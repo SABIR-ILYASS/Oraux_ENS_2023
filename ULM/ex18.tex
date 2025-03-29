@@ -1,0 +1,113 @@
+L'exercice 18 introduit une distance sur les matrices sym{\'e}triques
+d{\'e}finies positives. Il demande de prouver certaines propri{\'e}t{\'e}s de
+cette distance, notamment son invariance par conjugaison. L'exercice fait
+appel {\`a} des notions d'alg{\`e}bre lin{\'e}aire et de g{\'e}om{\'e}trie des
+espaces de matrices.
+\begin{exercise}[(Une distance sur les matrices sym{\'e}triques)]
+On note $\mathcal{S}^{+ +}_n$ l'ensemble des matrices r{\'e}elles
+sym{\'e}triques de taille $n$ d{\'e}finies positives. Montrer que pour toute
+paire $A, B \in \mathcal{S}^{+ +}_n$, il existe $G \in \mathrm{GL}_n
+(\mathbb{R})$ tel que $B = GAG^t$.
+
+Pour toute fonction $f : \mathbb{R}_+^{\ast} \to \mathbb{R}$ et $A \in
+\mathcal{S}^{+ +}_n$, donner un sens {\`a} $f (A)$. {\`A} l'aide de cette
+d{\'e}finition, on pose
+\[ d (A, B) = \| \log (A^{- 1 / 2} BA^{- 1 / 2})\|, \]
+
+
+o{\`u} $\|.\|$ est la norme d'op{\'e}rateur relative {\`a} la norme
+euclidienne sur~$\mathbb{R}^n$. Montrer que
+\[ d (GAG^t, GBG^t) = d (A, B) \]
+
+
+pour tout $G \in \mathrm{GL}_n (\mathbb{R})$, puis que~$d$ d{\'e}finit une
+distance sur $\mathcal{S}^{+ +}_n$.
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+Soit $R \in \mathcal{S}^{+ +}_n$ tel que $A = R^T R$ et soit $S \in
+\mathcal{S}^{+ +}_n$ tel que $B = S^2$. On pose $G = R^{- 1} S \in \text{GL}_n
+(\mathbb{R})$. Alors, nous avons :
+\[ G^T AG = S (R^{- 1} RR^{- 1}) S = S^2 = B. \]
+
+
+Ainsi, pour toute paire $A, B \in \mathcal{S}^{+ +}_n$, il existe $G \in
+\text{GL}_n (\mathbb{R})$ tel que $B = G^T AG$.
+
+\
+
+Soit $G \in O_n (\mathbb{R})$ et $\lambda_1, \ldots, \lambda_n > 0$ tels que
+$A = G \text{Diag} (\lambda_1, \ldots, \lambda_n) G^{- 1}$. On d{\'e}finit :
+\[ f (A) = G \text{Diag} (f (\lambda_1), \ldots, f (\lambda_n)) G^{- 1} . \]
+
+
+Pour montrer que cette d{\'e}finition ne d{\'e}pend pas de la
+d{\'e}composition, soit $\Sigma \subseteq \mathbb{R}_+$ le spectre de $A$. Il
+existe un polyn{\^o}me interpolateur de Lagrange $Q \in \mathbb{R}[X]$ tel que
+:
+\[ \forall \lambda \in \Sigma, \quad f (\lambda) = Q (\lambda) . \]
+
+
+Ainsi,
+\[ f (A) = G \text{Diag} (Q (\lambda_1), \ldots, Q (\lambda_n)) G^{- 1} . \]
+
+
+Soit $R \in \mathcal{S}^{+ +}_n$ tel que $R^2 = A$. Alors, $R^{- 1} BR^{- 1}
+\in \mathcal{S}^{+ +}_n$, et on note ses valeurs propres par $0 < \lambda_1
+\leq \ldots \leq \lambda_n$. On a :
+\[ \lambda_n = \underset{y \neq 0}{\sup}   \frac{\langle By, y
+   \rangle}{\langle Ay, y \rangle}, \quad \lambda_1 = \underset{y \neq 0}{\inf
+   }  \frac{\langle By, y \rangle}{\langle Ay, y \rangle} . \]
+
+
+La matrice $S = \ln (R^{- 1} BR^{- 1})$ a pour valeurs propres $\ln
+(\lambda_1), \ldots, \ln (\lambda_n)$. La distance est alors d{\'e}finie par :
+\[ d (A, B) = \max (| \ln (\lambda_1) |, | \ln (\lambda_n) |) = \underset{y
+   \neq 0}{\sup} \left| \ln \left( \frac{\langle By, y \rangle}{\langle Ay, y
+   \rangle} \right) \right| . \]
+
+
+Montrons que $d (G^T AG, G^T BG) = d (A, B)$ pour tout $G \in \text{GL}_n
+(\mathbb{R})$. On a :
+\begin{eqnarray*}
+  d (G^T AG, G^T BG) & = & \underset{Y \neq 0}{\sup} \left| \ln \left(
+  \frac{\langle G^T BGY, Y \rangle}{\langle G^T AGY, Y \rangle} \right)
+  \right|\\
+  & = &  \underset{Y \neq 0}{\sup} \left| \ln \left( \frac{\langle BGY, GY
+  \rangle}{\langle AGY, GY \rangle} \right) \right|\\
+  & = & \underset{Z \neq 0}{\sup} \left| \ln \left( \frac{\langle BZ, Z
+  \rangle}{\langle AZ, Z \rangle} \right) \right|\\
+  & = & d (A, B)
+\end{eqnarray*}
+Ainsi, la distance est invariante par changement de base.
+
+\tmtextbf{V{\'e}rification des propri{\'e}t{\'e}s de distance}
+
+- \tmtextbf{Sym{\'e}trie} : Il est clair que $d (A, B) = d (B, A) \geq 0$.
+
+- \tmtextbf{S{\'e}paration} : Si $d (A, B) = 0$, alors $\ln (R^{- 1} BR^{-
+1}) = 0$, donc $R^{- 1} BR^{- 1} = I_n$, ce qui implique $A = B$.
+
+Pour l'in{\'e}galit{\'e} triangulaire, soit $C \in \mathcal{S}^{+ +}_n$. Pour
+tout $Y \in M_{n, 1} (\mathbb{R}) \setminus \{0\}$ :
+\[ \frac{\langle BY, Y \rangle}{\langle AY, Y \rangle} = \frac{\langle BY, Y
+   \rangle}{\langle CY, Y \rangle} \times \frac{\langle CY, Y \rangle}{\langle
+   AY, Y \rangle} . \]
+
+
+En appliquant le logarithme, on obtient :
+\[ \left| \ln \left( \frac{\langle BY, Y \rangle}{\langle AY, Y \rangle}
+   \right) \right| \leq \left| \ln \left( \frac{\langle BY, Y \rangle}{\langle
+   CY, Y \rangle} \right) \right| + \left| \ln \left( \frac{\langle CY, Y
+   \rangle}{\langle AY, Y \rangle} \right) \right| . \]
+
+
+En prenant la borne sup{\'e}rieure, on obtient :
+\[ d (A, B) \leq d (A, C) + d (C, B) . \]
+
+
+Cela prouve que $d (A, B)$ d{\'e}finit bien une distance sur $S_{+ +}^n
+(\mathbb{R})$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

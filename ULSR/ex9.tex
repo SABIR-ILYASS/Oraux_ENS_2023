@@ -1,0 +1,152 @@
+Ce probl{\`e}me de probabilit{\'e}s porte sur l'{\'e}tude d'un processus
+al{\'e}atoire g{\'e}n{\'e}rant un sous-ensemble de $\llbracket 1, N
+\rrbracket$. Il {\'e}value la compr{\'e}hension des candidats sur les concepts
+de probabilit{\'e} conditionnelle et leur aptitude {\`a} calculer des
+esp{\'e}rances et des variances pour des variables al{\'e}atoires
+discr{\`e}tes.
+\begin{exercise}[]
+Soit un entier $N \geqslant 1$. On consid{\`e}re la suite al{\'e}atoire
+suivante : on choisit $u_1$ uniform{\'e}ment dans $\llbracket 1, N
+\rrbracket$; puis {\`a} chaque {\'e}tape, on choisit $u_{n + 1}$
+uniform{\'e}ment dans $\llbracket 1, u_n \rrbracket$. On consid{\`e}re ensuite
+l'ensemble al{\'e}atoire $E_N \assign \{ u_i \}_{i \geqslant 1} \subset
+\llbracket 1, N \rrbracket$.
+
+1. Pour tout $k \in \llbracket 1, N \rrbracket$, d{\'e}terminer la
+probabilit{\'e} que $k \in E_N$ .
+2. Quelle est la probabilité que $2 \in E_N$ sachant que $3 \notin E_N$ ?
+
+
+3. Calculer l'esp{\'e}rance de $|E_N |$ et en donner un {\'e}quivalent
+lorsque $N \rightarrow \infty$.
+
+4. Calculer la variance de $|E_N |$ et en donner un {\'e}quivalent lorsque $N
+\rightarrow \infty$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+1. Soit $N \geqslant 1$, et $k \in \llbracket 1, N \rrbracket$, calculons la
+probabilit{\'e} que $k \in E_N$.
+
+Pour tout $n \geqslant 1$, notons $\mathbb{P} (k \in E_n)$ la probabilit{\'e}
+que $k \in E_n$.
+
+On a pour tout $n \geqslant 2$, si $n < k$: $\mathbb{P} (k \in E_n) = 0$,
+sinon
+\begin{eqnarray*}
+  \mathbb{P} (k \in E_n) & = & \underset{j = 1}{\overset{n}{\sum}} \mathbb{P}
+  (k \in E_n, u_1 = j)\\
+  & = & \underset{j = k}{\overset{n}{\sum}} \mathbb{P} (k \in E_n, u_1 = j)\\
+  & = & \frac{1}{n} + \underset{j = k + 1}{\overset{n}{\sum}} \mathbb{P} (u_1
+  = j) \mathbb{P} (k \in E_j)\\
+  & = & \frac{1}{n} + \frac{1}{n} \underset{j = k + 1}{\overset{n}{\sum}}
+  \mathbb{P} (k \in E_j)
+\end{eqnarray*}
+
+
+Par suite,
+\begin{eqnarray*}
+  \mathbb{P} (k \in E_n) & = & \frac{1}{n - 1} + \frac{1}{n - 1} \underset{j =
+  k + 1}{\overset{n - 1}{\sum}} \mathbb{P} (k \in E_j)
+\end{eqnarray*}
+
+
+Ainsi,
+\[ \frac{1}{n} \underset{j = k + 1}{\overset{n}{\sum}} \mathbb{P} (k \in E_j)
+   = \frac{1}{n (n - 1)} + \frac{1}{n - 1} \underset{j = k + 1}{\overset{n -
+   1}{\sum}} \mathbb{P} (k \in E_j) \]
+
+
+Par suite,
+\[ \underset{n = k + 1}{\overset{N}{\sum}} \left( \frac{1}{n} \underset{j = k
+   + 1}{\overset{n}{\sum}} \mathbb{P} (k \in E_j) - \frac{1}{n - 1}
+   \underset{j = k + 1}{\overset{n - 1}{\sum}} \mathbb{P} (k \in E_j) \right)
+   = \underset{n = k + 1}{\overset{N}{\sum}} \frac{1}{n (n - 1)} \]
+
+
+Par t{\'e}l{\'e}scopage, on a
+\[ \underset{j = k + 1}{\overset{N}{\sum}} \mathbb{P} (k \in E_j) =
+   \frac{N}{k} - 1 \]
+
+
+Par suite
+\begin{eqnarray*}
+  \mathbb{P} (k \in E_N) & = & 1 + \frac{1}{N} \underset{j = k +
+  1}{\overset{N}{\sum}} \mathbb{P} (k \in E_j)\\
+  & = & \frac{1}{N} + \frac{1}{N} \left( \frac{N}{k} - 1 \right)\\
+  & = & \frac{1}{k}
+\end{eqnarray*}
+
+
+\
+
+2. Il est clair que pour tous $i < j \in \llbracket 1, n \rrbracket$, on a
+$\mathbb{P} (i \in E_N | \nobracket j \in E_N) =\mathbb{P} (i \in E_j)$
+\begin{eqnarray*}
+  \mathbb{P} \left( 2 \in E_N | \nobracket 3 \not{\in} E_N \right) & = &
+  \frac{\mathbb{P} \left( 3 \not{\in} E_N  | \nobracket 2 \in E_N \right)
+  \mathbb{P} (2 \in E_N)}{\mathbb{P} \left( 3 \not{\in} E_N \right)}\\
+  & = & \frac{(1 -\mathbb{P} (3 \in E_N  | \nobracket 2 \in E_N))}{1
+  -\mathbb{P} (3 \in E_N)} \mathbb{P} (2 \in E_N)\\
+  & = & \frac{\mathbb{P} (2 \in E_N)}{1 -\mathbb{P} (3 \in E_N)} \left( 1 -
+  \frac{\mathbb{P} (3 \in E_N)}{\mathbb{P} (2 \in E_N)} \mathbb{P} (2 \in E_N
+  | \nobracket 3 \in E_N) \right)\\
+  & = & \frac{\mathbb{P} (2 \in E_N)}{1 -\mathbb{P} (3 \in E_N)} \left( 1 -
+  \frac{\mathbb{P} (3 \in E_N)}{\mathbb{P} (2 \in E_N)} \mathbb{P} (2 \in E_3)
+  \right)\\
+  & = & \frac{\frac{1}{2}}{1 - \frac{1}{3}} \left( 1 -
+  \frac{\frac{1}{3}}{\frac{1}{2}} \times \frac{1}{2} \right)\\
+  & = & \frac{1}{2}
+\end{eqnarray*}
+
+
+3. Pour tout $N \geqslant 1$, notons $E_N = \{ u_1, \ldots, u_l \}$ avec $l
+\leqslant N$ et $u_1 < \cdots < u_l$.
+
+On a pour tout $k \in \llbracket 1, n \rrbracket$
+\begin{eqnarray*}
+  \mathbb{E} [| E_N |] & = & \mathbb{E} \left( \underset{k =
+  1}{\overset{N}{\sum}} \mathbbm{1}_{k \in E_N} \right)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} (k \in E_N)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k}
+\end{eqnarray*}
+
+
+On a alors :
+\[ \mathbb{E} [| E_N |] \underset{n \longrightarrow + \infty}{\sim} \ln (N) \]
+
+
+4. On a
+\begin{eqnarray*}
+  \mathbb{E} [| E_N |^2] & = & \underset{k = 1}{\overset{N}{\sum}} \underset{j
+  = 1}{\overset{N}{\sum}} \mathbb{P} (k \in E_N, j \in E_N)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} (k \in E_N) + 2
+  \underset{1 \leqslant j < k \leqslant N}{\sum} \mathbb{P} (k \in E_N, j \in
+  E_N)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k} + 2 \underset{1
+  \leqslant j < k \leqslant N}{\sum} \mathbb{P} (k \in E_N, j \in E_k)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k} + 2 \underset{1
+  \leqslant j < k \leqslant N}{\sum} \mathbb{P} (k \in E_N) \mathbb{P} (j \in
+  E_k)\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k} + 2 \underset{1
+  \leqslant j < k \leqslant N}{\sum} \frac{1}{k j}
+\end{eqnarray*}
+
+
+Par suite,
+\begin{eqnarray*}
+  \tmop{Var} (| E_N |) & = & \mathbb{E} [| E_N |^2] -\mathbb{E} [| E_N |]^2\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k} + 2 \underset{1
+  \leqslant j < k \leqslant N}{\sum} \frac{1}{k j} - \left( \underset{k =
+  1}{\overset{N}{\sum}} \frac{1}{k} \right)^2\\
+  & = & \underset{k = 1}{\overset{N}{\sum}} \frac{1}{k} - \underset{k =
+  1}{\overset{N}{\sum}} \frac{1}{k^2}
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \tmop{Var} (| E_N |) \underset{n \longrightarrow + \infty}{\sim} \ln (N) \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

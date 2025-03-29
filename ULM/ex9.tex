@@ -1,0 +1,442 @@
+L'exercice 9 {\'e}tudie les sous-groupes des isom{\'e}tries affines du plan.
+Il demande de prouver l'existence de certaines translations dans un
+sous-groupe d'isom{\'e}tries v{\'e}rifiant des conditions sp{\'e}cifiques.
+L'exercice fait appel {\`a} des notions de g{\'e}om{\'e}trie affine et de
+th{\'e}orie des groupes.
+\begin{exercise}[({\'E}tude des sous-groupes des isom{\'e}tries
+affines)]
+Soit $G$ un sous-groupe du groupe des isom{\'e}tries du plan affine
+$\mathbb{R}^2$. On suppose que pour tout $x \in \mathbb{R}^2$, il existe~$g
+\in G$ tel que~$g (x) \neq x$. Montrer que $G$ contient une translation non
+triviale.
+
+Si de plus~$G$ ne stabilise aucune droite, montrer que $G$ contient une
+deuxi{\`e}me translation non parall{\`e}le {\`a} la premi{\`e}re.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+Soit $G$ un sous-groupe du groupe des isom{\'e}tries du plan affine
+$\mathbb{R}^2$. On suppose que pour tout $x \in \mathbb{R}^2$, il existe $g
+\in G$ tel que $g (x) \neq x$. Montrons que $G$ contient une translation non
+triviale.
+
+On utilisera pour les deux questions le fait que les 4 isom{\'e}tries
+possibles du plan sont :
+\begin{enumeratenumeric}
+  \item Une transaltion
+  
+  \item Une rotation
+  
+  \item Une r{\'e}flexion
+  
+  \item Une r{\'e}flexion glissante
+\end{enumeratenumeric}
+
+
+Pour s'en convaincre il suffit d'utiliser la classification des isom{\'e}tries
+vectorielles du plan en rotation et r{\'e}flexion, puis translater par un
+vecteur $v$.
+
+\tmtextbf{Lemme 1.}
+
+La composition d'une rotation et d'une r{\'e}flexion dans le plan donne une
+r{\'e}flexion glissante si le centre de rotation n'est pas situ{\'e} sur la
+ligne de r{\'e}flexion.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Alignons l'axe des $x$ avec la ligne de r{\'e}flexion $l$. Ainsi, la
+r{\'e}flexion par rapport {\`a} $l$ est donn{\'e}e par :
+\[ M (x, y) = (x, - y) \]
+
+
+Pla{\c c}ons le centre de rotation $O$ en $(0, d)$ o{\`u} $d \neq 0$, puisque
+$l$ ne passe pas par $O$.
+
+Consid{\'e}rons une rotation autour du point $O$ d'angle $\theta$. La matrice
+de rotation est :
+\[ R_{\theta} = \left[ \begin{array}{cc}
+     \cos \theta & - \sin \theta\\
+     \sin \theta & \cos \theta
+   \end{array} \right] . \]
+
+
+Pour effectuer une rotation autour de $O$, nous devons translater les
+coordonn{\'e}es de mani{\`e}re {\`a} ce que $O$ soit {\`a} l'origine :
+\[ \tilde{P} = P - O. \]
+
+
+Apr{\`e}s la rotation, nous obtenons :
+\[ \tilde{P}' = R_{\theta}  \tilde{P} . \]
+
+
+Ensuite, nous revenons aux coordonn{\'e}es d'origine :
+\[ P' = \tilde{P}' + O. \]
+
+
+Ainsi , les coordonn{\'e}es apr{\`e}s translation vers $O$ sont :
+\[ \tilde{P} = \left[ \begin{array}{c}
+     x\\
+     y - d
+   \end{array} \right] . \]
+
+
+Apr{\`e}s rotation de $\tilde{P}$ :
+\[ \tilde{P}' = R_{\theta}  \tilde{P} = \left[ \begin{array}{cc}
+     \cos \theta & - \sin \theta\\
+     \sin \theta & \cos \theta
+   \end{array} \right] \left[ \begin{array}{c}
+     x\\
+     y - d
+   \end{array} \right] . \]
+
+
+En combinant les composantes, nous obtenons :
+\[ \tilde{x}' = \cos \theta \cdot x - \sin \theta \cdot (y - d), \]
+\[ \tilde{y}' = \sin \theta \cdot x + \cos \theta \cdot (y - d) . \]
+
+
+Par suite,
+\[ x' = \tilde{x}', \]
+\[ y' = \tilde{y}' + d = \sin \theta \cdot x + \cos \theta \cdot (y - d) + d.
+\]
+
+
+Ainsi,
+\[ y' = \sin \theta \cdot x + \cos \theta \cdot y - \cos \theta \cdot d + d.
+\]
+
+
+Par suite,
+\[ y'' = - y' = - (\sin \theta \cdot x + \cos \theta \cdot y - \cos \theta
+   \cdot d + d) . \]
+
+
+En combinant les composantes $x''$ et $y''$, nous obtenons :
+\[ x'' = \cos \theta \cdot x - \sin \theta \cdot (y - d), \]
+\[ y'' = - \sin \theta \cdot x - \cos \theta \cdot y + \cos \theta \cdot d -
+   d. \]
+
+
+En forme matricielle, cela donne :
+\[ \left[ \begin{array}{c}
+     x''\\
+     y''
+   \end{array} \right] = \left[ \begin{array}{cc}
+     \cos \theta & - \sin \theta\\
+     - \sin \theta & - \cos \theta
+   \end{array} \right] \left[ \begin{array}{c}
+     x\\
+     y
+   \end{array} \right] + \left[ \begin{array}{c}
+     \sin \theta \cdot d\\
+     \cos \theta \cdot d - d
+   \end{array} \right] . \]
+
+
+Le terme $\left[ \begin{array}{c}
+  \sin \theta \cdot d\\
+  \cos \theta \cdot d - d
+\end{array} \right]$ repr{\'e}sente une translation, et la matrice
+\[ A = \left[ \begin{array}{cc}
+     \cos \theta & - \sin \theta\\
+     - \sin \theta & - \cos \theta
+   \end{array} \right] \]
+
+
+indique qu'il s'agit d'une r{\'e}flexion suivie d'une translation le long de
+l'axe de r{\'e}flexion, c'est-{\`a}-dire une r{\'e}flexion glissante.
+
+\tmtextbf{Lemme 2.}
+
+La composition de deux rotations de centres diff{\'e}rents dans le plan affine
+donne une rotation ou une translation. Plus pr{\'e}cis{\'e}ment, si les angles
+de rotation sont oppos{\'e}s, la composition donne une translation. Sinon, la
+composition reste une rotation. Dans les deux cas, on peut toujours construire
+une translation.
+
+\tmtextbf{Preuve du lemme 2.}
+
+D{\'e}finissons les deux rotations :
+
+- Premi{\`e}re rotation $R_1$ : de centre $O_1$ {\`a} la position $\vec{o}_1$
+et d'angle $\theta_1$.
+
+- Deuxi{\`e}me rotation $R_2$ : de centre : $O_2$ {\`a} la position
+$\vec{o}_2$, et d'angle $\theta_2$.
+
+Nous allons analyser la composition $T = R_2 \circ R_1$. Une rotation dans le
+plan peut {\^e}tre repr{\'e}sent{\'e}e de la mani{\`e}re suivante :
+\begin{enumerate}
+  \item Translater le point de sorte que le centre de rotation soit {\`a}
+  l'origine.
+  
+  \item Appliquer la matrice de rotation.
+  
+  \item Translater le point de retour {\`a} sa position d'origine.
+\end{enumerate}
+
+
+La matrice de rotation pour un angle $\theta$ est :
+\[ R (\theta) = \left[ \begin{array}{cc}
+     \cos \theta & - \sin \theta\\
+     \sin \theta & \cos \theta
+   \end{array} \right] . \]
+
+
+La fonction de transformation pour une rotation autour d'un point $O$ est
+donn{\'e}e par :
+\[ R (P) = R (\theta) \cdot (P - \vec{o}) + \vec{o} . \]
+
+
+Appliquons d'abord $R_1$ {\`a} un point $P$, puis $R_2$ au r{\'e}sultat :
+\[ P' = R_1 (P) = R (\theta_1) \cdot (P - \vec{o}_1) + \vec{o}_1 . \]
+
+
+Ensuite,
+\[ P'' = R_2 (P') = R (\theta_2) \cdot (P' - \vec{o}_2) + \vec{o}_2 . \]
+
+
+La composition $T (P)$ s'exprime alors comme :
+\[ T (P) = R_2 (R_1 (P)) = R (\theta_2) \cdot [R (\theta_1) \cdot (P -
+   \vec{o}_1) + \vec{o}_1 - \vec{o}_2] + \vec{o}_2 . \]
+
+
+D{\'e}veloppons l'expression :
+\[ T (P) = R (\theta_2) \cdot R (\theta_1) \cdot (P - \vec{o}_1) + R
+   (\theta_2) \cdot (\vec{o}_1 - \vec{o}_2) + \vec{o}_2 . \]
+
+
+On a :
+\[ R (\theta_2) \cdot R (\theta_1) = R (\theta_1 + \theta_2) . \]
+
+
+Ainsi, l'expression devient :
+\[ T (P) = R (\theta_1 + \theta_2) \cdot (P - \vec{o}_1) + R (\theta_2) \cdot
+   (\vec{o}_1 - \vec{o}_2) + \vec{o}_2 . \]
+
+
+D{\'e}finissons :
+\begin{itemize}
+  \item \tmtextbf{Angle total de rotation} : $\theta = \theta_1 + \theta_2$.
+  
+  \item \tmtextbf{Vecteur de translation} : $\vec{t} = R (\theta_2) \cdot
+  (\vec{o}_1 - \vec{o}_2) + \vec{o}_2$.
+\end{itemize}
+
+
+La transformation devient :
+\[ T (P) = R (\theta) \cdot (P - \vec{o}_1) + \vec{t} . \]
+\begin{itemize}
+  \item \tmtextbf{Cas 1 : La somme des angles est nulle} ($\theta = 0$)
+  
+  Si $\theta_1 + \theta_2 = 0$, alors $R (\theta$) est la matrice
+  identit{\'e}. La transformation $T (P$) se simplifie en :
+  \[ T (P) = (P - \vec{o}_1) + \vec{t} = P + (\vec{t} - \vec{o}_1) . \]
+  C'est une translation par le vecteur $\vec{v} = \vec{t} - \vec{o}_1$.
+  
+  \item \tmtextbf{Cas 2 : La somme des angles n'est pas nulle} ($\theta \neq
+  0$)
+  
+  La transformation $T (P$) est une rotation d'angle $\theta$ autour d'un
+  nouveau point. Il existe un composant de translation suppl{\'e}mentaire. Par
+  cons{\'e}quent, $T$ est une rotation autour d'un nouveau centre.
+\end{itemize}
+
+
+\
+
+La composition de deux rotations $R_1$ et $R_2$ de centres diff{\'e}rents est
+{\'e}quivalente {\`a} :
+\begin{itemize}
+  \item Une rotation d'angle $\theta_1 + \theta_2$ autour d'un nouveau point,
+  sauf si les angles sont oppos{\'e}s. On peut aussi construire dans ce cas
+  une translation, en combinant cette rotation avec la rotation d'angle
+  -($\theta_1 + \theta_2$) qui est de centre diff{\'e}rent d'apr{\`e}s la
+  m{\^e}me construction,(puisque le centre d{\'e}pend de l'orientation).
+  
+  \item Dans le cas o{\`u} $\theta_1 + \theta_2 = 0$ et $\vec{o}_1 \neq
+  \vec{o}_2$, la composition est une translation.
+\end{itemize}
+
+
+\tmtextbf{Lemme 3.}
+
+La composition de deux r{\'e}flexions aux axes parall{\`e}les donne une
+translation.
+
+\
+
+\tmtextbf{Preuve du lemme 3.}
+
+Soient $L_1$ et $L_2$ deux droites parall{\`e}les distinctes dans le plan
+affine $\mathbb{R}^2$, faisant un angle $\theta$ avec l'axe des abscisses.
+Nous allons d{\'e}montrer que la composition des r{\'e}flexions par rapport
+{\`a} $L_1$ et $L_2$ est une translation.
+\begin{itemize}
+  \item Supposons que les droites $L_1$ et $L_2$ soient parall{\`e}les et
+  orient{\'e}es selon un angle $\theta$ avec l'axe des abscisses. Ainsi, un
+  vecteur directeur commun {\`a} ces droites est donn{\'e} par :
+  \[ \mathbf{u} = \left(\begin{array}{c}
+       \cos \theta\\
+       \sin \theta
+     \end{array}\right) \]
+  \item Un vecteur normal unitaire aux droites est :
+  \[ \mathbf{n} = \left(\begin{array}{c}
+       - \sin \theta\\
+       \cos \theta
+     \end{array}\right) \]
+  \item Soit $d$ la distance entre les droites $L_1$ et $L_2$.
+\end{itemize}
+
+
+La r{\'e}flexion par rapport {\`a} une droite $L$ orient{\'e}e selon $\theta$
+et situ{\'e}e {\`a} une distance $c$ de l'origine peut {\^e}tre exprim{\'e}e
+comme une transformation affine :
+\[ R_L (\mathbf{x}) = A \mathbf{x} + \mathbf{t} \]
+
+
+o{\`u} $A$ est la matrice de r{\'e}flexion lin{\'e}aire et $\mathbf{t}$ est le
+vecteur de translation.
+\begin{itemize}
+  \item La matrice de r{\'e}flexion par rapport {\`a} une droite orient{\'e}e
+  selon $\theta$ est :
+  \[ A = \left(\begin{array}{cc}
+       \cos 2 \theta & \sin 2 \theta\\
+       \sin 2 \theta & - \cos 2 \theta
+     \end{array}\right) \]
+  \item Le vecteur de translation d{\'e}pend de la position de la droite. Pour
+  une droite $L$ situ{\'e}e {\`a} une distance $c$ le long du vecteur normal
+  $\mathbf{n}$, le vecteur de translation est :
+  \[ \mathbf{t} = 2 c \mathbf{n} = 2 c \left(\begin{array}{c}
+       - \sin \theta\\
+       \cos \theta
+     \end{array}\right) \]
+\end{itemize}
+
+
+Ainsi, les r{\'e}flexions par rapport {\`a} $L_1$ et $L_2$ sont :
+\[ R_{L_1} (\mathbf{x}) = A \mathbf{x} + 2 c_1 \mathbf{n} \]
+\[ R_{L_2} (\mathbf{x}) = A \mathbf{x} + 2 c_2 \mathbf{n} \]
+
+
+o{\`u} $c_1$ et $c_2$ sont les distances de $L_1$ et $L_2$ par rapport {\`a}
+l'origine, respectivement.
+
+Nous calculons la composition $R = R_{L_2} \circ R_{L_1}$.
+\[ R (\mathbf{x}) = R_{L_2} (R_{L_1} (\mathbf{x})) = R_{L_2} (A \mathbf{x} + 2
+   c_1 \mathbf{n}) = A (A \mathbf{x} + 2 c_1 \mathbf{n}) + 2 c_2 \mathbf{n} \]
+
+
+Calculons chaque terme s{\'e}par{\'e}ment :
+
+\begin{align*}
+  A \cdot A \mathbf{x} & = A^2 \mathbf{x}\\
+  A \cdot 2 c_1 \mathbf{n} & = 2 c_1 A \mathbf{n}
+\end{align*}
+
+\
+
+\
+
+On a :
+\[ A^2 = \left(\begin{array}{cc}
+     \cos 2 \theta & \sin 2 \theta\\
+     \sin 2 \theta & - \cos 2 \theta
+   \end{array}\right) \left(\begin{array}{cc}
+     \cos 2 \theta & \sin 2 \theta\\
+     \sin 2 \theta & - \cos 2 \theta
+   \end{array}\right) = I \]
+\[ A \mathbf{n} = \left(\begin{array}{cc}
+     \cos 2 \theta & \sin 2 \theta\\
+     \sin 2 \theta & - \cos 2 \theta
+   \end{array}\right) \left(\begin{array}{c}
+     - \sin \theta\\
+     \cos \theta
+   \end{array}\right) = \left(\begin{array}{c}
+     - \cos 2 \theta \sin \theta + \sin 2 \theta \cos \theta\\
+     - \sin 2 \theta \sin \theta - \cos 2 \theta \cos \theta
+   \end{array}\right) \]
+
+
+Donc,
+\[ A \mathbf{n} = \left(\begin{array}{c}
+     \sin \theta\\
+     - \cos \theta
+   \end{array}\right) = \mathbf{n} \]
+
+
+Maintenant, revenons {\`a} la composition $R (\mathbf{x})$ :
+\[ R (\mathbf{x}) = A^2 \mathbf{x} + 2 c_1 A \mathbf{n} + 2 c_2 \mathbf{n} = I
+   \mathbf{x} + 2 c_1 \mathbf{n} + 2 c_2 \mathbf{n} = \mathbf{x} + 2 (c_1 +
+   c_2) \mathbf{n} \]
+
+
+La transformation $R$ est donc donn{\'e}e par :
+\[ R (\mathbf{x}) = \mathbf{x} + 2 (c_2 - c_1) \mathbf{n} \]
+
+
+o{\`u} $2 (c_2 - c_1) \mathbf{n}$ est le vecteur de translation.
+
+Ainsi, la composition des r{\'e}flexions $R_{L_2} \circ R_{L_1}$ est une
+translation de vecteur $\mathbf{t} = 2 (c_2 - c_1) \mathbf{n}$,
+c'est-{\`a}-dire une translation parall{\`e}lement aux droites $L_1$ et $L_2$
+et de longueur {\'e}gale au double de la distance entre elles.
+
+1- Examinons cas par cas:
+\begin{itemize}
+  \item Si G contient une r{\'e}flexion glissante alors on obtient une
+  translation non triviale en la composant par elle-m{\^e}me.
+  
+  \item Si G ne contient que des rotations, alors il contient deux rotations
+  de centre diff{\'e}rents d'apr{\`e}s l'hypoth{\`e}se de l'{\'e}nonc{\'e}, et
+  donc d'apr{\`e}s le \tmtextbf{Lemme 2} on peut construire une translation.
+  
+  \item Si G contient une rotation et une r{\'e}flexion dont la droite ne
+  passe pas par le centre de rotation, et dans ce cas on peut construit une
+  translation d'apr{\`e}s le \tmtextbf{Lemme 1}.
+  
+  \item Si G ne contient que des r{\'e}flexions: Si au moins deux
+  pr{\'e}sentent des axes qui sont parall{\`e}les alors la composition des
+  deux r{\'e}flexions r{\'e}sulte en une translation d'apr{\`e}s le
+  \tmtextbf{Lemme 3}. Sinon, On a aux moins trois r{\'e}flexions qui
+  pr{\'e}sentent des axes s{\'e}cants. Et leur composition donne deux matrices
+  de rotations diff{\'e}rentes (Il suffit de multiplier les matrices de
+  r{\'e}flexion).
+\end{itemize}
+
+
+2- Supposons que $G$ contienne une rotation $R$. Alors, pour toute translation
+$T_{\mathbf{v}} \in G$, nous avons
+\[ R^{- 1} \circ T_{\mathbf{v}} \circ R = T_{R^{- 1} (\mathbf{v})} . \]
+
+
+\
+
+Ainsi, nous obtenons une nouvelle translation $T_{R^{- 1} (\mathbf{v})}$.
+Comme $R$ ne stabilise que son centre de rotation, cette nouvelle translation
+n'est pas triviale et peut avoir une direction diff{\'e}rente de la
+translation initiale.
+
+Ensuite, si $G$ ne contient que des translations, et que ces translations sont
+parall{\`e}les {\`a} une direction commune. Cela implique que les droites
+parall{\`e}les {\`a} cette direction sont stabilis{\'e}es par $G$, ce qui
+contredit l'hypoth{\`e}se selon laquelle $G$ ne stabilise aucune droite.
+
+Consid{\'e}rons maintenant le cas o{\`u} $G$ contient des r{\'e}flexions mais
+pas de rotations. Soit $M$ une r{\'e}flexion dans $G$. Alors, pour toute
+translation $T_{\mathbf{v}} \in G$, nous avons
+\[ M \circ T_{\mathbf{v}} \circ M = T_{M (\mathbf{v})} . \]
+
+
+Si pour toutes les r{\'e}flexions $M \in G$, on a $M (\mathbf{v}) =
+\mathbf{v}$, alors $G$ stabilise une droite parall{\`e}le {\`a} $\mathbf{v}$,
+ce qui est une contradiction avec l'hypoth{\`e}se que $G$ ne stabilise aucune
+droite.
+
+Ainsi, $G$ doit contenir une seconde translation dont la direction est
+diff{\'e}rente de la premi{\`e}re.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

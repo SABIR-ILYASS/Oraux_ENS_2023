@@ -1,0 +1,139 @@
+Cet exercice s'int{\'e}resse aux g{\'e}n{\'e}rateurs d'un groupe de matrices.
+Il demande de prouver qu'un certain sous-groupe de $\tmop{GL}_2 (\mathbb{Z})$
+est engendr{\'e} par deux matrices sp{\'e}cifiques. L'exercice fait appel
+{\`a} des notions de th{\'e}orie des groupes et d'alg{\`e}bre lin{\'e}aire.
+
+\begin{exercise}[(G{\'e}n{\'e}rateurs d'un groupe de matrices)]
+Soit $G$ le sous-ensemble de $\mathrm{GL}_2 (\mathbb{Z})$ des matrices {\`a}
+coefficients entiers $\left( \begin{array}{ll}
+  a & b\\
+  c & d
+\end{array} \right)$ telles que $a \equiv d \equiv 1 - c \equiv 1 \pmod{3}$
+et~$ad - bc = 1$.
+
+Montrer que $G$ est un sous-groupe engendr{\'e} par $A = \left(
+\begin{array}{ll}
+  1 & 1\\
+  0 & 1
+\end{array} \right)$ et $B = \left( \begin{array}{ll}
+  1 & 0\\
+  3 & 1
+\end{array} \right)$.
+
+\textit{ C'est une variante, {\`a} peine plus subtile, d'un r{\'e}sultat
+analogue sur $\mathrm{SL}_2 (\mathbb{Z})$.}
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $H$ le sous-groupe de $G$ engendr{\'e} par $A = \left(\begin{array}{cc}
+  1 & 1\\
+  0 & 1
+\end{array}\right)$ et $B = \left(\begin{array}{cc}
+  1 & 0\\
+  3 & 1
+\end{array}\right)$.
+
+Montrons que $H = G$.
+
+On a pour tout $n, m \in \mathbb{Z}$
+\[ A^n = \left(\begin{array}{cc}
+     1 & n\\
+     0 & 1
+   \end{array}\right) \]
+
+
+Et
+\[ B^m = \left(\begin{array}{cc}
+     1 & 0\\
+     3 m & 1
+   \end{array}\right) \]
+
+
+Ces matrices sont dans $G$, et comme $G$ est stable par produit, donc $H
+\subseteq G$.
+
+Soit $M = \left(\begin{array}{cc}
+  a & b\\
+  c & d
+\end{array}\right) \in G$.
+
+Consid{\'e}rons l'ensemble $E$ des matrices de la forme $MQ$ avec $Q \in H$.
+Toutes ces matrices sont dans $G$, car $G$ est stable par produit. Parmi ces
+matrices, choisissons $A' = \left(\begin{array}{cc}
+  a' & b'\\
+  c' & d'
+\end{array}\right)$ qui minimise $|a' |$.
+
+Pour tous $m, n \in \mathbb{Z}$, d{\'e}finissons :
+\begin{eqnarray*}
+  A'' & \assign & A' A^{- n} B^{- m}\\
+  & = & \left(\begin{array}{cc}
+    a' & b'\\
+    c' & d'
+  \end{array}\right) \left(\begin{array}{cc}
+    1 & - n\\
+    0 & 1
+  \end{array}\right) \left(\begin{array}{cc}
+    1 & 0\\
+    - 3 m & 1
+  \end{array}\right)\\
+  & = & \left(\begin{array}{cc}
+    a' - 3 m (b' - na') & \ast\\
+    \ast & \ast
+  \end{array}\right)
+\end{eqnarray*}
+
+
+Par minimalit{\'e} de $|a' |$, on a pour tout $m, n \in \mathbb{Z}$:
+\[ |a' | \leq |a' - 3 m (b' - na') | \]
+
+
+Supposons que pour tout $n \in \mathbb{Z}$, $b' - na' \neq 0$. Choisissons
+$n_0 \in \mathbb{Z}$ l'entier le plus proche de $\frac{b'}{a'}$. Alors :
+\begin{eqnarray*}
+  0 & < & |b' - n_0 a' |\\
+  & = & |a' | \cdot | \frac{b'}{a'} - n_0 |\\
+  & \leqslant & | a'  | \cdot \frac{1}{2}
+\end{eqnarray*}
+
+
+Choisissons ensuite $m_0 \in \mathbb{Z}$ l'entier le plus proche de
+$\frac{a'}{3 (b' - n_0 a')}$. On obtient :
+\begin{eqnarray*}
+  |a' | & \leqslant & |a' - 3 m_0 (b' - n_0 a') |\\
+  & = & 3| b' - n_0 a' | \cdot | \frac{a'}{3 (b' - n_0 a')} - m_0 |\\
+  & < & 3 \cdot \frac{1}{2} |a' | \cdot \frac{1}{2}\\
+  & = & \frac{3}{4} |a' |
+\end{eqnarray*}
+
+
+Ceci est absurde, car $a' \neq 0$ (car $a' \equiv 1 \pmod{3}$).
+
+Donc, il existe $n \in \mathbb{Z}$ tel que $b' = na'$. En prenant $m = 0$, on
+a : $A'' = A' A^{- n} = \left(\begin{array}{cc}
+  a' & 0\\
+  c' & d'
+\end{array}\right) \in G$
+
+Comme $A'' \in G$, on a $a' d' = 1$ et $a' \equiv d' \equiv 1 \pmod{3}$. Donc
+$a' = d' = 1$.
+
+Posons $c' = 3 q$ avec $q \in \mathbb{Z}$. Alors :
+\[ A'' = \left(\begin{array}{cc}
+     1 & 0\\
+     3 q & 1
+   \end{array}\right) = B^q \]
+
+
+On a donc : $A' = B^q A^n$, et comme $A' = MQ$ avec $Q \in H$, on obtient : $M
+= B^q A^n Q^{- 1} \in H$
+
+D'o{\`u} $G = H$
+
+Ainsi, $G$ est bien le sous-groupe de $GL_2 (\mathbb{Z})$ engendr{\'e} par $A$
+et $B$.
+
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

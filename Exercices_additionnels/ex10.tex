@@ -1,0 +1,257 @@
+Cet exercice explore des propri{\'e}t{\'e}s de congruences binomiales et des
+puissances modulo un nombre premier $p$, en combinatoire et arithm{\'e}tique
+modulaire, avec des d{\'e}monstrations utiles pour les concours d'entr{\'e}e
+aux grandes {\'e}coles scientifiques.
+\begin{exercise}[(Oral Paris-Lyon-Cachan-Rennes 98)]
+Soit $p$ un nombre premier.
+
+1- Montrer que pour tout $x \in \mathbb{Z}$,
+\[ (1 + x)^p \equiv 1 + x^p \pmod{p} \]
+
+
+Soit $m$ et $n$ deux entiers naturels, on {\'e}crit $m$ et $n$ en base $p$ :
+\[ m = \sum_{i = 0}^{+ \infty} a_i p^i  \text{et } n = \sum_{i = 0}^{+ \infty}
+   b_i p^i \]
+
+
+2- Montrer que :
+\[ \binom{m}{n} \equiv \prod_{i = 0}^{+ \infty} \binom{a_i}{b_i} \pmod{p} \]
+
+
+3- Avec les notations pr{\'e}c{\'e}dentes, montrer que :
+\[ \binom{pm}{pn} \equiv \binom{m}{n} \pmod{p} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+1- Soit $x \in \mathbb{Z}$, on a :
+\[ (1 + x)^p = \sum_{i = 0}^p \binom{p}{i} x^i = 1 + x^p + \sum_{i = 1}^{p -
+   1} \binom{p}{i} x^i \]
+
+
+Pour tout $i \in \llbracket 1, p - 1 \rrbracket$ on a :
+\[ i! \binom{p}{i} = p (p - 1) \times \cdots \times (p - i + 1) \]
+
+
+Ainsi, $p|i! \binom{p}{i}$, puisque $p$ est premier, donc pour tout $k \in
+\llbracket 1, i \rrbracket$, $p$ ne divise pas $k$. En particulier $p$ ne
+divise par $i$!. Via le lemme de Gauss $p| \binom{p}{i}$.
+
+D'o{\`u}
+\[ \sum_{i = 1}^{p - 1} \binom{p}{i} x^i \equiv 0 \pmod{p} \]
+
+
+Par cons{\'e}quent,
+\[ (1 + x)^p \equiv 1 + x^p \pmod{p} \]
+
+
+2- Soit $N_0$ (respectivement $N_1$) le plus petit entier tel que pour tout $i
+\geqslant N_0 + 1$, $b_i = 0$ (respectivement pour tout $i \geqslant N_1 + 1$,
+$a_i = 0$).
+
+\tmtextbf{Si $n > m$}, alors
+\[ \binom{m}{n} = 0 \]
+
+
+D'autre part, vu que $n > m$, alors ou bien $N_0 > N_1$ ou bien $N_0 = N_1$ et
+$b_{N_0} > a_{N_0}$.
+
+Dans les deux cas, on a
+\[ \binom{a_{N_0}}{b_{N_0}} = \binom{0}{b_{N_0}} = 0 (\tmop{carb}_{N_0} \neq
+   0) \]
+
+
+Donc :
+\[ \prod_{i = 0}^{+ \infty} \binom{a_i}{b_i} = \binom{a_{N_0}}{b_{N_0}}
+   {\prod_{i = 0}^{+ \infty}}_{i \neq N_0} \binom{a_i}{b_i} = 0 \]
+
+
+\tmtextbf{Si $n \leqslant m$}, alors dans $\mathbb{Z}/ p\mathbb{Z}[X]$ :
+\begin{eqnarray*}
+  (X + 1)^m & = & (X + 1)^{\sum_{i = 0}^{+ \infty} a_i p^i}\\
+  & = & \prod^{+ \infty}_{i = 0} ((X + 1)^{p^i})^{a_i}
+\end{eqnarray*}
+
+
+Or, pour tout $r \in \mathbb{N}^{\ast}$, d'apr{\`e}s la question 1, pour tout
+$j \in \llbracket 1, r \rrbracket$, on a
+\begin{eqnarray*}
+  (X^{p^{r - j}} + 1)^{p^j} & = & ((X^{p^{r - j}} + 1)^p)^{p^{j - 1}}\\
+  & = & (X^{p^{r - (j - 1)}} + 1)^{p^{j - 1}}
+\end{eqnarray*}
+
+
+En particulier, pour tout $r \in \mathbb{N}^{\ast}$
+\[ (X + 1)^{p^r} = 1 + X^{p^r} (\tmop{modp}) \]
+
+
+Ce r{\'e}sultat reste vrai pour $r = 0$, donc pour tout $r \in \mathbb{N}$
+\[ (X + 1)^{p^r} = 1 + X^{p^r} (\tmop{modp}) \]
+
+
+Ainsi, dans $\mathbb{Z}/ p\mathbb{Z}[X]$, on a
+\begin{eqnarray*}
+  (1 + X)^m & = & \prod_{i = 0}^{N_1} (1 + X^{p^i})^{a_i}\\
+  & = & \prod_{i = 0}^{N_1} \sum_{j_i = 0}^{a_i} \binom{a_i}{j_i} X^{j_i
+  p^i}\\
+  & = & \sum_{j_0 = 0}^{a_0} \sum_{j_1 = 0}^{a_1} \cdots \sum_{j_{N_1} =
+  0}^{a_{N_1}} \prod_{i = 0}^{N_1} \binom{a_i}{j_i} X^{\sum_{i = 0}^{N_1} j_i
+  p^i}
+\end{eqnarray*}
+
+
+D'autre part,
+\[ (1 + X)^m = \sum_{j = 0}^m \binom{m}{j} X^j \]
+
+
+Pour $n \in \llbracket 0, m \rrbracket$, le coefficient du mon{\^o}me de
+degr{\'e} $n$ {\`a} gauche est $\binom{m}{n}$ et celui de droite est $\prod_{i
+= 0}^{N_1} \binom{a_i}{b_i}$.
+
+Par unicit{\'e} des coefficients d'un polyn{\^o}me, on a :
+\[ \  \]
+\[ \binom{m}{n} \equiv \prod_{i = 0}^{+ \infty} \binom{a_i}{b_i} \pmod{p} \]
+
+
+3- Montrons que
+\[ \binom{pm}{pn} \equiv \binom{m}{n} \pmod{p} \]
+
+
+On a
+\[ m = \sum_{i = 0}^{+ \infty} a_i p^i  \text{et } n = \sum_{i = 0}^{+ \infty}
+   b_i p^i \]
+
+
+Alors
+\[ pm = \sum_{i = 1}^{+ \infty} a_{i - 1} p^i  \text{et } pn = \sum_{i = 1}^{+
+   \infty} b_{i - 1} p^i \]
+
+
+Donc, d'apr{\`e}s la question pr{\'e}c{\'e}dente,
+\begin{eqnarray*}
+  \binom{pm}{pn} & \equiv & \binom{0}{0} \prod_{i = 1}^{+ \infty}
+  \binom{a_i}{b_i} \pmod{p}\\
+  & \equiv & \prod_{i = 1}^{+ \infty} \binom{a_i}{b_i} \pmod{p}\\
+  & \equiv & \binom{m}{n} \pmod{p}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
+
+1- Soit $x \in \mathbb{Z}$, on a :
+\[ (1 + x)^p = \sum_{i = 0}^p \binom{p}{i} x^i = 1 + x^p + \sum_{i = 1}^{p -
+   1} \binom{p}{i} x^i \]
+
+
+Pour tout $i \in \llbracket 1, p - 1 \rrbracket$ on a :
+\[ i! \binom{p}{i} = p (p - 1) \times \cdots \times (p - i + 1) \]
+
+
+Ainsi, $p|i! \binom{p}{i}$, puisque $p$ est premier, donc pour tout $k \in
+\llbracket 1, i \rrbracket$, $p$ ne divise pas $k$. En particulier $p$ ne
+divise par $i$!. Via le lemme de Gauss $p| \binom{p}{i}$.
+
+D'o{\`u}
+\[ \sum_{i = 1}^{p - 1} \binom{p}{i} x^i \equiv 0 \pmod{p} \]
+
+
+Par cons{\'e}quent,
+\[ (1 + x)^p \equiv 1 + x^p \pmod{p} \]
+
+
+2- Soit $N_0$ (respectivement $N_1$) le plus petit entier tel que pour tout $i
+\geqslant N_0 + 1$, $b_i = 0$ (respectivement pour tout $i \geqslant N_1 + 1$,
+$a_i = 0$).
+
+\tmtextbf{Si $n > m$}, alors
+\[ \binom{m}{n} = 0 \]
+
+
+D'autre part, vu que $n > m$, alors ou bien $N_0 > N_1$ ou bien $N_0 = N_1$ et
+$b_{N_0} > a_{N_0}$.
+
+Dans les deux cas, on a
+\[ \binom{a_{N_0}}{b_{N_0}} = \binom{0}{b_{N_0}} = 0 (\tmop{carb}_{N_0} \neq
+   0) \]
+
+
+Donc :
+\[ \prod_{i = 0}^{+ \infty} \binom{a_i}{b_i} = \binom{a_{N_0}}{b_{N_0}}
+   {\prod_{i = 0}^{+ \infty}}_{i \neq N_0} \binom{a_i}{b_i} = 0 \]
+
+
+\tmtextbf{Si $n \leqslant m$}, alors dans $\mathbb{Z}/ p\mathbb{Z}[X]$ :
+\begin{eqnarray*}
+  (X + 1)^m & = & (X + 1)^{\sum_{i = 0}^{+ \infty} a_i p^i}\\
+  & = & \prod^{+ \infty}_{i = 0} ((X + 1)^{p^i})^{a_i}
+\end{eqnarray*}
+
+
+Or, pour tout $r \in \mathbb{N}^{\ast}$, d'apr{\`e}s la question 1, pour tout
+$j \in \llbracket 1, r \rrbracket$, on a
+\begin{eqnarray*}
+  (X^{p^{r - j}} + 1)^{p^j} & = & ((X^{p^{r - j}} + 1)^p)^{p^{j - 1}}\\
+  & = & (X^{p^{r - (j - 1)}} + 1)^{p^{j - 1}}
+\end{eqnarray*}
+
+
+En particulier, pour tout $r \in \mathbb{N}^{\ast}$
+\[ (X + 1)^{p^r} = 1 + X^{p^r} (\tmop{modp}) \]
+
+
+Ce r{\'e}sultat reste vrai pour $r = 0$, donc pour tout $r \in \mathbb{N}$
+\[ (X + 1)^{p^r} = 1 + X^{p^r} (\tmop{modp}) \]
+
+
+Ainsi, dans $\mathbb{Z}/ p\mathbb{Z}[X]$, on a
+\begin{eqnarray*}
+  (1 + X)^m & = & \prod_{i = 0}^{N_1} (1 + X^{p^i})^{a_i}\\
+  & = & \prod_{i = 0}^{N_1} \sum_{j_i = 0}^{a_i} \binom{a_i}{j_i} X^{j_i
+  p^i}\\
+  & = & \sum_{j_0 = 0}^{a_0} \sum_{j_1 = 0}^{a_1} \cdots \sum_{j_{N_1} =
+  0}^{a_{N_1}} \prod_{i = 0}^{N_1} \binom{a_i}{j_i} X^{\sum_{i = 0}^{N_1} j_i
+  p^i}
+\end{eqnarray*}
+
+
+D'autre part,
+\[ (1 + X)^m = \sum_{j = 0}^m \binom{m}{j} X^j \]
+
+
+Pour $n \in \llbracket 0, m \rrbracket$, le coefficient du mon{\^o}me de
+degr{\'e} $n$ {\`a} gauche est $\binom{m}{n}$ et celui de droite est $\prod_{i
+= 0}^{N_1} \binom{a_i}{b_i}$.
+
+Par unicit{\'e} des coefficients d'un polyn{\^o}me, on a :
+\[ \  \]
+\[ \binom{m}{n} \equiv \prod_{i = 0}^{+ \infty} \binom{a_i}{b_i} \pmod{p} \]
+
+
+3- Montrons que
+\[ \binom{pm}{pn} \equiv \binom{m}{n} \pmod{p} \]
+
+
+On a
+\[ m = \sum_{i = 0}^{+ \infty} a_i p^i  \text{et } n = \sum_{i = 0}^{+ \infty}
+   b_i p^i \]
+
+
+Alors
+\[ pm = \sum_{i = 1}^{+ \infty} a_{i - 1} p^i  \text{et } pn = \sum_{i = 1}^{+
+   \infty} b_{i - 1} p^i \]
+
+
+Donc, d'apr{\`e}s la question pr{\'e}c{\'e}dente,
+\begin{eqnarray*}
+  \binom{pm}{pn} & \equiv & \binom{0}{0} \prod_{i = 1}^{+ \infty}
+  \binom{a_i}{b_i} \pmod{p}\\
+  & \equiv & \prod_{i = 1}^{+ \infty} \binom{a_i}{b_i} \pmod{p}\\
+  & \equiv & \binom{m}{n} \pmod{p}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

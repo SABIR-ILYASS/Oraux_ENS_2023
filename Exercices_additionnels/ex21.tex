@@ -1,0 +1,80 @@
+Cet exercice traite d'une suite dont la somme des puissances paires converge
+vers 1. Cette condition particuli{\`e}re de convergence va nous permettre
+d'{\'e}tudier le comportement asymptotique des termes de la suite {\`a} l'aide
+des propri{\'e}t{\'e}s des s{\'e}ries convergentes.
+
+\begin{exercise}[]
+On consid{\`e}re une suite $(a_n)_{n \in \mathbb{N}^{\ast}}$ de nombre
+r{\'e}els telle que :
+\[ \underset{n \to + \infty}{\lim}  \sum_{k = 0}^n a^{2 \beta}_k = 1,
+   \text{o{\`u} } \beta \in \mathbb{N}^{\ast} \]
+
+
+D{\'e}terminer un {\'e}quivalent de $a_n$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Posons
+\[ S_n = \sum_{k = 0}^n a^{2 \beta}_k \]
+
+
+Si la s{\'e}rie de terme g{\'e}n{\'e}ral $a_n^{2 \beta}$ converge, alors $S_n$
+tend vers une limite finie lorsque $n$ tend vers $+ \infty$, et $\underset{n
+\rightarrow + \infty}{\lim} a_n = 0$.
+
+On ne peut donc avoir $\underset{n \to + \infty}{\lim} {a_n}  S_n = 1$.
+Puisque la s{\'e}rie de terme g{\'e}n{\'e}ral $a_n^{2 \beta} \geqslant 0$ ne
+converge pas, on a $\underset{n \to + \infty}{\lim } S_n = + \infty$
+
+Comme pour tout $n \geq 1$, $a_n^{2 \beta} = S_n - S_{n - 1}$. L'hypoth{\`e}se
+s'{\'e}crit:
+\[ S_n - S_{n - 1} \underset{n \to + \infty}{\sim} \frac{1}{S_n^{2 \beta}} 
+   \quad (S_n > 0 \text{pour } n \text{assez grand}) \]
+
+
+On a alors :
+\begin{eqnarray*}
+  S_n^{2 \beta + 1} - S_{n - 1}^{2 \beta + 1} & = &  (S_n - S_{n - 1}) 
+  \sum_{j = 0}^{2 \beta} S_n^j S_{n - 1}^{2 p - j}\\
+  & \underset{+ \infty}{\sim} & \frac{1}{S_n^{2 \beta}}  \sum_{j = 0}^{2
+  \beta} S_n^j S_{n - 1}^{2 p - j}\\
+  & = & \sum_{j = 0}^{2 \beta} \left( \frac{S_{n - 1}}{S_n} \right)^{2 \beta
+  - j}
+\end{eqnarray*}
+
+
+Or, $1 - \frac{S_{n - 1}}{S_n} \underset{+ \infty}{\sim} \frac{1}{S_n^{2 \beta
++ 1}} \underset{n \to + \infty}{\to} 0 \quad (\text{car } S_n \underset{n \to
++ \infty}{\to} + \infty)$
+
+alors $S_n \sim S_{n - 1}$, ainsi
+\[ \sum_{j = 0}^{2 \beta} \left( \frac{S_{n - 1}}{S_n} \right)^{2 \beta - j}
+   \underset{n \to + \infty}{\to} 2 \beta + 1 \]
+
+
+d'o{\`u}
+\[ S_n^{2 \beta + 1} - S_{n - 1}^{2 \beta + 1} \underset{+ \infty}{\sim} 2
+   \beta + 1 \]
+
+
+Via le th{\'e}or{\`e}me de C{\'e}saro, on a :
+\begin{eqnarray*}
+  S^{2 \beta + 1}_n & = & \sum_{k = 1}^n (S_k^{2 \beta + 1} - S_{k - 1}^{2
+  \beta + 1})\\
+  & \underset{n \to + \infty}{\sim} & (2 \beta + 1) n
+\end{eqnarray*}
+
+
+Par suite,
+\[ S_n \underset{n \to + \infty}{\sim} ((2 \beta + 1) n)^{\frac{1}{2 \beta +
+   1}} \]
+
+
+On en d{\'e}duit finalement :
+\[ a_n \underset{n \to + \infty}{\sim} \frac{1}{((2 \beta + 1) n)^{\frac{1}{2
+   \beta + 1}}} \]
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

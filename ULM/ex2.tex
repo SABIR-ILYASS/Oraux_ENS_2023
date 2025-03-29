@@ -1,0 +1,80 @@
+L'exercice 2 traite d'une propri{\'e}t{\'e} de divisibilit{\'e} concernant le
+cardinal du groupe des matrices inversibles modulo un nombre premier. Il
+demande de d{\'e}montrer que le cardinal de ${GL}_{n - 1} (\mathbb{Z}/
+p\mathbb{Z})$ est divisible par $n$, pour $n \geq 3$ et $p$ premier impair.
+Cet exercice combine des {\'e}l{\'e}ments d'alg{\`e}bre lin{\'e}aire et de
+th{\'e}orie des groupes, avec une touche d'arithm{\'e}tique modulaire.
+
+\begin{exercise}[(Une propri{\'e}t{\'e} de divisibilit{\'e} du cardinal
+des matrices inversibles modulo $p$)]
+Soit $p$ un entier premier impair, et $n \geq 3$ un entier. Montrer que $n$
+divise le cardinal du groupe $\mathrm{GL}_{n - 1} (\mathbb{Z}/ p\mathbb{Z})$
+des matrices inversibles de taille~$n - 1$ {\`a} coefficients
+dans~$\mathbb{Z}/ p\mathbb{Z}$.
+\end{exercise}
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soient $p$ un nombre premier impair, et $n \geqslant 3$ un entier.
+
+Une matrice $M \in \mathcal{M}_{n - 1} (\mathbb{Z}/ p\mathbb{Z})$ est
+inversible si et seulement si les colonnes de $M$ forment une famille libre.
+
+On a $p^{n - 1} - 1$ possibilit{\'e}s de choisir la premi{\`e}re colonne, pour
+tout $k \in \llbracket 1, n - 2 \rrbracket$, si on choisit les $k$ premiers
+colonnes, alors la $(k + 1)$-{\`e}me colonne ne doit pas {\^e}tre une
+combinaison lin{\'e}aire des $k$ premiers colonnes. Donc on a $p^{n - 1} -
+p^k$ possibilit{\'e}s pour choisir la $(k + 1) - {\`e} \tmop{me}$ colonne.
+
+D'o{\`u}
+\[ \tmop{Card} (\tmop{GL}_{n - 1} (\mathbb{Z}/ p\mathbb{Z})) = \underset{k =
+   0}{\overset{n - 2}{\prod}} (p^{n - 1} - p^k) \]
+
+
+Donc, il suffit de montrer que $n$ divise le produit $\underset{k =
+0}{\overset{n - 2}{\prod}} (p^{n - 1} - p^k)$.
+
+On a
+\begin{eqnarray*}
+  \underset{k = 0}{\overset{n - 2}{\prod}} (p^{n - 1} - p^k) & = & \underset{k
+  = 0}{\overset{n - 2}{\prod}}  p^k (p^{n - k - 1} - 1)\\
+  & = & p^{\frac{(n - 2) (n - 1)}{2}} \underset{k = 0}{\overset{n -
+  2}{\prod}} (p^{n - k - 1} - 1)
+\end{eqnarray*}
+
+
+Or, le th{\'e}or{\`e}me fondamental de l'arithm{\'e}tique assure l'existence
+de $k, q \in \mathbb{N}$ tels que
+\[ n = p^k q \infixand p \wedge q = 1 \]
+
+
+Puisque $k < \frac{(n - 2) (n - 1)}{2}$, alors $p^k$ divise $\underset{k =
+0}{\overset{n - 2}{\prod}} (p^{n - 1} - p^k)$.
+
+Montrons maintenant que $q$ divise $\underset{k = 0}{\overset{n - 2}{\prod}}
+(p^{n - 1} - p^k)$ pour conclure.
+
+Sans perte de g{\'e}n{\'e}ralit{\'e}, on peut supposer que $q \geqslant 2$.
+
+On a d'apr{\`e}s le th{\'e}or{\`e}me de Fermat-Euler,
+\[ p^{\varphi (q)} = 1 (\tmop{mod} q) \]
+
+
+Avec $\varphi (q) \leqslant q \leqslant n - 2$, alors
+\[ p^{n - 1} = p^{\varphi (q)} p^{n - 1 - \varphi (q)} = p^{n - 1 - \varphi
+   (q)}  (\tmop{mod} q) \]
+
+
+Ainsi $q$ divise $p^{n - 1} - p^{n - 1 - \varphi (q)}$, et donc $q$ divise
+$\underset{}{\overset{}{}} \underset{k = 0}{\overset{n - 2}{\prod}} (p^{n - 1}
+- p^k)$.
+
+Par suite $q$ divise $\underset{k = 0}{\overset{n - 2}{\prod}} (p^{n - 1} -
+p^k)$.
+
+Or $p \wedge q = 1$, alors $p^k \wedge q = 1$, donc d'apr{\`e}s le lemme
+d'Euclide $n = p^k q$ divise $\underset{k = 0}{\overset{n - 2}{\prod}} (p^{n -
+1} - p^k)$.
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

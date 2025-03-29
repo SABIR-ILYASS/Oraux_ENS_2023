@@ -1,0 +1,133 @@
+Cet exercice explore les propri{\'e}t{\'e}s des racines d'un polyn{\^o}me $P$ et de sa d{\'e}riv{\'e}e $P^{\prime}$, ainsi que les liens entre les racines multiples et le signe d'une expression associ{\'e}e {\`a} $P$ et ses d{\'e}riv{\'e}es.
+\begin{exercise}[(Oral de l'X 2016)]
+Soit $P \in \mathbb{R}[X]$ d{\'e}finie sur $\mathbb{R}$.
+
+1. Montrer que toute racine multiple de $P'$ est racine de $P$
+
+2. Pour $x \in \mathbb{R}$, quel est le signe de $P (x) P'' (x) - P' (x)^2$ ?
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+1. La premi{\`e}re question est classique. {\'E}crivons
+\[ P = a \prod_{i = 1}^r (X - \alpha_i)^{n_i}  \prod_{i = 1}^{\ell} (X -
+   \beta_i) \]
+
+
+o{\`u} $\alpha_1, \ldots, \alpha_r$ sont les racines multiples de $P$ et
+$\beta_1, \ldots, \beta_{\ell}$ sont les racines simples de $P$. Les
+multiplicit{\'e}s $n_1, \ldots, n_r \geq 2$ repr{\'e}sentent les ordres des
+racines $\alpha_1, \ldots, \alpha_r$ comme {\'e}tant racines de $P$.
+($\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_{\ell}$ sont deux {\`a}
+deux distincts)
+
+On a, pour tout $i \in \llbracket 1, r \rrbracket$,
+\[ P (\alpha_i) = P' (\alpha_i) = P'' (\alpha_i) = \cdots = P^{(n_i - 1)}
+   (\alpha_i) = 0 \infixand P^{(n_i)} (\alpha_i) \neq 0 \]
+
+
+\
+
+En particulier, pour tout $i \in \llbracket 1, r \rrbracket$,
+\[ P' (\alpha_i) = (P')^{(1)} (\alpha_i) = \cdots = (P')^{(n_i - 2)}
+   (\alpha_i) = 0 \infixand (P')^{(n_i - 1)} (\alpha_i) \neq 0 \]
+
+
+Cela montre que, pour tout $i \in \llbracket 1, r \rrbracket$, $\alpha_i$ est
+une racine de $P'$ de multiplicit{\'e} $n_i - 1$.
+
+\
+
+En ordonnant $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_{\ell}$ par
+ordre croissant, posons, pour tout $i \in \llbracket 1, r + \ell \rrbracket$
+\[ \left\{\begin{array}{l}
+     \lambda_1 = \min \{\alpha_1, \ldots, \alpha_r, \beta_1, \ldots,
+     \beta_{\ell} \}\\
+     \lambda_i = \min \{(\alpha_1, \ldots, \alpha_r, \beta_1, \ldots,
+     \beta_{\ell}) \setminus \{\lambda_1, \ldots, \lambda_{i - 1} \}\},
+     \tmop{si} i \geqslant 2
+   \end{array}\right. \]
+\[ \  \]
+
+
+Ainsi, $\lambda_1, \ldots, \lambda_{\ell + r}$ sont exactement les racines de
+$P$ deux {\`a} deux distincts et $\lambda_1 < \lambda_2 < \cdots <
+\lambda_{\ell + r}$.
+
+Pour tout $i \in \llbracket 1, \ell + r - 1 \rrbracket$, on a $P$ est continue
+sur $[\lambda_i, \lambda_{i + 1}]$ et d{\'e}rivable sur $] \lambda_i,
+\lambda_{i + 1} [$ avec
+\[ P (\lambda_i) = P (\lambda_{i + 1}) \]
+
+
+Alors d'apr{\`e}s le th{\'e}or{\`e}me de Rolle, il existe $c_i \in] \lambda_i,
+\lambda_{i + 1} [$ tel que $P' (c_i) = 0$
+
+Donc, on a pour tout $i \in \llbracket 1, r \rrbracket$ $\alpha_i$ est une
+racine de $P$ de multiplicit{\'e} $n_i - 1$, et pour tout $i \in \llbracket 1,
+r + \ell - 1 \rrbracket$ $c_i$ est une racine de $P'$.
+
+Ainsi, il existe $Q \in \mathbb{R}[X]$ tel que
+\[ P' = a Q \prod_{i = 1}^r (X - \alpha_i)^{n_i - 1}  \prod_{i = 1}^{\ell + r
+   - 1} (X - c_i) \]
+
+
+Donc $P'$ est scind{\'e} sur $\mathbb{R}$.
+
+\
+
+Concernant $P'$ : une racine $\gamma$ multiple de $P'$ ne peut pas {\^e}tre
+un certain $c_i$ puisque $c_1, \ldots, c_{l + r - 1}$ sont des racines simples
+de $P'$. alors $\gamma$ est une racine de $P$.
+
+2- On reprend les notations de la question 1. La fonction $x \mapsto \frac{P'
+(x)}{P (x)}$ est d{\'e}rivable sur $\mathbb{R} \setminus \{\alpha_1, \ldots,
+\alpha_r, \beta_1, \ldots, \beta_r \}$, et on a
+\[ \frac{P'}{P} = \sum_{i = 1}^r \frac{n_i}{x - \alpha_i} + \sum_{i = 1}^l
+   \frac{1}{x - \beta_i} \]
+
+
+Donc,
+\[ \frac{P \cdot P'' - (P')^2}{P^2} = - \sum_{i = 1}^r \frac{n_i}{(x -
+   \alpha_i)^2} - \sum_{i = 1}^l \frac{1}{(x - \beta_i)^2} \]
+
+
+Par cons{\'e}quent, pour tout $x \in \mathbb{R} \setminus \{\alpha_1, \ldots,
+\alpha_r, \beta_1, \ldots, \beta_r \}$, on a
+\[ \frac{P (x) P'' (x) - (P' (x))^2}{P^2 (x)} = - \sum_{i = 1}^r \frac{n_i}{(x
+   - \alpha_i)^2} - \sum_{i = 1}^l \frac{1}{(x - \beta_i)^2} < 0 \]
+
+
+Donc, pour tout $x \in \mathbb{R} \setminus \{\alpha_1, \ldots, \alpha_r,
+\beta_1, \ldots, \beta_r \}$,
+\[ P (x) P'' (x) - (P' (x))^2 \leq 0 \]
+
+
+Par continuit{\'e} de $x \mapsto P (x) P'' (x) - (P' (x))^2$, on en d{\'e}duit
+que, pour tout $x \in \mathbb{R}$
+\[ P (x) P'' (x) - (P' (x))^2 \leq 0 \]
+
+
+\tmtextbf{Remarque.}
+
+{\`A} partir de la question 1,
+\[ P' \wedge P = \underset{i = 1}{\overset{r}{\prod}} (X - \alpha_i)^{n_i - 1}
+\]
+
+
+Donc,
+\[ \deg (P' \wedge P) = \underset{i = 1}{\overset{r}{\sum}} (n_i - 1) \]
+
+
+D'o{\`u}
+\begin{eqnarray*}
+  \deg P - \deg (P' \wedge P) & = & l + \underset{i = 1}{\overset{r}{\sum}}
+  n_i - \underset{i = 1}{\overset{r}{\sum}} (n_i - 1)\\
+  & = & l + r
+\end{eqnarray*}
+
+
+Par cons{\'e}quent, le nombre de racines distincts de $P$ est $\deg P - \deg
+(P' \wedge P)$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,246 @@
+Cet exercice propose une caract{\'e}risation des matrices antisym{\'e}triques.
+Il demande de prouver qu'une matrice carr{\'e}e de taille impaire est
+antisym{\'e}trique si et seulement si son d{\'e}terminant s'annule lorsqu'on
+lui ajoute toute matrice antisym{\'e}trique. L'exercice fait appel {\`a} des
+notions d'alg{\`e}bre lin{\'e}aire et de th{\'e}orie des d{\'e}terminants.
+\begin{exercise}[(Une caract{\'e}risation des matrices
+antisym{\'e}triques)]
+Soit $n$ entier positif impair. Soit $A \in \mathcal{M}_n (\mathbb{R})$ telle
+que, pour toute matrice antisym{\'e}trique $M \in \mathcal{M}_n (\mathbb{R})$,
+$\det (A + M) = 0$. Montrer que~$A$ est antisym{\'e}trique.
+\end{exercise}
+\subsection*{Solution. (ZINE Akram, SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram, SABIR Ilyass)}
+
+\tmtextbf{M{\'e}thode 1. (ZINE Akram)}
+
+Posons $A = B + C$, avec $B = \frac{1}{2} (A + A^T)$ et $C = \frac{1}{2} (A -
+A^T)$.
+
+Puisque $n$est impair, alors il existe $U \in \tmop{GL}_{n - 1} (\mathbb{R})$.
+Il suffit de prendre, par exemple :
+\[ U = \left( \begin{array}{cccc}
+     \left( \begin{array}{cc}
+       0 & 1\\
+       - 1 & 0
+     \end{array} \right) & \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right) & \ldots & \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right)\\
+     \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right) & \left( \begin{array}{cc}
+       0 & 1\\
+       - 1 & 0
+     \end{array} \right) &  & \vdots\\
+     \vdots &  &  & \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right)\\
+     \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right) & \ldots & \left( \begin{array}{cc}
+       0 & 0\\
+       0 & 0
+     \end{array} \right) & \left( \begin{array}{cc}
+       0 & 1\\
+       - 1 & 0
+     \end{array} \right)
+   \end{array} \right) \]
+
+
+Pour tout $x \in \mathbb{R}$, posons \ $V_x = x \tmop{diag} (0, U)$.
+
+Puisque $B$ est sym{\'e}trique, alors d'apr{\`e}s le th{\'e}or{\`e}me
+spectral, $B$ est orthogonalement diagonalisable, alors il existe une matrice
+diagonale $D = \tmop{diag} (d_1, \ldots, d_n)$ avec $d_1, \ldots, d_n \in
+\mathbb{R}$, et $P \in \mathcal{O}_n (\mathbb{R})$, telle que $B = P  D P^T$.
+
+Pour tout $x \in \mathbb{R}$, posons $M \assign - C + P V_x P^T$. On a alors :
+\[ \det (D + V_x) = \det (A + M) = 0 \]
+
+
+Si $D \not{=} 0$, on peut supposer sans perte de g{\'e}n{\'e}ralit{\'e} que
+$d_1 \not{=} 0$ (Il suffit de permuter les colonnes de $P$).
+
+On a alors $\det (D + V_x)$ est un polyn{\^o}me en $x$de degr{\'e} $n - 1$.
+
+Ainsi, il exite un $x_0 \in \mathbb{R}$ tel que $\det (D + V_{x_0})
+\text{{\tmname{}}} \not{=} 0$, ce qui est absurde.
+
+D'o{\`u} $D = 0$, et par suite $A^T = - A$. Donc, $A$ est antisym{\'e}trique.
+
+\
+
+{\tmstrong{M{\'e}thode 2. (SABIR Ilyass)}}
+
+Soit $B = \frac{1}{2} (A + A^T)$, la question revient {\`a} prouver que $B =
+0$.
+
+Puisque pour toute matrice antisym{\'e}trique $M \in \mathcal{M}_n
+(\mathbb{R})$, $\det (A + M) = 0$, alors pour tout toute matrice
+antisym{\'e}trique $M \in \mathcal{M}_n (\mathbb{R})$, $\det (B + M) = 0$.
+$(\maltese)$
+
+De plus $B$ est orthogonalement diagonalisable, donc si $B$ est
+orthogonalement semblable {\`a}\quad$\tmop{diag} (\lambda_1, \ldots,
+\lambda_n)$, o{\`u} $\lambda_1, \ldots, \lambda_n \in \mathbb{R}.$
+
+La question revient {\`a} montrer que pour toute matrice antisym{\'e}trique $M
+\in \mathcal{M}_n (\mathbb{R})$
+\[ \det (M + \tmop{diag} (\lambda_1, \ldots, \lambda_n)) = 0 \]
+
+
+Alors $\lambda_1 = \cdots = \lambda_n = 0$.
+
+\tmtextbf{Lemme 1}.
+
+Le polyn{\^o}me
+\[ \Psi  (X) \assign \det (X I_n - \tmop{diag} (\lambda_1, \ldots, \lambda_n))
+   = \underset{i = 1}{\overset{n}{\prod}} (X - \lambda_i) \]
+
+
+est impair.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Soit $a \neq 0$, on a :
+\begin{eqnarray*}
+  Q (X) & \assign & \left| \begin{array}{ccccc}
+    \lambda_1 + X & a + X & a + X & \ldots & a + X\\
+    - a + X & \lambda_2 + X & a + X & \ldots & a + X\\
+    - a + X & - a + X & \lambda_3 + X &  & \vdots\\
+    \vdots & \vdots &  &  & a + X\\
+    - a + X &  &  & - a + X & X + \lambda_n
+  \end{array} \right|
+\end{eqnarray*}
+
+
+$Q$ est polyn{\^o}me de degr{\'e} inf{\'e}rieur ou {\'e}gal {\`a} $1$, (il
+suffit de retrancher la premi{\`e}re ligne {\`a} toutes les autres lignes par
+exemple).
+
+Donc il existe $\alpha, \beta \in \mathbb{R}$ tels que $Q (X) = \alpha + \beta
+X$.
+
+On a
+\[ \left\{\begin{array}{l}
+     Q (a) = - \Psi (- a)\\
+     Q (- a) = - \Psi (a)
+   \end{array}\right. \]
+
+
+En particulier
+\[ Q (0) = \alpha = - \frac{1}{2} (\Psi (- a) + \Psi (a)) \]
+
+
+Or $Q (0) = 0$ (D'apr{\`e}s $(\maltese)$).
+
+D'o{\`u} $\Psi (- a) = - \Psi (a)$.
+
+Par continuit{\'e}, pour tout $a \in \mathbb{R}$, on a : $\Psi (- a) = - \Psi
+(a)$.
+
+D'o{\`u} $\Psi $ est impair.
+
+Donc pour tout $i \in \llbracket 1, n \rrbracket,$il existe $j \in \llbracket
+1, n \rrbracket$ on a $\lambda_j = - \lambda_i$.
+
+Quitte {\`a} r{\'e}arranger les valeurs propres (cela revient {\`a} permuter
+la base de diagonalisation), on peut supposer sans perte de
+g{\'e}n{\'e}ralit{\'e} que pour tout $k \in \left\llbracket 1, \frac{n - 1}{2}
+\right\rrbracket$ $\lambda_{2 k - 1} = - \lambda_{2 k} \geqslant 0$ et
+$\lambda_n = 0$.
+
+\
+
+Notons
+\[ P_n (X | \lambda_1, \ldots, \lambda_n \nobracket) \assign \left|
+   \begin{array}{ccccc}
+     \lambda_1 & X & 0 &  & 0\\
+     - X & \lambda_2 & X &  & \\
+     0 & - X &  &  & 0\\
+     &  &  &  & X\\
+     0 &  & 0 & - X & \lambda_n
+   \end{array} \right| \]
+
+
+Par d{\'e}veloppement suivant la premi{\`e}re ligne, on a
+\begin{eqnarray*}
+  P_n (X | \lambda_1, \ldots, \lambda_n \nobracket) & = & \lambda_1 P_{n - 1}
+  (X | \lambda_2, \ldots, \lambda_n \nobracket) + X^2 P_{n - 2} (X |
+  \lambda_2, \ldots, \lambda_n \nobracket)  (\star)
+\end{eqnarray*}
+Regardons les petites valeurs de $n$.
+
+Pour $n = 1$, $P_1 (X | \lambda_1 \nobracket) = \lambda_1$,
+
+Pour $n = 2$, on a $P_2 (X | \lambda_1, \lambda_2 \nobracket) = \lambda_1
+\lambda_2 + X^2$
+
+Pour $n = 3$, on a \ $P_3 (X | \lambda_1, \lambda_2, \lambda_3 \nobracket) =
+\lambda_1 \lambda_2 \lambda_3 + (\lambda_1 + \lambda_3) X^2$
+
+Pour $n = 4$, on a $P_4 (X | \lambda_1, \lambda_2, \lambda_3, \lambda_4
+\nobracket) = \lambda_1 \lambda_2 \lambda_3 \lambda_4 + (\lambda_1 \lambda_2 +
+\lambda_1 \lambda_4 + \lambda_3 \lambda_4) X^2 + X^4$
+
+Pour $n = 5$, on a
+\begin{eqnarray*}
+  P_5 (X | \lambda_1, \lambda_2, \lambda_3, \lambda_4 \comma \lambda_5
+  \nobracket) & = & \lambda_1 P_4 (X | \lambda_2, \lambda_3, \lambda_4 \comma
+  \lambda_5 \nobracket) + X^2 P_3 (X | \lambda_3, \lambda_4 \comma \lambda_5
+  \nobracket)\\
+  & = & \lambda_1 \lambda_2 \lambda_3 \lambda_4 \lambda_5 + (\lambda_1
+  \lambda_2 \lambda_3 + \lambda_1 \lambda_2 \lambda_5 + \lambda_1 \lambda_4
+  \lambda_5 + \lambda_3 \lambda_4 \lambda_5) X^2 \\
+  + (\lambda_1 + \lambda_3 + \lambda_5) X^4
+\end{eqnarray*}
+
+
+\tmtextbf{Lemme 2.}
+
+Pour tout $k \in \llbracket 1, n \rrbracket,$
+
+Si $k$ est pair, alors Le polyn{\^o}me $P_k (\lambda_{n - k + 1}, \ldots,
+\lambda_n) $est unitaire de degr{\'e} $k$.
+
+Si $k$ est impair, alors $P_k (\lambda_{n - k + 1}, \ldots, \lambda_n)$ est de
+degr{\'e} $\leqslant k - 1$, et le coefficient de $X^{k - 1} $est $\underset{j
+= \frac{n - k}{2}}{\overset{\frac{n - 1}{2}}{\sum}} \lambda_{2 j + 1}$.
+
+\
+
+\tmtextbf{Preuve du lemme 2.}
+
+Par r{\'e}currence sur $k \in \llbracket 1, n \rrbracket$, en utilisant la
+formule $(\star)$.
+
+\
+
+D'apr{\`e}s le lemme 2, on a le coefficient de $X^{n - 1}$ de $P_n (X |
+\lambda_1, \ldots, \lambda_n \nobracket)$ est
+\[ \underset{j = 0}{\overset{\frac{n - 1}{2}}{\sum}} \lambda_{2 j + 1} \]
+
+
+Or, d'apr{\`e}s $(\maltese)$, on a $P_n (X | \lambda_1, \ldots, \lambda_n
+\nobracket) = 0$, donc $\underset{j = 0}{\overset{\frac{n - 1}{2}}{\sum}}
+\lambda_{2 j + 1} = 0$,
+
+Avec $\lambda_1, \lambda_3, \lambda_5, \ldots, \lambda_{n - 2}, \lambda_n
+\geqslant 0$, alors pour tout $j \in \left\llbracket 0, \frac{n - 1}{2}
+\right\rrbracket$ $\lambda_{2 j + 1} = 0$.
+
+Par cons{\'e}quent, pour tout $j \in \llbracket 1, n \rrbracket$, $\lambda_j =
+0$.
+
+Ainsi, $B$ est une matrice diagonalisable qui admet une seule valeur propre
+$0$. alors $B = 0$.
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

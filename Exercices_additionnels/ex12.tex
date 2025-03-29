@@ -1,0 +1,110 @@
+L'alg{\`e}bre lin{\'e}aire nous r{\'e}serve parfois des surprises en liant
+commutateurs de matrices et nilpotence. Cet exercice propose d'{\'e}tablir un
+r{\'e}sultat remarquable sur la nilpotence d'une matrice v{\'e}rifiant une
+relation particuli{\`e}re avec son commutateur.
+\begin{exercise}[(Oral ULM Lyon Cachan Rennes 2016)]
+Soit $A$ et $B$ dans $M_n (\mathbb{R})$ telles que :
+\[ AB - BA = A \]
+\begin{enumerate}
+  \item Montrer que $A$ est nilpotente
+  
+  \item M{\^e}me question en rempla{\c c}ant $\mathbb{R}$ par $\mathbb{Z}/
+  p\mathbb{Z}$, o{\`u} $p$ est un nombre premier, et en supposant $p > n$.
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+1. On remarque tout d'abord qu'on a :
+\[ A^2 B - ABA = A^2  \text{ et } ABA - BA^2 = A^2 \]
+
+
+Donc,
+\[ A^2 B - BA^2 = 2 A^2 \]
+
+
+et
+\[ A^3 B - A^2 BA = 2 A^3  \text{et } ABA^2 - BA^3 = A^3 \]
+
+
+Ainsi,
+\[ A^3 B - BA^3 = 3 A^3 \]
+
+
+Par r{\'e}currence, on {\'e}tablit que, pour tout $k \in \mathbb{N}$
+\[ A^k B - BA^k = kA^k  \quad (1) \]
+
+
+\tmtextbf{M{\'e}thode 1:}
+
+Par (1), on a pour tout $k \in \mathbb{N}^{\ast}$:
+\[ \text{tr} (kA^k) = \text{tr} (A^k B - BA^k) = \text{tr} (A^k B) - \text{tr}
+   (BA^k) = 0 \]
+
+
+Donc
+\[ k \cdot \text{tr} (A^k) = 0 \]
+
+
+Par suite, opour tout $k \in \mathbb{N}^{\ast}$
+\[ \text{tr} (A^k) = 0 \]
+
+
+C'est tr{\`e}s classique, les seules matrices qui v{\'e}rifient cette
+propri{\'e}t{\'e} sont les matrices nilpotentes.
+
+\
+
+\tmtextbf{M{\'e}thode 2 :}
+
+Pour tout $P = \sum^n_{k = 0} a_k X^k \in \mathbb{K}[X]$
+
+Pour tout $k \in \llbracket 0, n \rrbracket$, on a
+\[ \sum_{k = 0}^n a_k (A^k B - BA^k) = \sum_{k = 0}^n a_k kA^k \]
+
+
+Donc
+\[ \left( \sum_{k = 0}^n a_k A^k \right) B - B \left( \sum_{k = 0}^n a_k A^k
+   \right) = A \sum_{k = 1}^n a_k kA^{k - 1} \]
+
+
+Ainsi
+\[ P (A) B - BP (A) = AP' (A) \]
+
+
+Notons $\Pi_A$ le polyn{\^o}me minimal de $A$. On a
+\[ X \Pi_A' (A) = \Pi_A (A) B - B \Pi_A (A) = 0 \]
+
+
+Donc $Q = X \Pi_A'$ annule $A$, et par cons{\'e}quent $\Pi_A$ divise $Q$.
+
+Or, $\deg (Q) = 1 + \deg (\Pi_A') = \deg (\Pi_A)$, donc Q et $\Pi_A$ sont
+associ{\'e}s, ce qui implique qu'il existe $r \in \mathbb{R}$ tel que
+\[ X \Pi'_A = r \Pi_A \]
+
+
+Par suite, il existe $k \in \mathbb{N}$ tel que $\Pi_A = X^k$.
+
+D'o{\`u} $A$ est niplotante.
+
+\
+
+\tmtextbf{Remarque.}
+
+Voir aussi la partie II, CCP(MP 2012) - exercice 2.
+
+Ce r{\'e}sultat de la question 1 reste valable pour tout anneau de
+caract{\'e}ristique nulle, on va voir dans la question 2 que le r{\'e}sultat
+est {\'e}galement vrai sur $\mathbb{Z}/ p\mathbb{Z}$, avec $p > n$.
+
+\
+
+2. M{\^e}me raisonnement.
+
+Etant donn{\'e} que $\mathbb{Z}/ p\mathbb{Z}$ est int{\`e}gre, et que $p > n$,
+Le raisonnement pr{\'e}c{\'e}dent s'applique ici.
+
+Ce r{\'e}sultat reste vrai pour tout anneau int{\`e}gre de caract{\'e}ristique
+nulle ou de caract{\'e}ristique $r$ avec $r > n$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

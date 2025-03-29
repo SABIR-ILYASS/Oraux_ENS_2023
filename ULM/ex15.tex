@@ -1,0 +1,253 @@
+Cet exercice porte sur les angles d'un pavage. Il {\'e}tudie un sous-groupe du
+groupe des isom{\'e}tries du plan complexe, demandant de prouver que
+l'ensemble des d{\'e}riv{\'e}es en 0 des {\'e}l{\'e}ments du groupe est fini
+et que son cardinal divise 6. L'exercice fait appel {\`a} des notions de
+g{\'e}om{\'e}trie complexe et de th{\'e}orie des groupes.
+
+\begin{exercise}[(Angles d'un pavage)]
+Soit $G = \{ z \to az + b | \nobracket a, b \in \mathbb{C}, |a| = 1 \}$. C'est
+un sous-groupe du groupe des bijections $\mathbb{C} \to \mathbb{C}$ muni de la
+composition. Soit $H \subseteq G$ un sous-groupe contenant deux translations
+selon des vecteurs $b_1, b_2 \in \mathbb{C}$ formant une famille libre
+sur~$\mathbb{R}$. On suppose de plus que pour tout~$h \in H$, soit~$h (0) =
+0$, soit~$|h (0) | \geq 1$.
+
+Montrer que l'ensemble $\{ h' (0) | \nobracket h \in H \}$ est fini.
+
+Montrer que le cardinal de cet ensemble divise 6.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+
+\tmtextbf{Lemme 1.}
+
+Soit $\Gamma \subset \mathbb{C}$ sous-groupe discret de $\mathbb{C}$. Alors,
+on peut construire une base $b_1, b_2$ avec $< b_1, b_2 > \neq 0$ pour ce
+groupe, telle que chaque {\'e}l{\'e}ment du groupe soit une combinaison
+lin{\'e}aire {\`a} coefficients entiers des {\'e}l{\'e}ments de cette base.
+
+\
+
+\tmtextbf{D{\'e}finition 1. (Parall{\'e}l{\'e}pip{\`e}de fondamental
+ferm{\'e})}
+
+Soit $b_1, b_2 \in \mathbb{C}$ des vecteurs lin{\'e}airement ind{\'e}pendants.
+Le parall{\'e}l{\'e}pip{\`e}de fondamental ferm{\'e} associ{\'e} {\`a} ces
+vecteurs est d{\'e}fini comme :
+
+\[ \mathcal{P}(b_1, b_2) = \{ x_1 b_1 + x_2 b_2 \mid 0 \leq x_1, x_2 \leq 1 \} . \]
+
+\
+
+\tmtextbf{Preuve du lemme 1.}
+
+Choisissons $x \in \Gamma$ tel qu'il n'y ait aucun vecteur du groupe entre le
+vecteur nul et $x$. Posons $b_1 = x$. Il suffit de consid{\'e}rer l'infimum
+des modules et de prendre un {\'e}l{\'e}ment qui l'atteint. Un tel
+{\'e}l{\'e}ment existe car le groupe est discret (et donc ferm{\'e}).
+
+Choisissons maintenant un vecteur $y$ qui n'est pas dans Vect($b_1, b_2$).
+Consid{\'e}rons le parall{\'e}l{\'e}pip{\`e}de fondamental ferm{\'e}
+$\mathcal{P}(b_1, y$). Ce parall{\'e}l{\'e}pip{\`e}de contient au moins un
+point du groupe ({\`a} savoir $y$) et contient un nombre fini de points du
+groupe. Choisissons un vecteur $z \in \mathcal{P}(b_1, y) \setminus
+\text{Vect} (b_1$) tel que la distance
+\[ \text{dist} (z, \text{Vect} (b_1)) \]
+
+
+soit la plus petite et que $< b_1, z > \neq 0$. Nous pouvons faire cela car
+nous avons seulement un nombre fini de points {\`a} choisir par compacit{\'e}
+du Parall{\'e}l{\'e}pip{\`e}de et discr{\'e}tion du sous-groupe. Posons $b_2 =
+z$. On peut le choisir telle que $< b_1, b_2 > \neq 0$. En effet si $< b_1, y
+> \neq 0$ Alors c'est termin{\'e}. Dans le cas contraire, et si c'est $y$ qui
+minimise la distance, on peut prendre dans ce cas $b_2 = y + b_1$, qui garde
+la m{\^e}me distance et qui satisfait {\`a} la contrainte $< b_1, b_2 > \neq
+0$.
+
+Il reste {\`a} montrer que tout vecteur $z \in \Gamma$ peut {\^e}tre
+exprim{\'e} comme une combinaison lin{\'e}aire enti{\`e}re de $b_1, b_2$,
+c'est-{\`a}-dire que
+\[ \Gamma \subset \{ x_1 b_1 + x_2 b_2 \mid x_1, x_2 \in \mathbb{Z} \} . \]
+
+
+Soit $z = z_1 b_1 + z_1 b_1 \in \Gamma$ un vecteur quelconque du r{\'e}seau,
+o{\`u} $z_1, z_2 \in \mathbb{R}$. Posons $z_0 = \lfloor z_1 \rfloor b_1 +
+\lfloor z_2 \rfloor b_2 \in \Gamma$. Alors, $z - z_0 \in \Gamma$.
+
+Nous allons montrer que tous les coefficients $z_1, z_2$ doivent {\^e}tre des
+entiers. Exprimons $z - z_0$ comme suit :
+\[ z - z_0 = (z_2 - \lfloor z_2 \rfloor) b_2 + \text{Vect} (b_1) = (z_2 -
+   \lfloor z_2 \rfloor) \tilde{b}_2 + \text{Vect} (b_1), \]
+
+
+o{\`u} $\tilde{b}_2$ est le vecteur projet{\'e} de $b_2$ orthogonal {\`a}
+Vect$(b_1)$.
+
+Maintenant,
+\[ \text{dist} (z - z_0, \text{Vect} (b_1)) = (z_2 - \lfloor z_2 \rfloor)\|
+   \tilde{b}_2 \|. \]
+
+
+De m{\^e}me,
+\[ \text{dist} (b_2, \text{Vect} (b_1)) =\| \tilde{b}_2 \|. \]
+
+
+En outre, comme $0 \leq z_2 - \lfloor z_2 \rfloor < 1$, nous avons :
+\[ \text{dist} (z - z_0, \text{Vect} (b_1)) < \text{dist} (b_2, \text{Vect}
+   (b_1)) . \]
+
+
+Mais comme $b_2$ a {\'e}t{\'e} choisi comme le vecteur le plus proche de
+Vect$(b_1)$, cela implique que $z - z_0$ doit {\^e}tre lin{\'e}airment
+d{\'e}pendant de $b_1$. Donc, $z_2 - \lfloor z_2 \rfloor = 0$, ce qui signifie
+que $z_2 \in \mathbb{Z}$.
+
+On obtient aussi $z_1 - \lfloor z_1 \rfloor = 0$ car $|z - z_0 | = | (z_1 -
+\lfloor z_1 \rfloor) b_1 | < |b_1 |$
+
+Soit $H'$ le sous-groupe de $H$ constitu{\'e} des translations.
+
+Soit $\Gamma$ le sous-groupe de $\mathbb{C}$ constitu{\'e} des vecteurs
+associ{\'e}s aux translations de $H'$. $\Gamma$ est discret, car $\forall b,
+b' \in H', b \neq b'$ on a $|b - b' | \geq 1$.
+
+Le lemme nous permet de construire une nouvelle base $(b_1', b_2')$, telle
+que:
+
+$\forall b \in V \quad \exists (m, n) \in \mathbb{Z}, b = mb_1' + nb_2'$.
+
+Ainsi, toute translation dans $H$ peut s'{\'e}crire comme :
+\[ z \mapsto z + mb_1' + nb_2', \quad m, n \in \mathbb{Z}. \]
+
+
+Le sous-groupe des translations forme donc un r{\'e}seau discret dans
+$\mathbb{C}$.
+
+On le note par
+\[ \Lambda' =\{mb_1' + nb_2' \mid m, n \in \mathbb{Z}\} \]
+
+
+Pour tout $c \in \Lambda'$, o{\`u} $\Lambda' =\{mb_1' + nb_2' \mid m, n \in
+\mathbb{Z}\}$, consid{\'e}rons la conjugaison:
+\[ h \circ t_c \circ h^{- 1} (z) = h (h^{- 1} (z) + c) = z + ac, \]
+
+
+o{\`u} $t_c (z) = z + c$ et $h (z) = az + b$.
+
+Par cons{\'e}quent,
+\[ a \Lambda' \subseteq \Lambda' . \]
+
+
+et donc en consid{\'e}rant $a^{- 1}$
+\[ a \Lambda' = \Lambda' . \]
+
+
+Soit $A$ la matrice de rotation associ{\'e}e :
+\[ A = \left(\begin{array}{cc}
+     \cos (\theta) & - \sin (\theta)\\
+     \sin (\theta) & \cos (\theta)
+   \end{array}\right), \]
+
+
+o{\`u} $\theta \in [0, 2 \pi [$. On a $A \Lambda' = \Lambda'$. Soit $f$
+l'endomorphisme canoniquement associ{\'e} {\`a} $A$, alors
+\[ f (\Lambda') = \Lambda' \]
+
+
+Cela signifie que $f$ doit envoyer chaque vecteur de la base $(b_1', b_2')$
+sur une combinaison enti{\`e}re de $b_1'$ et $b_2'$.
+
+Soit $M$ la matrice de $f$ dans la base $(b_1', b_2')$. La trace de la matrice
+$A$ est donn{\'e}e par :
+\[ \text{Tr} (A) = \text{Tr} (M) = 2 \cos (\theta) \in \mathbb{Z} \]
+
+
+Les seules valeurs enti{\`e}res possibles de $2 \cos (\theta)$ pour $\theta$
+r{\'e}el sont :
+\[ 2 \cos (\theta) \in \{- 2, - 1, 0, 1, 2\}. \]
+
+
+Cela correspond aux angles $\theta$ suivants modulo $2 \pi$ :
+\[ \theta \in \left\{ 0, \frac{\pi}{3}, \frac{\pi}{2}, \frac{2 \pi}{3}, \pi
+   \right\} . \]
+
+
+Parmi les angles possibles, l'angle droit ne pr{\'e}serve pas le r{\'e}seau
+car $< b_1, b_2 > \neq 0$, .\\
+Supposons que $\Lambda'$ soit un r{\'e}seau g{\'e}n{\'e}r{\'e} par deux
+vecteurs non orthogonaux $b_1$ et $b_2$, et supposons par l'absurde que
+$\Lambda'$ soit invariant par une rotation de $\pi / 2$.
+
+Puisque $\Lambda'$ est invariant par rotation de $\pi / 2$, nous avons :
+\[ \left\{\begin{array}{l}
+     ib_1 = m_1 b_1 + n_1 b_2,\\
+     ib_2 = m_2 b_1 + n_2 b_2,
+   \end{array}\right. \]
+
+
+o{\`u} $m_1, m_2, n_1, n_2 \in \mathbb{Z}$.
+
+{\`A} partir de la premi{\`e}re {\'e}quation, nous obtenons :
+\[ (i - m_1) b_1 = n_1 b_2, \]
+
+
+et {\`a} partir de la deuxi{\`e}me {\'e}quation :
+\[ (i - n_2) b_2 = m_2 b_1 . \]
+
+
+En multipliant ces deux {\'e}quations pour {\'e}liminer $b_1$ et $b_2$, nous
+obtenons :
+\[ (i - m_1) (i - n_2) = n_1 m_2 . \]
+
+
+En identifiant les parties r{\'e}elle et imaginaire, nous obtenons :
+\[ m_1 n_2 - 1 = m_2 n_1  \quad \text{et} \quad m_1 + n_2 = 0. \]
+
+
+Comme $m_1 + n_2 = 0$, nous pouvons substituer $n_2 = - m_1$ dans
+l'{\'e}quation $m_1 n_2 - 1 = m_2 n_1$, ce qui donne :
+\[ n_1 m_2 = - (n_2^2 + 1) . \]
+
+
+Nous prenons le conjugu{\'e} de la premi{\`e}re {\'e}quation puis multiplions
+la par la deuxi{\`e}me :
+\[ - (i + n_2)^2 b_1 \overline{b_2} = n_1 m_2 b_1 \overline{b_2} . \]
+
+
+En d{\'e}veloppant davantage, et en utilisant la relation obtenue
+pr{\'e}cedemment, nous obtenons :
+\[ (1 + n_2^2) \mathrm{Im} (b_1 \overline{b_2}) + n_2 b_1 \overline{b_2} = 0.
+\]
+
+
+Ainsi, nous trouvons :
+\[ \left\{\begin{array}{l}
+     n_2 \mathrm{Im} (b_1 \overline{b_2}) = 0,\\
+     (1 + n_2^2) \mathrm{Im} (b_1 \overline{b_2}) + m_2 \mathrm{Re} (b_1
+     \overline{b_2}) = 0.
+   \end{array}\right. \]
+
+
+{\`A} partir de ces {\'e}quations, nous d{\'e}duisons puisque $n_2 \neq 0$ que
+:
+\[ \mathrm{Re} (b_1 \overline{b_2}) = 0. \]
+
+
+Cela implique que $\langle b_1, b_2 \rangle = 0$, ce qui contredit
+l'hypoth{\`e}se selon laquelle $b_1$ et $b_2$ sont non orthogonaux.
+
+Par cons{\'e}quent, le r{\'e}seau $\Delta$ ne peut pas {\^e}tre invariant par
+une rotation de $\pi / 2$ s'il est g{\'e}n{\'e}r{\'e} par des vecteurs non
+orthogonaux $b_1$ et $b_2$.
+
+Les angles $\theta = 0, \frac{\pi}{3}, \frac{2 \pi}{3}, \pi$ correspondent
+{\`a} des racines de l'unit{\'e} dont l'ordre divise 6 :
+\[ \theta = 0 \quad (\text{ordre } 1), \quad \theta = \frac{\pi}{3}  \quad
+   (\text{ordre } 6), \quad \theta = \frac{2 \pi}{3}  \quad (\text{ordre } 3),
+   \quad \theta = \pi \quad (\text{ordre } 2) . \]
+Ainsi, l'ordre de chaque {\'e}l{\'e}ment de $A$ doit diviser 6. Et donc $A
+\subset \mathbb{U}_6$. Ainsi l'ordre de $A$ divise 6.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,204 @@
+L'exercice 11 s'int{\'e}resse aux composantes connexes d'ensembles de
+polyn{\^o}mes. Il demande de d{\'e}crire les composantes connexes par arcs de
+certains ensembles de polyn{\^o}mes unitaires {\`a} coefficients r{\'e}els,
+d{\'e}finis par des conditions sur leurs racines. L'exercice combine des
+aspects de topologie et de th{\'e}orie des polyn{\^o}mes.
+\begin{exercise}[(Composantes connexes d'ensembles de polyn{\^o}mes)]
+Soit $d \geq 1$ un entier. Soit $P$ l'ensemble des polyn{\^o}mes unitaires de
+degr{\'e} $d$ {\`a} coefficients r{\'e}els.
+
+D{\'e}crire les composantes connexes par arcs de
+\[ \left\{ (f, x) \in P \times \mathbb{R} | f (x) = 0 \text{et } f' (x) \neq 0
+   \right\} . \]
+
+
+D{\'e}crire les composantes connexes par arcs de
+\[ \left\{ f \in P | \forall x \in \mathbb{R}, f (x) \neq 0 ou  f' (x)
+   \neq 0 \right\} . \]
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+
+\tmtextbf{}Si $d = 1$, l'ensemble $H$ est {\'e}videmment connexe par arcs car
+il est convexe. Nous passons maintenant au cas o{\`u} $d \geq 2$.
+
+Pour $d \geq 2$, nous allons montrer que les composantes connexes par arcs de
+$H =\{(P, x) \in \mathcal{P}_d \times \mathbb{R} \mid P (x) = 0, P' (x) \neq
+0\}$ sont :
+\[ H_{> 0} \assign \{(P, x) \in H \mid P' (x) > 0\} \quad \text{et} \quad H_{<
+   0} \assign \{(P, x) \in H \mid P' (x) < 0\}. \]
+
+
+\tmtextbf{V{\'e}rification que $H_{> 0}$ et $H_{< 0}$ sont non vides :}
+
+- Pour $H_{> 0}$, on peut prendre $P (X) = X^d + X$, et pour $x = 0$, on a $P
+(0) = 0$ et $P' (0) = 1 > 0$, donc $(P, 0) \in H_{> 0}$.
+
+- Pour $H_{< 0}$, on peut prendre $P (\tmop{xX}) = X^d - X$, et pour $x = 0$,
+on a $P (0) = 0$ et $P' (0) = - 1 < 0$, donc $(P, 0) \in H_{< 0}$.
+
+\
+
+\tmtextbf{S{\'e}paration des composantes :}
+
+Consid{\'e}rons la fonction $\gamma : (P, x) \mapsto P' (x)$, qui est continue
+sur $\mathcal{P}_d \times \mathbb{R}$. Soit $C$ une partie connexe par arcs de
+$H$. $\gamma (C)$ doit {\^e}tre un intervalle de $\mathbb{R}$ ne contenant pas
+0, car $P' (x) \neq 0$ pour tout $(P, x) \in H$. Ainsi, $\gamma (C)$ est
+inclus dans $\mathbb{R}_+^{\ast}$ ou $\mathbb{R}_-^{\ast}$, et par
+cons{\'e}quent, $C \subset H_{> 0}$ ou $C \subset H_{< 0}$.
+
+\
+
+\tmtextbf{Connexit{\'e} de $H_{> 0}$ :}
+
+Pour prouver que $H_{> 0}$ est connexe par arcs, nous d{\'e}finissons une
+fonction continue $f (t)$ reliant deux {\'e}l{\'e}ments quelconques de $H_{>
+0}$. Soient $(P, x) \in H_{> 0}$ et $(Q, y) \in H_{> 0}$. Nous d{\'e}finissons
+$f (t)$ comme suit :
+\[ f (t) = (tP (X + x - (1 - t) y - tx) + (1 - t) Q (X + y - (1 - t) y - tx),
+   tx + (1 - t) y) \]
+
+
+Le premier composant, $tP (X + x - (1 - t) y - tx) + (1 - t) Q (X + y - (1 -
+t) y - tx)$, est continu en $t$ gr{\^a}ce {\`a} la continuit{\'e} des
+polyn{\^o}mes et {\`a} la formule de Taylor, tandis que le second composant,
+$tx + (1 - t) y$, est une interpolation lin{\'e}aire continue entre $x$ et
+$y$.
+
+- Pour $t = 0$, on a $f (0) = (Q (X), y) \in H_{> 0}$.
+
+- Pour $t = 1$, on a $f (1) = (P (X), x) \in H_{> 0}$.
+
+De plus, pour tout $t \in [0, 1]$, $f (t) \in H_{> 0}$.
+
+Ainsi, la fonction $f (t)$ fournit un chemin continu reliant $(P, x)$ {\`a}
+$(Q, y)$ {\`a} l'int{\'e}rieur de $H_{> 0}$, prouvant que $H_{> 0}$ est
+connexe par arcs.
+
+\
+
+\tmtextbf{Connexit{\'e} de $H_{< 0}$ :}
+
+Un raisonnement similaire s'applique pour $H_{< 0}$.
+
+\
+
+En conclusion, les composantes connexes par arcs de $H$ sont $H_{> 0}$ et
+$H_{< 0}$ si $d \geq 2$. Chaque partie connexe de $H$ est incluse soit dans
+$H_{> 0}$, soit dans $H_{< 0}$, et chacune de ces parties est connexe par
+arcs.
+
+\
+
+\tmtextbf{Composantes connexes par arcs de T} :
+
+Soit $P$ l'ensemble des polyn{\^o}mes unitaires de degr{\'e} $d$.
+D{\'e}finissons l'ensemble $T$ comme suit :
+\[ T =\{f \in P \mid \forall x \in \mathbb{R}, f (x) \neq 0 \text{ ou } f' (x)
+   \neq 0\} \]
+
+
+Autrement dit, $T$ est l'ensemble des polyn{\^o}mes qui n'ont ni racines
+multiples, ni racines o{\`u} la d{\'e}riv{\'e}e s'annule. Nous cherchons {\`a}
+d{\'e}crire les composantes connexes par arcs de $T$.
+
+\
+
+\tmtextbf{Structure de $T$ et description des composantes connexes} :
+
+On note que l'ensemble $T_m$, d{\'e}fini comme suit :
+\[ T_m =\{f \in T \mid n_f = m\} \]
+
+
+o{\`u} $n_f$ repr{\'e}sente le nombre de racines r{\'e}elles distinctes de
+$f$, constitue une composante connexe par arcs de $T$. Il est {\'e}galement
+important de noter que $T_m$ est non vide ssi $m \equiv d \pmod{2}$, avec $d$
+{\'e}tant le degr{\'e} du polyn{\^o}me. Autrement dit, le nombre de racines
+r{\'e}elles $m$ doit avoir la m{\^e}me parit{\'e} que le degr{\'e} $d$ du
+polyn{\^o}me. Dans ce cas, les $T_m$ pr{\'e}sentent exactement les composantes
+connexes par arcs de $T$.
+
+\
+
+\tmtextbf{Construction de $T_m$ :}
+
+Pour mieux comprendre la structure de $T_m$, consid{\'e}rons l'application
+suivante :
+\[ f : S \times D \to T_m \]
+
+
+O{\`u} :
+\begin{itemize}
+  \item $S$ est l'ensemble des polyn{\^o}mes de degr{\'e} $d - m$ qui sont
+  strictement positifs sur tout $\mathbb{R}$,
+  
+  \item $D$ est l'ensemble des $m$-uplets de r{\'e}els distincts et
+  ordonn{\'e}s de mani{\`e}re croissante.
+\end{itemize}
+
+
+L'application $f$ est d{\'e}finie par :
+\[ f (Q, (x_1, \ldots, x_m)) = Q \cdot \prod_{i = 1}^m (X - x_i) \]
+
+
+o{\`u} $Q \in S$ et $(x_1, \ldots, x_m) \in D$. Cette application est
+continue, et comme $S$ et $D$ sont des ensembles convexes, leur produit
+cart{\'e}sien $S \times D$ est {\'e}galement convexe. Par cons{\'e}quent,
+l'image de $f$, qui est pr{\'e}cis{\'e}ment $T_m$, est connexe par arcs.
+
+Pour en finir nous souhaitons maintenant montrer que la fonction $n_P$, qui
+associe {\`a} un polyn{\^o}me $P \in T$ le nombre $n_P$ de ses racines
+r{\'e}elles distinctes, est continue. \ Cela impliquerai la s{\'e}paration des
+composantes connexes.
+
+\
+
+\tmtextbf{Preuve de la continuit{\'e} de $n_P$ :}
+
+Soit $(P_n)$ une suite de polyn{\^o}mes dans $T$ qui converge vers un
+polyn{\^o}me $P \in T$. Autrement dit, les coefficients de $P_n$ convergent
+vers ceux de $P$, ce qui implique que la convergence est {\'e}galement
+uniforme sur tout compact. Supposons que $P$ ait $m$ racines r{\'e}elles
+distinctes. Entre chacune de ces racines, le signe de $P$ est constant,
+puisque $P$ ne s'annule pas en dehors de ses racines simples.
+
+Pour $n$ suffisamment grand, le polyn{\^o}me $P_n$ conserve le m{\^e}me signe
+que $P$ entre ces racines, par continuit{\'e}. Par le
+\tmtextit{th{\'e}or{\`e}me des valeurs interm{\'e}diaires (TVI)}, $P_n$ doit
+avoir au moins $m$ racines r{\'e}elles, c'est-{\`a}-dire $n_{P_n} \geq n_P$.
+
+\
+
+\tmtextbf{R{\'e}ciproque (preuve par l'absurde) :}
+
+Supposons maintenant que $n_{P_n} \geq m + 1 = n_P + 1$ pour une suite $P_n$.
+Cela signifierait que $P_n$ a au moins $m + 1$ racines r{\'e}elles. Puisque
+les racines r{\'e}elles de $P$ sont born{\'e}es dans un intervalle de la forme
+$[- Md, Md]$ (o{\`u} $M \geq 1$ est une constante d{\'e}pendant des
+coefficients de $P$), il existe un $M \geq 1$ tel que, pour tout $n$, le
+vecteur ($x_{n, 1}, \ldots, x_{n, m + 1}$) repr{\'e}sentant les $m + 1$
+racines r{\'e}elles de $P_n$ se trouve dans le compact $[- Md, Md]^{m + 1}$.
+Pour voir cela, il suffit d'annuler le polyn{\^o}me en l'une de ces racines et
+de distinguer si la valeur absolue de la racine est $\geq 1$.
+
+Ainsi, on peut extraire de cette suite une sous-suite convergente dont les
+racines tendent vers $y_1, \ldots, y_{m + 1}$, qui seraient des racines
+r{\'e}elles de $P$. Comme $P$ a exactement $m$ racines r{\'e}elles distinctes,
+il existe un indice $i$ tel que $y_i = y_{i + 1}$. Par le th{\'e}or{\`e}me de
+Rolle, il existe un point $z_n \in [x_{i, \varphi (n)}, x_{i + 1, \varphi
+(n)}]$ tel que $P_n' (z_n) = 0$.
+
+En passant {\`a} la limite, $z_n \to y_i$, ce qui implique que $y_i$ est une
+racine double de $P$. Cependant, ceci contredit le fait que toutes les racines
+de $P$ sont simples. Par cons{\'e}quent, la supposition $n_{P_n} \geq m + 1$
+est fausse, ce qui prouve que $n_{P_n} \leq n_P$.
+
+\
+
+Ainsi, nous avons montr{\'e} que $n_{P_n} = n_P$ pour $n$ suffisamment grand,
+ce qui prouve la continuit{\'e} de la fonction $n_P$, et donc la
+s{\'e}paration des $T_m$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

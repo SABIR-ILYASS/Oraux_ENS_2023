@@ -1,0 +1,80 @@
+Cet exercice {\'e}tudie le rayon de convergence d'une s{\'e}rie enti{\`e}re
+dont le terme g{\'e}n{\'e}ral fait intervenir une fonction trigonom{\'e}trique
+de la racine carr{\'e}e de l'indice. La singularit{\'e} de ce terme
+g{\'e}n{\'e}ral n{\'e}cessite une analyse fine du comportement asymptotique.
+
+\begin{exercise}[(G{\'e}n{\'e}ralisation d'un exercice pos{\'e} {\`a}
+l'oral de l'ENS Cachan)]
+Soit $n_0$ un entier strictement positif tel que $\sqrt{n_0} \nin \mathbb{Q}$.
+D{\'e}terminer le rayon de convergence de
+\[ \underset{n \geqslant 1}{\sum} \frac{z^n}{\sin (\sqrt{n_0 } \pi n)} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Notons $\alpha = \sqrt{n_0 }$. L'irrationalit{\'e} de $\alpha$ assure que pour
+tout $n \in \mathbb{N}^{\ast}$,
+\[ \sin (\alpha \pi n) \neq 0 \]
+
+
+Pour $z = 1$, la s{\'e}rie $\underset{n \geqslant 1}{\sum} \frac{1}{\sin
+(\alpha \pi n)}$ diverge, puisque pour tout $n \in \mathbb{N}^{\ast}$
+\[ | \sin (\alpha \pi n) | \leq 1 \]
+
+
+Donc, le rayon de convergence $R$ v{\'e}rifie $R \leq 1$.
+
+Pour obtenir une minoration de $R$, on va majorer $\frac{1}{\sin (\alpha \pi
+n)}$, donc minorer $\sin (\alpha \pi n)$.
+
+On note pour tout $n \in \mathbb{N}^{\ast}$
+\[ A_n =\{r \in \mathbb{N}: r \leq nd + \frac{1}{2} \} \]
+
+
+Pour tout $n \in \mathbb{N}^{\ast}$, $A_n$ est une partie non vide de
+$\mathbb{N}$ (puisque $0 \in A_n$) et major{\'e}e, donc $A_n$ admet un plus
+grand {\'e}l{\'e}ment. Notons $P_n = \max A_n$
+
+On a donc, pour tout $n \in \mathbb{N}^{\ast}$,
+\[ P_n \leqslant n \alpha + \frac{1}{2} \infixand P_n + 1 > n \alpha +
+   \frac{1}{2} \]
+
+
+Ainsi,
+\[ P_n - \frac{1}{2} \leqslant n \alpha < P_n + \frac{1}{2} \]
+
+
+Posons pour tout $n \in \mathbb{N}^{\ast}$,
+\[ \varepsilon_n = n \alpha - P_n \in \left[ - \frac{1}{2}, \frac{1}{2} 
+   \right[ \]
+
+
+Par suite, pour tout $n \in \mathbb{N}^{\ast}$,
+\begin{eqnarray*}
+  \sin (\alpha \pi n) & = & \sin (\pi \varepsilon_n)
+\end{eqnarray*}
+
+
+Avec la fonction $\sin$ est concave sur $\left[ 0, \frac{\pi}{2} \right]$,
+donc pour tout $x \in \left[ 0, \frac{\pi}{2} \right]$,
+\[ \sin (x) \geq \frac{2}{\pi} x \]
+
+
+Ainsi, pour tout $x \in \left[ - \frac{\pi}{2}, \frac{\pi}{2} \right]$,
+\[ | \sin (x) | \geqslant \frac{2}{\pi} | x | \]
+
+
+Par cons{\'e}quent, pour tout $n \in \mathbb{N}^{\ast}$,
+\begin{eqnarray*}
+  &  & 
+\end{eqnarray*}
+
+
+Ce dernier terme est en $O (n)$. Il en r{\'e}sulte que pour tout nombre
+complexe $z$ v{\'e}rifiant $|z| < 1$, la s{\'e}rie $\underset{n \geqslant
+1}{\sum} \frac{z^n}{\sin (d \pi n)}$
+
+converge, d'o{\`u} $R = 1$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

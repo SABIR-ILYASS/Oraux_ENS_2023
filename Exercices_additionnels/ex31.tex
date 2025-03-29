@@ -1,0 +1,184 @@
+Cet exercice explore les conditions de positivit{\'e} d'une suite r{\'e}elle
+$(u_n)_{n \geq 0}$ {\`a} travers une forme lin{\'e}aire associ{\'e}e aux
+polyn{\^o}mes. Il {\'e}tablit une {\'e}quivalence entre des propri{\'e}t{\'e}s
+de positivit{\'e} des polyn{\^o}mes et une in{\'e}galit{\'e} bilin{\'e}aire
+sur les coefficients de la suite.
+\begin{exercise}[(Oral de l'X 2016)]
+Soit $(u_n)_{n \geq 0}$ une suite r{\'e}elle et $\phi_u$ l'unique forme
+lin{\'e}aire dans $\mathbb{R}[X]$ telle que, pour tout $k \in \mathbb{N}$,
+\[ \phi_u (X^k) = u_k \]
+
+Montrer l'{\'e}quivalence entre :
+\begin{enumerate}
+  \item $\forall P \in \mathbb{R}[X]$ $P (\mathbb{R}) \subset \mathbb{R}^+
+  \Rightarrow \phi_u (P) \geq 0$
+  
+  \item $\forall n \in \mathbb{N}$ $\forall (x_0, \ldots, x_n) \in
+  \mathbb{R}^{n + 1}  \underset{0 \leq i, j \leq n}{\sum} u_{i + j} x_i x_j
+  \geq 0$
+\end{enumerate}
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+\underline{2) $\Rightarrow$ 1)} Supposons que pour tout $n \in \mathbb{N}$,
+pour tout $(x_0, \ldots, x_n) \in \mathbb{R}^{n + 1}$
+\[ \underset{0 \leq i, j \leq n}{\sum} u_{i + j} x_i x_j \geq 0 \]
+
+
+Soit $P \in \mathbb{R}[X]$, en {\'e}crivant $P = \underset{i =
+0}{\overset{n}{\sum}} a_i X^i$ o{\`u} $n \in \mathbb{N}$ et $a_0, \ldots, a_n
+\in \mathbb{R}$
+
+On a :
+\begin{eqnarray*}
+  \underset{0 \leq i, j \leq n}{\sum} u_{i + j} x_i x_j  & = & \underset{0
+  \leq i, j \leq n}{\sum} \phi_u (X^{i + j}) x_i x_j\\
+  & = & \phi_u (\sum_{0 \leq i, j \leq n} x_i x_j X^{i + j})\\
+  & = & \phi_u (P^2)
+\end{eqnarray*}
+
+
+Donc la condition (2) est {\'e}quivalente {\`a}
+\[ \forall P \in \mathbb{R}[X] \quad \phi_u (P^2) \geq 0 \quad (\ast) \]
+
+
+Montrons maintenant que :
+\[ \forall P \in \mathbb{R}[X], \quad P (\mathbb{R}) \subset \mathbb{R}^+
+   \Rightarrow \phi_u (P) \geq 0 \]
+
+
+Soit $P \in \mathbb{R}[X]$ tel que $P (\mathbb{R}) \subset \mathbb{R}^+$
+
+- Si $P$ admet une racine r{\'e}elle, en {\'e}crivant
+\[ P = a \prod_{i = 1}^r (X - \alpha_i)^{m_i}  \prod_{i = 1}^{\ell} (X^2 -
+   \lambda_i X + \beta_i)^{n_i} \]
+
+
+o{\`u} $(m_i, n_i, \alpha_i, \lambda_i, \beta_i) \in \mathbb{N} \times
+\mathbb{N} \times \mathbb{R} \times \mathbb{R} \times \mathbb{R}$ pour tout
+$i$, avec $a > 0$ et $\lambda_i^2 < 4 \beta_i$.
+
+Les $\alpha_1, \ldots, \alpha_r$ sont les racines r{\'e}elles de $P$.
+
+On a alors $\underset{x \to \infty}{\lim} P (x) \geq 0$, donc $P$ est de
+degr{\'e} pair.
+
+Soit $i_0 \in \llbracket 1, r \rrbracket$, on a
+\[ P \underset{x \rightarrow \alpha_{i_0}}{\sim} a (X -
+   \alpha_{i_0})^{m_{i_0}}  \underset{i \neq i_0}{\prod_{i = 1}^r}
+   (\alpha_{i_0} - \alpha_i)^{m_i}  \prod_{i = 1}^{\ell} (\alpha_{i_0}^2 -
+   \lambda_i \alpha_{i_0} + \beta_i)^{n_i} \]
+
+
+Le signe de $P$au voisinage de $\alpha_{i_0}$ est celui de $(X -
+\alpha_{i_0})^{m_{i_0}}$. En particulier, $(X - \alpha_{i_0})^{m_{i_0}}$ est
+positive au voisinage de $\alpha_{i_0}$, donc $m_{i_0}$ est pair. Cela est
+vrai pour tout $i_0 \in \llbracket 1, r \rrbracket$.
+
+Notons pour tout $i \in \llbracket 1, r \rrbracket$
+\[ m_i = 2 d_i \]
+
+
+On a alors
+\[ P = a \prod_{i = 1}^r (X - \alpha_i)^{2 d_i}  \prod_{i = 1}^{\ell} (X^2 -
+   \lambda_i X + \beta_i)^{n_i} \]
+
+
+Notons
+\[ \mathcal{L}= \{ P \in \mathbb{R} [X]  | \nobracket \exists (A, B) \in
+   \mathbb{R} [X]^2 \tmop{tel} \tmop{que} P = A^2 + B^2 \} \]
+
+
+Pour tout $P, Q \in \mathcal{L}$, il existe $(A, B), (C, D) \in \mathbb{R}
+[X]^2$ tels que
+\[ P = A^2 + B^2 \infixand Q = C^2 + D^2 \]
+
+
+Ainsi, $\mathcal{L}$ est stable par produit.
+
+\
+
+Montrons que pour tout $a, b \in \mathbb{R}$ tels que $a^2 < 4 b$, on a
+\[ X^2 + a X + b \in \mathcal{L} \]
+
+
+Soit $(a, b) \in \mathbb{R}^2$, tel que $a^2 < 4 b$, on a
+\begin{eqnarray*}
+  X^2 + a X + b & = & \left( X + \frac{a}{2} \right)^2 + b - \frac{a^2}{4}\\
+  & = & \left( X + \frac{a}{2} \right)^2 + \left( \sqrt{b - \frac{a^2}{4}}
+  \right)^2\\
+  & \in & \mathcal{L}
+\end{eqnarray*}
+
+
+En particulier, pour tout $i \in \llbracket 1, l \rrbracket$, on a $X^2 -
+\lambda_i X + \beta_i \in \mathcal{L}$. Par stabilit{\'e} par produit, on en
+d{\'e}duit que
+\[ \prod_{i = 1}^{\ell} (\alpha_{i_0}^2 - \lambda_i \alpha_{i_0} +
+   \beta_i)^{n_i} \in \mathcal{L} \]
+
+
+Donc, il existe $A, B \in \mathbb{R} [X]$ tels que
+\[ \prod_{i = 1}^{\ell} (\alpha_{i_0}^2 - \lambda_i \alpha_{i_0} +
+   \beta_i)^{n_i} = A^2 + B^2 \]
+
+
+Par suite,
+\begin{eqnarray*}
+  P & = & a \prod_{i = 1}^r (X - \alpha_i)^{2 d_i} (A^2 + B^2)\\
+  &  & \left( \sqrt{a} \prod_{i = 1}^r (X - \alpha_i)^{d_i} A \right)^2 +
+  \left( \sqrt{a} \prod_{i = 1}^r (X - \alpha_i)^{d_i} B \right)^2
+\end{eqnarray*}
+
+
+Ainsi, par lin{\'e}arit{\'e} de $\phi_u$ :
+\begin{eqnarray*}
+  \phi_u (P) & = & a \phi_u ((\prod_{i = 1}^r (X - \alpha_i)^{\alpha_i} A)^2)
+  + a \phi_u ((\prod_{i = 1}^r (X - \alpha_i)^{\alpha_i} B)^2)\\
+  & \geqslant & 0
+\end{eqnarray*}
+\underline{1) $\Rightarrow$ 2)} Supposons que pour tout $P \in \mathbb{R} [X]$
+\[ P (\mathbb{R}) \subset \mathbb{R}^+ \Rightarrow \phi_u (P) \geq 0 \]
+
+
+Montrons que, pour tout $n \in \mathbb{N}$, pour tout $x_0, x_1, \ldots, x_n
+\in \mathbb{R}^{n + 1}$
+\[ \sum_{0 \leq i, j \leq n} u_{i + j} x_i x_j \geq 0 \]
+
+
+Soient $n \in \mathbb{N}$ et $(x_0, \ldots, x_n) \in \mathbb{R}^{n + 1}$. On a
+\begin{eqnarray*}
+  &  & 
+\end{eqnarray*}
+\begin{eqnarray*}
+  \sum_{0 \leq i, j \leq n} u_{i + j} x_i x_j & = & \phi_u ((\sum_{i = 0}^n
+  x_i X^i)^2)
+\end{eqnarray*}
+
+
+Or, pour tout $x \in \mathbb{R}$,
+\[ (\sum_{i = 0}^n x_i X^i)^2 \geq 0 \]
+
+
+Donc
+\[ \phi_u ((\sum_{i = 0}^n x_i X^i)^2) \geq 0 \]
+
+
+Ainsi,
+\[ \sum_{0 \leq i, j \leq n} u_{i + j} x_i x_j \geq 0 \]
+
+
+D'o{\`u} l'{\'e}quivalence.
+
+\tmtextbf{Remarque.} Un exercice similaire a {\'e}t{\'e} pos{\'e} {\`a} l'oral
+de l'X 2007 :
+
+\
+
+Soit $P \in \mathbb{R} [X]$, Montrer l'{\'e}quivalence suivante :
+\[ \forall x \in \mathbb{R}, \quad P (x) \geqslant 0 \quad \Leftrightarrow
+   \quad \exists (A, B) \in \mathbb{R} [X]^2 \quad P = A^2 + B^2 \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

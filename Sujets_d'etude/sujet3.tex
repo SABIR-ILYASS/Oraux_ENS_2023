@@ -1,0 +1,672 @@
+\begin{center}
+\subsection*{Sujet 3 : La distribution des puissances d'un nombre dans une base de num{\'e}ration}\label{sjt3}
+\textbf{SABIR Ilyass}
+\end{center}
+\[ \star \star \star \]
+\addcontentsline{toc}{subsection}{Sujet 3 : La distribution des puissances d'un nombre dans une base de num{\'e}ration}
+
+\paragraph{Objectif. }
+
+Soient $a, b \geq 2$ deux entiers tels que $a$ est non divisible par $b$.
+
+Notons
+\[ \Omega =\{a^k | \nobracket k \in \mathbb{N}^{\ast} \} \]
+
+
+On consid{\`e}re l'espace probabilis{\'e} $(\Omega, \mathcal{P}(\Omega),
+\mathbb{P})$, o{\`u} $\mathbb{P}$ est la probabilit{\'e}
+\[ \mathbb{P}: I \in \mathcal{P}(\Omega) \longmapsto \underset{n \rightarrow +
+   \infty}{\lim}  \frac{\text{card} (I \cap \Omega_n)}{n} \in [0, 1] \]
+
+
+O{\`u} $\Omega_n =\{a^k / k \in \llbracket 1, n \rrbracket \}$.
+
+soit $X$ une variable al{\'e}atoire r{\'e}elle d{\'e}finie sur $(\Omega,
+\mathcal{P}(\Omega), \mathbb{P})$ par:
+\[
+X : x \in \Omega \longmapsto \text{le premier chiffre de l'écriture de } x \text{ dans la base } b.
+\]
+
+
+
+On veut calculer \ $\mathbb{P}(X = i)$ pour tout $i \in \llbracket 1, b - 1
+\rrbracket$.
+
+\
+
+\paragraph{D{\'e}finition 1. (Suite {\'e}quir{\'e}partie).}
+
+Une suite de r{\'e}els du segment $[0, 1]$ est dite {\'e}quir{\'e}partie si,
+pour tout intervalle $I$ inclus dans $[0, 1]$, la probabilit{\'e} pour qu'un
+terme de la suite soit dans $I$ est {\'e}gale {\`a} la longueur de $I$.
+
+Autrement dit, pour une suite de r{\'e}els $(a_n)_{n \in \mathbb{N}}$ du
+segment $[0, 1]$, la suite $(a_n)_{n \in \mathbb{N}}$ est dite
+{\'e}quir{\'e}partie si pour tout $0 \leq a < b \leq 1$
+\[ \underset{n \rightarrow + \infty}{\lim}  \frac{\text{Card} (\{k \in
+   \llbracket 1, n \rrbracket  | \nobracket a_k \in [a, b]\})}{n} = b - a \]
+
+
+\paragraph{D{\'e}finition 2. (Suite {\'e}quir{\'e}partie modulo 1).}
+
+Soit $(a_n)_{n \in \mathbb{N}}$ uns suite r{\'e}elle.
+
+La suite $(a_n)_{n \in \mathbb{N}}$ est dite {\'e}quir{\'e}partie modulo 1 si
+la suite $(a_n - E (a_n))_{n \in \mathbb{N}}$ est {\'e}quir{\'e}partie.
+
+\
+
+On fixe $a$ et $b$, on note pour tout $i \in \llbracket 1, b - 1 \rrbracket $
+et pour tout $n \in \mathbb{N}^{\ast}$, $N_i (n)$ le nombre d'{\'e}l{\'e}ments
+de l'ensemble $\Omega_n =\{a^k  | \nobracket k \in \llbracket 1, b - 1
+\rrbracket \}$ dont le premier chiffre en base $b$ est $i$.
+
+\
+
+Remarquons tout d'abord qu'il existe deux entiers non nuls $(k, c) \in
+\mathbb{N} \times \mathbb{N}^{\ast}$ tels que $a = cb^k$ avec $b$ ne divise
+pas c.\footnote{$k = \max \{j \in \mathbb{N}, b^j  \text{divise } a\}$, $k$
+existe puisque $\{j \in \mathbb{N} | \nobracket b^j  \text{divise } a\}$ est
+une partie de $\mathbb{N}$ non vide car contient 0 et major{\'e}e.}
+
+Puisque $a$ n'est pas une puissance de $b$, alors $c \geq 2$, et le premier
+chiffre des puissances de $a$ dans la base $b$ est le m{\^e}me que celui de
+$c$. On pourra supposer dans la suite, sans perte de g{\'e}n{\'e}ralit{\'e}
+que $b$ ne divise pas $a$.
+
+\
+
+\tmtextbf{Lemme 1. (Crit{\`e}re de Weyl)}
+
+Soit $(a_n)_{n \in \mathbb{N}}$ une suite de $[0, 1]$. Les assertions
+suivantes sont {\'e}quivalentes :
+\begin{enumerate}
+  \item $(a_n)_{n \in \mathbb{N}}$ est {\'e}quir{\'e}partie.
+  
+  \item Pour toute fonction $f : [0, 1] \to \mathbb{R}$ continue , on a
+  \[ \underset{n \to + \infty}{\lim}  \frac{1}{n}  \underset{k =
+     1}{\overset{n}{\sum}} f (a_k) = \int_0^1 f (t) dt \]
+  \item Pour tout $p \in \mathbb{N}^{\ast}$, on a
+  \[ \underset{n \to + \infty}{\lim}   \frac{1}{n}  \sum_{k = 1}^n e^{2 i \pi
+     pa_k} = 0 \]
+\end{enumerate}
+
+
+\tmtextbf{Preuve du lemme 1.}
+
+\tmtextbf{}Notons pour tout $0 \leq a \leq b \leq 1$ :
+\[ X_n (a, b) = Card\{k \in \llbracket 1, n \rrbracket  | \nobracket a_k \in
+   [a, b]\} \]
+
+
+\tmtextbf{$(i) \Rightarrow (ii)$}: On a pour tout $0 \leq a \leq b \leq 1$ :
+\[ \frac{X_n (a, b)}{n} = \frac{1}{n}  \sum_{k = 1}^n \chi_{[a, b]} (a_k) \]
+
+
+o{\`u} $\chi_{[a, b]}$ d{\'e}signe la fonction caract{\'e}ristique du segment
+$[a, b]$, et que
+\[ \int_a^b \chi_{[a, b]} (x) dx = b - a \]
+
+
+La propri{\'e}t{\'e} $(\tmop{ii})$ est donc v{\'e}rifi{\'e}e pour les
+fonctions caract{\'e}ristiques d'un segment. Or, toute fonction $f$ en
+escalier sur $[0, 1]$ est une combinaison lin{\'e}aire de fonctions
+caract{\'e}ristiques de segments ({\'e}ventuellement r{\'e}duits {\`a} un
+point pour obtenir les valeurs de $f$ aux points de discontinuit{\'e}).
+
+Par lin{\'e}arit{\'e}, la propri{\'e}t{\'e} $(\tmop{ii})$ est alors vraie
+pour toute fonction en escalier.
+
+Montrons maintenant que $(\tmop{ii})$ est v{\'e}rifi{\'e}e pour toute
+fonction continue.
+
+Soit $f : [0, 1] \to \mathbb{R}$ une fonction continue et $\varepsilon > 0$.
+On sait qu'on peut trouver une fonction en escalier $g$ qui approche $f$
+uniform{\'e}ment {\`a} $\varepsilon$ pr{\`e}s sur $[0, 1]$, c'est-{\`a}-dire
+telle que $\|f - g\|_{\infty} \leq \varepsilon$. Gr{\^a}ce {\`a}
+l'in{\'e}galit{\'e} triangulaire, pour tout $n \geq 1$, on peut majorer
+\[ \left| \frac{1}{n}  \sum_{k = 1}^n f (a_k) - \int_0^1 f (x) dx \right| \]
+
+
+par :
+\[
+\left| \frac{1}{n} \sum_{k=1}^n \bigl( f(a_k) - g(a_k) \bigr) \right|
++ \left| \frac{1}{n} \sum_{k=1}^n g(a_k) - \int_0^1 g(x) \, dx \right|
++ \left| \int_0^1 g(x) \, dx - \int_0^1 f(x) \, dx \right|
+\]
+
+
+avec
+\[ \left| \frac{1}{n}  \sum_{k = 1}^n (f (a_k) - g (a_k)) \right| \leq
+   \varepsilon \infixand \left| \int_0^1 g (x) dx - \int_0^1 f (x) dx \right|
+   \leq \varepsilon \]
+
+
+Pour le deuxi{\`e}me terme, comme la fonction $g$ est en escalier, ce terme
+devient inf{\'e}rieur {\`a} $\varepsilon$ {\`a} partir d'un certain rang $N$.
+
+Bref, pour tout entier $n \geq N$
+\[ \left| \frac{1}{n}  \sum_{k = 1}^n f (a_k) - \int_0^1 f (x) dx \right|
+   \leq 3 \varepsilon \]
+
+
+Ce qui prouve $(\tmop{ii})$.
+
+\
+
+Montrons r{\'e}ciproquement que \tmtextbf{($ii) \Rightarrow (i$)}.
+
+Une fonction caract{\'e}ristique d'un segment $I$ (distinct de $[0, 1]$)
+pr{\'e}sente au moins une discontinuit{\'e}, donc elle ne peut pas {\^e}tre
+obtenue comme limite uniforme d'une suite de fonctions continues. En fait, on
+n'a pas besoin d'une approximation uniforme : il suffit d'encadrer $\chi_I$
+par deux suites de fonctions continues affines par morceaux qui convergent
+vers $\chi_I$ au sens de la norme int{\'e}grale.
+
+Prenons pour commencer un segment $I = [\alpha, \beta]$ avec $0 < \alpha <
+\beta < 1$.
+
+On consid{\`e}re les suites de fonctions continues d{\'e}finies pour tout $k
+\in \mathbb{N}^{\ast}$ suffisamment grand par : $\varphi_k$ est nulle sur les
+segments $[0, \alpha]$ et $[\beta, 1]$, vaut $1$ sur le segment $\left[ \alpha
++ \frac{1}{k}, \beta - \frac{1}{k} \right]$, et est affine sur les deux
+segments qui restent, et $\psi_k$ est nulle sur les segments $\left[ 0, \alpha
+- \frac{1}{k}  \right]$ et $\left[ \beta + \frac{1}{k}, 1 \right]$, vaut $1$
+sur le segment $[\alpha, \beta]$, et est affine sur les deux segments qui
+restent.
+
+On observe que, pour tout $p$ assez grand,
+\[ \varphi_p \leq \chi_I \leq \psi_p \]
+
+
+Il en r{\'e}sulte que, pour tout $n$ assez grand,
+\[ \frac{1}{n}  \sum_{k = 1}^n \varphi_p (a_k) \leq \frac{\chi_n (\alpha,
+   \beta)}{n} \leq \frac{1}{n}  \sum_{k = 1}^n \psi_p (a_k) \]
+
+
+Par hypoth{\`e}se :
+\begin{eqnarray*}
+  \underset{n \to + \infty}{\lim}   \frac{1}{n}  \sum_{k = 1}^n \varphi_p
+  (a_k) & = & \int_0^1 \varphi_p (x) dx\\
+  & = & \beta - \alpha - \frac{1}{p}
+\end{eqnarray*}
+
+
+et
+\begin{eqnarray*}
+  \lim_{n \to + \infty}  \frac{1}{n}  \sum_{k = 1}^n \psi_p (a_k) & = &
+  \int_0^1 \psi_p (x) dx\\
+  & = & \beta - \alpha + \frac{1}{p}
+\end{eqnarray*}
+
+
+Soit $\varepsilon > 0$. Choisissons $p$ tel que $\frac{1}{p} < \varepsilon$.
+Il existe $N$ tel que pour $n \geq N$
+\[ \left| \frac{\chi_n (\alpha, \beta)}{n} - (\beta - \alpha) \right| \leq 2
+   \varepsilon \]
+Ainsi, $\left( \frac{\chi_n (\alpha, \beta)}{n} \right)_{n \geq 1}$ converge
+vers $\beta - \alpha$, lorsque $0 < \alpha < \beta < 1$. Il est ais{\'e}
+d'adapter cela lorsque $\alpha = 0$ ou $\beta = 1$.
+
+\tmtextbf{(iii) $\Rightarrow$ (i)} r{\'e}sulte directement de (ii) puisque
+pour tout \ $p \in \mathbb{N}^{\ast}$ :
+\begin{eqnarray*}
+  \underset{n \to + \infty}{\lim}   \frac{1}{n}  \sum_{k = 1}^n e^{2 i \pi
+  pa_k}  & = &  \int_0^1 \cos (2 \pi px) + i \int_0^1 \sin (2 \pi px)\\
+  & = & 0
+\end{eqnarray*}
+
+
+Montrons enfin que \tmtextbf{(iii) $\Rightarrow$ (ii)}
+
+Par lin{\'e}arit{\'e}, on a la propri{\'e}t{\'e} (ii) pour tous les
+polyn{\^o}mes trigonom{\'e}triques du type
+\[ x \longmapsto c_0 + \sum_{k = 1}^n (c_k \cos (2 k \pi x) + d_k \sin (2 k
+   \pi x)) \]
+
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Weierstrass trigonom{\'e}trique, toute
+fonction continue $f : [0, 1] \to \mathbb{R}$ v{\'e}rifiant $f (0) = f (1)$
+est limite uniforme d'une suite de polyn{\^o}mes trigonom{\'e}triques de ce
+type. Comme pr{\'e}c{\'e}demment, on en d{\'e}duit que $(\tmop{ii})$ est
+v{\'e}rifi{\'e}e pour une telle fonction $g$ v{\'e}rifiant
+\[ g (0) = g (1) \tmop{et} \int_0^1 |f (x) - g (x) |dx \leq \varepsilon \]
+
+
+Comme dans l'implication $(ii) {\Rightarrow} (i)$, cela suffit pour prouver que (ii) est aussi vraie pour $f$.
+
+D'o{\`u} les propositions (i), (ii) et (iii) sont toutes {\'e}quivalentes.
+
+\
+
+\tmtextbf{Lemme 2.}
+
+Soit $\theta > 0$. Alors la suite $(n \theta)_{n \in \mathbb{N}^{\ast}}$ est
+{\'e}quir{\'e}partie modulo 1 si et seulement si $\theta \nin \mathbb{Q}$.
+
+\
+
+\tmtextbf{Preuve du lemme 2.}
+
+Par d{\'e}finition d'une suite {\'e}quir{\'e}partie modulo 1, la suite
+$(a_n)_{n \in N^{\ast}} = (n \theta)_{n \in N^{\ast}}$ est
+{\'e}quir{\'e}partie modulo 1 si et seulement si la suite $(a_n - E (a_n))_{n
+\in N^{\ast}}$ est {\'e}quir{\'e}partie.
+
+Comme les fonctions $\varphi_k : x \to e^{2 ik \pi x}$ sont toutes
+1-p{\'e}riodiques pour tout entier non nul $k$, alors on a encore
+l'{\'e}quivalence suivante :
+
+La suite $(a_n)_{n \in \mathbb{N}^{\ast}} = (n. \theta)_{n \in
+\mathbb{N}^{\ast}}$ est {\'e}quir{\'e}partie modulo 1 si et seulement si pour
+tout $k \in \mathbb{N}^{\ast}$
+\[ \underset{n \to + \infty}{\lim }  \frac{1}{n}  \sum_{j = 1}^n \varphi_k
+   (a_j) = 0 \]
+
+
+Supposons que $\theta \nin \mathbb{Q}$. On a donc $\varphi_k (\theta) \neq 1$.
+Par suite, pour tous entiers $k$ et $n$ non nuls :
+\begin{eqnarray*}
+  \frac{1}{n}  \sum_{j = 1}^n \varphi_k (a_j) & = & \frac{1}{n}  \sum_{j =
+  1}^n \varphi_k (j. \theta)\\
+  & = & \frac{1}{n}  \sum_{j = 1}^n \varphi_k (\theta)^j \\
+  & = & \frac{\varphi_k (\theta)}{n}  \frac{\varphi_k (\theta)^n -
+  1}{\varphi_k (\theta) - 1}
+\end{eqnarray*}
+
+
+Comme pour tout $k, n \in \mathbb{N}^{\ast}$, on a
+\[ \begin{array}{ll}
+     \left| \frac{\varphi_k (\theta)}{n}  \frac{\varphi_k (\theta)^n -
+     1}{\varphi_k (\theta) - 1} \right| & \leq \frac{2| \varphi_k (\theta)
+     |}{n| \varphi_k (\theta) - 1|} \xrightarrow[n \to + \infty]{} 0
+   \end{array} \]
+
+
+Alors la suite $(a_n)_{n \in \mathbb{N}^{\ast}} = (n. \theta)_{n \in
+\mathbb{N}^{\ast}}$ est {\'e}quir{\'e}partie modulo 1.
+
+Supposons que $\theta \in \mathbb{Q}$ , alors il existe $(a, b) \in
+\mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$ tel que
+\[ \theta = \frac{a}{b} \]
+
+
+On pose
+\[ (x_n)_{n \in \mathbb{N}^{\ast}} \assign (a_n - E (a_n))_{n \in
+   \mathbb{N}^{\ast}} \]
+
+
+On a pour tout $n, q \in \mathbb{N}^{\ast}$ :
+\begin{eqnarray*}
+  x_{n + b} & = & (n + b) . \theta - E ((n + b) \frac{a}{b})\\
+  & = & n. \theta - E (n. \frac{a}{b})\\
+  & = & x_n
+\end{eqnarray*}
+
+
+Donc $(x_n)_{n \in \mathbb{N}^{\ast}}$est $b$-p{\'e}riodique , En posant
+\[ r = \underset{0 \leqslant i \leqslant b - 1}{\min} (x_i) \leq 1 \]
+
+
+Il n'existe aucun {\'e}l{\'e}ment de la suitet $(x_n)_{n \in
+\mathbb{N}^{\ast}}$ dans $] 0, r [$, donc le suite $(x_n)_{n \in
+\mathbb{N}^{\ast}}$ n'est pas {\'e}quir{\'e}partie, d'o{\`u}
+l'{\'e}quivalence.
+
+\
+
+Revenons {\`a} notre question. Soient $i \in \llbracket 1, b - 1 \rrbracket$
+et $k \in \mathbb{N}^{\ast}$. Commen{\c c}ons par traduire le fait que $i$ est
+le premier chiffre de $a^k$ en base $b$.
+
+\
+
+Dans toute la suite, nous travaillons dans la base de num{\'e}ration $b$.
+
+\
+
+L'entier $a^k$ commence par $i$ si et seulement s'il existe $n \in
+\mathbb{N}$ tel que
+\[ i.b^n \leq a^k < (i + 1) .b^n \]
+
+
+C'est-{\`a}-dire, si et seulement s'il existe un entier $n$ tel que :
+\[ \frac{\ln i}{\ln b} + n \leq k \frac{\ln a}{\ln b} < \frac{\ln (i + 1)}{\ln
+   b} + n \]
+
+
+Cela se traduit encore par : l'entier $a^k$ commence par $i$ si et seulement
+s'il existe $k \in \mathbb{N}$ tel que le r{\'e}sidu modulo 1 de $k \frac{\ln
+a}{\ln b}$ soit dans l'intervalle $ \left[ \frac{\ln i}{\ln b}, \frac{\ln (i +
+1)}{\ln b} \right[$.
+
+On pose
+\[ \theta = \frac{\ln a}{\ln b} \]
+
+
+On a alors, pour tout entier $p$ non nul, $N_i (p)$ est exactement le nombre
+d'entiers $k \in \llbracket 1, p \rrbracket$ tels que $k. \theta$ modulo 1
+appartienne {\`a} $\left[ \frac{\ln i}{\ln b}, \frac{\ln (i + 1)}{\ln b}
+\right[$.
+
+\
+
+Or, si $a$ divise $b$, alors il existe $r, c \in \mathbb{N^{\ast}}$ tels que
+$b = a^r \cdot c$ et $c$ ne divise pas $b$. On a alors :
+\[ \frac{\ln b}{\ln a} = r + \frac{\ln c}{\ln a} \]
+
+
+Donc
+\[ \frac{\ln (a)}{\ln (b)} \in \mathbb{Q} \tmop{si} \infixand \tmop{seulement}
+   \tmop{si} \frac{\ln (c)}{\ln (a)} \in \mathbb{Q} \]
+
+
+Ainsi, pour montrer que $\frac{\ln (a)}{\ln (b)} \nin \mathbb{Q}$, il suffit
+de montrer que $\frac{\ln (c)}{\ln (a)} \nin \mathbb{Q}$. Alors, on pourra
+supposer ici sans perte de g{\'e}n{\'e}ralit{\'e} que $b$ ne divise pas $a$ et
+$a$ ne divise pas $b$.
+
+Montrons par l'absurde que $\theta = \frac{\ln (a)}{\ln (b)} \nin \mathbb{Q}$.
+Si ce n'est pas le cas, il existe un couple $(u, v) \in \mathbb{N^{\ast}}
+\times \mathbb{N^{\ast}}$ tel que :
+\[ \frac{\ln (a)}{\ln (b)} = \frac{u}{v} \]
+
+
+alors
+\[ a^v = b^u \]
+
+
+{\'E}crivons :
+\[ a = \prod_{i = 1}^r p_i^{\alpha_i}  \quad \text{et} \quad b = \prod_{i =
+   1}^r p_i^{\beta_i} \]
+
+
+o{\`u} $p_1, \ldots, p_r$ sont des nombres premiers deux {\`a} deux distincts
+et $\alpha_1, \ldots, \alpha_r, \beta_1, \ldots, \beta_r \in \mathbb{N}$.
+
+Par suite :
+\[ a^v = \prod_{i = 1}^r p_i^{v \alpha_i}  \quad \text{et} \quad b^u =
+   \prod_{i = 1}^r p_i^{u \beta_i} \]
+
+
+Par l'unicit{\'e} de la d{\'e}composition en produit de facteurs premiers, on
+a pour tout $k \in \llbracket 1, r \rrbracket$,
+\[ u \alpha_k = v \beta_k \]
+
+
+Or, comme $b$ ne divise pas $a$, alors il existe $i_0 \in \llbracket 1, r
+\rrbracket$ tel que $\alpha_{i_0} < \beta_{i_0}$. De m{\^e}me $a$ ne divise
+pas $b$, alors il existe $j_0 \in \llbracket 1, r \rrbracket$ tel que
+$\beta_{j_0} < \alpha_{j_0}$.
+
+D'une part :
+\[ u \alpha_{i_0} = v \beta_{i_0} < u \beta_{i_0} \]
+
+
+Donc $v < u$.
+
+D'autre part :
+\[ u \alpha_{j_0} = v \beta_{j_0} < v \alpha_{j_0} \]
+
+
+Donc $u < v$.
+
+Ainsi, $u < v$ et $v < u$, ce qui est absurde.
+
+Donc
+\[ \theta = \frac{\ln (a)}{\ln (b)} \nin \mathbb{Q} \]
+
+
+D'apr{\`e}s le lemme 2, on a donc la suite $(k. \theta)_{k \in \mathbb{N}}$
+est {\'e}quir{\'e}partie modulo 1, alors :
+\begin{eqnarray*}
+  \mathbb{P} (X = i) & = & \underset{n \rightarrow + \infty}{\lim}  \frac{N_i
+  (n)}{n}\\
+  & = & \frac{\ln (i + 1) - \ln (i)}{\ln (b)}
+\end{eqnarray*}
+
+
+\paragraph{Remarques et commentaires.}
+
+1. On remarque tout d'abord que l'expression de $\mathbb{P}(X = i)$ est
+ind{\'e}pendante de $a$, c'est-{\`a}-dire que, dans n'importe quelle base $b$,
+la r{\'e}partition des puissances des nombres entiers non divisibles par $b$
+suit les m{\^e}mes fr{\'e}quences d'apparition des chiffres en premi{\`e}re
+position.
+
+\
+
+2. La probabilit{\'e} d{\'e}cro{\^i}t en fonction de $i$, ce qui signifie que
+l'apparition du chiffre 1 en premi{\`e}re position est la plus fr{\'e}quente.
+En effet, dans la base 10, la fr{\'e}quence d'apparition du chiffre 1 en
+premi{\`e}re position dans la suite des puissances d'un nombre non divisible
+par 10 est approximativement de 30,1 \%. On donne ci-dessous un tableau
+indiquant la probabilit{\'e} d'apparition des chiffres 1, 2, {\ldots}, 9 dans
+les puissances d'un entier non divisible par 10 en base d{\'e}cimale :
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    $i$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+    \hline
+    $\mathbb{P} (X = i)$ & 30.1\% & 17.6\% & 12.46\% & 9.69\% & 7.91\% &
+    6.69\% & 5.79\% & 5.11\% & 4.57\%\\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+3. Remarquons aussi que pour tout $i \in \llbracket 1, b - 1 \rrbracket$, on
+a :
+\[ \mathbb{P} (X = i) = \frac{\ln (i + 1) - \ln (i)}{\ln (b)} > 0 \]
+
+
+Ainsi, pour tout $i \in \llbracket 1, b - 1 \rrbracket$, il existe une
+infinit{\'e} de puissances de $a$ dont le d{\'e}veloppement $b$-adique
+commence par $i$.
+
+\
+
+On donnera une autre preuve de ce r{\'e}sultat.
+
+Fixons $i \in \llbracket 1, b - 1 \rrbracket$. Pour montrer le r{\'e}sultat,
+il suffit de d{\'e}montrer qu'il existe une infinit{\'e} de couple $(n, k) \in
+\mathbb{N}^2$ tels que
+\[ i \leq \frac{a^n}{b^k} < i + 1 \]
+
+
+Cela revient {\`a} trouver une infinit{\'e} de couples $(n, k) \in
+\mathbb{N}^2$ tels que
+\[ \ln \nospace (i) \leq n \ln \nospace (a) - k \ln \nospace (b) < \ln
+   \nospace (i + 1) \]
+
+
+Le r{\'e}sultat est prouv{\'e} gr{\^a}ce {\`a} la densit{\'e} de $\frac{\ln
+\nospace (a)}{\ln \nospace (b)} \mathbb{N}+\mathbb{Z}$, car $\frac{\ln
+\nospace (a)}{\ln \nospace (b)} \nin \mathbb{Q}$.
+
+\
+
+C'est ce que nous allons montrer dans les deux lemmes suivants :
+
+\tmtextbf{Lemme 3. (Sous-groupes additifs de $\mathbb{R}$)}
+
+Soit $G$ un sous-groupe de $(\mathbb{R}, +)$ non r{\'e}duit {\`a} $\{0\}$.
+Alors $G$ est soit dense dans $\mathbb{R}$, soit de la forme $a\mathbb{Z}$
+avec $a > 0$.
+
+\tmtextbf{Preuve du lemme 3.}
+
+le raisonnement est bas{\'e} sur la borne inf{\'e}rieure de
+$\mathbb{R}^+_{\ast} \cap G$.
+
+Comme $G$ est non r{\'e}duit {\`a} $\{0\}$, alors il existe $x \neq 0$ tel que
+$x \in G$. Puisque $G$ est un groupe, on a aussi $- x \in G$, donc $|x| \in
+G$.
+
+Par cons{\'e}quent, $\mathbb{R}^+_{\ast} \cap G \neq \emptyset$. Cette partie
+est minor{\'e}e par 0, donc d'apr{\`e}s l'axiome de la borne inf{\'e}rieure,
+on a l'existence de $r = \inf \mathbb{R}^+_{\ast} \cap G$.
+
+$\rightarrow$ \tmtextbf{Si $r > 0$}, montrons que $r \in G$ par l'absurde.
+
+Supposons que $r$ ne soit pas dans $G$. Comme $r > 0$, d'apr{\`e}s la
+caract{\'e}risation de la borne inf{\'e}rieure, il existe $x \in R_{\ast}^+
+\cap G$ tel que
+\[ r < x < 2 r \]
+
+
+Puisque $x - r > 0$, il existe aussi $y \in R_{\ast}^+ \cap G$ tel que , donc
+on a $r < y < x < 2 r$r<y<x<2r.\\
+Or, $0 < x - y < r$0<x \nonconverted{minus} y<r, ce qui implique que $x - y
+\in R_{\ast}^+ \cap G$
+\[ r < y < r + (x - r) = x \]
+
+
+Donc,
+\[ r < y < x < 2 r \]
+
+
+Or, $0 < x - y < r$, ce qui implique que $x - y \in R_{\ast}^+ \cap G$ et $x -
+y < r$, contradiction.
+
+Donc, $r \in G$.
+
+Par stabilit{\'e} de la somme dans $G$, on a $r\mathbb{Z} \subseteq G$.
+
+R{\'e}ciproquement, soit $x \in G$. Posons $k = \lfloor x / r \rfloor$. Comme
+$G$ est un groupe, le r{\'e}el $x - k \cdot r \in G$, et comme $k \leq x / r <
+k + 1$, alors $0 \leq x - k \cdot r < r$. N{\'e}cessairement, $x - k \cdot r =
+0$, c'est-{\`a}-dire $x = k \cdot r \in r\mathbb{Z}$.
+
+\
+
+$\rightarrow$ \tmtextbf{Si $r = 0$,} on va montrer que $G$ est dense dans
+$\mathbb{R}$. Pour cela, soient $a < b$ dans $\mathbb{R}$.
+
+Comme $r = 0$, par la caract{\'e}risation de la borne inf{\'e}rieure, on a
+l'existence de $x \in \mathbb{R}^+_{\ast} \cap G$ tel que $0 < x < b - a$.
+
+On note
+\[ C_{b, a} =\{k \in \mathbb{N} | \nobracket kx < b\} \]
+
+
+Il est clair que $C_{b, a}$ est une partie non vide de $\mathbb{N}$ et
+major{\'e}e, donc elle admet un plus grand {\'e}l{\'e}ment que l'on note
+$n_0$.
+
+Comme l'entier $n_0 + 1 \nin C_{b, a}$ et $n_0 \in C_{b, a}$, alors
+\[ (n_0 + 1) x \geq b \infixand n_0 x < b \]
+
+
+Par suite,
+\[ a < b - x \leq n_0 x < b \]
+
+
+D'o{\`u} $] a, b [\cap G \neq \varnothing$, c'est-{\`a}-dire que $G$ est dense
+dans $\mathbb{R}$. Le lemme est prouv{\'e}.
+
+\
+
+\tmtextbf{Lemme 4.}
+
+Soit $\theta$ un irrationnel, alors $\theta \mathbb{N}+\mathbb{Z}$ est dense
+dans $\mathbb{R}$.
+
+\
+
+\tmtextbf{Preuve du lemme 4.}
+
+on a $\theta \mathbb{Z}+\mathbb{Z}$ est un sous-groupe additif de
+$\mathbb{R}$. D'apr{\`e}s le lemme pr{\'e}c{\'e}dent, on a $\theta
+\mathbb{Z}+\mathbb{Z}$ est soit dense dans $\mathbb{R}$, soit de la forme
+$a\mathbb{Z}$ avec $a > 0$ (en effet, $a > 0$ car $\theta
+\mathbb{Z}+\mathbb{Z}$ n'est pas r{\'e}duit {\`a} $\{0\})$.
+
+Supposons qu'il existe $a > 0$, tel que
+\[ \theta \mathbb{Z}+\mathbb{Z}= a\mathbb{Z} \]
+
+
+Comme $1, \theta \in \theta \mathbb{Z}+\mathbb{Z}= a\mathbb{Z}$, alors il
+existe $(u, v) \in \mathbb{N}^{\ast} \times \mathbb{Z}$ tel que $1 = u.a$ et
+$\theta = v.a$
+
+Ainsi, $\theta = \frac{v}{u} \in \mathbb{Q}$, ce qui est absurde. Donc $\theta
+\mathbb{Z}+\mathbb{Z}$ est dense dans $\mathbb{R}$.
+
+\
+
+Montrons maintenant que l'ensemble $\theta \mathbb{N}+\mathbb{Z}$ reste dense
+dans $\mathbb{R}$. Soient $a < b$ dans $\mathbb{R}$. On a l'existence de $x =
+n \theta + m \in \theta \mathbb{Z}+\mathbb{Z}$ tel que $0 < x < b - a$.
+
+Si $n$ est un entier naturel, soit $m_0$ le plus grand entier strictement
+inf{\'e}rieur {\`a} $a$. La suite $(kx + m_0)_{k \in \mathbb{N}}$ rencontre
+n{\'e}cessairement l'intervalle $] a, b [$, puisqu'il s'agit d'une suite
+arithm{\'e}tique de raison $x < b - a$. Il existe donc dans ce cas un
+{\'e}l{\'e}ment de $\theta \mathbb{N}+\mathbb{Z}$ dans $] a, b [$.
+
+\
+
+Si $m < 0$, alors $- x \in \theta \mathbb{N}+\mathbb{Z}$. Soit $m_0$ un
+entier strictement sup{\'e}rieur {\`a} $b$. Il existe au moins un
+{\'e}l{\'e}ment de la suite $(m_0 - k.x)_{k \in \mathbb{N}}$ qui appartient
+{\`a} $] a, b [$.
+
+\
+
+4. Pour un nombre $a$ puissance de $b$, les puissances de $a$ sont aussi des
+puissances de $b$, Ainsi, le premier chiffre des puissances de $a$ est
+toujours {\'e}gal {\`a} 1 dans la base $b$.
+
+\
+
+5. La r{\'e}partition des chiffres en fonction des fr{\'e}quences reste
+complexe {\`a} comprendre, notamment dans la base d{\'e}cimale. Par exemple,
+le dernier chiffre d'un nombre pair ne peut pas {\^e}tre impair. De plus, la
+suite des derniers chiffres des puissances d'un entier $k$ est p{\'e}riodique
+: elle a une p{\'e}riode de 1 si $k$ est divisible par 10, et une p{\'e}riode
+de 4 si $k$ est pair mais non divisible par 10. On peut le d{\'e}montrer
+ais{\'e}ment, puisque $2^1 = 2$, $2^2 = 4$, $2^3 = 8$, $2^4 = 6$, et $2^5 =
+2$, bouclant ainsi la p{\'e}riode.
+
+Si $k$ est impair, on peut discuter des diff{\'e}rents cas possibles de
+mani{\`e}re analogue. En g{\'e}n{\'e}ral, l'{\'e}tude du comportement du
+dernier chiffre dans une base de num{\'e}ration $b$ se r{\'e}duit aux nombres
+$0, 1, \ldots, b - 1$. Cependant, pour l'avant-dernier chiffre, les choses
+deviennent plus complexes. En base d{\'e}cimale, par exemple, pour qu'un
+nombre soit divisible par 25, il doit se terminer par l'un des couples de
+chiffres suivants : 00, 25, 50 ou 75. Or, les puissances de 5 ne sont pas
+divisibles par 100 (car aucune puissance de 5 n'est divisible par 2).
+
+On peut {\'e}tudier les variations de chaque chiffre {\`a} une position
+donn{\'e}e dans les puissances d'un nombre sp{\'e}cifique dans une base
+d{\'e}termin{\'e}e. Par exemple, il serait possible d'examiner les variations
+du chiffre en cinqui{\`e}me position {\`a} gauche dans les puissances de 7 en
+base d{\'e}cimale. Cependant, cette analyse reste complexe.
+
+\
+
+6. La probabilit{\'e} donn{\'e}e dans est caract{\'e}ristique de la
+fr{\'e}quence de la distribution des puissances jusqu'{\`a} l'infini. En
+effet, il est impossible de trouver une partie finie non vide $I \subset
+\mathbb{N}$ et un entier $i^{\ast} \in \llbracket 1, b - 1 \rrbracket$ tels
+que
+\[
+\frac{\text{Card}(\{ k \in I \mid i \text{ est le premier chiffre de } a^k \text{ dans la base } b \})}{\text{Card}(I)}
+= \mathbb{P}(X = i) = \frac{\ln(i+1) - \ln(i)}{\ln(b)}
+\]
+Car sinon, on aurait
+\[
+\frac{\ln(i+1) - \ln(i)}{\ln(b)} \in \mathbb{Q}.
+\]
+Donc il existerait \((u, v) \in (\mathbb{N}^*)^2\) tels que
+\[
+(i+1)^u = i^v \cdot b^v.
+\]
+Comme \(\gcd(i, i+1) = 1\), il en découlerait que \(b\) divise \(i+1\), donc forcément \(i = b-1\). Cependant,
+\[
+(b-1)^v = b^{u-v},
+\]
+absurde !

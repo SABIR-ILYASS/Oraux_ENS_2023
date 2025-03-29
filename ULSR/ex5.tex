@@ -1,0 +1,108 @@
+Ce probl{\`e}me d'alg{\`e}bre et de th{\'e}orie des groupes demande aux
+candidats de d{\'e}nombrer les morphismes surjectifs entre groupes finis. Il
+{\'e}value la compr{\'e}hension des structures alg{\'e}briques et la
+capacit{\'e} {\`a} utiliser des outils comme le th{\'e}or{\`e}me des restes
+chinois.
+\begin{exercise}[]
+Soient $m \geq 1$ et $r \geq 2$ des entiers et $H_{m, r}$ l'ensemble des
+morphismes de groupes $(\mathbb{Z}/ m\mathbb{Z})^r \rightarrow \mathbb{Z}/
+m\mathbb{Z}$. Calculer la proportion dans $H_{m, r}$ des morphismes surjectifs
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Commen{\c c}ons par {\'e}tudier le cas o{\`u} \tmtextbf{$m$ est une puissance
+d'un nombre premier}, puis on va utiliser le th{\'e}or{\`e}me des restes
+chinois pour g{\'e}n{\'e}raliser au cas o{\`u} $m$ est quelconque.
+
+Soit $p$ un nombre premier, et $k \in \mathbb{N}^{\ast}$, tel que $m = p^k$.
+
+Le groupe $(\mathbb{Z}/ p^k \mathbb{Z})^r$ est engendr{\'e} par les $r$
+{\'e}l{\'e}ments canoniques $e_1, e_2, \ldots, e_r$, o{\`u} $e_i$ a un $1$ en
+position $i$ et $0$ ailleurs.
+
+Un morphisme de groupes $\phi : (\mathbb{Z}/ p^k \mathbb{Z})^r \rightarrow
+\mathbb{Z}/ p^k \mathbb{Z}$ est enti{\`e}rement d{\'e}termin{\'e} par les
+images des g{\'e}n{\'e}rateurs $e_i$, c'est-{\`a}-dire par les
+{\'e}l{\'e}ments $a_i = \phi (e_i) \in \mathbb{Z}/ p^k \mathbb{Z}$ pour $i =
+1, 2, \ldots, r$.
+
+Comme chaque $a_i$ peut prendre $p^k$ valeurs possibles, le nombre total de
+morphismes est $(p^k)^r$.
+
+Un morphisme $\phi$ est surjectif si et seulement si son image est {\'e}gale
+{\`a} $\mathbb{Z}/ p^k \mathbb{Z}$.
+
+Dans $\mathbb{Z}/ p^k \mathbb{Z}$, un {\'e}l{\'e}ment $a$ engendre le groupe
+si et seulement si $a$ est premier avec $p$.
+
+Ainsi, le morphisme $\phi$ est surjectif si et seulement si les $a_i$
+engendrent $\mathbb{Z}/ p^k \mathbb{Z}$, c'est-{\`a}-dire si $\tmop{pgcd}
+(a_1, a_2, \ldots, a_r, p) = 1$.
+
+Dans ce contexte, puisque $p$ est premier, $\tmop{pgcd} (a_1, \ldots, a_r, p)
+= 1$ si et seulement si au moins un des $a_i$ n'est pas divisible par $p$.
+
+Les morphismes non surjectifs sont ceux pour lesquels tous les $a_i$ sont
+divisibles par $p$. Cela signifie que chaque $a_i$ appartient {\`a} $p \times
+\mathbb{Z}/ p^k \mathbb{Z}$.
+
+Le nombre de choix possibles pour chaque $a_i$ divisible par $p$ est $p^{k -
+1}$ (car les multiples de $p$ dans $\mathbb{Z}/ p^k \mathbb{Z}$ sont $0, p, 2
+p, \ldots, (p^k - p$)).
+
+Donc, le nombre total de morphismes non surjectifs est $(p^{k - 1})^r .$
+
+Ainsi, le nombre de morphismes surjectifs est $(p^k)^r - (p^{k - 1})^r$
+
+La proportion des morphismes surjectifs est donn{\'e}e par :
+\[ \frac{(p^k)^r - (p^{k - 1})^r}{(p^k)^r} = 1 - \left( \frac{p^{k - 1}}{p^k}
+   \right)^r = 1 - \left( \frac{1}{p} \right)^r = 1 - \frac{1}{p^r} . \]
+
+
+\tmtextbf{Cas g{\'e}n{\'e}ral : }Soit $m$ un entier strictement positif, avec
+sa d{\'e}composition en facteurs premiers :
+\[ m = \prod_{i = 1}^n p_i^{k_i}, \]
+
+
+o{\`u} les $p_i$ sont des nombres premiers distincts et les $k_i$ des entiers
+positifs.
+
+Par le th{\'e}or{\`e}me des restes chinois, on a les isomorphismes de groupes
+:
+\[ \mathbb{Z}/ m\mathbb{Z} \simeq \prod_{i = 1}^n \mathbb{Z}/ p_i^{k_i}
+   \mathbb{Z}, \]
+
+
+et
+\[ (\mathbb{Z}/ m\mathbb{Z})^r \simeq \prod_{i = 1}^n (\mathbb{Z}/ p_i^{k_i}
+   \mathbb{Z})^r . \]
+
+
+Un morphisme $\phi : (\mathbb{Z}/ m\mathbb{Z})^r \rightarrow \mathbb{Z}/
+m\mathbb{Z}$ correspond {\`a} un $n$-uplet de morphismes :
+\[ \phi = (\phi_1, \phi_2, \ldots, \phi_n), \]
+
+
+o{\`u} chaque $\phi_i : (\mathbb{Z}/ p_i^{k_i} \mathbb{Z})^r \rightarrow
+\mathbb{Z}/ p_i^{k_i} \mathbb{Z}$ est un morphisme de groupes.
+
+Le morphisme $\phi$ est surjectif si et seulement si chaque $\phi_i$ est
+surjectif. En effet, l'isomorphisme fourni par le th{\'e}or{\`e}me des restes
+chinois est compatible avec les morphismes, et l'image de $\phi$ est le
+produit des images des $\phi_i$.
+
+Pour chaque $i$, d'apr{\`e}s le r{\'e}sultat du cas particulier, la proportion
+des morphismes $\phi_i$ surjectifs est :
+\[ 1 - \frac{1}{p_i^r} . \]
+
+
+Comme les morphismes $\phi_i$ sont ind{\'e}pendants pour des premiers
+distincts, la proportion totale des morphismes surjectifs est le produit des
+proportions individuelles :
+\[  \prod_{i = 1}^n \left( 1 - \frac{1}{p_i^r} \right) = \underset{p | m
+   \nobracket}{\prod} \left( 1 - \frac{1}{p^r} \right) \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

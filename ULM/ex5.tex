@@ -1,0 +1,83 @@
+Cet exercice traite de la limite d'une s{\'e}rie altern{\'e}e. Il demande
+d'{\'e}tudier la convergence et la limite d'une s{\'e}rie altern{\'e}e
+form{\'e}e {\`a} partir d'une fonction d{\'e}croissante tendant vers z{\'e}ro.
+L'exercice combine des aspects d'analyse r{\'e}elle et de th{\'e}orie des
+s{\'e}ries.
+\begin{exercise}[(Limite d'une s{\'e}rie altern{\'e}e)]
+Soit $f \in \mathcal{C}^1 (\mathbb{R})$ d{\'e}croissante et tendant vers 0 en
+$+ \infty$. Montrer que la fonction
+\[ g (x) = \sum_{n = 0}^{\infty} (- 1)^n f (nx) \]
+
+
+est bien d{\'e}finie pour $x > 0$. Donner sa limite en 0.
+
+\end{exercise}
+\subsection*{Solution. (ETTOUSY Badr)}
+\addcontentsline{toc}{subsection}{Solution. (ETTOUSY Badr)}
+
+
+Soit $x > 0$, on a $(f (n x))_{n \in \mathbb{N}}$ est une suite de r{\'e}els
+positifs, d{\'e}croissante et tendant vers $0$. D'apr{\`e}s le crit{\`e}re
+sp{\'e}cial des s{\'e}ries altern{\'e}es, on a $g$ est bien d{\'e}finie.
+
+De plus :
+\begin{eqnarray*}
+  g (x) - \frac{1}{2} f (0) & = & \sum_{k = 0}^{+ \infty} (f (2 k x) - f ((2 
+  k + 1) x)) + \frac{1}{2}  \int_0^{+ \infty} f' (t) \hspace{0.17em} \text{d}
+  t\\
+  & = & - \sum_{k = 0}^{+ \infty} \int_{2  kx}^{(2 k + 1) x} f' (t)
+  \hspace{0.17em} \text{d} t + \frac{1}{2}  \sum_{k = 0}^{+ \infty} \int_{2 k
+  x}^{(2 k + 2) x} f' (t) \hspace{0.17em} \text{d} t\\
+  & = & - \frac{1}{2}  \sum_{k = 0}^{+ \infty} \left( \int_{2 kx}^{(2 k + 1)
+  x} f' (t) \hspace{0.17em} \text{d} t - \int_{(2 k + 1) x}^{(2 k + 2) x} f'
+  (t) \hspace{0.17em} \text{d} t \right)\\
+  & = & - \frac{1}{2}  \sum_{k = 0}^{+ \infty} \int_{2 kx}^{(2 k + 1) x} (f'
+  (t) - f' (t + x)) \hspace{0.17em} \text{d} t
+\end{eqnarray*}
+
+
+\
+
+Par cons{\'e}quent :
+\begin{eqnarray*}
+  |g (x) - \frac{1}{2} f (0) | & \leqslant & \frac{1}{2}  \sum_{k = 0}^{+
+  \infty} \int_{2 kx}^{(2 k + 1) x} |f' (t + x) - f' (t) | \hspace{0.17em}
+  \text{d} t\\
+  & \leqslant & \frac{1}{2}  \sum_{k = 0}^{+ \infty} \int_{2 kx}^{(2 k + 2)
+  x} |f' (t + x) - f' (t) | \hspace{0.17em} \text{d} t\\
+  & \leqslant & \frac{1}{2}  \int_0^{+ \infty} |f' (t + x) - f' (t) |
+  \hspace{0.17em} \text{d} t
+\end{eqnarray*}
+
+
+Soient $\varepsilon > 0$ et $A > 0$ suffisamment grand pour que :
+\[ \int_A^{+ \infty} |f' (t) | \hspace{0.17em} \text{d} t = \int_A^{+ \infty}
+   (- f' (t)) \hspace{0.17em} \text{d} t = f (A) \leq \frac{\varepsilon}{3} \]
+
+
+Pour $x > 0$, il en d{\'e}coule que :
+\[ \int_A^{+ \infty} |f' (t + x) - f' (t) | \hspace{0.17em} \text{d} t \leq
+   \int_{A + x}^{+ \infty} |f' (t) | \hspace{0.17em} \text{d} t + \int_A^{+
+   \infty} |f' (t) | \hspace{0.17em} \text{d} t \leq \frac{2 \varepsilon}{3}
+\]
+
+
+Comme $f'$ est continue sur le segment $[0, A + 1]$, elle y est
+uniform{\'e}ment continue. Il existe donc $\alpha \in] 0, 1]$ tel que :
+\[ \forall (x, t) \in [0, A] \times] 0, \alpha], \quad |f' (t + x) - f' (t) |
+   \leq \frac{\varepsilon}{3 A} \]
+
+
+D'o{\`u}, pour tout $x \in] 0, \alpha]$ :
+\begin{eqnarray*}
+  |g (x) - \frac{1}{2} f (0) | & = & \int_0^A |f' (t + x) - f' (t) |
+  \hspace{0.17em} \text{d} t + \int_A^{+ \infty} |f' (t + x) - f' (t) |
+  \hspace{0.17em} \text{d} t\\
+  & \leqslant &  \int_0^A \frac{\varepsilon}{3 A}  \hspace{0.17em} \text{d} t
+  + \frac{2 \varepsilon}{3}\\
+  & = & \varepsilon
+\end{eqnarray*}
+
+
+D'o{\`u} $g (x) \underset{x \rightarrow 0}{\rightarrow} \frac{1}{2} f (0)$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

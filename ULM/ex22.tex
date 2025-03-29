@@ -1,0 +1,128 @@
+L'exercice 22 porte sur la m{\'e}diane de moyennes de variables
+al{\'e}atoires. Il demande de prouver une borne de probabilit{\'e} sur
+l'{\'e}cart entre cette m{\'e}diane et la moyenne th{\'e}orique. L'exercice
+fait appel {\`a} des notions de probabilit{\'e}s et de statistiques.
+
+\begin{exercise}[(M{\'e}diane de moyennes)]
+Soient $n, m \geq 1$ des entiers et soient $X_{i, j}$, pour $1 \leq i \leq n$
+et $1 \leq j \leq m$, des variables al{\'e}atoires discr{\`e}tes i.i.d. de
+variance $\sigma^2$ et de moyenne~$\mu$. Pour~$1 \leq i \leq n$, soit $Y_i =
+\frac{1}{m}  \sum_{j = 1}^m X_{i, j}$. Soit $Z$ une m{\'e}diane de l'ensemble
+$\{ Y_1, \ldots, Y_n \}$.
+
+Montrer que
+\[ \mathbb{P} \left[ |Z - \mu | \leq \frac{2 \sigma}{\sqrt{m}} \right] \geq 1
+   - \left( \frac{3}{4} \right)^{\frac{n}{2}} . \]
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram, SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram, SABIR Ilyass)}
+
+Esp{\'e}rance et Variance :\tmtextbf{}
+\[ E [Y_i] = \mu \quad \text{et} \quad \text{Var} (Y_i) = \frac{\sigma^2}{m} .
+\]
+
+
+Pour chaque $Y_i$, appliquons l'in{\'e}galit{\'e} de Chebyshev pour estimer la
+probabilit{\'e} que $Y_i$ s'{\'e}carte de $\mu$ de plus de $\frac{2
+\sigma}{\sqrt{m}}$ :
+\[ P \left( |Y_i - \mu | > \frac{2 \sigma}{\sqrt{m}} \right) \leq
+   \frac{\text{Var} (Y_i)}{\left( \frac{2 \sigma}{\sqrt{m}} \right)^2} =
+   \frac{\sigma^2 / m}{4 \sigma^2 / m} = \frac{1}{4} . \]
+
+
+Ainsi,
+\[ P \left( |Y_i - \mu | \leq \frac{2 \sigma}{\sqrt{m}} \right) \geq
+   \frac{3}{4} . \]
+
+
+La m{\'e}diane $Z$ de l'ensemble $\{Y_1, Y_2, \ldots, Y_n \}$ sera dans
+l'intervalle $\left[ \mu - \frac{2 \sigma}{\sqrt{m}}, \mu + \frac{2
+\sigma}{\sqrt{m}} \right]$ si au moins la moiti{\'e} des $Y_i$ se trouvent
+dans cet intervalle.
+
+D{\'e}finissons $S$ comme le nombre de $Y_i$ satisfaisant $|Y_i - \mu | \leq
+\frac{2 \sigma}{\sqrt{m}}$. Chaque $Y_i$ satisfait cette condition avec une
+probabilit{\'e} $p \geq \frac{3}{4}$, ind{\'e}pendamment des autres. Ainsi,
+$S$ suit une loi binomiale $\mathcal{B}(n, p)$ avec $p \geq \frac{3}{4}$.
+
+Pour obtenir une borne sur $P \left( S > \frac{n}{2} \right)$, nous allons
+consid{\'e}rer la probabilit{\'e} compl{\'e}mentaire $P \left( S \leq
+\frac{n}{2} \right)$ et la majorer.
+
+Pour tout $t > 0$, l'in{\'e}galit{\'e} de Markov donne :
+
+
+\[ P (S \leq k) = P (e^{- tS} \geq e^{- tk}) \leq \frac{E [e^{- tS}]}{e^{-
+   tk}} . \]
+
+
+Ici, nous choisissons $k = \frac{n}{2}$.
+
+Comme $S = \sum_{i = 1}^n I_i$, o{\`u} $I_i$ est l'indicateur que $Y_i$ est
+dans l'intervalle, et les $I_i$ sont ind{\'e}pendants, nous avons :
+\[ E [e^{- tS}] = \prod_{i = 1}^n E [e^{- tI_i}] = (pe^{- t} + (1 - p))^n . \]
+
+
+Nous devons choisir $t$ pour minimiser la borne. Pour cela, posons :
+\[ f (t) = (pe^{- t} + 1 - p) e^{t / 2} . \]
+
+
+Calculons la d{\'e}riv{\'e}e de $f (t)$ :
+\[ f' (t) = \frac{d}{dt}  [(pe^{- t} + 1 - p) e^{t / 2}] = e^{t / 2}  \left( -
+   pe^{- t} + \frac{1}{2} (pe^{- t} + 1 - p) \right) . \]
+
+
+Pour trouver le minimum, r{\'e}solvons $f' (t) = 0$, cela revient {\`a}
+r{\'e}soudre l'{\'e}quation
+\[ - pe^{- t} + \frac{1}{2} (pe^{- t} + 1 - p) = 0 \]
+
+
+Par suite,
+
+
+\[ - 2 pe^{- t} + pe^{- t} + 1 - p = 0 \]
+
+
+Ainsi,
+\[ pe^{- t} = 1 - p \]
+
+
+Donc,
+\[ t = - \ln \left( \frac{1 - p}{p} \right) \]
+
+
+Substituons $t = - \ln \left( \frac{1 - p}{p} \right)$ dans $f (t)$ :
+\begin{eqnarray*}
+  f (t) & = & (pe^{- t} + 1 - p) e^{t / 2} \\
+  & = & \left( p \cdot \frac{1 - p}{p} + 1 - p \right) \left( \frac{p}{1 - p}
+  \right)^{1 / 2}\\
+  & = & 2 (1 - p) \cdot \frac{p}{1 - p} = 2 (p (1 - p))^{\frac{1}{2}}
+\end{eqnarray*}
+
+
+Ainsi, on a :
+\[ P \left( S \leq \frac{n}{2} \right) \leq (4 p (1 - p))^{n / 2} . \]
+
+
+$p (1 - p)$ d{\'e}croit pour $p \geq \frac{1}{2}$
+
+Pour $p = \frac{3}{4}$, calculons cette expression :
+\[ 4 p (1 - p) = 4 \cdot \frac{3}{4} \cdot \frac{1}{4} = \frac{3}{4} . \]
+
+
+Donc,
+\[ P \left( S \leq \frac{n}{2} \right) \leq \left( \frac{3}{4} \right)^{n / 2}
+   . \]
+
+
+Par cons{\'e}quent,
+\[ P \left( S \geq \frac{n}{2} \right) \geq P \left( S > \frac{n}{2} \right)
+   \geq 1 - \left( \frac{3}{4} \right)^{n / 2} . \]
+
+
+Nous obtenons la borne souhait{\'e}e :
+\[ P \left( |Z - \mu | \leq \frac{2 \sigma}{\sqrt{m}} \right) \geq 1 - \left(
+   \frac{3}{4} \right)^{n / 2} . \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

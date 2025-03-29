@@ -1,0 +1,89 @@
+Cet exercice porte sur la minimisation locale sur un graphe. Il explore une
+m{\'e}thode probabiliste pour trouver un minimum local d'une fonction
+d{\'e}finie sur un ensemble fini, en utilisant un {\'e}chantillonnage
+al{\'e}atoire suivi d'une descente locale. L'exercice demande de prouver que
+cette m{\'e}thode a une probabilit{\'e} d'au moins 1/2 de trouver un minimum
+local.
+\begin{exercise}[(Minimisation locale sur un graphe)]
+Soit~$E$ un ensemble fini et $V : E \to \mathcal{P} (E)$ une fonction de $E$
+vers les parties de $E$. Soit $f : E \to \mathbb{R}$ une fonction. Un point~$a
+\in E$ est un {\tmem{minimum local}} si $f (a) \leq f (b)$ pour tout $b \in V
+(a)$.
+
+Soit $M$ un entier tel que~$M \geq \sqrt{\#E}$. Soient~$b_1, \ldots, b_M$ des
+variables al{\'e}atoires ind{\'e}pendantes et uniform{\'e}ment distribu{\'e}es
+dans~$E$. Soit~$k$ tel que $f (b_k) = \underset{1 \leq i \leq M}{\min} f
+(b_i)$.
+
+Soit $(u_n)_{n \geq 0}$ une suite de~$E$ telle que~$u_0 = b_k$ et pour tout~$n
+\geq 0$ :
+\begin{itemize}
+  \item si $u_n$ est un minimum local, alors~$u_{n + 1} = u_n$;
+  
+  \item sinon, $u_{n + 1} \in V (u_n)$ et~$f (u_{n + 1}) < f (u_n)$.
+\end{itemize}
+
+Montrer que $u_M$ est un minimum local avec probabilit{\'e} au moins $1 / 2$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+On cherche {\`a} montrer que $u_M $est un minimum local avec une
+probabilit{\'e} au moins $\frac{1}{2}$.
+
+Quitte {\`a} munir $E$ d'une relation d'ordre, on peut supposer sans perte de
+g{\'e}n{\'e}ralit{\'e}, que $E = \llbracket 1, n \rrbracket$ et $f$ est
+croissante sur E.
+
+Nous cherchons {\`a} montrer que la probabilit{\'e} de l'{\'e}v{\'e}nement
+\[ \mathcal{E}= \{ e \in E \mid u_M (e) \tmop{est} \tmop{un} \tmop{minimum}
+   \tmop{local} \} \]
+
+
+est $1 / 2$.
+
+\
+
+Soit $e \not{\in} \mathcal{E}$, alors $u_M$ n'est pas un minimum local, et
+donc il existe $k \in \llbracket 1, M \rrbracket$ et $(u_0, \ldots, u_M) \in
+E$ tels que :
+\[ u_0 = b_k (e), \quad f (b_k (e)) = \underset{1 \leqslant i \leqslant
+   M}{\min} f (b_i (e)) \infixand \tmop{pour} \tmop{tout} i \in \llbracket 0,
+   M - 1 \rrbracket, f (u_{i + 1}) < f (u_i) \]
+
+
+On a alors :
+\[ f (u_M) < f (u_{M - 1}) < \cdots < f (u_1) < f \left( \underset{1 \leqslant
+   i \leqslant M}{\min} b_i (e) \right) \]
+
+
+Par croissance de $f$, on a alors :
+\[ u_M < u_{M - 1} < \cdots < u_1 < \underset{1 \leqslant i \leqslant M}{\min}
+   b_i (e) \]
+
+
+Par suite $\underset{1 \leqslant i \leqslant M}{\min} b_i (e) \geqslant M + 1$
+(car $u_M, \ldots, u_1 \in \mathbb{N}$), en particulier
+\[ \bar{\mathcal{E}} \subset \{ \min (b_1, \ldots, b_M) \geqslant M + 1 \} =
+   \underset{i = 1}{\overset{M}{\bigcap}} \{ b_i \geqslant M + 1 \} \]
+
+
+Ainsi par ind{\'e}pendance entre les variables $b_1, \ldots, b_M$, on a :
+\begin{eqnarray*}
+  \mathbb{P} (\mathcal{E}) & = & 1 -\mathbb{P} (\bar{\mathcal{E}})\\
+  & \geqslant & 1 - \underset{i = 1}{\overset{M}{\prod}} \mathbb{P} (b_i
+  \geqslant M + 1)\\
+  & \geqslant & 1 - \left( 1 - \frac{M}{n} \right)^M
+\end{eqnarray*}
+
+
+Or $x \longmapsto \left( 1 - \frac{x}{n} \right)^x = \exp \left( x \ln \left(
+1 - \frac{x}{n} \right) \right)$ est d{\'e}croissante sur $[0, n]$, en
+particulier
+\[ \mathbb{P} (\mathcal{E}) \geqslant 1 - \left( 1 - \frac{1}{\sqrt{n}}
+   \right)^{\sqrt{n}} \geqslant 1 - e^{- 1} > \frac{1}{2} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

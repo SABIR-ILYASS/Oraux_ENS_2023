@@ -1,0 +1,140 @@
+Dans cet exercice, nous {\'e}tudions une suite d{\'e}finie par un terme
+initial $u_1 > 0$ et une relation de r{\'e}currence impliquant les termes
+successifs. Nous chercherons {\`a} d{\'e}terminer le comportement asymptotique
+de cette suite, notamment sa limite lorsque $n$ tend vers l'infini. Les
+techniques employ{\'e}es incluront la transformation logarithmique pour
+simplifier la r{\'e}currence et l'analyse des termes par la m{\'e}thode de
+variation de la constante.
+
+\begin{exercise}[(Oral l'X 2007)]
+{\'E}tudier la suite d{\'e}finie par son premier terme $u_1 > 0$ et la
+relation de r{\'e}currence
+\[ u_{n + 1} = \frac{n + 1}{2 n}  \sqrt{u_n} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $(u_n)_{n \geq 1}$ une suite v{\'e}rifiant
+\[ u_{n + 1} = \frac{n + 1}{2 n}  \sqrt{u_n}, \tmop{pour} \tmop{tout} n \in
+   \mathbb{N}^{\ast} \infixand u_1 > 0 \]
+
+
+Par construction, les termes de $(u_n)_{n \geq 1}$ sont tous strictement
+positifs.
+
+Posons
+\[ (\beta_n)_{n \geq 1} \assign (\ln u_n)_{n \geq 1} \]
+
+
+On a, pour tout $n \geqslant 1$
+\[ \beta_{n + 1} - \frac{1}{2} \beta_n = \ln \left( \frac{n + 1}{2 n} \right)
+\]
+
+
+Il s'agit d'une relation de r{\'e}currence lin{\'e}aire. Une suite
+v{\'e}rifiant cette relation peut s'{\'e}crire comme la somme d'une suite
+v{\'e}rifiant $\gamma_{n + 1} - \frac{1}{2} \gamma_n = 0$, $\forall n \geq 1$,
+et une solution particuli{\`e}re.
+
+Tout d'abord, une suite $(\gamma_n)_{n \geq 1}$ v{\'e}rifiant pour tout $n
+\geq 1$ $\gamma_{n + 1} - \frac{1}{2} \gamma_n = 0$, est une suite
+g{\'e}om{\'e}trique de raison $\frac{1}{2}$. Donc, pour tout $n \geq 1$
+\[ \gamma_n = \frac{\gamma_1}{2^{n - 1}} \]
+
+
+Cherchons une solution particuli{\`e}re, soit $(\Gamma_n)_{n \geq 1}$ une
+solution particuli{\`e}re. On s'inspire de la m{\'e}thode de la variation de
+la constante pour les {\'e}quations diff{\'e}rentielles lin{\'e}aires.
+
+On pose, pour tout $n \geq 1$
+\[ (\sigma_n)_{n \geq 1} \assign (2^{n - 1} \Gamma_n)_{n \geq 1} \]
+
+
+On a pour tout $n \geqslant 1$
+\[ \Gamma_n = \frac{\sigma_n}{2^{n - 1}} \]
+
+
+Avec pour tout $n \geqslant 1$
+\[ \Gamma_{n + 1} - \frac{1}{2} \Gamma_n = \ln \left( \frac{n + 1}{2 n}
+   \right) \]
+
+
+Donc, pour tout $n \geqslant 1$
+\[ \sigma_{n + 1} - \sigma_n = 2^n \ln \left( \frac{n + 1}{2 n} \right) \]
+
+
+Par suite, pour tout $n \geqslant 1$
+\begin{eqnarray*}
+  \sigma_n & = & \sum_{k = 1}^{n - 1} (\sigma_{k + 1} - \sigma_k) + \sigma_1\\
+  & = & \sum_{k = 1}^{n - 1} 2^k \ln \left( \frac{k + 1}{2 k} \right) +
+  \sigma_1
+\end{eqnarray*}
+
+
+\
+
+En prenant $\sigma_1 = 0$, on obtient, pour tout $n \geq 1$
+\[ \Gamma_n = \sum_{k = 1}^{n - 1} \frac{1}{2^{n - 1 - k}} \ln \left( \frac{k
+   + 1}{2 k} \right) \]
+\text{}
+
+Donc, pour tout $n \geq 1$
+\[ \beta_n = \frac{\gamma_1}{2^{n - 1}} + \sum_{k = 1}^{n - 1} \frac{1}{2^{n
+   - 1 - k}} \ln \left( \frac{k + 1}{2 k} \right) \]
+
+
+avec $\gamma_1$ est une constante, d{\'e}termin{\'e}e par la donn{\'e}e d'un
+terme de la suite $(\beta_n)_{n \geq 1}$
+
+Or $\beta_1 = \ln u_1 = \gamma_1$
+
+Finalement, pour tout $n \geq 1$,
+\[ \beta_n = \frac{\ln u_1}{2^{n - 1}} + \sum_{k = 1}^{n - 1} \frac{1}{2^{n -
+   1 - k}} \ln \left( \frac{k + 1}{2 k} \right) \]
+
+
+Par suite, pour tout $n \geq 1$
+\begin{eqnarray*}
+  u_n  & = & \exp \left( \frac{\ln u_1}{2^{n - 1}} + \sum_{k = 1}^{n - 1}
+  \frac{1}{2^{n - 1 - k}} \ln \left( \frac{k + 1}{2 k} \right) \right)\\
+  & = & u_1^{\frac{1}{2^{n - 1}}}  \prod_{k = 1}^{n - 1} \left( \frac{k +
+  1}{2 k} \right)^{\frac{1}{2^{n - 1 - k}}}
+\end{eqnarray*}
+
+
+$\rightarrow$ d{\'e}terminons la limite de $(u_n)_{n \geq 1}$
+
+Pour tout $n \geqslant 1$, on a
+
+
+\begin{eqnarray*}
+  \ln (u_n) & = & \beta_n\\
+  & = & \frac{1}{2^{n - 1}} \ln (u_1) + \frac{1}{2^{n - 1}}  \sum_{k = 1}^{n
+  - 1} 2^k \ln \left( \frac{k + 1}{2 k} \right)
+\end{eqnarray*}
+\[ \  \]
+
+
+Or, $\frac{1}{2^{n - 1}} \ln (U_1) \xrightarrow[n \to \infty]{} 0$. De plus,
+pour tout $ \text{} n \geq 1$
+\[ \frac{1}{2^{n - 1}}  \sum_{k = 1}^{n - 1} 2^k \ln \left( \frac{k + 1}{2 k}
+   \right) = \frac{\sum_{k = 1}^{n - 1} 2^k \ln \left( \frac{k + 1}{2 k}
+   \right)}{\sum_{k = 1}^{n - 1} 2^k} \cdot \frac{2^n - 2}{2^{n - 1}} \]
+
+
+La s{\'e}rie $\underset{n \geq 0}{\sum}  2^n$ diverge, donc on peut appliquer
+le th{\'e}or{\`e}me de C{\'e}saro (puisque $\ln \left( \frac{n + 1}{2 n}
+\right) \xrightarrow[n \rightarrow + \infty]{} \ln \left( \frac{1}{2} \right)$
+). Il s'ensuit que
+
+
+\[ \ln U_n \xrightarrow[n \to + \infty]{} 2 \ln \left( \frac{1}{2} \right) =
+   \ln \left( \frac{1}{4} \right) \]
+
+
+Par suite,
+\[ U_n \xrightarrow[n \to + \infty]{} \frac{1}{4} \]
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

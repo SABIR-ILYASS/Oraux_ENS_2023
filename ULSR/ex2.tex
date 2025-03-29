@@ -1,0 +1,102 @@
+Cet exercice porte sur l'{\'e}tude asymptotique d'une suite r{\'e}currente
+lin{\'e}aire d'ordre deux {\`a} coefficients variables.
+\begin{exercise}[]
+On consid{\`e}re $(a_n), (b_n)$ deux suites telles que
+\[ a_n = 1 + o (1), \quad b_n = 1 + o (1) \]
+et $u_n$ une suite de nombres r{\'e}els strictement positifs telle que
+\[ u_{n + 1} = a_n u_n + b_n u_{n - 1} \]
+Montrer que les suites $v_n = \frac{u_{n + 1}}{u_n}$ et $w_n = \frac{1}{n}
+\log u_n$ convergent.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass, ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass - ZINE Akram)}
+
+
+Soient $(a_n), (b_n)$ deux suites telles que $a_n = 1 + o (1), \quad b_n = 1 +
+o (1)$ et $u_n$ une suite de nombres r{\'e}els strictement positifs telle que
+\[ u_{n + 1} = a_n u_n + b_n u_{n - 1} \]
+
+
+Montrons que $v_n = \frac{u_{n + 1}}{u_n}$ converge,
+
+On a pour tout $n \in \mathbb{N}^{\ast}$,
+\begin{eqnarray*}
+  v_n & = & a_n + \frac{b_n}{v_{n - 1}} 
+\end{eqnarray*}
+
+
+Donc, pour tout $n \in \mathbb{N}$, on a
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sup}} (v_k) & = & \underset{k =
+  1}{\overset{n}{\sup}} (a_k) + \underset{k = 1}{\overset{n}{\sup}} (b_k)
+  \underset{k = 1}{\overset{n}{\sup}} \left( \frac{1}{v_{k - 1}} \right)\\
+  & = & \underset{k = 1}{\overset{n}{\sup}} (a_k) + \frac{\underset{k =
+  1}{\overset{n}{\sup}} (b_k)}{\underset{k = 0}{\overset{n - 1}{\inf}} (v_k)}
+\end{eqnarray*}
+
+
+De m{\^e}me,
+\[ \underset{k = 1}{\overset{n}{\inf}} (v_k) = \underset{k =
+   1}{\overset{n}{\inf}} (a_k) + \frac{\underset{k = 1}{\overset{n}{\inf}}
+   (b_k)}{\underset{k = 0}{\overset{n - 1}{\sup}} (v_k)} \]
+
+
+Or, les deux suites $\left( \underset{k = 1}{\overset{n}{\sup}} (v_k)
+\right)_{n \in \mathbb{N}}$ et $\left( \underset{k = 1}{\overset{n}{\inf}}
+(v_k) \right)_{n \in \mathbb{N}}$sont monotones. En particulier, elles
+admettent une limite dans $\mathbb{R} \cup \{ - \infty, + \infty \}$, notons
+$s$et $l$ leurs limites respectivement.
+
+On a par passage {\`a} la limite lorsque $n \rightarrow + \infty$
+\[ s = 1 + \frac{1}{l} \infixand l = 1 + \frac{1}{s} \]
+
+
+Donc, par positivit{\'e} de $s$ et $l$, on a $s = l = \frac{1 + \sqrt{5}}{2}$.
+
+D'o{\`u} $(v_n)_{n \in \mathbb{N}}$ est convergente et converge vers $\frac{1
++ \sqrt{5}}{2} .$
+
+\
+
+\tmtextbf{Lemme 1. (lemme de C{\'e}saro)}
+
+Soit $(z_n)_{n \in \mathbb{N}^{\ast}}$ une suite de nombres r{\'e}els ou
+complexes qui converge vers $l$. Alors la suite $\left( \frac{1}{n}
+\underset{k = 1}{\overset{n}{\sum}} z_n \right)_{n \in \mathbb{N}^{\ast}}$ est
+convergente et converge vers la m{\^e}me limite $l$.
+
+\
+
+\tmtextbf{Preuve du lemme 1.}
+
+Soit $\varepsilon > 0$, on a l'existence de $N_1 \in \mathbb{N}^{\ast}$, tel
+que pout tout $n \geqslant N_1,$ $| z_n - l | < \frac{\varepsilon}{2}$. Par
+suite, pour tout $n \geqslant N_1$
+\begin{eqnarray*}
+  \left| \frac{1}{n} \underset{k = 1}{\overset{n}{\sum}} z_k - l \right| &
+  \leqslant & \frac{1}{n} \underset{k = 1}{\overset{n}{\sum}} | z_k - l |\\
+  & \leqslant & \frac{1}{n} \underset{k = 1}{\overset{N_1 - 1}{\sum}} | z_k -
+  l | + \frac{n - N_1}{2 n} \varepsilon
+\end{eqnarray*}
+
+
+Or, $\frac{1}{n} \underset{k = 1}{\overset{N_1 - 1}{\sum}} | z_k - l |
+\underset{n \longrightarrow + \infty}{\longrightarrow} 0$, donc il existe $N_2
+\in \mathbb{N}^{\ast}$ tel que pour tout $n \geqslant N_2$, on a
+\[ \frac{1}{n} \underset{k = 1}{\overset{N_1 - 1}{\sum}} | z_k - l | <
+   \frac{\varepsilon}{2} \]
+
+
+Ainsi, pour tout $n \geqslant \max (N_1, N_2)$, on a
+\[ \left| \frac{1}{n} \underset{k = 1}{\overset{n}{\sum}} z_k - l \right| <
+   \varepsilon \]
+
+
+D'o{\`u} le lemme.
+
+En appliquant ce lemme, on obtient alors $w_n \underset{n \longrightarrow +
+\infty}{\sim} \frac{1}{n} \underset{k = 1}{\overset{n}{\sum}} \log (v_k)
+\underset{n \longrightarrow + \infty}{\longrightarrow} \log \left( \frac{1 +
+\sqrt{5}}{2} \right)$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

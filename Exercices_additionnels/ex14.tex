@@ -1,0 +1,123 @@
+Les propri{\'e}t{\'e}s arithm{\'e}tiques des puissances de 2 et leur
+d{\'e}veloppement d{\'e}cimal rec{\`e}lent des surprises fascinantes. Cet
+exercice propose d'utiliser des outils de th{\'e}orie des nombres pour
+{\'e}tablir un r{\'e}sultat contre-intuitif sur les premiers chiffres de ces
+puissances.
+\begin{exercise}[(Oral ULM 2008)]
+Montrer qu'il existe une infinit{\'e} de puissances de 2 dont le
+d{\'e}veloppement d{\'e}cimal commence par 7.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Le r{\'e}sultat, {\'e}nonc{\'e} ici en base 10, et pour les puissances de 2
+qui commence par 7, est en fait valable pour tout base $b \geq 2$ et pour les
+puissances de $a \geq 2$ tel qu'il existe au moins un nombre premier $p$ qui
+divise $a$ et ne divise pas $b$ ou divise $b$ et ne divise pas $a$, et en
+rempla{\c c}ant 7 par n'importe quelle nombre $r \in \llbracket 1, b - 1
+\rrbracket$.
+
+\
+
+Nous traiterons le cas g{\'e}n{\'e}ral, et on souhaite d{\'e}montrer qu'il
+existe une infinit{\'e} de puissances de $a \geq 2$ dont le d{\'e}veloppement
+dans la base $b \geq 2$ commence par $r$ o{\`u} $(a, b, r) \in
+\mathbb{N}^{\ast 3}$ tel que $a, b \geq 2$, et qu'il existe au moins un nombre
+premier $p$ qui divise $a$ et ne divise pas $b$ ou qui divise $b$ et ne divise
+pas $a$ et $r \in \llbracket 1, b - 1 \rrbracket$.
+
+\
+
+Avec les notations pr{\'e}c{\'e}dentes, il suffit de montrer qu'il existe une
+infinit{\'e} de couple $(n, k) \in \mathbb{N}^2$ tels que
+\[ r \leq \frac{a^n}{b^k} < r + 1 \]
+
+
+c'est-{\`a}-dire :
+\[ \ln r \leq n \ln a - k \ln b < \ln (r + 1) \]
+
+
+Montrons que $\ln a\mathbb{Z}+ \ln b\mathbb{Z}$ est dense dans $\mathbb{R}$.
+Puisque les sous-groupes de $\mathbb{R}$ sont soit dense sur $\mathbb{R}$ ou
+de la forme $\alpha \mathbb{Z}$ o{\`u} $\alpha \in \mathbb{R}^+$ (r{\'e}sultat
+classique).
+
+Puisque $\ln a\mathbb{Z}+ \ln b\mathbb{Z}$ est un sous-groupe de $\mathbb{R}$,
+il suffit de montrer que $\ln a\mathbb{Z}+ \ln b\mathbb{Z}$ ne s'{\'e}crit pas
+sous la forme $\alpha \mathbb{Z}$ avec $\alpha > 0$. Cela revient {\`a}
+montrer que $\frac{\ln a}{\ln b} \nin \mathbb{Q}$.
+
+Supposons par l'absurde que $\frac{\ln a}{\ln b} \in \mathbb{Q}$, alors il
+existe $P, Q \in \mathbb{N}^{\ast}$ tels que $\frac{\ln a}{\ln b} =
+\frac{P}{Q}$ donc $a^Q = b^P$, ce qui est contradictoire avec l'existence de
+$p$ premier qui divise $a$ et ne divise pas $b$ ou divise $b$ et ne divise pas
+$a$.
+
+Ainsi, $\ln a\mathbb{Z}+ \ln b\mathbb{Z}$ dense dans $\mathbb{R}$.
+
+Par cons{\'e}quent, $(\ln a\mathbb{Z}+ \ln b\mathbb{Z}) \cap [\ln r, \ln (r +
+1)]$ dense dans $[\ln r, \ln r + 1]$, donc il existe une infinit{\'e} de
+couples $(n, k) \in \mathbb{Z}^2$ tels que :
+\[ \ln r \leq n \ln a - k \ln b < \ln (r + 1) \]
+
+
+Pour finir, il ne reste {\`a} montrer que l'ensemble :
+\[ \{(n, k) \in (\mathbb{Z}^{\ast}_- \times \mathbb{Z}^{\ast}_-) \cup
+   (\mathbb{Z}^{\ast}_- \times \mathbb{N}) \cup (\mathbb{N} \times
+   \mathbb{Z}^{\ast}_-) \mid \ln r \leq n \ln a - k \ln b < \ln (r + 1)\} \]
+
+
+est fini.
+
+Tout d'abord, il n'existe aucun couple $(n, k) \in \mathbb{Z}^{\ast}_- \times
+\mathbb{N}$ tel que
+\[ \ln r \leq n \ln a - k \ln b < \ln (r + 1) \]
+
+
+La suite $(n \ln a + k \ln b)_{n \in \mathbb{N}}$ est strictement croissante,
+puisque $\ln b > 0$ avec $\underset{n \rightarrow + \infty}{\lim} (n \ln a + k
+\ln b) = + \infty$
+
+Ainsi, il existe $n_0 \in \mathbb{N}$, tel que pour tout $k \geqslant n_0$
+\[ n \ln a + k \ln b \geq \ln (r + 1) \]
+
+
+Donc pour que $n \ln a - k \ln b \leq \ln (r + 1)$, il faut $k \leq n_0$.
+Ainsi $k \in \mathbb{Z}_-^{\ast} \cap] - n_0, + \infty [$
+
+Par cons{\'e}quent, $k \in \llbracket 1 - n_0, 0 \rrbracket$ et comme $\ln r
+\leq n \ln a - k \ln b \leq \ln (r + 1)$
+
+alors
+\[ \frac{\ln r + k \ln b}{\ln a} \leq n \leq \frac{\ln (r + 1) + k \ln b}{\ln
+   a} \]
+
+
+Donc
+\[ n \in \left\llbracket \left\lceil \frac{\ln r + k \ln b}{\ln a}
+   \right\rceil, \left\lfloor \frac{\ln (r + 1) + k \ln b}{\ln a}
+   \right\rfloor \right\rrbracket \]
+
+
+D'o{\`u}
+\[ (n, k) \in \llbracket 1 - n_0, 0 \rrbracket \times \bigcup_{k = 1 - n_0}^0
+   \left\llbracket \left\lceil \frac{\ln r + k \ln b}{\ln a} \right\rceil,
+   \left\lfloor \frac{\ln (r + 1) + k \ln b}{\ln a} \right\rfloor
+   \right\rrbracket \]
+
+
+est fini
+
+De m{\^e}me, on montre que l'ensemble des couples $(n, k) \in \mathbb{N}
+\times \mathbb{Z}_-^{\ast}$ tel que
+\[ \ln r \leq n \ln a - k \ln b \leq \ln (r + 1) \]
+
+
+est de cardinal fini.
+
+Ce qui montre qu'il existe une infinit{\'e} de couples $(n, k) \in
+\mathbb{N}^2$ tels que $\ln r \leq n \ln a - k \ln b \leq \ln (r + 1)$
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

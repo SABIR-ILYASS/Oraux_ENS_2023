@@ -1,0 +1,125 @@
+Cet exercice traite des unions d{\'e}nombrables d'ensembles ferm{\'e}s. Il
+demande de prouver que l'intervalle ouvert$] 0, 1 [$ne peut pas {\^e}tre
+{\'e}crit comme union d{\'e}nombrable d'intervalles ferm{\'e}s disjoints
+d'int{\'e}rieur non vide, puis d'{\'e}tendre ce r{\'e}sultat au carr{\'e}
+ouvert ]$0, 1 [^2$ pour des disques ferm{\'e}s. L'exercice fait appel {\`a}
+des notions de topologie et de th{\'e}orie de la mesure.
+
+\begin{exercise}[(Unions de ferm{\'e}s)]
+Montrer que $] 0, 1 [$ n'est pas l'union d'un nombre d{\'e}nombrable
+d'intervalles ferm{\'e}s disjoints d'int{\'e}rieur non vide.
+
+Montrer que le carr{\'e} ouvert $] 0, 1 [^2$ n'est pas l'union d'un nombre
+d{\'e}nombrable de disques ferm{\'e}s.
+\end{exercise}
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Pour r{\'e}pondre aux deux parties de l'exercice, on va montrer la
+g{\'e}n{\'e}ralisation suivante :
+
+\tmtextbf{G{\'e}n{\'e}ralisation de l'exercice :}
+
+Pour tout $n \in \mathbb{N}^{\ast}$, on a $] 0, 1 [^n$ n'est pas l'union d'une
+suite d{\'e}nombrable de ferm{\'e}es non vide deux {\`a} deux disjoints.
+
+Soit $n \in \mathbb{N}^{\ast}$, Raisonnons par l'absurde en supposant que $]
+0, 1 [^n$ peut {\^e}tre d{\'e}compos{\'e} en une union d{\'e}nombrable de
+ferm{\'e}s non vides deux {\`a} deux disjoints, et montrons que cela conduit
+{\`a} une contradiction avec la propri{\'e}t{\'e} de connexit{\'e} de $] 0, 1
+[^n$.
+
+Supposons qu'il existe une famille d{\'e}nombrable $(F_k)_{k \in \mathbb{N}}$
+de sous-ensembles tels que :
+\begin{itemize}
+  \item Pour tout $k \in \mathbb{N}$, $F_k \subset] 0, 1 [^n$ est ferm{\'e}
+  dans $] 0, 1 [^n$ et non vide.
+  
+  \item Pour tout $k, l \in \mathbb{N}$ avec $k \neq l$, $F_k \cap F_l =
+  \emptyset$ (ils sont deux {\`a} deux disjoints).
+  
+  \item $] 0, 1 [^n = \underset{k = 1}{\overset{\infty}{\bigcup}} F_k$ (leur
+  union est $] 0, 1 [^n$).
+\end{itemize}
+
+
+Pour aboutir {\`a} une contradiction, on va utiliser le lemme suivant, qui
+pr{\'e}sente une propri{\'e}t{\'e} fondamentale des espaces connexes.
+
+\tmtextbf{Lemme 1.}
+
+Dans un espace connexe, la seule fa{\c c}on de le partitionner en ferm{\'e}s
+disjoints est que l'un des ferm{\'e}s soit l'espace entier et les autres
+soient vides. En d'autres termes, un espace connexe ne peut pas {\^e}tre
+d{\'e}compos{\'e} en une union de plusieurs ferm{\'e}s non vides deux {\`a}
+deux disjoints.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Supposons que $X$ est un espace topologique connexe, et qu'il existe une
+famille $(F_i)_{i \in I}$ de ferm{\'e}s de $X$ tels que :
+\begin{itemize}
+  \item Pour tout $i \in I$, $F_i$ est ferm{\'e} dans $X$ et non vide.
+  
+  \item Les $F_i$ sont deux {\`a} deux disjoints : $F_i \cap F_j = \emptyset$
+  pour $i \neq j$.
+  
+  \item Leur union est l'espace : $X = \underset{i \in I}{\bigcup} F_i$.
+\end{itemize}
+
+
+On va montrer que n{\'e}cessairement un seul des $F_i$ est {\'e}gal {\`a} $X$
+et que les autres sont vides.
+
+Supposons par l'absurde qu'il existe au moins deux ferm{\'e}s non vides
+disjoints $F_1$ et $F_2$ dans $X$.
+
+Consid{\'e}rons les ensembles $A = F_1$ et $B = X \setminus F_1 = \underset{i
+\in I}{\bigcup} F_i$.
+\begin{itemize}
+  \item $A$ est ferm{\'e} dans $X$ (par hypoth{\`e}se).
+  
+  \item $B$ est l'union de ferm{\'e}s (les $F_i$ pour $i \neq 1$), donc
+  ferm{\'e} dans $X$.
+  
+  \item $A$ et $B$ sont disjoints (puisque les $F_i$ sont deux {\`a} deux
+  disjoints).
+  
+  \item De plus, $A \cup B = X$.
+\end{itemize}
+
+
+Ainsi, nous avons partitionn{\'e} $X$ en deux ferm{\'e}s disjoints non vides
+$A$ et $B$.
+
+Selon la d{\'e}finition de la connexit{\'e}, un espace connexe ne peut pas
+{\^e}tre partitionn{\'e} en deux ferm{\'e}s disjoints non vides.
+
+Cette situation contredit donc la connexit{\'e} de $X$.
+
+Donc, il n'est pas possible qu'il y ait au moins deux ferm{\'e}s non vides
+disjoints dans une telle partition de $X$.
+
+Par suite, un seul des $F_i$ est {\'e}gal {\`a} $X$, et les autres $F_i$ sont
+vides.
+
+\
+
+Revenons {\`a} notre hypoth{\`e}se initiale sur $] 0, 1 [^n$.
+
+On a suppos{\'e} que $] 0, 1 [^n$ est d{\'e}compos{\'e} en une union
+d{\'e}nombrable de ferm{\'e}s non vides deux {\`a} deux disjoints ($F_k)_{k
+\in \mathbb{N}}$.
+
+Puisque $] 0, 1 [^n$ est un espace connexe ({\'e}tant un ouvert connexe de
+$\mathbb{R}^n$), la propri{\'e}t{\'e} d{\'e}montr{\'e}e s'applique.
+
+Selon cette propri{\'e}t{\'e}, il devrait y avoir un unique $F_k$ {\'e}gal
+{\`a} $] 0, 1 [^n$ et les autres $F_k$ seraient vides.
+
+Cependant, par hypoth{\`e}se, tous les $F_k$ sont non vides, ce qui est en
+contradiction avec la conclusion de la propri{\'e}t{\'e}.
+
+Ainsi, il est donc impossible que $] 0, 1 [^n$ soit l'union d{\'e}nombrable de
+ferm{\'e}s non vides deux {\`a} deux disjoints.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

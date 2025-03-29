@@ -1,0 +1,86 @@
+Cet exercice explore une in{\'e}galit{\'e} math{\'e}matique impliquant une
+somme pond{\'e}r{\'e}e de puissances de variables positives.
+
+\begin{exercise}[]
+Soient \ ${\color[HTML]{000000}a_1, \ldots, a_m > 0}$, ${\color[HTML]{000000}n
+\in \mathbb{N}^{\ast}}$. Montrer que le maximum de $K = K
+(a_1, \ldots, a_n)$ v{\'e}rifiant pour tout {$x_1, \ldots,
+x_m$}>0
+
+{\[ {\underset{k = 1}{\overset{m}{\sum}} a_k x^{n
+   }_k \geqslant K \left( \underset{k = 1}{\overset{m}{\sum}} x_k \right)^{n
+   }} \]}
+
+\
+
+est :
+\[ {K = \frac{1}{\left( \frac{1}{\sqrt[n - 1]{a_1}} + \cdots +
+   \frac{1}{\sqrt[n - 1]{a_m}} \right)^{n - 1}}} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soit $x_1, \ldots, x_m > 0$
+
+Soient $y_1, \ldots, y_m$ des nombres r{\'e}els non-n{\'e}gatifs tels que $y_1
++ \cdots + y_m = x_1 + \cdots + x_m$
+
+Selon l'\tmtextbf{in{\'e}galit{\'e} de H{\"o}lder}, on a
+\[ \left( \underset{k = 1}{\overset{m}{\sum}} a_k x^{n }_k
+   \underset{}{\overset{}{}} \right) \left( \underset{k =
+   1}{\overset{m}{\sum}} a_k y^{n }_k \right)^{n - 1} \geqslant \left(
+   \underset{k = 1}{\overset{m}{\sum}} a_k x^{}_k y^{n - 1}_k \right)^n \]
+
+
+Par cons{\'e}quent,
+\[ \underset{k = 1}{\overset{m}{\sum}} a_k x^{n }_k \underset{}{\overset{}{}}
+   \geqslant \frac{\left( \underset{k = 1}{\overset{m}{\sum}} a_k x^{}_k y^{n
+   - 1}_k \right)^n}{\left( \underset{k = 1}{\overset{m}{\sum}} a_k y^{n }_k
+   \right)^{n - 1}} \]
+
+
+\
+
+Nous choisirons $y_1, \ldots, y_m$ de sorte que $a_1 y^{n - 1}_1 = \cdots =
+a_m y^{n - 1}_m = C $, Si c'est le cas alors
+
+
+\[ \underset{k = 1}{\overset{m}{\sum}} a_k x^{n }_k \underset{}{\overset{}{}}
+   \geqslant \frac{C^n \left( \underset{k = 1}{\overset{m}{\sum}} x^{}_k
+   \right)^n}{C^{n - 1} \left( \underset{k = 1}{\overset{m}{\sum}} y _k
+   \right)^{n - 1}} = C \underset{k = 1}{\overset{m}{\sum}} {x_1^{}}_k \]
+
+
+On a pour tout $k = 1, \ldots, m$
+\[ y_k = \sqrt[n - 1]{\frac{C}{a_k}} \]
+
+
+Par cons{\'e}quent,
+\[ \sqrt[n - 1]{C} \left( \frac{1}{\sqrt[n - 1]{a_1}} + \cdots +
+   \frac{1}{\sqrt[n - 1]{a_m}} \right) = x_1 + \cdots + x_m \]
+
+
+Ainsi,
+\[ C = \frac{(x_1 + \cdots + x_m)^{n - 1}}{\left( \frac{1}{\sqrt[n - 1]{a_1}}
+   + \cdots + \frac{1}{\sqrt[n - 1]{a_m}} \right)^{n - 1}} \]
+
+
+\
+
+On en d{\'e}duit que
+\[ \underset{k = 1}{\overset{m}{\sum}} a_k x^{n }_k \underset{}{\overset{}{}}
+   \geqslant \frac{(x_1 + \cdots + x_m)^n}{\left( \frac{1}{\sqrt[n - 1]{a_1}}
+   + \cdots + \frac{1}{\sqrt[n - 1]{a_m}} \right)^{n - 1}} \]
+
+
+Et l'{\'e}galit{\'e} est atteinte pour $x_k = \frac{1}{\sqrt[n - 1]{a_k}
+\left( \frac{1}{\sqrt[n - 1]{a_1}} + \cdots + \frac{1}{\sqrt[n - 1]{a_m}}
+\right)}$, $k = 1, \ldots, m$
+
+\
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

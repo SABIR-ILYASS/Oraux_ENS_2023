@@ -1,0 +1,42 @@
+L'{\'e}tude des propri{\'e}t{\'e}s arithm{\'e}tiques des sommes harmoniques
+r{\'e}v{\`e}le des r{\'e}sultats surprenants. Cet exercice combine la
+th{\'e}orie des nombres et l'analyse pour {\'e}tablir une propri{\'e}t{\'e}
+remarquable concernant la divisibilit{\'e} de ces sommes par des carr{\'e}s de
+nombres premiers.
+\begin{exercise}[(le th{\'e}or{\`e}me de Wolstenholme)]
+Pour tout $n \in \mathbb{N}^{\ast}$, on note :
+\[ \overset{n - 1}{\underset{k = 1}{\sum}} \frac{1}{k} = \frac{a_n}{b_n},
+   \tmop{avec} a_n, b_n \in \mathbb{N} \tmop{tels} \tmop{que} a_n \wedge b_n =
+   1 \]
+   
+Montrer que pour tout nombre premier $p \geqslant 5$, on a $p^2$ divise $a_p$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soit $p \geqslant 5$, un nombre premier. Dans $\mathbb{Z}/ p\mathbb{Z}$, on a
+:
+\begin{eqnarray*}
+  \frac{2}{p} \overset{p - 1}{\underset{k = 1}{\sum}} \frac{1}{k} & = &
+  \frac{2}{p} \left( \overset{(p - 1) / 2}{\underset{k = 1}{\sum}} \frac{1}{k}
+  + \overset{p - 1}{\underset{k = 1 + (p - 1) / 2}{\sum}} \frac{1}{k}
+  \right)\\
+  & = & \frac{2}{p} \overset{(p - 1) / 2}{\underset{k = 1}{\sum}} \frac{1}{k}
+  + \frac{1}{p - k}\\
+  & = & 2 \overset{(p - 1) / 2}{\underset{k = 1}{\sum}} \frac{1}{k (p - k)}\\
+  & = & - \overset{p - 1}{\underset{k = 1}{\sum}} \frac{1}{k^2}\\
+  & = & - \overset{p - 1}{\underset{k = 1}{\sum}} k^2\\
+  & = & - \frac{p (p - 1) (2 p - 1)}{6}
+\end{eqnarray*}
+
+
+Ainsi,
+\[ \overset{p - 1}{\underset{k = 1}{\sum}} \frac{1}{k} = - \frac{(p - 1) (2 p
+   - 1)}{12} p^2 \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

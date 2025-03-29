@@ -1,0 +1,293 @@
+Ce probl{\`e}me explore diff{\'e}rentes versions du th{\'e}or{\`e}me du point
+fixe pour des applications contractantes et non expansives dans
+$\mathbb{R}^n$.
+
+\begin{exercise}[]
+On consid{\`e}re l'espace vectoriel $\mathbb{R}^n$ {\'e}quip{\'e} de la norme
+euclidienne $\| . \|$.
+
+Une application $A : \mathbb{R}^n \rightarrow \mathbb{R}^n$ est dite
+contractante s'il existe $k < 1$ tel que, pour tous $x, y \in \mathbb{R}^n$,
+$\| A (x) - A (y) \| \leqslant k \| x - y \|$, et non expansive si $\| A (x) -
+A (y) \| \leqslant \| x - y \|$ pour tous $x, y \in \mathbb{R}^n$.
+
+1. Montrer qu'une application contractante admet un unique point fixe.
+
+2. Soient $A : \mathbb{R}^n \rightarrow \mathbb{R}^n$ une application non
+expansive et $K \subset \mathbb{R}^n$ un sous-ensemble convexe, ferm{\'e} et
+born{\'e} tel que $A (K) \subseteq K$. Montrer que $A$ admet un point fixe.
+
+3. Soit $A : \mathbb{R}^n \rightarrow \mathbb{R}^n$ une application non
+expansive. Montrer que pour tout $R > 0$, l'application
+\[ \tilde{A} (x) = \min (1, R \parallel A (x) \parallel^{- 1}) A (x) \]
+est non expansive et admet un point fixe.
+
+4. Soit $A : \mathbb{R}^n \rightarrow \mathbb{R}^n$ une application non
+expansive. On suppose que l'ensemble
+
+$S : =\{x \in \mathbb{R}^n : \exists \lambda \in [0, 1], x = \lambda A (x)\}$
+est born{\'e}. Montrer que $A$ admet un point fixe.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+1. Soit $x_0 \in \mathbb{R}^n$ un point arbitraire, et d{\'e}finissons la
+suite $(x_n)$ par r{\'e}currence :
+\[ x_{n + 1} = A (x_n) . \]
+
+
+Montrons que la suite $(x_n)_{n \in \mathbb{N}}$ converge.
+
+On a pour tout $n \geqslant 1$,
+\begin{eqnarray*}
+  \|x_{n + 1} - x_n \| & = & \|A (x_n) - A (x_{n - 1})\|\\
+  & \leqslant & k\|x_n - x_{n - 1} \|
+\end{eqnarray*}
+
+
+Par r{\'e}currence, on obtient pour tout $n \in \mathbb{N}$:
+\[ \|x_{n + 1} - x_n \| \leq k^n \|x_1 - x_0 \| \]
+
+
+Pour tout $p > n$, consid{\'e}rons $\|x_p - x_n \|$ :
+\begin{eqnarray*}
+  \|x_p - x_n \| & \leqslant &  \sum_{i = n}^{p - 1} \|x_{i + 1} - x_i \|\\
+  & \leqslant & \|x_1 - x_0 \| \sum_{i = n}^{p - 1} k^i \\
+  & = & \|x_1 - x_0 \| \frac{k^n - k^p}{1 - k}\\
+  & \leqslant & \frac{k^n}{1 - k} \|x_1 - x_0 \|
+\end{eqnarray*}
+
+
+Comme $k \in [0, 1 [$, $k^n  \underset{n \to \infty}{\to} 0$. Donc, la suite
+$(x_n)_{n \in \mathbb{N}}$ est de Cauchy. Puisque $\mathbb{R}^n$ est complet,
+la suite $(x_n)_{n \in \mathbb{N}}$ converge vers un point $x^{\ast} \in
+\mathbb{R}^n$.
+
+Par continuit{\'e} de $A$ (car elle est lipschitzienne), on a :
+\[ x^{\ast} = \underset{n \to \infty}{\lim}  x_n = \underset{n \to
+   \infty}{\lim} A (x_{n - 1}) = A \left( \underset{n \to \infty}{\lim} x_{n -
+   1} \right) = A (x^{\ast}) . \]
+
+
+Donc, $x^{\ast}$ est un point fixe de $A$.
+
+\tmtextbf{Unicit{\'e} du point fixe :}
+
+Supposons qu'il existe un autre point fixe $y^{\ast}$ tel que $A (y^{\ast}) =
+y^{\ast}$. Alors :
+\[ \|x^{\ast} - y^{\ast} \|=\|A (x^{\ast}) - A (y^{\ast})\| \leq k\|x^{\ast} -
+   y^{\ast} \|. \]
+
+
+Ainsi,
+\[ (1 - k)\|x^{\ast} - y^{\ast} \| \leq 0. \]
+
+
+Comme $k < 1$, on a $\|x^{\ast} - y^{\ast} \|= 0$, donc $x^{\ast} = y^{\ast}$.
+
+En conclusion, l'application $A$ admet un unique point fixe dans
+$\mathbb{R}^n$.
+
+\
+
+2. Soient $A : \mathbb{R}^n \rightarrow \mathbb{R}^n$ une application non
+expansive et $K \subset \mathbb{R}^n$ un sous-ensemble convexe, ferm{\'e} et
+born{\'e} tel que $A (K) \subset K$. Montrer que $A$ admet un point fixe.
+
+Comme $K$ est un sous-ensemble ferm{\'e} et born{\'e} de $\mathbb{R}^n$. Il
+est donc compact d'apr{\`e}s le th{\'e}or{\`e}me de Heine-Borel.
+
+Or, $A$ est une application non expansive, c'est-{\`a}-dire que pour tous $x,
+y \in \mathbb{R}^n$, on a :
+\[ \|A (x) - A (y)\| \leq \|x - y\|. \]
+
+
+Cela implique que $A$ est lipschitzienne. Par cons{\'e}quent, $A$ est continue
+sur $\mathbb{R}^n$, et en particulier sur $K$.
+
+Le th{\'e}or{\`e}me du point fixe de Brouwer (voir le lemme 1) affirme que
+toute application continue d'un compact convexe non vide de $\mathbb{R}^n$
+dans lui-m{\^e}me poss{\`e}de au moins un point fixe.
+
+Comme $K$ est compact, convexe et non vide (puisque tout compact dans
+$\mathbb{R}^n$ est non vide), et que $A (K) \subset K$, on peut appliquer le
+th{\'e}or{\`e}me de Brouwer {\`a} l'application $A$ restreinte {\`a} $K$.
+
+\tmtextbf{Lemme 1. (Th{\'e}or{\`e}me du point fixe de Brouwer)}
+
+Soit $K \subset \mathbb{R}^n$ un compact convexe non vide. Toute application
+continue $f : K \rightarrow K$ admet au moins un point fixe.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Supposons par l'absurde que $f$ n'a pas de point fixe sur $K$. Alors, pour
+tout $x \in K$, $f (x) \neq x$.
+
+D{\'e}finissons l'application $g : K \rightarrow \partial K$ (o{\`u} $\partial
+K$ d{\'e}signe le bord de $K$) par :
+\[ g (x) = x + \lambda (x) [f (x) - x], \]
+
+
+o{\`u} $\lambda (x) > 0$ est choisi de sorte que $g (x) \in \partial K$.
+
+Puisque $K$ est convexe, le segment $[x, f (x)]$ est contenu dans $K$. Comme
+$f (x) \neq x$, le vecteur $f (x) - x$ est non nul. En prolongeant ce segment
+au-del{\`a} de $f (x)$, nous sortons de $K$ car $K$ est compact. Donc, il
+existe un scalaire $\lambda (x) > 0$ tel que $g (x) = x + \lambda (x) [f (x) -
+x]$ appartient {\`a} $\partial K$.
+
+L'application $g$ est continue car elle compos{\'e}e de fonctions continues.
+Elle envoie $K$ dans $\partial K$.
+
+Il est connu qu'il n'existe pas de r{\'e}traction continue d'un compact
+convexe $K$ de $\mathbb{R}^n$ sur son bord $\partial K$ (c'est une
+propri{\'e}t{\'e} topologique des espaces contractiles). En effet, cela
+violerait les propri{\'e}t{\'e}s homologiques ou homotopiques de $K$.
+
+Donc, l'application $f$ admet au moins un point fixe dans $K$.
+
+\
+
+3. Soit $R > 0$, montrons que
+\[ \tilde{A} (x) = \min \left( 1, \dfrac{R}{\|A (x)\|} \right) A (x) \]
+
+
+est non expansive
+
+Soient $x, y \in \mathbb{R}^n$,
+
+\tmtextbf{Cas 1 : }Si $\|A (x)\|< R$ et $\|A (y)\|< R$, on a alors
+\begin{eqnarray*}
+  \| \tilde{A} (x) - \tilde{A} (y)\| & = & \|A (x) - A (y) \|\\
+  & = & \|x - y\|
+\end{eqnarray*}
+
+
+\tmtextbf{Cas 2 :} Si $\|A (x)\| \geq R$ et $\|A (y)\| \geq R$, on a alors
+\begin{eqnarray*}
+  \frac{1}{R^2} \| \tilde{A} (x) - \tilde{A} (y)\|^2 & = & \| \dfrac{1}{\|A
+  (x)\|} A (x) - \dfrac{1}{\|A (y)\|} A (y) \|^2\\
+  & = & 2 - \frac{2}{\|A (x)\|\|A (y)\|} \langle A (x), A (y) \rangle \qquad
+\end{eqnarray*}
+
+
+Pour conclure, il suffit de montrer que :
+\[ 2 - \frac{2}{\|A (x)\|\|A (y)\|} \langle A (x), A (y) \rangle \leqslant
+   \frac{1}{R^2} \|A (x) - A (y)\|^2 \quad (1) \]
+
+
+En posant $\alpha =\|A (x)\| \geq R$, $\beta =\|A (y)\| \geq R$ et $\cos
+(\theta) = \frac{\langle A (x), A (y) \rangle}{\|A (x)\|\|A (y)\|}$, pour
+montrer $(1)$, cela revient {\`a} montrer que
+\[ \frac{\alpha^2}{R^2} + \frac{\beta^2}{R^2} + 2 \cos (\theta) \left( 1 -
+   \frac{\alpha \beta}{R^2} \right) \geqslant 2 \]
+
+
+Puisque $1 - \frac{\alpha \beta}{R^2} < 0$, il suffit de montrer que
+\[ \frac{\alpha^2}{R^2} + \frac{\beta^2}{R^2} - 2 \left( 1 - \frac{\alpha
+   \beta}{R^2} \right) \geqslant 2 \]
+
+
+Ce qui est {\'e}quivalent {\`a} $(\alpha + \beta)^2 \geqslant 4 R^2$ et ceci
+est vrai car $\alpha, \beta \geqslant R$.
+
+\tmtextbf{Cas 3 :} Si $\|A (x)\| \geq R$ et $\|A (y)\|< R$ (respectivement si
+$\|A (x)\|< R$ et $\|A (y)\| \geqslant R$), par sym{\'e}trie, on peut supposer
+sans perte de g{\'e}n{\'e}ralit{\'e} que $\|A (x)\| \geq R$ et $\|A (y)\|< R$,
+on a alors
+\begin{eqnarray*}
+  \| \tilde{A} (x) - \tilde{A} (y)\|^2 & = & \| \dfrac{R}{\|A (x)\|} A (x) - A
+  (y)\|^2\\
+  & = & R^2 +\|A (y)\|^2 - 2 \dfrac{R}{\|A (x)\|}  \langle A (x), A (y)
+  \rangle
+\end{eqnarray*}
+
+
+En posant $\alpha =\|A (x)\| \geq R$, $\beta =\|A (y)\|< R$ et $\cos (\theta)
+= \frac{\langle A (x), A (y) \rangle}{\|A (x)\|\|A (y)\|}$, pour montrer que
+\[ R^2 +\|A (y)\|^2 - 2 \dfrac{R}{\|A (x)\|}  \langle A (x), A (y) \rangle
+   \leqslant \|A (x) - A (y) \|^2 \]
+
+
+Il suffit de montrer que
+\[ R^2 + 2 \beta (\alpha - R) \cos (\theta) \leqslant \alpha^2 \]
+
+
+Puisque $\alpha - R > 0$ et $\beta < R$, il suffit de montrer que
+\[ R^2 + 2 R (\alpha - R) \leqslant \alpha^2 \]
+
+
+Cette in{\'e}galit{\'e} est {\'e}quivalente {\`a} $(\alpha - R)^2 \geqslant
+0$.
+
+\
+
+D'o{\`u} pour tout $x, y \in \mathbb{R}^n$, on a
+\[ \| \tilde{A} (x) - \tilde{A} (y)\| \leqslant \|x - y\| \]
+
+
+Ainsi $\tilde{A}$ est non expansive.
+
+L'application $\tilde{A}$ est continue (car combinaison de fonctions
+continues) et {\`a} valeurs dans la boule ferm{\'e}e $B (0, R$) de
+$\mathbb{R}^n$, c'est-{\`a}-dire $\| \tilde{A} (x)\| \leq R$ pour tout $x \in
+\mathbb{R}^n$.
+
+Or, $B (0, R$)est sous-ensemble de $\mathbb{R}^n$ convexe, ferm{\'e} et
+born{\'e}, donc d'apr{\`e}s la question pr{\'e}c{\'e}dente, $\tilde{A}$ admet
+un point fixe.
+
+\
+
+4. Pour chaque $\lambda \in [0, 1 [\nobracket$, d{\'e}finissons l'application
+$T_{\lambda} : \mathbb{R}^n \rightarrow \mathbb{R}^n$ par :
+\[ T_{\lambda} (x) = \lambda A (x) . \]
+
+
+Pour tout $x, y \in \mathbb{R}^n$,
+\[ \begin{aligned}
+     \|T_{\lambda} (x) - T_{\lambda} (y)\| & =\| \lambda A (x) - \lambda A
+     (y)\|\\
+     & = \lambda \|A (x) - A (y)\|\\
+     & \leq \lambda \|x - y\|.
+   \end{aligned} \]
+
+
+Puisque $\lambda \in [0, 1 [\nobracket$, alors $T_{\lambda}$ est une
+application contractante avec une constante de contraction $\lambda < 1$.
+
+Ainsi, d'apr{\`e}s la question 1, $T_{\lambda}$ admet un unique point fixe
+$x_{\lambda}$ tel que
+\[ x_{\lambda} = T_{\lambda} (x_{\lambda}) = \lambda A (x_{\lambda}) \]
+
+
+Ainsi, pout tout $\lambda \in [0, 1 [\nobracket,$ il existe $x_{\lambda} \in
+\mathbb{R}^n$ tel que $x_{\lambda} = \lambda A (x_{\lambda})$.
+
+En particulier, pour tout $n \in \mathbb{N}^{\ast}$, il existe $x_n \in
+\mathbb{R}^n$, tel que $x_n = \left( 1 - \frac{1}{n} \right) A (x_n)$.
+
+Puisque pour tout $n \in \mathbb{N}$, $x_n \in S$ et que $S$ est born{\'e},
+alors $(x_n)_{n \in \mathbb{N}}$ est born{\'e}e,
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Bolzano-Weierstrass, la suite born{\'e}e
+$(x_n)$ poss{\`e}de une sous-suite convergente $(x_{\varphi (n)})_{n \in
+\mathbb{N}}$. Notons $x$ sa limite. (o{\`u} $\varphi : \mathbb{N} \rightarrow
+\mathbb{N}$ strictement croissante).
+
+Ainsi, pour tout $n \in \mathbb{N}$
+\[ x_{\varphi (n)} = \left( 1 - \frac{1}{\varphi (n)} \right) A (x_{\varphi
+   (n)}) \]
+
+
+Puisque $A$ est non expensive, elle est lipschitizienne, en particulier elle
+esr continue sur $\mathbb{R}^n$. Par passage {\`a} la limite $n \rightarrow +
+\infty$, on trouve
+\[ x = A (x) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

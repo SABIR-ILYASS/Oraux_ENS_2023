@@ -1,0 +1,76 @@
+Dans cet exercice, nous {\'e}tudions le comportement asymptotique de la suite
+$(u_n)_{n \in \mathbb{N}}$ d{\'e}finie par r{\'e}currence, en analysant sa
+croissance et en obtenant les deux premiers termes de son d{\'e}veloppement
+asymptotique.
+\begin{exercise}[]
+Soit $(u_n)_{n \in \mathbb{N}}$ d{\'e}finie par $u_0 \in \mathbb{R}$, et la
+relation : $u_{n + 1} = u_n + e^{- u_n}$ pour tout $n \in \mathbb{N}$.
+
+Donner les deux premiers termes du d{\'e}veloppement asymptotique de $u_n$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+La suite $(u_n)_{n \in \mathbb{N}}$ est croissante. Si elle convergeait vers
+$l \in \mathbb{R}$, on aurait, par continuit{\'e} de l'exponentielle,
+$\underset{n \longrightarrow + \infty}{\lim} e^{- u_n} = e^{- l} = 0$, ce qui
+est impossible. Donc, la suite $(u_n)_{n \in \mathbb{N}}$ tend vers $+
+\infty$.
+
+Posons, pour tout entier naturel $n$, $v_n = e^{u_n}$. On obtient :
+\[ v_{n + 1} = e^{u_{n + 1}} = e^{u_n + \frac{1}{v_n}} = v_n e^{\frac{1}{v_n}}
+\]
+
+
+La suite $(v_n)_{n \in \mathbb{N}}$ est {\`a} termes strictement positifs,
+cro{\^i}t, et diverge vers $+ \infty$. On a :
+\[ v_{n + 1} = v_n \left( 1 + \frac{1}{v_n} + \frac{1}{2 v^2_n} + o \left(
+   \frac{1}{v^2_n} \right) \right) = v_n + 1 + \frac{1}{2 v _n} + o \left(
+   \frac{1}{v_n} \right) \]
+
+
+On en d{\'e}duit que : $\underset{n \longrightarrow + \infty}{\lim} (v_{n + 1}
+- v_n) = 1$. Donc :
+\[ v_n - v_0 \underset{n \longrightarrow + \infty}{\sim} n \infixand
+   \tmop{donc} v_n \underset{n \longrightarrow + \infty}{\sim} n \]
+
+
+et :
+\[ v_{n + 1} - v_n - 1 = \frac{1}{2 v _n} + o \left( \frac{1}{v _n} \right)
+   \underset{n \longrightarrow + \infty}{\sim} \frac{1}{2 v_n} \underset{n
+   \longrightarrow + \infty}{\sim} \frac{1}{2 n} \]
+
+
+On obtient :
+\[ v_n - v_1 - (n - 1) \underset{n \longrightarrow + \infty}{\sim} \quad
+   \underset{k = 1}{\overset{n - 1}{\sum}} \frac{1}{2 k} \quad \underset{n
+   \longrightarrow + \infty}{\sim} \frac{1}{2} \ln (n - 1) \underset{n
+   \longrightarrow + \infty}{\sim} \frac{1}{2} \ln (n) \]
+
+
+Ainsi :
+
+
+\[ v_n = n + \frac{1}{2} \ln (n) + o (\ln (n)) \]
+
+
+En cons{\'e}quence :
+\begin{eqnarray*}
+  u_n & = & \ln (v_n)\\
+  & = & \ln \left( n + \frac{1}{2} \ln (n) + o (\ln (n)) \right)\\
+  & = & \ln \left( n \left( 1 + \frac{1}{2} \frac{\ln (n)}{n} + o \left(
+  \frac{\ln (n)}{n} \right) \right) \right)
+\end{eqnarray*}
+
+
+On d{\'e}veloppe alors :
+\[ u_n = \ln (n) + \ln \left( 1 + \frac{1}{2} \frac{\ln (n)}{n} + o \left(
+   \frac{\ln (n)}{n} \right) \right) \]
+
+
+Enfin :
+\[ u_n = \ln (n) + \frac{1}{2} \frac{\ln (n)}{n} + o \left( \frac{\ln (n)}{n}
+   \right) \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

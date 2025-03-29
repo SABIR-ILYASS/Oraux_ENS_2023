@@ -1,0 +1,110 @@
+Les propri{\'e}t{\'e}s des suites de la forme $\{nx\}$ (partie fractionnaire)
+sont riches en applications dans l'{\'e}tude de la r{\'e}partition des
+nombres. Cet exercice propose d'{\'e}tablir un r{\'e}sultat sur l'existence
+d'un terme de cette suite dans un intervalle donn{\'e}.
+
+\begin{exercise}[]
+Soit $x \in] 0, \frac{2}{3} [$, montrer qu'il existe $n \in \mathbb{N}$ tel
+que $\{nx\} \in [\frac{1}{3}, \frac{2}{3} [$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $x \in] 0, \frac{2}{3} [$. On sait que pour tout $b \in \mathbb{N}$ tel
+que $b \geq 2$, il existe une suite $(a_n)_{n \in \mathbb{N}}$ telle que :
+\[ \forall n \in \mathbb{N}^{\star}  \quad a_n \in \llbracket 0, b - 1
+   \rrbracket \]
+
+
+et $(a_n)_{n \in \mathbb{N}}$ n'est pas stationnaire en $0$.
+
+On a {\'e}galement :
+\[ x = \sum_{k = 1}^{+ \infty} \frac{a_k}{b^k} \]
+
+
+En particulier, il existe une suite $(a_n)_{n \in \mathbb{N}}$
+d'{\'e}l{\'e}ments dans $\{0, 1, 2\}$, non stationnaire en $2$ telle que :
+\[ x = \sum_{k = 1}^{+ \infty} \frac{a_k}{3^k} \]
+
+
+Puisque $x \in] 0, \frac{2}{3} [$, alors forc{\'e}ment $a_1 \in \{0, 1\}$, et
+la suite $(a_n)_{n \in \mathbb{N}}$ est non identiquement nulle.
+
+Pour tout $n \in \mathbb{N}$, on a :
+\[ 3^n x = \sum_{k = 1}^{+ \infty} \frac{a_k}{3^{k - n}} = \sum_{k = 1}^n a_k
+   3^{n - k} + \sum_{k = n + 1}^{+ \infty} \frac{a_k}{3^{k - n}} \]
+
+
+Avec $\sum_{k = 1}^n a_k 3^{n - k} \in \mathbb{N}$, et $\sum_{k = n + 1}^{+
+\infty} \frac{a_k}{3^{k - n}} \in [0, 1 [$, alors pour tout $l \in
+\mathbb{N}$, on a :
+\[ \{3^l x\}= \sum_{k = l + 1}^{+ \infty} \frac{a_k}{3^{k - l}} = \sum_{k =
+   1}^{+ \infty} \frac{a_{k + l}}{3^k} \]
+
+
+S'il existe $n_0 \in \mathbb{N}^{\star}$ tel que $a_{n_0} = 1$, alors on a :
+\[ \{3^{n_0 - 1} x\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{a_{k + n_0 -
+   1}}{3^k} \]
+
+
+Par positivit{\'e}, on a :
+\[ \{3^{n_0 - 1} x\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{a_{k + n_0 -
+   1}}{3^k} \geq \frac{1}{3} \]
+
+
+D'autre part, puisque $(a_n)_{n \in \mathbb{N}}$ n'est pas stationnaire en
+$2$, on a :
+\[ \{3^{n_0 - 1} x\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{a_{k + n_0 -
+   1}}{3^k} < \frac{1}{3} + 2 \sum_{k = 2}^{+ \infty} \frac{1}{3^k} <
+   \frac{2}{3} \]
+
+
+Donc, on a bien :
+\[ \{3^{n_0 - 1} x\} \in \left[ \frac{1}{3}, \frac{2}{3} \right[ \]
+
+
+Sinon, c'est-{\`a}-dire, si la suite ($a_n)_{n \in \mathbb{N}}$ prend des
+valeurs seulement dans $\{0, 2\}$, par la non-stationnarit{\'e} de ($a_n)_{n
+\in \mathbb{N}}$ en $2$, il existe $r_0 \geq 3$ tel que $a_{r_0} = 0$. On a
+alors (facile {\`a} v{\'e}rifier !) :
+\[ \{2 \times 3^{r_0 - 1} x\}= 2 \times \sum_{k = 1}^{+ \infty} \frac{a_{k +
+   r_0 - 1}}{3^k} = \frac{4}{3^2} + 2 \times \sum_{k = 3}^{+ \infty}
+   \frac{a_{k + r_0 - 1}}{3^k} = \frac{1}{3} + \frac{1}{3^2} + 2 \times
+   \sum_{k = 3}^{+ \infty} \frac{a_{k + r_0 - 1}}{3^k} \]
+
+
+Avec :
+\[ \frac{1}{3^2} + 2 \times \sum_{k = 3}^{+ \infty} \frac{a_{k + r_0 -
+   1}}{3^k} \leq \frac{2}{3^2} \]
+
+
+Par l'unicit{\'e} de la d{\'e}composition dans la base de $3$, il existe une
+suite $(a'_n)_{n \in \mathbb{N}}$ {\`a} valeurs dans $\{0, 1, 2\}$ telle que :
+\[ \{2 \times 3^{r_0 - 1} x\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty}
+   \frac{a'_{k + r_0 - 1}}{3^k} \]
+
+
+En conclusion, dans tous les cas, il existe $n \in \mathbb{N}$, tel qu'il
+existe une suite $(c_n)_{n \in \mathbb{N}}$ d'{\'e}l{\'e}ments dans $\{0, 1,
+2\}$, non stationnaire en $2$ telle que :
+\[ \{nx\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{c_k}{3^k} \]
+
+
+Par positivit{\'e}, on a :
+\[ \{nx\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{c_k}{3^k} \geq
+   \frac{1}{3} \]
+
+
+Et par non stationnarit{\'e} en $2$, on a :
+\[ \{nx\}= \frac{1}{3} + \sum_{k = 2}^{+ \infty} \frac{c_k}{3^k} < \frac{1}{3}
+   + 2 \times \frac{1}{3^2}  \frac{1}{1 - \frac{1}{3}} = \frac{2}{3} \]
+
+
+On en d{\'e}duit que :
+\[ \{nx\} \in [\frac{1}{3}, \frac{2}{3} [ \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

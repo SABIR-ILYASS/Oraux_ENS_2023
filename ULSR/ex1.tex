@@ -1,0 +1,426 @@
+Cet exercice explore la notion d'ordre convexe en probabilit{\'e}s, testant la
+compr{\'e}hension des candidats sur les propri{\'e}t{\'e}s des esp{\'e}rances
+conditionnelles et leur capacit{\'e} {\`a} manipuler des in{\'e}galit{\'e}s
+impliquant des fonctions convexes.
+\begin{exercise}[]
+Soient $X, Y$ deux variables al{\'e}atoires discr{\`e}tes ayant un support
+fini. On dit que $X$ est plus petite que $Y$ pour l'ordre convexe, ce qui sera
+not{\'e} $X \leqslant_{\tmop{cvx}} Y$ si et seulement si
+\[ \mathbb{E} [f (X)] \leqslant \mathbb{E} [f (Y)] \tmop{pour} \tmop{toute}
+   \tmop{fonction} \tmop{convexe} f : \mathbb{R} \rightarrow \mathbb{R} \]
+
+
+1. Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ une fonction convexe. Montrer
+que :
+\[ f (\mathbb{E} [X]) \leqslant \mathbb{E} [f (X)] \]
+
+
+2. Montrer que si $X \leqslant_{\tmop{cvx}} Y$ alors $\mathbb{E} [X]
+=\mathbb{E} [Y]$ et $\tmop{var} [X] \leqslant \tmop{var} [Y]$.
+
+3. Montrer que si $X \leqslant_{\tmop{cvx}} Y$ si et seulement si $\mathbb{E}
+[X] =\mathbb{E} [Y]$ et pour tout $a \in \mathbb{R}$,
+\[ \underset{a}{\overset{\infty}{\int}} \mathbb{P} [X \geqslant x] d x
+   \leqslant \underset{a}{\overset{\infty}{\int}} \mathbb{P} [Y \geqslant x] d
+   x \]
+
+
+4. Montrer que $X +\mathbb{E} [X] \leqslant_{\tmop{cvx}} 2 X$
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+1. Montrons que $f (\mathbb{E} [X]) \leqslant \mathbb{E} [f (X)]$.
+
+On a
+\begin{eqnarray*}
+  \mathbb{E} [f (X)] & = & \underset{k = 1}{\overset{n}{\sum}} \mathbb{P} [X =
+  x_k] f (x_k)\\
+  & \geqslant & f \left( \underset{k = 1}{\overset{n}{\sum}} \mathbb{P} [X =
+  x_k] x_k \right)\\
+  & = & f (\mathbb{E} [X])
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+2. Supposons que $X \leqslant_{\tmop{cvx}} Y$. Montrons que $\mathbb{E} [X]
+=\mathbb{E} [Y]$ et $\tmop{var} [X] \leqslant \tmop{var} [Y]$ :
+
+Les fonction $x \longmapsto x$ et $x \longmapsto - x$ sont convexes, alors
+$\mathbb{E} [X] \leqslant \mathbb{E} [Y]$ et $-\mathbb{E} [X] \leqslant
+-\mathbb{E} [Y]$.
+
+D'o{\`u} $\mathbb{E} [X] =\mathbb{E} [Y]$
+
+D'autre part, la fonction $x \longmapsto (x -\mathbb{E} [X])^2$ est convexe,
+par cons{\'e}quant :
+\begin{eqnarray*}
+  \tmop{var} [X] & = & \mathbb{E} [(X -\mathbb{E} [X])^2]\\
+  & \leqslant & \mathbb{E} [(Y -\mathbb{E} [X])^2]\\
+  & = & \mathbb{E} [(Y -\mathbb{E} [Y])^2]\\
+  & = & \tmop{var} [Y]
+\end{eqnarray*}
+
+
+3. Montrons l'{\'e}quivalence : $X \leqslant_{\tmop{cnv}} Y$ si et seulement
+si $\mathbb{E} [X] =\mathbb{E} [Y]$ et pour tout $a \in \mathbb{R}$,
+\[ \underset{a}{\overset{\infty}{\int}} \mathbb{P} [X \geqslant x] d x
+   \leqslant \underset{a}{\overset{\infty}{\int}} \mathbb{P} [Y \geqslant x] d
+   x \]
+
+
+$\Rightarrow$) Supposons que $X \leqslant_{\tmop{cnv}} Y$, alors d'arp{\`e}s
+la question 2, on a $\mathbb{E} [X] =\mathbb{E} [Y]$.
+
+Montrons que :
+\[ \underset{a}{\overset{\infty}{\int}} \mathbb{P} [X \geqslant x] d x
+   \leqslant \underset{a}{\overset{\infty}{\int}} \mathbb{P} [Y \geqslant x] d
+   x, \tmop{pour} \tmop{tout} a \in \mathbb{R} \]
+
+
+\
+
+On peut justifier rapidement que ces int{\'e}grales sont bien d{\'e}finis.
+
+Soit $a \in \mathbb{R}$, et soit $x \geqslant a$, la fonction $\varphi_x :
+\mathbb{R} \rightarrow \mathbb{R}$ d{\'e}finie pour tout $t \in \mathbb{R}$,
+par :
+\[ \varphi_x (t) = \left\{\begin{array}{l}
+     0 \tmop{si} t < x\\
+     1 \tmop{si} t \geqslant x
+   \end{array}\right. \]
+
+
+La fontion $\varphi_x$ est convexe, par cons{\'e}quent $\mathbb{E} [\varphi_x
+(X)] \leqslant \mathbb{E} [\varphi_x (Y)]$. En appliquant le th{\'e}or{\`e}me
+de transfert, on obtient
+\[ \mathbb{P} [X \geqslant x] \leqslant \mathbb{P} [Y \geqslant x] \]
+
+
+De plus, les fonctions $x \rightarrow \mathbb{P} [X \geqslant x]$ et $x
+\rightarrow \mathbb{P} [Y \geqslant x]$ sont des fonctions en escalier et
+{\`a} support compact (car $X$ et $Y$ont un support fini). En particulier,
+elles sont int{\'e}grables sur $\mathbb{R}$, par suite :
+\[ \underset{a}{\overset{\infty}{\int}} \mathbb{P} [X \geqslant x] d x
+   \leqslant \underset{a}{\overset{\infty}{\int}} \mathbb{P} [Y \geqslant x] d
+   x < + \infty \]
+
+
+$\Leftarrow$) Supposons que $\mathbb{E} [X] =\mathbb{E} [Y]$ et pour tout $a
+\in \mathbb{R}$ on a
+\begin{equation}
+  \underset{a}{\overset{\infty}{\int}} \mathbb{P} [X \geqslant x] d x
+  \leqslant \underset{a}{\overset{\infty}{\int}} \mathbb{P} [Y \geqslant x] d
+  x
+\end{equation}
+
+
+Montrons que $X \leqslant_{\tmop{cnv}} Y$
+
+La condition $(1)$, signifie que pour tout $a \in \mathbb{R}$, on a
+\[ \mathbb{E} [\max (X - a, 0)] \leqslant \mathbb{E} [\max (Y - a, 0)] \]
+
+
+Notons, dans toute la suite de cette question, $\{ x_1, \ldots, x_N \}$
+l'union des deux supports finis de $X$et $Y$, avec $N \in \mathbb{N}^{\ast}$
+et $x_1 < \cdots < x_N$.
+
+Via le th{\'e}or{\`e}me de transfert, le probl{\`e}me pourrait {\^e}tre
+r{\'e}{\'e}crit comme suit :
+\[ \left\{\begin{array}{l}
+     \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} [X = x_k] x_k \leqslant
+     \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} [Y = x_k] x_k\\
+     \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} [X = x_k] \max (x_k - a,
+     0) \leqslant \underset{k = 1}{\overset{N}{\sum}} \mathbb{P} [Y = x_k]
+     \max (x_k - a, 0) \quad \tmop{pour} \tmop{tout} a \in \mathbb{R}
+   \end{array}\right. \]
+
+
+Cela revient {\`a} montrer le lemme suivant :
+
+\tmtextbf{Lemme 1.} Soient $x_1, \ldots, x_N \in \mathbb{R}$, $\lambda_1,
+\ldots, \lambda_N \geqslant 0$ et $\beta_1, \ldots, \beta_N \geqslant 0$ tels
+que $\underset{k = 1}{\overset{N}{\sum}} \lambda_k = \underset{k =
+1}{\overset{N}{\sum}} \beta_k = 1$ v{\'e}rifiant :
+\begin{equation}
+  \left\{\begin{array}{l}
+    \underset{k = 1}{\overset{N}{\sum}} \lambda_k x_k = \underset{k =
+    1}{\overset{n}{\sum}} \beta_k x_k\\
+    \underset{k = 1}{\overset{N}{\sum}} \lambda_k \max (x_k - a, 0) \leqslant
+    \underset{k = 1}{\overset{N}{\sum}} \beta_k \max (x_k - a, 0), \tmop{pour}
+    \tmop{tout} a \in \mathbb{R}
+  \end{array}\right.
+\end{equation}
+
+
+Alors, pour toute fonction $f : \mathbb{R} \rightarrow \mathbb{R}$ convexe, on
+a :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k f (x_k) \leqslant \underset{k
+   = 1}{\overset{N}{\sum}} \beta_k f (x_k) \]
+\tmtextbf{\
+
+Preuve du lemme 1.}
+
+La premi{\`e}re condition pr{\'e}sent{\'e}e dans $(2)$ et $\underset{k =
+1}{\overset{N}{\sum}} \lambda_k = \underset{k = 1}{\overset{N}{\sum}} \beta_k
+= 1$ impliquent que pour toute fonction affine $g$ on a :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k g (x_k) = \underset{k =
+   1}{\overset{N}{\sum}} \beta_k g (x_k) \]
+
+
+Pour passer au cas d'une fonction convexe quelconque, on va essayer
+d'approximer toute fonction convexe par une suite de somme de fonctions
+affines et des fonctions $x \longmapsto \max (x - a, 0)$, $a \in \mathbb{R}$.
+
+Pour ce faire, on va d{\'e}montrer le lemme suivant :
+
+\tmtextbf{Lemme 2.} Soient $a < b$ deux r{\'e}els et $f : [a, b] \rightarrow
+\mathbb{R}$ une fonction convexe, alors il existe une fonction affine
+$\varphi$, une suite de r{\'e}els positifs $(\alpha_n)_{n \in \mathbb{N}}$ et
+une suite de r{\'e}els $(a_n)_{n \in \mathbb{N}}$ tels que :
+
+La suite de fonctions $\left( x \longmapsto \varphi (x) + \underset{k =
+0}{\overset{n}{\sum}} \alpha_n \max (x - a_k, 0) \right)_{n \in \mathbb{N}}$
+converge simplement vers $f$
+
+\tmtextbf{Preuve du lemme 2.}
+
+La fonction $f$ est d{\'e}rivable {\`a} droite en tout point de $[a, b]$, et
+$f_+' : x \in [a, b] \longmapsto \underset{y > x}{\underset{y \rightarrow
+x}{\lim}} \frac{f (y) - f (x)}{y - x}$ est croissante.
+
+Consid{\'e}rant la fonction affine $\varphi : x \longmapsto (f_+' (a) - 1) (x
+- a) + f (a)$. Notons $g : [a, b] \rightarrow \mathbb{R}$ la fonction
+d{\'e}finie pour tout $x \in [a, b]$ par:
+\[ g (x) = f (x) - \varphi (x) \]
+
+
+On a $g'_+ : x \in [a, b] \longmapsto \underset{y > x}{\underset{y \rightarrow
+x}{\lim}} \frac{g (y) - g (x)}{y - x}$ est strictement positive, ce qui
+implique que $g$ est strictement croissante sur $[a, b]$.
+
+La fonction $g$ est convexe, alors elle est continue sur le segment $[a, b]$.
+Ainsi d'apr{\`e}s le th{\'e}or{\`e}me de Heine, elle est uniformement continue
+sur $[a, b]$. Par cons{\'e}quent, pour tout $\varepsilon > 0$, il existe $\mu
+> 0$ tel que pour tout $x, y \in [a, b]$ si $| x - y | \leqslant \mu$ alors $|
+g (x) - g (y) | < \varepsilon$.
+
+Pour tout $n \in \mathbb{N}^{\ast}$, on a l'existance de $\mu_n > 0$ tel que
+tel que pour tout $x, y \in [a, b]$ si $| x - y | \leqslant \mu_n$ alors $| g
+(x) - g (y) | < \frac{1}{n}$.
+
+Pour la subdivision $\left( x_k = a + k \frac{b - a}{\kappa_n} \right)_{k \in
+\llbracket 0, \kappa_n \rrbracket}$ avec $\kappa_n = \left\lfloor
+\frac{1}{\mu_n} \right\rfloor + 1$.\quad On a pour tout $k \in \llbracket 0,
+\kappa_n - 1 \rrbracket$ et pour tout $x, y \in [x_k, x_{k + 1}]$ :
+
+\
+
+
+\[ | g (x) - g (y) | < \frac{1}{n} \]
+
+
+En particulier pour tout $x \in [x_k, x_{k + 1}],$ on a
+\[ | g (x) - g (x_k) | < \frac{1}{n} \]
+
+
+Posons pour tout $k \in \llbracket 0, \kappa_n - 1 \rrbracket$,
+\[ \gamma_k : x \longmapsto \frac{g (x_{k + 1}) - g (x_k)}{x_{k + 1} - x_k}
+   (x - x_k) + g (x_k) \]
+
+
+On a
+\begin{eqnarray*}
+  | g (x) - \gamma_k (x) | & \leqslant & | g (x) - g (x_k) | + \frac{x -
+  x_k}{x_{k + 1} - x_k} | g (x_{k + 1}) - g (x_k) |\\
+  & \leqslant & \frac{2}{n}
+\end{eqnarray*}
+
+
+\tmtextbf{Lemme 3.}
+
+Soit $k \in \llbracket 0, \kappa_n - 2 \rrbracket$ et $x \in \mathbb{R}$, on a
+\[ \gamma_{k + 1} (x) - \gamma_k (x) \geqslant 0 \tmop{si} \infixand
+   \tmop{seulement} \tmop{si} x \geqslant x_{k + 1} \]
+
+
+Et
+\[ \gamma_0 (x) \geqslant 0 \tmop{si} \infixand \tmop{seulement} \tmop{si} x
+   \geqslant a \]
+
+
+\tmtextbf{Preuve du lemme 3.}
+
+Soient $k \in \llbracket 0, \kappa_n - 2 \rrbracket$ et $x \in \mathbb{R}$,
+alors :
+
+
+\begin{eqnarray*}
+  &  & \gamma_{k + 1} (x) - \gamma_k (x) \geqslant 0\\
+  & \Leftrightarrow & \frac{g (x_{k + 2}) - g (x_{k + 1})}{x_{k + 2} - x_{k +
+  1}} (x - x_{k + 1}) + g (x_{k + 1}) \geqslant \frac{g (x_{k + 1}) - g
+  (x_k)}{x_{k + 1} - x_k} (x - x_k) + g (x_k)\\
+  & \Leftrightarrow & x \geqslant \frac{b - a}{\kappa_n} + x_k = x_{k + 1}
+\end{eqnarray*}
+
+
+Et
+\begin{eqnarray*}
+  \gamma_0 (x) \geqslant 0 & \Leftrightarrow & \frac{g (x_1) - g (x_0)}{x_1 -
+  x_0} (x - x_0) + g (x_0) \geqslant 0\\
+  & \Leftrightarrow & x \geqslant x_0 = a \quad (\tmop{car} g (x_0) = 0)
+\end{eqnarray*}
+
+
+Notons pour tout $k \in \llbracket 0, \kappa_n - 1 \rrbracket$,
+\[ \left\{\begin{array}{l}
+     \alpha_k = \frac{g (x_{k + 1}) - g (x_k)}{x_{k + 1} - x_k} - \frac{g
+     (x_k) - g (x_{k - 1})}{x_k - x_{k - 1}} > 0 \quad \tmop{si} k \in
+     \llbracket 1, \kappa_n - 1 \rrbracket\\
+     \alpha_0 = \frac{g \left( {x_1}  \right) - g (x_0)}{x_1 - x_0} > 0
+   \end{array}\right. \]
+
+
+Et pour tout $k \in \llbracket 1, \kappa_n - 1 \rrbracket$ :
+\[ a_k = \frac{1}{\alpha_k} \left( g (x_k) - g (x_{k - 1}) - \frac{g (x_{k +
+   1}) - g (x_k)}{x_{k + 1} - x_k} x_k + \frac{g (x_k) - g (x_{k - 1})}{x_k -
+   x_{k - 1}} x_{k - 1} \right) \]
+
+
+De plus pour tout $k \in \llbracket 0, \kappa_n - 1 \rrbracket$ et pour tout
+$x \in [x_k, x_{k + 1}]$, on a :
+\begin{eqnarray*}
+  \left| g (x) - \underset{j = 0}{\overset{\kappa_n - 1}{\sum}} \alpha_j \max
+  (x - a_j, 0) \right| & = & \left| g (x) - \underset{j = 1}{\overset{\kappa_n
+  - 1}{\sum}} \max (\gamma_j (x) - \gamma_{j - 1} (x), 0) - \max (\gamma_0
+  (x), 0) \right|\\
+  & = & \left| g (x) - \underset{j = 1}{\overset{k}{\sum}} (\gamma_j (x) -
+  \gamma_{j - 1} (x)) - \gamma_0 (x) \right|\\
+  & = & | g (x) - \gamma_k (x) |\\
+  & \leqslant & \frac{2}{n}
+\end{eqnarray*}
+
+
+Et donc pour tout $x \in [a, b],$
+\[ \left| g (x) - \underset{j = 0}{\overset{\kappa_n - 1}{\sum}} \alpha_j \max
+   (x - a_j, 0) \right| \leqslant \frac{2}{n} \]
+
+
+D'o{\`u} le lemme 2.
+
+Revenant au lemme 1, soit $f$ une fonction convexe. L'objectif est de montrer
+que :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k f (x_k) \leqslant \underset{k
+   = 1}{\overset{N}{\sum}} \beta_k f (x_k) \]
+D'apr{\`e}s le lemme 2, il existe une fonction affine $\varphi$, une suite de
+r{\'e}els positifs $(\alpha_n)_{n \in \mathbb{N}}$ et une suite de r{\'e}els
+$(a_n)_{n \in \mathbb{N}}$ telles que :
+
+La suite de fonctions $\left( x \longmapsto \varphi (x) + \underset{k =
+0}{\overset{n}{\sum}} \alpha_n \max (x - a_k, 0) \right)_{n \in \mathbb{N}}$
+converge simplement vers $f$
+
+Or Pour tout $n$, et pour tout $i \in \llbracket 0, n \rrbracket$, on a :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k \max (x_k - a_i, 0) \leqslant
+   \underset{k = 1}{\overset{N}{\sum}} \beta_k \max (x_k - a_i, 0) \]
+
+
+Ainsi :
+\[ \underset{i = 0}{\overset{n}{\sum}} \alpha_i \underset{k =
+   1}{\overset{N}{\sum}} \lambda_k \max (x_k - a_i, 0) \leqslant \underset{i =
+   0}{\overset{n}{\sum}} \alpha_i \underset{k = 1}{\overset{N}{\sum}} \beta_k
+   \max (x_k - a_i, 0) \]
+
+
+Ce qui est {\'e}quivalent {\`a} :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k \left( \underset{i =
+   0}{\overset{n}{\sum}} \alpha_i \max (x_k - a_i, 0) \right) \leqslant
+   \underset{k = 1}{\overset{N}{\sum}} \beta_k \left( \underset{i =
+   0}{\overset{n}{\sum}} \alpha_i \max (x_k - a_i, 0) \right) \]
+
+
+Or, $\underset{i = 0}{\overset{n}{\sum}} \alpha_i \max (x_k - a_i, 0)
+\underset{n \rightarrow + \infty}{\rightarrow} f (x_k) - \varphi (x_k)$, alors
+:
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k (f (x_k) - \varphi (x_k))
+   \leqslant \underset{k = 1}{\overset{N}{\sum}} \beta_k (f (x_k) - \varphi
+   (x_k)) \]
+
+
+Et puisque :
+\[ \left\{\begin{array}{l}
+     \underset{k = 1}{\overset{N}{\sum}} \lambda_k \varphi (x_k) = \varphi
+     (\mathbb{E} [X])\\
+     \underset{k = 1}{\overset{N}{\sum}} \beta_k \varphi (x_k) = \varphi
+     (\mathbb{E} [Y])
+   \end{array}\right. \]
+
+
+Alors :
+\[ \underset{k = 1}{\overset{N}{\sum}} \lambda_k f (x_k) \leqslant \underset{k
+   = 1}{\overset{N}{\sum}} \beta_k f (x_k) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+4. Montrons que $X +\mathbb{E} [X] \leqslant_{\tmop{cvx}} 2 X$
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, il suffit de montrer que :
+\[ \left\{\begin{array}{l}
+     \mathbb{E} [X +\mathbb{E} [X]] =\mathbb{E} [2 X]\\
+     \mathbb{E} [\max (X +\mathbb{E} [X] - a, 0)] \leqslant \mathbb{E} [\max
+     (2 X - a, 0)]
+   \end{array}\right. \]
+
+
+La premi{\`e}re {\'e}quation est imm{\'e}diate gr{\^a}ce {\`a} la
+lin{\'e}arit{\'e} de l'esp{\'e}rance.
+
+Notons $\{ x_1, \ldots, x_n \}$ le support fini de $X$ avec $x_1 < \cdots <
+x_n$, et pour $k = 1, \ldots, n$, $\lambda_k =\mathbb{P} [X = x_k]$
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Transfert, il faut montrer que pour tout $a
+\in \mathbb{R}$ :
+\[ \overset{n}{\underset{k = 1}{\sum}} \lambda_k \max (x_k +\mathbb{E} [X] -
+   a, 0) \leqslant \overset{n}{\underset{k = 1}{\sum}} \lambda_k \max (2 x_k -
+   a, 0) \]
+
+
+Cela {\'e}quivaut {\`a} montrer que pour tout tout $a \in \mathbb{R}$ :
+\begin{equation}
+  \overset{n}{\underset{k = 1}{\sum}} \lambda_k | x_k +\mathbb{E} [X] - a |
+  \leqslant \overset{n}{\underset{k = 1}{\sum}} \lambda_k | 2 x_k - a |
+\end{equation}
+\[ \  \]
+
+
+Posons pour tout $k \in \llbracket 1, n \rrbracket$ : $y_k = x_k -
+\frac{a}{2}$, Montrer $(3)$ est {\'e}quivalent {\`a} montrer que :
+\[ \overset{n}{\underset{k = 1}{\sum}} \lambda_k \left| y_k + \underset{j =
+   1}{\overset{n}{\sum}} \lambda_k y_k \right| \leqslant 2
+   \overset{n}{\underset{k = 1}{\sum}} \lambda_k | y_k | \]
+
+
+D'apr{\`e}s l'in{\'e}galit{\'e} triangulaire, on a :
+
+
+\begin{eqnarray*}
+  \overset{n}{\underset{k = 1}{\sum}} \lambda_k \left| y_k + \underset{j =
+  1}{\overset{n}{\sum}} \lambda_k y_k \right| & \leqslant &
+  \overset{n}{\underset{k = 1}{\sum}} \lambda_k \left( | y_k | + \underset{j =
+  1}{\overset{n}{\sum}} \lambda_j | y_j | \right)\\
+  & = & \underset{j = 1}{\overset{n}{\sum}} \lambda_k | y_k | +
+  \overset{n}{\underset{j = 1}{\sum}} \left( \overset{n}{\underset{k =
+  1}{\sum}} \lambda_k \right) \lambda_j | y_j |\\
+  & = & \underset{j = 1}{\overset{n}{\sum}} \lambda_k | y_k | +
+  \overset{n}{\underset{j = 1}{\sum}} \lambda_j | y_j |\\
+  & = & 2 \overset{n}{\underset{k = 1}{\sum}} \lambda_k | y_k |
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

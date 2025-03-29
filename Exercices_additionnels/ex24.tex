@@ -1,0 +1,88 @@
+Dans cet exercice, nous nous int{\'e}ressons {\`a} une propri{\'e}t{\'e}
+remarquable concernant la r{\'e}union de sous-espaces vectoriels. Plus
+pr{\'e}cis{\'e}ment, nous allons voir que si un nombre fini de sous-espaces
+vectoriels recouvre enti{\`e}rement l'espace $\mathbb{R}^n$, alors l'un
+d'entre eux doit n{\'e}cessairement {\^e}tre {\'e}gal {\`a} l'espace tout
+entier. Cette propri{\'e}t{\'e}, bien que surprenante {\`a} premi{\`e}re vue,
+s'av{\`e}re {\^e}tre une cons{\'e}quence des caract{\'e}ristiques
+fondamentales des sous-espaces vectoriels.
+\begin{exercise}[(Oral de l'X 2016)]
+Soient $V_1, \ldots, V_p$ des sous-espaces de $\mathbb{R}^n$ dont la
+r{\'e}union est {\'e}gale {\`a} $\mathbb{R}^n$. Montrons que l'un des $V_i$
+est {\'e}gal {\`a} $\mathbb{R}^n$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+C'est un exercice classique, d{\'e}j{\`a} pos{\'e} {\`a} l'oral de l'ENS dans
+une version plus forte.
+
+Le r{\'e}sultat est valable pour tout $K$-espace vectoriel de dimension finie,
+o{\`u} $K$ est un corps infini.
+
+\
+
+Montrons le r{\'e}sultat suivant :
+
+Soit $K$ un corps infini, $E$ un $K$-espace vectoriel de dimension finie.
+Alors, il n'existe aucune famille finie $(V_i)_{1 \leqslant i \leqslant n}$ de
+sous-espaces vectoriels stricts de $E$ telle que :
+\[ E = \underset{i = 1}{\overset{n}{\bigcup}} V_i \]
+
+
+Raisonnons par l'absurde et supposons qu'il existe une famille $(V_i)_{1
+\leqslant i \leqslant n}$ de sous-espaces vectoriels stricts de $E$ telle que
+\[ E = \underset{i = 1}{\overset{n}{\bigcup}} V_i \]
+
+
+Quitte {\`a} retirer un certain nombre de sous-espaces vectoriels, nous
+pouvons supposer que la famille $(V_i)_{1 \leqslant i \leqslant n} $est
+minimale, c'est-{\`a}-dire qu'elle est telle que, pour tout $i \in \llbracket
+1, n \rrbracket$,
+\[ V_i \not{\subset} \underset{j \neq i}{\underset{j =
+   1}{\overset{n}{\bigcup}}} V_j \]
+
+
+Pour $V_n$ par exemple, il existe $y \in V_n$ tel que $y \nin \bigcup_{i =
+1}^{n - 1} V_i$ ($\star$)
+
+D'autre part, \ $E = \bigcup_{i = 1}^n V_i$, ce qui est {\'e}vident puisque
+$V_n$ est un sous-espace strict de $E$. Donc, il existe $x \in \bigcup_{i =
+1}^{n - 1} V_i$ et $x \nin V_n$.
+
+\
+
+Pour tout $\lambda \in K$, on a $x + \lambda y \in E$. Le vecteur $x +
+\lambda y \nin V_n$, donc
+\[ x + \lambda y \in \bigcup_{i = 1}^{n - 1} V_i \]
+
+
+Ainsi, il existe $i_{\lambda} \in \llbracket 1, n - 1 \rrbracket$ tel que $x
++ \lambda y \in V_{i_{\lambda}}$.
+
+\
+
+Consid{\'e}rons l'application
+\[ \varphi : \left\{\begin{array}{l}
+     K \to \llbracket 1, n - 1 \rrbracket\\
+     \lambda \mapsto i_{\lambda}
+   \end{array}\right. \]
+
+
+Soient $\lambda, \beta \in K$ tels que $\varphi (\lambda) = \varphi (\beta)$.
+On a alors $x + \lambda y \in V_{\varphi (\lambda)}$ et $x + \beta y \in
+V_{\varphi (\beta)} = V_{\varphi (\lambda)}$
+
+Comme $V_{\varphi (\lambda)}$ est un espace vectoriel, alors
+\[ (\lambda - \beta) y \in V_{\varphi (\lambda)} \]
+
+
+si $\lambda \neq \beta$ alors $y \in V_{\varphi (\lambda)} \subset \bigcup_{i
+= 1}^{n - 1} V_i$, ce qui est absurde en vertu de ($\star$).
+
+Donc $\lambda = \beta$, et par suite $\varphi$ est injective. Cette conclusion
+contredit le fait que $K$ est infini alors que $\llbracket 1, n - 1
+\rrbracket$ est fini.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

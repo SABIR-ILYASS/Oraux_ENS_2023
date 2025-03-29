@@ -1,0 +1,305 @@
+L'exercice 27 porte sur le th{\'e}or{\`e}me d'Hermite-Sylvester. Il demande
+d'{\'e}tudier les propri{\'e}t{\'e}s d'une matrice construite {\`a} partir des
+racines d'un polyn{\^o}me, notamment son rang et sa positivit{\'e}. L'exercice
+fait appel {\`a} des notions d'alg{\`e}bre lin{\'e}aire et de th{\'e}orie des
+polyn{\^o}mes.
+\begin{exercise}[(Th{\'e}or{\`e}me d'Hermite-Sylvester)]
+Soit~$P \in \mathbb{R} [X]$ un polyn{\^o}me de degr{\'e}~$n \geq 1$.
+Soit~$\lambda_1, \ldots, \lambda_n \in \mathbb{C}$ ses racines, avec
+multiplicit{\'e}. Soit~$H \in \mathbb{C}^{n \times n}$ la matrice d{\'e}finie
+par
+\[ H_{i, j} = \sum_{k = 1}^n \lambda_k^{i + j} . \]
+Montrer que~$H$ est une matrice sym{\'e}trique r{\'e}elle. Montrer que le rang
+de~$H$ est {\'e}gal au nombre de racines distincte, et que~$H$ est positive si
+et seulement si toutes les racines sont r{\'e}elles.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $P \in \mathbb{R} [X]$ de degr{\'e} $n \geqslant 1$. Soient $\lambda_1,
+\ldots, \lambda_n \in \mathbb{C}$ ses racines, avec multiplicit{\'e}.
+
+Montrons que la matrice $H$ est une matrice r{\'e}elle sym{\'e}trique,
+
+Pour tout $i, j \in \llbracket 1, n \rrbracket$, il est clair que \ $H_{i, j}
+= H_{j, i}$. Donc $H$ est une matrice sym{\'e}trique.
+
+\
+
+Notons $\alpha_1, \ldots, \alpha_r \in \mathbb{R}$ et $\beta_1,
+\overline{\beta_1}, \ldots, \beta_s, \overline{\beta_s} \in \mathbb{C}
+\backslash \mathbb{R}$ les racines de $P$, et notons pour tout $i \in
+\llbracket 1, r \rrbracket$ et pour tout $j \in \llbracket 1, s \rrbracket$
+$\zeta_i$ l'ordre de multiplicit{\'e} de $\alpha_i$ et $\rho_j$ l'ordre de
+multiplicit{\'e} de $\beta_j$ et de $\overline{{\beta_j} }$.
+
+On a alors, pour tout $i, j \in \llbracket 1, n \rrbracket$
+\begin{eqnarray*}
+  H_{i, j} & = & \sum_{k = 1}^r {\zeta_k}  \lambda_k^{i + j} + \sum_{k = 1}^s
+  \rho_k (\beta_k^{i + j} + \overline{{\beta_k}  }^{i + j})\\
+  & = & \sum_{k = 1}^r {\zeta_k}  \lambda_k^{i + j} + 2 \sum_{k = 1}^s \rho_k
+  \tmop{Re} (\beta_k^{i + j})\\
+  & \in & \mathbb{R}
+\end{eqnarray*}
+
+
+Donc $H$ est une matrice r{\'e}elle. Montrons que le rang de~$H$ est {\'e}gal
+au nombre de racines distincts.
+
+\
+
+Tout d'abord, observons que chaque racine $\lambda_k$ (compt{\'e}e avec
+multiplicit{\'e}) d{\'e}finit un vecteur $v_k \in \mathbb{C}^n$ dont les
+composantes sont :
+\[ v_k = \left(\begin{array}{c}
+     \lambda_k^1\\
+     \lambda_k^2\\
+     \vdots\\
+     \lambda_k^n
+   \end{array}\right) \]
+Alors, $H$ peut s'exprimer comme :
+\[ H = \sum_{k = 1}^n v_k v_k^T \]
+
+
+\
+
+Comme $P$ peut avoir des racines multiples, on peut regrouper les vecteurs
+correspondant aux racines identiques.
+
+\
+
+Soient $\lambda^{(1)}, \ldots, \lambda^{(m)}$ les racines distinctes de $P$,
+avec des multiplicit{\'e}s $n_1, \ldots, n_m$ (donc $\sum_{i = 1}^m n_i = n$).
+D{\'e}finissons :
+\[ w_i = \left(\begin{array}{c}
+     (\lambda^{(i)})^1\\
+     (\lambda^{(i)})^2\\
+     \vdots\\
+     (\lambda^{(i)})^n
+   \end{array}\right) \]
+
+
+Alors, $H$ devient :
+\[ H = \sum_{i = 1}^m n_i w_i w_i^T \]
+
+
+Comme chaque $w_i w_i^T$ est une matrice de rang $1$, et que les $w_i$
+correspondant aux racines distinctes sont lin{\'e}airement ind{\'e}pendants
+(car des racines distinctes donnent des vecteurs de puissances
+lin{\'e}airement ind{\'e}pendants), le rang de $H$ est {\'e}gal au nombre de
+racines distinctes :
+\[ \mathrm{rang} (H) = m \]
+
+
+o{\`u} $m$ est le nombre de racines distinctes de $P$.
+
+\
+
+Pour tout vecteur $x \in \mathbb{R}^n$, on a :
+\[ x^T Hx = \sum_{k = 1}^n (x^T v_k)^2 \geq 0 \]
+
+
+Cela montre que $H$ est semi-d{\'e}finie positive.
+\begin{itemize}
+  \item \tmtextbf{Si toutes les racines sont r{\'e}elles :}
+  
+  Les vecteurs $w_i$ sont r{\'e}els et lin{\'e}airement ind{\'e}pendants, donc
+  $H$ est d{\'e}finie positive :
+  \[ x^T Hx > 0 \quad \text{pour tout } x \in \mathbb{R}^n \setminus \{0\} \]
+  \item \tmtextbf{S'il y a des racines complexes :}
+  
+  Les racines complexes apparaissent en paires conjugu{\'e}es $\lambda,
+  \bar{\lambda}$. Les vecteurs correspondants $v_{\lambda}$ et
+  $v_{\bar{\lambda}}$ v{\'e}rifient :
+  \[ v_{\bar{\lambda}} = \overline{v_{\lambda}} \]
+  La contribution {\`a} $H$ d'une paire de conjugu{\'e}s complexes est :
+  \[ v_{\lambda} v_{\lambda}^T + v_{\bar{\lambda}} v_{\bar{\lambda}}^T \]
+  Cette somme est r{\'e}elle et sym{\'e}trique, mais introduit une
+  d{\'e}pendance lin{\'e}aire, ce qui fait que $H$ est seulement
+  semi-d{\'e}finie positive. Sp{\'e}cifiquement, il existe des vecteurs non
+  nuls $x$ tels que $x^T Hx = 0$, indiquant que $H$ n'est pas d{\'e}finie
+  positive.
+\end{itemize}
+
+
+\tmtextbf{Commentaire.}
+
+Pour montrer que $H$ est r{\'e}elle, on peut utiliser aussi le r{\'e}sultat
+classique des formules de Newton :
+
+\
+
+\tmtextbf{Lemme 1. (Formules de Newton)}
+
+Soit $N \geqslant 2$ un entier, et $K$ un corps commutatif, $x_1, \ldots, x_N$
+des {\'e}l{\'e}ments de $K$. On consid{\`e}re, pour tout $p \in \mathbb{N}$ :
+\[ S_p (x_1, \ldots, x_N) \assign \underset{i = 1}{\overset{N}{\sum}} x^p_i \]
+
+
+\
+
+On note $\sigma_1, \ldots, \sigma_N$ les fonctions sym{\'e}triques
+{\'e}l{\'e}mentaires de $x_1, \ldots, x_N$ d{\'e}finies par :
+\[ \sigma_k (x_1, \ldots, x_N) = \overset{}{\underset{1 \leqslant j_1 < \cdots
+   < j_k \leqslant N}{\sum}}  \underset{l = 1}{\overset{k}{\prod}} x_{j_l},
+   \forall k = 1, \ldots, n \]
+
+
+Pour tout $p \geqslant N$, on a :
+\[ S_p (x_1, \ldots, x_N) + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i
+   \sigma_i (x_1, \ldots, x_N) S_{p - i} (x_1, \ldots, x_N) = 0 \]
+
+
+Et pour tout $p \in \llbracket 1, N - 1 \rrbracket$, on a :
+\[ S_p (x_1, \ldots, x_N) + \underset{i = 1}{\overset{p - 1}{\sum}} (- 1)^i
+   \sigma_i (x_1, \ldots, x_N) S_{p - i} (x_1, \ldots, x_N) + (- 1)^p p
+   \sigma_p = 0 \]
+
+
+\tmtextbf{Preuve du lemme 1.}
+
+Soit $N \geqslant 2$ un entier, $K$ un corps commutatif, $x_1, \ldots, x_N$
+des {\'e}l{\'e}ments de $K$, et soit $p \in \mathbb{N}$.
+
+Pour simplifier les notations, on note simplement $S_k $au lieu de $S_k (x_1,
+\ldots, x_N)$ (respectivement $\sigma_k$ au lieu de $\sigma_k (x_1, \ldots,
+x_N)$) pour tout $k = 1, \ldots, N$.
+
+Si $n \geqslant p$, on a :
+\[ \underset{i = 1}{\overset{N}{\prod}} (X - x_i) = X^N + \underset{i =
+   1}{\overset{N}{\sum}} (- 1)^i \sigma_i X^{N - i} \]
+
+
+Donc, pour tout $j \in \llbracket 1, N \rrbracket$, on a :
+\[ x_j^N + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i \sigma_i x_j^{N - i} =
+   \underset{i = 1}{\overset{N}{\prod}} (x_j - x_i) = 0 \]
+
+
+Par suite, en mutlipliant par $x^{p - N}$, on obtient :
+\[ x_j^p + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i \sigma_i x_j^{p - i} =
+   0 \]
+
+
+Ainsi :
+\begin{eqnarray*}
+  \underset{j = 1}{\overset{N}{\sum}} \left( x_j^p + \underset{i =
+  1}{\overset{N}{\sum}} (- 1)^i \sigma_i x_j^{p - i} \right) & = & \underset{j
+  = 1}{\overset{N}{\sum}} x_j^p + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i
+  \sigma_i \underset{j = 1}{\overset{N}{\sum}} x_j^{p - i}\\
+  & = & S_p + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i \sigma_i S_{p - i}
+\end{eqnarray*}
+
+
+D'o{\`u} :
+\[ S_p + \underset{i = 1}{\overset{N}{\sum}} (- 1)^i \sigma_i S_{p - i} = 0 \]
+
+
+Si $p \in \llbracket 1, N - 1 \rrbracket$, on a, pour tout $k \in \llbracket
+1, p - 1 \rrbracket$ :
+\begin{eqnarray*}
+  \sigma_k S_{p - k} & = & \left( \overset{}{\underset{1 \leqslant j_1 <
+  \cdots < j_k \leqslant N}{\sum}}  \underset{l = 1}{\overset{k}{\prod}}
+  x_{j_l} \right) S_{p - k}\\
+  & = & \overset{}{\underset{1 \leqslant j_1 < \cdots < j_k \leqslant
+  N}{\sum}} \underset{m = 1}{\overset{N}{\sum}}  \underset{l =
+  1}{\overset{k}{\prod}} x_{j_l} x^{p - k}_m\\
+  & = & \overset{}{\underset{1 \leqslant m \leqslant N, m \neq j_1, \ldots,
+  j_k}{\underset{1 \leqslant j_1 < \cdots < j_k \leqslant N}{\sum}}} 
+  \underset{l = 1}{\overset{k}{\prod}} x_{j_l} x^{p - k}_m + \underset{i =
+  1}{\overset{k}{\sum}} \overset{}{\underset{m = j_i}{\underset{1 \leqslant
+  j_1 < \cdots < j_k \leqslant N}{\sum}}}  \underset{l =
+  1}{\overset{k}{\prod}} x_{j_l} x^{p - k}_m\\
+  & = & \overset{}{\underset{1 \leqslant m \leqslant N, m \neq j_1, \ldots,
+  j_k}{\underset{1 \leqslant j_1 < \cdots < j_k \leqslant N}{\sum}}} 
+  \underset{l = 1}{\overset{k}{\prod}} x_{j_l} x^{p - k}_m + \underset{1
+  \leqslant j_1 < \cdots < j_k \leqslant N}{\sum} \underset{i =
+  1}{\overset{k}{\sum}} \left( \underset{l \not{=} i}{\underset{l =
+  1}{\overset{k}{\prod}}} x_{j_l} \right) x^{p - k + 1}_{j_i}\\
+  & = & \overset{}{\underset{1 \leqslant m \leqslant N, m \neq j_1, \ldots,
+  j_k}{\underset{1 \leqslant j_1 < \cdots < j_k \leqslant N}{\sum}}} 
+  \underset{l = 1}{\overset{k}{\prod}} x_{j_l} x^{p - k}_m +
+  \overset{}{\underset{1 \leqslant m \leqslant N, m \neq j_1, \ldots, j_{k -
+  1}}{\underset{1 \leqslant j_1 < \cdots < j_{k - 1} \leqslant N}{\sum}}} 
+  \underset{l = 1}{\overset{k - 1}{\prod}} x_{j_l} x^{p - k + 1}_m
+\end{eqnarray*}
+
+
+Par suite :
+\[ (- 1)^k \sigma_k S_{p - k} = (- 1)^k \overset{}{\underset{1 \leqslant m
+   \leqslant N, m \neq j_1, \ldots, j_k}{\underset{1 \leqslant j_1 < \cdots <
+   j_k \leqslant N}{\sum}}}  \underset{l = 1}{\overset{k}{\prod}} x_{j_l} x^{p
+   - k}_m - (- 1)^{k - 1} \overset{}{\underset{1 \leqslant m \leqslant N, m
+   \neq j_1, \ldots, j_{k - 1}}{\underset{1 \leqslant j_1 < \cdots < j_{k - 1}
+   \leqslant N}{\sum}}}  \underset{l = 1}{\overset{k - 1}{\prod}} x_{j_l} x^{p
+   - k + 1}_m \]
+
+
+Ainsi, par t{\'e}l{\'e}scopage, on a :
+\begin{eqnarray*}
+  \underset{i = 1}{\overset{p - 1}{\sum}} (- 1)^i \sigma_i S_{p - i} & = & (-
+  1)^{p - 1} \overset{}{\underset{1 \leqslant m \leqslant N, m \neq j_1,
+  \ldots, j_{p - 1}}{\underset{1 \leqslant j_1 < \cdots < j_{p - 1} \leqslant
+  N}{\sum}}}  \underset{l = 1}{\overset{k}{\prod}} x_{j_l} x_m - S_p\\
+  & = & (- 1)^{p - 1} p \sigma_p - S_p
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ S_p + \underset{i = 1}{\overset{p - 1}{\sum}} (- 1)^i \sigma_i S_{p - i} +
+   (- 1)^p p \sigma_p = 0 \]
+
+
+\
+
+Montrons par r{\'e}currance sur $p \in \mathbb{N}$ que $S_p (\lambda_1,
+\ldots, \lambda_n) \in \mathbb{R}$.
+
+On a $P = \underset{i = 1}{\overset{n}{\prod}} (X - \lambda_i) \in \mathbb{R}
+[X] \underset{}{\overset{}{}},$ donc pour tout $k \in \llbracket 1, n
+\rrbracket$, $\sigma_i (\lambda_1, \ldots, \lambda_n) \in \mathbb{R}$.
+
+On a pour $p = 0$, $S_0 (\lambda_1, \ldots, \lambda_n) = n \in \mathbb{R}$.
+
+Soit $p \in \mathbb{N}$, supposons que $S_0, \ldots, S_p \in \mathbb{R}$, et
+montrons que $S_{p + 1} \in \mathbb{R}$.
+
+Si $p + 1 \geqslant n$, on a
+\[ S_{p + 1} = \underset{i = 1}{\overset{N}{\sum}} (- 1)^{i - 1} \sigma_i
+   (\lambda_1, \ldots, \lambda_n) S_{p - i} (\lambda_1, \ldots, \lambda_n) \in
+   \mathbb{R} \]
+
+
+Si $p + 1 < n$, on a alors
+\[ S_p (\lambda_1, \ldots, \lambda_n) = \underset{i = 1}{\overset{p -
+   1}{\sum}} (- 1)^{i - 1} \sigma_i (\lambda_1, \ldots, \lambda_n) S_{p - i}
+   (\lambda_1, \ldots, \lambda_n) + (- 1)^{p - 1} p \sigma_p \in \mathbb{R} \]
+
+
+D'o{\`u} $S_p (\lambda_1, \ldots, \lambda_n)$ pour tout $p \in \mathbb{N}$.
+
+Ainsi, pour tout $i, j \in \llbracket 1, n \rrbracket$ on a
+\[ H_{i, j} = S_{i + j} \in \mathbb{R} \]
+
+
+Revenons {\`a} d{\'e}montrer que $H$ est r{\'e}elle, On garde les m{\^e}mes
+notations que dans le lemme 1.
+
+D'apr{\`e}s le lemme, pour tout $p \in \mathbb{N}$ :
+\[ \left\{\begin{array}{ll}
+     S_p (\lambda_1, \ldots, \lambda_n) + \underset{i = 1}{\overset{N}{\sum}}
+     (- 1)^i \sigma_i (\lambda_1, \ldots, \lambda_n) S_{p - i} (\lambda_1,
+     \ldots, \lambda_n) = 0 & \tmop{si} p \geqslant n\\
+     S_p (\lambda_1, \ldots, \lambda_n) + \underset{i = 1}{\overset{p -
+     1}{\sum}} (- 1)^i \sigma_i (\lambda_1, \ldots, \lambda_n) S_{p - i}
+     (\lambda_1, \ldots, \lambda_n) + (- 1)^p p \sigma_p = 0 & \tmop{si} p < n
+   \end{array}\right. \]
+
+
+\tmtextbf{Remarque.}
+
+Pour plus de d{\'e}tails, vous pouvez consulter l'{\'e}preuve Math2 du
+concours Mines-Ponts, Fili{\`e}re PC, 2021.
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

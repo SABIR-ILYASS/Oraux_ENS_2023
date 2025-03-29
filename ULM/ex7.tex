@@ -1,0 +1,77 @@
+L'exercice 7 porte sur une in{\'e}galit{\'e} isop{\'e}rim{\'e}trique
+discr{\`e}te. Il demande de prouver une in{\'e}galit{\'e} impliquant
+l'esp{\'e}rance de la valeur absolue de la diff{\'e}rence entre une fonction
+sur un groupe ab{\'e}lien fini et sa moyenne. Cet exercice fait appel {\`a}
+des techniques de th{\'e}orie des probabilit{\'e}s et d'analyse fonctionnelle
+discr{\`e}te.
+\begin{exercise}[(Une in{\'e}galit{\'e} isop{\'e}rim{\'e}trique
+discr{\`e}te)]
+Soient $n$ et $d$ des entiers strictement positifs et $G = (\mathbb{Z}/
+n\mathbb{Z})^d$. Soit $S = \{ \pm e_1, \ldots, \pm e_d \}$, o{\`u} $e_i = (0,
+\ldots, 0, 1, 0, \ldots, 0) \in G$, avec le 1 en $i$\tmrsup{e} position.
+Soient $X$ une variable al{\'e}atoire uniform{\'e}ment distribu{\'e}e dans $G$
+et $f : G \to \mathbb{R}$ une fonction. Montrer que
+\[ \mathbb{E} [| f (X) -\mathbb{E}[f (X)] |] \leq \frac{dn}{2} \max_{s \in S}
+   \mathbb{E} [|f (X) - f (X + s) |] . \]
+\end{exercise}
+\subsection*{Solution. (ETTOUSY Badr)}
+\addcontentsline{toc}{subsection}{Solution. (ETTOUSY Badr)}
+
+
+D'apr{\`e}s le th{\'e}or{\`e}me de transfert, on a :
+\begin{eqnarray*}
+  \mathbb{E} [| f (X) -\mathbb{E}[f (X)] |] & = & \frac{1}{n^d} \underset{x
+  \in G}{\sum} \left| f (x) - \frac{1}{n^d} \underset{y \in G}{\sum} f (y)
+  \right|\\
+  & \leqslant & \frac{1}{n^{2 d}} \underset{x \in G}{\sum} \underset{y \in
+  G}{\sum} | f (x) - f (y) |
+\end{eqnarray*}
+
+
+Pour tout $z \in G$, l'application $y \longmapsto y + x$ est une bijection de
+$G$. Donc, on a :
+\[ \underset{x \in G}{\sum} \underset{y \in G}{\sum} | f (x) - f (y) | =
+   \underset{x \in G}{\sum} \underset{y \in G}{\sum} | f (x) - f (x + y) | \]
+
+
+Puisque $G$ est fini, alors l'application $y \in G \longmapsto \frac{1}{n^d}
+\underset{x \in G}{\sum} | f (x) - f (x + y) |$ est born{\'e}e et atteint ses
+bornes. En particulier il existe $y_0 \in G$ tel que :
+\[ \frac{1}{n^d} \underset{y \in G}{\sum} | f (x) - f (x + y_0) | =
+   \underset{y \in G}{\max} \frac{1}{n^d} \underset{y \in G}{\sum} | f (x) - f
+   (x + y) | \assign M \]
+
+
+Pour conclure, il suffit de montrer que :
+\[ \frac{1}{n^d} \underset{y \in G}{\sum} | f (x) - f (x + y_0) | \leqslant
+   \frac{n d}{2} \underset{s \in S}{\max}  \mathbb{E} [|f (X) - f (X + s) |]
+\]
+
+
+Soit $y \in G$ et $\varepsilon_i \in \{ - 1, 1 \}$ pour tout $i \in \llbracket
+1, d \rrbracket$, on a
+\begin{eqnarray*}
+  \frac{1}{n^d} \underset{y \in G}{\sum} | f (x) - f (x + y + \varepsilon_i
+  e_i) | & \leqslant & \frac{1}{n^d} \underset{y \in G}{\sum} | f (x + y) - f
+  (x + y + \varepsilon_i e_i) | + \frac{1}{n^d} \underset{y \in G}{\sum} | f
+  (x) - f (x + y) |\\
+  & \leqslant & \frac{1}{n^d} \underset{y \in G}{\sum} | f (y) - f (y +
+  \varepsilon_i e_i) | + M
+\end{eqnarray*}
+
+
+Notons $z = \underset{i = 1}{\overset{d}{\sum}} \varepsilon_i u_i e_i$, avec
+$\varepsilon_1, \ldots, \varepsilon_d \in \{ \pm 1 \}$ et $u_1, \ldots, u_d
+\in \left\llbracket 0, \left\lfloor \frac{n}{2} \right\rfloor
+\right\rrbracket$. On a, pour tout $i \in \llbracket 1, d \rrbracket$,
+
+
+\begin{eqnarray*}
+  \frac{1}{n^d} \underset{y \in G}{\sum} | f (y) - f (y + \varepsilon_i u_i
+  e_i) | & = & \underset{i = 1}{\overset{d}{\sum}} | u_i | \times M\\
+  & \leqslant & \frac{n \times d}{2} M
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,89 @@
+La caract{\'e}risation des polyn{\^o}mes positifs sur $\mathbb{R}^+$ fait
+appel {\`a} des techniques de d{\'e}composition en sommes de carr{\'e}s,
+distinctes du cas g{\'e}n{\'e}ral sur \ensuremath{\mathbb{R}} tout entier. Cet
+exercice propose d'{\'e}tablir une {\'e}quivalence {\'e}l{\'e}gante
+adapt{\'e}e au cas des r{\'e}els positifs.
+\begin{exercise}[(Oral de l'X 2016)]
+Soit $P \in \mathbb{R}[X]$. Montrer que $P$ est positif sur $\mathbb{R}^+$, si
+et seulement s'il existe $A, B \in \mathbb{R}[X]$ tels que $P = A^2 + XB^2$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Notons
+\[ \mathcal{H}=\{P \in \mathbb{R}[X] | \nobracket \exists A, B \in
+   \mathbb{R}[X] \text{ tels que } P = A^2 + XB^2 \} \]
+
+
+Montrons que $\mathcal{H}$ est stable par multiplication.
+
+Soit $(P, Q) \in \mathcal{H}^2$. Il existe alors $A_1, B_1 ; A_2, B_2 \in
+\mathbb{R}[X]$ tels que :
+\[ P = A_1^2 + XB_1^2 \infixand Q = A_2^2 + XB_2^2 \]
+
+
+On a donc :
+\begin{eqnarray*}
+  PQ & = & (A_1^2 + XB_1^2) (A_2^2 + XB_2^2)\\
+  & = & (A_1 A_2)^2 + (XB_1 B_2)^2 + X (A_1^2 B_2^2 + A_2^2 B_1^2)\\
+  & = & (A_1 A_2 - XB_1 B_2)^2 + X (A_1 B_2 + A_2 B_1)^2
+\end{eqnarray*}
+
+
+Ce qui montre que $PQ \in \mathcal{H}$.
+
+Pour montrer que pour tout $P \in \mathbb{R}[X]$, $P$ est positif sur
+$\mathbb{R}^+$ si et seulement s'il existe $A, B \in \mathbb{R}[X]$ tels que
+\[ P = A^2 + XB^2 \]
+
+
+Il suffit de montrer l'{\'e}quivalence :
+
+Pour tout $P \in \mathbb{R}[X]$ irr{\'e}ductible dans $\mathbb{R}[X]$,
+
+$P$ est positif sur $\mathbb{R}^+$ si, et seulement si, il existe $A, B \in
+\mathbb{R}[X]$ tels que $P = A^2 + XB^2$.
+
+\
+
+$\Leftarrow$) Notons tout d'abord que la r{\'e}ciproque est {\'e}vidente.
+
+$\Rightarrow$) Soit $P \in \mathbb{R}[X]$ irr{\'e}ductible dans
+$\mathbb{R}[X]$.
+
+- \tmtextbf{Si $\deg P = 1$} : {\'e}crivons $P = aX + b$ avec $(a, b) \in
+\mathbb{R}^{\ast} \times \mathbb{R}$
+
+Puisque pour tout $x \geq 0$, on a $P (x) \geq 0$
+
+D'o{\`u} $P (0) = b \geq 0$ et $\underset{x \to + \infty}{\lim} P (x) \geq 0$
+donc $a \geq 0$
+
+On a donc
+\[ P = (\sqrt{b})^2 + X (\sqrt{a})^2 \in \mathcal{H} \]
+
+
+-\tmtextbf{ Si $\deg P = 2$} : {\'e}crivons $P = aX^2 + bX + c$ avec $(a, b,
+c) \in \mathbb{R}^{\ast} \times \mathbb{R} \times \mathbb{R}$ et $b^2 < 4 ac$
+
+Puisque pour tout $x \geq 0, \hspace{0.27em} P (x) \geq 0$
+
+Alors $P (0) = c \geq 0$ et $\underset{x \to + \infty}{\lim} P (x) \geq 0$
+donc $a \geq 0$
+
+On a $| b | < 2 \sqrt{a c}$, alors
+\[ P = (\sqrt{a} X - \sqrt{c})^2 + (b + 2 \sqrt{ac}) X \]
+
+
+avec $b + 2 \sqrt{ac} \geq |b| + b \geqslant 0$
+
+D'o{\`u}
+\[ P = (\sqrt{a} X - \sqrt{c})^2 + X (\sqrt{b + 2 \sqrt{ac}})^2 \in
+   \mathcal{H} \]
+
+
+On obtient ainsi le r{\'e}sultat souhait{\'e} !
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
+
+

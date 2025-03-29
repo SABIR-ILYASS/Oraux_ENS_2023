@@ -1,0 +1,97 @@
+Cet exercice d'alg{\`e}bre lin{\'e}aire explore les propri{\'e}t{\'e}s
+spectrales d'une perturbation de rang 1 d'une matrice sym{\'e}trique.
+
+\begin{exercise}[]
+Soit $A \in \mathcal{M}_n (\mathbb{R})$ une matrice r{\'e}elle sym{\'e}trique,
+{\`a} valeurs propres toutes distinctes, et $v$un vecteur tel que la matrice
+$A + v v^T \in \mathcal{M}_n (\mathbb{R})$ n'ait aucune valeur propre en
+commun avec $A$. Montrer que les valeurs propres de $A + v v^T$ correspondent
+aux z{\'e}ros de la fraction rationnelle :
+\[ F (X) = 1 + v^T (A \nonconverted{minus} X I_n)^{- 1} v \]
+
+
+En d{\'e}duire que les valeurs propres de $A + v v^T$ et celles de $A$ sont
+entrelac{\'e}es.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+{\'E}tant donn{\'e} que $A$ est sym{\'e}trique avec des valeurs propres
+distinctes, elle est diagonalisable par une matrice orthogonale. Ses valeurs
+propres sont r{\'e}elles et peuvent {\^e}tre ordonn{\'e}es comme $\lambda_1 <
+\lambda_2 < \ldots < \lambda_n$.
+
+La fonction $F (X)$ est bien d{\'e}finie et rationnelle sauf aux valeurs
+propres de $A$, o{\`u} $(A - XI_n)^{- 1}$ n'est pas d{\'e}finie.
+
+Soit $\lambda$ une valeur propre de $A + vv^T$, il existe donc un vecteur non
+nul $x$ tel que :
+\[ (A + vv^T) x = \lambda x. \]
+
+
+R{\'e}{\'e}crivons cette {\'e}quation :
+\[ (A - \lambda I_n) x + vv^T x = 0. \]
+
+
+Posons $\alpha = v^T x$ (un scalaire), alors :
+\[ (A - \lambda I_n) x = - \alpha v. \]
+
+
+En supposant que ($A - \lambda I_n$) est inversible (puisque $\lambda$ n'est
+pas une valeur propre de $A$), on a :
+\[ x = - \alpha (A - \lambda I_n)^{- 1} v. \]
+
+
+En substituant dans $\alpha$ :
+\[ \alpha = v^T x = - \alpha v^T (A - \lambda I_n)^{- 1} v. \]
+
+
+En simplifiant (car $\alpha \neq 0$) :
+\[ 1 + v^T (A - \lambda I_n)^{- 1} v = 0. \]
+
+
+Ainsi, $\lambda$ est un z{\'e}ro de $F (X)$.
+
+R{\'e}ciproquement, supposons que $F (\lambda) = 0$ et que $\lambda$ n'est pas
+une valeur propre de $A$. D{\'e}finissons :
+\[ x = (A - \lambda I_n)^{- 1} v. \]
+
+
+Alors :
+\[ (A - \lambda I_n) x = v. \]
+
+
+Calculons $(A + vv^T - \lambda I_n) x$ :
+\[ (A - \lambda I_n) x + vv^T x = v + v (v^T x) = v + v \alpha = v (1 +
+   \alpha) . \]
+
+
+Comme $F (\lambda) = 1 + \alpha = 0$, il s'ensuit que :
+\[ (A + vv^T - \lambda I_n) x = 0 \]
+
+
+ce qui signifie que $\lambda$ est une valeur propre de $A + vv^T$.
+
+Consid{\'e}rons la fonction rationnelle :
+\[ F (X) = 1 + v^T (A - XI_n)^{- 1} v. \]
+
+
+Nous pouvons exprimer $F (X)$ en utilisant la d{\'e}composition en valeurs
+propres de $A$. Soit $A = PDP^T$, o{\`u} $D = \mathrm{diag} (\lambda_1,
+\ldots, \lambda_n)$ et $P$ est orthogonale. Alors :
+\[ F (X) = 1 + \sum_{i = 1}^n \frac{w_i^2}{\lambda_i - X}, \]
+
+
+o{\`u} $w = (w_1, \ldots, w_n)^T = P^T v$.
+
+Entre chaque paire de valeurs propres $\lambda_i$ et $\lambda_{i + 1}$, la
+fonction $F (X)$ a une asymptote verticale (due aux p{\^o}les en $\lambda_i$)
+et change de signe car les termes dans la somme passent de positif {\`a}
+n{\'e}gatif ou vice versa. Par cons{\'e}quent, $F (X$) a exactement un
+z{\'e}ro dans chaque intervalle ($\lambda_i, \lambda_{i + 1}$). Puisque $A +
+vv^T$ a $n$ valeurs propres et qu'aucune ne co{\"i}ncide avec celles de $A$,
+cela implique que les valeurs propres de $A + vv^T$ sont entrelac{\'e}es avec
+celles de $A$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

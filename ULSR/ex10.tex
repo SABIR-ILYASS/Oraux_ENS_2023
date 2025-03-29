@@ -1,0 +1,162 @@
+Cet exercice traite de la construction et de l'analyse d'un arbre
+al{\'e}atoire croissant. Il teste la capacit{\'e} des candidats {\`a}
+mod{\'e}liser un processus stochastique, {\`a} calculer des probabilit{\'e}s
+conditionnelles et {\`a} d{\'e}terminer les caract{\'e}ristiques statistiques
+(esp{\'e}rance, variance) de certaines propri{\'e}t{\'e}s de l'arbre.
+
+\begin{exercise}[]
+On construit un arbre al{\'e}atoire de la mani{\`e}re suivante: on commence
+par une racine $S_1$ ; on lui ajoute un premier descendant direct $S_2$. Puis,
+{\`a} l'{\'e}tape $N + 1$, on choisit un sommet $S_i$ uniform{\'e}ment (avec
+$i \in \llbracket 1, N \rrbracket$) et on lui ajoute un descendant direct
+$S_{N + 1}$.
+
+1. Calculer l'esp{\'e}rance et la variance du nombre de descendants directs
+de $S_1$ {\`a} l'{\'e}tape $N$.
+
+2. Calculer la probabilit{\'e} que $S_2$ ait $k$ descendants (directs ou non)
+{\`a} l'issue de l'{\'e}tape $N$.
+
+3. Calculer l'eps{\'e}rance et la variance du nombre de feuilles (sommets sans
+descendants) de l'arbre {\`a} l'{\'e}tape $N$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass, ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass - ZINE Akram)}
+
+1. {\`A} chaque {\'e}tape $k$ (de $2$ {\`a} $N$), le sommet $S_1$ a une
+probabilit{\'e} de $\frac{1}{k - 1}$ d'{\^e}tre choisi pour recevoir un
+nouveau descendant direct. On d{\'e}finit pour tout $k = 2, \ldots, N$, la
+variable al{\'e}atoire $X_k$ par :
+\[ X_k = \left\{\begin{array}{l}
+     1 \tmop{si} S_1 \tmop{est} \tmop{choisi} {\`a} l' {\'e} \tmop{tape} k\\
+     0 \tmop{sinon}
+   \end{array}\right. \]
+
+
+L'esp{\'e}rance du nombre de descendants directs de $S_1$ {\`a} l'{\'e}tape N
+:
+\begin{eqnarray*}
+  \mathbb{E} \left[ \underset{k = 2}{\overset{N}{\sum}} X_k \right] & = &
+  \sum_{k = 2}^N \mathbb{E}[X_k]\\
+  & = & \sum_{k = 2}^N \frac{1}{k - 1}\\
+  & = & H_{N - 1}
+\end{eqnarray*}
+
+
+o{\`u} $H_{N - 1}$ est le $(N - 1)$-i{\`e}me nombre harmonique.
+
+\
+
+La variance du nombre de descendants directs de $S_1$ {\`a} l'{\'e}tape N :
+
+On a par ind{\'e}pendance entre $X_2, X_3, \ldots, X_N$
+\begin{eqnarray*}
+  \tmop{Var} \left[ \underset{k = 2}{\overset{N}{\sum}} X_k \right] & = &
+  \sum_{k = 2}^N \text{Var} [X_k]\\
+  & = &  \sum_{k = 2}^N \left( \frac{1}{k - 1}  \left( 1 - \frac{1}{k - 1}
+  \right) \right)\\
+  & = & H_{N - 1} - \sum_{k = 2}^N \frac{1}{(k - 1)^2}
+\end{eqnarray*}
+
+
+2. Le nombre total de sommets est $N$. On a la racine $S_1$, qui n'est pas un
+descendant de $S_2$. $S_2$ lui-m{\^e}me ne doit pas {\^e}tre compt{\'e} comme
+son propre descendant.
+
+Les sommets $S_3, S_4, \ldots, S_N$ sont les $N - 2$ sommets restants qui
+peuvent potentiellement {\^e}tre des descendants de $S_2$.
+
+Le nombre total d'arbres que l'on peut construire est : $(N - 1) !$
+
+\
+
+Le nombre de fa{\c c}ons de choisir les $k$ descendants de $S_2$ parmi les $N
+- 2$ sommets est : $\binom{N - 2}{k}$
+
+\
+
+Le nombre de fa{\c c}ons de construire un arbre r{\'e}cursif avec $k + 1$
+sommets (incluant $S_2$) est :
+\[ T_{\text{sous-arbre}} = k! \]
+
+
+puisque $S_2$ est la racine fixe du sous-arbre.
+
+Les $N - k - 2$ sommets restants (qui ne sont pas descendants de $S_2$)
+forment un autre arbre r{\'e}cursif enracin{\'e} en $S_1$. Le nombre de fa{\c
+c}ons de construire cet arbre est :
+\[ T_{\text{compl{\'e}ment}} = (N - k - 2) ! \]
+
+
+Le nombre total d'arbres favorables est :
+\[ \text{Nombre d'arbres favorables} = \binom{N - 2}{k} \times
+   T_{\text{sous-arbre}} \times T_{\text{compl{\'e}ment}} \]
+
+
+D'o{\`u}, la probabilit{\'e} que $S_2$ ait exactement $k$ descendants (directs
+ou indirects), est :
+\begin{eqnarray*}
+  P & \assign & \frac{\binom{N - 2}{k} \times k! \times (N - k - 2) !}{(N - 1)
+  !}\\
+  & = & \frac{(N - 2) !}{(N - 1) !}\\
+  & = & \frac{1}{N - 1}
+\end{eqnarray*}
+
+
+3. Notons $L_N$ le nombre de feuilles dans un arbre al{\'e}atoire de $N$
+sommets.
+
+Soit $\sigma = (\sigma_1, \ldots, \sigma_{N - 1})$ une permutation sur $\{2,
+\ldots, N\}$. On peut construire un arbre r{\'e}cursif avec les n{\oe}uds $1,
+2, \ldots, N$ en prenant 1 comme racine, et en attachant le n{\oe}ud $i \geq
+2$ au n{\oe}ud le plus {\`a} droite $j$ de $\sigma$ qui pr{\'e}c{\`e}de $i$ et
+qui est inf{\'e}rieur {\`a} $i$. S'il n'existe pas un tel {\'e}l{\'e}ment $j$,
+alors on d{\'e}finit la racine 1 comme le parent de $i$.
+
+De la construction de l'arbre ci-dessus, $L_N$ peut {\^e}tre d{\'e}fini par :
+\begin{equation}
+  L_N = \sum_{i = 1}^{N - 2} I\{\sigma_i > \sigma_{i + 1} \}+ 1.
+\end{equation}
+
+
+Ceci est obtenu en observant que chaque apparition de descentes dans $\sigma$
+signifie qu'une feuille sera ajout{\'e}e {\`a} l'arbre $T_n$. De plus, le
+dernier {\'e}l{\'e}ment $\sigma_{n - 1}$ de $\sigma$ est toujours une feuille.
+
+$\mathbb{E}[L_N] = N / 2$ d{\'e}coule du fait que $\mathbb{P}(I\{\sigma_i >
+\sigma_{i + 1} \}= 1) = 1 / 2$.
+
+De plus,
+\begin{eqnarray*}
+  \mathbb{E}[L_N^2] & = & \mathbb{E} \left[ \left( \sum_{i = 1}^{N - 2}
+  I\{\sigma_i > \sigma_{i + 1} \}+ 1 \right)^2 \right]\\
+  & = & \mathbb{E} \left[ 3 \sum_{i = 1}^{N - 2} I\{\sigma_i > \sigma_{i + 1}
+  \}+ \sum_{1 \leqslant i \neq j \leqslant N - 2} I\{\sigma_i > \sigma_{i + 1}
+  \}I\{\sigma_j > \sigma_{j + 1} \}+ 1 \right]
+\end{eqnarray*}
+
+
+Or, pour tout $i, j \in \llbracket 1, N - 2 \rrbracket$, on a :
+\[ \mathbb{P}(I\{\sigma_i > \sigma_{i + 1} \}|I\{\sigma_j > \sigma_{j + 1} \}=
+   1) = \left\{\begin{array}{ll}
+     1 / 6 & \text{si } |i - j| = 1,\\
+     1 / 4 & \text{si } |i - j| > 1
+   \end{array}\right. \]
+
+
+Ainsi, on obtient :
+
+\[  \]
+\begin{eqnarray*}
+  \mathbb{E}[L_N^2] & = & \frac{3 (N - 2)}{2} + \frac{(N - 3) (N - 4)}{4} +
+  \frac{2 (N - 3)}{6} + 1\\
+  & = & \frac{N^2}{4} + \frac{N}{12} 
+\end{eqnarray*}
+
+
+Par cons{\'e}quent,
+\[ \tmop{Var} [L^2_N] = \frac{N}{12} \]
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

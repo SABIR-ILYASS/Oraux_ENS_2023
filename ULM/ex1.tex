@@ -1,0 +1,378 @@
+L'exercice 1 porte sur les wronskiens et les syst{\`e}mes de Tchebychev. Il explore les propri{\'e}t{\'e}s des d{\'e}terminants wronskiens et leur application {\`a} l'{\'e}tude des z{\'e}ros de combinaisons lin{\'e}aires de fonctions. Cet exercice combine des aspects d'alg{\`e}bre lin{\'e}aire et d'analyse, mettant en {\'e}vidence des liens profonds entre ces domaines.
+
+\begin{exercise}[(Wronskiens et syst{\`e}mes de Tchebychev)]
+
+Soit~$I \subseteq \mathbb{R}$ un intervalle ouvert non vide.
+Soit~$\mathcal{C}^r (I)$ le~$\mathbb{R}$-espace vectoriel des fonctions sur $I$ {\`a} valeurs r{\'e}elles continument d{\'e}rivables $r$ fois. Pour toutes fonctions $f_1, \ldots, f_r \in \mathcal{C}^{r - 1} (I)$ on d{\'e}finit une fonction $I \to \mathbb{R}$ par :
+
+\[ \mathcal{W} [f_1, \ldots, f_r] (x) = \left| \begin{array}{ccc}
+     f_1 (x) & \cdots & f_r (x)\\
+     f_1' (x) & \cdots & f_r' (x)\\
+     \vdots &  & \vdots\\
+     f_1^{(r - 1)} (x) & \cdots & f_r^{(r - 1)} (x)
+   \end{array} \right| \]
+
+
+1. Montrer que pour toute fonctions~$g, f_1, \ldots, f_r \in \mathcal{C}^{r - 1} (I)$,
+\[ \mathcal{W} [gf_1, \ldots, gf_r] (x) = g (x)^r \mathcal{W} [f_1, \ldots, f_r] (x) . \]
+
+2. Soit~$f_1, \ldots, f_r \in \mathcal{C}^{r - 1} (I)$ telles que~$\mathcal{W}
+[f_1, \ldots, f_k]$ est strictement positif sur~$I$, pour tout~$1 \leq k \leq r$. Montrer que pour tout~$a_1, \ldots, a_r \in \mathbb{R}$ non tous nuls, la fonction~$a_1 f_1 + \cdots + a_r f_r$ admet au plus~$r - 1$ z{\'e}ros sur $I$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+1. Soient $g, f_1, \ldots, f_r \in \mathcal{C}^{r - 1} (I)$ et $x \in
+\mathbb{R}$, on a :
+\begin{eqnarray*}
+  \mathcal{W} [gf_1, \ldots, gf_r] (x) & = & \left| \begin{array}{ccc}
+    (g f_1) (x) & \cdots & (g f_r) (x)\\
+    (g f_1)' (x) & \cdots & (g f_1)^{'} (x)\\
+    \vdots &  & \vdots\\
+    (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+  \end{array} \right|
+\end{eqnarray*}
+
+Or, pour tout $j, k \in \llbracket 1, r \rrbracket$, on a :
+\[ (1) : (g f_j)^{(k)} (x) = \underset{i = 0}{\overset{k}{\sum}} \left(
+   \begin{array}{c}
+     k\\
+     i
+   \end{array} \right) g^{(i)} (x) f^{(k - i)}_j (x) \]
+
+Donc
+\begin{eqnarray*}
+  {}[gf_1, \ldots, gf_r] (x) & = & g (x) \left| \begin{array}{ccc}
+    f_1 (x) & \cdots & f_r (x)\\
+    g (x) f_1' (x) + g' (x) f_1 (x) & \cdots & g (x) f_r' (x) + g' (x) f_r
+    (x)\\
+    \vdots &  & \vdots\\
+    (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+  \end{array} \right|\\
+  & = & g (x) \left| \begin{array}{ccc}
+    f_1 (x) & \cdots & f_r (x)\\
+    g (x) f_1' (x) & \cdots & g (x) f_r' (x)\\
+    \vdots &  & \vdots\\
+    (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+  \end{array} \right| L_2 \leftarrow L_2 - g' (x) L_1\\
+  & = & g (x)^2 \left| \begin{array}{ccc}
+    f_1 (x) & \cdots & f_r (x)\\
+    f_1' (x) & \cdots & f_r' (x)\\
+    \vdots &  & \vdots\\
+    (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+  \end{array} \right|
+\end{eqnarray*}
+
+Soit $l \in \llbracket 1, r - 2 \rrbracket$, supposons que :
+\[ \mathcal{W} [gf_1, \ldots, gf_r] (x) = g (x)^l \left| \begin{array}{ccc}
+     f_1 (x) & \cdots & f_r (x)\\
+     f_1' (x) & \cdots & f_r' (x)\\
+     \vdots &  & \vdots\\
+     f^{(l)}_1 (x) &  & f^{(l)}_r (x)\\
+     (g f_1)^{(l + 1)} (x) &  & (g f_r)^{(l + 1)} (x)\\
+     \vdots &  & \vdots\\
+     (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+   \end{array} \right| \]
+
+Et montrons que :
+\[ \mathcal{W} [gf_1, \ldots, gf_r] (x) = g (x)^{l + 1} \left|
+   \begin{array}{ccc}
+     f_1 (x) & \cdots & f_r (x)\\
+     f_1' (x) & \cdots & f_r' (x)\\
+     \vdots &  & \vdots\\
+     f^{(l + 1)}_1 (x) &  & f^{(l + 1)}_r (x)\\
+     (g f_1)^{(l + 2)} (x) &  & (g f_r)^{(l + 2)} (x)\\
+     \vdots &  & \vdots\\
+     (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+   \end{array} \right| \]
+
+Ce qui est {\'e}vident, en effectuant l'op{\'e}ration $L_{l + 1} \leftarrow L_{l + 1} - \underset{i = 1}{\overset{l}{\sum}} \left( \begin{array}{c} l\\ i \end{array} \right) g^{(i)} (x) L_i$, (Selon $(1)$).
+
+D'o{\`u} par r{\'e}currence pour tout $l \in \llbracket 1, r - 1 \rrbracket$,
+on a :
+\[ \mathcal{W} [gf_1, \ldots, gf_r] (x) = g (x)^l \left| \begin{array}{ccc}
+     f_1 (x) & \cdots & f_r (x)\\
+     f_1' (x) & \cdots & f_r' (x)\\
+     \vdots &  & \vdots\\
+     f^{(l)}_1 (x) &  & f^{(l)}_r (x)\\
+     (g f_1)^{(l + 1)} (x) &  & (g f_r)^{(l + 1)} (x)\\
+     \vdots &  & \vdots\\
+     (g f_1)^{(r - 1)} (x) & \cdots & (g f_r)^{(r - 1)} (x)
+   \end{array} \right| \]
+
+En particulier, pour $l = r - 1$, on a alors :
+\[ \mathcal{W} [gf_1, \ldots, gf_r] (x) = g (x)^r \mathcal{W} [f_1, \ldots,
+   f_r] (x) \]
+
+
+2. Soient~$f_1, \ldots, f_r \in \mathcal{C}^{r - 1} (I)$ telles
+que~$\mathcal{W} [f_1, \ldots, f_k]$ soit strictement positif sur~$I$, pour
+tout~$1 \leq k \leq r$. Soient $a_1, \ldots, a_r \in \mathbb{R}$ non tous
+nuls. Montrons que la fonction $a_1 f_1 + \cdots + a_r f_r$ admet au plus~$r -
+1$ z{\'e}ros sur $I$.
+
+Commen{\c c}ons par examiner les petites valeurs de $r$.
+
+\textbf{Pour $r = 1$}, on a pour tout $x \in I$
+\[ f_1 (x) =\mathcal{W} [f_1] (x) > 0 \]
+
+
+Donc pour tout $a \not{=} 0$, on a $a f_1$ n'admet pas de z{\'e}ros sur $I$.
+
+\textbf{Pour $r = 2$,} on a pour tout $x \in I$,
+\[ \left\{\begin{array}{l}
+     f_1 (x) =\mathcal{W} [f_1] (x) > 0\\
+     f_2' (x) f_1 (x) - f_1' (x) f_2 (x) =\mathcal{W} [f_1, f_2] (x) > 0
+   \end{array}\right. \]
+
+Alors
+\[ \left( \frac{f_2}{f_1} \right)' (x) = \frac{\mathcal{W} [f_1, f_2] (x)}{f_1
+   (x)^2} > 0 \]
+
+
+Soient $a, b \in \mathbb{R}$ non tous nuls, montrons que la fonction $x \in I
+\longmapsto a f_1 (x) + b f_2 (x)$ admet au plus $1$ z{\'e}ro sur $I$.
+
+Si $b = 0$, il est clair que la fonction $x \in I \longmapsto a f_1 (x) + b
+f_2 (x)$ n'admet pas de z{\'e}ros sur $I$.
+
+Sinon, les z{\'e}ros de \ $x \in I \longmapsto a f_1 (x) + b f_2 (x)$ sont
+exactement les z{\'e}ros de la fonction \ $\gamma : x \in I \longmapsto a + b
+\frac{f_2 (x)}{f_1 (x)}$. Or, pour tout $x \in I$, on a $\gamma' (x) = b
+\left( \frac{f_2}{f_1} \right)'$, ce qui signifie que $\gamma$ est strictement
+monotone sur $I$, par cons{\'e}quent $\gamma$ admet au plus un z{\'e}ro sur
+$I$. D'o{\`u} le r{\'e}sultat.
+
+Dans toute la suite, on suppose que $\tmmathbf{r \geqslant 3}$, Le
+r{\'e}sultat n'est pas facile {\`a} d{\'e}montrer, donc nous allons prouver
+dans un premier temps trois lemmes qui nous aideront {\`a} r{\'e}pondre {\`a}
+la question.
+
+\textbf{D{\'e}finition.}
+
+Notons, pour tout $k \in \llbracket 1, r \rrbracket$
+\[ \left\{\begin{array}{l}
+     \varphi_1 \assign \mathcal{W} [f_1]\\
+     \varphi_2 \assign \frac{\mathcal{W} [f_1, f_2]}{\mathcal{W} [f_1]^2}\\
+     \varphi_k \assign \frac{\mathcal{W} [f_1, \ldots, f_{k - 2}] \mathcal{W}
+     [f_1, \ldots, f_k]}{\mathcal{W} [f_1, \ldots, f_{k - 1}]^2} \tmop{si} 3
+     \leqslant k \leqslant r
+   \end{array}\right. \]
+
+Et pour tout $k \in \llbracket 1, r - 1 \rrbracket$, on d{\'e}finit
+l'op{\'e}rateur diff{\'e}rentiel $D_k$ par :
+\[ D_k .f \assign \frac{d}{d x} \left( \frac{f}{\varphi_k} \right) \quad,
+   \forall f \in \mathcal{C}^{r - 1} (I) \infixand D_0 .f = f \]
+
+
+\textbf{Lemme 1.}
+
+On a pour tout $k \in \llbracket 1, r \rrbracket$
+\[ D_{k - 1} .D_{k - 2} \ldots D_1 .f_k = \varphi_k \]
+
+
+\textbf{Preuve du lemme 1.}
+
+Montrons le r{\'e}sultat par r{\'e}currence sur $k \in \llbracket 1, r
+\rrbracket$.
+
+Le r{\'e}sultat est trivial pour $k = 1, 2$ ($c.f$ le cas $r = 1, 2$).
+
+Soit $k \in \llbracket 3, r \rrbracket$, supposons que pour tout $i \in
+\llbracket 1, k - 1 \rrbracket$ $D_{i - 1} \ldots D_1 .f_i = \varphi_i$.
+Montrons que $D_{k - 1} .D_{k - 2} \ldots D_1 .f_k = \varphi_k$.
+
+On a d'apr{\`e}s la question 1 :
+\begin{eqnarray*}
+  \frac{1}{\varphi^k_1} \mathcal{W} [f_1, \ldots, f_k] & = & \left|
+  \begin{array}{cccc}
+    1 & \frac{f_2}{\varphi_1} & \cdots & \frac{f_k}{\varphi_1}\\
+    D_1 .f_1 & D_1 .f_2 & \cdots & D_1 .f_k\\
+    \vdots &  &  & \vdots\\
+    D_1 .f_1 & D_1 .f_2 & \cdots & D_1 .f_k
+  \end{array} \right|\\
+  & = & \left| \begin{array}{cccc}
+    1 & \frac{f_2}{\varphi_1} & \cdots & \frac{f_r}{\varphi_1}\\
+    0 & D_1 .f_2 & \cdots & D_1 .f_r\\
+    0 & \frac{d}{d x} D_1 .f_2 &  & \frac{d}{d x} D_1 .f_2\\
+    \vdots &  &  & \vdots\\
+    0 & \left( \frac{d}{d x} \right)^{r - 2} D_1 .f_2 & \cdots & \left(
+    \frac{d}{d x} \right)^{r - 2} D_1 .f_r
+  \end{array} \right|\\
+  & = & \mathcal{W} [D_1 .f_2, \ldots, D_1 .f_k]
+\end{eqnarray*}
+
+Ainsi,
+\begin{eqnarray*}
+  \frac{1}{\varphi^{k - 1}_2} \mathcal{W} [D_1 .f_2, \ldots, D_1 .f_k] & = &
+  \left| \begin{array}{ccc}
+    \frac{1}{\varphi_2} D_1 .f_2 & \cdots & \frac{1}{\varphi_2} D_1 .f_r\\
+    D_2 .D_1 .f_2 &  & D_2 .D_1 .f_2\\
+    &  & \vdots\\
+    \left( \frac{d}{d x} \right)^{r - 3} D_2 .D_1 .f_2 & \cdots & \left(
+    \frac{d}{d x} \right)^{r - 3} D_2 .D_1 .f_2
+  \end{array} \right|\\
+  & = & \left| \begin{array}{cccc}
+    1 & \frac{1}{\varphi_2} D_1 .f_3 & \cdots & \frac{1}{\varphi_2} D_1 .f_r\\
+    0 & D_2 .D_1 .f_3 &  & D_2 .D_1 .f_2\\
+    &  &  & \vdots\\
+    0 & \left( \frac{d}{d x} \right)^{r - 3} D_2 .D_1 .f_3 & \cdots & \left(
+    \frac{d}{d x} \right)^{r - 3} D_2 .D_1 .f_2
+  \end{array} \right|\\
+  & = & \mathcal{W} [D_2 .D_1 .f_3, \ldots, D_2 .D_1 .f_k]
+\end{eqnarray*}
+
+Ainsi, par r{\'e}currence, on a pour tout $j \in \llbracket 0, k - 1
+\rrbracket$ :
+\begin{eqnarray*}
+  \frac{1}{\varphi^{k - j + 1}_j} \times \ldots \times \frac{1}{\varphi^{k -
+  1}_2} \times \frac{1}{\varphi^k_1} \mathcal{W} [f_1, \ldots, f_k] & = &
+  \mathcal{W} [D_j \ldots D_1 .f_{j + 1}, \ldots, D_j \ldots D_1 .f_k]
+\end{eqnarray*}
+
+
+En particulier, pour $j = k - 1$, on a :
+\[ \frac{1}{\varphi^2_{k - 1}} \times \ldots \times \frac{1}{\varphi^{k -
+   1}_2} \times \frac{1}{\varphi^k_1} \mathcal{W} [f_1, \ldots, f_k] = D_{k -
+   1} \ldots D_1 .f_k \]
+
+Ainsi, $D_{k - 1} \ldots D_1 .f_k $ vaut :
+\begin{eqnarray*}
+  & = & \mathcal{W} [f_1, \ldots, f_k] \underset{j = 1}{\overset{k -
+  1}{\prod}} \frac{1}{\varphi^{k - j + 1}_j} \\
+  & = & \mathcal{W} [f_1, \ldots, f_k] \times \frac{1}{\mathcal{W} [f_1]^k}
+  \times \left( \frac{\mathcal{W}[f_1]^2}{\mathcal{W}[f_1, f_2]} \right)^{k -
+  1} \times  \underset{j = 3}{ \overset{k - 1}{\prod}} \left(
+  \frac{\mathcal{W}[f_1, \ldots, f_{j - 1}]^2}{\mathcal{W}[f_1, \ldots, f_{j -
+  2}]\mathcal{W}[f_1, \ldots, f_j]} \right)^{k - j + 1}\\
+  & = & \mathcal{W} [f_1, \ldots, f_k] \times \frac{\mathcal{W} [f_1]^{k -
+  2}}{\mathcal{W} [f_1, f_2]^{k - 1}} \times \frac{\underset{j = 2}{
+  \overset{k - 2}{\prod}} \mathcal{W} [f_1, \ldots, f_j]^{2 (k -
+  j)}}{\underset{j = 1}{ \overset{k - 3}{\prod}} \mathcal{W} [f_1, \ldots,
+  f_j]^{k - j - 1} \times \underset{j = 3}{ \overset{k - 1}{\prod}}
+  \mathcal{W} [f_1, \ldots, f_j]^{k - j + 1}}\\
+  & = & \frac{\mathcal{W} [f_1, \ldots, f_k] \mathcal{W} [f_1, \ldots, f_{k -
+  2}]}{\mathcal{W} [f_1, \ldots, f_{k - 1}]^2}\\
+  & = & \varphi_k
+\end{eqnarray*}
+
+D'o{\`u} le r{\'e}sultat par r{\'e}currence.
+
+\textbf{lemme 2.}
+
+Soit $f \in \mathcal{C}^1 (I)$ et $k \in \llbracket 1, r - 1 \rrbracket$, s'il
+existe $a < b \in I$ tels que $f (a) = f (b) = 0$, alors il existe $c \in] a,
+b [$ tel que $D_k .f (c) = 0$
+
+\textbf{Preuve du lemme 2.}
+
+Trivial, en appliquant le th{\'e}or{\`e}me de Rolle {\`a}
+$\frac{f}{\varphi_k}$.
+
+\
+
+\textbf{Lemme 3.}
+
+Soit $f \in \mathcal{C}^{r - 1} (I)$. On suppose que $f$ admet au moins $r$
+z{\'e}ros sur $I$, alors pour tout $k \in \llbracket 1, r - 1 \rrbracket$, on
+a $D_k .D_{k - 1} \ldots D_1 .f$ admet au moins $r - k$ racines sur $I$.
+
+\textbf{Preuve du lemme 3.}
+
+Soit $f \in \mathcal{C}^{r - 1} (I)$, on suppose que $f$ admet au moins $r$
+z{\'e}ros $\zeta_1 < \ldots < \zeta_r $ sur $I$.
+
+On va montrer le r{\'e}sultat par r{\'e}currence finie sur $k \in \llbracket
+1, r - 1 \rrbracket$.
+
+Pour $k = 1$, on a pour tout $j \in \llbracket 1, r - 1 \rrbracket$, on a $f
+(\zeta_j) = f (\zeta_{j + 1}) = 0$. Donc, via le lemme 2, il existe $\tau_j
+\in] \zeta_j, \zeta_{j + 1} [$ tel que $D_1 .f (\tau_j) = 0$
+
+Ainsi $D_1 .f$ admet au moins $r - 1$ z{\'e}ros sur $I$.
+
+Soit $k \in \llbracket 1, r - 2 \rrbracket$, supposons que $D_k .D_{k - 1}
+\ldots D_1 .f$ admet au moins $r - k$ z{\'e}ros sur $I$ et montrons que $D_{k
++ 1} .D_k \ldots D_1 .f$ admet au moins $r - (k + 1)$ z{\'e}ros sur $I$.
+
+Par le m{\^e}me raisonnement que pr{\'e}c{\'e}demment, entre deux z{\'e}ros de
+\ $D_k .D_{k - 1} \ldots D_1 .f$, il existe un z{\'e}ro de $D_{k + 1} .D_k
+\ldots D_1 .f$.
+
+D'o{\`u} le r{\'e}sultat.
+
+Revenons {\`a} notre question. Montrons que \ $a_1 f_1 + \cdots + a_r f_r$
+admet au plus~$r - 1$ z{\'e}ros sur $I$.
+
+Par l'absurde, supposons que $a_1 f_1 + \cdots + a_r f_r$ admet au moins $r$
+z{\'e}ros sur $I$.
+
+Notons $I = \left\{ k \in \llbracket 1, r \rrbracket, a_i \not{=} 0 \right\}$
+et $i_0 = \max (I)$. On a d'apr{\`e}s le lemme 1,
+
+\begin{eqnarray*}
+  D_{i_0 - 1} \cdots D_1 \left( \sum_{k = 1}^{r} a_k f_k \right) 
+  &=& D_{i_0 - 1} \cdots D_1 \left( \sum_{k \in I} a_k f_k \right) \\
+  &=& \sum_{k \in I \setminus \{ i_0 \}} a_k \, D_{i_0 - 1} \cdots D_{k+1} D_{k - 1} \cdots D_1 f_k + a_{i_0} \, D_{i_0 - 1} \cdots D_1 f_{i_0} \\
+  &=& a_{i_0} \, \varphi_{i_0}
+\end{eqnarray*}
+
+
+
+Or, via le lemme 3, $D_{i_0 - 1} \ldots D_1 . \left( \overset{r}{\underset{k =
+1}{\sum}} a_k f_k \right)$ admet au moins $r - i_0 + 1 \geqslant 1$ z{\'e}ros
+sur $I$.
+
+Ainsi $a_{i_0} . \varphi_{i_0}$ s'annule sur $I$, absurde avec $\varphi_{i_0}
+> 0$.
+
+D'o{\`u} $a_1 f_1 + \cdots + a_r f_r$ admet au plus~$r - 1$ z{\'e}ros sur $I$.
+
+\textbf{Commentaire.} Le r{\'e}sultat de la deuxi{\`e}me question semble
+int{\'e}ressant pour caract{\'e}riser certains types de fonctions.
+
+1- Notons pour tout $i \in \llbracket 1, r \rrbracket$ $f_i : x \longmapsto
+x^{i - 1}$, on a alors pour tout $k \in \llbracket 1, r \rrbracket$ et pour
+tout $x \in \mathbb{R}$
+\begin{eqnarray*}
+  \mathcal{W} [f_1, \ldots, f_k] (x) & = & \left| \begin{array}{ccccc}
+    1 & x & \cdots &  & x^{k - 1}\\
+    0 & 2 & \cdots &  & (k - 1) x^{k - 2}\\
+    \vdots &  &  &  & \vdots\\
+    0 &  &  & (k - 2) ! & (k - 2) !x\\
+    0 &  & \cdots & 0 & (k - 1) !
+  \end{array} \right|\\
+  & = & \underset{i = 1}{\overset{k - 1}{\prod}} i!\\
+  & > & 0
+\end{eqnarray*}
+
+Donc pour tous $a_1, \ldots, a_r$ non tous nuls, on a $x \longmapsto
+\underset{k = 1}{\overset{r}{\sum}} a_k x^{k - 1}$ admet au plus~$r - 1$
+z{\'e}ros sur $\mathbb{R}$.
+
+Ainsi, pour tout polyn{\^o}me $P \in \mathbb{R} [X]$ non nul, $P$ admet au
+plus $\deg (P)$ racines sur $\mathbb{R}$.
+
+2- Soient $t_1 < \cdots < t_r \in \mathbb{R}$
+
+Pour tout $i \in \llbracket 1, r \rrbracket$, et pour tout $f_k : x
+\longmapsto e^{t_k x}$, on a alors pour tout $k \in \llbracket 1, r
+\rrbracket$ et pour tout $x \in \mathbb{R}$
+\begin{eqnarray*}
+  \mathcal{W} [f_1, \ldots, f_k] (x) & = & e^{(t_1 + \cdots + t_k) x} \left|
+  \begin{array}{ccccc}
+    1 & 1 & \cdots &  & 1\\
+    t_1 & t_2 & \cdots &  & t_k\\
+    \vdots &  &  &  & \vdots\\
+    t^{k - 1}_1 & t^{k - 1}_k & \cdots &  & t^{k - 1}_k
+  \end{array} \right|\\
+  & = & e^{(t_1 + \cdots + t_k) x} \underset{1 \leqslant i < j \leqslant
+  k}{\prod} (t_j - t_i)\\
+  & > & 0
+\end{eqnarray*}
+
+Ainsi pour tous $a_1, \ldots, a_r$ non tous nuls, on a $x \longmapsto
+\underset{k = 1}{\overset{r}{\sum}} a_k e^{t_k x}$ admet au plus~$r - 1$
+z{\'e}ros sur $\mathbb{R}$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

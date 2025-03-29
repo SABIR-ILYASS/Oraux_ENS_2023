@@ -1,0 +1,76 @@
+L'exercice suivant s'int{\'e}resse aux polyn{\^o}mes et au comportement de
+leurs racines r{\'e}elles. Il s'agit de d{\'e}terminer s'il est possible de
+construire une suite particuli{\`e}re de coefficients permettant d'obtenir un
+nombre pr{\'e}cis de racines r{\'e}elles distinctes pour chaque polyn{\^o}me
+consid{\'e}r{\'e}.
+\begin{exercise}[(Oral ULM)]
+Existe-il une suite $(a_n)_{n \in \mathbb{N}}$ de r{\'e}els telle que pour
+tout entier $n \in \mathbb{N}$, le polyn{\^o}me $\underset{k =
+0}{\overset{n}{\sum}} a_k X^k$ ait exactement $n$ racines r{\'e}elles
+distinctes?
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Commen{\c c}ons par construire une suite de polyn{\^o}mes $\left( P_n \assign
+\underset{k = 0}{\overset{n}{\sum}} a_k X^k \right)_{n \in \mathbb{N}}$
+scind{\'e}s sur $\mathbb{R}${\`a} racines simples.
+
+Initialisons la suite par $P_0 = 1$, $P_1 = X + 1$, puis l'id{\'e}e est de
+supposer pour un $n \in \mathbb{N}$ donn{\'e}, qu'il existe $a_0, \ldots, a_n$
+tels que $P_n \assign \underset{k = 0}{\overset{n}{\sum}} a_k X^k$ soit
+scind{\'e} sur $\mathbb{R}$ {\`a} racines simples. Nous allons chercher un
+$a_{n + 1} \in \mathbb{R}$ tel que $P_{n + 1} = \underset{k = 0}{\overset{n +
+1}{\sum}} a_k X^k$ soit {\'e}galement scind{\'e} sur $\mathbb{R}${\`a} racines
+simples.
+
+Puisque $P_n$ est scind{\'e} {\`a} racines simples, alors il existe $\lambda_1
+< \ldots < \lambda_n \in \mathbb{R}$ \ tels que $P_n = \underset{k =
+1}{\overset{n}{\prod}} (X - \lambda_k)$
+
+Soient $\beta_0, \ldots, \beta_n \in \mathbb{R}$ v{\'e}rifiant $\beta_{k - 1}
+< \lambda_k < \beta_k$ pour tout$k = 1, \ldots, n$.
+
+Par ailleurs, pour tout $k \in \llbracket 0, n - 1 \rrbracket$ $P_n$ change de
+signe sur les intervalles $] \lambda_k, \lambda_{k + 1} [$ et  $] \lambda_{k +
+1}, \lambda_{k + 2} [$ avec $\lambda_0 = - \infty$ et $\lambda_{n + 1} = +
+\infty$. En particulier, pour tout $k \in \llbracket 0, n - 1 \rrbracket$ $P_n
+(\beta_k) P_n (\beta_{k + 1}) < 0$ et $P_n (\beta_n) > 0$.
+
+Soit $\varphi$ la fonction d{\'e}finie sur $\mathbb{R}^2$ par $\varphi (x, y)
+= P_n (x) + y x^{n + 1}$ pour tout $(x, y) \in \mathbb{R}^2$.
+
+On a $\varphi (\beta_k, 0) \varphi (\beta_{k + 1}, 0) = P_n (\beta_k) P_n
+(\beta_{k + 1}) < 0$ et $\varphi (\beta_n, 0)$=$P_n (\beta_n) > 0$.
+
+Donc par continuit{\'e} de $(x, y, z) \longmapsto \varphi (x, z) \varphi (y,
+z)$ sur $\mathbb{R}^2$, pour tout $k \in \llbracket 0, n - 1 \rrbracket$ il
+existe $\varepsilon_k > 0$ tel que pour tout $t \in \mathbb{R}$ tel que $| t |
+< \varepsilon_k$ on a $\varphi (\beta_k, t) \varphi (\beta_{k + 1}, t) < 0$
+pour tout $k = 1, \ldots, n$.
+
+Par continuit{\'e} de $\varphi$, il existe $\varepsilon_n > 0$ tel que pour
+tout $t \in \mathbb{R}$ v{\'e}rifiant $| t | < \varepsilon_n$, on a $\varphi
+(\beta_n, t) > 0$.
+
+En particulier pour $a_{n + 1} \assign - \frac{1}{2} \underset{k =
+0}{\overset{n}{\min}} (\varepsilon_k)$, on obtient pour tout $k \in \llbracket
+0, n - 1 \rrbracket$ $\varphi (\beta_k, a_{n + 1}) \varphi (\beta_{k + 1},
+a_{n + 1}) < 0$ et $\varphi (\beta_n, a_{n + 1}) > 0$.
+
+Via le th{\'e}or{\`e}me des valeurs interm{\'e}diaires, pour tout $k \in
+\llbracket 0, n - 1 \rrbracket$, il existe $\gamma_k \in] \beta_k, \beta_{k +
+1} [$ tel que $\varphi (\gamma_k, a_{n + 1}) = 0$.
+
+D'autre part, $\underset{x \rightarrow + \infty}{\lim} \varphi (x, a_{n + 1})
+= - \infty$ et $\varphi (\beta_n, a_{n + 1}) > 0$, d'apr{\`e}s le m{\^e}me
+th{\'e}or{\`e}me il existe $\gamma_n \in] \beta_n, + \infty [$ tel que
+$\varphi (\gamma_n, a_{n + 1}) = 0$.
+
+En conclusion, $x \longmapsto \varphi (x, a_{n + 1}) = \underset{k =
+0}{\overset{n + 1}{\sum}} a_k X^k$ admet exactement $n + 1$ racines simples
+$\gamma_0 < \cdots < \gamma_n$.
+
+D'o{\`u} le r{\'e}sultat par r{\'e}currence.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

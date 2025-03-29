@@ -1,0 +1,150 @@
+L'exercice 25 s'int{\'e}resse {\`a} un groupe particulier de polyn{\^o}mes. Il
+demande de d{\'e}crire le groupe des {\'e}l{\'e}ments inversibles dans un
+certain anneau de fractions rationnelles {\`a} coefficients dans $\mathbb{Z}/
+p^2 \mathbb{Z}$, et de prouver que ce groupe n'est pas finiment engendr{\'e}.
+L'exercice fait appel {\`a} des notions d'alg{\`e}bre et de th{\'e}orie des
+groupes.
+\begin{exercise}[(Un groupe de polyn{\^o}mes)]
+Soit~$p$ un nombre premier. On consid{\`e}re l'anneau $A$ des fractions
+rationnelles en $X$ {\`a} coefficients dans $\mathbb{Z}/ p^2 \mathbb{Z}$ de la
+forme~$X^{- k} P (X)$, avec~$P$ un polyn{\^o}me. D{\'e}crire le groupe
+$A^{\times}$ des {\'e}l{\'e}ments inversibles (pour la multiplication) et
+montrer qu'il n'est pas engendr{\'e} par un nombre fini d'{\'e}l{\'e}ments.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+
+\tmtextbf{Lemme 1.}
+
+Soit $G = \langle g_1, g_2, \ldots, g_n \rangle$ un groupe ab{\'e}lien
+finiment engendr{\'e} et soit $N$ un sous-groupe de $G$. Alors, $N$ est
+{\'e}galement finiment engendr{\'e}.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Nous proc{\'e}dons par r{\'e}currence sur le nombre $n$ de g{\'e}n{\'e}rateurs
+de $G$.
+
+Le cas de base est trivial cas tout sous groupe d'un groupe cyclique est
+cyclique.
+
+Supposons maintenant que le lemme est vrai pour tout groupe ab{\'e}lien
+finiment engendr{\'e} avec $n - 1$ g{\'e}n{\'e}rateurs.
+
+Soit $G = \langle g_1, g_2, \ldots, g_n \rangle$ et soit $N$ un sous-groupe
+de $G$. Consid{\'e}rons le sous-groupe
+\[ M = N \cap \langle g_2, \ldots, g_n \rangle . \]
+
+
+Ce sous-groupe $M$ est un sous-groupe de $\langle g_2, \ldots, g_n \rangle$,
+qui est un groupe ab{\'e}lien finiment engendr{\'e} avec $n - 1$
+g{\'e}n{\'e}rateurs.
+
+Par hypoth{\`e}se de r{\'e}currence, $M$ est donc finiment engendr{\'e}.
+
+Soit $M = \langle x_1, x_2, \ldots, x_m \rangle$ avec $x_i \in M$. Ensuite,
+consid{\'e}rons les {\'e}l{\'e}ments de $N$ qui impliquent $g_1$.
+D{\'e}finissons l'ensemble
+\[ A =\{a \in \mathbb{Z} \mid \exists b_2, \ldots, b_n \in \mathbb{Z}
+   \text{tels que } g_1^a g_2^{b_2} \ldots g_n^{b_n} \in N\}. \]
+
+
+Cet ensemble $A$ est un sous-groupe de $\mathbb{Z}$, et tout sous-groupe de
+$\mathbb{Z}$ est de la forme $d\mathbb{Z}$ pour un certain entier $d$.
+
+Par cons{\'e}quent, il existe un entier $d$ tel que $A = d\mathbb{Z}$. Cela
+signifie qu'il existe des entiers $b_2, \ldots, b_n$ tels que
+\[ x = g_1^d g_2^{b_2} \ldots g_n^{b_n} \in N. \]
+
+
+Nous affirmons maintenant que $N = \langle x_1, \ldots, x_m, x \rangle$.
+Prenons un {\'e}l{\'e}ment quelconque $g \in N$. Comme $g \in G$, il peut
+s'{\'e}crire sous la forme
+\[ g = g_1^{c_1} g_2^{c_2} \ldots g_n^{D_n} . \]
+
+
+Par la d{\'e}finition de $A$, nous avons $c_1 \in A = d\mathbb{Z}$, donc il
+existe un entier $h$ tel que $c_1 = dh$. Consid{\'e}rons alors
+\[ gx^{- h} = g_1^{c_1 - dh} g_2^{c_2} \ldots g_n^{D_n} = g_2^{c_2} \ldots
+   g_n^{D_n} . \]
+
+
+Cet {\'e}l{\'e}ment appartient {\`a} $M$, qui est engendr{\'e} par $x_1,
+\ldots, x_m$. Ainsi, nous avons
+\[ g = x^h (x_1^{e_1} x_2^{e_2} \ldots x_m^{e_m}), \]
+
+
+o{\`u} $e_i \in \mathbb{Z}$. Cela montre que chaque {\'e}l{\'e}ment de $N$
+peut {\^e}tre {\'e}crit comme une combinaison des {\'e}l{\'e}ments $x_1,
+\ldots, x_m, x$.
+
+Par cons{\'e}quent, $N$ est finiment engendr{\'e}, ce qui conclut la preuve du
+lemme.
+
+\
+
+Revenons {\`a} l'exercice.
+
+\
+
+Pour caract{\'e}riser les {\'e}l{\'e}ments inversibles de $A$, nous devons
+montrer que $X^{- k} P (X)$ est inversible si et seulement si $P$ a exactement
+un coefficient non divisible par $p$. Supposons que $X^{- k} P (X)$ soit
+inversible : il existe alors un polyn{\^o}me $Q (X)$ et un entier natuel $l$
+tels que
+\[ (X^{- k} P (X)) (X^{- l} Q (X)) = 1_A . \]
+
+
+Cela implique que tous les coefficients de $PQ - X^{k + l}$ sont des multiples
+de $p^2$. En r{\'e}duisant modulo $p$, on trouve que $PQ = X^{k + l}$ dans
+$\mathbb{F}_p [X]$. Comme $\mathbb{F}_p$ est un corps et que $X$ est
+irr{\'e}ductible dans $\mathbb{F}_p [X]$, cela signifie que $P = \alpha X^i$
+pour un certain $\alpha \in \mathbb{F}_p \setminus \{0\}$. Ainsi, $P$
+poss{\`e}de exactement un coefficient non divisible par $p$.
+
+R{\'e}ciproquement, supposons que $P = \alpha X^i + pQ (X)$ avec $\alpha$ non
+divisible par $p$.
+
+Soit $b$ l'inverse de $a$ modulo $p^2$. On trouve modulo $p^2$ que $P (X) =
+aX^i (1 + pbX^{- i} Q (X))$ En posant $y = bX^{k - i} (1 - pbX^{- i} Q (X))$.
+On trouve que $(X^{- k} P (X)) y = 1_A$, prouvant que $X^{- k} P (X)$ est
+inversible.
+
+Consid{\'e}rons maintenant le sous-groupe S de $A^{\times}$.
+\[ S = \left\{ \alpha + pQ (X) \mid \alpha \in \mathbb{Z}, \hspace{0.17em}
+   \alpha \neq 0 \pmod{p}, \hspace{0.17em} Q (X) \in \mathbb{Z}[X] \right\} \]
+
+
+Consid{\'e}rons maintenant que le sous-groupe $S$ est g{\'e}n{\'e}r{\'e} par
+un ensemble fini d'{\'e}l{\'e}ments $s_1, s_2, \ldots, s_n$, o{\`u} chaque
+$s_i$ est de la forme :
+\[ s_i = \alpha_i + pQ_i (X) \]
+
+
+avec $\alpha_i \in \mathbb{Z}$, $\alpha_i \neq 0 \pmod{p}$, et $Q_i (X) \in
+\mathbb{Z}[X]$. On suppose que ces $s_i$ forment un syst{\`e}me de
+g{\'e}n{\'e}rateurs de $S$.
+
+Cependant, une contradiction {\'e}merge lorsque l'on examine le produit de
+deux g{\'e}n{\'e}rateurs $s_i$ et $s_j$. Prenons deux {\'e}l{\'e}ments $s_i =
+\alpha_i + pQ_i (X)$ et $s_j = \alpha_j + pQ_j (X)$ dans $S$, et
+consid{\'e}rons leur produit :
+\[ s_i s_j = (\alpha_i + pQ_i (X)) (\alpha_j + pQ_j (X)) = \alpha_i \alpha_j +
+   p (\alpha_i Q_j (X) + \alpha_j Q_i (X)) + p^2 Q_i (X) Q_j (X) \]
+
+
+Le terme $p^2 Q_i (X) Q_j (X)$ dispara{\^i}t dans l'anneau $\mathbb{Z}/ p^2
+\mathbb{Z}$. Ainsi, le produit devient :
+\[ s_i s_j = \alpha_i \alpha_j + p (\alpha_i Q_j (X) + \alpha_j Q_i (X)) \]
+
+
+Le degr{\'e} du polyn{\^o}me reste born{\'e} par $M = \max (\deg Q_i)_{1 \leq
+i \leq n}$. Ceci est valable pour un produit aussi long que l'on souhaite.
+
+En consid{\'e}rant le polyn{\^o}me $1 + pQ^{M + 1} (X)$. Il est dans S mais ne
+peut {\^e}tre g{\'e}n{\'e}r{\'e} par un produit des g{\'e}n{\'e}rateurs de S.
+Et cela est une contradiction.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

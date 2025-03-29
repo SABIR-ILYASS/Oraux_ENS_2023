@@ -1,0 +1,44 @@
+Dans cet exercice, nous {\'e}tudions une in{\'e}galit{\'e} impliquant des
+sommes doubles de racines carr{\'e}es. Elle compare deux expressions
+similaires, l'une faisant intervenir des diff{\'e}rences de nombres r{\'e}els,
+l'autre leurs sommes.
+
+\begin{exercise}[(IMO 2021)]
+Montrer que pour tout $x_1, \ldots, x_n \in \mathbb{R}$, on a :
+\[ \underset{i = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}}
+   \sqrt{| x_i - x_j |} \leqslant \underset{i = 1}{\overset{n}{\sum}}
+   \underset{j = 1}{\overset{n}{\sum}} \sqrt{| x_i + x_j |} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Sans perte de g{\'e}n{\'e}ralit{\'e}, on peut supposer que $x_1, \ldots, x_n
+\neq 0$. On a :
+\begin{eqnarray*}
+  H (x_1, \ldots, x_n) & \assign & \underset{i = 1}{\overset{n}{\sum}}
+  \underset{j = 1}{\overset{n}{\sum}} \sqrt{| x_i + x_j |} - \underset{i =
+  1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}} \sqrt{| x_i - x_j
+  |}\\
+  & = & \underset{i = 1}{\overset{n}{\sum}} \underset{j =
+  1}{\overset{n}{\sum}} \frac{| x_i + x_j | - | x_i - x_j |}{\sqrt{| x_i + x_j
+  |} + \sqrt{| x_i - x_j |}}\\
+  & = & 2 \underset{i = 1}{\overset{n}{\sum}} \underset{j =
+  1}{\overset{n}{\sum}} \frac{\tmop{sgn} (x_i) \tmop{sgn} (x_j) \min (| x_i |,
+  | x_j |)}{\sqrt{| x_i + x_j |} + \sqrt{| x_i - x_j |}}\\
+  & \geqslant & \frac{2}{\underset{1 \leqslant i, j \leqslant n}{\max} \left(
+  \sqrt{| x_i + x_j |} + \sqrt{| x_i - x_j |} \right)} \underset{i =
+  1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}} \tmop{sgn} (x_i)
+  \tmop{sgn} (x_j) \min (| x_i |, | x_j |)\\
+  & = & \frac{2}{\underset{1 \leqslant i, j \leqslant n}{\max} \left( \sqrt{|
+  x_i + x_j |} + \sqrt{| x_i - x_j |} \right)} \underset{0}{\overset{+
+  \infty}{\int}} \left( \underset{i = 1}{\overset{n}{\sum}} \tmop{sgn} (x_i)
+  \tmmathbf{1_{[0, | x_i |]}} (x) \right)^2 d x\\
+  & \geqslant & 0
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,67 @@
+Cet exercice {\'e}tudie les propri{\'e}t{\'e}s de divisibilit{\'e} d'un
+polyn{\^o}me {\`a} coefficients entiers admettant une racine rationnelle. On
+cherche {\`a} {\'e}tablir des crit{\`e}res de divisibilit{\'e} dans
+$\mathbb{Z}[X]$ et {\`a} analyser l'impact de la multiplicit{\'e} d'une racine
+sur les coefficients du polyn{\^o}me.
+\begin{exercise}[]
+Soit $P = \sum_{k = 0}^n a_k X^k$ un polyn{\^o}me de degr{\'e} $n$ {\`a} {\`a}
+coefficients dans $\mathbb{Z}$, et soit $(p, q) \in \mathbb{Z} \times
+\mathbb{N}^{\ast}$ tel que $p \wedge q = 1$. On suppose que $\frac{p}{q}$ est
+racine de $P$.
+
+Montrer que $qX - p$ divise $P$ dans $\mathbb{Z}[X]$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $c$ l'application d{\'e}finie pour tout $P \assign \sum_{i = 0}^n a_i X^i
+\in \mathbb{Z} [X]$ par
+\[ c (P) = \tmop{pgcd} (a_0, a_1, \ldots, a_n) \]
+
+
+$c (P)$ est appel{\'e} le contenu du polyn{\^o}me $P$.
+
+On rappelle que pour tout $P, Q \in \mathbb{Z}[X]$,
+\[ c (P \cdot Q) = c (P) \cdot c (Q) \]
+
+
+Si $\frac{p}{q}$ est une racine de $P$, alors il existe $Q \in \mathbb{Q}[X]$
+tel que
+\[ P = \left( X - \frac{p}{q} \right) Q \]
+
+
+Quitte {\`a} prendre un d{\'e}nominateur commun des coefficients de $Q$ on
+peut trouver $R \in \mathbb{Z}[X]$, $(a, b) \in \mathbb{Z} \times
+\mathbb{N}^{\ast}$ tel que $a \wedge b = 1$ et
+\[ P = \frac{a}{bq} (qX - p) R \]
+
+
+On a alors
+\[ bqP = a (qX - p) R \]
+
+
+En cons{\'e}quence
+\[ c (bqP) = c (a (qX - p) R) \]
+
+
+avec $P \in \mathbb{Z}[X]$, alors $\text{}$
+\[ c (bqP) = bq \cdot c (P) \]
+
+
+et $c (qX - p) = 1$ et $R \in \mathbb{Z}[X]$
+
+alors
+\[ bq \cdot c (P) = a \cdot c (R) \]
+
+
+On en d{\'e}duit que $\frac{a}{bq} = \frac{c (P)}{c (R)}$,
+
+D'o{\`u} $P = c (P) (qX - q) \frac{R}{c (R)}$ avec $\frac{R}{c (R)} \in
+\mathbb{Z}[X]$
+
+d'o{\`u} le r{\'e}sultat.
+
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

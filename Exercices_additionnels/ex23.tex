@@ -1,0 +1,121 @@
+Cet exercice explore une propri{\'e}t{\'e} des polyn{\^o}mes scind{\'e}s {\`a}
+racines simples dans $\mathbb{R}$, montrant qu'ils ne peuvent pas avoir deux
+coefficients cons{\'e}cutifs nuls. {\`A} travers un raisonnement par l'absurde
+et deux lemmes, on d{\'e}montre que les d{\'e}riv{\'e}es successives de ces
+polyn{\^o}mes conservent {\'e}galement cette structure. Une
+g{\'e}n{\'e}ralisation est aussi propos{\'e}e.
+\begin{exercise}[(Oral l'X 2007)]
+Soit $P \in \mathbb{R}[X]$, scind{\'e} dans $\mathbb{R}$, et {\`a} racines
+simples.
+
+Montrer que $P$ ne peut pas avoir deux coefficients cons{\'e}cutifs nuls.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soit $P \in \mathbb{R}[X]$. Tout d'abord, Montrons le lemme classique suivant
+:
+
+\tmtextbf{Lemme 1.}
+
+Soit $P \in \mathbb{R}[X]$, si $P$ est scind{\'e} sur $\mathbb{R}$ {\`a}
+racines simples, alors $P'$ est {\'e}galement scind{\'e} sur $\mathbb{R}$
+{\`a} racines simples.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Notons
+\[ P = \mu \prod_{i = 1}^r (X - \alpha_i) \]
+
+
+Avec $\alpha_1, ..., \alpha_r$ des r{\'e}els deux {\`a} deux distincts (o{\`u}
+$r = \deg (P$)), et $\mu \in \mathbb{R}$.
+
+Or, pour tout $i \in \llbracket 1, r \rrbracket$, $P (\alpha_i) = 0$, et $P$
+est d{\'e}rivable sur $\mathbb{R}$.
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Rolle, il existe $\beta_i \in] \alpha_i,
+\alpha_{i + 1} [$, tel que
+\[ P' (\beta_i) = 0 \]
+
+
+avec $\alpha_1 < \beta_1 < \alpha_2 < ... < \alpha_{n - 1} < \beta_{r - 1} <
+\alpha_r$. Donc $P'$ admet $\beta_1, ..., \beta_{r - 1}$ racines deux {\`a}
+deux distinctes, avec $\deg P' = r - 1$.
+
+On en d{\'e}duit que $P'$ est scind{\'e} {\`a} racines simples sur
+$\mathbb{R}$.
+
+\
+
+\tmtextbf{Lemme 2.}
+
+Soit $P \in \mathbb{R}[X]$ de degr{\'e} $n \geq 1$, scind{\'e} sur
+$\mathbb{R}$ {\`a} racines simples, alors pour tout $i \in \llbracket 0, n - 1
+\rrbracket$, $P^{(i)}$ est scind{\'e} sur $\mathbb{R}$ {\`a} racines simples.
+
+\tmtextbf{Preuve du lemme 2.}
+
+Par l'absurde, supposons que $P$ a deux coefficients cons{\'e}cutifs nuls, On
+consid{\`e}re alors l'ensemble
+\[ \mathcal{A}=\{i \in \llbracket 0, r \rrbracket  | \nobracket a_i = a_{i +
+   1} = 0\} \]
+
+
+qui est non vide (o{\`u} $r = \deg P$ et $P = \underset{i =
+0}{\overset{r}{\sum}} a_i X^i$).
+
+L'ensemble $\mathcal{A}$ est une partie non vide de $\mathbb{N}$, donc
+$\mathcal{A}$ admet un plus petit {\'e}l{\'e}ment, que l'on note
+\[ n_0 = \min \mathcal{A} \]
+
+
+On a :
+\begin{eqnarray*}
+  P^{(n_0)}  & = &  \sum_{i = n_0}^r \frac{i!}{(i - n_0) !} a_i X^{i - n_0}\\
+  & = & X^2 \sum_{i = n_0 + 2}^r \frac{i!}{(i - n_0) !} a_i X^{i - n_0 - 2}
+  \quad (\tmop{car} a_{n_0} = a_{n_0 + 1} = 0)
+\end{eqnarray*}
+
+
+Ainsi, $0$ est une racine double de $P^{(n_0)}$, ce qui est absurde
+(d'apr{\`e}s le lemme 2).
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{Remarque.}
+
+Il existe plusieurs polyn{\^o}mes scind{\'e}s sur $\mathbb{R}$ {\`a} racines
+simples et ayant deux coefficients cons{\'e}cutifs {\'e}gaux. Par exemple :
+\[ P = X^2 - X - 1 \]
+
+
+scind{\'e} sur $\mathbb{R}$ {\`a} racines simples.
+
+On peut de plus g{\'e}n{\'e}raliser le r{\'e}sultat d{\'e}montr{\'e} dans cet
+exercice.
+
+\
+
+\tmtextbf{G{\'e}n{\'e}ralisation :}
+
+Soit $P \in \mathbb{R}[X]$, scind{\'e} sur $\mathbb{R}$, tel que pour tout $r
+\in \mathbb{N}$ l'ordre de multiplicit{\'e} des racines de $P$ est au plus \
+$r$. Alors $P$ ne peut pas avoir $(r + 1)$ coefficients cons{\'e}cutifs nuls.
+
+\
+
+La d{\'e}monstration de ce r{\'e}sultat est presque la m{\^e}me que celle que
+nous avons faite. En particulier, si l'on note $\alpha_1, ..., \alpha_r$ les
+racines de $P$ et pour tout $i \in \llbracket 1, r \rrbracket$ $m (\alpha_i)$
+d{\'e}signe l'ordre de multiplicit{\'e} de $\alpha_i$.
+
+Comme chaque $\alpha_i$ est une racine de $P$, alors $P$ ne peut pas avoir $R$
+coefficients cons{\'e}cutifs nuls, avec
+\[ R = \underset{i = 1}{\overset{r}{\max}} m (\alpha_i) \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

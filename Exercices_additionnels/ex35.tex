@@ -1,0 +1,160 @@
+Cet exercice explore les propri{\'e}t{\'e}s des suites complexes dont la puissance $p$-i{\`e}me tend vers $1$ et dont la moyenne arithm{\'e}tique converge. L'objectif est de caract{\'e}riser l'ensemble des valeurs possibles de cette moyenne limite.
+\begin{exercise}[]
+Soit $p \in \mathbb{N}^{\ast}$, soit $E$ l'ensemble des suites $(u_n)$ de
+nombres complexes v{\'e}rifiant $\underset{n \to + \infty}{\lim} u_n^p = 1$,
+et telles que la suite de terme g{\'e}n{\'e}ral $S_n = \frac{1}{n} 
+\underset{k = 1}{\overset{n}{\sum}} u_k$ converge. On consid{\`e}re
+l'application $\varphi$ de $E$ dans $\mathbb{C}$ qui, {\`a} la suite $(u_n)$,
+associe la limite $l$ de la suite $(S_n)$. D{\'e}terminer $\varphi (E)$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soit $p \in \mathbb{N}^{\ast}$,
+
+Notons $W_p$ l'ensemble des racines $p$-i{\`e}mes de l'unit{\'e}, donn{\'e}es
+par $\omega_k = e^{\frac{2 i \pi k}{p}}$ pour tout $1 \leq k \leq p$.
+
+\
+
+Pour d{\'e}terminer l'image $\varphi (E)$ de la fonction $\varphi$, nous
+devons trouver toutes les limites possibles $l \in \mathbb{C}$ telles qu'il
+existe une suite $(u_n) \in E$ satisfaisant les conditions suivantes :
+
+1. $\underset{n \to + \infty}{\lim}  u_n^p = 1$,
+
+2. La suite $S_n = \frac{1}{n}  \underset{k = 1}{\overset{n}{\sum}} u_k$
+converge vers $l$.
+
+\
+
+\
+
+La condition $\underset{n \to + \infty}{\lim}  u_n^p = 1$ implique que les
+$p$-i{\`e}mes puissances des $u_n$ tendent vers 1. Cela signifie que les $u_n$
+s'approchent des racines $p$-i{\`e}mes de l'unit{\'e} dans le plan complexe.
+
+Les racines $p$-i{\`e}mes de l'unit{\'e} sont donn{\'e}es par :
+\[ C_p = \left\{ e^{2 i \pi \frac{m}{p}} \mid m = 0, 1, \ldots, p - 1 \right\}
+   . \]
+
+
+La convergence de $S_n$ signifie que la moyenne des $u_n$ se stabilise lorsque
+$n$ cro{\^i}t.
+
+\tmtextbf{Construction des Suites et Limites :}
+
+- Si $u_n \to \zeta$ o{\`u} $\zeta \in C_p$, alors $u_n^p \to \zeta^p = 1$. La
+limite de $S_n$ sera $l = \zeta$.
+
+\
+
+- Si $u_n$ prend des valeurs dans $C_p$ avec certaines fr{\'e}quences, nous
+pouvons d{\'e}finir $\alpha_m$ comme la fr{\'e}quence asymptotique de $u_n =
+\zeta_m$.
+
+Alors, $S_n \to l = \underset{m = 0}{\overset{p - 1}{\sum}} \alpha_m \zeta_m$.
+avec $\alpha_m \geq 0$ et $\underset{m = 0}{\overset{p - 1}{\sum}} \alpha_m =
+1$.
+
+\
+
+- M{\^e}me si les $u_n$ ne sont pas exactement les racines de l'unit{\'e}
+mais s'en approchent, tant que $u_n^p \to 1$, une logique similaire
+s'applique.
+
+L'{\'e}quation $u_n^p \to 1$ implique que chaque $u_n$ s'approche d'une
+solution de $z^p = 1$, c'est-{\`a}-dire des racines $p$-i{\`e}mes de
+l'unit{\'e}.
+
+Plus pr{\'e}cis{\'e}ment, pour tout $\varepsilon > 0$, il existe $N$ tel que
+pour tout $n \geq N$, $\mid u_n^p - 1 \mid < \varepsilon$.
+
+Donc, pour $n$ suffisamment grand, il existe $m_n \in \{ 0, 1, \ldots, p - 1
+\}$ tel que $u_n$ est proche de $\omega_{m_n}$.
+
+On peut {\'e}crire :
+
+
+\[ u_n = e^{2 i \pi m_n / p} e^{i \varepsilon_n}, \]
+
+
+o{\`u} : $m_n \in \{0, 1, \ldots, p - 1\}$ (car $u_n$ est proche de la
+$m_n$-{\`e}me racine de l'unit{\'e}), et $\varepsilon_n  \underset{n \to
+\infty}{\to} 0$ (petite d{\'e}viation par rapport {\`a} la racine de
+l'unit{\'e} exacte).
+
+On peut {\'e}crire la moyenne $S_n$ comme suit :
+\begin{eqnarray*}
+  S_n & = & \frac{1}{n}  \sum_{k = 1}^n u_k\\
+  & = & \frac{1}{n}  \sum_{k = 1}^n e^{2 i \pi m_k / p} e^{i \varepsilon_k}
+\end{eqnarray*}
+
+
+Comme $\varepsilon_k  \underset{k \to \infty}{\to} 0$, pour les grandes
+valeurs de $n$, $e^{i \varepsilon_k} = 1 + i \varepsilon_k + o
+(\varepsilon_k)$. Par cons{\'e}quent :
+\[ u_k = e^{2 i \pi m_k / p} + e^{2 i \pi m_k / p} i \varepsilon_k + o
+   (\varepsilon_k) \]
+
+
+La moyenne $S_n$ devient :
+\[ S_n = \frac{1}{n}  \sum_{k = 1}^n e^{2 i \pi m_k / p} + \frac{1}{n} 
+   \sum_{k = 1}^n e^{2 i \pi m_k / p} i \varepsilon_k + o (\varepsilon_k) \]
+
+
+Le second terme $\frac{1}{n}  \underset{k = 1}{\overset{n}{\sum}} e^{2 i \pi
+m_k / p} i \varepsilon_k$ implique des $\varepsilon_k$ qui sont petits et
+tendent vers z{\'e}ro.
+
+Comme $\varepsilon_k  \underset{k \to \infty}{\to} 0$ et sont born{\'e}s, la
+somme des $\varepsilon_k$ sur $n$ termes divis{\'e}e par $n$ tend vers
+z{\'e}ro :
+\[ \left| \frac{1}{n}  \sum_{k = 1}^n \varepsilon_k \right| \leq \frac{1}{n} 
+   \sum_{k = 1}^n | \varepsilon_k | \underset{k \to \infty}{\to} 0. \]
+
+
+Par cons{\'e}quent, le terme d'erreur dispara{\^i}t dans la limite :
+\[ \underset{n \to \infty}{\lim}   \frac{1}{n}  \sum_{k = 1}^n e^{2 i \pi m_k
+   / p} i \varepsilon_k = 0 \]
+
+
+La limite de $S_n$ est d{\'e}termin{\'e}e par les fr{\'e}quences des racines
+de l'unit{\'e} $e^{2 i \pi m / p}$ parmi les $u_k$ :
+\[ l = \underset{n \to \infty}{\lim} S_n = \sum_{m = 0}^{p - 1} \alpha_m e^{2
+   i \pi m / p}  \]
+
+
+o{\`u} $\alpha_m$ est la fr{\'e}quence asymptotique de $u_k$ {\'e}tant proche
+de $e^{2 i \pi m / p}$.
+
+\
+
+D{\'e}finissons $N_m (n)$ comme le nombre de $k \leq n$ tels que $u_k$ soit
+proche de $e^{2 i \pi m / p}$.
+
+La fr{\'e}quence asymptotique est donn{\'e}e par $\alpha_m = \underset{n \to
+\infty}{\lim}  \frac{N_m (n)}{n}$.
+
+Comme $\underset{m = 0}{\overset{p - 1}{\sum}} N_m (n) = n$, on a
+$\underset{m = 0}{\overset{p - 1}{\sum}} \alpha_m = 1$.
+
+La limite $l$ est une moyenne pond{\'e}r{\'e}e des racines de l'unit{\'e} :
+\[ l = \sum_{m = 0}^{p - 1} \alpha_m e^{2 i \pi m / p} . \]
+
+
+Chaque $\alpha_m$ repr{\'e}sente la proportion de termes $u_k$ proches d'une
+racine de l'unit{\'e} donn{\'e}e.
+
+\
+
+Comme $\alpha_m \geq 0$ et $\underset{m = 0}{\overset{p - 1}{\sum}} \alpha_m
+= 1$, $l$ est une combinaison convexe des racines $p$-i{\`e}mes de
+l'unit{\'e}. \
+
+L'ensemble de tous ces $l$ forme l'enveloppe convexe de $C_p$ :
+\[ \varphi (E) = \text{Conv} \{ e^{2 \pi im / p} \mid m = 0, 1, \ldots, p - 1
+   \} . \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

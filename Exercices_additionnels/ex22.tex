@@ -1,0 +1,72 @@
+On consid{\`e}re un polyn{\^o}me unitaire $P \in \mathbb{Z} [X]$ qui se
+d{\'e}compose en produit de deux polyn{\^o}mes $Q$ et $R$ dans $\mathbb{Q}
+[X]$, avec $Q$ {\'e}galement unitaire. L'objectif est de montrer que, dans ce
+cas, $Q$ et $R$ appartiennent n{\'e}cessairement {\`a} $\mathbb{Z} [X]$.
+
+\begin{exercise}[]
+Soit $P \in \mathbb{Z}[X]$ un polyn{\^o}me unitaire, et $Q, R \in
+\mathbb{Q}[X]$, avec $Q$ unitaire, et $P = Q \cdot R$.
+
+Montrer que $Q, R \in \mathbb{Z}[X]$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+On d{\'e}finit l'application contenu d'un polyn{\^o}me de $\mathbb{Z}[X]$ par
+:
+
+Pour tout $P \assign \underset{k = 0}{\overset{n}{\sum}} a_k X^k \in
+\mathbb{Z} [X]$,
+\[ c (P) = \tmop{pgcd} (a_1, a_2, \ldots, a_n) \]
+
+
+Un r{\'e}sultat classique stipule que pour tout $P, Q \in \mathbb{Z}[X]$,
+\[ c (PQ) = c (P) c (Q) \]
+
+
+Puisque $P = Q.R$, quitte {\`a} multiplier par un d{\'e}nominateur commun des
+coefficients de $Q$ (resp. de $R$), on peut trouver $a, b \in
+\mathbb{N}^{\ast}$ tels que $a Q, b R \in \mathbb{Z} [X]$.
+
+On note alors
+\[ \hat{Q} = aQ \infixand \hat{R} = bR \]
+
+
+On a donc,
+\[ P = \frac{1}{a.b}  \hat{Q}  \hat{R} \]
+
+
+Comme $P$ et $Q$ sont unitaires, le coefficient dominant de $\hat{Q}$ est $a$
+(resp. le coefficient dominant de $\hat{R}$ est $b$).
+
+En particulier, $c (\hat{Q})$ divise $a$ et $c (\hat{R})$ divise $b$.
+
+De l'{\'e}galit{\'e}
+\[ abP = \hat{Q}  \hat{R} \]
+
+
+On d{\'e}duit que :
+\[ ab = c (abP) = c (\hat{Q}  \hat{R}) \]
+
+
+Finalement, on obtient
+\[ c (\hat{Q}) = a \infixand c (\hat{R}) = b \]
+
+
+Ainsi, $Q = \frac{\hat{Q}}{c (\hat{Q})} \in \mathbb{Z}[X]$ et $R =
+\frac{\hat{R}}{c (\hat{R})} \in \mathbb{Z}[X]$.
+
+\tmtextbf{Remarque.}
+
+L'hypoth{\`e}se que $Q$ est unitaire est essentielle. En effet, on peut
+trouver $P, Q \in \mathbb{Z}[X]$ tels que $P.Q \in \mathbb{Z}[X]$ sans que $P
+\in \mathbb{Z}[X]$ ou $Q \in \mathbb{Z}[X]$.
+
+Par exemple :
+\[ (X + 1)^2 = (2 X + 2) \left( \frac{1}{2} X + \frac{1}{2} \right) \]
+
+
+De m{\^e}me, l'hypoth{\`e}se que $P$ est unitaire est essentielle, ce qui est
+clairement visible de la d{\'e}monstration effectu{\'e}e.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

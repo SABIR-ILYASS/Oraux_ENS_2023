@@ -1,0 +1,6216 @@
+\begin{center}
+\subsection*{Agr{\'e}gation externe 2019}\label{agreg}
+\textbf{Corrig{\'e} par: SABIR ILYASS.}
+\end{center}
+\[ \star \star \star \]
+\addcontentsline{toc}{subsection}{Agr{\'e}gation externe 2019}
+
+
+Le probl{\`e}me pr{\'e}sent{\'e} ici est issu du sujet d'alg{\`e}bre du
+concours de l'Agr{\'e}gation externe 2019.
+
+\
+
+Ce probl{\`e}me est long : il est compos{\'e} de cinq grandes parties,
+aboutissant finalement {\`a} une d{\'e}monstration du th{\'e}or{\`e}me de
+Fermat-Wiles pour certains nombres premiers dits {\tmem{r{\'e}guliers}}.
+
+\
+
+\
+
+Le probl{\`e}me est un excellent sujet formateur pour les futurs candidats de
+l'agr{\'e}gation en maths, et peut-{\^e}tre aussi int{\'e}ressant pour les
+{\'e}tudiants de CPGE scientifiques.
+
+\
+
+C'est un excellent sujet de formation pour les futurs candidats {\`a}
+l'agr{\'e}gation de math{\'e}matiques et peut-{\^e}tre {\'e}galement
+int{\'e}ressant pour les {\'e}tudiants en classes pr{\'e}paratoires
+scientifiques.
+
+\
+
+La premi{\`e}re partie consiste {\`a} d{\'e}montrer quelques r{\'e}sultats
+sur la division euclidienne des polyn{\^o}mes {\`a} coefficients entiers et
+{\`a} montrer que l'anneau $\mathbb{Z}[\zeta]$ est euclidien pour $\zeta =
+\exp (2 i \pi / 3)$. Ensuite, on introduit la notion de polyn{\^o}me
+cyclotomique, un r{\'e}sultat important concernant ces polyn{\^o}mes {\'e}tant
+qu'ils ont des coefficients entiers et sont irr{\'e}ductibles sur
+$\mathbb{Q}[X] .$ Cela nous fournit un excellent exemple pour montrer que,
+pour tout entier $n \in \mathbb{N}$, il existe un polyn{\^o}me de
+\ensuremath{\mathbb{Q}}$[X]$ irr{\'e}ductible dans $\mathbb{Q}[X]$. Ce
+r{\'e}sultat n'est pas valable pour \ensuremath{\mathbb{R}}$[X]$ ni pour
+$\mathbb{C}[X]$. En particulier, \ensuremath{\mathbb{Q}} n'est pas
+alg{\'e}briquement clos.
+
+\
+
+D'autre part, les questions 4.a, 4.b, et 4.c servent {\`a} introduire les
+matrices compagnons, un outil souvent utilis{\'e} pour simplifier les
+d{\'e}monstrations (comme celle du th{\'e}or{\`e}me de Cayley-Hamilton, par
+exemple !). Ici, la pr{\'e}sence des matrices compagnons permet de
+d{\'e}montrer le r{\'e}sultat {\'e}nonc{\'e} dans la question 4.e, qui sera
+utilis{\'e} {\`a} plusieurs reprises dans la suite du probl{\`e}me.
+
+\
+
+La deuxi{\`e}me partie porte sur les nombres alg{\'e}briques. Un tr{\`e}s bon
+r{\'e}sultat est pr{\'e}sent{\'e} dans la question 1.b concernant la finitude
+des racines de l'unit{\'e} incluses dans une extension finie de $\mathbb{Q}$,
+ce qui implique que le corps des nombres alg{\'e}briques est de degr{\'e}
+infini sur $\mathbb{Q}$. Vers la fin de cette partie, on montre que l'ensemble
+des nombres entiers alg{\'e}briques est un sous-anneau de $\mathbb{C}$.
+
+\
+
+Passons ensuite {\`a} la troisi{\`e}me partie, qui consiste {\`a} {\'e}tudier
+et caract{\'e}riser quelques r{\'e}sultats sur$\mathbb{Z}[\zeta]$ (qui seront
+utilis{\'e}s dans les parties 4 et 5), o{\`u} $\zeta = \exp ((2 i \pi) / p)$,
+notamment en ce qui concerne les {\'e}l{\'e}ments inversibles de l'anneau
+$\mathbb{Z}[\zeta$].
+
+\
+
+La partie 4 a pour but de d{\'e}montrer le th{\'e}or{\`e}me de Fermat pour $n
+= 3$.
+
+\
+
+Enfin, la partie 5 traite du th{\'e}or{\`e}me de Fermat pour certains nombres
+premiers et dans des cas particuliers.
+
+\
+
+En conclusion, le th{\'e}or{\`e}me de Fermat (en anglais, {\tmem{Fermat's
+Last Theorem}}) a {\'e}t{\'e} {\'e}nonc{\'e} (conjectur{\'e}) par le
+math{\'e}maticien fran{\c c}ais Pierre de Fermat en 1637, et il n'a
+{\'e}t{\'e} d{\'e}montr{\'e} qu'en 1994. Cette d{\'e}monstration a {\'e}t{\'e}
+pr{\'e}sent{\'e}e pour la premi{\`e}re fois par le math{\'e}maticien
+britannique Andrew Wiles. Elle repose sur plusieurs th{\'e}ories, comme la
+th{\'e}orie de Galois, ainsi que sur des r{\'e}sultats de math{\'e}matiques
+modernes qui n'existaient pas au XVIIe si{\`e}cle. Pour ceux qui souhaitent
+d{\'e}couvrir la d{\'e}monstration de ce th{\'e}or{\`e}me, n'h{\'e}sitez pas
+{\`a} cliquer sur le lien {\`a} la fin de ce document (la beaut{\'e} du livre
+vous donnera envie de le lire en entier).
+
+\
+
+Bon courage pour la suite{\ldots}
+
+\
+
+\subsubsection*{D{\'e}finitions et rappels.}
+
+\
+
+--- Soit $A$ un anneau commutatif unitaire int{\`e}gre dont on note $1_A$
+l'{\'e}l{\'e}ment unit{\'e}.
+
+\
+
+--- On rappelle qu'un {\'e}l{\'e}ment $u \in A$ est inversible s'il existe
+$u' \in A$tel que $u u' = 1_A .$ On note $A^{\times}$ l'ensemble des
+inversibles de $A$, qui \tmtextbf{est un groupe multiplicatif}.
+
+\
+
+--- Un {\'e}l{\'e}ment $x$ de $A$ est dit \tmtextbf{irr{\'e}ductible} si $x$
+n'est pas inversible et si pour tous $\alpha, \beta \in A$, $x = \alpha \beta$
+implique $\alpha \in A^{\times}$ ou $\beta \in A^{\times}$.
+
+\
+
+--- Deux {\'e}l{\'e}ments $x, y \in A$ sont dits associ{\'e}s s'il existe $u
+\in A^{\times}$ tel que $x = u y$. On note alors $x \sim y$.
+
+\
+
+--- Soit $I$ un id{\'e}al de $A$; on dit que deux {\'e}l{\'e}ments $\alpha,
+\beta \in A$ sont congrus modulo $I$si $\alpha \nonconverted{minus} \beta \in
+I$. On {\'e}crit alors $\alpha = \beta (\tmop{mod} I) .$
+
+\
+
+--- Pour$x \in A$, on note$ \langle x \rangle = x A$ l'id{\'e}al engendr{\'e}
+par $x$. Un tel id{\'e}al est dit \tmtextbf{principal}.
+
+\
+
+--- Soient $I, J$ deux id{\'e}aux de $A$. On dit que $I$ divise $J$ si $J
+\subseteq I$. Par ailleurs, on note$I J$ l'id{\'e}al produit de $I$ et $J$,
+qui est l'ensemble des sommes finies $\underset{i}{\sum} x_i y_i$ avec $x_i
+\in I$ et $y_i \in J$.
+
+\
+
+--- On rappelle qu'un nombre complexe $\alpha$ est dit alg{\'e}brique (sur
+$\mathbb{Q}$) s'\tmtextbf{il existe un polyn{\^o}me non nul $P$ de
+$\mathbb{Q}[X]$ tel que $P (\alpha) = 0$}.
+
+Il existe alors un polyn{\^o}me unitaire de plus petit degr{\'e} annulant
+$\alpha$, que l'on appelle \tmtextbf{polyn{\^o}me minimal de $\alpha$} et que
+l'on note $\pi_{\alpha}$. Les racines complexes de ce polyn{\^o}me sont
+appel{\'e}es les conjugu{\'e}s de $\alpha$.
+
+\
+
+--- On appelle \tmtextbf{entier alg{\'e}brique} tout nombre complexe qui est
+racine d'un polyn{\^o}me unitaire {\`a} coefficients dans $\mathbb{Z}$.
+
+\
+
+--- On rappelle une version du \tmtextbf{lemme de Gauss}, que l'on pourra
+utiliser librement : soit $P \in \mathbb{Z}[X]$ tel que $P = P_1 P_2$, avec
+$P_1$ et $P_2$ des polyn{\^o}mes de $\mathbb{Q} [\nobracket X] .$ Alors, il
+existe un rationnel $r \in \mathbb{Q}$, non nul, tel que $r P_1 \in
+\mathbb{Z}[X]$et $\frac{1}{r} P_2 \in \mathbb{Z}[X]$.
+
+\
+
+--- On dit qu'un groupe ab{\'e}lien $G$ est de \tmtextbf{type fini} s'il
+existe une famille g{\'e}n{\'e}ratrice finie de $G$, c'est-{\`a}-dire un
+entier $r$ et une famille $(a_1, . . ., a_r)$ d'{\'e}l{\'e}ments de $G$ tels
+que tout {\'e}l{\'e}ment de $G$ s'{\'e}crit comme une combinaison lin{\'e}aire
+{\`a} coefficients entiers des $a_1, . . ., a_r$.
+
+\
+
+\subsubsection*{Notations.}
+
+\
+
+--- Pour un anneau $A$ commutatif et un entier naturel non nul $n$, on note
+$\mathcal{M}_n (A)$ l'alg{\`e}bre des matrices carr{\'e}es $n \times n$ {\`a}
+coefficients dans $A$ ; la matrice unit{\'e} est not{\'e}e $I_n$.
+
+Si $M$ est une matrice de $\mathcal{M}_n (A)$, on note $\chi_M$ son
+\tmtextbf{polyn{\^o}me caract{\'e}ristique}, qui est le polyn{\^o}me unitaire
+d{\'e}fini par
+\[ \chi_M = \det (X I_n \nonconverted{minus} M) \]
+et on note $\pi_M$ son \tmtextbf{polyn{\^o}me minimal}.
+
+\
+
+--- Pour un nombre premier $p$, on note $\mathbb{F}_p$ le corps $\mathbb{Z}/
+p\mathbb{Z}.$
+
+\
+
+--- Pour tout entier alg{\'e}brique $\alpha$, on note $\mathbb{Z}[\alpha]$
+l'anneau des {\'e}l{\'e}ments de la forme $P (\alpha)$ o{\`u} $P$ parcourt
+$\mathbb{Z}[X]$.
+
+\
+
+Dans le probl{\`e}me, les textes plac{\'e}s entre les symboles $\maltese
+\maltese${\textdots}$\maltese \maltese$ pr{\'e}cisent des notations et
+d{\'e}finitions qui sont utilis{\'e}es dans la suite de l'{\'e}nonc{\'e}.
+
+\
+
+\subsubsection*{I. Exercices pr{\'e}liminaires}
+
+\
+
+1. Soit $B \in \mathbb{Z}[X]$ un polyn{\^o}me unitaire et $A \in
+\mathbb{Z}[X]$. Montrer qu'il existe $Q, R \in \mathbb{Z}[X]$ tels que $A =
+\tmop{BQ} + R$ avec $\deg R < \deg B$ ou $R = 0$.
+
+\
+
+\tmtextbf{{\tmname{Indication}} :} On pourra faire une preuve par
+r{\'e}currence sur le degr{\'e} de $A$.
+
+\
+
+\paragraph{\textbf{2. L'anneau $\mathbb{Z}[j]$.}} On note $j = e^{\frac{2i\pi}{3}}$.
+
+
+\
+
+\quad (a) D{\'e}montrer que $j$ est un {\'e}l{\'e}ment alg{\'e}brique sur
+$\mathbb{Q}$ et pr{\'e}ciser son polyn{\^o}me minimal.
+
+\
+
+\quad (b) D{\'e}montrer que $\mathbb{Z}[j] =\{a + b j, (a, b) \in
+\mathbb{Z}^2 \}$.
+
+\
+
+\quad Pour tout nombre complexe $z$, on pose $N (z) = z \bar{z} = |z|^2$ .
+
+\
+
+\quad (c) D{\'e}montrer que pour tout $z \in \mathbb{Z}[j]$, on a $N (z) \in
+\mathbb{N}$. En d{\'e}duire que si $z \in \mathbb{Z}[j]$ est inversible, alors
+$N (z) = 1$, puis que $\mathbb{Z}[j]^{\times}$ poss{\`e}de $6$
+{\'e}l{\'e}ments que l'on pr{\'e}cisera.
+
+\
+
+\quad (d) Soient $x \in \mathbb{Z}[j]$ et $y \in
+\mathbb{Z}[j]\backslash\{0\}$. D{\'e}terminer un {\'e}l{\'e}ment$q \in
+\mathbb{Z}[j]$ tel que $N \left( \frac{x}{y} - q \right) < 1$.
+
+\quad En d{\'e}duire que l'anneau $\mathbb{Z}[j]$ est euclidien.
+
+\
+
+\paragraph{\tmtextbf{3. Polyn{\^o}mes cyclotomiques. }}
+
+Soit $n$ un entier naturel non nul. On note $\Phi_n$ le $n - i{\`e} \tmop{me}$
+polyn{\^o}me cyclotomique. On rappelle que si $\mu_n^{\ast}$ d{\'e}signe
+l'ensemble des racines primitives $n - i{\`e} \tmop{mes}$ de l'unit{\'e} dans
+$\mathbb{C}$, ce polyn{\^o}me est d{\'e}fini par
+\[ \Phi_n (X) = \underset{\mu \in \mu^{\ast}_n}{\prod} (X - \mu) \]
+
+
+\
+
+\quad (a) D{\'e}montrer que
+\[ X^n - 1 = \underset{d \overline{} | n \nobracket}{\prod} \Phi_d (X) \]
+
+
+\quad (b) En d{\'e}duire que $\Phi_n (X) \in \mathbb{Z}[X]$.
+
+\
+
+\quad (c) Soit $p$ un nombre premier.
+
+On note $\pi : \mathbb{Z} \rightarrow \mathbb{F}_p $ la surjection canonique.
+Le morphisme d'anneaux $\pi$ s'{\'e}tend, coefficient par coefficient, en un
+morphisme d'anneaux de $\mathbb{Z}[X]$ sur $\mathbb{F}_p [X]$, not{\'e}
+\^{$\pi$} (on ne demande pas de justifier ce point). Si $\Phi_p$ d{\'e}signe
+le $p - i{\`e} \tmop{me}$ polyn{\^o}me cyclotomique, on rappelle que
+\[ \Phi_p = \underset{k = 0}{\overset{p - 1}{\sum}} X^k  \tmmathbf{}
+   \tmmathbf{} \]
+
+
+\quad i. D{\'e}montrer que $\hat{\pi} (X^p \nonconverted{minus} 1) = (X
+\nonconverted{minus} 1_{\mathbb{F}_p})^p$ .
+
+\
+
+\quad ii. Soient$P$ et $Q$ deux polyn{\^o}mes unitaires et non constants dans
+$\mathbb{Z}[X]$ tels que $X^p - 1 = P Q$. D{\'e}montrer que $P (1)$ et $Q (1)$
+sont des entiers multiples de $p$.
+
+\
+
+\quad iii. Retrouver ainsi que $\Phi_p$ est un polyn{\^o}me irr{\'e}ductible
+de $\mathbb{Q}[X]$.
+
+\
+
+$\maltese \maltese$ De mani{\`e}re g{\'e}n{\'e}rale, $\Phi_n$ est
+irr{\'e}ductible pour tout $n \in \mathbb{N}\backslash\{0\}$, r{\'e}sultat que
+l'on admet ici et que l'on pourra utiliser librement dans la suite. $\maltese
+\maltese$
+
+\
+
+\quad iv. Soit ${\zeta = e^{\frac{2 i \pi}{p}}} $. D{\'e}terminer le
+polyn{\^o}me minimal de $\zeta$ sur $\mathbb{Q}$ et en d{\'e}duire le
+degr{\'e} de l'extension de corps $\mathbb{Q} (\nobracket \zeta) /\mathbb{Q}$.
+
+\paragraph{\tmtextbf{4. Matrices compagnons. }}
+
+Soit $n$ un entier naturel non nul. Soit $P = X^n + a_{n - 1} X^{n - 1} +
+\cdots + a_0$ un polyn{\^o}me unitaire de $\mathbb{C}[X]$. On lui associe sa
+matrice compagnon $C_P$ d{\'e}finie dans$\mathcal{M}_n (\mathbb{C})$ par
+\[ C_P = \left( \begin{array}{c}
+     0\\
+     1\\
+     0\\
+     .\\
+     .\\
+     .\\
+     0
+   \end{array} \begin{array}{c}
+     \\
+     
+   \end{array} \quad \begin{array}{c}
+     0\\
+     0\\
+     1\\
+     0\\
+     .\\
+     .\\
+     0
+   \end{array} \quad  \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{l}
+     0\\
+     0\\
+     .\\
+     .\\
+     .\\
+     0\\
+     1
+   \end{array} \quad  \begin{array}{l}
+     - a_0\\
+     - a_1\\
+     .\\
+     .\\
+     .\\
+     - a_{n - 2}\\
+     - a_{n - 1}
+   \end{array} \right) \]
+
+
+
+
+On note $\mathcal{E}= (e_1, . . ., e_n)$ la base canonique de $\mathbb{C}^n$.
+
+\
+
+\quad (a) Pour $k \in \{1, . . ., n \nonconverted{minus} 1\}$, exprimer
+$C_P^k e_1$ dans la base $\mathcal{E}$. En d{\'e}duire que pour tout
+polyn{\^o}me $Q \in \mathbb{C}[X]$ non nul et de degr{\'e} inf{\'e}rieur ou
+{\'e}gal {\`a} $n \nonconverted{minus} 1$, la matrice $Q (C_P)$ est non nulle.
+
+\quad En d{\'e}duire le degr{\'e} du polyn{\^o}me minimal de $C_P$.
+
+\
+
+\quad (b) Exprimer $C^n_p e_1$ dans la base $\mathcal{E}$. En d{\'e}duire que
+$P$ est le polyn{\^o}me minimal de $C_P$ .
+
+\
+
+\quad (c) En d{\'e}duire le polyn{\^o}me $\chi_{C_P}$ .
+
+\
+
+Soit $M \in \mathcal{M}_n (\mathbb{C})$ de polyn{\^o}me caract{\'e}ristique
+$\chi_M$ . Soient $\alpha_1, . . ., \alpha_n$ les racines complexes de
+$\chi_M$ compt{\'e}es avec leur multiplicit{\'e}. Soit $Q$ un polyn{\^o}me de
+$\mathbb{C}[X]$.
+
+\
+
+\quad (d) D{\'e}montrer que le polyn{\^o}me caract{\'e}ristique de la matrice
+$Q (M)$ est
+\[ \chi_{Q (M)} = \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k)) \]
+
+
+\
+
+\tmtextbf{{\tmname{\tmtextbf{Indication} :}}} On pourra commencer par traiter
+le cas o{\`u} $M$ est triangulaire.
+
+\
+
+\quad (e) Soit $A$ un sous-anneau de $\mathbb{C}$. On suppose que le
+polyn{\^o}me $Q$ est dans $A [X]$. Soit $P \in A [X]$ un polyn{\^o}me unitaire
+dont on note $\alpha_1, . . ., \alpha_n$ les racines complexes compt{\'e}es
+avec leur multiplicit{\'e}.
+
+D{\'e}montrer que $\underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k))$
+est un polyn{\^o}me de $A [X]$.
+
+\
+
+\subsubsection*{II. Nombres alg{\'e}briques.}
+
+\
+
+1. (a) On d{\'e}signe par$\varphi$ l'indicatrice d'Euler, qui {\`a} tout
+entier $n \in \mathbb{N}\backslash\{0\}$ associe le nombre d'entiers non nuls
+inf{\'e}rieurs {\`a} $n$ et premiers avec$n$. Justifier que pour tout entier$d
+\geqslant 1$, l'ensemble des entiers $n$ tels que $\varphi (n) \leqslant d$
+est fini.
+
+\
+
+\quad (b) En d{\'e}duire que si $\tmmathbf{K} /\mathbb{Q}$ est une extension
+finie de $\mathbb{Q}$, o{\`u} $\tmmathbf{K}$ est un sous-corps de
+$\mathbb{C}$, alors $\tmmathbf{K}$ contient un nombre fini de racines de
+l'unit{\'e}.
+
+\
+
+2. Soit $\alpha \in \mathbb{C}$ un nombre alg{\'e}brique dont on rappelle que
+l'on a not{\'e} $\pi_{\alpha}$ son polyn{\^o}me minimal. On note $\tmmathbf{K}
+=\mathbb{Q}(\alpha)$ le plus petit corps contenant $\alpha$ et $\mathbb{Q}$,
+et $d = [\tmmathbf{K} : \mathbb{Q}]$, le degr{\'e} de l'extension de corps
+$\mathbb{Q}(\alpha) /\mathbb{Q}$.
+
+\
+
+\quad (a) Montrer que $\pi_{\alpha}$ est un polyn{\^o}me irr{\'e}ductible de
+$\mathbb{Q}[X]$ et que son degr{\'e} est {\'e}gal {\`a} $d$.
+
+\
+
+\quad (b) Montrer que si $\sigma$ est un morphisme de $\mathbb{Q}- \tmop{alg}
+{\`e} \tmop{bre}$ de $\tmmathbf{K}$ dans $\mathbb{C}$, $\sigma (\alpha)$ est
+une racine de $\pi_{\alpha}$, c'est-{\`a}-dire un conjugu{\'e} de $\alpha$. En
+d{\'e}duire qu'il y a exactement $d$ tels morphismes de
+$\mathbb{Q}$-$\tmop{alg} {\`e} \tmop{bre}$, que l'on notera $\sigma_k :
+\tmmathbf{K} \rightarrow \mathbb{C}, k \in \{1, . . ., d\}$.
+
+\
+
+3. Soit $\alpha \in \mathbb{C}$ un nombre alg{\'e}brique et soit $\theta \in
+\tmmathbf{K} =\mathbb{Q}(\alpha)$. Comme dans la question pr{\'e}c{\'e}dente,
+les $\sigma_k$ avec $k \in \{1, . . ., d\}$ d{\'e}signent les morphismes de
+$\mathbb{Q}- \tmop{alg} {\`e} \tmop{bre}$ de $\mathbb{Q}(\alpha)$.
+
+\
+
+\quad (a) Justifier que $\theta$ est un nombre alg{\'e}brique.
+
+\
+
+On pose
+\[ P_{\theta} = \underset{k = 1}{\overset{d}{\prod}} (X \nonconverted{minus}
+   \sigma_k (\theta)) \in \mathbb{C}[X] . \]
+
+
+\
+
+\quad (b) Montrer que $P_{\theta} \in \mathbb{Q}[X]$.
+
+\
+
+\quad (c) Justifier que $\pi_{\theta}$ divise $P_{\theta}$, puis montrer que
+$P_{\theta}$ est une puissance de $\pi_{\theta}$.
+
+
+
+4. Montrer qu'un nombre alg{\'e}brique $\alpha$ est un entier alg{\'e}brique
+si et seulement si son polyn{\^o}me minimal est {\`a} coefficients entiers.
+
+\
+
+5. Soit $\alpha$ un nombre complexe.
+
+\
+
+\quad (a) Montrer que si $\alpha$ est un entier alg{\'e}brique, alors le
+groupe additif $G$ engendr{\'e} par la partie $\{\alpha^n  | \nobracket n \in
+N\}$ est de type fini.
+
+
+
+\quad (b) R{\'e}ciproquement, montrer que si $G$ est de type fini alors
+$\alpha$ est un entier alg{\'e}brique.
+
+\tmtextbf{{\tmname{Indication :}}} En notant $(g_1, . . ., g_n)$ une famille
+g{\'e}n{\'e}ratrice finie de $G$, on pourra consid{\'e}rer le d{\'e}terminant
+du syst{\`e}me obtenu en {\'e}crivant les {\'e}l{\'e}ments $\alpha g_i$, $i
+\in \{1, . . ., n\}$ comme combinaison lin{\'e}aire des $g_j$ .
+
+\
+
+6. En d{\'e}duire que l'ensemble $\mathfrak{D}_{\mathbb{C}}$ des entiers
+alg{\'e}briques de $\mathbb{C}$ est un sous-anneau de $\mathbb{C}$.
+
+\tmtextbf{{\tmname{Indication :}} }On pourra utiliser sans d{\'e}monstration
+qu'un sous-groupe d'un groupe ab{\'e}lien de type fini est de type fini.
+
+\
+
+7. Montrer que $\mathfrak{D}_{\mathbb{C}} \cap \mathbb{Q}=\mathbb{Z}$.
+
+\
+
+$\maltese \maltese$\quad Dans la suite, on consid{\`e}re le corps
+$\tmmathbf{K} =\mathbb{Q}(\zeta)$, o{\`u} $\zeta = e^{\frac{2 i \pi}{p}}$ avec
+$p$ premier impair. On note $\mathfrak{D}_{\tmmathbf{K}}$ l'ensemble des
+entiers alg{\'e}briques de $\tmmathbf{K}$. On pose $\lambda = 1
+\nonconverted{minus} \zeta$.
+
+\
+
+On d{\'e}finit la norme et la trace de tout {\'e}l{\'e}ment $\theta \in
+\tmmathbf{K} =\mathbb{Q}(\zeta)$ par
+\[ N (\theta) = \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (\theta) \]
+
+
+et
+\[ \tmop{Tr} (\theta) = \underset{k = 1}{\overset{p - 1}{\sum}} \sigma_k
+   (\theta) \]
+
+
+o{\`u} les $\sigma_k$ sont les morphismes de $\mathbb{Q}- \tmop{alg} {\`e}
+\tmop{bre}$de $\mathbb{Q}(\zeta)$ d{\'e}finis dans la question 2 de cette
+partie.$\maltese \maltese$
+
+\
+
+\subsubsection*{III. Le corps $\mathbb{Q} (\zeta)$ et son anneau d'entiers}
+
+\
+
+1. (a) Montrer que les morphismes de $\mathbb{Q}- \tmop{alg} {\`e}
+\tmop{bre}$ de $\mathbb{Q}(\zeta)$ sont les $\sigma_k$ tels que $\sigma_k
+(\zeta) = \zeta^k$ , avec $k \in \{1, ..., p \nonconverted{minus} 1\}$.
+
+\
+
+\quad (b) \ i. Montrer que $N (\zeta) = 1$et $\tmop{Tr} (\zeta) =
+\nonconverted{minus} 1$.
+
+\
+
+{\hspace{3em}}ii. Montrer que $N (1 \nonconverted{minus} \zeta) = p$ et $N (1
++ \zeta) = 1$.
+
+\
+
+2. Montrer l'inclusion $\mathbb{Z}[\zeta] \subseteq
+\mathfrak{D}_{\tmmathbf{K}}$.
+
+\
+
+3. Soit $z \in \mathbb{Z}[\zeta]$.
+
+\
+
+\quad (a) Montrer que $z \in Z [\zeta]^{\times}$ si et seulement si $N (z)
+\in \{\nonconverted{minus} 1, + 1\}$.
+
+\
+
+\quad (b) Montrer que si $N (z)$ est un nombre premier, alors $z$ est
+irr{\'e}ductible.
+
+\
+
+4. Le but de cette question est de montrer que l'ensemble $G$ des racines de
+l'unit{\'e} contenues dans$ \tmmathbf{K}$ est form{\'e} exactement des
+{\'e}l{\'e}ments de la forme $\pm \zeta^k$, $k \in \{0, . . ., p
+\nonconverted{minus} 1\}$.
+
+\
+
+\quad (a) Justifier que $G$ est un groupe fini cyclique, dont on notera $n$
+le cardinal.
+
+\
+
+\quad (b) Soit $\omega$ un g{\'e}n{\'e}rateur de $G$. Justifier que $2 p |
+n$et que $\mathbb{Q}(\zeta) =\mathbb{Q}(\omega)$.
+
+\quad
+
+\quad (c) En d{\'e}duire que $n = 2 p$ et conclure.
+
+\
+
+5. On note $\langle \lambda \rangle = \lambda \mathbb{Z}[\zeta]$, l'id{\'e}al
+de $\mathbb{Z}[\zeta]$ engendr{\'e} par$\lambda$.
+
+\
+
+\quad (a) Montrer que $\langle \lambda \rangle \cap \mathbb{Z}= p\mathbb{Z}$.
+
+\
+
+\quad (b) Montrer que pour tout $k \in \{1, . . ., p \nonconverted{minus}
+1\}$, on a
+\[ \frac{1 \nonconverted{minus} \zeta}{1 - \zeta^k} \in Z [\zeta]^{\times} \]
+
+
+et en d{\'e}duire que
+
+
+\[ \lambda^{p - 1} \mathbb{Z}[\zeta] = p\mathbb{Z}[\zeta] . \]
+
+
+\quad (c) Soit $\psi$ le morphisme d'anneaux de $\mathbb{Z}[X]$ dans
+$\mathbb{Z} [\zeta] / \langle \lambda \rangle$, qui {\`a} $P \in
+\mathbb{Z}[X]$ associe $P (\zeta) (\tmop{mod} \langle \lambda \rangle)$.
+D{\'e}terminer l'image de $\psi$ et montrer que $\ker \psi$ est l'ensemble des
+polyn{\^o}mes $P \in \mathbb{Z}[X]$ tels que $P (1) = 0 (\tmop{mod}
+p\mathbb{Z})$.
+
+\
+
+\quad (d) En d{\'e}duire que $Z [\zeta] / \langle \lambda \rangle$ est
+isomorphe {\`a} $\mathbb{F}_p$.
+
+\
+
+\quad (e) Que peut-on en d{\'e}duire pour l'id{\'e}al $\lambda$ ?
+
+\
+
+6. On d{\'e}termine ici la structure de $\mathbb{Z}[\zeta]^{\times}$. Le but
+est de d{\'e}montrer que les {\'e}l{\'e}ments de $\mathbb{Z}[\zeta]^{\times}$
+sont les $\zeta^r \varepsilon$, o{\`u} $r \in \mathbb{Z}$ et $\varepsilon$ est
+un r{\'e}el inversible de $\mathbb{Z}[\zeta]$.
+
+\
+
+Soit $u \in \mathbb{Z}[\zeta]^{\times}$ .
+
+\
+
+\quad (a) Soit $P = \underset{k = 0}{\overset{d}{\sum}} a_k X^k \in
+\mathbb{Z}[X]$ un polyn{\^o}me unitaire de degr{\'e} $d$, dont on note
+$\alpha_1, . . ., \alpha_d$ les racines complexes compt{\'e}es avec leur
+multiplicit{\'e}. On suppose que, pour tout$k \in \{1, . . ., d\}$, $\alpha_k$
+est de module $1$.
+
+\
+
+{\hspace{3em}}i. Montrer que pour tout $k \in \{0, . . ., d\}$, on a $|a_k |
+\leqslant \left( \begin{array}{c}
+  d\\
+  k
+\end{array} \right)$ .
+
+{\hspace{3em}}En d{\'e}duire qu'il n'existe qu'un nombre fini d'entiers
+alg{\'e}briques de degr{\'e} $d$ dont tous les conjugu{\'e}s sont de module
+$1$.
+
+\
+
+{\hspace{3em}}ii. En d{\'e}duire {\'e}galement que les racines de $P$ sont
+des racines de l'unit{\'e}.
+
+\tmtextbf{{\tmname{Indication}} :} On pourra consid{\'e}rer les polyn{\^o}mes
+$P_n = \underset{k = 1}{\overset{d}{\prod}} (X - \alpha_k^n)$, $n \in
+\mathbb{N}$, dont on montrera qu'ils sont dans $\mathbb{Z}[X]$.
+
+\
+
+\quad (b) Soit $P \in \mathbb{Z}[X]$ tel que $u = P (\zeta)$. Montrer que,
+pour tout $k \in \{1, . . ., p \nonconverted{minus} 1\}$, $u_k = P (\zeta^k)$
+est un conjugu{\'e} de $u$, et que c'est un {\'e}l{\'e}ment de
+$\mathbb{Z}[\zeta]^{\times}$.
+
+\quad
+
+\quad (c) Justifier que $\frac{u_p}{u_{p - 1}}$ est un entier alg{\'e}brique
+dont tous les conjugu{\'e}s sont de module 1.
+
+\
+
+\quad (d) En d{\'e}duire qu'il existe$m \in \mathbb{Z}$ tel que
+$\frac{u_1}{u_{p - 1}} = \pm \zeta^m$.
+
+\
+
+\quad (e) \ i. Soit $\theta \in \mathbb{Z}[\zeta]$. Justifier qu'il existe un
+entier $a \in \mathbb{Z}$ tel que $\theta = a (\tmop{mod} < \lambda >)$. En
+d{\'e}duire que deux {\'e}l{\'e}ments conjugu{\'e}s de $\mathbb{Z}[\zeta]$
+sont {\'e}gaux modulo $< \lambda >$.
+
+\
+
+{\hspace{3em}}ii. D{\'e}montrer que $\frac{u_1}{u_{p - 1}} = \zeta^m$.
+
+\
+
+\quad (f) Justifier l'existence de $r \in \mathbb{Z}$ tel que $2 r = m
+(\tmop{mod} p\mathbb{Z})$. On pose $\varepsilon = \zeta^{- r} u.$ Montrer que
+$\varepsilon \in \mathbb{R}$ et conclure.
+
+\
+
+7. Le but de ce qui suit est de montrer que $\mathfrak{D}_{\tmmathbf{K}}
+=\mathbb{Z}[\zeta]$.
+
+\
+
+\quad (a) Montrer que pour tout $\theta \in \mathfrak{D}_{\tmmathbf{K}}$, on
+a $N (\theta) \in \mathbb{Z}$ et $\tmop{Tr} (\theta) \in \mathbb{Z}$.
+
+\
+
+\quad (b) Soit $\theta \in \tmmathbf{K} =\mathbb{Q}(\zeta)$ un entier
+alg{\'e}brique. Il existe des rationnels $a_0, . . ., a_{p - 2}$ tels que
+\[ \theta = \underset{k = 0}{\overset{p - 2}{\sum}} a_k \zeta^k \]
+
+
+\
+
+{\hspace{3em}}i. Pour $k \in \{0, . . ., p \nonconverted{minus} 2\}$,
+calculer $b_k = \tmop{Tr} (\theta \zeta^{- k} \nonconverted{minus} \theta
+\zeta)$ et justifier que $b_k \in \mathbb{Z}$.
+
+\
+
+{\hspace{3em}}ii. Montrer qu'il existe des entiers $c_0, c_1, . . ., c_{p -
+2},$ que l'on exprimera en fonction des $b_k$, tels que
+\[ p \theta = \underset{k = 0}{\overset{p - 2}{\sum}} c_k \lambda^k \]
+
+
+Justifier ensuite que pour tout$k \in \{0, . . ., p \nonconverted{minus}
+2\}$,
+\[ b_k = \underset{l = k}{\overset{p - 2}{\sum}} (- 1)^l \left(
+   \begin{array}{c}
+     l\\
+     k
+   \end{array} \right) c_l \]
+
+
+\
+
+{\hspace{3em}}iii. Montrer qu'il existe $\beta \in \mathbb{Z}[\zeta]$ tel que
+$p = \lambda^{p - 1} \beta$. En d{\'e}duire que$p | c_0$, puis que pour tout
+$k \in \{0, . . ., p \nonconverted{minus} 2\}$, on a $p | c_k$. Conclure.
+
+\
+
+\subsubsection*{IV. Le th{\'e}or{\`e}me de Fermat pour $p = 3$}
+
+\
+
+On cherche {\`a} d{\'e}montrer dans cette partie que l'{\'e}quation
+\begin{equation}
+  x^3 + y^3 + z^3 = 0
+\end{equation}
+
+
+n'a pas de solution enti{\`e}res non triviales, $i. e$., telles que $x y z
+\neq 0.$
+
+\
+
+Soient $x, y \tmop{et} z$ trois entiers relatifs tels que $x^3 + y^3 + z^3 =
+0$.
+
+\
+
+1. On suppose que $3 \not{| \nobracket} x y z$. Montrer que $x^3$ vaut $+ 1$
+ou $\nonconverted{minus} 1 (\tmop{mod} 9)$ et conclure {\`a} une
+impossibilit{\'e}.
+
+\
+
+$\maltese \maltese$ On traite {\`a} pr{\'e}sent le cas $3 | x y z$. Dans la
+suite de cette partie, on note $\lambda = 1 \nonconverted{minus} j$ avec
+toujours $j = e^{\frac{2 i \pi}{3}}$, et on suppose que les entiers $x, y$ et
+$z$ sont premiers entre eux dans $\mathbb{Z}[j]$ (et non seulement dans
+$\mathbb{Z}$), cas auquel on peut se ramener en divisant par leur pgcd dans
+$\mathbb{Z}[j]$. $\maltese \maltese$
+
+\
+
+2. Montrer que $3$ et $\lambda^2$ sont associ{\'e}s dans $\mathbb{Z}[j]$, ce
+que l'on a not{\'e} $3 \sim \lambda^2$.
+
+\
+
+3. Soit $s \in \mathbb{Z}[j]$ tel que $s \neq 0 (\tmop{mod} \langle \lambda
+\rangle)$. Montrer qu'il existe $\varepsilon \in \{\nonconverted{minus} 1, +
+1\}$ tel que $s^3 = \varepsilon (\tmop{mod} \langle \lambda^4 \rangle)$.
+
+{\tmname{\tmtextbf{Indication :}}} On pourra remarquer que tout
+{\'e}l{\'e}ment $s \in \mathbb{Z}[j]$ est congru {\`a} $\nonconverted{minus}
+1, 0$ou $1 (\tmop{mod} \langle \lambda \rangle)$.
+
+\
+
+$\maltese \maltese$ Par sym{\'e}trie des r{\^o}les de $x, y$ et $z$, on peut
+supposer que $3 | z$ (et donc $3 \not{| \nobracket} x$, $3 \not{| \nobracket}
+y$ puisqu'ils sont premiers entre eux). En particulier, on a $\lambda | z$,
+$\lambda \not{| \nobracket} x$ et$\lambda \not{| \nobracket} y$ dans
+$\mathbb{Z}[j]$.
+
+On note $n$ la valuation en $\lambda$ de $z$ ; il existe donc $\mu \in
+\mathbb{Z}[j]$ premier avec $\lambda$ tel que $z = \mu \lambda^n$, et par
+hypoth{\`e}se $n \geqslant 1.$ On a donc $x^3 + y^3 + \mu^3 \lambda^{3 n} =
+0.$
+
+La propri{\'e}t{\'e} suivante (qui pourra {\^e}tre utilis{\'e}e sans plus de
+justification) est donc v{\'e}rifi{\'e}e :
+\[ (P_n) : \tmop{il} \tmop{existe} \alpha, \beta, \delta \in \mathbb{Z}[j]
+   \tmop{et} \omega \in \mathbb{Z}[j]^{\times} \tmop{tels} \tmop{que}
+   \left\{\begin{array}{l}
+     \lambda \not{| \nobracket} \alpha \beta \delta\\
+     \alpha \infixand \beta \tmop{premiers} \tmop{entre} \tmop{eux}\\
+     \alpha^3 + \beta^3 + \omega \lambda^{3 n} \delta^3 = 0
+   \end{array}\right. \]
+
+
+Nous allons montrer que si $(P_n)$ est v{\'e}rifi{\'e}e, alors $n \geqslant
+2$ et $(P_{n - 1})$ est {\'e}galement v{\'e}rifi{\'e}e. $\maltese \maltese$
+
+\
+
+4. Supposons $(P_n)$ v{\'e}rifi{\'e}e pour un quadruplet $(\alpha, \beta,
+\delta, \omega)$. En consid{\'e}rant les valeurs de $\alpha^3, \beta^3$ et
+$\omega \lambda^{3 n} \delta^3 (\tmop{mod} \langle \lambda^4 \rangle)$,
+montrer que $n \geqslant 2$.
+
+\
+
+5. Supposons $(P_n)$v{\'e}rifi{\'e}e pour un quadruplet $(\alpha, \beta,
+\delta, \omega)$. On montre dans cette question que $(P_{n - 1})$ est
+{\'e}galement v{\'e}rifi{\'e}e.
+
+\
+
+\quad (a) Montrer que
+
+
+\[ \nonconverted{minus} \omega \lambda^{3 n} \delta^3 = (\alpha + \beta)
+   (\alpha + j \beta) (\alpha + j^2 \beta) . \]
+
+
+\quad (b) En d{\'e}duire que $\lambda$ divise chacun des facteurs $\alpha +
+\beta, \alpha + j \beta$ et $\alpha + j^2 \beta$.
+
+\
+
+\quad (c) D{\'e}montrer que $\lambda$ est un\tmtextbf{ pgcd} de $\alpha +
+\beta$et $\alpha + j \beta$. En d{\'e}duire que $\lambda^2$ divise exactement
+l'un des {\'e}l{\'e}ments $\alpha + \beta, \alpha + j \beta$ ou$\alpha + j^2
+\beta$.
+
+\
+
+Quitte {\`a} remplacer$\beta$ par $j \beta$ ou$j^2 \beta$, on peut supposer
+que $\lambda^2$ divise $\alpha + \beta$. Il existe donc des {\'e}l{\'e}ments
+$\kappa_1$, $\kappa_2$ et $\kappa_3$ de $\mathbb{Z}[j]$ tels que $\lambda
+\not{| \nobracket} \kappa_1 \kappa_2 \kappa_3$ et
+\[ \left\{\begin{array}{l}
+     \alpha + \beta = \lambda^{3 n - 2} \kappa_1\\
+     \alpha + j \beta = \lambda \kappa_2\\
+     \alpha + j^2 \beta = \lambda \kappa_3
+   \end{array}\right. \]
+
+
+\quad (d) Montrer que $\nonconverted{minus} \omega \delta^3 = \kappa_1
+\kappa_2 \kappa_3$ et en d{\'e}duire qu'il existe des {\'e}l{\'e}ments
+$\gamma_1, \gamma_2 \tmop{et} \gamma_3$ de $\mathbb{Z}[j]$ tels que pour tout
+$l \in \{1, 2, 3\}$, $\kappa_l \sim \gamma^3_l$.
+
+\
+
+\quad (e) D{\'e}montrer qu'il existe deux inversibles $\tau$ et $\tau'$ de
+$\mathbb{Z}[j]^{\times}$ tels que
+\[ \gamma^3_2 + \tau \gamma^3_3 + \tau' \lambda^{3 (n - 1)} \gamma^3_1 = 0.
+\]
+\quad
+
+\quad (f) Montrer que si $\tau = \pm 1$, alors $(P_{n - 1})$ est
+v{\'e}rifi{\'e}e.
+
+
+
+\
+
+\quad (g) Montrer que $\tau = \pm 1 (\tmop{mod} \langle \lambda^3 \rangle)$,
+puis que $\tau \nin \{j, \nonconverted{minus} j, j^2, \nonconverted{minus} j^2
+\}$.
+
+\
+
+6. Conclure que l'{\'e}quation $(1)$ n'a pas de solution$(x, y, z)$ dans le
+cas $3 | x y z$.
+
+\
+
+\subsubsection*{V. Le th{\'e}or{\`e}me de Fermat pour $p$ r{\'e}gulier et $p
+\not{| \nobracket} x y z$}
+
+\
+
+$\maltese \maltese$\quad On admet dans la suite que pour tout corps
+$\tmmathbf{K}$ de degr{\'e} fini sur $\mathbb{Q}$, son anneau des entiers
+$\mathfrak{D}_{\tmmathbf{K}}$ v{\'e}rifie la propri{\'e}t{\'e} suivante :
+
+Tout id{\'e}al non nul de $\mathfrak{D}_{\tmmathbf{K}}$ s'{\'e}crit comme
+produit d'id{\'e}aux premiers, de mani{\`e}re unique {\`a} l'ordre pr{\`e}s
+des facteurs.
+
+\
+
+Dans ce contexte, on dit que deux id{\'e}aux $I$ et $J$ sont premiers entre
+eux s'ils n'ont pas d'id{\'e}al premier en commun dans leur d{\'e}composition
+en produit d'id{\'e}aux premiers.
+
+\
+
+L'anneau $\mathbb{Z}[\zeta]$ qui est, d'apr{\`e}s les r{\'e}sultats de la
+Partie 3, l'anneau des entiers de $\tmmathbf{K} =\mathbb{Q}(\zeta)$,
+v{\'e}rifie donc cette propri{\'e}t{\'e} de factorisation de ses id{\'e}aux.
+
+\
+
+On suppose dans cette partie que $p > 3$ est un nombre premier r{\'e}gulier,
+ce qui signifie que si $I$ est un id{\'e}al de $\mathbb{Z}[\zeta]$ tel que
+$I^p$ est principal, alors $I$ est lui-m{\^e}me principal. On rappelle que
+l'on a not{\'e}$\lambda = 1 \nonconverted{minus} \zeta$ et que certaines
+propri{\'e}t{\'e}s de l'id{\'e}al $\langle \lambda \rangle$ ont {\'e}t{\'e}
+{\'e}tudi{\'e}es en Partie $3$, question 5.
+
+\
+
+On d{\'e}montre dans cette partie que l'{\'e}quation
+\begin{equation}
+  x^p + y^p + z^p = 0
+\end{equation}
+n'admet pas de solutions enti{\`e}res non triviales dans le cas o{\`u} $p
+\not{| \nobracket} x y z$.
+
+\
+
+Par l'absurde, on se donne trois entiers $x, y, z \in \mathbb{Z}$, deux {\`a}
+deux premiers entre eux dans $\mathbb{Z}$, tels que $p \not{| \nobracket} x y
+z$ et qui v{\'e}rifient l'{\'e}quation (2). $\maltese \maltese$
+
+\
+
+1. Montrer l'{\'e}galit{\'e} d'id{\'e}aux
+\[ \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y \rangle =
+   \langle z^p \rangle \]
+
+
+2. Soient deux entiers $k$ et $l$ tels que $0 \leqslant k < l \leqslant p -
+1$. On montre dans cette question que les id{\'e}aux $\langle x + \zeta^k y
+\rangle$ et $\langle x + \zeta^l y \rangle$ de $\mathbb{Z} [\zeta]$ sont
+premiers entre eux. Par l'absurde, soit $\mathfrak{B}$ un id{\'e}al premier
+divisant $\langle x + \zeta^k y \rangle$ et $\langle x + \zeta^l y \rangle$.
+
+\
+
+\quad$(a)$ En consid{\'e}rant $\langle x + \zeta^l y \rangle - \langle x +
+\zeta^k y \rangle$, montrer que $\lambda y \in \mathfrak{B}$.
+
+\
+
+\quad$(b)$ Montrer que $y \nin \mathfrak{B}$, en d{\'e}duire que $x + y \in
+\langle \lambda \rangle \cap \mathbb{Z}$ et conclure {\`a} une absurdit{\'e}.
+
+\
+
+3. Justifier l'existence d'un id{\'e}al $I$ tel que $\langle x + \zeta y
+\rangle = I^p$.
+
+\
+
+4. Montrer qu'il existe $r \in \mathbb{Z}$, $\varepsilon$ r{\'e}el inversible
+de $\mathbb{Z}[\zeta]$ et $\alpha \in \mathbb{Z}[\zeta]$ tels que $x + \zeta y
+= \zeta^r \varepsilon \alpha^p$.
+
+\
+
+5. Montrer qu'il existe $a \in \mathbb{Z}$ tel que $\alpha^p = a (\tmop{mod}
+\langle p \rangle)$ (attention, ici $\langle p \rangle = p\mathbb{Z}[\zeta]$
+et non $p\mathbb{Z}$) et en d{\'e}duire que
+\[ x \zeta^{- r} + y \zeta^{1 - r} \nonconverted{minus} x \zeta^r
+   \nonconverted{minus} y \zeta^{r \nonconverted{minus} 1} = 0 (\tmop{mod}
+   \langle p \rangle) . \]
+
+
+6. Supposons que$r = 0 (\tmop{mod} p\mathbb{Z})$. Montrer alors que $p | y$
+dans $\mathbb{Z}$, ce qui est contraire {\`a} l'hypoth{\`e}se.
+
+\
+
+On montrerait de m{\^e}me que l'on ne peut avoir $r = 1 (\tmop{mod}
+p\mathbb{Z})$, ce que l'on admet.
+
+\
+
+7. D'apr{\`e}s la question 5, il existe $\beta \in \mathbb{Z}[\zeta]$ tel que
+\[ x \zeta^{\nonconverted{minus} r} + y \zeta^{1 \nonconverted{minus} r}
+   \nonconverted{minus} x \zeta^r \nonconverted{minus} y \zeta^{r
+   \nonconverted{minus} 1} = \beta p. \]
+
+
+Montrer que deux des entiers $\pm r, \pm (1 \nonconverted{minus} r)$ sont
+{\'e}gaux modulo $p$ ; en d{\'e}duire que $2 r = 1 (\tmop{mod} p\mathbb{Z})$.
+
+\
+
+8. Montrer que $\beta p \zeta^r = (x \nonconverted{minus} y) \lambda$, puis
+que $x = y (\tmop{mod} p\mathbb{Z})$.
+
+\
+
+9. Conclure {\`a} une absurdit{\'e}.6. Supposons que$r = 0 (\tmop{mod}
+p\mathbb{Z})$. Montrer alors que $p | y$ dans $\mathbb{Z}$, ce qui est
+contraire {\`a} l'hypoth{\`e}se.
+
+\
+
+On montrerait de m{\^e}me que l'on ne peut avoir $r = 1 (\tmop{mod}
+p\mathbb{Z})$, ce que l'on admet.
+
+\
+
+7. D'apr{\`e}s la question 5, il existe $\beta \in \mathbb{Z}[\zeta]$ tel que
+\[ x \zeta^{\nonconverted{minus} r} + y \zeta^{1 \nonconverted{minus} r}
+   \nonconverted{minus} x \zeta^r \nonconverted{minus} y \zeta^{r
+   \nonconverted{minus} 1} = \beta p. \]
+
+
+Montrer que deux des entiers $\pm r, \pm (1 \nonconverted{minus} r)$ sont
+{\'e}gaux modulo $p$ ; en d{\'e}duire que $2 r = 1 (\tmop{mod} p\mathbb{Z})$.
+
+\
+
+8. Montrer que $\beta p \zeta^r = (x \nonconverted{minus} y) \lambda$, puis
+que $x = y (\tmop{mod} p\mathbb{Z})$.
+
+\
+
+9. Conclure {\`a} une absurdit{\'e}.
+
+\
+
+\begin{center}
+  {\tmname{\subsubsection*{\tmtextbf{Solution}}}}
+\end{center}
+
+\subsubsection*{1. Exercices pr{\'e}liminaires}
+
+\
+
+\tmtextbf{1.} Soit $B \in \mathbb{Z} [X]$ un polyn{\^o}me unitaire, et $A \in
+\mathbb{Z} [X]$.
+
+Montrons par r{\'e}currence sur $n = \deg (A)$ que :
+\[ \exists Q, R \in \mathbb{Z} [X] \tmop{tels} \tmop{que}
+   \left\{\begin{array}{l}
+     A = B.Q + R\\
+     \deg (R) < \deg (B) \tmop{ou} R = 0
+   \end{array}\right. \]
+
+
+Remarquons tout d'abord que si $\deg (B) = 0$, alors $B = 1$, donc le
+r{\'e}sultat est trivial puisque pour tout $A \in \mathbb{Z} [X]$, on a : $A =
+B \times A$.
+
+On suppose dans la suite que $\deg (B) \geqslant 1$.
+
+\tmtextbf{Pour $n = 0$,} on a pour tout $A \in \mathbb{Z} [X]$, tel que $\deg
+(A) = 0$. On a
+\[ A = 0 \times B + A \]
+
+
+Avec,
+\[ \deg (A) = 0 < \deg (B) \]
+
+
+Donc, le r{\'e}sultat est vrai pour $n = 0$.
+
+Soit $n \in \mathbb{N}$, supposons que le r{\'e}sultat est vrai pour $k = 0,
+1, \ldots, n$, et montrons le pour $n + 1$.
+
+Soit $A \in \mathbb{Z} [X],$ $\tmop{tel} \tmop{que}$ $\deg (A) = n + 1$. On
+peut {\'e}crire $A$ comme :
+\[ A = X A_1 + a_0 \]
+
+
+Avec,
+\[ \left\{\begin{array}{l}
+     A_1 \in \mathbb{Z} [X]\\
+     a_0 = A (0) \in \mathbb{Z} [X]
+   \end{array}\right. \]
+
+
+On tire $\deg (A_1) = n$, donc, d'apr{\`e}s l'hypoth{\`e}se de r{\'e}currence,
+il existe $Q_1, R_1 \in \mathbb{Z} [X]$ tels que :
+\[ \left\{\begin{array}{l}
+     A_1 = B Q_1 + R_1\\
+     \deg (R_1) < \deg (B)
+   \end{array}\right. \]
+
+
+On a alors :
+\begin{equation}
+  A = B (X Q_1) + X R_1 + a_0
+\end{equation}
+
+
+Or :
+\begin{equation}
+  \deg (X R_1) = 1 + \deg (R_1) \leqslant \deg (B)
+\end{equation}
+
+
+\tmtextbf{Si $\deg (B) \geqslant \deg (A)$ :}
+
+\tmtextbf{$\rightarrow$Si $\deg (B) > \deg (A) $:}
+
+On a
+\[ A = 0 \times B + A \]
+
+
+Donc le r{\'e}sultat est vrai.
+
+\tmtextbf{$\rightarrow$ Si $\deg (B) = \deg (A)$:}
+
+On note
+\[ A = \underset{k = 0}{\overset{n + 1}{\sum}} a_k X^k \]
+
+
+et
+\[ B = X^{n + 1} + \underset{k = 0}{\overset{n}{\sum}} b_k X^k \]
+
+
+avec $a_0, \ldots, a_{n + 1}, b_0, \ldots, b_n \in \mathbb{Z}$
+
+On a
+\begin{eqnarray*}
+  A - a_{n + 1} B & = & \underset{k = 0}{\overset{n}{\sum}} (a_k - a_{n + 1}
+  b_k) X^k
+\end{eqnarray*}
+
+
+Donc
+\[ \begin{array}{lll}
+     A & = & a_{n + 1} B + \underset{k = 0}{\overset{n}{\sum}} (a_k - a_{n +
+     1} b_k) X^k
+   \end{array} \]
+
+
+avec
+\[ \deg \left( \underset{k = 0}{\overset{n}{\sum}} (a_k - a_{n + 1} b_k) X^k
+   \right) < n + 1 \]
+
+
+Donc par l'unicit{\'e} de la division euclidienne, on a le r{\'e}sultat,
+puisque :
+\[ \left\{\begin{array}{l}
+     a_{n + 1} \in \mathbb{Z} [X]\\
+     \underset{k = 0}{\overset{n}{\sum}} (a_k - a_{n + 1} b_k) X^k \in
+     \mathbb{Z} [X]
+   \end{array}\right. \]
+
+
+\tmtextbf{On suppose dans le suite que $\deg (B) < \deg (A)$}.
+
+D'apr{\`e}s $(2)$, on a :
+\begin{eqnarray*}
+  \deg (X R_1) & \leqslant & \deg (B)\\
+  & < & \deg (A)\\
+  & = & n + 1
+\end{eqnarray*}
+
+
+Donc $\deg (X R_1) \leqslant n$.
+
+Si $R_1 = 0$, alors d'apr{\`e}s $(1)$, on a :
+\[ A = B (X Q_1) + a_0 \]
+
+
+Avec $X Q_1 \in \mathbb{Z} [X]$, et $a_0 \in \mathbb{Z} [X]$. C'est fini !
+
+\tmtextbf{Sinon} ( $R_1 \neq 0$), on a :
+\[ \deg (X R_1) \in \llbracket 0, n \rrbracket \]
+
+
+Par hypoth{\`e}se de r{\'e}currence, on a l'existence de $Q_2, R_2 \in
+\mathbb{Z} [X]$, tels que :
+\[ \left\{\begin{array}{l}
+     X R_1 = B Q_2 + R_2\\
+     \deg (R_2) < \deg (B)
+   \end{array}\right. \]
+
+
+Donc, via $(1)$, on a :
+\begin{eqnarray*}
+  A & = & B (X Q_1) + B Q_2 + R_2 + a_0\\
+  & = & B (X Q_1 + Q_2) + R_2 + a_0
+\end{eqnarray*}
+
+
+Avec $X Q_1 + Q_2 \in \mathbb{Z} [X]$, $R_2 + a_0 \in \mathbb{Z} [X]$ et $\deg
+(R_2 + a_0) < \deg (B)$.
+
+D'o{\`u} le r{\'e}sultat par r{\'e}currence.
+
+\
+
+Il ne reste que le cas o{\`u} $\deg (A) \nin \mathbb{N}$, donc $\deg (A) = -
+\infty$, c'est-{\`a}-dire $A = 0$.
+
+On a :
+\[ A = 0 \times B + 0 \]
+
+
+Avec
+\[ \left\{\begin{array}{l}
+     0 \in \mathbb{Z} [X]\\
+     \deg (0) = - \infty < \deg (B)
+   \end{array}\right. \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\paragraph{2. L'anneau $\mathbb{Z} [j] .$}
+
+\tmtextbf{2.a.} On a
+\[ 1 + j + j^2 = \frac{1 - j^3}{1 - j} = 0 \]
+
+
+Donc $P (j) = 0$, o{\`u} $P = X^2 + X + 1 \in \mathbb{Q} [X]$, et donc $j$ est
+alg{\'e}brique de $\mathbb{Q}$.
+
+\
+
+\tmtextbf{D{\'e}terminons le polyn{\^o}me minimal de $j$ :}
+
+\tmtextbf{Lemme 1.}
+
+Soient $\alpha \in \mathbb{C}$ et $P \in \mathbb{Q} [X]$ annulant $\alpha$,
+alors $\pi_{\alpha} | P \nobracket$.
+
+\
+
+\tmtextbf{Preuve du lemme 1.}
+
+Puisque $\pi_{\alpha} \neq 0$, et $\mathbb{Q} [X]$ est euclidien (car
+$\mathbb{Q}$ est un corps), alors il existe $(Q, R) \in \mathbb{Q} [X]^2$ tels
+que:
+\[ \left\{\begin{array}{l}
+     P = Q \pi_{\alpha} + R\\
+     \deg (R) < \deg (\pi_{\alpha})
+   \end{array}\right. \]
+
+
+On a :
+\[ R (\alpha) = P (\alpha) - Q (\alpha) \pi_{\alpha} (\alpha) = 0 \]
+
+
+Donc $R$ annule $\alpha$. De plus, $\deg (R) < \deg (\pi_{\alpha})$, et
+$\pi_{\alpha}$ est par d{\'e}finition le polyn{\^o}me non nul, unitaire,
+annulant $\alpha$ et de \tmtextbf{degr{\'e} minimal}. Puisque $\deg (R) < \deg
+(\pi_{\alpha})$, alors forc{\'e}ment $R = 0$.
+
+D'o{\`u}
+\[ \pi_{\alpha} | P \nobracket \]
+
+
+Montrons maintenant que $\pi_j = X^2 + X + 1$.
+
+Puisque $j^2 + j + 1 = 0$, alors $\pi_j | X^2 + X + 1 \nobracket$. Pour
+conclure, il suffit de montrer que $X^2 + X + 1$ est irr{\'e}ductible sur
+$\mathbb{Q} [X]$.
+
+On a le discriminant du trin{\^o}me $X^2 + X + 1$ est $- 3 < 0$.
+
+Donc $X^2 + X + 1$ est irr{\'e}ductible sur $\mathbb{R} [X]$.
+
+Or, $\mathbb{Q}$ est un sous-corps de $\mathbb{R}$, alors $X^2 + X + 1$ est
+{\'e}galement irr{\'e}ductible sur $\mathbb{Q} [X]$.
+
+Via la relation \ $\pi_j | X^2 + X + 1 \nobracket$ et puisque $X^2 + X + 1$
+est irr{\'e}ductible aussi sur $\mathbb{Q} [X]$, alors ou bien $\pi_j$ est
+inversible, ou bien $\pi_j $est associ{\'e} {\`a} $X^2 + X + 1$.
+
+Avec $\deg (\pi_j) \geqslant 1$, on en d{\'e}duit que $\pi_j $et $X^2 + X + 1$
+sont associ{\'e}s. De plus, ils sont unitaires, donc ils sont {\'e}gaux.
+
+D'o{\`u}
+\[ \pi_j = X^2 + X + 1 \]
+
+
+\tmtextbf{2.b.} \ Montrons que
+\[ \mathbb{Z} [j] = \{ a + b j | \nobracket  (a, b) \in \mathbb{Z}^2 \}
+\]
+
+\
+
+Soit $(a, b) \in \mathbb{Z}^2$. On a $a + b j = P_{a, b} (j)$, avec $P_{a, b}
+= b X + a \in \mathbb{Z} [X]$, donc $a + b j \in \mathbb{Z} [j]$.
+
+D'o{\`u}
+\[ \{ a + b j | \nobracket  (a, b) \in \mathbb{Z}^2 \} \subseteq \mathbb{Z}
+   [j] \]
+
+
+Montrons maintenant que $\mathbb{Z} [j] \subseteq \{ a + b j | \nobracket  (a,
+b) \in \mathbb{Z}^2 \}$.
+
+Soit $\alpha \in \mathbb{Z} [j]$. Alors par d{\'e}finition, il existe $P \in
+\mathbb{Z} [X] $tel que $\alpha = P (j)$.
+
+En utilisant la question 1 de cette partie et puisque $X^2 + X + 1 \in
+\mathbb{Z} [X]$est unitaire, on a l'existence de $Q, R \in \mathbb{Z} [X]$
+tels que :
+\[ \left\{\begin{array}{l}
+     P = Q (X^2 + X + 1) + R\\
+     \deg (R) < \deg (X^2 + X + 1) = 2
+   \end{array}\right. \]
+
+
+Donc
+\[ \alpha = P (j) = Q (j) (j^2 + j + 1) + R (j) = R (j) \]
+
+
+En {\'e}crivant $R = b_1 X + a_1 \in \mathbb{Z} [X]$, on a alors $\alpha = b_1
+j + a_1 \in \{ a + b j | \nobracket  (a, b) \in \mathbb{Z}^2 \}$
+
+D'o{\`u}
+\[ \mathbb{Z} [j] \subseteq \{ a + b j | \nobracket  (a, b) \in \mathbb{Z}^2
+   \} \]
+
+
+Finalement
+\[ \mathbb{Z} [j] = \{ a + b j | \nobracket  (a, b) \in \mathbb{Z}^2 \} \]
+Si vous {\^e}tes int{\'e}ress{\'e}, je vous invite {\`a} d{\'e}montrer la
+g{\'e}n{\'e}ralisation suivante :
+
+\tmtextbf{G{\'e}n{\'e}ralisation 1.}
+
+Soit $n \in \mathbb{N} $ tel que $n \geqslant 2$. Notons $u_n = e^{\frac{2 i
+\pi}{n}}$. On a
+\[ \mathbb{Z} [u_n] = \{ a_0 + a_1 u_n + \cdots + a_{n - 2} u^{n - 2}_n  |
+   \nobracket  (a_0, a_1, \ldots, a_{n - 2}) \in \mathbb{Z}^{n - 1} \} \]
+
+
+\tmtextbf{2.c.} Soit $z \in \mathbb{Z} [j]$, on a l'existence de $(a, b) \in
+\mathbb{Z}^2 $tel que $z = a + j b$.
+
+On a alors\footnote{ car $\bar{j} = j^2$ et $j^2 + j = - 1$.}
+\begin{eqnarray*}
+  N (z) & = & z \bar{z}\\
+  & = & (a + j b) (a + \bar{j} b)\\
+  & = & (a + j b) (a + j^2 b)\\
+  & = & a^2 + a b (j^2 + j) + b^2\\
+  & = & a^2 - a b + b^2
+\end{eqnarray*}
+
+
+Or, on sait que :
+\[ a^2 + b^2 \geqslant 2 | a b | \]
+
+
+Donc :
+\[ N (z) \geqslant 2 | a b | - \tmop{ab} \geqslant 0 \]
+
+
+D'o{\`u} $N (z) \in \mathbb{N}$.
+
+Si $z \in \mathbb{Z} [j]$ est inversible dans $\mathbb{Z} [j]$, alors par
+d{\'e}finition, il existe $z' \in \mathbb{Z} [j]$ tel que $z.z'$=1.
+
+On a alors :
+\[ N (z.z') = N (1) = 1. \bar{1} = 1 \]
+
+
+Et en d{\'e}veloppant :
+\[ N (z.z') = z.z' . \overline{z.z'} = z. \bar{z} .z' . \overline{z'} = N (z)
+   N (z') \]
+
+
+Donc, $N (z) N (z') = 1$ et $N (z), N (z') \in \mathbb{N}$, ce qui implique $N
+(z) = 1$.
+
+\
+
+\tmtextbf{D{\'e}terminons les {\'e}l{\'e}ments de $\mathbb{Z} [j]^{\times}$.}
+
+On a $z = a + b j$, o{\`u} $a, b \in \mathbb{Z}$, et $N (z) = 1$, donc :
+\[ a^2 - a b + b^2 = 1 \]
+
+
+On en d{\'e}duit que :
+\[ a b + 1 = a^2 + b^2 \geqslant 2 | a b | \]
+
+
+Ainsi,
+\[ (| a b | - a b) + | a b | \leqslant 1 \]
+
+
+Avec $| a b | - a b, | a b | \in \mathbb{N}$.
+
+Alors,
+\[ \left\{\begin{array}{l}
+     | a b | - a b = 0\\
+     | a b | = 0
+   \end{array}\right. \tmop{ou} \left\{\begin{array}{l}
+     | a b | - a b = 0\\
+     | a b | = 1
+   \end{array}\right. \infixor \left\{\begin{array}{l}
+     | a b | - a b = 1\\
+     | a b | = 0
+   \end{array}\right. \]
+\[ \  \]
+
+
+Or, $\left\{\begin{array}{l}
+  | a b | - a b = 0\\
+  | a b | = 0
+\end{array}\right.$ {\'e}quivaut {\`a} dire que ($a = 0 \text{ ou $b = 0$}$),
+
+Si $a = 0$, on a dans ce cas $1 = N (z) = b^2$, donc $b = 1$ ou $b = - 1$.
+
+D'o{\`u} $z = j$ ou $z = - j$.
+
+Si $b = 0$, on a de m{\^e}me $a = 1$ ou $a = - 1$, donc $z = 1$ ou $z = - 1$.
+
+\
+
+Et le syst{\`e}me d'{\'e}quations $\left\{\begin{array}{l}
+  | a b | - a b = 0\\
+  | a b | = 1
+\end{array}\right.$ {\'e}quivaut {\`a} $\left[ \left( a = 1 \infixand b = 1
+\right) \infixor (a = - 1 \tmop{et} b = - 1) \right]$
+
+Ainsi, $z = 1 + j$ ou $z = - 1 - j$
+
+\
+
+Et $\left\{\begin{array}{l}
+  | a b | - a b = 1\\
+  | a b | = 0
+\end{array}\right.$ n'admet pas de solutions.
+
+\
+
+En conclusion, on a :
+\[ \mathbb{Z} [j]^{\times} \subseteq \{ - 1, 1, - j, j, - 1 - j, 1 + j \} \]
+
+
+R{\'e}ciproquement, v{\'e}rifions que ces {\'e}l{\'e}ments sont bien des
+unit{\'e}s de $\mathbb{Z} [j]$ :
+\begin{eqnarray*}
+  (- 1)^2 & = & 1\\
+  1^2 & = & 1\\
+  - j (1 + j) & = & 1\\
+  j (- 1 - j) & = & 1
+\end{eqnarray*}
+
+
+Par d{\'e}finition, on a donc :
+\[ \{ - 1, 1, - j, j, - 1 - j, 1 + j \} \subseteq \mathbb{Z} [j]^{\times} \]
+
+
+D'o{\`u} :
+\[ \mathbb{Z} [j]^{\times} = \{ - 1, 1, - j, j, - 1 - j, 1 + j \} = \{ - 1, 1,
+   - j, j, - j^2, j^2 \} \]
+
+
+\tmtextbf{2.d.} \ Soient $x \in \mathbb{Z} [j]$ et $y \in \mathbb{Z} [j]
+\backslash \{ 0 \}$. Cherchons $q \in \mathbb{Z} [X]$ tel que $N \left(
+\frac{x}{y} - q \right) < 1$.
+
+Notons
+\[ x = a + j b \infixand y = c + j d \]
+
+
+On a
+\begin{eqnarray*}
+  \frac{x}{y} & = & \frac{a + j b}{c + j d}\\
+  & = & \frac{(a + j d) (c + j^2 d)}{c^2 - c d + d^2}\\
+  & = & \frac{a c - a d + b d}{c^2 - c d + d^2} + j \frac{b c - a d}{c^2 - c
+  d + d^2}
+\end{eqnarray*}
+
+
+Notons
+\[ \alpha = \frac{a c - a d + b d}{c^2 - c d + d^2} \in \mathbb{Q} \infixand
+   \beta = \frac{b c - a d}{c^2 - c d + d^2} \in \mathbb{Q} \]
+
+
+\tmtextbf{}\tmtextbf{Lemme 2.}
+
+Soit $a \in \mathbb{R},$ alors il existe $t_a \in \mathbb{Z}$, tel que $| a -
+t_a | \leqslant \frac{1}{2}$.
+
+\
+
+\tmtextbf{Preuve du lemme 2.}
+
+On a si $a - \lfloor a \rfloor > \frac{1}{2}, \tmop{alors}$
+\[ (\lfloor a \rfloor + 1) - a = (\lfloor a \rfloor - a) + 1 < \frac{1}{2} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+En particulier, il existe $t_{\alpha}, t_{\beta} \in \mathbb{Z}$ tels que
+\[ \left\{\begin{array}{l}
+     | \alpha - t_{\alpha} | \leqslant \frac{1}{2}\\
+     | \beta - t_{\beta} | \leqslant \frac{1}{2}
+   \end{array}\right. \]
+
+
+Notons $q = t_{\alpha} + j t \beta \in \mathbb{Z} [j]$, on a alors
+\begin{eqnarray*}
+  N \left( \frac{x}{y} - q \right) & = & N ((\alpha - t_{\alpha}) + j (\beta -
+  t_{\beta}))\\
+  & = & (\alpha - t_{\alpha})^2 - (\alpha - t_{\alpha}) (\beta - t_{\beta}) +
+  (\beta - t_{\beta})^2\\
+  & \leqslant & \frac{3}{2} [(\alpha - t_{\alpha})^2 + (\beta -
+  t_{\beta})^2]\\
+  & \leqslant & \frac{3}{4}\\
+  & < & 1
+\end{eqnarray*}
+
+
+Do{\`u} le r{\'e}sultat.
+
+Montrons que $\mathbb{Z} [j]$ est un anneau euclidien.
+
+Pour tout $x, y \in \mathbb{Z} [j] $tel que $y \neq 0$, on a l'existence de $q
+\in \mathbb{Z} [j]$ tel que $N \left( \frac{x}{y} - q \right) < 1$.
+
+On a alors $x = y q + (x - q y)$ avec
+\begin{eqnarray*}
+  N (x - q y) & = & N (y) N \left( \frac{x}{y} - q \right)\\
+  & < & N (y)
+\end{eqnarray*}
+
+
+et $x - q y \in \mathbb{Z} [j]$.
+
+D'o{\`u} l'application $N : \mathbb{Z} [j] \rightarrow \mathbb{R}$ v{\'e}rifie
+pour tout $x, y \in \mathbb{Z} [j]$ tel que $y \neq 0$, l'existence de $(q, r)
+\in \mathbb{Z} [j]^2$ tel que
+\[ \left\{\begin{array}{l}
+     x = q.y + r\\
+     N (r) < N (y)
+   \end{array}\right. \]
+
+
+D'o{\`u} $\mathbb{Z} [j]$ est euclidien.
+
+\
+
+\paragraph{3. Polyn{\^o}mes cyclotomiques. }
+
+\tmtextbf{3.a.} Montrons que :
+\[ X^n - 1 = \underset{d | n \nobracket}{\prod} \Phi_d (X) \]
+
+
+Notons $U_n$ l'ensemble des racines $n$-i{\`e}me de l'unit{\'e}. Montrons que
+:
+\[ U_n = \underset{d | n \nobracket}{\bigsqcup} \mu_d^{\star} \]
+
+
+Soit $d \in \mathbb{N}$, tel que $d | n \nobracket$, et soit $z \in
+\mu_d^{\star}$.
+
+On a $z$ est une racine $d$-i{\`e}me de l'unit{\'e} donc il existe $k \in
+\mathbb{N}$, tel que $z = \exp \left( \frac{2 i \pi k}{d} \right)$.
+
+On a alors :
+\begin{eqnarray*}
+  z^n & = & \exp \left( \frac{2 i \pi k n}{d} \right)\\
+  & = & \exp \left( 2 i \pi k \frac{n}{d} \right)\\
+  & = & 1
+\end{eqnarray*}
+
+
+Donc $z \in U_n$, ensuite $\mu_d^{\star} \subset U_n$, et ceci pour tout $d
+\in \mathbb{N}$, tel que $d | n \nobracket$.
+
+Donc
+\[ \underset{d | n \nobracket}{\bigcup} \mu_d^{\star} \subset U_n \]
+
+
+R{\'e}ciproquement, soit $z \in U_n$, alors il existe $k \in \llbracket 0, n -
+1 \rrbracket$, tel que $z = \exp \left( \frac{2 i k \pi}{n} \right)$
+
+Notons :
+\[ k' = \frac{k}{n \wedge k} \infixand n' = \frac{n}{n \wedge k} \]
+
+
+On a $n' \wedge k' = 1$, et
+\[ z = \exp \left( \frac{2 i k' \pi}{n'} \right) \]
+
+
+Avec $n' | n \nobracket$, et $n' \wedge k' = 1$, alors $z \in \mu_{n'}^{\star}
+\subset \underset{d | n \nobracket}{\bigcup} \mu_d^{\star}$.
+
+\
+
+Donc :
+\[ U_n \subset \underset{d | n \nobracket}{\bigcup} \mu_d^{\star} \]
+
+
+Par suite :
+\[ U_n = \underset{d | n \nobracket}{\bigcup} \mu_d^{\star} \]
+
+
+Il ne reste qu'{\`a} montrer que $\underset{d | n \nobracket}{\bigcup}
+\mu_d^{\star}$ est disjoint.
+
+Plus g{\'e}n{\'e}ralement, soit $k, l \in \mathbb{N}^{\star}$, tel que $k \neq
+l$, montrons que $\mu_k^{\star} \cap \mu_l^{\star} = \emptyset$.
+
+Par l'absurde, supposons que $\mu_k^{\star} \cap \mu_l^{\star} \not{=}
+\emptyset$, alors il existe $z \in \mu_k^{\star} \cap \mu_l^{\star}$
+
+Donc,
+\[ \begin{array}{c}
+     \exists k_1 \in \llbracket 0, k - 1 \rrbracket \tmop{tel} \tmop{que} z =
+     \exp \left( \frac{2 i k_1 \pi}{k} \right) \infixand k_1 \wedge k = 1\\
+     \tmop{et}\\
+     \exists l_1 \in \llbracket 0, l - 1 \rrbracket \tmop{tel} \tmop{que} z =
+     \exp \left( \frac{2 i l_1 \pi}{l} \right) \infixand l_1 \wedge l = 1
+   \end{array} \]
+
+
+Par sym{\'e}trie, on peut supposer que $k < l$. On a alors :
+\[ \exp \left( \frac{2 i k_1 l \pi}{k} \right) = \exp \left( \frac{2 i l_1 l
+   \pi}{l} \right) = \exp (2 \tmop{il}_1 \pi) = 1 \]
+
+
+Donc $\frac{k_1 l}{k} \in \mathbb{Z}$, par suite $k | k_1 l \nobracket,$ avec
+$k_1 \wedge k = 1$.D'apr{\`e}s le lemme de Gauss, on en d{\'e}duit que $k | l
+\nobracket,$ absurde, puisque $k, l \in \mathbb{N}^{\star}$ et $k < l$.
+
+D'o{\`u}
+\[ \mu_k^{\star} \cap \mu_l^{\star} = \emptyset \]
+
+
+Ainsi,
+\[ \underset{d | n \nobracket}{\bigcup} \mu_d^{\star} = \underset{d | n
+   \nobracket}{\bigsqcup} \mu_d^{\star} \]
+
+
+Donc :
+\[ U_n = \underset{d | n \nobracket}{\bigsqcup} \mu_d^{\star} \]
+
+
+{\`A} partir de ce r{\'e}sultat, on peut d{\'e}duire que :
+\begin{eqnarray*}
+  X^n - 1 & = & \underset{z \in U_n}{\prod} (X - z)\\
+  & = & \underset{z \in \underset{d | n \nobracket}{\bigsqcup}
+  \mu_d^{\star}}{\prod} (X - z)\\
+  & = & \underset{d | n \nobracket}{\prod} \left[ \underset{z \in
+  \mu_d^{\star}}{\prod} (X - z) \right]\\
+  & = & \underset{d | n \nobracket}{\prod} \Phi_d (X)
+\end{eqnarray*}
+
+
+\tmtextbf{3.b.} En d{\'e}duire que $\Phi_n (X) \in \mathbb{Z} [X]$,
+
+Montrons le r{\'e}sultat par r{\'e}currence sur $n \in \mathbb{N}^{\ast}$
+
+Pour$n = 1$, on a $\Phi_1 = X - 1 \in \mathbb{Z} [X]$.
+
+Soit $n \in \mathbb{N}^{\ast}$, supposons que $\Phi_1, \Phi_2, \ldots, \Phi_n
+\in \mathbb{Z} [X]$ et montrons que $\Phi_{n + 1} \in \mathbb{Z} [X]$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a :
+\[ X^n - 1 = \Phi_{n + 1} \underset{d \leqslant n}{\underset{d | n + 1
+   \nobracket}{\prod}} \Phi_d \]
+
+
+Par hypoth{\`e}se de r{\'e}currence, on a $\underset{d \leqslant
+n}{\underset{d | n + 1 \nobracket}{\prod}} \Phi_d \in \mathbb{Z} [X]$. De
+plus, $\underset{d \leqslant n}{\underset{d | n + 1 \nobracket}{\prod}}
+\Phi_d$ est unitaire. En utilisant la question 1 de cette partie, il vient :
+\[ \exists (Q, R) \in \mathbb{Z} [X]^2, \quad X^{n + 1} - 1 = Q \underset{d
+   \leqslant n}{\underset{d | n + 1 \nobracket}{\prod}} \Phi_d + R \]
+
+
+avec
+\[ \deg (R) < \deg \left( \underset{d \leqslant n}{\underset{d | n + 1
+   \nobracket}{\prod}} \Phi_d \right) \]
+
+
+Pour tout $\alpha \in \mathbb{C}$ racine de $\underset{d \leqslant
+n}{\underset{d | n + 1 \nobracket}{\prod}} \Phi_d$, on a
+\[ R (\alpha) = \alpha^{n + 1} - 1 - Q (\alpha) \underset{d \leqslant
+   n}{\underset{d | n + 1 \nobracket}{\prod}} \Phi_d (\alpha) = 0 \]
+
+
+Donc $\alpha$ est {\'e}galement racine de $R$.
+
+Avec $\deg (R) < \deg \left( \underset{d \leqslant n}{\underset{d | n + 1
+\nobracket}{\prod}} \Phi_d \right)$, donc forc{\'e}ment $R = 0$.
+
+\
+
+D'o{\`u}
+\[ X^{n + 1} - 1 = Q \underset{d \leqslant n}{\underset{d | n + 1
+   \nobracket}{\prod}} \Phi_d \]
+
+
+Avec
+\[ \Phi_{n + 1} = \frac{X^{n + 1}}{\underset{d \leqslant n}{\underset{d | n +
+   1 \nobracket}{\prod}} \Phi_d} = Q \in \mathbb{Z} [X] \]
+
+
+Ce qui conclut la d{\'e}monstration par r{\'e}currence.
+
+\
+
+\tmtextbf{3.c.} Soit $p$ un nombre premier
+
+\tmtextbf{3.c.i.} On a
+\begin{eqnarray*}
+  X^p - 1 - (X - 1)^p & = & - \underset{k = 1}{\overset{p - 1}{\sum}} \left(
+  \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) X^k (- 1)^{p - k}\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}} (- 1)^k \left(
+  \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) X^k
+\end{eqnarray*}
+
+
+On a, pour tout $k \in \llbracket 1, p - 1 \rrbracket$,
+\[ \left( \begin{array}{c}
+     p\\
+     k
+   \end{array} \right) = \frac{p!}{k! (p - k) !} \]
+
+
+donc
+\[ p! = k! (p - k) ! \left( \begin{array}{c}
+     p\\
+     k
+   \end{array} \right) \]
+
+
+Avec, pour tout $i \in \llbracket 1, k \rrbracket$, on a $p \wedge i = 1$,
+donc $p \wedge k! = 1$, et pour tout $i \in \llbracket 1, p - k \rrbracket$ on
+a {\'e}galement $p \wedge i = 1$, donc $p \wedge (p - k) ! = 1$.
+
+Ainsi,
+\[ p \wedge k! (p - k) ! = 1 \]
+
+
+avec $p | \nobracket k! (p - k) ! \left( \begin{array}{c}
+  p\\
+  k
+\end{array} \right)$, donc d'apr{\`e}s le lemme de Gauss, on a
+\[ p | \nobracket \left( \begin{array}{c}
+     p\\
+     k
+   \end{array} \right) \]
+
+
+Ainsi,
+\[ \pi \left( (- 1)^k \left( \begin{array}{c}
+     p\\
+     k
+   \end{array} \right) \right) = 0 \]
+
+
+D'o{\`u} :
+\begin{eqnarray*}
+  \hat{\pi} (X^p - 1 - (X - 1)^p) & = & \underset{k = 1}{\overset{p -
+  1}{\sum}} \pi \left( (- 1)^k \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) \right) X^k\\
+  & = & 0
+\end{eqnarray*}
+
+
+Donc :
+\[ \hat{\pi} (X^p - 1) - \hat{\pi} ((X - 1)^p) = 0 \]
+
+
+D'o{\`u} :
+\[ \hat{\pi} (X^p - 1) = (X - 1_{\mathbb{F}_p})^p \]
+
+
+Ce qui conclut la d{\'e}monstration.
+
+\
+
+\tmtextbf{3.c.ii.} Soient $P$ et $Q$ deux polyn{\^o}mes unitaires non
+constants dans $\mathbb{Z} [X]$ tels que
+\[ X^p - 1 = P Q \]
+
+
+Montrons que $P$ divise $P (1)$ et $Q (1)$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a
+\[ \hat{\pi} (X^p - 1) = (X - 1_{\mathbb{F}_p})^p \]
+
+
+Donc
+\[ \hat{\pi} (P) \hat{\pi} (Q) = (X - 1_{\mathbb{F}_p})^p \]
+
+
+Puisque $P$ et $Q$ sont non constant, alors $\hat{\pi} (P)$ et $\hat{\pi} (Q)$
+les sont aussi.
+
+Par unicit{\'e} de la d{\'e}composition en irr{\'e}ductibles dans $\mathbb{Z}/
+p\mathbb{Z} [X]$, on en d{\'e}duit l'existence de $k \in \llbracket 1, p - 1
+\rrbracket$ tel que
+\[ \left\{\begin{array}{l}
+     \hat{\pi} (P) = (X - 1_{\mathbb{F}_p})^k\\
+     \hat{\pi} (Q) = (X - 1_{\mathbb{F}_p})^{p - k}
+   \end{array}\right. \]
+
+
+Ainsi,
+\[ \left\{\begin{array}{l}
+     \hat{\pi} (P) (1_{F_p}) = 0_{\mathbb{F}_p}\\
+     \hat{\pi} (Q) (1_{F_p}) = 0_{\mathbb{F}_p}
+   \end{array}\right. \]
+
+
+Ensuite
+\[ \left\{\begin{array}{l}
+     \pi (P (1)) = 0\\
+     \pi (Q (1)) = 0
+   \end{array}\right. \]
+
+
+Cela implique que $p | P (1) \nobracket$ et $p | Q (1) \nobracket$.
+
+\
+
+\tmtextbf{3.c.iii.} Montrons que $\Phi_p$ est irr{\'e}ductible de $\mathbb{Q}
+[X] .$
+
+Par l'absurde, supposons que $\Phi_p$ n'est pas irr{\'e}ductible de
+$\mathbb{Q} [X]$.
+
+Alors, il existe $P, Q \in \mathbb{Q} [X]$ tel que $\Phi_p = P Q$, et $P, Q$
+sont non-constants.
+
+D'apr{\`e}s le r{\'e}sultat admis, il existe $r \in \mathbb{Q}$, tel que :
+\[ \left\{\begin{array}{l}
+     r P \in \mathbb{Z} [X]\\
+     \frac{1}{r} Q \in \mathbb{Z} [X]
+   \end{array}\right. \]
+
+
+Notons $P_1 = r P$ et $Q_1 = \frac{1}{r} Q$. On a alors
+\[ \Phi_p = P_1 Q_1 \]
+
+
+avec $P_1, Q_1 \in \mathbb{Z} [X]$ sont non-constants.
+
+Notons
+\begin{eqnarray*}
+  R_p (X) & = & \Phi_p (X + 1)\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} (X + 1)^k\\
+  & = & \frac{(X + 1)^p - 1}{X}\\
+  & = & \underset{k = 1}{\overset{p}{\sum}} \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) X^{k - 1}\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    p\\
+    k + 1
+  \end{array} \right) X^k
+\end{eqnarray*}
+
+
+{\'E}crivons {\'e}galement $P_1 = \underset{k = 0}{\overset{l}{\sum}} a_k X^k$
+et $Q_1 = \underset{k = 0}{\overset{m}{\sum}} b_k X^k$, o{\`u} $l, k \geqslant
+1$ et $a_0, \ldots, a_l, b_0, \ldots, b_m \in \mathbb{Z}$.
+
+Or, pour tout $k \in \llbracket 0, p - 2 \rrbracket$, on a $p | \nobracket
+\left( \begin{array}{c}
+  p\\
+  k + 1
+\end{array} \right)$, donc dans $\mathbb{Z}/ p\mathbb{Z} [X]$, on obtient :
+\[ \hat{\pi} (R_p (X)) = X^{p - 1} \]
+
+
+Ainsi,
+\[ \hat{\pi} (P_1 Q_1) = X^{p - 1} \]
+
+
+Par cons{\'e}quent,
+\[ \hat{\pi} (P_1) \hat{\pi} (Q_1) = X^{p - 1} \]
+
+
+Par unicit{\'e} de la d{\'e}composition en irr{\'e}ductibles dans $\mathbb{Z}/
+p\mathbb{Z} [X]$, on a
+\[ \hat{\pi} (P_1) = \overline{a_l} X^l \]
+
+
+rt
+\[ \hat{\pi} (Q_1) = \overline{b_m} X^m \]
+
+
+Ainsi $\overline{a_0} = 0$ et $\overline{b_0} = 0$, donc $p | a_0 \nobracket$
+et $p | b_0 \nobracket$, ainsi $p^2 | a_0 b_0 \nobracket$
+
+Or,
+\[ a_0 b_0 = \left( \begin{array}{c}
+     p\\
+     1
+   \end{array} \right) = p \]
+
+
+Alors $p^2 | p \nobracket$, absurde.
+
+D'o{\`u} $\Phi_p$ est irr{\'e}ductible.
+
+\
+
+\tmtextbf{3.c.iv.} Soit $\zeta = e^{\frac{2 i \pi}{p}}$.
+
+On a $\zeta$ est une racine primitive de l'unit{\'e}, donc $\Phi_p (\zeta) =
+0$.
+
+Par cons{\'e}quent,
+\[ \pi_{\zeta} | \Phi_p \nobracket \]
+
+
+Or, d'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $\Phi_p$ est
+irr{\'e}ductible ; ainsi, soit $\pi_{\zeta}$ est constant, soit $\pi_{\zeta}
+$est associ{\'e} {\`a} $\Phi_p$.
+
+Avec $\pi_{\zeta}$ n'est pas constant, alors $\pi_{\zeta}$ et $\Phi_p$ sont
+associ{\'e}. De plus, ils sont unitaires, donc ils sont {\'e}gaux.
+
+D'o{\`u},
+\[ \pi_{\zeta} = \Phi_p \]
+
+
+On a :
+\[ \mathbb{Q} (\zeta) = \{ P (\zeta) / P \in \mathbb{Q} [X] \} \]
+
+
+est un corps (facile {\`a} v{\'e}rifier).
+
+De plus, si $P \in \mathbb{Q} [X]$, par division euclidienne de $P \tmop{par}
+\Phi_p$, on a l'existence de $Q, R \in \mathbb{Q} [X]^2$ tels que
+\[ P = Q \Phi_p + R \infixand \deg (R) < p \]
+
+
+Notons $R = \underset{k = 0}{\overset{p - 1}{\sum}} a_k X^k$, on a alors
+\begin{eqnarray*}
+  P (\zeta) & = & R (\zeta)\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} a_k \zeta^k\\
+  & \in & \tmop{vect}_{\mathbb{Q}} (1, \zeta, \ldots, \zeta^{p - 1})
+\end{eqnarray*}
+
+
+Donc
+\[ \mathbb{Q} (\zeta) \subset \tmop{vect}_{\mathbb{Q}} (1, \zeta, \ldots,
+   \zeta^{p - 1}) \]
+
+
+R{\'e}ciproquement, pour tout $k \in \llbracket 0, p - 1 \rrbracket$, on a
+$\zeta^k \in \mathbb{Q} (\zeta)$, avec $\mathbb{Q} (\zeta)$ est un
+$\mathbb{Q}$-espace vectoriel.
+
+Ainsi,
+\[ \tmop{vect}_{\mathbb{Q}} (1, \zeta, \ldots, \zeta^{p - 1}) \subset
+   \mathbb{Q} (\zeta) \]
+
+
+D'o{\`u}
+\[ \mathbb{Q} (\zeta) = \tmop{vect}_{\mathbb{Q}} (1, \zeta, \ldots, \zeta^{p -
+   1}) \]
+
+
+Ainsi, la famille $(1, \zeta, \ldots, \zeta^{p - 1})$ est g{\'e}n{\'e}ratrice
+de $\mathbb{Q} (\zeta)$. Montrons qu'elle est $\mathbb{Q}$-libre.
+
+Pour cela, soient $a_0, \ldots, a_{p - 1} \in \mathbb{Q}$, tels que
+\[ \underset{k = 0}{\overset{p - 1}{\sum}} a_k \zeta^k = 0 \]
+
+
+On a donc
+\[ \left. \underset{k = 0}{\overset{p - 1}{\sum}} a_k X^k \right|_{X = \zeta}
+   = 0 \]
+
+
+Avec $\deg \left( \underset{k = 0}{\overset{p - 1}{\sum}} a_k X^k \right)
+\leqslant p - 1 < p$. Par minimalit{\'e} du degr{\'e} de $\pi_{\zeta} =
+\Phi_p$, on a forc{\'e}ment
+\[ \underset{k = 0}{\overset{p - 1}{\sum}} a_k X^k = 0 \]
+
+
+Par suite $a_0 = \cdots = a_{p - 1} = 0$.
+
+Ainsi, la famille $(1, \zeta, \ldots, \zeta^{p - 1})$ est $\mathbb{Q}-
+\tmop{libre} .$
+
+Donc
+\[ [\mathbb{Q} (\zeta) : \mathbb{Q}] = \dim_{\mathbb{Q}} (\mathbb{Q} (\zeta))
+   = p \]
+
+
+On en conclut que l'extension de corps $\mathbb{Q} (\zeta) /\mathbb{Q}$ est de
+degr{\'e} $p$.
+
+\
+
+\paragraph{4. Matrice compagnon}
+
+\tmtextbf{4.a.} Soit $k \in \{ 1, \ldots, n - 1 \}$. Par r{\'e}currence finie
+sur $k$, on peut montrer facilement que :
+\[ C^k_p e_1 = e_{k + 1} \]
+
+
+Donc, pour tout $Q \in \mathbb{C} [X] $non nul de degr{\'e} inf{\'e}rieur ou
+{\'e}gal {\`a} $(n - 1)$, si l'on note :
+\[ Q = \underset{k = 0}{\overset{n - 1}{\sum}} a_k X^k \]
+
+
+On a :
+\begin{eqnarray*}
+  Q (C_p) e_1 & = & \underset{k = 0}{\overset{n - 1}{\sum}} a_k  C^k_p e_1\\
+  & = & \underset{k = 0}{\overset{n - 1}{\sum}} a_k e_{k + 1}\\
+  & \neq & 0
+\end{eqnarray*}
+
+
+Car $(e_1, \ldots, e_n)$ est $\mathbb{C}$-libre, et $(a_0, \ldots, a_{n - 1})
+$ne sont pas tous nuls.
+
+Ainsi, on obtient :
+\[ Q (C_p) \neq 0 \]
+
+
+En particulier, le degr{\'e} du polyn{\^o}me minimal $\pi_{C_p}$ est
+sup{\'e}rieur ou {\'e}gal {\`a} $n$.
+
+Or,
+\[ \deg (\pi_{C_p}) \leqslant \deg (\chi_{C_p}) = n \]
+
+
+O{\`u} $\chi_{C_p}$ d{\'e}signe le polyn{\^o}me caract{\'e}ristique de $C_p$.
+
+Donc :
+\[ \deg (\pi_{C_p}) = n \]
+
+
+\tmtextbf{4.b.} D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a :
+\[ C^{n - 1}_p e_1 = e_n \]
+
+
+Donc,
+\begin{eqnarray*}
+  C^n_p e_1 & = & C_p e_n\\
+  & = & \left( \begin{array}{c}
+    - a_0\\
+    - a_1\\
+    .\\
+    .\\
+    .\\
+    - a_{n - 1}
+  \end{array} \right)\\
+  & = & - \underset{k = 0}{\overset{n - 1}{\sum}} a_k e_{k + 1}
+\end{eqnarray*}
+
+
+Ainsi,
+\[ P (C_p) = C^n_p + \underset{k = 0}{\overset{n - 1}{\sum}} a_k C^k_p \]
+
+
+Pour tout $j \in \llbracket 2, n \rrbracket$, on a :
+\begin{eqnarray*}
+  P (C_p) e_j & = & C^n_p e_j + \underset{k = 0}{\overset{n - 1}{\sum}} a_k
+  C^k_p e_j\\
+  & = & C_p^n (C_p^{j - 1} e_1) + \underset{k = 0}{\overset{n - 1}{\sum}} a_k
+  C^k_p (C_p^{j - 1} e_1)
+\end{eqnarray*}
+
+
+L'{\'e}galit{\'e} reste vrai aussi pour $j = 1$, donc pour tout $j \in
+\llbracket 1, n \rrbracket$, on a :
+\[ \begin{array}{lll}
+     P (C_p) e_j & = & C^{n + j - 1}_p e_1 + \underset{k = 0}{\overset{n -
+     1}{\sum}} a_k C^{k + j - 1}_p e_1\\
+     & = & C^{j - 1}_p \left( C^n_p e_1 + \underset{k = 0}{\overset{n -
+     1}{\sum}} a_k C^k_p e_1 \right)\\
+     & = & C^{j - 1}_p \left( - \underset{k = 0}{\overset{n - 1}{\sum}} a_k
+     e_k + \underset{k = 0}{\overset{n - 1}{\sum}} a_k e_k \right)\\
+     & = & 0
+   \end{array} \]
+
+
+Ainsi, $e_j \in \tmop{Ker} (P (C_p))$ pour tout $j \in \llbracket 1, n
+\rrbracket$, donc $\tmop{Ker} (P (C_p)) =\mathbb{C}^n$.
+
+Alors,
+\[ P (C_p) = 0 \]
+
+
+Ensuite,
+\[ \pi_{C_p} | P \nobracket \]
+
+
+Avec $\deg (\pi_{C_p}) = \deg (P)$, et $\pi_{C_p}$ et $P$ sont unitaires, donc
+$\pi_{C_p}$ et $P$ sont {\'e}gaux.
+
+\
+
+\tmtextbf{4.c.} D'apr{\`e}s le th{\'e}or{\`e}me de Cayley-Hamilton,
+$\pi_{C_p} | \chi_{C_p} \nobracket$, avec $\deg (\pi_{C_p}) = \deg
+(\chi_{C_p}) = n$
+
+Ainsi, $\pi_{C_p}$ et $\chi_{C_p}$ sont associ{\'e}s. De plus, {\'e}tant
+unitaires, on obtient :
+\[ \chi_{C_p} = \pi_{C_p} = P \]
+
+
+\tmtextbf{4.d.} Montrons que
+\[ \chi_{Q (M)} = \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k)) \]
+
+
+Puisque $\mathbb{C}$ est alg{\'e}briquement clos, alors $M$ est
+trigonalisable. Donc, il existe $P \in \tmop{GL}_n (\mathbb{C})$ et $T \in
+T_{n, s} (\mathbb{C})$ tels que :
+\[ M = P T P^{- 1} \]
+
+
+On a $\alpha_1, \ldots, \alpha_n$ sont les racines de $\chi_M$, donc il existe
+une permutation $\sigma : \mathcal{S}_n \rightarrow \mathcal{S}_n$ telle que
+\[ T = \left( \begin{array}{c}
+     \alpha_{\sigma (1)}\\
+     0\\
+     .\\
+     .\\
+     .\\
+     0
+   \end{array} \begin{array}{c}
+     \\
+     
+   \end{array} \begin{array}{c}
+     \ast\\
+     \alpha_{\sigma (2)}\\
+     0\\
+     .\\
+     .\\
+     0
+   \end{array}  \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{l}
+     \ast\\
+     \star\\
+     .\\
+     .\\
+     \ast\\
+     \alpha_{\sigma (n)}
+   \end{array} \right) \]
+
+
+Pour tout $k \in \mathbb{N}$, on a :
+\[ M^k = P \left( \begin{array}{c}
+     \alpha^k_{\sigma (1)}\\
+     0\\
+     .\\
+     .\\
+     .\\
+     0
+   \end{array} \begin{array}{c}
+     \\
+     
+   \end{array} \begin{array}{c}
+     \ast\\
+     \alpha^k_{\sigma (2)}\\
+     0\\
+     .\\
+     .\\
+     0
+   \end{array}  \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{c}
+     .\\
+     \\
+     \\
+     \\
+     .\\
+     0
+   \end{array} \quad \begin{array}{l}
+     \ast\\
+     \star\\
+     .\\
+     .\\
+     \ast\\
+     \alpha^k_{\sigma (n)}
+   \end{array} \right) P^{- 1} \]
+
+
+Notons $Q (X) = \underset{k = 0}{\overset{l}{\sum}} a_k X^k$. Alors,
+\begin{eqnarray*}
+  Q (M) & = & \underset{k = 0}{\overset{l}{\sum}} a_k P \left(
+  \begin{array}{c}
+    \alpha^k_{\sigma (1)}\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    \alpha^k_{\sigma (2)}\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    \alpha^k_{\sigma (n)}
+  \end{array} \right) P^{- 1}\\
+  & = & P \left( \begin{array}{c}
+    \underset{k = 0}{\overset{l}{\sum}} a_k \alpha^k_{\sigma (1)}\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    \underset{k = 0}{\overset{l}{\sum}} a_k \alpha^k_{\sigma (2)}\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    0\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    \underset{k = 0}{\overset{l}{\sum}} a_k \alpha^k_{\sigma (n)}
+  \end{array} \right) p^{- 1}\\
+  & = & P \left( \begin{array}{c}
+    Q (\alpha_{\sigma (1)})\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    Q (\alpha _{\sigma (2)})\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    Q (\alpha _{\sigma (n)})
+  \end{array} \right) P^{- 1}
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  \chi_{Q (M)} & = & \det (X I_n - M)\\
+  & = & \det \left( P \left( \begin{array}{c}
+    X - Q (\alpha_{\sigma (1)})\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    X - Q (\alpha _{\sigma (2)})\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    X - Q (\alpha _{\sigma (n)})
+  \end{array} \right) P^{- 1} \right)\\
+  & = & \det \left( P \times P^{- 1} \times \left( \begin{array}{c}
+    X - Q (\alpha_{\sigma (1)})\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    X - Q (\alpha _{\sigma (2)})\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    X - Q (\alpha _{\sigma (n)})
+  \end{array} \right) \right)\\
+  & = & \det \left( \begin{array}{c}
+    X - Q (\alpha_{\sigma (1)})\\
+    0\\
+    .\\
+    .\\
+    .\\
+    0
+  \end{array} \begin{array}{c}
+    \\
+    
+  \end{array} \begin{array}{c}
+    \ast\\
+    X - Q (\alpha _{\sigma (2)})\\
+    0\\
+    .\\
+    .\\
+    0
+  \end{array}  \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{c}
+    .\\
+    \\
+    \\
+    \\
+    .\\
+    0
+  \end{array} \quad \begin{array}{l}
+    \ast\\
+    \star\\
+    .\\
+    .\\
+    \ast\\
+    X - Q (\alpha _{\sigma (n)})
+  \end{array} \right)\\
+  & = & \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_{\sigma (k)}))\\
+  & = & \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k))
+\end{eqnarray*}
+
+
+\tmtextbf{4.e.} $A$ est un sous-anneau de $\mathbb{C}$, et $Q \in A [X]$.
+
+Soit $P \in A [X]$ un polyn{\^o}me unitaire dont les racines complexes,
+compt{\'e}es avec leur multiplicit{\'e}, sont $\alpha_1, \ldots, \alpha_n$.
+
+Puisque $P \in A [X]$, alors $C_p \in \mathcal{M}_n (A)$. {\'E}tant donn{\'e}
+que $\mathcal{M}_n (A)$ est un anneau, alors
+\[ \forall k \in \mathbb{N}, \quad C^k_p \in \mathcal{M}_n (A) \]
+
+
+Ensuite,
+\[ \forall R \in A [X], \quad R (C_p) \in \mathcal{M}_n (A) \]
+
+
+En particulier,
+\[ Q (C_p) \in \mathcal{M}_n (A) \]
+
+
+Ainsi,
+\[ X I_n - Q (C_p) \in \mathcal{M}_n (A) \]
+
+
+Par d{\'e}finition du d{\'e}terminant, et puisque $A$ est un anneau, on en
+d{\'e}duit que
+\[ \chi_{Q (C_p)} = \det (X I_n - Q (C_p)) \in A [X] \]
+
+
+Or, le polyn{\^o}me caract{\'e}ristique de $C_p$ est $P$, dont les racines
+sont $\alpha_1, \ldots, \alpha_n$. D'apr{\`e}s la question pr{\'e}c{\'e}dente,
+on a donc
+\[ \chi_{Q (C_p)} = \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k)) \]
+
+
+Enfin,
+\[ \underset{k = 1}{\overset{n}{\prod}} (X - Q (\alpha_k)) \in A [X] \]
+
+
+\subsubsection*{II Nombres alg{\'e}briques}
+
+\tmtextbf{1.a. }On consid{\`e}re la $\varphi : \mathbb{N}^{\star} \rightarrow
+\mathbb{N}$ d{\'e}finie pour tout $n \in \mathbb{N}^{\ast}$ par :
+\[ \varphi (n) = \tmop{card} \{ k \in \llbracket 1, n \rrbracket  | \nobracket
+   k \wedge n = 1 \} \]
+
+
+Soit $d \geqslant 1$ un entier. Montrons que $\{ n \in \mathbb{N}^{\star},
+\varphi (n) \leqslant d \}$ est fini.
+
+\
+
+Pour tout $n \geqslant 2$, {\'e}crivons $n$ sous la forme :
+\[ n = \underset{j = 1}{\overset{r}{\prod}} p^{\alpha_{i_j}}_{i_j} \]
+
+
+o{\`u} $i_1 < \ldots < i_r \in \mathbb{N}^{\ast}$, $(p_i)_{i \in
+\mathbb{N}^{\ast}} $est la suite des nombres premiers, et $\alpha_{i_1},
+\ldots, \alpha_{i_r} \in \mathbb{N}^{\ast}$.
+
+On a alors :
+\[ \varphi (n) = n \underset{j = 1}{\overset{r}{\prod}} \left( 1 -
+   \frac{1}{p_{i_j}} \right) \]
+
+
+Or, pour tout $i \in \mathbb{N}^{\ast}$, on a $p_i \geqslant (i + 1)$ (Car la
+suite $(p_i)_{i \in \mathbb{N}^{\ast}}$ est une suite d'entiers strictement
+croissante avec $p_1 = 2$).
+
+Donc :
+\begin{eqnarray*}
+  \varphi (n) & \geqslant & n \underset{j = 1}{\overset{r}{\prod}} \left( 1 -
+  \frac{1}{i_j + 1} \right)\\
+  & \geqslant & n \underset{j = 1}{\overset{i_r}{\prod}} \left( 1 -
+  \frac{1}{j + 1} \right)\\
+  & = & \frac{n}{i_r + 1}
+\end{eqnarray*}
+
+
+Avec :
+\begin{eqnarray*}
+  n & = & \underset{j = 1}{\overset{r}{\prod}} p^{\alpha_{i_j}}_{i_j}\\
+  & \geqslant & 2^{\alpha_{i_1} + \cdots + \alpha_{i_r}}\\
+  & \geqslant & 2^{i_r}
+\end{eqnarray*}
+
+
+On en d{\'e}duit que :
+\[ i_r \leqslant \frac{\log (n)}{\log (2)} \]
+
+
+Ainsi :
+\begin{eqnarray*}
+  \varphi (n) & \geqslant & \frac{n}{\frac{\log (n)}{\log (2)} + 1}\\
+  & \underset{n \rightarrow + \infty}{\sim} & \log (2) \frac{n}{\log (n)}\\
+  & \underset{n \rightarrow + \infty}{\rightarrow} & + \infty
+\end{eqnarray*}
+
+
+Par cons{\'e}quent, il existe un entier $N_0 \in \mathbb{N}$ tel que, pour
+tout $n \geqslant N_0$, on a $\varphi (n) > d$.
+
+D'o{\`u} :
+\[ \{ n \in \mathbb{N}^{\ast}  | \nobracket \varphi (n) \leqslant d \}
+   \subseteq \llbracket 1, N_0 - 1 \rrbracket \]
+
+
+On en conclut que l'ensemble $\{ n \in \mathbb{N}^{\star}, \varphi (n)
+\leqslant d \}$ est fini.
+
+\
+
+\tmtextbf{1.b.} Soit $K$ un sous-corps de $\mathbb{C}$, tel que $K
+/\mathbb{Q}$ soit une extension finie.
+
+Montrons que $K$ contient un nombre fini de racines de l'unit{\'e}.
+
+Soit $u$ une racine de l'unit{\'e}, donc par d{\'e}finition, il existe $n \in
+\mathbb{N}^{\ast}$, tel que $u^n = 1$.
+
+Soit $n_0$ le plus petit entier non nul tel que $u^{n_0} = 1$.
+
+Alors, u est une racine $n_0$-i{\`e}me primitive de l'unit{\'e}.
+
+On a alors :
+\[ \Phi_{n_0} (u) = 0 \]
+
+
+o{\`u} $\Phi_{n_0}$ est irr{\'e}ductible sur $\mathbb{Q} [X]$, donc
+$\pi_{\alpha} = \Phi_{n_0}$.
+
+Ainsi, $\mathbb{Q} (u) /\mathbb{Q}$ est une extension finie de degr{\'e} $\deg
+(\Phi_{n_0}) = \varphi (n_0)$.
+
+On obtient donc :
+\[ \varphi (n_0) \leqslant [K : \mathbb{Q}] \]
+
+
+Ainsi,
+\[ u \in \underset{\varphi (n_0) \leqslant [K : \mathbb{Q}]}{\underset{n_0 \in
+   \mathbb{N}^{\star}}{\bigcup}} \{ \alpha \in \mathbb{C} | \nobracket
+   \alpha^{n_0} = 1 \} \]
+
+
+Or, pour tout $n_0 \in \mathbb{N}$, $\{ \alpha \in \mathbb{C} | \nobracket
+\alpha^{n_0} = 1 \}$ est fini, et d'apr{\`e}s la question pr{\'e}c{\'e}dente,
+on a l'ensemble
+\[ \{ n_0 \in \mathbb{N}^{\ast}  | \nobracket \varphi (n_0) \leqslant [K :
+   \mathbb{Q}] \} \]
+
+
+est fini.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{2.a. }Montrons que $\pi_{\alpha}$ est irr{\'e}ductible de
+$\mathbb{Q} [X]$.
+
+Soient $P, Q \in \mathbb{Q} [X]$ tels que $\pi_{\alpha} = \tmop{PQ}$.
+
+On a
+\[ P (\alpha) Q (\alpha) = \pi_{\alpha} (\alpha) = 0 \]
+
+
+Donc $P (\alpha) = 0$ ou $Q (\alpha) = 0$.
+
+Par sym{\'e}trie, on suppose que $P (\alpha) = 0$. Alors $\pi_{\alpha} | P
+\nobracket$, car $P$ est non nul (si c'est le cas, on aurait $\pi_{\alpha} =
+0$, ce qui contredit le fait que $\deg (\pi_{\alpha}) \geqslant 1$).
+
+Comme $\deg (P) \leqslant \deg (\pi_{\alpha})$, on a n{\'e}cessairement $\deg
+(P) = \deg (\pi_{\alpha})$.
+
+Ce qui implique que $P$et $\pi_{\alpha}$ sont associ{\'e}s.
+
+D'o{\`u}, $\pi_{\alpha}$ est irr{\'e}ductible de $\mathbb{Q} [X]$.
+
+Notons $n = \deg (\pi_{\alpha})$. Et soit $P \in \mathbb{Q} [X] .$ Par
+division euclidienne de $P$ par $\pi_{\alpha}$, on a l'existence de $Q, R \in
+\mathbb{Q} [X] $tels que
+\[ P = Q \pi_{\alpha} + R \]
+
+
+Donc
+\begin{eqnarray*}
+  P (\alpha) & = & Q (\alpha) \pi_{\alpha} (\alpha) + R (\alpha)\\
+  & = & R (\alpha)\\
+  & \in & \tmop{vect}_{\mathbb{Q}} (1, \alpha, \ldots, \alpha^{n - 1})
+\end{eqnarray*}
+
+
+Cela signifie que
+\[ \mathbb{Q} (\alpha) = \{ P (\alpha)  | \nobracket P \in \mathbb{Q} [X] \}
+   \subset \tmop{vect}_{\mathbb{Q}} (1, \alpha, \ldots, \alpha^{n - 1}) \]
+
+
+En particulier, la famille $(1, \alpha, \ldots, \alpha^{n - 1})$ est
+g{\'e}n{\'e}ratrice de $\mathbb{Q} (\alpha)$.
+
+Si $a_0, \ldots, a_{n - 1} \in \mathbb{Q}$, tels que
+\[ \underset{k = 0}{\overset{n - 1}{\sum}} a_k \alpha^k = 0 \]
+
+
+Alors $\pi_{\alpha} \left| \underset{k = 0}{\overset{n - 1}{\sum}} a_k X^k
+\right.$. {\'E}tant donn{\'e} que $\deg (\pi_{\alpha}) = n$, on a
+n{\'e}cessairement $\underset{k = 0}{\overset{n - 1}{\sum}} a_k X^k = 0$,
+d'o{\`u} $a_0 = \cdots = a_{n - 1} = 0$.
+
+Cela montre que la famille $(1, \alpha, \ldots, \alpha^{n - 1})$ est
+$\mathbb{Q}$-libre.
+
+En conclusion, la famille $(1, \alpha, \ldots, \alpha^{n - 1})$ est une base
+de $\mathbb{Q}$-espace vectoriel $K =\mathbb{Q} (\alpha)$
+
+Donc
+\[ d = [K : \mathbb{Q}] = \dim_{\mathbb{Q}} (K) = n \]
+
+
+Ainsi,
+\[ \deg \left( {\pi_{\alpha}}  \right) = d \]
+
+
+\tmtextbf{2.b.} Soit $\sigma$ un morphisme de $\mathbb{Q}$-alg{\`e}bre de $K$
+dans $\mathbb{C}$.
+
+Montrons que $\sigma (\alpha)$ est une racine de $\pi_{\alpha}$.
+
+Notons $\pi_{\alpha} = \underset{k = 0}{\overset{d}{\sum}} a_k X^k$. On a
+$\pi_{\alpha} (\alpha) = 0$, donc
+\[ \underset{k = 0}{\overset{d}{\sum}} a_k \alpha^k = 0 \]
+
+
+Ainsi,
+\[ \sigma \left( \underset{k = 0}{\overset{d}{\sum}} a_k \alpha^k \right) = 0
+\]
+
+
+Par suite,
+\[ \underset{k = 0}{\overset{d}{\sum}} a_k \sigma (\alpha)^k = 0 \]
+
+
+D'o{\`u}
+\[ \pi_{\alpha} (\sigma (\alpha)) = 0 \]
+
+
+Cela prouve le r{\'e}sultat. Montrons maintenant qu'il y a exactement $d$
+morphismes de $\mathbb{Q}$-alg{\'e}bre.
+
+\
+
+\tmtextbf{Lemme 3.}
+
+Soit $P \in \mathbb{Q} [X]$ irr{\'e}ductible ; alors les racines complexes de
+$P$ sont deux {\`a} deux distinctes.
+
+\
+
+\tmtextbf{Preuve du lemme 3.}
+
+Si $P$ admet une racine double $\alpha \in \mathbb{C}$, alors $\alpha$ est
+aussi racine de $P'$.
+
+Donc on a $P \wedge P'$ est non constant dans $\mathbb{C} [X]$.
+
+Or, la division euclidienne est invariante par extension de corps ; donc,
+d'apr{\`e}s l'algorithme d'Euclide, $P \wedge P'$ reste non constant dans
+$\mathbb{Q} [X]$.
+
+Or, comme $P$ est irr{\'e}ductible, donc $P \wedge P' = P$, en particulier $P'
+| P \nobracket .$
+
+Et puisque $\deg (P') = \deg (P) - 1 < \deg (P)$, cela implique $P' = 0$, ce
+qui est absurde, car $P$ serait alors constant !
+
+D'o{\`u} le r{\'e}sultat du lemme.
+
+\
+
+On en d{\'e}duit que $\pi_{\alpha}$ admet exactement $d$ recines complexes,
+not{\'e}es $\alpha_1, \ldots, \alpha_d$ avec $\alpha_1 = \alpha$.
+
+Soient $\sigma, \tau : K \rightarrow \mathbb{C}$ deux morphismes d'alg{\`e}bre
+tels que $\sigma (\alpha) = \tau (\alpha)$. Montrons que $\sigma = \tau$.
+
+Soit $x \in K =\mathbb{Q} (\alpha)$. Alors il existe $P = \underset{k =
+0}{\overset{n}{\sum}} a_k X^k \in \mathbb{Q} [X]$ tel que $x = P (\alpha)$
+
+On a alors
+\begin{eqnarray*}
+  \sigma (x) & = & \sigma \left( \underset{k = 0}{\overset{n}{\sum}} a_k
+  \alpha^k \right)\\
+  & = & \underset{k = 0}{\overset{n}{\sum}} a_k \sigma (\alpha)^k\\
+  & = & \underset{k = 0}{\overset{n}{\sum}} a_k \tau (\alpha)^k\\
+  & = & \tau \left( \underset{k = 0}{\overset{n}{\sum}} a_k \alpha^k
+  \right)\\
+  & = & \tau (x)
+\end{eqnarray*}
+
+
+Cela est vrai pour tout $x \in K$, donc $\sigma = \tau$. On en conclut qu'un
+morphisme d'alg{\`e}bre $K \rightarrow \mathbb{C}$ est d{\'e}termin{\'e} par
+l'image de $\alpha$, et cette image est une racine de $\pi_{\alpha}$.
+
+On en d{\'e}duit qu'il existe exactement $d$ morphismes de
+$\mathbb{Q}$-alg{\`e}bre, not{\'e}s $\sigma_k : K \rightarrow \mathbb{C}$,
+o{\`u} $k \in \{ 1, 2, \ldots, d \}$.
+
+\
+
+\tmtextbf{3.} Soit $\alpha \in \mathbb{C}$ un nombre alg{\'e}brique, et
+$\theta \in K =\mathbb{Q} (\alpha)$.
+
+\tmtextbf{3.a.} Justifiant que $\theta$ est un nombre alg{\'e}brique.
+
+On a $\mathbb{Q} (\theta)$ est une sous-alg{\`e}bre de $\mathbb{Q} (\alpha)$.
+
+Or, $\alpha$ est alg{\'e}brique, donc l'extension de corps $\mathbb{Q}
+(\alpha) /\mathbb{Q}$ est finie. Par cons{\'e}quent, $\mathbb{Q} (\theta)
+/\mathbb{Q}$ est aussi finie (car $\mathbb{Q} (\theta)$ est une
+sous-alg{\`e}bre de $\mathbb{Q} (\alpha)$).
+
+D'o{\`u} $\theta$ est un nombre alg{\'e}brique.
+
+\
+
+\tmtextbf{3.b.} Montrons que $P_{\theta} = \underset{k =
+1}{\overset{d}{\prod}} (X - \sigma_k (\theta)) \in \mathbb{Q} [X]$
+
+Comme $\theta \in \mathbb{Q} (\alpha)$, alors il existe $R = \underset{k =
+0}{\overset{n}{\sum}} a_k X^k \in \mathbb{Q} [X]$ tel que $\theta = R
+(\alpha)$.
+
+On a pour tout $k \in \llbracket 1, d \rrbracket$ :
+\begin{eqnarray*}
+  \sigma_k (\theta) & = & \sigma_k \left( \underset{j = 0}{\overset{n}{\sum}}
+  a_j \alpha^j \right)\\
+  & = & \underset{j = 0}{\overset{n}{\sum}} a_j \sigma_k (\alpha)^j\\
+  & = & R (\sigma_k (\alpha))
+\end{eqnarray*}
+
+
+Donc :
+\[ P_{\theta} = \underset{k = 1}{\overset{d}{\prod}} (X - R (\sigma_k
+   (\alpha))) \]
+
+
+Or, $\sigma_1 (\alpha), \ldots, \sigma_d (\alpha)$ sont les racines de
+$\pi_{\alpha} \in \mathbb{Q} [X]$, et $R \in \mathbb{Q} [X]$.
+
+D'apr{\`e}s la question \tmtextbf{4.e} de la partie \tmtextbf{I}, on a donc :
+\[ P_{\theta} = \underset{k = 1}{\overset{d}{\prod}} (X - R (\sigma_k
+   (\alpha))) \in \mathbb{Q} [X] \]
+
+
+\tmtextbf{3.c.} Justifions que $\pi_{\theta}$ divise $P_{\theta}$, en
+utilisant la m{\^e}me notation que dans la question pr{\'e}c{\'e}dente:
+\[ \theta = \underset{j = 0}{\overset{n}{\sum}} a_j \alpha^j \]
+
+
+o{\`u} $a_0, \ldots, a_n \in \mathbb{Q}$.
+
+On a :
+\begin{eqnarray*}
+  P_{\theta} (\theta) & = & \underset{k = 1}{\overset{d}{\prod}} (\theta -
+  \sigma_k (\theta))\\
+  & = & \underset{k = 1}{\overset{d}{\prod}} \left( \underset{j =
+  0}{\overset{n}{\sum}} a_j \alpha^j - \sigma_k \left( \underset{j =
+  0}{\overset{n}{\sum}} a_j \alpha^j \right) \right)\\
+  & = & \underset{k = 1}{\overset{d}{\prod}} \left( \underset{j =
+  0}{\overset{n}{\sum}} a_j (\alpha^j - \sigma_k (\alpha)^j) \right)
+\end{eqnarray*}
+
+
+Or, les $\sigma_1 (\alpha), \ldots, \sigma_d (\alpha)$ sont exactement les
+racines de $\pi_{\alpha}$.
+
+Donc, il existe $k_0 \in \llbracket 1, d \rrbracket$ tel que
+\[ \sigma_{k_0} (\alpha) = \alpha \]
+
+
+On a alors :
+\begin{eqnarray*}
+  P_{\theta} (\theta) & = & \left( \underset{j = 0}{\overset{n}{\sum}} a_j
+  (\alpha^j - \alpha^j) \right) \underset{k \neq k_0}{\underset{k =
+  1}{\overset{d}{\prod}}} \left( \underset{j = 0}{\overset{n}{\sum}} a_j
+  (\alpha^j - \sigma_k (\alpha)^j) \right)\\
+  & = & 0
+\end{eqnarray*}
+
+
+Comme $P_{\theta} \in \mathbb{Q} [X]$ (d'apr{\`e}s la question
+pr{\'e}c{\'e}dente), on en d{\'e}duit, via le lemme 1, que $\pi_{\theta} |
+P_{\theta} \nobracket$.
+
+\
+
+Montrons maintenant que $P_{\theta}$ est une puissance de $\pi_{\theta}$.
+
+Notons :
+\[ \mathcal{A}_{\theta} = \{ k \in \mathbb{N} | \nobracket \pi_{\theta} |
+   P_{\theta} \nobracket \} \]
+
+
+D'apr{\`e}s la premi{\`e}re partie de cette question $1 \in
+\mathcal{A}_{\theta}$, donc $\mathcal{A}_{\theta} \neq \varnothing$. Ainsi,
+cette partie de $\mathbb{N}$ admet un plus grand {\'e}l{\'e}ment, not{\'e}
+$k_0 = \max (\mathcal{A}_{\theta})$.
+
+On a alors $\pi^{k_0}_{\theta} | P_{\theta} \nobracket$ et $\pi^{k_0 +
+1}_{\theta} \not{| \nobracket} P_{\theta}$.
+
+Donc, il existe $Q \in \mathbb{Q} [X]$ tel que $P_{\theta} = Q
+\pi^{k_0}_{\theta}$.
+
+Comme $\pi_{\theta} \not{| \nobracket} Q$ et $\pi _{\theta}$ est
+irr{\'e}ductible, alors $Q \wedge \pi_{\theta} = 1$.
+
+Par suite, via le th{\'e}or{\`e}me de B{\'e}zout\footnote{Le th{\'e}or{\`e}me
+de B{\'e}zout est valable sur $\mathbb{Q} [X]$, car l'anneau $\mathbb{Q} [X]$
+est euclidien (puisque $\mathbb{Q}$ est un corps), donc $\mathbb{Q} [X]$ est
+un anneau de B{\'e}zout.}, on a l'existence de $R, S \in \mathbb{Q} [X]$ tels
+que :
+\[ R \pi_{\theta} + S Q = 1 \]
+
+
+Par l'absurde, supposons que $Q$ est non constant.
+
+Alors, d'apr{\`e}s le th{\'e}or{\`e}me fondamental de l'alg{\`e}bre, $Q$ est
+scind{\'e} sur $\mathbb{C}$. De plus, toutes ses racines sont des racines de
+$P_{\theta}$.
+
+Notons
+\[ \pi_{\theta} = \underset{j = 0}{\overset{l}{\sum}} \beta_j X^j \]
+
+
+On a les racines de $P_{\theta}$ sont $\sigma_1 (\theta), \ldots, \sigma_d
+(\theta)$. Et pour tout $k \in \llbracket 1, d \rrbracket$, on a :
+\begin{eqnarray*}
+  \pi_{\theta} (\sigma_k (\theta)) & = & \pi_{\theta} (\sigma_k (\theta))\\
+  & = & \underset{j = 0}{\overset{l}{\sum}} \beta_j \sigma_k (\theta)^j\\
+  & = & \sigma_k \left( \underset{j = 0}{\overset{l}{\sum}} \beta_j \theta^j
+  \right)\\
+  & = & \sigma_k (\pi_{\theta} (\theta))\\
+  & = & \sigma_k (0)\\
+  & = & 0
+\end{eqnarray*}
+
+
+Soit $\gamma$ un racine de $Q$. Puisque les racines de $Q$ sont des racines de
+$P_{\theta}$, alors il existe $k_0 \in \llbracket 1, d \rrbracket$ tel que :
+\[ \gamma = \sigma_{k_0} (\theta) \]
+
+
+via la relation $(5)$, on a :
+\[ 1 = R (\sigma_{k_0} (\theta)) \pi_{\theta} (\sigma_{k_0} (\theta)) + S
+   (\sigma_{k_0} (\theta)) Q (\sigma_{k_0} (\theta)) = 0 \]
+
+
+ce qui est absurde !
+
+D'o{\`u} $Q$ est constant. Comme $P_{\theta}$ et $\pi_{\theta}$ sont
+unitaires, alors $Q = 1$.
+
+Par suite,
+\[ P_{\theta} = \pi^{k_0}_{\theta} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{4.} Soit $\alpha \in \mathbb{C}$
+
+$\Rightarrow$) Si $\alpha$ est un entier alg{\'e}brique, alors par
+d{\'e}finition, il existe un polyn{\^o}me unitaire {\`a} coefficients entiers
+tel que $P (\alpha) = 0$.
+
+On a alors $\pi_{\alpha} | P \nobracket$, donc il existe $Q \in \mathbb{Q}
+[X]$ tel que $P = \pi_{\alpha} Q$.
+
+D'apr{\`e}s le r{\'e}sultat admis, on a l'existence de $r \in \mathbb{Q}$ tel
+que :
+\[ \left\{\begin{array}{l}
+     r \pi_{\alpha} \in \mathbb{Z} [X]\\
+     \frac{1}{r} Q \in \mathbb{Z} [X]
+   \end{array}\right. \]
+
+
+Le coefficient dominant de $r \pi_{\alpha}$ est $r$, donc $r \in \mathbb{Z}$.
+
+De m{\^e}me, le coefficient dominant de $\frac{1}{r} Q$ est $\frac{1}{r}$,
+alors $\frac{1}{r} \in \mathbb{Z}$.
+
+Ainsi, $r \in \{ - 1, 1 \}$, d'o{\`u} $\pm \pi_{\alpha} \in \mathbb{Z} [X]$,
+donc $\pi_{\alpha} \in \mathbb{Z} [X]$.
+
+$\Leftarrow$) Si $\pi_{\alpha} \in \mathbb{Z} [X]$,
+
+puisque $\pi_{\alpha} (\alpha) = 0$, par d{\'e}finition, $\alpha$ est un
+entier alg{\'e}brique.
+
+\
+
+\tmtextbf{5.a.} Si $\alpha$ est un entier alg{\'e}brique, notons $d = \deg
+(\pi_{\alpha})$.
+
+Soit $x \in \tmop{gr} \{ \alpha^n  | \nobracket n \in \mathbb{N} \}$, donc il
+existe $n_1, \ldots, n_r \in \mathbb{N}$ et $a_1, \ldots, a_r \in \mathbb{Z}$
+tels que
+\[ x = a_1 \alpha^{n_1} + \cdots + a_r \alpha^{n_r} \]
+
+
+Notons
+\[ P = \underset{k = 1}{\overset{r}{\sum}} a_k X^{n_k} \in \mathbb{Z} [X] \]
+
+
+D'apr{\`e}s \tmtextbf{la question 1 de la partie $I$}, on a l'existence de $Q,
+R \in \mathbb{Z} [X]$ tels que
+\[ P = \pi_{\alpha} Q + R \]
+
+
+avec $\deg (R) \leqslant d - 1$.
+
+On a donc
+\[ x = P (\alpha) = \pi_{\alpha} (\alpha) Q (\alpha) + R (\alpha) \]
+
+
+Ainsi, $x$ s'{\'e}crit comme une combinaison lin{\'e}aire {\`a} coefficients
+entiers de $1, \alpha, \ldots, \alpha^{d - 1}$.
+
+D'o{\`u} le groupe engendr{\'e} par $\{ \alpha^n  | \nobracket n \in
+\mathbb{N} \}$ est de type fini.
+
+\
+
+\tmtextbf{5.b.} R{\'e}ciproquement, si $G$ est de type fini, montrons que
+$\alpha$ est un entier alg{\'e}brique.
+
+Soit $(g_1, \ldots, g_n)$ une famille g{\'e}n{\'e}ratrice finie de $G$.
+
+Notons, pour tout $i \in \llbracket 1, n \rrbracket$,
+\[ \alpha g_i = \underset{k = 1}{\overset{n}{\sum}} a_{i, k} g_k \]
+
+
+O{\`u} $a_{i, k} \in \mathbb{Z}$, pour tous $i, k \in \llbracket 1, n
+\rrbracket$
+
+Notons $A = (a_{i, k})_{1 \leqslant i, k \leqslant n}$ et $X = \left(
+\begin{array}{c}
+  g_1 \\
+  g_2\\
+  .\\
+  .\\
+  .\\
+  g_n
+\end{array} \right)$
+
+On a alors
+\[ \alpha X = A X \]
+
+
+Donc,
+\[ (A - \alpha I_n) X = 0 \]
+
+
+En particulier,
+\[ A - \alpha I_n \not{\in} \tmop{GL}_n (\mathbb{C}) \]
+
+
+D'o{\`u},
+\[ \det (A - \alpha I_n) = 0 \]
+
+
+Ainsi,
+\[ \underset{\sigma \in \mathcal{S}_n}{\sum} (- 1)^{^{\varepsilon (\sigma)}}
+   \underset{i = 1}{\overset{n}{\prod}} (a_{\sigma (i), i} - \alpha
+   \delta_{\sigma (i), i}) = 0 \]
+
+
+O{\`u} $\varepsilon (\sigma) \in \{ - 1, 1 \}$ est la signature de $\sigma$,
+pour tout $\sigma \in \mathcal{S}_n .$
+
+D'o{\`u},
+\[ P (\alpha) = 0 \]
+
+
+Avec,
+\[ P = \underset{\sigma \in \mathcal{S}_n}{\sum} (- 1)^{^{\varepsilon
+   (\sigma)}} \underset{i = 1}{\overset{n}{\prod}} (a_{\sigma (i), i} - X
+   \delta_{\sigma (i), i}) \in \mathbb{Z} [X] \]
+
+
+D'o{\`u} $\alpha$ est un entier alg{\'e}brique.
+
+\
+
+\tmtextbf{6.} Montrons que $\mathcal{D}_{\mathbb{C}}$, l'ensemble des entiers
+alg{\'e}briques de $\mathbb{C}$, est un sous-anneau de $\mathbb{C}$.
+
+On a $0 \in \mathcal{D}_{\mathbb{C}}$ (car $\pi_0 = X \in \mathbb{Z} [X]$),
+donc \ensuremath{\mathcal{D}}\tmrsub{\ensuremath{\mathbb{C}}}$\neq
+\varnothing$.
+
+Soient $\alpha, \beta \in \mathcal{D}_{\mathbb{C}}$.
+
+Les deuc groupes $G_{\alpha} : = \tmop{gr} \{ \alpha^n  | \nobracket n \in
+\mathbb{N} \}$ et $G_{\beta} : = \tmop{gr} \{ \beta^n | \nobracket n \in
+\mathbb{N} \}$ sont de type fini.
+
+Donc, il existe une famille $(g_1, \ldots, g_n)$ (respectivement $(l_1,
+\ldots, l_m)$) g{\'e}n{\'e}ratrice de $G_{\alpha}$ (respectivement de
+$G_{\beta}$).
+
+On a, pour tout $i \in \mathbb{N}$, il existe $a_{i, 1}, \ldots, a_{i, n} \in
+\mathbb{Z}$, tel que
+\[ \alpha^i = \underset{k = 1}{\overset{n}{\sum}} a_{i, k} g_k \]
+
+
+Et pour tout $i \in \mathbb{N}$, il existe $b_{i, 1}, \ldots, b_{i, m} \in
+\mathbb{Z}$, tel que
+\[ \beta^i = \underset{k = 1}{\overset{m}{\sum}} b_{i, k} l_k \]
+
+
+Pour tout $x \in G_{\alpha \beta} : = \tmop{gr} \{ (\alpha \beta)^n |
+\nobracket n \in \mathbb{N} \}$, on a l'existence de $c_0, \ldots, c_r \in
+\mathbb{Z}$ tel que
+\[ x = \underset{j = 0}{\overset{r}{\sum}} c_j (\alpha \beta)^j \]
+
+
+On a alors
+\begin{eqnarray*}
+  x & = & \underset{j = 0}{\overset{r}{\sum}} c_j \alpha^j \beta^j\\
+  & = & \underset{j = 0}{\overset{r}{\sum}} c_j \left( \underset{k =
+  1}{\overset{n}{\sum}} a_{j, k} g_k \right) \left( \underset{i =
+  1}{\overset{m}{\sum}} b_{j, i} l_i \right)\\
+  & = & \underset{j = 0}{\overset{r}{\sum}} \underset{k =
+  1}{\overset{n}{\sum}} \underset{i = 1}{\overset{m}{\sum}} c_j a_{j, k} b_{j,
+  i} g_k l_i\\
+  & = & \underset{k = 1}{\overset{n}{\sum}} \underset{i =
+  1}{\overset{m}{\sum}} \left( \underset{j = 0}{\overset{r}{\sum}} c_j a_{j,
+  k} b_{j, i} \right) g_k l_i
+\end{eqnarray*}
+
+
+Avec, pour tout $k \in \llbracket 1, n \rrbracket$ et $i \in \llbracket 1, m
+\rrbracket$, $\underset{}{\overset{}{\underset{j = 0}{\overset{r}{\sum}} c_j
+a_{j, k} b_{j, i} \in \mathbb{Z}}}$.
+
+Donc la famille finie $(g_k l_i)_{\underset{1 \leqslant i \leqslant m}{1
+\leqslant k \leqslant n}}$ est une famille g{\'e}n{\'e}ratrice de $G_{\alpha
+\beta}$.
+
+D'apr{\`e}s \tmtextbf{les questions $5. a$ et 5.$b$ de cette partie}, on
+d{\'e}duit que $\alpha \beta \in \mathcal{D}_{\mathbb{C}}$.
+
+Et pour tout $y \in G_{\alpha - \beta} : = \tmop{gr} \{ (\alpha - \beta)^n |
+\nobracket n \in \mathbb{N} \}$, on a l'existence de $c_0 ; \ldots ; c_r \in
+\mathbb{Z}$ tel que
+\[ y = \underset{j = 0}{\overset{r}{\sum}} c_j (\alpha - \beta)^j \]
+
+
+On a alors
+\begin{eqnarray*}
+  y & = & \underset{j = 0}{\overset{r}{\sum}} c_j (\alpha - \beta)^j\\
+  & = & \underset{j = 0}{\overset{r}{\sum}} \underset{k =
+  0}{\overset{j}{\sum}} \left( \begin{array}{c}
+    j\\
+    k
+  \end{array} \right) c_j (- 1)^j \alpha^{j - k} \beta^k\\
+  & = & \underset{j = 0}{\overset{r}{\sum}} \underset{k =
+  0}{\overset{j}{\sum}} \left( \begin{array}{c}
+    j\\
+    k
+  \end{array} \right) c_j (- 1)^j \left( \underset{i = 1}{\overset{n}{\sum}}
+  a_{j - k, i} g_i \right) \left( \underset{s = 1}{\overset{m}{\sum}} b_{k, s}
+  l_s \right)\\
+  & = & \underset{j = 0}{\overset{r}{\sum}} \underset{k =
+  0}{\overset{j}{\sum}} \underset{i = 1}{\overset{n}{\sum}} \underset{s =
+  1}{\overset{m}{\sum}} \left( \begin{array}{c}
+    j\\
+    k
+  \end{array} \right) c_j (- 1)^j a_{j - k, i} b_{k, s} g_i l_s\\
+  & = & \underset{i = 1}{\overset{n}{\sum}} \underset{s =
+  1}{\overset{m}{\sum}} \left( \underset{j = 0}{\overset{r}{\sum}} \underset{k
+  = 0}{\overset{j}{\sum}} \left( \begin{array}{c}
+    j\\
+    k
+  \end{array} \right) c_j (- 1)^j a_{j - k, i} b_{k, s} \right) g_i l_s
+\end{eqnarray*}
+
+
+Avec, pour tout $(i, s) \in \llbracket 1, n \rrbracket \times \llbracket 1, m
+\rrbracket$, on a $\underset{j = 0}{\overset{r}{\sum}} \underset{k =
+0}{\overset{j}{\sum}} \left( \begin{array}{c}
+  j\\
+  k
+\end{array} \right) c_j (- 1)^j a_{j - k, i} b_{k, s} \in \mathbb{Z}$.
+
+Alors, la famille finie $(g_i l_s)_{\underset{1 \leqslant s \leqslant m}{1
+\leqslant i \leqslant n}}$ est g{\'e}n{\'e}ratrice de $G_{\alpha - \beta}$.
+
+D'o{\`u}, d'apr{\`e}s ce qui pr{\'e}c{\`e}de, $\alpha - \beta \in
+\mathcal{D}_{\mathbb{C}}$.
+
+Par suite, $\mathcal{D}_{\mathbb{C}}$ est un sous anneau de $\mathbb{C}$.
+
+\
+
+\tmtextbf{7.} Montrons que $\mathcal{D}_{\mathbb{C}} \cap
+\mathbb{Q}=\mathbb{Z}$.
+
+Tout d'abord pour tout $z \in \mathbb{Z}$, on a $X - z \in \mathbb{Z} [X]$
+annule $z$, donc $z \in \mathcal{D}_{\mathbb{C}}$, et de plus $z \in
+\mathbb{Q}$.
+
+Ainsi, $z \in \mathcal{D}_{\mathbb{C}} \cap \mathbb{Q}$. Par suite,
+$\mathbb{Z} \subseteqq \mathcal{D}_{\mathbb{C}} \cap \mathbb{Q}$.
+
+R{\'e}ciproquement, pour tout $z \in \mathcal{D}_{\mathbb{C}} \cap
+\mathbb{Q}$.
+
+On a $X - z \in \mathbb{Q} [X]$ annule $z$. Donc $\pi_z | X - z \nobracket$,
+avec $\deg (\pi_z) \geqslant 1$. Alors, $\pi_z = X - z$.
+
+Or, $z$ est un entier alg{\'e}brique, donc
+\[ \pi_z = X - z \in \mathbb{Z} [X] \]
+
+
+On en d{\'e}duit que $z \in \mathbb{Z}$.
+
+D'o{\`u} $\mathcal{D}_{\mathbb{C}} \cap \mathbb{Q} \subseteq \mathbb{Z}$.
+
+Enfin, $\mathcal{D}_{\mathbb{C}} \cap \mathbb{Q}=\mathbb{Z}$.
+
+\
+
+\subsubsection*{III Le corps $\mathbb{Q}(\zeta)$ et son anneau d'entiers}
+
+\
+
+\tmtextbf{1.a. }Montrons que les morphismes de $\mathbb{Q}$-alg{\'e}bre de
+$\mathbb{Q} (\zeta)$ sont les $\sigma_k$, tels que $\sigma_k (\zeta) =
+\zeta^k$, pour tout $k \in \{ 1, \ldots, p - 1 \}$.
+
+Puisque $p$ est premier, donc $\pi_{\zeta} = \Phi_p$, dont les racines sont
+$\zeta, \zeta^2, \ldots, \zeta^{p - 1}$.
+
+D'apr{\`e}s les questions $\tmmathbf{2. a}$ et \tmtextbf{$2. b$ de la partie
+$\mathbb{I}$}, il existe exactement $(p - 1)$ morphismes  de
+$\mathbb{Q}$-alg{\'e}bre $\sigma_k : K =\mathbb{Q} (\zeta) \rightarrow
+\mathbb{C}$ tels que pour tout $k \in \{ 1, \ldots, p - 1 \}$, $\sigma_k
+(\zeta)$ soit racine de $\Phi_p$ et $\sigma_1 (\zeta), \ldots, \sigma_{p - 1}
+(\zeta)$ soient deux {\`a} deux distinctes.
+
+Quitte {\`a} r{\'e}ordonner les $\sigma_1, \ldots, \sigma_{p - 1}$. On conclut
+que les les morphismes de $\mathbb{Q}$-alg{\`e}bre de $\mathbb{Q} (\zeta)$
+sont les $\sigma_k$ tels que $\sigma_k (\zeta) = \zeta^k$ pour tout $k \in \{
+1, 2, \ldots, p - 1 \}$.
+
+\
+
+\tmtextbf{1.b.i.} On a
+\begin{eqnarray*}
+  N (\zeta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (\zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \zeta^k\\
+  & = & \zeta^{p \frac{p - 1}{2}}\\
+  & = & \exp \left( 2 i \pi \frac{p - 1}{2} \right)
+\end{eqnarray*}
+
+
+Avec $p$ est impair, alors $\frac{p - 1}{2} \in \mathbb{N}$, donc $N (\zeta) =
+1$.
+
+Et
+\begin{eqnarray*}
+  \tmop{Tr} (\zeta) & = & \underset{k = 1}{\overset{p - 1}{\sum}} \sigma_k
+  (\zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}} \zeta^k\\
+  & = & \zeta \frac{1 - \zeta^{p - 1}}{1 - \zeta}\\
+  & = & \frac{\zeta - 1}{1 - \zeta}\\
+  & = & - 1
+\end{eqnarray*}
+
+
+\tmtextbf{1.b.ii.} Montrons que $N (1 - \zeta) = p$ et $N (1 + \zeta) = 1$
+
+Notons
+\begin{eqnarray*}
+  P & = & \Phi_p (X + 1)\\
+  & = & \overset{p - 1}{\underset{k = 0}{\sum}} (X + 1)^k\\
+  & = & \frac{(X + 1)^p - 1}{(X + 1) - 1}\\
+  & = & \underset{k = 1}{\overset{p}{\sum}} \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) X^{k - 1}\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    p\\
+    k + 1
+  \end{array} \right) X^k
+\end{eqnarray*}
+
+
+Avec
+\[ P = \underset{k = 1}{\overset{p - 1}{\prod}} (X - (\zeta^k - 1)) \]
+
+
+D'apr{\`e}s les identit{\'e}s de Newton des polyn{\^o}mes sym{\'e}triques, on
+a
+\[ (- 1)^{p - 1} \prod^{p - 1}_{k = 1} (\zeta^k - 1) = \left( \begin{array}{c}
+     p\\
+     1
+   \end{array} \right) = p \]
+
+
+Donc,
+\[ \prod^{p - 1}_{k = 1} (1 - \zeta^k) = p \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  N (1 - \zeta) & = & \prod^{p - 1}_{k = 1} (1 - \sigma_k (\zeta))\\
+  & = & \prod^{p - 1}_{k = 1} (1 - \zeta^k)\\
+  & = & p
+\end{eqnarray*}
+
+
+Notons
+\[ Q = \Phi_p (X - 1) \]
+
+
+D'autre part, on a
+\begin{eqnarray*}
+  Q & = & \underset{k = 0}{\overset{p - 1}{\sum}} (X - 1)^k\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} \underset{i =
+  0}{\overset{k}{\sum}} \left( \begin{array}{c}
+    k\\
+    i
+  \end{array} \right) (- 1)^{k - i} X^i\\
+  & = & \underset{i = 0}{\overset{p - 1}{\sum}} \left[ \underset{k =
+  i}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    k\\
+    i
+  \end{array} \right) (- 1)^{k - i} \right] X^i
+\end{eqnarray*}
+
+
+Avec
+\[ Q = \underset{k = 1}{\overset{p - 1}{\prod}} (X - (\zeta^k + 1)) \]
+
+
+Donc, d'apr{\`e}s les identit{\'e}s de Newton, on a
+\begin{eqnarray*}
+  (- 1)^{p - 1} \underset{k = 1}{\overset{p - 1}{\prod}} (\zeta^k + 1) & = &
+  \underset{k = 0}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    k\\
+    0
+  \end{array} \right) (- 1)^k\\
+  & = & \underset{k = 0}{\overset{p - 1}{\sum}} (- 1)^k\\
+  & = & 1
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  N (1 + \zeta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} (\zeta^k + 1)\\
+  & = & 1
+\end{eqnarray*}
+
+
+\tmtextbf{2.} Montrons que $\mathbb{Z} [\zeta] \subseteq \mathcal{D}_K$
+
+Soit $x \in \mathbb{Z} [\zeta]$,
+
+Alors il existe $(a_0, \ldots, a_n) \in \mathbb{Z}^{n + 1}$, tel que $x =
+\underset{k = 0}{\overset{n}{\sum}} a_k \zeta^k$.
+
+Tout d'abord, remarquons que $x \in \mathbb{Q} (\zeta) = K$.
+
+D'autre part, en utilisant la division euclidienne de $P = \underset{k =
+0}{\overset{n}{\sum}} a_k X^k$ par $\pi_{\zeta}$, et la question $1$ de la
+partie $I$, on a l'existence de $Q, R \in \mathbb{Z} [X]$ tels que
+\[ \left\{\begin{array}{l}
+     P = Q \pi_{\zeta} + R\\
+     \deg (R) < \deg \left( {\pi_{\zeta}}  \right) = \deg (\Phi_p) = p - 1
+   \end{array}\right. \]
+
+
+En {\'e}crivant $R = \underset{k = 0}{\overset{p - 2}{\sum}} r_k X^k$ o{\`u}
+$r_0, \ldots, r_{p - 2} \in \mathbb{Z}$
+
+On a alors
+\begin{eqnarray*}
+  x & = & P (\zeta)\\
+  & = & Q (\zeta) \pi_{\zeta} (\zeta) + R (\zeta)\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} r_k \zeta^k
+\end{eqnarray*}
+
+
+Or, $\zeta \in \mathcal{D}_{\mathbb{C}}$ (car $\Phi_p \in \mathbb{Z} [X]$
+annule $\zeta$), et $\mathcal{D}_{\mathbb{C}}$ est un sous-anneau de
+$\mathbb{C}$.
+
+Ainsi,
+\[ x = \underset{k = 0}{\overset{p - 2}{\sum}} r_k \zeta^k \in
+   \mathcal{D}_{\mathbb{C}} \]
+
+
+D'o{\`u}
+\[ \mathbb{Z} [\zeta] \subseteq \mathcal{D}_{\mathbb{C}} \]
+
+
+Ainsi,
+\[ \mathbb{Z} [\zeta] \subseteq \mathcal{D}_{\mathbb{C}} \cap K =\mathcal{D}_K
+\]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{3.} Soit $z \in \mathbb{Z} [\zeta]$
+
+\tmtextbf{3.a.} Montrons que
+\[ z \in \mathbb{Z} [\zeta]^{\times} \tmop{si} \infixand \tmop{seulement}
+   \tmop{si} N (z) \in \{ - 1, 1 \} \]
+
+
+$\Rightarrow$)Si $z \in \mathbb{Z} [\zeta]^{\times}$.
+
+Alors, il existe $z' \in \mathbb{Z} [\zeta]$ tel que $z.z' = 1$.
+
+\
+
+\tmtextbf{Lemme 4.}
+
+Soit $\theta \in \mathbb{Z} [\zeta]$, si $\theta$ est un entier
+alg{\'e}brique, alors $N (\theta) \in \mathbb{Z}$.
+
+\
+
+\tmtextbf{Preuve du lemme 4. }
+
+On a $\theta$ est un entier alg{\'e}brique ; en particulier, il est
+alg{\'e}brique sur $\mathbb{Q}$.
+
+D'apr{\`e}s \tmtextbf{la question 3.b de la partie $\mathbb{I}$}, on a
+\[ P_{\theta} = \underset{k = 1}{\overset{p - 1}{\prod}} (X - \sigma_k
+   (\theta)) \in \mathbb{Q} [X] \]
+
+
+En particulier :
+\[ N (\theta) = \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (\theta) \in
+   \mathbb{Q} \]
+
+
+En {\'e}crivant $\theta = P (\zeta)$, avec $P \in \mathbb{Z} [X]$, on obtient
+alors :
+\begin{eqnarray*}
+  N (\theta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k
+  (\theta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k)
+\end{eqnarray*}
+
+
+Comme $\zeta$ est un entier alg{\'e}brique, donc pour tout $k \in \llbracket
+1, p - 1 \rrbracket$, on a $P (\zeta^k)$ est un entier alg{\'e}brique.
+D'o{\`u} :
+\[ \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k) \in
+   \mathcal{D}_{\mathbb{C}} \]
+
+
+Ainsi :
+\[ \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k) \in
+   \mathcal{D}_{\mathbb{C}} \cap \mathbb{Q}=\mathbb{Z} \]
+
+
+D'o{\`u} :
+\[ N (\theta) = \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k) \in
+   \mathbb{Z} \]
+
+
+Puisque $z.z' = 1$, alors :
+\[ N (z.z') = N (1) = \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (1) =
+   1 \]
+
+
+Or,
+\begin{eqnarray*}
+  N (z.z') & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (z.z')\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (z) \sigma_k (z')\\
+  & = & \left( \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (z) \right)
+  \left( \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (z') \right)\\
+  & = & N (z) N (z')
+\end{eqnarray*}
+
+
+Donc :
+\[ N (z) N (z') = 1 \]
+
+
+Avec $N (z), N (z') \in \mathbb{Z}$ (d'apr{\`e}s le lemme 4), donc $N (z) \in
+\{ - 1, 1 \}$.
+
+\
+
+$\Leftarrow$)R{\'e}ciproquement, si $N (z) \in \{ - 1, 1 \}$, alors
+\begin{eqnarray*}
+  N (z) & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k \left(
+  \underset{j = 0}{\overset{n}{\sum}} a_j \zeta^j \right)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \left( \underset{j =
+  0}{\overset{n}{\sum}} a_j \sigma_k (\zeta)^j \right)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \left( \underset{j =
+  0}{\overset{n}{\sum}} a_j \zeta^{j k} \right)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k)
+\end{eqnarray*}
+
+
+D'o{\`u},
+\[ \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k) \in \{ - 1, 1 \} \]
+
+
+Ainsi,
+\[ z \times \underset{k = 2}{\overset{p - 1}{\prod}} P (\zeta^k) \in \{ - 1, 1
+   \} \]
+
+
+Avec $\underset{k = 2}{\overset{p - 1}{\prod}} P (\zeta^k) \in \mathbb{Z}
+[\zeta]$.
+
+Donc $z \in \mathbb{Z} [\zeta]^{\times}$.
+
+D'o{\`u} l'{\'e}quivalence.
+
+\
+
+\tmtextbf{3.b.} Si $N (z)$ est un nombre premier.
+
+Montrons que $z$ est irr{\'e}ductible.
+
+Soient $a, b \in \mathbb{Z} [\zeta]$ tels que $z = a.b$
+
+On a alors :
+\begin{eqnarray*}
+  N (z) & = & N (a b)\\
+  & = & N (a) N (b)
+\end{eqnarray*}
+
+
+D'apr{\`e}s le lemme 4, on a
+\[ N (a), N (b) \in \mathbb{Z} \]
+
+
+Or, $N (z)$ est un nombre premier.
+
+Ainsi, $N (a) \in \{ - 1, 1 \}$ ou $N (b) \in \{ - 1, 1 \}$.
+
+Via la question pr{\'e}c{\'e}dente, on en d{\'e}duit que $a \in \mathbb{Z}
+[\zeta]^{\times}$ ou $b \in \mathbb{Z} [\zeta]^{\times}$.
+
+Ainsi, $z$ est irr{\'e}ductible de $\mathbb{Z} [\zeta]$.
+
+\
+
+\tmtextbf{4.a.} Justifions que $G$ est un groupe fini cyclique.
+
+Par d{\'e}finition, $G$ est l'ensemble des racines de l'unit{\'e} contenues
+dans $K$, o{\`u} $K$est un corps. Alors $1 \in G$.
+
+Soient $z, z'$ deux racines de l'unit{\'e} dans $K$, Puisque $K$ est un
+corps, alors $z \times \frac{1}{z'}$ est {\'e}galement une racine de
+l'unit{\'e} contenue dans $K$.
+
+Ainsi
+\[ z \times \frac{1}{z'} \in G \]
+
+
+Cela prouve que $G$ est un groupe.
+
+De plus, $K /\mathbb{Q}$ est une extension finie. D'apr{\`e}s la question
+\tmtextbf{1.b de la partie 2}, on a $K$ contient un nombre fini de racines de
+l'unit{\'e}.
+
+Donc, $G$ est un groupe fini ; notons $n =\#G$.
+
+On a alors, pour tout $z \in G$, $z^n = 1$.
+
+Ainsi, $G$ est un sous-groupe de $(\mathbb{U}_n, \times)$, qui est
+monog{\`e}ne. Par cons{\'e}quent, $G$ est {\'e}galement monog{\`e}ne.
+
+On en d{\'e}duit que $G$ est cyclique.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{4.b.} Soit $\omega$ un g{\'e}n{\'e}rateur de $G$. Justifions que $2
+p | n$et que$\mathbb{Q}(\zeta) =\mathbb{Q}(\omega)$.
+
+On a $\omega \in G$, donc $| w | = 1$, et il existe $a_0, \ldots, a_{p - 1}
+\in \mathbb{Q}$ tels que
+\[ \omega = \underset{k = 0}{\overset{p - 1}{\sum}} a_k \zeta^k \]
+
+
+On a alors
+\begin{eqnarray*}
+  \omega^p & = & \left( \underset{k = 0}{\overset{p - 1}{\sum}} a_k \zeta^k
+  \right)^p\\
+  & = & \underset{i_0 + \cdots + i_{p - 1} = p}{\sum}  \underset{k =
+  0}{\overset{p - 1}{\prod}} a_{i_k} \zeta^{i_k}\\
+  & = & \underset{i_0 + \cdots + i_{p - 1} = p}{\sum}  \underset{k =
+  0}{\overset{p - 1}{\prod}} a_{i_k} \zeta^{i_k}\\
+  & = & \underset{i_0 + \cdots + i_{p - 1} = p}{\sum}  \left( \underset{k =
+  0}{\overset{p - 1}{\prod}} a_{i_k} \right) {\zeta^{i_0 + \cdots + i_{p -
+  1}}} \\
+  & = & \underset{i_0 + \cdots + i_{p - 1} = p}{\sum}  \left( \underset{k =
+  0}{\overset{p - 1}{\prod}} a_{i_k} \right)\\
+  & \in & \mathbb{R}
+\end{eqnarray*}
+
+
+Ainsi, $\omega^p \in \mathbb{R}$ et $| \omega^p | = 1$, donc $\omega^p = \pm
+1$, ce qui entra{\^i}ne que $\omega^{2 p} = 1$.
+
+Par cons{\'e}quent, $2 p | n \nobracket$.
+
+\
+
+Montrons maintenant que $\mathbb{Q} (\omega) =\mathbb{Q} (\zeta)$.
+
+On a $\omega \in \mathbb{Q} (\zeta)$, donc $\mathbb{Q} (\omega) \subset
+\mathbb{Q} (\zeta)$.
+
+Or, $\zeta \in G = < \omega >$, donc il existe $k \in \mathbb{N}$, tel que
+$\zeta = \omega^k \in \mathbb{Q} (\omega)$.
+
+Ainsi, $\mathbb{Q} (\zeta) \subset \mathbb{Q} (\omega)$
+
+On en d{\'e}duit donc que
+\[ \mathbb{Q} (\zeta) =\mathbb{Q} (\omega) \]
+
+
+\tmtextbf{4.c.} Montrons que $2 p = n$.
+
+On a forc{\'e}ment $G =\mathbb{U}_n$, ce qu'on va justifier dans un premier
+temps.
+
+On a $\tmop{ord} (G) = n$, donc pour tout $g \in G$, on a $g^n = 1$, ce qui
+implique $G \subset \mathbb{U}_n$.
+
+Or,
+\[ \tmop{card} (G) = \tmop{card} (\mathbb{U}_n) = n < + \infty \]
+
+
+D'o{\`u},
+\[ G =\mathbb{U}_n \]
+
+
+Avant de continuer, montrons un lemme :
+
+\
+
+\tmtextbf{Lemme 5.}
+
+Soit $z \in \mathbb{C}$, on a alors
+\[ [\mathbb{Q} (z) : \mathbb{Q}] = \deg (\pi_z) \]
+
+
+\tmtextbf{Preuve du lemme 5.}
+
+Soit $z \in \mathbb{C}$, rappelons que $\pi_z$ est irr{\'e}ductible de
+$\mathbb{Q} [X]$.
+
+Soit $x \in \mathbb{Q} (z)$, alors il existe $a_0, \ldots, a_r \in \mathbb{Q}$
+tels que
+\[ x = \underset{j = 0}{\overset{n}{\sum}} a_j z^j \]
+
+
+Par division euclidienne de $P = \underset{j = 0}{\overset{n}{\sum}} a_j X^j$
+par $\Phi_z$, on a l'existence de $(Q, R) \in \mathbb{Q} [X]^2$ tel que
+\[ P = Q \pi_z + R \]
+
+
+Alors
+\begin{eqnarray*}
+  x & = & P (z)\\
+  & = & Q (z) \pi_z (z) + R (z)\\
+  & = & R (z)\\
+  & \in & \tmop{vect}_{\mathbb{Q}} (1, z, \ldots, z^{\deg (\pi_z) - 1})
+\end{eqnarray*}
+
+
+Ainsi, $(1, z, \ldots, z^{\deg (\pi_z) - 1})$ est g{\'e}n{\'e}ratrice de
+$\mathbb{Q}- \tmop{espace}$ vectoriel $\mathbb{Q} (z)$.
+
+Montrons que cette famille est $\mathbb{Q}-$libre.
+
+Pour cela, consid{\'e}rons $b_0, \ldots, b_{\deg (\pi_z) - 1} \in \mathbb{Q}$,
+tels que
+\[ \underset{k = 0}{\overset{\deg (\pi_z) - 1}{\sum}} b_k z^k = 0 \]
+
+
+Alors, $\pi_z$ divise $\underset{k = 0}{\overset{\deg (\pi_z) - 1}{\sum}} b_k
+z^k$, donc
+\begin{eqnarray*}
+  \deg (\pi_z) & \leqslant & \deg \left( \underset{k = 0}{\overset{\deg
+  (\pi_z) - 1}{\sum}} b_k z^k \right)\\
+  & = & \deg (\pi_z) - 1
+\end{eqnarray*}
+
+
+absurde!
+
+\
+
+D'o{\`u}, $(1, z, \ldots, z^{\deg (\pi_z) - 1})$ est $\mathbb{Q}$-libre.
+
+Ensuite, $(1, z, \ldots, z^{\deg (\pi_z) - 1})$ est une base de $\mathbb{Q}
+(z)$ en tant que $\mathbb{Q}$-espace vectoriel.
+
+Ainsi,
+\begin{eqnarray*}
+  {}[\mathbb{Q} (z) : \mathbb{Q}] & = & \# \{ 1, z, \ldots, z^{\deg (\pi_z) -
+  1} \}\\
+  & = & \deg (\pi_z)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+On a $\omega$ est un g{\'e}n{\'e}rateur de $G$, donc $\omega$ est une racine
+primitive de $n$.
+
+En utilisant le lemme pr{\'e}c{\'e}dent, on a
+\begin{eqnarray*}
+  {}[\mathbb{Q} (\omega) : \mathbb{Q}] & = & \deg (\pi_{\omega})\\
+  & = & \deg (\Phi_n)\\
+  & = & \varphi (n)
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $2 p | n \nobracket$,
+donc il existe $k \in \mathbb{N}^{\ast}$ tel que $n = 2 k p$.
+
+Si $k$ s'{\'e}crit sous la forme $k = 2^a p^b$, o{\`u} $a, b \in \mathbb{N}$
+non tous nuls. On a alors
+\begin{eqnarray*}
+  \varphi (n) & = & \varphi (2^{a + 1} p^{b + 1})\\
+  & = & 2^{a + 1} p^{b + 1} \left( 1 - \frac{1}{2} \right) \left( 1 -
+  \frac{1}{p} \right)\\
+  & = & 2^a p^b (p - 1)\\
+  & \geqslant & \min (2 (p - 1), p (p - 1))\\
+  & > & p
+\end{eqnarray*}
+
+
+Donc
+\begin{eqnarray*}
+  p & = & [\mathbb{Q} (\zeta) : Q]\\
+  & = & [\mathbb{Q} (\omega) : \mathbb{Q}]\\
+  & = & \varphi (n)\\
+  & > & p
+\end{eqnarray*}
+
+
+ce qui est absurde !
+
+\
+
+Sinon, si $k$ est de la forme
+\[ k = 2^a p^b \underset{i = 1}{\overset{l}{\prod}} p^{y_i}_i \]
+
+
+o{\`u} $a, b \in \mathbb{N}$ et $y_1, \ldots, y_l > 1$, et $p_1, \ldots, p_l
+\geqslant 3$. On a alors
+\begin{eqnarray*}
+  p & = & [\mathbb{Q} (\zeta) : \mathbb{Q}]\\
+  & = & [\mathbb{Q} (\omega) : \mathbb{Q}]\\
+  & = & \varphi (n)\\
+  & = & \varphi \left( 2^{a + 1} p^{b + 1} \underset{i =
+  1}{\overset{l}{\prod}} p^{y_i}_i \right)\\
+  & = & \tmmathbf{} 2^{a + 1} p^{b + 1} \underset{i = 1}{\overset{l}{\prod}}
+  p^{y_i}_i \left( 1 - \frac{1}{2} \right) \left( 1 - \frac{1}{p} \right)
+  \underset{i = 1}{\overset{l}{\prod}} \left( 1 - \frac{1}{p_i} \right)\\
+  & = & 2^a p^b \underset{i = 1}{\overset{l}{\prod}} p^{y_i - 1}_i (p_i - 1)
+  (p - 1)\\
+  & \geqslant & 2 (p - 1)\\
+  & > & p
+\end{eqnarray*}
+
+
+absurde!
+
+D'o{\`u} $k = 1$, par suite $n = 2 p$.
+
+Ainsi,
+\begin{eqnarray*}
+  G & = & \mathbb{U}_{2 p}\\
+  & = & \left\{ \exp \left( \frac{2 i k \pi}{2 p} \right) / k \in \llbracket
+  0, 2 p - 1 \rrbracket \right\}\\
+  & = & \{ \pm \zeta^k / k \in \llbracket 0, p - 1 \rrbracket \}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.a.} Montrons que
+\[ < \lambda > \cap \mathbb{Z}= p\mathbb{Z} \]
+
+
+On a
+\[ < \lambda > = \lambda \mathbb{Z} [\zeta] \]
+
+
+Avec $0 = \lambda \times 0 \in \lambda \mathbb{Z} [\zeta] = < \lambda >$. Donc
+$< \lambda > \neq \emptyset$.
+
+De plus, pour tout $x, y \in < \lambda >$, on a l'existence de $P, Q \in
+\mathbb{Z} [X]$ tels que $x = \lambda P (\zeta)$ et $y = \lambda Q (\zeta)$.
+
+Donc
+\begin{eqnarray*}
+  x - y & = & \lambda (P - Q) (\zeta)\\
+  & \in & \lambda \mathbb{Z} [\zeta]\\
+  & = & < \lambda >
+\end{eqnarray*}
+
+
+Ainsi, $< \lambda >$ est un sous-groupe de $\mathbb{C}$.
+
+Comme $\mathbb{Z}$ est un sous-groupe de $\mathbb{C}$, donc l'intersection $<
+\lambda > \cap \mathbb{Z}$ est un sous-groupe de $\mathbb{C}$.
+
+{\'E}tant donn{\'e} que $< \lambda > \cap \mathbb{Z} \subseteq \mathbb{Z}$,
+alors $< \lambda > \cap \mathbb{Z}$ est un sous-groupe de $\mathbb{Z}$.
+
+Il existe donc $n \in \mathbb{N}$ tel que
+\[ < \lambda > \cap \mathbb{Z}= n\mathbb{Z} \]
+
+
+Or, d'apr{\`e}s la question $b. \tmop{ii} .$ de cette partie, on a
+\begin{eqnarray*}
+  p & = & N (\lambda)\\
+  & = & N (1 - \zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (1 - \zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} (1 - \zeta^k)\\
+  & = & \lambda \underset{k = 2}{\overset{p - 1}{\prod}} (1 - \zeta^k)
+\end{eqnarray*}
+
+
+Avec $\underset{k = 2}{\overset{p - 1}{\prod}} (1 - \zeta^k) \in \mathbb{Z}
+[\zeta]$
+
+Donc
+\[ p \in < \lambda > \cap \mathbb{Z}= n\mathbb{Z} \]
+
+
+En particulier, $n \neq 0$.
+
+De plus $p \in n\mathbb{Z}$, il existe donc $r \in \mathbb{N}$ tel que $p = n
+r$.
+
+Puisque $p$ est premier, alors $n = 1$ ou $n = p$.
+
+Si $n = 1$, donc $< \lambda > \cap \mathbb{Z}=\mathbb{Z}$.
+
+En particulier $1 \in < \lambda >$.
+
+Donc, il existe $x \in \mathbb{Z} [\zeta]$ tel que
+\[ 1 = \lambda x \]
+
+
+Cela impliquerait que $\lambda \in \mathbb{Z} [\zeta]^{\times}$, ce qui est
+absurde car $N (\lambda) = p \nin \{ - 1, 1 \}$.
+
+Donc $n = p$.
+
+En conclusion,
+\[ < \lambda > \cap \mathbb{Z}= p\mathbb{Z} \]
+
+
+\tmtextbf{5.b.} Soit $K \in \{ 1, 2, \ldots, p - 1 \}$. Montrons que
+\[ \frac{1 - \zeta}{1 - \zeta^k} \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+{\tmname{\tmtextbf{M{\'e}thode 1.}}}
+
+On a
+\[ \frac{1 - \zeta^k}{1 - \zeta} = \underset{j = 0}{\overset{k - 1}{\sum}}
+   \zeta^j \in \mathbb{Z} [\zeta] \]
+
+
+Et
+\begin{eqnarray*}
+  N \left( \frac{1 - \zeta^k}{1 - \zeta} \right) & = & N \left( \underset{j =
+  0}{\overset{k - 1}{\sum}} \zeta^j \right)\\
+  & = & \underset{l = 1}{\overset{p - 1}{\prod}} \sigma_l \left( \underset{j
+  = 0}{\overset{k - 1}{\sum}} \zeta^j \right)\\
+  & = & \underset{l = 1}{\overset{p - 1}{\prod}}  \left( \underset{j =
+  0}{\overset{k - 1}{\sum}} \sigma_l (\zeta)^j \right)\\
+  & = & \underset{l = 1}{\overset{p - 1}{\prod}}  \left( \underset{j =
+  0}{\overset{k - 1}{\sum}} \zeta^{j l} \right)\\
+  & = & \underset{l = 1}{\overset{p - 1}{\prod}}  \left( \frac{1 - \zeta^{k
+  l}}{1 - \zeta^l} \right)
+\end{eqnarray*}
+
+
+Pour tous $k, l \in \llbracket 1, p - 1 \rrbracket$, notons $r_{k, l}$
+l'unique entier dans $\llbracket 0, p - 1 \rrbracket$ qui repr{\'e}sente le
+reste de la division euclidienne de $k l$ par $p$.
+
+On a pour tout $k, l \in \llbracket 1, p - 1 \rrbracket$ :
+\[ k \wedge p = 1 \infixand l \wedge p = 1 \]
+
+
+Donc $k l \wedge p = 1$, ainsi $r_{k l} \in \llbracket 1, p - 1 \rrbracket$
+
+Donc l'application
+\[ \begin{array}{lll}
+     l \in \llbracket 1, p - 1 \rrbracket & \longmapsto & r_{k, l} \in
+     \llbracket 1, p - 1 \rrbracket
+   \end{array} \]
+
+
+est bien d{\'e}finie. De plus, pour tous $l, l' \in \llbracket 1, p - 1
+\rrbracket$, si $r_{k, l} = r_{k, l'}$, alors
+\[ k (l - l') \tmop{est} \tmop{divisible} \tmop{par} p \]
+
+
+Avec $p \wedge k = 1$, on en d{\'e}duit via le lemme de Gauss que
+\[ P | l - l' \nobracket \]
+
+
+Donc, il existe $s \in \mathbb{Z}$ tel que $l - l' = s.p$.
+
+Or,
+\[ - (p - 1) \leqslant l - l' \leqslant p - 1 \]
+
+
+Donc,
+\[ - \frac{p - 1}{p} \leqslant s \leqslant \frac{p - 1}{p} \]
+
+
+Ainsi, $s = 0$, par suite $l = l'$. D'o{\`u} l'application$\begin{array}{lll}
+  l \in \llbracket 1, p - 1 \rrbracket & \longmapsto & r_{k, l} \in \llbracket
+  1, p - 1 \rrbracket
+\end{array}$est injective, donc elle est bijective.
+
+D'o{\`u},
+\begin{eqnarray*}
+  \underset{l = 1}{\overset{p - 1}{\prod}}  (1 - \zeta^{k l}) & = &
+  \underset{l = 1}{\overset{p - 1}{\prod}}  (1 - \zeta^{r_{k, l}})\\
+  & = & \underset{l = 1}{\overset{p - 1}{\prod}}  (1 - \zeta^l)
+\end{eqnarray*}
+
+
+D'o{\`u},
+\begin{eqnarray*}
+  N \left( \frac{1 - \zeta^k}{1 - \zeta} \right) & = & \frac{\underset{l =
+  1}{\overset{p - 1}{\prod}}  (1 - \zeta^l)}{\underset{l = 1}{\overset{p -
+  1}{\prod}}  (1 - \zeta^l)}\\
+  & = & 1
+\end{eqnarray*}
+
+
+Finalement,
+\[ \frac{1 - \zeta^k}{1 - \zeta} \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+D'o{\`u}
+\[ \frac{1 - \zeta }{1 - \zeta^k} = \frac{1}{\frac{1 - \zeta^k}{1 - \zeta}}
+   \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+{\tmname{\tmtextbf{M{\'e}thode 2.}}}
+
+On a $p \wedge k = 1$, donc d'apr{\`e}s le th{\'e}or{\`e}me de B{\'e}zout, il
+existe $n_0, m_0 \in \mathbb{Z}$ tel que
+\[ p n_0 + k m_0 = 1 \]
+
+
+Donc, pour tout $\alpha \in \mathbb{Z}$
+\[ p (n_0 - \alpha k) + k (m_0 + \alpha p) = 1 \]
+
+
+Avec $\underset{\alpha \rightarrow + \infty}{\lim} m_0 + \alpha p = + \infty$,
+alors il existe $\alpha_0 \in \mathbb{N}$ tel que
+\[ m_0 + \alpha_0 p > 0 \]
+
+
+Pour ce $\alpha_0 \in \mathbb{N}$, on a
+\begin{eqnarray*}
+  \frac{1 - \zeta}{1 - \zeta^k} & = & \frac{1 - \zeta^{1 - p (n_0 - \alpha_0
+  k)}}{1 - \zeta^k}\\
+  & = & \frac{1 - \left( {\zeta^k}  \right)^{m_0 + \alpha_0 p}}{1 -
+  \zeta^k}\\
+  & = & \underset{j = 0}{\overset{m_0 + \alpha_0 p - 1}{\sum}} \zeta^{k j}\\
+  & \in & \mathbb{Z} [\zeta]
+\end{eqnarray*}
+
+
+D'autre part,
+\begin{eqnarray*}
+  \frac{1}{\frac{1 - \zeta }{1 - \zeta^k}} & = & \frac{1 - \zeta^k}{1 -
+  \zeta}\\
+  & = & \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j\\
+  & \in & \mathbb{Z} [\zeta]
+\end{eqnarray*}
+
+
+Donc, par d{\'e}finition,
+\[ \frac{1 - \zeta}{1 - \zeta^k} \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+Montrons que
+\[ \lambda^{p - 1} \mathbb{Z} [\zeta] = p\mathbb{Z} [\zeta] \]
+
+
+Soit $x \in p\mathbb{Z} [\zeta]$, donc il existe $P \in \mathbb{Z} [X]$ tel
+que $x = p P (\zeta)$.
+
+Donc
+\begin{eqnarray*}
+  x & = & N (1 - \zeta) P (\zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (1 - \zeta ) P
+  (\zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} (1 - \zeta^k) P (\zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \left[ (1 - \zeta ) \left(
+  \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j \right) \right] P (\zeta)\\
+  & = & (1 - \zeta)^{p - 1} \left[ \underset{k = 1}{\overset{p - 1}{\prod}}
+  \left( \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j \right) \right] P
+  (\zeta)\\
+  & \in & \lambda^{p - 1} \mathbb{Z} [\zeta]
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ p\mathbb{Z} [\zeta] \subset \lambda^{p - 1} \mathbb{Z} [\zeta] \]
+
+
+R{\'e}ciproquement, on a
+\begin{eqnarray*}
+  \lambda^{p - 1} & = & (1 - \zeta)^{p - 1}\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \left( \frac{1 - \zeta}{1 -
+  \zeta^k} \right) \underset{k = 1}{\overset{p - 1}{\prod}} (1 - \zeta^k)\\
+  & = & N (1 - \zeta) \underset{k = 1}{\overset{p - 1}{\prod}} \left( \frac{1
+  - \zeta}{1 - \zeta^k} \right)\\
+  & = & p \underset{k = 1}{\overset{p - 1}{\prod}} \left( \frac{1 - \zeta}{1
+  - \zeta^k} \right)
+\end{eqnarray*}
+
+
+Avec $\frac{1 - \zeta}{1 - \zeta^k} \in \mathbb{Z} [\zeta]^{\times}$ pour tout
+$k \in \llbracket 1, p - 1 \rrbracket$.
+
+Donc,
+\[ \underset{k = 1}{\overset{p - 1}{\prod}} \left( \frac{1 - \zeta}{1 -
+   \zeta^k} \right) \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+D'o{\`u},
+\[ \lambda^{p - 1} \in p\mathbb{Z} [\zeta] \]
+
+
+Ainsi,
+\[ \lambda^{p - 1} \mathbb{Z} [\zeta] \subset p\mathbb{Z} [\zeta] \]
+
+
+Enfin,
+\[ \lambda^{p - 1} \mathbb{Z} [\zeta] = p\mathbb{Z} [\zeta] \]
+
+
+\tmtextbf{5.c.} Soit $\Psi$: le morphisme d'anneaux de $\mathbb{Z} [X]
+\rightarrow \mathbb{Z} [\zeta] / < \lambda >$.
+
+Soit $P = \underset{k = 0}{\overset{n}{\sum}} a_k X^k \in \mathbb{Z} [X]$.
+
+On a, pour tout $k \in \llbracket 0, n \rrbracket$ :
+\begin{eqnarray*}
+  \zeta^k & = & (\zeta - 1 + 1)^k\\
+  & = & (1 - \lambda)^k\\
+  & = & \underset{j = 0}{\overset{k}{\sum}} (- 1)^j \left( \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^j\\
+  & = & 1 + \underset{j = 1}{\overset{k}{\sum}} (- 1)^j \left(
+  \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^j
+\end{eqnarray*}
+
+
+Donc,
+\begin{eqnarray*}
+  P (\zeta) & = & \underset{k = 0}{\overset{n}{\sum}} a_k \zeta^k\\
+  & = & \underset{k = 0}{\overset{n}{\sum}} a_k \left( 1 + \underset{j =
+  1}{\overset{k}{\sum}} (- 1)^j \left( \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^j \right)\\
+  & = & \underset{k = 0}{\overset{n}{\sum}} a_k + \lambda \underset{k =
+  0}{\overset{n}{\sum}} a_k \underset{j = 1}{\overset{k}{\sum}} (- 1)^j \left(
+  \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^{j - 1}
+\end{eqnarray*}
+
+
+Avec, $\underset{k = 0}{\overset{n}{\sum}} a_k \underset{j =
+1}{\overset{k}{\sum}} (- 1)^j \left( \begin{array}{c}
+  k\\
+  j
+\end{array} \right) \lambda^{j - 1} \in \mathbb{Z} [\zeta]$.
+
+Donc,
+\[ \underset{k = 0}{\overset{n}{\sum}} a_k \underset{j = 1}{\overset{k}{\sum}}
+   (- 1)^j \left( \begin{array}{c}
+     k\\
+     j
+   \end{array} \right) \lambda^{j - 1} \in < \lambda > \]
+
+
+Et donc,
+\begin{eqnarray*}
+  P (\zeta) & = & \underset{k = 0}{\overset{n}{\sum}} a_k  (\tmop{mod} <
+  \lambda >)\\
+  & = & P (1)  (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+Par division euclidienne de $P (1)$ par $p$, on a l'existence de $q, r \in
+\mathbb{N}$ tels que
+\[ \left\{\begin{array}{l}
+     P (1) = p q + r\\
+     r \in \llbracket 0, p - 1 \rrbracket
+   \end{array}\right. \]
+
+
+Or, $p \in p\mathbb{Z} [\zeta]$, donc $p \in \lambda^{p - 1} \mathbb{Z}
+[\zeta]$.
+
+Donc, il existe $Q \in \mathbb{Z} [X]$ tel que $p = \lambda^{p - 1} Q
+(\zeta)$.
+
+Ainsi,
+\begin{eqnarray*}
+  p & = & \lambda (1 - \zeta)^{p - 2} Q (\zeta)\\
+  & = & \lambda \nobracket [(1 - X)^{p - 2} Q] |_{X = \zeta}\\
+  & = & 0 (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+Donc,
+\[ P (1) = r (\tmop{mod} < \lambda >) \]
+
+
+Ainsi,
+\[ \Psi (P) = r (\tmop{mod} < \lambda >) \]
+
+
+D'o{\`u},
+\[ \Psi (P) = P (1)  (\tmop{mod} p\mathbb{Z}) \]
+
+
+\
+
+Donc l'image de $P$ par $\Psi$ est le reste de la division euclidienne de $P
+(1) $par $p$.
+
+\
+
+Soit $P \in \tmop{Ker} (\Psi)$, alors d'apr{\`e}s ce qui pr{\'e}c{\`e}de, le
+reste de la division euclidienne de $P (1) $par $p$ est nul.
+
+Donc,
+\[ P (1) = 0 (\tmop{mod} p\mathbb{Z}) \]
+
+
+R{\'e}ciproquement, si $P \in \mathbb{Z} [X]$ tel que $P (1) = 0 (\tmop{mod}
+p\mathbb{Z})$.
+
+Alors, d'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a
+\begin{eqnarray*}
+  \Psi (P) & = & 0 (\tmop{mod} p\mathbb{Z})\\
+  & = & 0 (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+D'o{\`u} $P \in \tmop{Ker} (\Psi)$
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.d.} D'apr{\`e}s ce qui pr{\'e}c{\`e}de, $\tmop{Im} (\Psi)$ est
+isomorphe {\`a} $\mathbb{F}_p =\mathbb{Z}/ p\mathbb{Z}$.
+
+Donc $\mathbb{Z} [\zeta] / < \lambda >$ est isomorphe {\`a} $\mathbb{F}_p
+=\mathbb{Z}/ p\mathbb{Z}$.
+
+\
+
+\tmtextbf{5.e.} Puisque $\mathbb{Z} [\zeta] / < \lambda >$ est isomorphe
+{\`a} $\mathbb{F}_p$, et que $p$ est un nombre premier.
+
+Alors l'id{\'e}al $< \lambda >$ est premier, comme {\'e}tant un id{\'e}al de
+l'anneau $\mathbb{Z} [\zeta]$.
+
+\
+
+\tmtextbf{6.a.} Soit $P = \underset{k = 0}{\overset{d}{\sum}} a_k X^k$ un
+polyn{\^o}me unitaire de degr{\'e} $d$, dont on note $\alpha_1, . . .,
+\alpha_d$ les racines complexes compt{\'e}es avec leur multiplicit{\'e}. On
+suppose que pour tout $k \in \{1, . . ., d\}$, $\alpha_k$ est de module $1$.
+
+\
+
+\tmtextbf{6.a.i.} Soit $k \in \llbracket 0, d \rrbracket$, montrons que
+\[ | a_k | \leqslant \left( \begin{array}{c}
+     d\\
+     k
+   \end{array} \right) \]
+
+
+On a, d'apr{\`e}s les identit{\'e}s de Newton
+\[ a_k = \underset{1 \leqslant i_1 < \cdots < i_k \leqslant d}{\sum} 
+   \underset{j = 1}{\overset{k}{\prod}} \alpha_{i_j} \]
+
+
+Donc
+\begin{eqnarray*}
+  | a_k | & \leqslant & \underset{1 \leqslant i_1 < \cdots < i_k \leqslant
+  d}{\sum}  \left| \underset{j = 1}{\overset{k}{\prod}} \alpha_{i_j} \right|\\
+  & = & \underset{1 \leqslant i_1 < \cdots < i_k \leqslant d}{\sum} 1\\
+  & = & \left( \begin{array}{c}
+    d\\
+    k
+  \end{array} \right)
+\end{eqnarray*}
+
+
+Notons
+\[ \mathcal{E}_d = \left\{ z \in \mathcal{D}_{\mathbb{C}}  | \nobracket \deg
+   (\pi_z) = d, \infixand \tmop{les} \tmop{conjug} {\'e}s \tmop{de} z
+   \tmop{sont} \tmop{tous} \tmop{de} \tmop{module} 1 \right\} \]
+
+
+et
+\[ \mathcal{O}_d = \{ P \in \mathbb{Z} [X]  | \nobracket P \tmop{de}
+   \tmop{degr} {\'e} d \tmop{dont} \tmop{toutes} \tmop{les} \tmop{racines}
+   \tmop{sont} \tmop{de} \tmop{module} 1 \} \]
+
+
+On a
+\[ \mathcal{E}_d \subset \underset{P \in \mathcal{O}_d}{\bigcup} P^{- 1} (\{ 0
+   \}) \]
+
+
+Or, un polyn{\^o}me de degr{\'e} $d$ admet au plus $d$ racines distincts dans
+$\mathbb{C}$.
+
+Donc, pour tout $P \in \mathcal{O}_d$, on a
+\[ \#P^{- 1} (\{ 0 \}) \leqslant d \]
+
+
+De plus
+\[ \mathcal{O}_d \subset \left\{ \underset{k = 0}{\overset{d}{\sum}} a_k X^k
+   \in \mathbb{Z} [X]  | \nobracket \forall k \in \llbracket 0, d \rrbracket,
+   a_k \leqslant \left( \begin{array}{c}
+     d\\
+     k
+   \end{array} \right) \right\} \]
+
+
+Et la famille
+\[ \left\{ \underset{k = 0}{\overset{d}{\sum}} a_k X^k \in \mathbb{Z} [X]  |
+   \nobracket \forall k \in \llbracket 0, d \rrbracket, a_k \leqslant \left(
+   \begin{array}{c}
+     d\\
+     k
+   \end{array} \right) \right\} \]
+\ est en bijection avec$\left\{ (a_0, \ldots, a_d) \in \mathbb{Z}^d  |
+\nobracket \forall k \in \llbracket 0, d \rrbracket, a_k \leqslant \left(
+\begin{array}{c}
+  d\\
+  k
+\end{array} \right) \right\}$
+
+\
+
+Comme cet ensemble est fini, cela implique que
+\[ \left\{ \underset{k = 0}{\overset{d}{\sum}} a_k X^k \in \mathbb{Z} [X]  |
+   \nobracket \forall k \in \llbracket 0, d \rrbracket, a_k \leqslant \left(
+   \begin{array}{c}
+     d\\
+     k
+   \end{array} \right) \right\} \]
+
+
+est fini aussi. Ainsi $\mathcal{O}_d$ est fini.
+
+Par suite,
+\begin{eqnarray*}
+  \#\mathcal{E}_d & \leqslant & \# \underset{P \in \mathcal{O}_d}{\bigcup}
+  P^{- 1} (\{ 0 \})\\
+  & \leqslant & d \times \#\mathcal{O}_d\\
+  & \leqslant & d \times \# \left\{ \underset{k = 0}{\overset{d}{\sum}} a_k
+  X^k \in \mathbb{Z} [X]  | \nobracket \forall k \in \llbracket 0, d
+  \rrbracket, a_k \leqslant \left( \begin{array}{c}
+    d\\
+    k
+  \end{array} \right) \right\}\\
+  & = & d \underset{k = 0}{\overset{d}{\prod}} \left( 2 \left(
+  \begin{array}{c}
+    d\\
+    k
+  \end{array} \right) + 1 \right)\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.a.ii.} On a $X^n \in \mathbb{Z} [X]$, et $P \in \mathbb{Z} [X]$
+est un polyn{\^o}me unitaire de degr{\'e} $d$, dont on note $\alpha_1, . . .,
+\alpha_d$ les racines complexes compt{\'e}es avec leur multiplicit{\'e}. Avec,
+$\mathbb{Z}$ est un sous-anneau de $\mathbb{C}$.
+
+D'apr{\`e}s \tmtextbf{la question 4.e de la partie $I$}, on a pour tout $n \in
+\mathbb{N}$
+\[ P_n = \underset{k = 1}{\overset{d}{\prod}} (X - \alpha_k^n) \in \mathbb{Z}
+   [X] \]
+
+
+Avec pour tout $(n, d) \in \mathbb{N} \times \llbracket 1, d \rrbracket$, on a
+$| \alpha_k^n | = 1$, En utilisant les m{\^e}mes notations que
+pr{\'e}c{\'e}demment, on a, pour tout $k \in \llbracket 1, d \rrbracket$, et
+pour tout $n \in \mathbb{N}$
+\[ \alpha_k^n \in \mathcal{E}_d \]
+
+
+o{\`u} $\mathcal{E}_d$ est fini. Donc il existe $n_0, n_1 \in \mathbb{N}$,
+tels que $n_0 < n_1$ et $\alpha_k^{n_0} = \alpha_k^{n_1}$.
+
+Avec $\alpha_k  \neq 0$, donc
+\[ \alpha_k^{n_1 - n_0} = 1 \]
+
+
+On en d{\'e}duit que $\alpha_k $ est un racine de l'unit{\'e}
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.b.} Soit $P \in \mathbb{Z}[X]$ tel que $u = P (\zeta)$. Montrons
+que, pour tout $k \in \{1, . . ., p \nonconverted{minus} 1\}$, $u_k = P
+(\zeta^k)$ est un conjugu{\'e} de $u$ et que c'est un {\'e}l{\'e}ment de
+$\mathbb{Z}[\zeta]^{\times}$.
+
+On a, en utilisant les m{\^e}mes notations de la partie $\mathbb{I}$.
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{p - 1}{\prod}} (X - P (\zeta^k)) & = & \underset{k
+  = 1}{\overset{p - 1}{\prod}} (X - P (\sigma_k (\zeta)))\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} (X - \sigma_k (P (\nobracket
+  \zeta) \nobracket))\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} (X - \sigma_k (u))\\
+  & = & P_u
+\end{eqnarray*}
+
+
+D'apr{\`e}s la \tmtextbf{question 3.c de la partie $\mathbb{I}$}, on a $P_u$
+est une puissance de ${\pi_u} $.
+
+Donc, pour tout $k \in \{1, . . ., p \nonconverted{minus} 1\}$, $u_k = P
+(\zeta^k)$ est un conjugu{\'e} de $u$.
+
+De plus $u = P (\zeta) \in \mathbb{Z}[\zeta]^{\times}$.
+
+Ainsi, d'apr{\`e}s la \tmtextbf{question 3.a de cette partie}, on a :
+\[ N (u) \in \{ - 1, 1 \} \]
+
+
+Donc, pour tout $k \in \{ 1, 2, \ldots, p - 1 \}$, on a :
+\begin{eqnarray*}
+  u_k \underset{j \neq k}{\overset{p - 1}{\underset{j = 1}{\prod}}} P
+  (\zeta^j) & = & \underset{}{\overset{p - 1}{\underset{j = 1}{\prod}}} P
+  (\zeta^j)\\
+  & = & \underset{}{\overset{p - 1}{\underset{j = 1}{\prod}}} \sigma_j (P
+  (\zeta ))\\
+  & = & \underset{}{\overset{p - 1}{\underset{j = 1}{\prod}}} \sigma_j (u)\\
+  & = & N (u)\\
+  & \in & \{ - 1, 1 \}
+\end{eqnarray*}
+
+
+Avec $\underset{j \neq k}{\overset{p - 1}{\underset{j = 1}{\prod}}} P
+(\zeta^j) \in Z [\zeta]$, donc par d{\'e}finition
+\[ u_k \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+\tmtextbf{6.c.} Justifions que $\frac{u_p}{u_{p - 1}}$ est un entier
+alg{\'e}brique dont tous les conjugu{\'e}s sont de module 1.
+
+Soit $k \in \llbracket 1, p - 1 \rrbracket$,
+
+On a :
+\begin{eqnarray*}
+  u_{p - k} & = & P (\zeta^{p - k})\\
+  & = & P (\zeta^{- k})\\
+  & = & \overline{P (\zeta)}\\
+  & = & \overline{u_k}
+\end{eqnarray*}
+
+
+Donc $\left| \frac{u_k}{u_{p - k}} \right| = 1$.
+
+Or, $\frac{u_1}{u_{p - 1}} \in \mathbb{Z} [\zeta]^{\times} \subset
+\mathfrak{D}_K$, et ses conjugu{\'e}s sont donn{\'e}s par :
+\begin{eqnarray*}
+  \sigma_k \left( \frac{u_1}{u_{p - 1}} \right) & = & \frac{\sigma_k (u_{k
+  1})}{\sigma_k (u_{p - 1})}\\
+  & = & \frac{u_k}{P (\sigma_k (\zeta^{- 1}))}\\
+  & = & \frac{u_k}{u_{p - k}}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.d.} En d{\'e}duire qu'il existe$m \in \mathbb{Z}$ tel que
+$\frac{u_1}{u_{p - 1}} = \pm \zeta^m$.
+
+En utilisant la question 6.a.ii, on a $\frac{u}{u_{p - 1}}$ est une racine de
+l'unit{\'e} de $K$.
+
+Ainsi, il existe $m \in \mathbb{Z}$ tel que $\frac{u}{u_{p - 1}} = \pm
+\zeta^m$ (cf. question 4 de la partie 3).
+
+\
+
+\tmtextbf{6.e.i.} Soit $\theta \in \mathbb{Z}[\zeta]$. Justifions qu'il
+existe un entier $a \in \mathbb{Z}$ tel que $\theta = a (\tmop{mod} < \lambda
+>)$.
+
+On a $\theta \in \mathbb{Z} [\zeta]$, donc il existe des entiers $a_0,
+\ldots, a_{p - 2}$ tels que
+\[ \theta = \underset{k = 0}{\overset{p - 2}{\sum}} a_k \zeta^k \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  \theta & = & \underset{k = 0}{\overset{p - 2}{\sum}} a_k (\zeta^k - 1) +
+  \underset{k = 0}{\overset{p - 2}{\sum}} a_k\\
+  & = & \lambda \underset{k = 0}{\overset{p - 2}{\sum}} a_k \underset{j =
+  0}{\overset{k - 1}{\sum}} \zeta^j + \underset{k = 0}{\overset{p - 2}{\sum}}
+  a_k\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} a_k  (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+On a donc $\theta = a (\tmop{mod} < \lambda >)$, o{\`u} $a = \underset{k =
+0}{\overset{p - 2}{\sum}} a_k \in \mathbb{Z}$.
+
+\
+
+En d{\'e}duire que deux {\'e}l{\'e}ments conjugu{\'e}s de $\mathbb{Z}[\zeta]$
+sont {\'e}gaux modulo $< \lambda > .$
+
+Soit $\theta = \underset{k = 0}{\overset{p - 2}{\sum}} a_k \zeta^k \in
+\mathbb{Z} [\zeta]$, et $\sigma_j (\theta) = \underset{k = 0}{\overset{p -
+2}{\sum}} a_k \zeta^{j k}$ un des conjugu{\'e}s de $\theta$, o{\`u} $k \in
+\llbracket 0, p - 1 \rrbracket$.
+
+On a
+\begin{eqnarray*}
+  \theta - \sigma_j (\theta) & = & \underset{k = 0}{\overset{p - 2}{\sum}} a_k
+  (\zeta^k - \zeta^{j k})\\
+  & = & \lambda \underset{k = 0}{\overset{p - 2}{\sum}} a_k \zeta^k
+  \underset{l = 0}{\overset{j k - k - 1}{\sum}} \zeta l\\
+  & = & 0 (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.e.ii.} Montrons que $\frac{u_1}{u_{p - 1}} = \zeta^m$.
+
+On a  $\frac{u_1}{u_{p - 1}} = \pm \zeta^m$. Par l'absurde, supposons que \
+$\frac{u_1}{u_{p - 1}} = - \zeta^m .$
+
+Alors
+\begin{eqnarray*}
+  u & = & - \zeta^m u_{p - 1}\\
+  & = & - u_{p - 1} (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+De plus, $u$ et $u_{p - 1} $sont conjugu{\'e}s, donc d'apr{\`e}s la question
+pr{\'e}c{\'e}dente, on a
+\[ u = u_{p - 1} (\tmop{mod} < \lambda >) \]
+
+
+Donc
+\[ 2 u = 0 (\tmop{mod} < \lambda >) \]
+
+
+Ainsi, $2 u \in < \lambda >$, avec $< \lambda >$ est premier.
+
+Donc, $2 \in < \lambda >$ ou $u \in < \lambda >$.
+
+Si $2 \in < \lambda >$, alors
+\[ N (\lambda) | \nobracket N (2) = 2^{p - 1} \]
+
+
+Ainsi, $p | 2^{p - 1} \nobracket,$ absurde!
+
+Donc $u \in < \lambda >$
+
+Ainsi,
+\[ p = N (\lambda) | N \nobracket (u) = 1 \]
+
+
+Absurde!
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{Remarque.}
+
+On peut r{\'e}pondre directement {\`a} la question \tmtextbf{6.e.ii} sans
+faire les questions \tmtextbf{6.c, 6.d} et \tmtextbf{6.e.i}.
+
+En justifiant que $\frac{u_1}{u_{p - 1}}$ est un entier alg{\'e}brique dont
+tous les conjugu{\'e}s sont de module 1.
+
+\
+
+D'apr{\`e}s la question pr{\'e}c{\'e}cente, on a
+\[ u_1, u_{p - 1} \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+Donc
+\[ u_1, \frac{1}{u_{p - 1}} \in \mathbb{Z} [\zeta]  \]
+
+
+D'apr{\`e}s la question 2, on sait que $\mathbb{Z} [\zeta] \subseteq
+\mathcal{D}_K \subseteq D_{\mathbb{C}}$, o{\`u} $\mathcal{D}_{\mathbb{C}}$ est
+un anneau (d'apr{\`e}s la \tmtextbf{question 6 de la partie $\mathbb{I}$}).
+
+Ainsi,
+\[ \frac{u_1}{u_{p - 1}} = u_1 \times \frac{1}{u_{p - 1}} \in
+   \mathcal{D}_{\mathbb{C}}  \]
+
+
+Autrement dit, $\frac{u_1}{u_{p - 1}}$ est un entier alg{\'e}brique.
+
+Il ne reste qu'{\`a} montrer que tous les conjugu{\'e}s de $\frac{u_1}{u_{p -
+1}} $sont de module 1. En s'inspirant des questions \tmtextbf{6.a.i} et
+\tmtextbf{6.a.ii} de cette partie, il est pr{\'e}f{\'e}rable ({\'e}tant
+donn{\'e} que $\frac{u_1}{u_{p - 1}}$ est un entier alg{\'e}brique) de montrer
+que \ $\frac{u_1}{u_{p - 1}}$ est une racine de l'unit{\'e}.(Ce faisant, on
+r{\'e}pond {\'e}galement {\`a} la deuxi{\`e}me partie de cette question).
+
+Notons,
+\[ P = \overset{n}{\underset{k = 0}{\sum}} a_k X^k \in \mathbb{Z} [X] \]
+D'apr{\`e}s la formule multin{\^o}me, on a :
+\begin{eqnarray*}
+  u_{p - 1}^p & = & P (\zeta^{p - 1})^p\\
+  & = & P \left( \frac{1}{\zeta} \right)^p\\
+  & = & \left( \overset{n}{\underset{k = 0}{\sum}} a_k \zeta^{- k}
+  \right)^p\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \zeta^{- i_k}\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \left( \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \right) \zeta^{- (i_1 + \cdots + i_n)}\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \left( \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \right) \zeta^{- p}\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \left( \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \right)\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \left( \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \right) \zeta^p\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \left( \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \right) \zeta^{i_1 + \cdots + i_n}\\
+  & = & \underset{i_1 + \cdots + i_n = p}{\sum} \underset{k =
+  0}{\overset{n}{\prod}} a_{i_k} \zeta^{i_k}\\
+  & = & \left( \overset{n}{\underset{k = 0}{\sum}} a_k \zeta^k \right)^p\\
+  & = & P (\zeta)^p\\
+  & = & u^p_1
+\end{eqnarray*}
+
+
+Donc :
+\[ \left( \frac{u_1}{u_{p - 1}} \right)^p = 1 \]
+
+
+Ainsi, il existe $m \in \mathbb{Z}$ tel que :
+\[ \frac{u_1}{u_{p - 1}} = \zeta^m \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.f.} Justifions l'existence de $r \in \mathbb{Z}$ tel que $2 r = m
+(\tmop{mod} p\mathbb{Z})$.
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Fermat :
+\[ 2^{p - 1} = 1 (\tmop{mod} p\mathbb{Z}) \]
+
+
+Ainsi, pour $r = m 2^{p - 1}$, on a $r = m (\tmop{mod} p\mathbb{Z})$.
+
+On pose $\varepsilon = \zeta^{- r} u$. Montrons que $\varepsilon \in
+\mathbb{R}$.
+
+On a\footnote{Il est facile {\`a} v{\'e}rifier que $\overline{u_{p - 1}} =
+u$.}
+\begin{eqnarray*}
+  \bar{\varepsilon} & = & \zeta^r \bar{u}\\
+  & = & \zeta^r u_{p - 1}\\
+  & = & \zeta^r (\zeta^{- m} u)\\
+  & = & \zeta^r (\zeta^{- 2 r} u)\\
+  & = & \zeta^{- r} u\\
+  & = & \varepsilon
+\end{eqnarray*}
+
+
+D'o{\`u} $\varepsilon \in \mathbb{R}$.
+
+Puisque $u, \zeta^{- r} \in \mathbb{Z} [\zeta]^{\times}$, alors $\varepsilon
+\in \mathbb{Z} [\zeta]^{\times}$.
+
+Ainsi, $u = \zeta^r \varepsilon$, o{\`u} $\varepsilon$ est un r{\'e}el dans
+$\mathbb{Z} [\zeta]^{\times}$.
+
+\tmtextbf{\tmcolor{blue}{{\tmname{}}}Conculsion.}
+
+Pour tout $u \in \mathbb{Z} [\zeta]^{\times}$, on a l'existence de $r \in
+\mathbb{Z}$ et $\varepsilon$ un r{\'e}el inversible de $\mathbb{Z} [\zeta] $,
+tels que :
+\[ u = \zeta^r \varepsilon \]
+
+
+\tmtextbf{7.} Le but de ce qui suit est de montrer que $\mathcal{D}_K
+=\mathbb{Z}[\zeta]$.
+
+\tmtextbf{7.a.} Soit $\theta \in \mathcal{D}_K$. Montrons que
+\[ N (\theta) \in \mathbb{Z} \infixand \tmop{Tr} (\theta) \in \mathbb{Z} \]
+
+
+Puisque $\theta \in K =\mathbb{Q} (\zeta)$, alors il existe $P = \underset{k =
+0}{\overset{n}{\sum}} a_k X^k \in \mathbb{Q} [X]$, tel que $\theta = P
+(\zeta)$.
+
+On a alors
+\[ P_{\theta} = \underset{k = 1}{\overset{p - 1}{\prod}} (X - \sigma_k
+   (\theta)) \in \mathbb{Q} [X] \]
+
+
+En particulier :
+\[ \begin{array}{lll}
+     N (\theta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k
+     (\theta) \in \mathbb{Q}
+   \end{array} \]
+
+
+De plus,
+\[ \begin{array}{lll}
+     N (\theta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k)
+   \end{array} \]
+
+
+Et $\zeta \in \mathcal{D}_K$, $P \in \mathbb{Q} [X]$, et $\mathcal{D}_K$ est
+un sous-anneau de $\mathbb{C}$, alors
+\[ \begin{array}{lll}
+     N (\theta) & = & \underset{k = 1}{\overset{p - 1}{\prod}} P (\zeta^k)
+   \end{array} \in \mathcal{D}_K \]
+
+
+Par suite :
+\[ N (\theta) \in \mathcal{D}_K \cap \mathbb{Q}=\mathbb{Z} \]
+
+
+Ensuite, pour la trace, on a :
+\begin{eqnarray*}
+  \tmop{Tr} (\theta) & = & \underset{k = 1}{\overset{p - 1}{\sum}} \sigma_k
+  (\theta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}} \sigma_k (P (\zeta))\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}}  P (\nobracket \sigma_k
+  (\nobracket \zeta))\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}}  P (\zeta^k)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}}  \underset{j =
+  0}{\overset{n}{\sum}} a_j \zeta^{j k}\\
+  & = &  \underset{j = 0}{\overset{n}{\sum}} a_j \left( \underset{k =
+  1}{\overset{p - 1}{\sum}} \zeta^{j k} \right)\\
+  & = & \underset{j = 0}{\overset{n}{\sum}} a_j \zeta^j \frac{1 - \zeta^{j (p
+  - 1)}}{1 - \zeta^j}\\
+  & = & \underset{j = 0}{\overset{n}{\sum}} a_j \frac{\zeta^j - 1}{1 -
+  \zeta^j}\\
+  & = & - \underset{j = 0}{\overset{n}{\sum}} a_j\\
+  & \in & \mathbb{Q}
+\end{eqnarray*}
+
+
+Comme $\zeta \in \mathcal{D}_K$, $P \in \mathbb{Q} [X]$, et $\mathcal{D}_K$
+est un sous-anneau de $\mathbb{C}$, alors
+\[ \tmop{Tr} (\theta) = \underset{k = 1}{\overset{p - 1}{\sum}}  P (\zeta^k)
+   \in \mathcal{D}_K \]
+
+
+Par suite :
+\[ \tmop{Tr} (\theta) \in \mathcal{D}_K \cap \mathbb{Q}=\mathbb{Z} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{7.b.i.} Soit $k \in \llbracket 0, p - 2 \rrbracket$, on a
+\begin{eqnarray*}
+  b_k & = & \tmop{Tr} (\theta \zeta^{- k} - \theta \zeta)\\
+  & = & \underset{j = 1}{\overset{p - 1}{\sum}} \sigma_j (\theta \zeta^{- k}
+  - \theta \zeta)\\
+  & = & \underset{j = 1}{\overset{p - 1}{\sum}} (\sigma_j (\theta) \sigma_j
+  (\zeta)^{- k} - \sigma_j (\theta) \sigma_j (\zeta))\\
+  & = & \underset{j = 1}{\overset{p - 1}{\sum}} \left( \sigma_j \left(
+  \underset{l = 0}{\overset{p - 2}{\sum}} a_l \zeta^l \right) \zeta^{- j k} -
+  \sigma_j \left( \underset{l = 0}{\overset{p - 2}{\sum}} a_l \zeta^l \right)
+  \zeta^j \right)\\
+  & = & \underset{j = 1}{\overset{p - 1}{\sum}} \underset{l = 0}{\overset{p -
+  2}{\sum}} a_l (\zeta^{j l - j k} - \zeta^{j l - j})\\
+  & = & \underset{l = 0}{\overset{p - 2}{\sum}} a_l \left( \underset{j =
+  1}{\overset{p - 1}{\sum}} (\zeta^{l - k})^j \right) - \underset{l =
+  0}{\overset{p - 2}{\sum}} a_l \left( \underset{j = 1}{\overset{p - 1}{\sum}}
+  (\zeta^{l - 1})^j \right)\\
+  & = & \underset{l \neq k}{\underset{l = 0}{\overset{p - 2}{\sum}}} a_l
+  \left( \underset{j = 1}{\overset{p - 1}{\sum}} (\zeta^{l - k})^j -
+  \underset{j = 1}{\overset{p - 1}{\sum}} (\zeta^{l - 1})^j \right) + a_{_k}
+  \left( p - 1 - \underset{j = 1}{\overset{p - 1}{\sum}} (\zeta^{l - 1})^j
+  \right)\\
+  & = & \underset{l \neq k}{\underset{l = 0}{\overset{p - 2}{\sum}}} a_l
+  \left( \underset{j = 1}{\overset{p - 1}{\sum}} (\zeta^{l - k})^j -
+  \underset{j = 1}{\overset{p - 1}{\sum}} (\zeta^{l - 1})^j \right) + a_{_k}
+  \left( p - 1 - \zeta^{l - 1} \frac{1 - \zeta^{(l - 1) (p - 1)}}{1 - \zeta^{l
+  - 1}} \right)\\
+  & = & \underset{l \neq k}{\underset{l = 0}{\overset{p - 2}{\sum}}} a_l
+  \left[ \zeta^{l - k} \frac{1 - \zeta^{(l - k) (p - 1)}}{1 - \zeta^{l - k}} -
+  \zeta^{l - 1} \frac{1 - \zeta^{(l - 1) (p - 1)}}{1 - \zeta^{l - 1}} \right]
+  + p a_k\\
+  & = & \underset{l \neq k}{\underset{l = 0}{\overset{p - 2}{\sum}}} a_l [- 1
+  - (- 1)] + p a_k\\
+  & = & p a_k
+\end{eqnarray*}
+
+
+De plus,
+\[ \theta \zeta^{- k} - \theta \zeta \in \mathcal{D}_K \]
+
+
+Donc d'apr{\`e}s la question pr{\'e}c{\'e}dente :
+\[ b_k = \tmop{Tr} (\theta \zeta^{- k} - \theta \zeta) \in \mathbb{Z} \]
+
+
+\tmtextbf{7.b.ii.} Montrons qu'il existe des entiers $c_0, \ldots, c_{p - 2}$.
+que l'on exprimera en fonction des $b_k$ tels que :
+\[ p \theta = \underset{k = 0}{\overset{p - 2}{\sum}} c_k \lambda^k \]
+
+
+On a :
+\begin{eqnarray*}
+  p \theta & = & \underset{k = 0}{\overset{p - 2}{\sum}} p a_k (1 -
+  \lambda)^k\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} \underset{j =
+  0}{\overset{k}{\sum}} b_k (- 1)^j \left( \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^j\\
+  & = & \underset{j = 0}{\overset{p - 2}{\sum}} \underset{k = j}{\overset{p -
+  2}{\sum}} b_k (- 1)^j \left( \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \lambda^j
+\end{eqnarray*}
+
+
+On pose pour tout $k \in \llbracket 0, p - 2 \rrbracket$,
+\[ c_k = \underset{j = k}{\overset{p - 2}{\sum}} b_j (- 1)^k \left(
+   \begin{array}{c}
+     j\\
+     k
+   \end{array} \right) \in \mathbb{Z} \]
+
+
+On a alors
+\[ p \theta = \underset{k = 0}{\overset{p - 2}{\sum}} c_k \lambda^k \]
+$\text{}$
+
+CQFD.
+
+\
+
+Montrons que, pour tout $k \in \llbracket 0, p - 2 \rrbracket$,
+\[ b_k = \underset{l = k}{\overset{p - 2}{\sum}} (- 1)^l \left(
+   \begin{array}{c}
+     l\\
+     k
+   \end{array} \right) c_l \]
+
+
+On a :
+\begin{eqnarray*}
+  \underset{k = 0}{\overset{p - 2}{\sum}} b_k \zeta^k & = & p \underset{k =
+  0}{\overset{p - 2}{\sum}} a_k \zeta^k\\
+  & = & p \theta\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} c_k \lambda^k\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} c_k (1 - \zeta)^k\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} \tmmathbf{} \underset{j =
+  0}{\overset{k}{\sum}} c_k (- 1)^j \left( \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \zeta^j\\
+  & = & \underset{k = 0}{\overset{p - 2}{\sum}} \tmmathbf{} \underset{l =
+  k}{\overset{p - 2}{\sum}} c_l (- 1)^l \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \zeta^k
+\end{eqnarray*}
+
+
+Avec $(1, \zeta, \ldots, \zeta^{p - 2})$ est $\mathbb{Q}$-libre, alors pour
+tout $k \in \llbracket 0, p - 2 \rrbracket$,
+\[ b_k = \underset{l = k}{\overset{p - 2}{\sum}} c_l (- 1)^l \left(
+   \begin{array}{c}
+     l\\
+     k
+   \end{array} \right) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{7.b.iii.} D'apr{\`e}s la question 1.b.ii de cette partie, on a :
+\begin{eqnarray*}
+  p & = & N (1 - \zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \sigma_k (1 - \zeta)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} (1 - \zeta^k)\\
+  & = & \underset{k = 1}{\overset{p - 1}{\prod}} \left[ (1 - \zeta)
+  \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j \right]\\
+  & = & (1 - \zeta)^{p - 1} \underset{k = 1}{\overset{p - 1}{\prod}} \left(
+  \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j \right)\\
+  & = & \lambda^{p - 1} \underset{k = 1}{\overset{p - 1}{\prod}} \left(
+  \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j \right)
+\end{eqnarray*}
+
+
+Avec
+\[ \beta = \underset{k = 1}{\overset{p - 1}{\prod}} \left( \underset{j =
+   0}{\overset{k - 1}{\sum}} \zeta^j \right) \in \mathbb{Z} [\zeta] \]
+
+
+Montrons maintenant que $p | c_0 \nobracket$. On a :
+\begin{eqnarray*}
+  c_0 & = & p \theta - \underset{k = 1}{\overset{p - 2}{\sum}} c_k \lambda^k\\
+  & = & \beta \lambda^{p - 1} - \lambda \underset{k = 1}{\overset{p -
+  2}{\sum}} c_k \lambda^{k - 1}
+\end{eqnarray*}
+
+
+Donc,
+\begin{eqnarray*}
+  c^{p - 1}_0 & = & N (c_0)\\
+  & = & N \left( \lambda \left( \beta \lambda^{p - 2} - \underset{k =
+  1}{\overset{p - 2}{\sum}} c_k \lambda^{k - 1} \right) \right)\\
+  & = & N (\lambda) N \left( \beta \lambda^{p - 2} - \underset{k =
+  1}{\overset{p - 2}{\sum}} c_k \lambda^{k - 1} \right)\\
+  & = & p N \left( \beta \lambda^{p - 2} - \underset{k = 1}{\overset{p -
+  2}{\sum}} c_k \lambda^{k - 1} \right)
+\end{eqnarray*}
+
+
+Avec $N \left( \beta \lambda^{p - 2} - \underset{k = 1}{\overset{p - 2}{\sum}}
+c_k \lambda^{k - 1} \right) \in \mathbb{Z}$, donc $p | c^{p - 1}_0
+\nobracket$, et comme $p$ est premier, alors $p | c_0 \nobracket$.
+
+\
+
+Passons maintenant {\`a} montrer que $p | c_k \nobracket $pour tout $k \in
+\llbracket 0, p - 2 \rrbracket$.
+
+Montrons ce r{\'e}sultat par r{\'e}currence fini sur $k \in \llbracket 0, p -
+2 \rrbracket$.
+
+\tmtextbf{Pour $k = 0$,} c'est d{\'e}j{\`a} fait !
+
+Soit $\tmmathbf{k \in \llbracket 0, p - 3 \rrbracket}$, supposons que le
+r{\'e}sultat est vrai pour $1, 2, \ldots, k$ et montrons-le pour $k + 1$.
+
+On a :
+\begin{eqnarray*}
+  c_{k + 1} \lambda^{k + 1} & = & p \left( \theta - \underset{l =
+  0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l \right) - \lambda^{k + 2}
+  \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k - 2}
+\end{eqnarray*}
+
+
+\
+
+Avec pour tout $l \in \llbracket 1, p - 2 \rrbracket$,
+\begin{eqnarray*}
+  c_{k + 1} p^{k + 1} & = & c_{k + 1} N (\lambda^{k + 1})\\
+  & = & N (c_{k + 1} \lambda^{k + 1})\\
+  & = & N \left( \beta \lambda^{^{p + 1}} \left( \theta - \underset{l =
+  0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l \right) - \lambda^{k + 2}
+  \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k - 2}
+  \right)\\
+  & = & N \left( \lambda^{k + 2} \left[ \beta \lambda^{^{p - k - 1}} \left(
+  \theta - \underset{l = 0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l \right)
+  - \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k - 2}
+  \right] \right)\\
+  & = & N (\lambda^{k + 2}) N \left( \left[ \beta \lambda^{^{p - k - 1}}
+  \left( \theta - \underset{l = 0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l
+  \right) - \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k -
+  2} \right] \right)\\
+  & = & p^{k + 2} N \left( \left[ \beta \lambda^{^{p - k - 1}} \left( \theta
+  - \underset{l = 0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l \right) -
+  \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k - 2} \right]
+  \right)
+\end{eqnarray*}
+
+
+Donc,
+\[ c_{k + 1} = p  N \left( \left[ \beta \lambda^{^{p - k - 1}} \left( \theta -
+   \underset{l = 0}{\overset{k}{\sum}} \frac{c_l}{p} \lambda^l \right) -
+   \underset{l = k + 2}{\overset{p - 2}{\sum}} c_l \lambda^{l - k - 2} \right]
+   \right) \]
+
+
+Ainsi, $p | c_{k + 1} \nobracket$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\subsubsection*{IV Le th{\'e}or{\`e}me de Fermat pour$p = 3$}
+
+\
+
+\tmtextbf{1.} On a $3 \not{| \nobracket} x y z$, en particulier \ $3 \not{|
+\nobracket} x$, donc $x \equiv 1 [3]$ ou $x \equiv - 1 [3]$.
+
+Si $x \equiv 1 [3]$, on a :
+\[ (x - 1)^3 = x^3 + 3 (x - x^2) - 1 \]
+
+
+Avec $9 | (x - 1)^3 \nobracket$ et $9 | 3 (x - x^2) \nobracket$, donc
+\[ x^3 \equiv 1 [9] \]
+
+
+De m{\^e}me, si $x \equiv - 1 [3]$, on a :
+\[ (x + 1)^3 = x^3 + 3 (x^2 + x ) + 1 \]
+
+
+Avec $9 | (x - 1)^3 \nobracket$ et $9 | 3 (x^2 + x ) \nobracket$, donc
+\[ x^3 \equiv - 1 [9] \]
+
+
+De m{\^e}me, on obtient :
+\[ y^3 \equiv 1 [9] \infixor y^3 \equiv - 1 [9] \]
+
+
+et
+\[ z^3 \equiv 1 [9] \infixor z^3 \equiv - 1 [9] \]
+
+
+Avec
+\[ x^3 = - (y^3 + z^3) \]
+
+
+Donc, modulo 9, on a les possibilit{\'e}s suivantes :
+\[ 1 \equiv - 2 [9] \infixor 1 \equiv 0 [9] \infixor 1 \equiv 2 [9] \infixor -
+   1 \equiv - 2 [9] \infixor - 1 \equiv 0 [9] \infixor 1 \equiv 2 [9] \]
+
+
+Ce qui est absurde !
+
+\
+
+\tmtextbf{2.} On a :
+\begin{eqnarray*}
+  \lambda^2 & = & (1 - j)^2\\
+  & = & 1 - 2 j + j^2\\
+  & = & (1 + j + j^2) - 3 j\\
+  & = & - 3 j
+\end{eqnarray*}
+
+
+D'apr{\`e}s \tmtextbf{la question 2.c de la partie $I$}, on sait que $- j \in
+\mathbb{Z} [j]^{\times}$.
+
+Ainsi,
+\[ 3 \sim \lambda^2 \]
+
+
+\tmtextbf{3.} Soit $s \in \mathbb{Z}[j]$ tel que $s \neq 0 (\tmop{mod} <
+\lambda >)$. Montrons qu'il existe $\varepsilon \in \{\nonconverted{minus} 1,
++ 1\}$ tel que $s^3 = \varepsilon (\tmop{mod} < \lambda >)$.
+
+\
+
+Suivant l'indication, montrons qu'il existe $\varepsilon \in \{ - 1, 1 \}$
+tel que $s = \varepsilon (\tmop{mod} < \lambda  >)$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $\lambda^2 \sim 3$ dans
+$\mathbb{Z} [j]$.
+
+Il existe $a, b \in \mathbb{Z}$ tels que $s = a + j b $.
+
+Donc :
+\begin{eqnarray*}
+  s & = & a - 2 b + 3 j b\\
+  & = & a - 2 b (\tmop{mod} < \lambda >)\\
+  & = & \varepsilon (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+O{\`u} $\varepsilon \in \{ - 1, 0, 1 \}$ est obtenu {\`a} partir de la
+division euclidienne de $a - 2 b$ par $3$.
+
+Puisque $s \neq 0 (\tmop{mod} < \lambda >)$, on a alors $\varepsilon \in \{ -
+1, 1 \}$.
+
+Il existe donc $\chi \in \mathbb{Z} [j]$ tel que : $s - \varepsilon = \chi
+\lambda$.
+
+Ainsi,
+\begin{eqnarray*}
+  s^3 - \varepsilon & = & s^3 - \varepsilon^3\\
+  & = & (s - \varepsilon)^3 + 3 \varepsilon s^2 - 3 s\\
+  & = & \chi^3 \lambda^3 + 3 \varepsilon s (s - \chi)\\
+  & = & \chi^3 \lambda^3 - j^2 \lambda^2 \varepsilon (\chi \lambda +
+  \varepsilon) \chi \lambda\\
+  & = & \chi^3 \lambda^3 - j^2 \lambda^3 \varepsilon (\chi \lambda +
+  \varepsilon) \chi\\
+  & = & \chi  \lambda^3 (\chi^2 - j^2 \varepsilon (\chi \lambda +
+  \varepsilon))\\
+  & = & \chi \lambda^3 (\chi^2 - j^2 \varepsilon \nobracket \chi \lambda -
+  j^2) \nobracket
+\end{eqnarray*}
+
+
+D'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a l'existence de $\varepsilon' \in \{ -
+1, 1 \}$ tel que $\chi = \varepsilon'  (\tmop{mod} < \lambda >)$.
+
+\
+
+Ainsi, on a, modulo $< \lambda >$
+\begin{eqnarray*}
+  \chi^2 - j^2 \varepsilon \chi \lambda - j^2 & = & {\varepsilon'}^2 - j^2
+  \varepsilon \chi \lambda - j^2  (\tmop{mod} < \lambda >)\\
+  & = & \lambda [(1 + j) - j^2 \varepsilon \chi] (\tmop{mod} < \lambda >)\\
+  & = & 0 (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+Ainsi, il existe $\mu \in \mathbb{Z} [j]$ tel que
+\[ \chi^2 - j^2 \varepsilon \chi \lambda - j^2 = \mu \lambda \]
+
+
+Par suite,
+\begin{eqnarray*}
+  s^3 - \varepsilon & = & \chi \mu \lambda^4\\
+  & = & 0 (\tmop{mod} < \lambda^4 >)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{4.} Supposons que $(P_n)$ est v{\'e}rifi{\'e}e pour un quadruplet
+$(\alpha, \beta, \delta, \omega)$.
+
+Montrons que $n \geqslant 2$.
+
+On a
+\[ z = \mu \lambda^n \]
+
+
+Donc
+\[ \alpha^3 + \beta^3 + \omega \delta^3 \lambda^{3 n} = 0 \]
+
+
+Et on a
+\[ \lambda \not{| \nobracket} \alpha \beta \delta \]
+
+
+Donc  $\lambda \not{| \nobracket} \alpha$, $\lambda \not{| \nobracket} \beta$
+et $\lambda \not{| \nobracket} \delta$.
+
+Ainsi, $\alpha \neq 0 (\tmop{mod} < \lambda >)$, $\beta \neq 0 (\tmop{mod} <
+\lambda >)$ et $\delta \neq 0 (\tmop{mod} < \lambda >)$.
+
+En utilisant la question 3 de cette partie, on a l'existence de
+$\varepsilon_1, \varepsilon_2, \varepsilon_3 \in \{ - 1, 1 \}$ tels que :
+\[ \left\{\begin{array}{l}
+     \begin{array}{c}
+       \alpha^3 = \varepsilon_1 (\tmop{mod} < \lambda^4 >) \text{}\\
+       \beta^3 = \varepsilon_1 (\tmop{mod} < \lambda^4 >)\\
+       \delta^3 = \varepsilon_1 (\tmop{mod} < \lambda^4 >)
+     \end{array}
+   \end{array}\right. \]
+
+
+Donc
+\begin{eqnarray*}
+  \omega \delta^3 \lambda^{3 n} & = & - (\alpha^3 + \beta^3)\\
+  & = & - (\varepsilon_1 + \varepsilon_2) \quad (\tmop{mod} < \lambda^4 >)
+\end{eqnarray*}
+
+
+Avec $\alpha \wedge \beta = 1$, alors $\varepsilon_1 \neq \varepsilon_2$, avec
+$\varepsilon_1, \varepsilon_2 \in \{ - 1, 1 \}$, on a alors $\varepsilon_1 +
+\varepsilon_2 = 0$.
+
+Par suite,
+\[ \begin{array}{lll}
+     \omega \delta^3 \lambda^{3 n} & = & 0 \quad (\tmop{mod} < \lambda^4 >)
+   \end{array} \]
+
+
+Autrement dit
+\[ \lambda^4 | \nobracket \omega \delta^3 \lambda^{3 n} \]
+
+
+Avec $\omega \in \mathbb{Z} [j]^{\times}$, donc il existe $u = a + j b \in
+\mathbb{Z} [j]^{\times}$ tel que $\omega (a + j b) = 1$.
+
+Ainsi,
+\[ (a + b) . \omega - (b \omega) \lambda = 1 \]
+
+
+D'apr{\`e}s le th{\'e}or{\`e}me de B{\'e}zout, on a $\lambda \wedge \omega =
+1$, donc $\lambda^4 \wedge \omega = 1$.
+
+Par cons{\'e}quent, \ via le lemme de Gauss, on a :
+\[ \lambda^4 | \nobracket \delta^3 \lambda^{3 n} \]
+
+
+D'autre part, on a
+\[ \delta^3 = \varepsilon_1 (\tmop{mod} < \lambda^4 >) \]
+
+
+Donc, il existe $t \in \mathbb{Z} [j]$ tel que $\delta^3 = \varepsilon_1 + t
+\lambda^4$.
+
+Ainsi,
+\[ \varepsilon_1 \delta^3 - (\varepsilon_1 t) \lambda^4 = 1 \]
+
+
+D'apr{\`e}s le th{\'e}or{\`e}me de B{\'e}zout, on a $\delta^3 \wedge \lambda^4
+= 1$. Le lemme da Gauss assure que :
+\[ \lambda^4 | \nobracket \lambda^{3 n} \]
+
+
+{\'E}tant donn{\'e} que $\lambda$ est non inversible, on en d{\'e}duit $3 n
+\geqslant 4$. Comme $n \in \mathbb{N}$, alors $n \geqslant 2$.
+
+D'o{\`u} le r{\'e}sulltat.
+
+\
+
+\tmtextbf{5.} On a
+\[ \begin{array}{lll}
+     - \omega \delta^3 \lambda^{3 n} & = & \alpha^3 + \beta^3
+   \end{array} \]
+
+
+Avec $\lambda \not{| \nobracket} \alpha \beta \delta$, en particulier $\beta
+\neq 0$.
+
+On a alors
+\begin{eqnarray*}
+  \begin{array}{l}
+    - \omega \delta^3 \lambda^{3 n}
+  \end{array} & = & \alpha^3 + \beta^3\\
+  & = & (- \beta)^3 \left[ \left( \frac{\alpha}{- \beta} \right)^3 - 1^3
+  \right]
+\end{eqnarray*}
+
+
+En utilisant la factorisation :
+\[ X^3 - 1 = (X - 1) (X - j) (X - j^2) \]
+
+
+(Car les racines cubiques de l'unit{\'e} sont exactement $1, j$ et $j^2$).
+
+Alors,
+\begin{eqnarray*}
+  \begin{array}{l}
+    - \omega \delta^3 \lambda^{3 n}
+  \end{array} & = & \alpha^3 + \beta^3\\
+  & = & (- \beta)^3 \left[ \left( \frac{\alpha}{- \beta} \right)^3 - 1^3
+  \right]\\
+  & = & (- \beta)^3 \left( \frac{\alpha}{- \beta} - 1 \right) \left(
+  \frac{\alpha}{- \beta} - j \right) \left( \frac{\alpha}{- \beta} - j^2
+  \right)\\
+  & = & (\alpha + \beta) (\alpha + j \beta) \left( \alpha + j^2 \beta \right)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{Remarque.}
+
+\tmcolor{red}{} On peut commencer par d{\'e}velopper le terme {\`a} droite, et
+on obtient :
+
+
+\begin{eqnarray*}
+  (\alpha + \beta) (\alpha + j \beta) \left( \alpha + j^2 \beta \right) & = &
+  \alpha^3 + j^2 \alpha^2 \beta - j^2 \alpha^2 \beta - j  \alpha  \beta^2 + j 
+  \alpha  \beta^2 + \beta^3\\
+  & = & \alpha^3 + \beta^3\\
+  & = & - \omega \delta^3 \lambda^{3 n}
+\end{eqnarray*}
+
+
+\tmtextbf{5.b.} D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $\lambda  |
+\nobracket (\alpha + \beta) (\alpha + j \beta) \left( \alpha + j^2 \beta
+\right)$.
+
+Comme $N (\lambda) = 3$ qui est un nombre premier, alors, d'apr{\`e}s la
+question 3.b de la partie 3, on a $\lambda$ est irr{\'e}ductible.
+
+Donc $\lambda  | \nobracket \alpha + \beta$ ou $\lambda  | \nobracket \alpha +
+j \beta$ ou $\lambda  | \nobracket \alpha + j^2 \beta$.
+
+Il existe donc $i_0 \in \{ 0, 1, 2 \}$ tel que $\lambda  | \nobracket {\alpha
++ j^{i_0}}^{} \beta$.
+
+Soit $k \in \{ 0, 1, 2 \}$, on a :
+\begin{eqnarray*}
+  \alpha + j^k \beta & = & \alpha {+ j^{i_0}}^{} \beta + \left( j^k {-
+  j^{i_0}}^{} \right) \beta\\
+  & = & \alpha {+ j^{i_0}}^{} \beta + \varepsilon_{k, i_0} j^{\min (k, i_0)}
+  (j^{\max (k, i_0)} - 1) \beta
+\end{eqnarray*}
+
+
+avec
+\[ \varepsilon_{k, i_0} = \tmop{sgn} (k - i_0) \in \{ - 1, 0, 1 \} \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  \alpha + j^k \beta & = & \alpha {+ j^{i_0}}^{} \beta + \varepsilon_{k, i_0}
+  j^{\min (k, i_0)} (j  - 1) \beta \left( \underset{l = 0}{\overset{\max (k,
+  i_0) - 1}{\sum}} j^l \right)\\
+  & = & \alpha {+ j^{i_0}}^{} \beta - \lambda \varepsilon_{k, i_0} j^{\min
+  (k, i_0)} \beta \left( \underset{l = 0}{\overset{\max (k, i_0) - 1}{\sum}}
+  j^l \right)
+\end{eqnarray*}
+
+
+Puisque
+\[ \lambda \left| \alpha {+ j^{i_0}}^{} \beta \right. \infixand \lambda |
+   \nobracket \lambda \varepsilon_{k, i_0} j^{\min (k, i_0)} \beta \left(
+   \underset{l = 0}{\overset{\max (k, i_0) - 1}{\sum}} j^l \right) \]
+
+
+alors
+\[ \lambda | \nobracket \alpha {+ j^{i_0}}^{} \beta - \lambda \varepsilon_{k,
+   i_0} j^{\min (k, i_0)} \beta \left( \underset{l = 0}{\overset{\max (k, i_0)
+   - 1}{\sum}} j^l \right) = \alpha + j^k \beta \]
+
+
+Cela est vrai pour $k = 0, 1, 2$.
+
+D'o{\`u}
+\[ \lambda  | \nobracket \alpha + \beta \infixand \lambda  | \nobracket
+   \alpha + j \beta \infixand \lambda  | \nobracket \alpha + j^2 \beta \]
+
+
+\tmtextbf{5.c.} Montrons que $\lambda$ est un \tmtextbf{pgcd} de $\alpha +
+\beta$ et $\alpha + j \beta$.
+
+Notons $d$ un pgcd de $\alpha + \beta$ et $\alpha + j \beta$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, $\lambda  | \nobracket \alpha +
+\beta \infixand \lambda  | \nobracket \alpha + j \beta$.
+
+En particulier,
+\[ \lambda | d \nobracket \]
+
+
+Et
+\[ d | \lambda \beta = (\alpha + \beta) - (\alpha + j \beta) \nobracket \]
+
+
+Alors
+\[ d | \lambda \nobracket \]
+
+
+Ainsi, $d$ et $\lambda$ sont associ{\'e}s, d'o{\`u} $\lambda$ est un pgcd de
+$\alpha + \beta$ et $\alpha + j \beta$.
+
+\
+
+De la m{\^e}me mani{\`e}re, on peut montrer facilemet que $\lambda$ est aussi
+un pgcd de $\alpha + \beta$ et $\alpha + j^2 \beta$ (respectivement de $\alpha
++ j \beta$ et $\alpha + j^2 \beta$).
+
+Notons
+\[ \left\{\begin{array}{l}
+     \begin{array}{c}
+       \alpha + \beta = \lambda^{m_1} r_1\\
+       \alpha + j  \beta = \lambda^{m_2} r_2\\
+       \alpha + j^2 \beta = \lambda^{m_3} r_3
+     \end{array}
+   \end{array}\right. \]
+
+
+Avec $\lambda \not{| \nobracket} r_1$, $\lambda \not{| \nobracket} r_2$ et
+$\lambda \not{| \nobracket} r_3$. et $m_1, m_2, m_3 \geqslant 1$ des entiers
+qui repr{\'e}sentent respectivement la valuation $\lambda$-adique de $\alpha +
+\beta$, $\alpha + j \beta$ et $\alpha + j^2 \beta$.
+
+D'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a
+\[ \left\{\begin{array}{l}
+     \begin{array}{c}
+       \min (m_1, m_2) = 1\\
+       \min (m_2, m_3) = 1\\
+       \min (m_3, m_1) = 1
+     \end{array}
+   \end{array}\right. \]
+
+
+Donc, forc{\'e}ment, deux des entiers $m_1, m_2, m_3$ sont inf{\'e}rieurs ou
+{\'e}gaux {\`a} 1.
+
+Par sym{\'e}trie (il suffit de remplacer $\beta$ par $j \beta$ ou $j^2
+\beta$), on peut supposer que $m_1, m_2 \leqslant 1$.
+
+Or, comme $m_1, m_2 \geqslant 1$, alors $m_1 = m_2 = 1$.
+
+Avec
+\[ \lambda^4 | \nobracket - \omega \delta^3 \lambda^{3 n} = (\alpha + \beta)
+   (\alpha + j \beta) \left( \alpha + j^2 \beta \right) = \lambda^{m_1 + m_2 +
+   m_3} r_1 r_2 r_3 \]
+
+
+Comme $\lambda \not{| \nobracket } r_1 $et $\lambda \not{| \nobracket } r_2$
+et $\lambda \not{| \nobracket } r_3$ et $\lambda$ est irr{\'e}ductible, alors
+$\lambda \wedge r_1 r_2 r_3 = 1$.
+
+Par suite,
+\[ m_1 + m_2 + m_3 \geqslant 4 \]
+
+
+Donc $m_3 \geqslant 2$.
+
+D'o{\`u} $\lambda^{^2}$ divise $\alpha + j^2 \beta$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.d.} On a
+
+
+\[ \begin{array}{lll}
+     \begin{array}{l}
+       - \omega \delta^3 \lambda^{3 n}
+     \end{array} & = & (\alpha + \beta) (\alpha + j \beta) \left( \alpha + j^2
+     \beta \right)\\
+     & = & \lambda^{3 n} \kappa_1 \kappa_2 \kappa_3
+   \end{array} \]
+
+
+Avec $\lambda \neq 0$, alors
+\[ \begin{array}{lll}
+     \begin{array}{l}
+       - \omega \delta^3
+     \end{array} & = & \kappa_1 \kappa_2 \kappa_3
+   \end{array} \]
+
+
+Montrons l'existence de $\gamma_l \in \mathbb{Z} [j]$ tel que $\kappa_l \sim
+\gamma_l^3$ pour tout $l \in \{ 1, 2, 3 \}$.
+
+Soit $l \in \{ 1, 2, 3 \}$. Comme $\mathbb{Z} [j]$ est un anneau principal,
+alors il existe $p_{1, l}, \ldots, p_{m_l, l} \in \mathbb{Z} [j]$ des
+irr{\'e}ductibles deux {\`a} deux distincts, et $\eta_{1, l}, \ldots, \eta_{l 
+m_l, l} \in \mathbb{N}^{\ast}$ et $\omega_l \in \mathbb{Z} [j]^{\times}$ tels
+que :
+\[ \kappa_l = \omega_l \underset{s = 1}{\overset{m_l}{\prod}} p^{\eta_{s,
+   l}}_{s, l}, \quad \tmop{pour} \tmop{tout} l \in \{ 1, 2, 3 \} \]
+
+
+Via la question pr{\'e}c{\'e}dente, on a $\lambda$ est un pgcd de $\alpha +
+\beta$ et $\alpha + j \beta$ (respectivement de $\alpha + j \beta$, $\alpha +
+j^2 \beta$, $\alpha + j^2 \beta$ et $\alpha + \beta$).
+
+Donc $\kappa_1 \infixand \kappa_2$ (respectivement $\kappa_2 \infixand
+\kappa_3$, et $\kappa_1$) sont premiers entre eux.
+
+Ainsi, $p_{1, 1}, \ldots, p_{m_1, 1}, p_{1, 2}, \ldots, p_{m_2, 2}, p_{1, 3},
+\ldots, p_{m_3, 3}$ sont deux {\`a} deux distincts.
+
+Et on a :
+\begin{eqnarray*}
+  - \omega \delta^3 & = & \kappa_1 \kappa_2 \kappa_3\\
+  & = & \underset{l = 1}{\overset{3}{\prod}} \left( \omega_l \underset{s =
+  1}{\overset{m_l}{\prod}} p^{\eta_{s, l}}_{s, l} \right)\\
+  & = & \omega_1 \omega_2 \omega_3 \underset{l = 1}{\overset{3}{\prod}}
+  \underset{s = 1}{\overset{m_l}{\prod}} p^{\eta_{s, l}}_{s, l}
+\end{eqnarray*}
+
+
+Notons $\delta = \vartheta \underset{s = 1}{\overset{m}{\prod}} p^{\tau_s}_s$
+la d{\'e}composition en produit d'irr{\'e}ductibles de $\delta$.
+
+Avec $\vartheta \in \mathbb{Z} [j]^{\times}$, et $p_1, \ldots, p_m$ des
+irr{\'e}ductibles deux {\`a} deux distincts et $\tau_1, \ldots, \tau_m \in
+\mathbb{N}^{\ast}$.
+
+On a alors :
+\[ - \omega \vartheta^3 \underset{s = 1}{\overset{m}{\prod}} p^{3 \tau_s}_s =
+   \omega_1 \omega_2 \omega_3 \underset{l = 1}{\overset{3}{\prod}} \underset{s
+   = 1}{\overset{m_l}{\prod}} p^{\eta_{s, l}}_{s, l} \]
+
+
+Par l'unicit{\'e} de la d{\'e}composition en facteurs irr{\'e}ductibles, on a
+forc{\'e}ment $3$ divise $\eta_{s, l}$ pour tout $l \in \{ 1, 2, 3 \}$ et \ $s
+\in \llbracket 1, m_l \rrbracket$.
+
+Notons p$\tmop{our} \tmop{tout} l \in \{ 1, 2, 3 \}  \infixand s \in
+\llbracket 1, m_l \rrbracket$ :
+\[ \varsigma_{s, l} = \frac{\eta_{s, l}}{3} \in \mathbb{N}^{\ast} \]
+
+
+On a alors, pour $\tmop{tout} l \in \{ 1, 2, 3 \}$,
+\[ \kappa_{l =} \omega_l \left( \underset{s = 1}{\overset{m_l}{\prod}}
+   p^{\varsigma_{s, l}}_{s, l} \right)^3 \]
+
+
+Donc, pour tout $l \in \{ 1, 2, 3 \}$, on a
+\[ \kappa_l \sim \gamma_l^3 \]
+
+
+Avec
+\[ \gamma_l^3 = \underset{s = 1}{\overset{m_l}{\prod}} p^{\varsigma_{s,
+   l}}_{s, l} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.e.} Montrons qu'il existe deux inversibles $\tau$ et $\tau'$ de
+$\mathbb{Z} [j]^{\times}$ tels que
+\[ \gamma^3_2 + \tau \gamma^3_3 + \tau' \lambda^{3 (n - 1)} \gamma^3_1 = 0 \]
+
+
+Essayons de d{\'e}tailler la question tout en profitant des r{\'e}sultats
+obtenus pr{\'e}c{\'e}demment.
+
+\
+
+Puisque pour tout $l \in \{ 1, 2, 3 \}$, on a $\kappa_l \sim \gamma^3_l$,
+donc il existe $a_l \in \mathbb{Z} [j]^{\times}$ tel que: $\kappa_l = a_l
+\gamma^3_l$.
+
+Ainsi,
+\[ \left\{\begin{array}{l}
+     \alpha + \beta = \lambda^{3 n - 2} a_1 \gamma^3_1\\
+     \alpha + j \beta = \lambda a_2 \gamma^3_2\\
+     \alpha + j^2 \beta = \lambda a_3 \gamma^3_3
+   \end{array}\right. \]
+
+
+Il s'agit de trouver un triplet $(a, b, c) \in \mathbb{Z} [j]^{\times} \times
+\mathbb{Z} [j]^{\times} \times \mathbb{Z} [j]^{\times}$, tel que :
+\[ a \gamma^3_2 + b \gamma^3_3 + c \lambda^{3 (n - 1)} \gamma^3_1 = 0. \]
+
+
+Cela {\'e}quivaut {\`a} trouver $(a, b, c) \in \mathbb{Z} [j]^{\times} \times
+\mathbb{Z} [j]^{\times} \times \mathbb{Z} [j]^{\times}$, tel que :
+\[ a (\alpha + \beta) + b (\alpha + j \beta) + c (\alpha + j^2 \beta) = 0 \]
+
+
+Il suffit alors de trouver  $(a, b, c) \in \mathbb{Z} [j]^{\times} \times
+\mathbb{Z} [j]^{\times} \times \mathbb{Z} [j]^{\times}$, tel que :
+\[ \left\{\begin{array}{l}
+     a + b + c = 0\\
+     a + j b + j^2 c = 0
+   \end{array}\right. \]
+
+
+Le triplet $(a, b, c) = (j^2, 1, j)$ convient.
+
+Ainsi,
+\[ \lambda a_2 \gamma^3_2 + \lambda j a_3 \gamma^3_3 + j^2 a_1 \lambda^{3 n -
+   2} \gamma^3_1 = 0 \]
+
+
+Par suite,
+\[ \gamma^3_2 + j a^{- 1}_2 a_3 \gamma^3_3 + j^2 a^{- 1}_2 a_1 \lambda^{3 (n -
+   1)} \gamma^3_1 = 0 \]
+
+
+D'o{\`u} le r{\'e}sultat pour $\tau = j a^{- 1}_2 a_3$, et $\tau' = j^2 a^{-
+1}_2 a_1$.
+
+\
+
+\tmtextbf{5.f.} Si $\tau = \pm 1$, montrons que $(P_{n - 1})$ est
+v{\'e}rifi{\'e}e.
+
+On a :
+\[ \gamma^3_2 + (\tau \gamma _3)^3 + \lambda^{3 (n - 1)} \gamma^3_1 = 0 \]
+
+
+Avec $\lambda \not{| \nobracket} \omega \delta^3 = \kappa_1 \kappa_2 \kappa_3$
+et $\kappa_l \sim \gamma_l^3$ pour $l \in \{ 1, 2, 3 \}$, donc $\lambda \not{|
+\nobracket} (\gamma _1 \gamma _2 \gamma _3)^3$.
+
+Or, $\lambda$ est irr{\'e}ductible dans $\mathbb{Z} [j]$, car $N (\lambda) =
+3$ est premier.
+
+Donc $\lambda \not{| \nobracket} \gamma _1 \gamma _2 \gamma _3 $.
+
+De plus, on a :
+\[ \left\{\begin{array}{l}
+     \begin{array}{c}
+       \alpha + j  \beta = \lambda  \kappa_2\\
+       \alpha + j^2 \beta = \lambda  \kappa_3
+     \end{array}
+   \end{array}\right. \]
+
+
+Donc :
+\begin{eqnarray*}
+  \lambda \alpha & = & (\alpha + j^2 \beta) - j (\alpha + j \beta)\\
+  & = & \lambda \kappa_3 - j \lambda \kappa_2
+\end{eqnarray*}
+
+
+Ainsi :
+\[ \alpha = \kappa_3 - j \kappa_2 \]
+
+
+De m{\^e}me, on trouve :
+\[ \beta = j^2 (\kappa_2 - \kappa_3) \]
+
+
+Soit $d$ un PGCD de $\kappa_2$ et $\kappa_3$, alors $d$ divise {\`a} la fois
+$\kappa_3 - j \kappa_2 = \alpha$ et $j^2 (\kappa_2 - \kappa_3) = \beta$.
+
+Donc $d$ est un PGCD de $\alpha$ et $\beta$.
+
+Or, $\alpha$ et $\beta$ sont premier entre eux, alors $d$ est inversible.
+
+Par suite, $\kappa_2$ et $\kappa_3$ sont premiers entre eux.
+
+D'apr{\`e}s ce qui pr{\'e}c{\'e}de, $(\kappa_1, \kappa_2, \kappa_3)$
+v{\'e}rifie $(P_{n - 1})$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.g.} Montrons que $\tau = \pm 1 (\tmop{mod} \langle \lambda^3
+\rangle)$.
+
+D'apr{\`e}s la question 5.e de cette partie, on a :
+\[ \gamma^3_2 {{+ \tau \gamma_3^3}  }  + \lambda^{3 (n - 1)} \gamma^3_1 = 0 \]
+
+
+Avec $n \geqslant 2$, alors modulo $\langle \lambda^3 \rangle$, on a :
+\[ \gamma^3_2 {{+ \tau \gamma_3^3}  }  = 0 (\tmop{mod} \langle \lambda^3
+   \rangle) \]
+
+
+Avec $\lambda \not{| \nobracket} \gamma_2, \gamma_3$, d'apr{\`e}s la qustion 3
+de cette partie, on a l'existence de $\varepsilon_2, \varepsilon_3 \in \{ - 1,
+1 \}$ tels que :
+\[ \left\{\begin{array}{l}
+     \gamma^3_{ 2} = \varepsilon_2  (\tmop{mod} \langle \lambda^4 \rangle)\\
+     \gamma^3_{ 3} = \varepsilon_3  (\tmop{mod} \langle \lambda^4 \rangle)
+   \end{array}\right. \]
+
+
+En particulier,
+\[ \left\{\begin{array}{l}
+     \gamma^3_{ 2} = \varepsilon_2  (\tmop{mod} \langle \lambda^4 \rangle)\\
+     \gamma^3_{ 3} = \varepsilon_3  (\tmop{mod} \langle \lambda^4 \rangle)
+   \end{array}\right. \]
+
+
+Ainsi,
+\[ \varepsilon_2 + \varepsilon_3 \tau = 0 (\tmop{mod} \langle \lambda^3
+   \rangle) \]
+
+
+D'o{\`u}
+\[ \tau = \pm 1 (\tmop{mod} \langle \lambda^3 \rangle) \]
+
+
+On peut facilement montrer que $- j, j, - j^2, j^2$ ne sont pas congrus {\`a}
+$\pm 1$ $(\tmop{mod} \langle \lambda^3 \rangle)$.
+
+Ainsi, $\tau \not{\in} \{ j, - j, j^2, - j^2 \}$.
+
+\
+
+\tmtextbf{6.} D'apr{\`e}s tout ce qu'on vu dans cette partie, on a
+\[ j \in \mathbb{Z} [j]^{\times} = \{ 1, - 1, j, - j, j^2, - j^2 \} \]
+
+
+Or, d'apr{\`e}s la question pr{\'e}c{\'e}dente, on a montr{\'e} que $\tau
+\not{\in} \{ j, - j, j^2, - j^2 \}$.
+
+D'o{\`u} $\tau = \pm 1$.
+
+Et, via la question 5.f, on en d{\'e}duit que $(P_{n - 1})$ est
+v{\'e}rifi{\'e}e.
+
+Ainsi, si $(P_n)$ est v{\'e}rifi{\'e}e, alors $n \geqslant 2$ et $(P_{n - 1})$
+est {\'e}galement v{\'e}rifi{\'e}e.
+
+Par principe de r{\'e}currence, on a $(P_1)$ est v{\'e}rifi{\'e}e et $1
+\geqslant 2$, ce qui est absurde !
+
+D'o{\`u} l'{\'e}quation $x^3 + y^3 + z^3 = 0$ n'a pas de solution $(x, y, z)
+\in \mathbb{Z}_{\ast}^3$ dans le cas o{\`u} $3 | x y z \nobracket$.
+
+\
+
+\subsubsection*{V. Le th{\'e}or{\`e}me de Fermat pour p r{\'e}gulier et $p
+\not{| \nobracket} x y z$}
+
+\
+
+\tmtextbf{1.} Montrons que
+\[ \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y \rangle =
+   \langle z^p \rangle \]
+
+
+Par d{\'e}finition, on a :
+\begin{eqnarray*}
+  &  & \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y
+  \rangle\\
+  & = & \left\{ \underset{i \in J}{\sum} \underset{k = 0}{\overset{p -
+  1}{\prod}} x_{k, i}  | \nobracket J \tmop{est} \tmop{un} \tmop{ensemble}
+  \tmop{fini}, \infixand \tmop{pour} \tmop{tout} (i, k) \in J \times
+  \llbracket 0, p - 1 \rrbracket x_{k, i} \in \langle x + \zeta^k y \rangle
+  \right\}
+\end{eqnarray*}
+
+
+Soit $t \in \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y
+\rangle$, on a alors l'existence d'un ensemble fini $J$, et une famille
+$(x_{i, k})_{(i, k) \in J \times \llbracket 0, p - 1 \rrbracket}$ tels que :
+\[ t = \underset{i \in J}{\sum} \underset{k = 0}{\overset{p - 1}{\prod}} x_{k,
+   i} \]
+
+
+Et p$\tmop{our} \tmop{tout} (i, k) \in J \times \llbracket 0, p - 1
+\rrbracket$, on a $x_{k, i} \in \langle x + \zeta^k y \rangle$.
+
+Donc, pour tout $(i, k) \in J \times \llbracket 0, p - 1 \rrbracket$, il
+existe $a_{k, i} \in \mathbb{Z} [\zeta]$ tel que $x_{k, i} = (x + \zeta^k y)
+a_{k, i}$.
+
+On a alors :
+\begin{eqnarray*}
+  t & = & \underset{i \in J}{\sum} \underset{k = 0}{\overset{p - 1}{\prod}}
+  [(x + \zeta^k y) a_{k, i}]\\
+  & = & \underset{i \in J}{\sum} \underset{k = 0}{\overset{p - 1}{\prod}} (x
+  + \zeta^k y) \underset{k = 0}{\overset{p - 1}{\prod}} a_{k, i}\\
+  & = & \underset{k = 0}{\overset{p - 1}{\prod}} (x + \zeta^k y) \underset{i
+  \in J}{\sum} \underset{k = 0}{\overset{p - 1}{\prod}} a_{k, i}
+\end{eqnarray*}
+
+
+Avec $x, y \neq 0$, on a alors :
+\begin{eqnarray*}
+  \underset{k = 0}{\overset{p - 1}{\prod}} (x + \zeta^k y) & = & (- y)^p
+  \underset{k = 0}{\overset{p - 1}{\prod}} \left( \frac{x}{- y} - \zeta^k
+  \right)\\
+  & = & (- y)^p \left( \left( \frac{x}{- y} \right)^p - 1 \right)\\
+  & = & x^p + y^p\\
+  & = & - z^p
+\end{eqnarray*}
+
+
+Donc :
+\begin{eqnarray*}
+  t & = & - z^p \underset{i \in J}{\sum} \underset{k = 0}{\overset{p -
+  1}{\prod}} a_{k, i}\\
+  & \in & \langle z^p \rangle
+\end{eqnarray*}
+
+
+D'o{\`u} :
+\[ \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y \rangle
+   \subset \langle z^p \rangle \]
+
+
+R{\'e}ciproquement, soit $u \in \langle z^p \rangle$. Alors, il existe $u' \in
+\mathbb{Z} [\zeta]$ tel que $u = z^p u'$. On a alors
+\begin{eqnarray*}
+  u & = & u' z^p\\
+  & = & - u' (x^p + y^p)\\
+  & = & - u' \underset{k = 0}{\overset{p - 1}{\prod}} (x + \zeta^k y)\\
+  & \in & \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y
+  \rangle
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \langle z^p \rangle \subset \underset{k = 0}{\overset{p - 1}{\prod}}
+   \langle x + \zeta^k y \rangle \]
+
+
+Par suite,
+\[ \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y \rangle =
+   \langle z^p \rangle \]
+
+
+\tmtextbf{2.a.} Montrons que $\lambda y \in \mathfrak{B}$.
+
+On a
+\begin{eqnarray*}
+  (x + \zeta^l y) - (x + \zeta^k y) & = & \zeta^k (\zeta^{l - k} - 1) y\\
+  & = & \zeta^k (\zeta - 1) \frac{1 - \zeta^{l - k}}{1 - \zeta} y\\
+  & = & - \lambda y \zeta^k \frac{1 - \zeta^{l - k}}{1 - \zeta}
+\end{eqnarray*}
+
+
+Donc,
+\[ \lambda y = - \frac{1}{\zeta^k} \times \frac{1 - \zeta}{1 - \zeta^{l - k}}
+   [(x + \zeta^l y) - (x + \zeta^k y)] \]
+
+
+Avec $l - k \in \llbracket 1, p - 1 \rrbracket$, et en utilisant \tmtextbf{la
+question 5.b de la partie 3}, on a :
+\[ \frac{1 - \zeta}{1 - \zeta^{l - k}} \in \mathbb{Z} [\zeta]^{\times} \]
+
+
+De plus, on a $N (\zeta^k) = 1$. Donc, via \tmtextbf{la question 3.b de la
+partie 3}, on a $\zeta^k \in \mathbb{Z} [\zeta]^{\times}$, donc
+$\frac{1}{\zeta^k} \in \mathbb{Z} [\zeta]^{\times}$. Par suite,
+\[ \frac{1}{\zeta^k} \times \frac{1 - \zeta}{1 - \zeta^{l - k}} \in \mathbb{Z}
+   [\zeta]^{\times} \]
+
+
+Donc,
+\[ \lambda y \in \langle x + \zeta^l y \rangle \cap \langle x + \zeta^k y
+   \rangle \]
+
+
+\tmtextbf{2.b.} Montrons que $y \nin \mathfrak{B}$.
+
+On sait que $\mathfrak{B}$ est premier, donc on a $\lambda \in \mathfrak{B}$
+ou $y \in \mathfrak{B}$.
+
+Par l'absurde, supposons que $y \in \mathfrak{B}$. D'apr{\`e}s la question 1
+de cette partie, on a $\mathfrak{B}$ divise{\tmem{}} $< z^p >$. En
+particulier, $z \in \mathfrak{B}$.
+
+Or, $y$ et $z$ sont premiers entre eux, donc d'apr{\`e}s le th{\'e}or{\`e}me
+de B{\'e}zout, on a l'existence de $(u, v) \in \mathbb{Z}^2$ tel que
+\[ u y + v z = 1 \]
+
+
+Ainsi, $1 \in \mathfrak{B}$, ce qui est absurde !
+
+\
+
+Montrons que $x + y \in \langle \lambda \rangle \cap \mathbb{Z}$.
+
+On a $y \nin \mathfrak{B}$, et $\mathfrak{B}$ est premier, donc $\lambda \in
+\mathfrak{B}$, ce qui implique que $< \lambda > \subset \mathfrak{B}$.
+
+Or, $< \lambda >$ est premier (d'apr{\`e}s \tmtextbf{la question 5 de la
+partie 3}).
+
+Or, pour tout $k \in \llbracket 0, p - 1 \rrbracket$, on a
+\begin{eqnarray*}
+  \zeta^k - 1 & = & \lambda \underset{j = 0}{\overset{k - 1}{\sum}} \zeta^j\\
+  & = & 0 (\tmop{mod} < \lambda >)
+\end{eqnarray*}
+
+
+Ainsi,
+\[ \zeta^k = 1 (\tmop{mod} < \lambda >) \]
+
+
+Par suite,
+\[ x + y = x + \zeta^k y (\tmop{mod} < \lambda >) \]
+
+
+Par d{\'e}finition de $\mathfrak{B}$,
+\[ x + \zeta^k y = 0 (\tmop{mod} < \lambda >) \]
+
+
+Donc,
+\[ x + y = 0 (\tmop{mod} < \lambda >) \]
+
+
+Ainsi, $x + y \in \mathbb{Z} \cap < \lambda > = p\mathbb{Z}$.
+
+Par suite ,
+\[ p | z^p = - \nobracket (x^p + y^p) = - (x + y) \underset{k = 0}{\overset{p
+   - 1}{\sum}} x^k y^{p - 1 - k} \]
+
+
+Comme $p$ est premier, alors $p | z \nobracket$, ce qui est absurde avec $p |
+x y z \nobracket .$
+
+D'o{\`u} le r{\'e}sultat souhait{\'e}.
+
+\
+
+\tmtextbf{3.} Justifions qu'il existe un id{\'e}al $I$ tel que $< x + \zeta y
+> = I^p$.
+
+D'apr{\`e}s la question 1, on a :
+\[ \underset{k = 0}{\overset{p - 1}{\prod}} \langle x + \zeta^k y \rangle =
+   \langle z^p \rangle \]
+
+
+Comme les id{\'e}aux $< x + \zeta^k y >$ sont deux {\`a} deux premiers entre
+eux (d'apr{\`e}s la question 2.a), et en vertu du th{\'e}or{\`e}me de
+d{\'e}composition unique des id{\'e}aux en produits d'id{\'e}aux premiers dans
+$\mathbb{Z} [\zeta]$, on peut conclure que cette d{\'e}composition est unique.
+
+Or, pour tout $k \in \llbracket 0, p - 1 \rrbracket$ l'id{\'e}al $\langle x +
+\zeta^k y \rangle$ est une puissance $p$-i{\`e}me d'un id{\'e}al. En
+particulier, cela est vrai pour $< x + \zeta y >$.
+
+\
+
+\tmtextbf{4.} Montrons qu'il existe $r \in \mathbb{Z}$, un r{\'e}el
+$\varepsilon$ inversible de $\mathbb{Z}[\zeta]$ et $\alpha \in
+\mathbb{Z}[\zeta]$ tels que
+\[ x + \zeta y = \zeta^r \varepsilon \alpha^p \]
+
+
+Puisque $I^p = < x + \zeta y >$ est principal, et $p$ est r{\'e}gulier. alors
+$I$ est principal.
+
+Ainsi, il existe $\alpha \in \mathbb{Z} [\zeta]$ tel que
+\[ < x + \zeta y > = < \alpha^p > \]
+
+
+En particulier, il existe $\omega \in \mathbb{Z} [\zeta]^{\times}$ tel que
+\[ x + \zeta y = u \alpha^p \]
+
+
+Or, d'apr{\`e}s \tmtextbf{la question 6 de la partie 3}, on peut {\'e}crire
+$u$ sous la forme $u = \zeta^r \varepsilon$, avec $r \in \mathbb{Z}$ et
+$\varepsilon \in \mathbb{Z} [\zeta]^{\times} \cap \mathbb{R}$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.} Montrons l'existence de $a \in \mathbb{Z}$ tel que $\alpha^p =
+a (\tmop{mod} \langle p \rangle)$.
+
+{\'E}crivons $\alpha = c + \zeta b$, o{\`u} $c, b \in \mathbb{Z}$.
+
+On a
+\begin{eqnarray*}
+  \alpha^p & = & (c + \zeta b)^p\\
+  & = & \underset{k = 0}{\overset{p}{\sum}} \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) \zeta^k b^k c^{p - k}
+\end{eqnarray*}
+
+
+Avec $p \left| \left( \begin{array}{c}
+  p\\
+  k
+\end{array} \right) \right.$, pour tout $k \in \llbracket 1, p - 1
+\rrbracket$, alors
+\[ \alpha^p = c^p + b^p  (\tmop{mod} \langle p \rangle) \]
+
+
+D'o{\`u} le r{\'e}sultat. (on pose $a = c^p + b^p \in \mathbb{Z}$)
+
+Montrons maintenant que
+\[ x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} = 0
+   (\tmop{mod} \langle p \rangle) \]
+
+
+On a
+\begin{eqnarray*}
+  x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} & = &
+  (\zeta^{- r} - \zeta^r) (x + \zeta y)\\
+  & = & (\zeta^{- r} - \zeta^r) \zeta^r \varepsilon \alpha^p\\
+  & = & (1 - \zeta^{2 r})  \varepsilon \alpha^p\\
+  & = & (1 - \zeta^{2 r})  \varepsilon a (\tmop{mod} \langle p \rangle)
+\end{eqnarray*}
+
+
+Notons $r_0$ le reste de la division euclidienne de $2 r$ par $p$.
+
+On a alors $r_0 \in \llbracket 0, p - 1 \rrbracket$, et
+\begin{eqnarray*}
+  x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} & = & (1 -
+  \zeta^{2 r_0})  \varepsilon a (\tmop{mod} \langle p \rangle)
+\end{eqnarray*}
+
+
+Or,
+\begin{eqnarray*}
+  (1 - \zeta^{2 r_0}) \underset{k \neq r_0}{\underset{k = 1}{\overset{p -
+  1}{\prod}}} (1 - \zeta^k) & = & \underset{}{\underset{k = 1}{\overset{p -
+  1}{\prod}}} (1 - \zeta^k)\\
+  & = & N (1 - \zeta)\\
+  & = & N (\lambda)\\
+  & = & p
+\end{eqnarray*}
+
+
+Donc,
+\[ (1 - \zeta^{2 r_0}) (1 - \zeta)^{p - 1} = p  \underset{k \neq
+   r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}} \frac{(1 - \zeta)}{(1 -
+   \zeta^k)} \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  1 - \zeta^{2 r_0} & = & p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p
+  - 1}{\prod}}} \frac{(1 - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) [(1 -
+  \zeta)^{p - 1} - 1]\\
+  & = & p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}}
+  \frac{(1 - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) \underset{j =
+  1}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    p - 1\\
+    j
+  \end{array} \right) \zeta^j\\
+  & = & p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}}
+  \frac{(1 - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) \underset{j =
+  1}{\overset{\frac{p - 1}{2}}{\sum}} \left[ \left( \begin{array}{c}
+    p - 1\\
+    2 j - 1
+  \end{array} \right) + \left( \begin{array}{c}
+    p - 1\\
+    2 j
+  \end{array} \right) \zeta \right] \zeta^{2 j - 1}\\
+  & = & p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}}
+  \frac{(1 - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) \underset{j =
+  1}{\overset{\frac{p - 1}{2}}{\sum}} \left[ \left( \begin{array}{c}
+    p\\
+    2 j
+  \end{array} \right) - \lambda \left( \begin{array}{c}
+    p - 1\\
+    2 j
+  \end{array} \right) \right] \zeta^j\\
+  & = & p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}}
+  \frac{(1 - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) \underset{j =
+  1}{\overset{\frac{p - 1}{2}}{\sum}} \left( \begin{array}{c}
+    p\\
+    2 j
+  \end{array} \right) + \lambda (1 - \zeta^{2 r_0}) \underset{j =
+  1}{\overset{\frac{p - 1}{2}}{\sum}} \left( \begin{array}{c}
+    p - 1\\
+    2 j
+  \end{array} \right) \zeta^j
+\end{eqnarray*}
+
+
+Avec $p | \nobracket \left( \begin{array}{c}
+  p\\
+  2 j
+\end{array} \right)$, pour tout $j \in \left\llbracket 1, \frac{p - 1}{2}
+\right\rrbracket$, donc
+\[ p  \underset{k \neq r_0}{\underset{k = 1}{\overset{p - 1}{\prod}}} \frac{(1
+   - \zeta)}{(1 - \zeta^k)} - (1 - \zeta^{2 r_0}) \underset{j =
+   1}{\overset{\frac{p - 1}{2}}{\sum}} \left( \begin{array}{c}
+     p\\
+     2 j
+   \end{array} \right) \in p\mathbb{Z} [\zeta] \]
+
+
+De plus,
+\begin{eqnarray*}
+  \lambda^p & = & (1 - \zeta)^{^p}\\
+  & = & \underset{k = 0}{\overset{p}{\sum}} \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) \zeta^k\\
+  & = & \underset{k = 1}{\overset{p - 1}{\sum}} \left( \begin{array}{c}
+    p\\
+    k
+  \end{array} \right) \zeta^k
+\end{eqnarray*}
+
+
+Or, $p | \nobracket \left( \begin{array}{c}
+  p\\
+  k
+\end{array} \right)$, pour tout $k \in \llbracket 1, p - 1 \rrbracket$, alors
+$p | \lambda^p \nobracket$.
+
+Avec, $p$ est irr{\'e}ductible dans $\mathbb{Z} \subset \mathbb{Z} [\zeta]$,
+donc $p$ est irr{\'e}ductible dans $\mathbb{Z} [\zeta]$, ainsi $p | \lambda
+\nobracket$.
+
+Par suite,
+\[ \lambda (1 - \zeta^{2 r_0}) \underset{j = 1}{\overset{\frac{p -
+   1}{2}}{\sum}} \left( \begin{array}{c}
+     p - 1\\
+     2 j
+   \end{array} \right) \zeta^j \in p\mathbb{Z} [\zeta] \]
+
+
+D'o{\`u},
+\[ (1 - \zeta^{2 r_0}) \in p\mathbb{Z} [\zeta] \]
+
+
+Finalement,
+\[ x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} = 0
+   (\tmop{mod} < p >) \]
+
+
+\tmtextbf{6.} Supposons que $r = 0 (\tmop{mod} p\mathbb{Z})$, Montrons que $p
+| y \nobracket $dans $\mathbb{Z}$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a :
+\[ x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} = 0
+   (\tmop{mod} \langle p \rangle) \]
+
+
+Puisque $r = 0 (\tmop{mod} p\mathbb{Z})$, donc $\zeta^r = 1$. Ainsi,
+\[ y (\zeta^1 - \zeta^{- 1}) = 0 (\tmop{mod} \langle p \rangle) \]
+
+
+Cela signifie qu'il existe un $t \in \mathbb{Z} [\zeta]$, tel que
+\[ y (\zeta^1 - \zeta^{p - 1}) = p t \]
+
+
+On a alors\footnote{Car $\zeta^{p - 1} \in \mathbb{Z} [\zeta]^{\times}$, alors
+$N (\zeta^{p - 1}) = 1$ et d'apr{\`e}s la partie 3 on a $N (1 - \zeta) = p$ et
+$N (1 + \zeta) = 1$.}
+\begin{eqnarray*}
+  N (y (\zeta^1 - \zeta^{p - 1})) & = & N (y \zeta^{p - 1} (\zeta  + 1) (\zeta
+  - 1))\\
+  & = & N (y) N (\zeta^{p - 1}) N (\zeta - 1) N (\zeta + 1)\\
+  & = & - p y^{p - 1}
+\end{eqnarray*}
+
+
+Dautre part,
+\begin{eqnarray*}
+  N (y (\zeta^1 - \zeta^{p - 1})) & = & N (p t)\\
+  & = & p^{p - 1} N (t)
+\end{eqnarray*}
+
+
+Ainsi,
+\[ p^{p - 2} N (t) = - y^{p - 1} \]
+
+
+Puisque $N (t) \in \mathbb{Z}$ (voir le lemme 4), cela implique $p | y^p
+\nobracket$.
+
+{\'E}tant donn{\'e} que $p$ est premier, alors $p | y \nobracket$.
+
+{\guillemotleft} On montrerait de m{\^e}me que l'on ne peut avoir $r = 1
+(\tmop{mod} p\mathbb{Z})$, ce que l'on admet. {\guillemotright}
+
+\
+
+\tmtextbf{7.} D'apr{\`e}s la question 5, il existe $\beta \in \mathbb{Z}
+[\zeta]$ tel que
+\[ x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y \zeta^{r - 1} = \beta p \]
+
+
+Montrons que deux des entiers parmi $\pm r$ et $\pm (1 - r)$ sont {\'e}gaux
+modulo $p$.
+
+Par l'absurde, supposons qu'aucun des entiers $\pm r$, $\pm (1 - r)$ ne soit
+{\'e}gal modulo $p$.
+
+On a alors,
+\[ \beta = \frac{x}{p} \zeta^{- r} + \frac{y}{p} \zeta^{1 - r} - \frac{x}{p}
+   \zeta^r - \frac{y}{p} \zeta^{r - 1} \]
+
+
+Or, $(1, \zeta, \ldots, \zeta^{p - 2})$ est une $\mathbb{Q}$-base de
+$\mathbb{Q} (\zeta)$, et $\beta \in \mathbb{Z} [\zeta]$.
+
+Ainsi, $\frac{x}{p} \in \mathbb{Z}$, ce qui implique que $p | x \nobracket$,
+ce qui est absurde.
+
+D'o{\`u} le r{\'e}sultat
+
+Donc $\pm r = \pm (1 - r)  (\tmop{mod} p\mathbb{Z})$, et cela n'est possible
+que pour $r = (1 - r) (\tmop{mod} p\mathbb{Z})$
+
+Ainsi,
+\[ 2 r = 1 (\tmop{mod} p\mathbb{Z}) \]
+
+
+\tmtextbf{8.} Montrons que
+\[ \beta p \zeta^r = (x - y) \lambda \]
+
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $2 r = 1 (\tmop{mod}
+p\mathbb{Z})$, alors :
+\begin{eqnarray*}
+  \beta p \zeta^r & = & (x \zeta^{- r} + y \zeta^{1 - r} - x \zeta^r - y
+  \zeta^{r - 1}) \zeta^r\\
+  & = & x + \zeta y - x \zeta^{2 r} - y \zeta^{2 r - 1}\\
+  & = & x + \zeta y - x \zeta - y\\
+  & = & (x - y) (1 - \zeta)\\
+  & = & (x - y) \lambda
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  N (\beta p \zeta^r) & = & N ((x - y) \lambda)\\
+  & = & N (\lambda) N (x - y)\\
+  & = & p (x - y)^{p - 1}
+\end{eqnarray*}
+
+
+Avec
+\begin{eqnarray*}
+  N (\beta p \zeta^r) & = & N (\beta) N (p) N (\zeta^r)\\
+  & = & p^{p - 1} N (\beta)
+\end{eqnarray*}
+
+
+Donc
+\[ (x - y)^{p - 1} = p^{p - 2} N (\beta) \]
+
+
+Comme $N (\beta) \in \mathbb{Z}$, alors $p | (x - y)^{p - 2} \nobracket$.
+Puisque $p$ est premier, cela implique que $p$ divise $x - y$.
+
+D'o{\`u}
+\[ x = y (\tmop{mod} p\mathbb{Z}) \]
+
+
+\tmtextbf{9.} D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a :
+\[ x = y (\tmop{mod} p\mathbb{Z}) \]
+
+
+Par sym{\'e}trie, on trouve {\'e}galement $z = y (\tmop{mod} p\mathbb{Z})$
+
+\
+
+\
+
+Alors,
+\[ \left\{\begin{array}{l}
+     x^p = y^p  (\tmop{mod} p\mathbb{Z})\\
+     z^p = y^p  (\tmop{mod} p\mathbb{Z})
+   \end{array}\right. \]
+
+
+Ainsi
+\begin{eqnarray*}
+  3 x^p & = & x^p + y^p + z^p (\tmop{mod} p\mathbb{Z})\\
+  & = & 0 (\tmop{mod} p\mathbb{Z})
+\end{eqnarray*}
+
+
+Alors $p | 3 x^p \nobracket$, avec $p > 3$, donc $p | x^p \nobracket$,
+d'o{\`u} $p | x \nobracket$, ce qui est absurde avec $p \not{| \nobracket} x y
+z$.
+
+\
+
+\subsubsection*{Pour aller plus loin{\textdots}}
+
+\
+
+Pour ceux qui sont int{\'e}ress{\'e}s par la d{\'e}monstration du
+th{\'e}or{\`e}me de Wiles-Fermat ({\'e}galement connu sous le nom de dernier
+th{\'e}or{\`e}me de Fermat), je vous conseille de lire l'excellent livre
+{\tmem{The Proof of Fermat's Last Theorem}} de Nigel Boston, en cliquant sur
+le lien suivant :
+
+\begin{center}
+  https://people.math.wisc.edu/\~{}boston/869.pdf
+\end{center}

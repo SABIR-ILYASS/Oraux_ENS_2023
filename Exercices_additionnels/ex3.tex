@@ -1,0 +1,109 @@
+Dans cet exercice, nous explorons une expression de la somme des puissances
+d'entiers copremiers avec un nombre donn{\'e}, en utilisant l'indicatrice
+d'Euler et des techniques combinatoires.
+
+\begin{exercise}[]
+Pour tous $n, r \in \mathbb{N}$ tel que $n \geqslant 2$, on d{\'e}finit :
+\[ T_{n, r} \assign \underset{i \wedge n = 1}{\underset{1 \leqslant i
+   \leqslant n}{\sum}} i^r \]
+
+
+Montrer que :
+\begin{align*}
+T_{n, r} =\; & n^r \varphi(n) + \sum_{j = 0}^{r - 1} \binom{r}{j} 
+\sum_{k = 0}^{j} (-1)^{j + k} T_{n, k} \\
+& {} - \varphi(n) \sum_{j = 0}^{r - 1} \binom{r}{j} 
+\sum_{k = 0}^{j} (-1)^{j + k} n^k
+\end{align*}
+
+
+
+O{\`u} $\varphi$ d{\'e}signe l'indicatrice d'Euler.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+On d{\'e}finit l'application $\psi$ pour tout $(l, m) \in \mathbb{N}^{\star}
+\times \mathbb{N}$ par :
+\[ \psi (l, m) =\# \{ 1 \leqslant i \leqslant m | i \wedge l = 1 \nobracket \}
+\]
+
+
+On a
+\begin{eqnarray*}
+  T_{n, r} & = & \underset{}{\overset{n}{\underset{i = 1}{\sum}}} i^r (\psi
+  (n, i) - \psi (n, i - 1))\\
+  & = & \underset{}{\overset{n}{\underset{i = 1}{\sum}}} i^r \psi (n, i) -
+  \overset{n}{\underset{i = 1}{\sum}} i^r \psi (n, i - 1)\\
+  & = & n^r \psi (n, n) + \underset{}{\overset{n - 1}{\underset{i =
+  1}{\sum}}} (i^r  - (i + 1)^r) \psi (n, i)\\
+  & = & n^r \varphi (n) - \underset{}{\overset{n - 1}{\underset{i =
+  1}{\sum}}} \overset{r - 1}{\underset{j = 0}{\sum}} \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) i^j \psi (n, i)
+\end{eqnarray*}
+
+
+Donc,
+\begin{eqnarray*}
+  n^r \varphi (n) - T_{n, r} & = & \overset{r - 1}{\underset{j = 0}{\sum}}
+  \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) \left( \underset{}{\overset{n - 1}{\underset{i =
+  1}{\sum}}} i^j \psi (n, i) \right)
+\end{eqnarray*}
+
+
+D'apr{\`e}s la formule d'inversion de Pascal, on peut {\^e}crire pour tout $j
+\in \llbracket 0, r - 1 \rrbracket$ :
+\[ \underset{}{\overset{n - 1}{\underset{i = 1}{\sum}}} i^j \psi (n, i) = (-
+   1)^j \overset{j}{\underset{k = 0}{\sum}} (- 1)^k (n^k \varphi (n) - T_{n,
+   k}) \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  n^r \varphi (n) - T_{n, r} & = & \overset{r - 1}{\underset{j = 0}{\sum}}
+  \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) (- 1)^j \overset{j}{\underset{k = 0}{\sum}} (- 1)^k (n^k
+  \varphi (n) - T_{n, k})\\
+  & = & \overset{r - 1}{\underset{j = 0}{\sum}} \overset{j}{\underset{k =
+  0}{\sum}} \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) (- 1)^{j + k} (n^k \varphi (n) - T_{n, k})\\
+  & = & \overset{r - 1}{\underset{j = 0}{\sum}} \overset{j}{\underset{k =
+  0}{\sum}} \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) (- 1)^{j + k} n^k \varphi (n) - \overset{r -
+  1}{\underset{j = 0}{\sum}} \overset{j}{\underset{k = 0}{\sum}} \left(
+  \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) (- 1)^{j + k} T_{n, k}
+\end{eqnarray*}
+
+
+D'o{\`u}
+\begin{eqnarray*}
+  T_{n, r} & = & n^r \varphi (n) + \overset{r - 1}{\underset{j = 0}{\sum}}
+  \left( \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) \overset{j}{\underset{k = 0}{\sum}} (- 1)^{j + k} T_{n,
+  k} - \varphi (n) \overset{r - 1}{\underset{j = 0}{\sum}} \left(
+  \begin{array}{c}
+    r\\
+    j
+  \end{array} \right) \overset{j}{\underset{k = 0}{\sum}} (- 1)^{j + k} n^k
+\end{eqnarray*}
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

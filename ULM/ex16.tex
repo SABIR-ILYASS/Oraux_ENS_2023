@@ -1,0 +1,195 @@
+L'exercice 16 s'int{\'e}resse aux valeurs rationnelles du cosinus. Il demande
+de d{\'e}crire l'ensemble des nombres rationnels $r$ tels que c$\tmop{os} (r
+\pi)$ est rationnel. Cet exercice combine des aspects de trigonom{\'e}trie et
+de th{\'e}orie des nombres alg{\'e}briques.
+
+\begin{exercise}[(Valeurs rationnelles du cosinus)]
+D{\'e}crire l'ensemble des nombres rationels $r$ tels que $\cos (r \pi)$ soit
+rationel.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Notons $S = \{ r \in \mathbb{Q} | \nobracket \cos (r \pi) \in \mathbb{Q} \}$.
+
+Puisque pour tout $n \in \mathbb{Z}$, on a $\cos ((n + r) \pi) = (- 1)^n \cos
+(r \pi)$, alors
+\[ S = (S \cap [0, 1 [) +\mathbb{Z} \]
+
+
+On peut donc se concentrer seulement sur les nombres rationnels $r \in [0, 1
+[$ tels que $\cos (r \pi) \in \mathbb{Q}$.
+
+Soit $r \in \mathbb{Q} \cap [0, 1 [$ tel que $\cos (r \pi) \in \mathbb{Q}$.
+
+Si $r = 0$, on a $\cos (r \pi) = 1 \in \mathbb{Q}$. Dans toute la suite, on
+suppose que $r > 0$.
+
+Notons $\frac{r}{2} = \frac{p}{q}$ avec $p, q \in \mathbb{N}$ tels que $q
+\geqslant 2$, $p < \frac{q}{2}$ et $p \wedge q = 1$.
+
+\
+
+On a alors, $e^{i \pi r} = e^{2 i \pi \frac{p}{q}}$, qui est une racine
+primitive $q$-{\`e}me de l'unit{\'e}. Donc $e^{i \pi r}$ annule :
+\[ \Phi_q = \underset{k \wedge q = 1}{\underset{k \in \llbracket 1, q
+   \rrbracket}{\prod}} \left( X - e^{2 i \pi \frac{k}{q}} \right) \]
+
+
+\tmtextbf{Lemme 1. (Classique)}
+
+Pour tout $n \in \mathbb{N}^{\ast}$, $\Phi_n \assign \underset{k \wedge q =
+1}{\underset{k \in \llbracket 1, q \rrbracket}{\prod}} \left( X - e^{2 i \pi
+\frac{k}{n}} \right)$ est irr{\'e}ductible dans $\mathbb{Q} [X]$.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Nous allons d{\'e}montrer ce lemme en utilisant le crit{\`e}re d'Eisenstein
+apr{\`e}s un changement de variable appropri{\'e}.
+
+D{\'e}finissons le polyn{\^o}me
+\[ \Psi_n (X) = \Phi_n (X + 1) \]
+
+
+Les racines de $\Psi_n (X)$ sont les nombres
+\[ \alpha_k = e^{2 i \pi k / n} - 1, o{\`u} \quad k \wedge n = 1 \]
+
+
+On peut montrer facilement que les polyn{\^o}mes cyclotomiques ont des
+coefficients entiers, par suite $\Psi_n (X) \in \mathbb{Z}[X]$.
+
+Soit $p$ un nombre premier tel que $p$ divise $n$ mais $p^2$ ne divise pas
+$n$. Cela signifie que $p$ est un facteur premier de $n$ apparaissant avec
+multiplicit{\'e} 1 dans la d{\'e}composition en facteurs premiers de $n$.
+
+Nous allons montrer que $\Psi_n (X)$ satisfait le crit{\`e}re d'Eisenstein
+pour le nombre premier $p$ :
+\begin{enumerate}
+  \item Tous les coefficients $a_i$ pour $i \geq 1$ sont divisibles par $p$.
+  
+  \item Le coefficient dominant $a_0$ n'est pas divisible par $p$.
+  
+  \item Le terme constant $a_n$ n'est pas divisible par $p^2$.
+\end{enumerate}
+
+
+Les coefficients de $\Psi_n (X)$ sont des sommes sym{\'e}triques des racines
+$\alpha_k$. Pour $i \geq 1$, les coefficients sont donn{\'e}s par :
+\[ a_i = (- 1)^i  \sum_{1 \leq k_1 < \ldots < k_i \leq \varphi (n)}
+   \alpha_{k_1} \cdots \alpha_{k_i} . \]
+
+
+On va montrer que $p$ divise chaque $a_i$ pour $i \geq 1$.
+
+Les racines $\alpha_k$ peuvent {\^e}tre exprim{\'e}es en termes de sommes de
+racines de l'unit{\'e}, et en exploitant les propri{\'e}t{\'e}s des sommes
+cyclotomiques modulo $p$, on montre que les sommes sym{\'e}triques sont
+divisibles par $p$.
+
+Le coefficient dominant $a_0$ est {\'e}gal {\`a} 1, car $\Psi_n (X)$ est un
+polyn{\^o}me unitaire. Donc, $p$ ne divise pas $a_0$.
+
+Le terme constant $a_n$ est donn{\'e} par
+\[ a_n = (- 1)^n  \prod_{k = 1}^{\varphi (n)} \alpha_k . \]
+
+
+on doit montrer que $p^2$ ne divise pas $a_n$.
+
+Le terme constant est le produit des $\alpha_k = e^{2 i \pi k / n} - 1$. On
+peut montrer que modulo $p$, ce produit est congru {\`a} $p$ ou $- p$, mais
+pas divisible par $p^2$.
+
+En effet, \ $k \wedge n = 1$, les nombres $k$ parcourent un syst{\`e}me
+complet de repr{\'e}sentants des unit{\'e}s modulo $n$. Quand on r{\'e}duit
+modulo $p$, les racines $e^{2 i \pi k / n}$ deviennent des racines primitives
+$p$-i{\`e}mes de l'unit{\'e}, et on peut utiliser des identit{\'e}s classiques
+des racines de l'unit{\'e} pour {\'e}tablir la non-divisibilit{\'e} par $p^2$.
+
+{\'E}tant donn{\'e} que toutes les conditions du crit{\`e}re d'Eisenstein sont
+satisfaites pour $\Psi_n (X)$, on conclut que $\Psi_n (X)$ est
+irr{\'e}ductible dans $\mathbb{Q}[X]$.
+
+Comme $\Psi_n (X)$ est irr{\'e}ductible dans $\mathbb{Q}[X]$ et que $\Phi_n
+(X) = \Psi_n (X - 1)$, il en r{\'e}sulte que $\Phi_n (X)$ est {\'e}galement
+irr{\'e}ductible dans $\mathbb{Q}[X]$.
+
+D'o{\`u} le lemme.
+
+\
+
+On a pour tout $k \in \llbracket 1, q - 1 \rrbracket$ si $k \wedge q = 1$,
+alors $(q - k) \wedge q = 1$.
+\begin{eqnarray*}
+  \Phi_q & = & \underset{k \wedge q = 1}{\underset{k \in \llbracket 1, q
+  \rrbracket}{\prod}} \left( X - e^{2 i \pi \frac{k}{q}} \right)\\
+  & = & \underset{k \wedge q = 1}{\underset{k \in \left\llbracket 1,
+  \left\lfloor \frac{q}{2} \right\rfloor \right\rrbracket}{\prod}} \left( X -
+  e^{2 i \pi \frac{k}{q}} \right) \left( X - e^{2 i \pi \frac{(q - k)}{q}}
+  \right)\\
+  & = & \underset{k \wedge q = 1}{\underset{k \in \left\llbracket 1,
+  \left\lfloor \frac{q}{2} \right\rfloor \right\rrbracket}{\prod}} \left( X^2
+  - 2 \cos \left( 2 \pi \frac{k}{q} \right) X + 1 \right)
+\end{eqnarray*}
+
+
+Puisque $\cos (\pi r) = \cos \left( 2 \pi \frac{p}{q} \right) \in \mathbb{Q}$,
+alors $X^2 - 2 \cos (\pi r) X + 1 \in \mathbb{Q} [X]$, alors par
+irr{\'e}ductibilit{\'e} de $\Phi_q$, on a
+\[ \Phi_q = X^2 - 2 \cos (\pi r) X + 1 \]
+
+
+En particulier $\deg (\Phi_q) = 2$.
+
+D'autre part,
+\[ \deg (\Phi_q) = \underset{}{\overset{}{}} \underset{k \wedge q =
+   1}{\underset{k \in \llbracket 1, q \rrbracket}{\sum}} 1 = \varphi (q) \]
+
+
+Avec $\varphi$ d{\'e}signe l'indicatrice d'Euler.
+
+Ainsi, $q \in \mathbb{N}$, v{\'e}rifie l'{\'e}quation, $\varphi (q) = 2$.
+
+D'apr{\`e}s le th{\'e}or{\`e}me fondamental de l'arithm{\'e}tique, on a
+l'existence de $\alpha, \beta \in \mathbb{N}$ et $a_1, \ldots, a_r \in
+\mathbb{N}$ et $p_1, \ldots, p_r > 3$ des nombres premiers tels que
+\[ q = 2^{\alpha} 3^{\beta} \underset{}{\overset{}{}} \underset{i =
+   1}{\overset{r}{\prod}} p^{a_i}_i \]
+
+
+On a, alors
+\[ \varphi (q) = 2^{\alpha} 3^{\beta - 1} \underset{i = 1}{\overset{r}{\prod}}
+   (p_i - 1) p^{a_i - 1}_i \]
+
+
+Or, $2^{\alpha} 3^{\beta - 1} \underset{i = 1}{\overset{r}{\prod}} (p_i - 1)
+p^{a_i - 1}_i = 2$ si et seulement si $r = 0$ et $\alpha = 1$ et $\beta = 1$,
+ainsi
+\[ q = 6 \]
+
+
+Par suite $\frac{r}{2} = \frac{1}{6}$. (Car $p \in \{ 1, 2, 3 \} \tmop{avec} p
+\wedge q = 1$, donc $p = 1$)
+
+\
+
+Ainsi $r = \frac{1}{3}$, r{\'e}ciproquement $\cos \left( \frac{\pi}{3}
+\right) = \frac{1}{2}$.
+
+Par suite
+\[ S = \left\{ 0, \frac{1}{3} \right\} +\mathbb{Z} \]
+
+
+D'o{\`u} les seuls rationnels $r \in \mathbb{Q}$ tel que $\cos (r \pi) \in
+\mathbb{Q}$ sont d{\'e}crits par l'ensemble $\left\{ n, n + \frac{1}{3} | n
+\in \mathbb{Z} \nobracket \right\}$.
+
+\
+
+\tmtextbf{Commentaire.}
+
+On a utilis{\'e} des r{\'e}sultats tr{\`e}s classiques de la th{\'e}orie des
+nombres alg{\'e}briques. Pour plus de d{\'e}tails sur les m{\'e}thodes
+utilis{\'e}es dans cet exercice, vous pouvez consulter l'{\'e}nonc{\'e} de
+X/ENS, {\'e}preuve Math A, MP, 2019.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

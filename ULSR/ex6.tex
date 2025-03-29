@@ -1,0 +1,149 @@
+Cet exercice traite d'une in{\'e}galit{\'e} matricielle classique, connue sous
+le nom de th{\'e}or{\`e}me de Schur-Horn. Il teste la compr{\'e}hension des
+candidats sur les propri{\'e}t{\'e}s des matrices sym{\'e}triques et leur
+capacit{\'e} {\`a} manipuler des in{\'e}galit{\'e}s impliquant des valeurs
+propres.
+
+\begin{exercise}[]
+Soit $A = (a_{i, j})_{1 \leqslant i, j \leqslant n} \in S_n (\mathbb{R})$ une
+matrice r{\'e}elle sym{\'e}trique. On note $\lambda_1 (A) \leqslant \cdots
+\leqslant \lambda_n (A)$ les valeurs propres de $A$. Montrer pour tout $k \in
+\{ 1, \ldots, n \}$ l'in{\'e}galit{\'e}
+\[ \lambda_1 (A) + \cdots + \lambda_k (A) \leqslant a_{1, 1} + \cdots + a_{k,
+   k} \leqslant \lambda_{n - k + 1} (A) + \cdots + \lambda_n (A) \]
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Pour tout $A \in S_n (\mathbb{R})$. Remarquons d'abord que si $\lambda_1 (A)
+\leq \ldots \leq \lambda_n (A)$ sont les valeurs propres de $A$, alors les
+valeurs propres de $- A \in S_n (\mathbb{R})$ sont $- \lambda_n (A) \leq
+\ldots \leq - \lambda_1 (A)$.
+
+Donc, si
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) \leq a_{1, 1} + \ldots + a_{k, k}
+\]
+pour tout $k \in \{1, \ldots, n\}$ et pour toute matrice $A \in S_n
+(\mathbb{R})$, alors, puisque $- A \in S_n (\mathbb{R})$, on a pour tout $k
+\in \{1, \ldots, n\}$ :
+\[ - \lambda_{n - k + 1} (A) - \ldots - \lambda_n (A) \leq - a_{1, 1} - \ldots
+   - a_{k, k} . \]
+
+
+Donc, il suffit de montrer que $\lambda_1 (A) + \ldots + \lambda_k (A) \leq
+a_{1, 1} + \ldots + a_{k, k}$ pour tout $k \in \llbracket 1, n \rrbracket$
+
+\tmtextbf{D{\'e}finition 1.}
+
+Soit $m \in \mathbb{N}^{\ast}$ tel que $m \leq n$, et soit $V$ un sous-espace
+vectoriel de $\mathbb{R}^n$ de dimension $m$. On d{\'e}finit Tr$(A|_V)$ comme
+suit :
+\[ \text{Tr} (A|_V) \assign \sum_{i = 1}^m v_i^T Av_i \]
+
+
+o{\`u} $v_1, \ldots, v_m$ constituent une base orthonorm{\'e}e quelconque de
+$V$. Il est facile de voir que cette expression est ind{\'e}pendante du choix
+de la base orthonorm{\'e}e, et donc Tr$(A|_V)$ est bien d{\'e}finie.
+
+\tmtextbf{Lemme 1.}
+
+Pour tout $1 \leq k \leq n$, on a :
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) =   \underset{\dim (V) =
+   k}{\underset{V \subset \mathbb{R}^n}{\sup}} \text{Tr} (A|_V) \]
+
+
+\tmtextbf{Preuve du lemme 1.}
+
+Soient $e_1, \ldots, e_n$ une base orthogonale form{\'e}e par les vecteurs
+propres associ{\'e}s {\`a} $\lambda_1 (A), \ldots, \lambda_n (A)$
+respectivement (en appliquant le th{\'e}or{\`e}me spectral). On a :
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) = \text{Tr} (A|_{\text{vect} (e_1,
+   \ldots, e_k)}) \]
+
+
+et
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) \leq \underset{\dim (V) =
+   k}{\underset{V \subset \mathbb{R}^n}{\sup}} \text{Tr} (A|_V) . \]
+
+
+Il reste {\`a} montrer que $\lambda_1 (A) + \ldots + \lambda_k (A) \geq
+\underset{\dim (V) = k}{\underset{V \subset \mathbb{R}^n}{\sup}}  \text{Tr}
+(A|_V)$.
+
+Montrons par r{\'e}currence sur $n \in \mathbb{N}^{\ast}$ que :
+\[ (\mathcal{P}_n) : \forall A \in S_n (\mathbb{R}), \forall k \in \{1,
+   \ldots, n\}, \lambda_1 (A) + \ldots + \lambda_k (A) \geq \underset{\dim (V)
+   = k}{\underset{V \subset \mathbb{R}^n}{\sup}}  \text{Tr} (A|_V) . \]
+
+
+C'est trivial pour $n = 1$. Supposons que $\mathcal{P}_n$ soit vraie et
+montrons $\mathcal{P}_{n + 1}$.
+
+Soit $A \in S_{n + 1} (\mathbb{R})$ et $k \in \{1, \ldots, n + 1\}$. Notons
+$(e_1, \ldots, e_{n + 1})$ une base orthonormale form{\'e}e par les vecteurs
+propres de $A$, associ{\'e}e aux valeurs propres $\lambda_1 (A), \ldots,
+\lambda_{n + 1} (A)$ respectivement.
+
+\tmtextbf{Si $k = 1$}, on a pour tous $\beta_1, \ldots, \beta_{n + 1}$ non
+tous nuls, et pour $v = \frac{1}{\sqrt{\beta_1^2 + \ldots + \beta_{n + 1}^2}} 
+\sum_{k = 1}^{n + 1} \beta_k e_k$, on a :
+\[ \text{Tr} (A|_{\text{vect} (v)}) = v^T Av = \frac{1}{\beta_1^2 + \ldots +
+   \beta_{n + 1}^2}  \sum_{k = 1}^{n + 1} \beta_k^2 \lambda_k (A) \]
+
+
+et
+\[ \text{Tr} (A|_{\text{vect} (v)}) \leq \frac{1}{\beta_1^2 + \ldots +
+   \beta_{n + 1}^2}  \sum_{k = 1}^{n + 1} \beta_k^2 \lambda_1 (A) = \lambda_1
+   (A) . \]
+
+
+Donc,
+\[ \lambda_1 (A) \geq \sup_{\tmscript{\begin{array}{c}
+     V \subset \mathbb{R}^{n + 1}\\
+     \dim (V) = 1
+   \end{array}}}  \text{Tr} (A|_V) . \]
+
+
+\tmtextbf{Si $k > 1$}, soit $V$ un sous-espace vectoriel de $\mathbb{R}^{n +
+1}$ de dimension $k$. Alors $V$ contient un sous-espace $V'$ de dimension $k -
+1$ inclus dans vect$(e_2, \ldots, e_{n + 1})$. En appliquant l'hypoth{\`e}se
+de r{\'e}currence {\`a} la restriction de $A$ {\`a} vect$(e_2, \ldots, e_{n +
+1})$, qui a pour valeurs propres $\lambda_2 (A), \ldots, \lambda_{n + 1} (A)$,
+on obtient :
+\[ \lambda_2 (A) + \ldots + \lambda_k (A) \geq \text{Tr} (A|_{V'}) . \]
+
+
+D'autre part, si $v$ est un vecteur unitaire dans le compl{\'e}ment orthogonal
+de $V'$ dans $V$, on voit {\`a} partir du cas $k = 1$ que :
+\[ \lambda_1 (A) \geq v^T Av. \]
+
+
+Par suite, on a :
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) \geq \text{Tr} (A|_V) . \]
+
+
+D'o{\`u} :
+\[ \lambda_1 (A) + \ldots + \lambda_k (A) \geq \underset{\dim (V) =
+   k}{\underset{V \subset \mathbb{R}^n}{\sup}}  \text{Tr} (A|_V) . \]
+
+
+Cela conclut la preuve par r{\'e}currence sur $n \in \mathbb{N}^{\ast}$.
+
+\
+
+En appliquant ce lemme {\`a} $e_i = {(0, \ldots, 0, 1, 0, \ldots, 0 )^T}
+,$o{\`u} $1$est {\`a} la i-{\`e}me position pour tout $i = 1, \ldots, n$, on
+obtient :
+\begin{eqnarray*}
+  \lambda_1 (A) + \ldots + \lambda_k (A) & = & \underset{\dim (V) =
+  k}{\underset{V \subset \mathbb{R}^n}{\sup}}  \text{Tr} (A|_V)\\
+  & \geqslant & \text{Tr} (A|_{\{ e_i \}_{1 \leqslant i \leqslant n}})\\
+  & = & \sum_{i = 1}^k e_i^T Ae_i\\
+  & = & a_{1, 1} + \cdots + a_{k, k}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

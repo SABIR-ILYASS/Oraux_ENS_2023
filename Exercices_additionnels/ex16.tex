@@ -1,0 +1,82 @@
+L'{\'e}tude des fonctions infiniment d{\'e}rivables satisfaisant des
+{\'e}quations fonctionnelles est un domaine fascinant de l'analyse. Cet
+exercice propose d'{\'e}tudier une fonction v{\'e}rifiant une relation
+lin{\'e}aire particuli{\`e}re et invite {\`a} utiliser les propri{\'e}t{\'e}s
+de d{\'e}rivation pour conclure.
+\begin{exercise}[(G{\'e}n{\'e}ralisation de l'oral ULM 2007)]
+Soient $a_1, a_2, \ldots, a_n > 0$, deux {\`a} deux distincts, et $f \in
+\mathcal{C}^{\infty} (\mathbb{R}, \mathbb{R})$ v{\'e}rifiant :
+\[ \forall x \in \mathbb{R}, f (a_1 x) + f (a_2 x) + \cdots + f (a_n x) = 0 \]
+
+Montrer que $f = 0$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+On a, pour tout $x \in \mathbb{R}$ :
+\[ f (a_1 x) + f (a_2 x) + \cdots + f (a_n x) = 0 \]
+
+
+Donc, pour tout $r \in \mathbb{N}$ et pour tout $x \in \mathbb{R}$, on obtient
+:
+\[ \sum_{k = 1}^n a_k^r \times f^{(r)} (a_k x) = 0 \quad (1) \]
+
+
+En particulier, pour tout $r \in \mathbb{N}$, on a :
+\[ f^{(r)} (0) = 0 \quad (2) \]
+
+
+On peut supposer sans perte de g{\'e}n{\'e}ralit{\'e} que $0 < a_1 < a_2 <
+\cdots < a_n$
+
+Soit $a > 0$, pour tout $x \in [- a, a]$, et pour tout $r \in \mathbb{N}$, on
+a d'apr{\`e}s (1) :
+\[ f^{(r)} (x) = - \sum_{k = 1}^{n - 1} \left( \frac{a_k}{a_n} \right)^r
+   \times f^{(r)} \left( \frac{a_k x}{a_n} \right) \]
+
+
+Notons $M_r = \underset{x \in [- a, a]}{\sup}  |f^{(r)} (x) |$. On a alors,
+pour tout $r \in \mathbb{N}$ :
+\[ |f^{(r)} (x) | \leqslant M_r \times \sum_{k = 1}^{n - 1} \left(
+   \frac{a_k}{a_n} \right)^r \]
+
+
+Donc :
+\[ M_r \leqslant M_r \times \sum_{k = 1}^{n - 1} \left( \frac{a_k}{a_n}
+   \right)^r \]
+
+
+Or, pour tout $k \in \llbracket 1, n - 1 \rrbracket$, on a :
+\[ 0 < \frac{a_k}{a_n} < 1 \]
+
+
+Donc $\left( \frac{a_k}{a_n} \right)^r \xrightarrow[r \to + \infty]{} 0$.
+Ainsi,
+\[ \sum_{k = 1}^{n - 1} \left( \frac{a_k}{a_n} \right)^r \xrightarrow[r \to +
+   \infty]{} 0 < 1 \]
+
+
+Donc, il existe un $r_0 \in \mathbb{N}$, tel que pour tout $r \geq r_0$
+\[ \sum_{k = 1}^{n - 1} \left( \frac{a_k}{a_n} \right)^r < 1 \]
+
+
+En particulier, pour tout $r \geq r_0$
+\[ M_r \leqslant M_r \times \sum_{k = 1}^{n - 1} \left( \frac{a_k}{a_n}
+   \right)^r < M_r \]
+
+
+Cela implique que, pour tout $r \geq r_0$, $M_r = 0$, d'o{\`u} pour tout $r
+\geq r_0$ et pour tout $x \in [- a, a]$, $f^{(r)} (x) = 0$, et ceci pour tout
+$a > 0$.
+
+Donc, pour tout $r \geq r_0$ et pour tout $x \in \mathbb{R}$, $f^{(r)} (x) =
+0$
+
+Ainsi, $f$ est polyn{\^o}miale de degr{\'e} inf{\'e}rieur ou {\'e}gal {\`a}
+$r_0 - 1$, et on a pour tout $x \in \mathbb{R}$
+\[ f (x) = \sum_{k = 0}^{r_0 - 1} \frac{f^{(k)} (0)}{k!} x^k = 0 \]
+
+
+Finalement, $f = 0$. (d'apr{\`e}s (2)).
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,180 @@
+Cet exercice comporte deux parties distinctes. La premi{\`e}re traite des
+matrices de trace nulle dans $\mathrm{SL}_2 (\mathbb{Z})$, demandant de
+prouver une propri{\'e}t{\'e} de conjugaison. La seconde partie concerne les
+sommes de deux carr{\'e}s, demandant de prouver une condition suffisante pour
+qu'un entier soit la somme de deux carr{\'e}s. L'exercice fait appel {\`a} des
+notions d'alg{\`e}bre lin{\'e}aire et de th{\'e}orie des nombres.
+
+\begin{exercise}[(Matrices de traces nulles et sommes de deux
+carr{\'e}s)]
+Soient~$A, B \in \mathrm{SL}_2 (\mathbb{Z})$ (le groupe des matrices $2 \times
+2$ {\`a} coefficients entiers et d{\'e}terminant~1).
+
+1. Montrer que si~$\mathrm{Tr} (A) = \mathrm{Tr} (B) = 0$, alors~$A$ est
+conjugu{\'e}e {\`a}~$B$ ou~$- B$.
+
+2. Montrer que si~$n > 1$ et~$x$ sont des entiers tels que~$x^2 \equiv - 1
+\pmod{n}$, alors il existe des entiers~$a$ et~$b$ tels que~$n = a^2 + b^2$.
+
+\end{exercise}
+
+\subsection*{Solution. (ETTOUSY Badr - ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ETTOUSY Badr - ZINE Akram)}
+
+
+\tmtextbf{1.} Consid{\'e}rons $x, y, a, b, c, d \in \mathbb{Z}$, \ et
+d{\'e}finissons $\alpha_{x, y} \assign \left(\begin{array}{c}
+  x\\
+  y
+\end{array}\right) \in \mathbb{Z}^2$, et $A \assign \left(\begin{array}{cc}
+  a & c\\
+  b & d
+\end{array}\right) \in \tmop{SL}_2 (\mathbb{Z})$.
+
+Supposons que $b > 0$. On consid{\`e}re $M_{x, y} = (\alpha, A \alpha)$ et on
+souhaite d{\'e}montrer que :
+\[ \det M_{x, y} bx^2 + (d - a) xy - cy^2 = 1 \]
+
+
+En utilisant la compl{\'e}tion du carr{\'e} et par le fait que $a + d = 0$ et
+$a^2 + bc = - 1$, que :
+\[ \det M_{x, y} = \frac{(bx - ay)^2 + y^2}{b} \]
+
+
+Ainsi, $\det M_{x, y} > 0$ pour tout $(x, y) \in \mathbb{Z}^2 \setminus \{(0,
+0)\}$.
+
+\tmtextbf{D{\'e}termination de $e$}
+
+D{\'e}finissons $e = \underset{(x, y) \in \mathbb{Z}^2 \setminus \{(0,
+0)\}}{\inf} \det M_{x, y}$. Nous allons prouver le lemme suivant :
+
+\
+
+\tmtextbf{Lemme 1.}
+
+$e = \underset{(x, y) \in \mathbb{Z}^2 \setminus \{(0, 0)\}}{\inf} \det M_{x,
+y}$ est atteint et on a $3 e^2 \leq - 4 (bc + a^2)$.
+
+\tmtextbf{Preuve du lemme 1.}
+
+\
+
+Notons $m = \underset{(x, y) \in \mathbb{R}^2 \setminus \{(0, 0)\}}{\inf}
+\det M_{x, y}$. Il est atteint car le cercle unit{\'e} de $\mathbb{R}^2$ est
+compact. Par homog{\'e}n{\'e}it{\'e} de la forme quadratique, on a
+\[ \det M_{x, y} \geq m (x^2 + y^2) \]
+
+
+Soit $N$ un entier naturel tel que $N \geq \sqrt{\frac{e + 1}{m}}$.
+D'apr{\`e}s ce qui pr{\'e}c{\`e}de, si $(x, y) \in \mathbb{Z}^2$ et $\lvert x
+\rvert > N$ ou $\lvert y \rvert > N$, alors $\det M_{x, y} \geq e + 1$.
+
+Donc, $e = \underset{\lvert x \rvert \leq N, \lvert y \rvert \leq
+N}{\underset{(x, y) \in \mathbb{Z}^2 \setminus \{(0, 0)\}}{\inf}}  \det M_{x,
+y}$ est atteint car l'ensemble est fini.
+
+Soit $(\alpha, \beta) \in \mathbb{Z}^2$ tel que $\tmop{detM}_{\alpha, \beta} =
+e$. Notons $d = \tmop{pgcd} (\alpha, \beta)$ et $\alpha'$, $\beta'$ les
+entiers tels que $\alpha = d \alpha'$ et $\beta = d \beta'$. On obtient
+\[ e = d^2 q (\alpha', \beta') \geq d^2 e \]
+
+
+Ainsi, $d = 1$. D'apr{\`e}s le th{\'e}or{\`e}me de B{\'e}zout, il existe
+$(\gamma, \delta)$ tel que $\alpha \delta + \beta \delta = 1$. Posons $v = (-
+\delta, \gamma)$.
+
+$P = \left(\begin{array}{cc}
+  \alpha & - \delta\\
+  \beta & \gamma
+\end{array}\right)$ et $P^{- 1}$ est la matrice de passage de $(u, v)$ {\`a}
+$(e_1, e_2)$ (base canonique de $\mathbb{R}^2$). Donc, $\mathbb{Z}^2
+=\mathbb{Z}u +\mathbb{Z}v$.
+
+Il existe $(a', c')$ tels que, dans la base $(u, v)$ on ait $q (x, y) = ex^2 +
+2 a' xy + c' y^2$. On a :
+\[ \left(\begin{array}{cc}
+     e & a'\\
+     a' & c'
+   \end{array}\right) = P^{\top} \left(\begin{array}{cc}
+     b & - a\\
+     - a & - c
+   \end{array}\right) P \]
+
+
+et donc $c' {e - a'}^2 = (\det P)^2  (- bc - a^2) = - bc - a^2$.
+
+Pour tout $(x, y) \in \mathbb{Z}^2$, on obtient
+\[ q (xu + yv) = e \left( x + \frac{a'}{e} y \right)^2 + \left( c' -
+   \frac{(a')^2}{e} \right) y^2 \]
+
+
+En prenant $y = 1$ et en choisissant $n \in \mathbb{Z}$ tel que $\lvert n +
+\frac{a'}{e} \rvert \leq \frac{1}{2}$, on a
+\[ e \leq q (nu + v) \leq \frac{e}{4} + c' - \frac{(a')^2}{e} \]
+
+
+et donc $3 e^2 \leq - 4 (bc + a^2)$.
+
+\tmtextbf{Conclusion.}
+
+Ainsi, comme $e > 0$, on a $e = 1$. D'o{\`u} il existe $\alpha \in \mathbb{R}$
+tel que $\det M = 1$.
+
+La matrice $A$ dans la base $(\alpha, A \alpha)$ est sous la forme :
+\[ \left(\begin{array}{cc}
+     0 & m\\
+     1 & n
+   \end{array}\right) \]
+avec $m, n \in \mathbb{Z}$. Le d{\'e}terminant et la trace sont conserv{\'e}s
+par conjugaison. Ainsi, on trouve que $n = 0$ et $m = - 1$.
+
+Si $b < 0$, on consid{\`e}re la base $(A \alpha, \alpha)$. Dans ce cas, $- b
+> 0$ et on introduit une forme quadratique de la m{\^e}me fa{\c c}on (avec
+pour coefficient dominant $- b$). On obtient ainsi que $A$ est conjugu{\'e}e
+{\`a} $\left(\begin{array}{cc}
+  0 & 1\\
+  - 1 & 0
+\end{array}\right)$ ou $\left(\begin{array}{cc}
+  0 & - 1\\
+  1 & 0
+\end{array}\right)$.
+
+Cela implique que pour toute matrice $B$ sans SL$_2 (\mathbb{Z})$ telle que
+$\det B = 1$ et Tr$(B) = 0$, $A$ est conjugu{\'e}e {\`a} $B$ ou $- B$.
+
+\tmtextbf{2.} Si a et b sont somme de carr{\'e}s $a = x^2 + y^2$ et $b = z^2 +
+t^2$ alors $ab = (xz - yt)^2 + (xt + yz)^2$ On va se r{\'e}duire donc au cas
+o{\`u} n est premier.
+
+\
+
+\tmtextbf{Lemme 2.}
+
+Soit $p$ premier. Pour tout $a \in \mathbb{Z}$, $p \nmid a$. Il existe $x, y
+\in \{1, 2, \ldots, \lfloor \sqrt{p} \rfloor\}$ tels que $ax \equiv y
+\pmod{p}$ ou $ax \equiv - y \pmod{p}$.
+
+\
+
+\tmtextbf{Preuve du lemme 2.}
+
+Consid{\'e}rons $S = \{1, 2, \ldots, \lfloor \sqrt{p} \rfloor\}^2$. On a $p <
+(\lfloor \sqrt{p} \rfloor + 1)^2$, et donc card$(S) > p$. D'apr{\`e}s le
+principe des tiroirs, il existe $(x_1, y_1) \neq (x_2, y_2)$ telles que $ax_1
+- y_1 \equiv ax_2 - y_2 \pmod{p}$. On prouve facilement par l'absurde que $x$
+et $y$ sont non nuls. D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{Conclusion.}
+
+Revenons {\`a} notre question, soit $x \in \mathbb{Z}$ tel que $x^2 \equiv - 1
+\pmod{p}$. On a $p \nmid x$. Il existe $a, b$ d'apr{\`e}s le lemme tels que
+$xa \equiv \pm b \pmod{p}$. On a $x^2 a^2 + a^2 = b^2 + a^2 \equiv 0
+\pmod{p}$, et donc $a^2 + b^2 = kp$ avec $k \in \mathbb{Z}$. On a $x^2 + y^2
+\geq 2$. Ainsi $k > 0$.
+
+Nous montrons que $k = 1$. $a, b \leq \lfloor \sqrt{p} \rfloor$, d'o{\`u}
+$a^2 + b^2 < 2 p$. Or, $p / a^2 + b^2$, d'o{\`u} $p = a^2 + b^2$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

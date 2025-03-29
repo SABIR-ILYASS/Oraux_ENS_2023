@@ -1,0 +1,70 @@
+Cet exercice, intitul{\'e} ``Certification de racines", propose un crit{\`e}re
+pour garantir l'existence et l'unicit{\'e} d'un z{\'e}ro d'une fonction
+diff{\'e}rentiable dans une boule donn{\'e}e. L'exercice fait appel {\`a} des
+notions d'analyse et de topologie.
+\begin{exercise}[(Certification de racines)]
+Soit $f : \mathbb{R}^n \to \mathbb{R}^n$ une application de classe
+$\mathcal{C}^1$. Soit $x \in \mathbb{R}^n$, soit $B$ la boule unit{\'e}
+ferm{\'e}e. On suppose que pour tout $u, v \in B$,
+\[ - f (x) + v - \mathrm{d} f (x + u) \cdot v \in \tfrac{1}{2} B. \]
+Montrer que $f$ admet un unique z{\'e}ro dans la boule $x + B$.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+
+Soit $x \in B$, alors $\|f (x) - x\| \leq \frac{1}{2}$. En effet,
+\[ f (x) = f (0) + \int_0^1 df_{tx} (x) \hspace{0.17em} dt = f (0) + \int_0^1
+   (x - f (0) + h (t))  \hspace{0.17em} dt, \]
+
+
+avec $\|h (t)\| \leq \frac{1}{2}$ pour tout $t \in [0, 1]$. Donc,
+\[ \|f (x) - x\|= \left| \int_0^1 h (t) \hspace{0.17em} dt \right| \leq
+   \int_0^1 \|h (t)\| \hspace{0.17em} dt \leq \frac{1}{2} . \]
+
+
+Soit $g (x) =\|f (x)\|^2$ sur $B$. Comme $g$ est continue sur le compact $B$,
+elle admet un minimum.
+
+Avec $v = 0$, on a $\|f (0)\| \leq \frac{1}{2}$. Si $x \in \partial B$, alors
+$\|f (x)\| \geq \frac{1}{2}$. Donc, le minimum de $g$ sur $B$ est au plus
+$\frac{1}{4}$. Si le minimum est atteint en $0$, c'est fait, sinon il est
+atteint {\`a} l'int{\'e}rieur de $B$.
+
+Soit $a \in \overset{\circ}{B}$ un point o{\`u} $g$ atteint son minimum. Alors
+$dg_a = 0$, c'est-{\`a}-dire pour tout \ $h \in \mathbb{R}^n, \langle df_a
+(h), f (a) \rangle = 0$. Si $df_a$ est inversible, on en d{\'e}duit $f (a) =
+0$.
+
+Pour prouver que $df_a$ est injective, supposons le contraire. Alors, il
+existe $w \in \ker (df_a)$, $\|w\|= 1$. On a aussi $df_a (- w) = 0$. Donc,
+$\|w - f (0)\| \leq \frac{1}{2}$ et $\|- w - f (0)\| \leq \frac{1}{2}$, ce qui
+est impossible, car $\|w - (- w)\|= 2$ alors que la sph{\`e}re $S (f (0),
+\frac{1}{2})$ a un diam{\`e}tre de $1$.
+
+Enfin, supposons qu'il existe $a, b \in B$ tels que $f (a) = f (b) = 0$ et $a
+\neq b$. On a :
+\[ 0 = \int_0^1 df_{(1 - t) a + tb} (b - a) \hspace{0.17em} dt =\|a - b\|
+   \int_0^1 df_{(1 - t) a + tb} \left( \frac{b - a}{\|b - a\|} \right) 
+   \hspace{0.17em} dt. \]
+
+
+Or,
+\[ df_{(1 - t) a + tb} \left( \frac{b - a}{\|b - a\|} \right) = \frac{b -
+   a}{\|b - a\|} - f (0) + h (t), \]
+
+
+avec $\|h (t)\| \leq \frac{1}{2}$. On obtient alors
+\[ \frac{b - a}{\|b - a\|} = f (0) - \int_0^1 h (t) d t. \]
+
+
+Puisque $\|f (0)\| \leq \frac{1}{2}$ et $\|h\| \leq \frac{1}{2}$, on a
+{\'e}galit{\'e} dans l'in{\'e}galit{\'e} triangulaire :
+\[ f (0) = - \int_0^1 h (t) d t = \frac{b - a}{2\|b - a\|} . \]
+
+
+En proc{\'e}dant de mani{\`e}re similaire, on trouve $f (0) = \frac{a -
+b}{2\|b - a\|}$, ce qui implique $a = b$, ce qui est une contradiction.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

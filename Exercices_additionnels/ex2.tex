@@ -1,0 +1,58 @@
+Dans cet exercice, nous allons explorer la convergence d'une suite de
+polyn{\^o}mes vers un polyn{\^o}me donn{\'e}, en utilisant les notions de
+normes dans l'espace des polyn{\^o}mes $\mathbb{R} [X]$. L'objectif est de
+construire une norme appropri{\'e}e pour laquelle une suite de polyn{\^o}mes
+de degr{\'e} croissant converge vers le polyn{\^o}me cible. Cette approche
+permet de mieux comprendre les comportements asymptotiques des polyn{\^o}mes
+et les propri{\'e}t{\'e}s des espaces norm{\'e}s en analyse.
+
+\begin{exercise}[(Oral ULM)]
+Soit $Q$ un p{\^o}lynome de $\mathbb{R} [X]$, et $(P_n)_{n \in \mathbb{N}}$
+une suite de p{\^o}lynomes v{\'e}rifiant, pour tout
+
+$n \in \mathbb{N}, \deg (P_n)  = n$.
+
+Construire une norme sur $\mathbb{R} [X]$ telle que le suite $(P_n)_{n \in
+\mathbb{N}}$ tende vers $Q$au sens de cette norme.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Notons $n_0 = \deg (Q)$.
+
+Posons, pour tout $n \in \mathbb{N}$ : $R_n = 2^n (P_n - Q)$
+
+Pour tout \ norme $\| . \|$ de $\mathbb{R} [X]$,et pour tout $n \in
+\mathbb{N}$ on a : $\| P_n - Q \| = \frac{1}{2^n} \| R_n \|$
+
+Pour avoir la convergence de $(P_n)_{n \in \mathbb{N}}$ vers $Q$, il suffit de choisir une norme $\| \cdot \|$ telle que :
+
+
+pour tout $n \in \mathbb{N}$ : $\| R_n \| = 1$
+
+une petite modification des premiers termes de $R_n$ ne change pas le
+r{\`e}sultat.
+
+En prenant $R_n = X^n$ pour $n = 1, 2, \ldots, n_0$
+
+Alors pour tout $n \in \mathbb{N}$, on a $\deg (R_n) = n$ , donc $(R_n)_{n \in
+\mathbb{N}}$ forme une base de $\mathbb{R} [X] .$
+
+On d{\'e}finie sur $\mathbb{R} [X]$, la norme $\| . \|$ par : pour tout $P =
+\underset{i = 0}{\overset{r}{\sum}} a_i  R_i \in \mathbb{R} [X]$, on pose:
+\[ \| P \| = \underset{i = 0}{\overset{r}{\max}} | a_i | \]
+
+
+$\| . \|$ est clairement une norme sur $\mathbb{R} [X]$ ,et pour tout $n \in
+\mathbb{N}$, $\| R_n \| = 1$
+
+Parsuite :
+\[ \forall n \geq n_0, \quad \| P_n - Q \| = \frac{1}{2^n} \underset{n
+   \rightarrow + \infty}{\longrightarrow} 0 \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

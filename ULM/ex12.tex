@@ -1,0 +1,167 @@
+Cet exercice traite de l'impossibilit{\'e} de la densit{\'e} d'un certain
+espace de translations. Il demande d'{\'e}tudier l'ensemble des translations
+qui laissent invariant un espace engendr{\'e} par les translat{\'e}s entiers
+d'une fonction {\`a} support compact. L'exercice fait appel {\`a} des notions
+d'analyse fonctionnelle.
+
+\begin{exercise}[(Impossibilit{\'e} de la densit{\'e} d'un certain
+espace de translations)]
+Soit $B (\mathbb{R})$ l'espace vectoriel des fonctions born{\'e}es sur
+$\mathbb{R}$ muni de la norme uniforme. Soit $g : \mathbb{R} \to \mathbb{R}$
+une fonction {\`a} support compact. On note $W (g) \subseteq B (\mathbb{R})$
+l'espace engendr{\'e} par les translat{\'e}s $x \mapsto g (x - n)$ pour $n \in
+\mathbb{Z}$.
+
+Etudier l'ensemble $t \in \mathbb{R}$ tels que $\overline{W (g)}$ est
+invariant par translation par $t$.
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+On suppose que $g$ est non nulle, sans quoi le probl{\`e}me est trivial et $G
+=\mathbb{R}$. Raisonnons par l'absurde en supposant que l'ensemble des $t \in
+\mathbb{R}$ pour lesquels l'adh{\'e}rence de $W (g)$, not{\'e}e $\overline{W
+(g)}$, est invariante par translation, est dense dans $\mathbb{R}$. Autrement
+dit, supposons que ce sous-groupe $G \subset \mathbb{R}$ soit dense.
+
+Puisque $\overline{W (g)}$ est invariant par $t$ pour tout $t \in G$, prenons
+un {\'e}l{\'e}ment $t \in G$. Par d{\'e}finition de l'invariance par
+translation, cela signifie que $g (x - t)$ peut {\^e}tre exprim{\'e}e comme
+une combinaison lin{\'e}aire des translat{\'e}s de $g$ par des entiers, soit :
+\[ g (x - t) = \sum_{n \in \mathbb{Z}} \alpha_n g (x - n) . \]
+
+
+Notre objectif est maintenant de faire intervenir la transform{\'e}e de
+Fourier pour mieux comprendre cette expression. D{\'e}finissons une suite de
+sommes partielles
+\[ g_N (x - t) = \sum_{|n| \leq N} \alpha_n g (x - n) \]
+
+
+qui converge uniform{\'e}ment vers $g (x - t)$, car $g$ est born{\'e}e et de
+support compact. Cela signifie que $g_N$ est major{\'e}e par une fonction de
+support compact $f$ pour tout $N$ et tout $x$.
+
+Ainsi, nous pouvons appliquer le th{\'e}or{\`e}me de convergence domin{\'e}e
+pour justifier l'interversion entre la transform{\'e}e de Fourier et la
+limite, en concluant que la transform{\'e}e de Fourier de $g_N$ converge vers
+la transform{\'e}e de Fourier de $g$ lorsque $N \to \infty$.
+
+\tmtextbf{Lemme 1. }
+
+La transform{\'e}e de Fourier d'une fonction $g$ {\`a} support compact est
+analytique.
+
+\
+
+\tmtextbf{Preuve du lemme 1. }
+
+La transform{\'e}e de Fourier d'une fonction $g$ {\`a} support compact est
+donn{\'e}e par :
+\[ \hat{g} (\xi) = \int_{- a}^a g (t) e^{- 2 i \pi \xi t}  \hspace{0.17em} dt,
+\]
+
+
+o{\`u} $g$ est {\`a} support dans $[- a, a]$.
+
+Nous pouvons d{\'e}velopper l'exponentielle complexe en s{\'e}rie de Taylor :
+\[ e^{- 2 i \pi \xi t} = \sum_{k \geq 0} \frac{(- 2 i \pi t \xi)^k}{k!} \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  \hat{g} (\xi) & = &  \int_{- a}^a g (t) \left( \sum_{k \geq 0} \frac{(- 2 i
+  \pi t \xi)^k}{k!} \right) dt\\
+  & = & \sum_{k \geq 0} \xi^k  \int_{- a}^a g (t) \frac{(- 2 i \pi t)^k}{k!} 
+  \hspace{0.17em} dt
+\end{eqnarray*}
+
+
+o{\`u} l'interversion de la somme et de l'int{\'e}grale est permise par la
+convergence de
+\[ \int_{- a}^a \sum_{k \geq 0} \left| \frac{(- 2 i \pi t \xi)^k}{k!} \right|
+   |g (t) | \hspace{0.17em} dt \]
+
+
+Cela montre que $\hat{g} (\xi)$ est exprim{\'e}e comme une s{\'e}rie
+enti{\`e}re en $\xi$, ce qui signifie que $\hat{g} (\xi)$ est analytique en
+tant que fonction de la variable complexe $\xi$ dans le plan complexe.
+
+Utilisons le lemme suivant pour montrer qu'il existe $\xi$ et $\xi + 1$,
+telles que $\hat{g} (\xi)$ et $\hat{g} (\xi + 1)$ soient non nulles.
+
+\
+
+D'apr{\`e}s le lemme pr{\'e}c{\'e}dent, si la transform{\'e}e de Fourier est
+non nulle, alors elle est analytique, et donc ses z{\'e}ros sont isol{\'e}s.
+Si $\hat{g}$ ne s'annule pas, la d{\'e}monstration est termin{\'e}e.
+
+Sinon, il existe un $\xi$ tel que $\hat{g} (\xi) = 0$. Comme les z{\'e}ros
+sont isol{\'e}s, il existe $\epsilon' > 0$ tel que pour tout $\epsilon \in] 0,
+\epsilon']$, on ait $\hat{g} (\xi + \epsilon) \neq 0$.
+
+\
+
+D'autre part, pour la m{\^e}me raison, il existe $t \in] 0, \epsilon']$ tel
+que $\hat{g} (\xi + 1 + t) \neq 0$.
+
+Finalement, il existe $\xi$ et $\xi + 1$, telles que $\hat{g} (\xi)$ et
+$\hat{g} (\xi + 1)$ soient non nulles.
+
+La transform{\'e} de Fourier donne :
+\[ \hat{g} (\xi) \left( e^{- 2 i \pi t \xi} - \sum_{n \in \mathbb{Z}} \alpha_n
+   e^{- 2 i \pi n \xi} \right) = 0. \]
+.
+
+\
+
+En prenant les valeur pour $\hat{g} (\xi)$ et $\hat{g} (\xi + 1)$ et on
+observant que $e^{- 2 i \pi n \xi}$ est p{\'e}riodique de p{\'e}riode 1. On
+obtient que $e^{- 2 i \pi t} = 1$, et donc $t \in \mathbb{Z}$.
+
+Reprenons le cas o{\`u} $\hat{g} = 0$. Ceci implique, par injectivit{\'e} de
+la transform{\'e}e de Fourier, que $g = 0$ presque partout au sens de la
+mesure de Lebesgue.
+
+Soit $S$ le support de $g$. Montrons qu'il existe $x \in S$, et $t \in G$ $n
+\in \mathbb{Z}$, $x - n - t \nin S$.
+
+Raisonnons par l'absurde et supposons que
+\[ \forall x \in S, \forall t \in G, \exists n \in \mathbb{Z}, x - n - t \in S
+\]
+
+
+Ainsi, $G + S \subset \mathbb{Z}+ S$. Posons $A =\mathbb{Z}+ S$ est
+ferm{\'e}. En effet, soit ($x_n) \in A^{\mathbb{N}}$ tel que ($x_n$) converge
+vers $x$.
+
+Ainsi, il existe ($z_n) \in \mathbb{Z}^{\mathbb{N}}$ et il existe ($s_n) \in
+S^{\mathbb{N}}$ telles que $x_n = z_n + s_n$.
+
+La suite ($z_n$) est born{\'e}e car S est compact et ($x_n$) converge. Il
+existe donc une extractrice $\phi$ telle que ($z_{\phi (n)}$) converge vers $z
+\in \mathbb{Z}$ . ($s_{\phi (n)}$) converge vers $s \in S$. Ainsi, ($x_{\phi
+(n)}$) converge vers $z + s$.
+
+Donc, ($x_n$) converge vers $z + s$.
+
+Ce qui montre que $A$ est ferm{\'e} et dense, car il contient $S + G$ et donc
+$A =\mathbb{R}$.
+
+\
+
+Or, puisque la mesure de Lebesgue de $S$ est nulle(comme on a suppos{\'e} que
+$\hat{g}$ est nulle), alors la mesure de Lebesgue de $A$ l'est aussi.
+Contradiction.
+
+Ainsi, il existe $x \in S$ et $t \in G$, tels que pour tout $n \in \mathbb{Z},
+\quad x - n - t \nin S$
+
+{\'E}crivons
+\[ g (x) = \sum_{n \in \mathbb{Z}} \alpha_n g (x - n - t) \]
+
+
+On trouve que $g (x) = 0$, ce qui est absurde car $x \in S$. Ainsi, $G$ est
+discret. Comme il contient $\mathbb{Z}$, on en conclut que $G = \frac{1}{n}
+\mathbb{Z}$, avec $n \in \mathbb{N}^{\ast}$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

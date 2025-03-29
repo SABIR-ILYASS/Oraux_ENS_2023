@@ -1,0 +1,193 @@
+Ce probl{\`e}me examine les conditions sous lesquelles on peut d{\'e}duire
+l'existence d'une limite pour une fonction {\`a} partir d'informations sur ses
+d{\'e}riv{\'e}es successives.
+\begin{exercise}[]
+On consid{\`e}re un entier $k \geqslant 1$ et une fonction $f \in
+\mathcal{C}^k (\mathbb{R}, \mathbb{R})$ telle que $\underset{j =
+0}{\overset{k}{\sum}} f^{(j)} (x)$ admet une limite pour $x \rightarrow +
+\infty$. Peut-on en d{\'e}duire que $f$ admet une limite en $x \rightarrow +
+\infty$, selon le valeur de $k$?
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soient $k \geq 1$ et $f \in C^k (\mathbb{R}, \mathbb{R})$ telle que
+\[ S (x) = \sum_{j = 0}^k f^{(j)} (x) \]
+admet une limite finie $L$ lorsque $x \to + \infty$.
+
+\tmtextbf{Cas $k = 1$ :}
+
+On a
+\[ S (x) = f (x) + f' (x) \underset{x \to + \infty}{\to} L \]
+
+
+Consid{\'e}rons l'{\'e}quation diff{\'e}rentielle :
+\[ f' (x) + f (x) = S (x) . \]
+
+
+C'est une {\'e}quation diff{\'e}rentielle lin{\'e}aire du premier ordre. Son
+facteur int{\'e}grant est $\mu (x) = e^x$. En multipliant les deux membres par
+$e^x$, on obtient :
+\[ e^x f' (x) + e^x f (x) = e^x S (x), \]
+
+
+ce qui {\'e}quivaut {\`a} :
+\[ \frac{d}{dx} (e^x f (x)) = e^x S (x) . \]
+
+
+En int{\'e}grant entre un point $x_0$ et $x$, on obtient :
+\[ e^x f (x) = \int_{x_0}^x e^t S (t) \hspace{0.17em} dt + C. \]
+
+
+O{\`u} $C$ est une constante.
+
+Comme $S (x) \to L$ lorsque $x \to + \infty$, nous pouvons {\'e}crire $S (x) =
+L + \varepsilon (x)$, avec $\varepsilon (x) \underset{x \rightarrow +
+\infty}{\to} 0$.
+
+Ainsi,
+\[ \int_{x_0}^x e^t S (t) \hspace{0.17em} dt = Le^x - Le^{x_0} + \int_{x_0}^x
+   e^t \varepsilon (t) \hspace{0.17em} dt. \]
+
+
+Donc,
+\[ e^x f (x) = Le^x - Le^{x_0} + \int_{x_0}^x e^t \varepsilon (t)
+   \hspace{0.17em} dt + C, \]
+
+
+D'o{\`u}
+\[ f (x) = L + e^{- x}  (- Le^{x_0} + C) + e^{- x}  \int_{x_0}^x e^t
+   \varepsilon (t) \hspace{0.17em} dt \]
+
+
+Or, $e^{- x}  (- Le^{x_0} + C)  \underset{x \rightarrow + \infty}{\to} 0$, et
+puisque $\varepsilon (x) \underset{x \rightarrow + \infty}{\to} 0$, alors pour
+tout $\kappa > 0$, il existe $M \in \mathbb{R}$ tel que pour tout $x \geqslant
+M$, on a
+\[ | \varepsilon (x) | \leqslant \frac{\kappa}{2} \]
+
+
+Ainsi pour tout $x \geqslant \max (M, x_0)$, on a
+\begin{eqnarray*}
+  \left| e^{- x}  \int_{x_0}^x e^t \varepsilon (t) \hspace{0.17em} dt \right|
+  & \leqslant & e^{- x}  \int_{x_0}^x e^t  | \varepsilon (t) | \hspace{0.17em}
+  dt\\
+  & \leqslant & e^{- x}  \int_{x_0}^M e^t  | \varepsilon (t) |
+  \hspace{0.17em} dt + \frac{\kappa}{2} e^{- x} \int_M^x e^t  \hspace{0.17em}
+  dt\\
+  & = & \frac{\kappa}{2} + e^{- x} \left( \int_{x_0}^M e^t  | \varepsilon (t)
+  | \hspace{0.17em} dt - \frac{\kappa}{2} e^M \right)
+\end{eqnarray*}
+
+
+Avec, $e^{- x} \left( \int_{x_0}^M e^t  | \varepsilon (t) | \hspace{0.17em} dt
+- \frac{\kappa}{2} e^M \right) \underset{x \rightarrow + \infty}{\to} 0$,
+alors il existe $M' \in \mathbb{R}$ tel que pour tout $x \geqslant M'$
+\[ e^{- x} \left( \int_{x_0}^M e^t  | \varepsilon (t) | \hspace{0.17em} dt -
+   \frac{\kappa}{2} e^M \right) \leqslant \frac{\kappa}{2} \]
+
+
+Ainsi, pour tout $x \geqslant \max (M, M', x_0)$, on a
+\[ \left| e^{- x}  \int_{x_0}^x e^t \varepsilon (t) \hspace{0.17em} dt \right|
+   \leqslant \kappa \]
+
+
+D'o{\`u} $e^{- x}  \int_{x_0}^x e^t \varepsilon (t) \hspace{0.17em} dt
+\underset{x \rightarrow + \infty}{\to} 0$ et par cons{\'e}quent $f (x)
+\underset{x \rightarrow + \infty}{\to} L$.
+
+\
+
+D'o{\`u} $f$ admet une limite finie lorsque $x \to + \infty$.
+
+\
+
+\tmtextbf{Cas $k = 2$ :}
+
+On a
+\[ S (x) = f (x) + f' (x) + f'' (x) \underset{x \rightarrow + \infty}{\to} L
+\]
+
+
+Notons $Y = \left( \begin{array}{c}
+  f\\
+  f'
+\end{array} \right)$, on a alors
+\[ Y' + \left( \begin{array}{cc}
+     0 & - 1\\
+     1 & 1
+   \end{array} \right) Y = \left( \begin{array}{c}
+     0\\
+     S
+   \end{array} \right) \]
+
+
+Posons $A = \left( \begin{array}{cc}
+  0 & - 1\\
+  1 & 1
+\end{array} \right)$, on a alors
+\[ \frac{d}{d x} (e^{A x} Y (x)) = e^{A x} \left( \begin{array}{c}
+     0\\
+     S (x)
+   \end{array} \right) \]
+
+
+Par suite
+\[ Y (x) = e^{- A x} \int e^{A x} \left( \begin{array}{c}
+     0\\
+     S (x)
+   \end{array} \right) d x + C \]
+\[ \  \]
+
+
+Par une approche similaire au cas $k = 1$, on peut montrer facilement que $Y
+(x) \underset{x \rightarrow + \infty}{\rightarrow} \left( \begin{array}{c}
+  L\\
+  0
+\end{array} \right)$
+
+En particulier que $f (x) \underset{x \rightarrow + \infty}{\rightarrow} L$.
+
+\
+
+\tmtextbf{Cas $k \geq 3$ :}
+
+Consid{\'e}rons l'{\'e}quation diff{\'e}rentielle
+\[ \sum_{j = 0}^k f^{(j)} (x) = 0 \quad  (\maltese) \]
+
+
+Il s'agit d'une {\'e}quation diff{\'e}rentielle lin{\'e}aire d'{\'e}quation
+caract{\'e}ristique
+\[ \sum_{j = 0}^k r^j = 0 \]
+
+
+L'ensemble des solutions de l'{\'e}quation caract{\'e}ristique est
+\[ \left\{ \exp \left( 2 i \pi \frac{l}{k + 1} \right) | l = 1, 2, \ldots, k +
+   1 \nobracket \right\} \]
+
+
+En prenant $r = \exp \left( \frac{2 i \pi}{k + 1} \right)$, on a alors
+\[ h : x \longmapsto \mathcal{R}e (\exp (r x)) \]
+
+
+est une solution de $(\maltese) .$
+
+Or, pour tout $x \in \mathbb{R},$ on a
+\begin{eqnarray*}
+  h (x) & = & \mathcal{R}e \left( \exp \left( \exp \left( \frac{2 i \pi}{k +
+  1} \right) x \right) \right)\\
+  & = & \mathcal{R}e \left( \exp \left( \cos \left( \frac{2 \pi}{k + 1}
+  \right) x + i \sin \left( \frac{2 \pi}{k + 1} \right) x \right) \right)\\
+  & = & \exp \left( \cos \left( \frac{2 \pi}{k + 1} \right) x \right) \cos
+  \left( \sin \left( \frac{2 \pi}{k + 1} \right) x \right)
+\end{eqnarray*}
+
+
+Or, $k \geqslant 3$, alors $\cos \left( \frac{2 \pi}{k + 1} \right) > 0$ et
+$\sin \left( \frac{2 \pi}{k + 1} \right) > 0$, donc $h$ n'admet pas de limite
+en $+ \infty$.
+
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

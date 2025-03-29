@@ -1,0 +1,1675 @@
+\begin{center}
+\subsection*{Corrig{\'e} de l'{\'e}preuve math{\'e}matiques \ A - \\ XLSR - Fili{\`e}re MP-MPI\\ 2024}\label{mathA_2023}
+\textbf{SABIR ilyass - ETTOUSY BADR}
+\end{center}
+\[
+\star \star \star
+\]
+\addcontentsline{toc}{subsection}{Corrig{\'e} de l'{\'e}preuve math{\'e}matiques \ A -  XLSR - Fili{\`e}re MP-MPI 2024}
+
+\begin{center}
+  \subsubsection*{Prami{\`e}re partie}
+\end{center}
+
+\
+
+\tmtextbf{1.a.} Montrons que $- M_0$ est diagonalisable.
+
+Le polyn{\^o}me caract{\'e}ristique de $- M_0$ est :
+\begin{eqnarray*}
+  \chi_{- M_0} (X) & = & \det (X I_n + M_0)\\
+  & = & \left|\begin{array}{ccccccc}
+    X & 1 & . & . & . & 1 & 1\\
+    1 & X &  &  &  & . & .\\
+    1 & 1 & . &  &  & . & .\\
+    . & . &  & . &  & . & .\\
+    . & . &  &  & . &  & \\
+    . & . &  &  &  & X & 1\\
+    1 & 1 & . & . & . & 1 & X
+  \end{array}\right|
+\end{eqnarray*}
+
+
+On a alors
+\[ \chi_{- M_0} (1) = 0 \]
+
+
+Donc 1 est une valeur propre associ{\'e}e {\`a} $- M_0$, et le sous-espace
+propre $E_1$ de $- M_0$ associ{\'e} {\`a} la valeur propre $1$ est :
+\begin{eqnarray*}
+  E_1 & = & \ker (- M_0 - I_n)\\
+  & = & \ker (M_0 + I_n)
+\end{eqnarray*}
+
+
+Soit $x = \left( \begin{array}{c}
+  x_1\\
+  .\\
+  .\\
+  .\\
+  x_n
+\end{array} \right) \in \mathbb{R}^n$, on a :
+\begin{eqnarray*}
+  x \in E_1 & \Leftrightarrow & (M_0 + I_n) x = 0\\
+  & \Leftrightarrow & x_1 + \cdots + x_n = 0\\
+  & \Leftrightarrow & x \in H \assign \left\{ \left( \begin{array}{c}
+    y_1\\
+    .\\
+    .\\
+    .\\
+    y_n
+  \end{array} \right) \in \mathbb{R}^n | \nobracket y_1, \ldots, y_n \in
+  \mathbb{R} \tmop{tel} \tmop{que} \underset{k = 1}{\overset{n}{\sum}} y_k = 0
+  \right\}
+\end{eqnarray*}
+
+
+Et cela pour tout $x \in \mathbb{R}^n$, d'o{\`u}
+\[ E_1 = H \]
+
+
+Or, $H$ est un hyperplan, donc $\dim E_1 = \dim H = n - 1$.
+
+Ainsi, $1$ est une valeur propre de $- M_0$ d'ordre de multiplicit{\'e} $n -
+1$.
+
+La somme des valeurs propres est la trace de $- M_0$, donc $1 - n$est aussi
+une valeur propre de $- M_0$.
+
+Pour tout $x = \left( \begin{array}{c}
+  x_1\\
+  .\\
+  .\\
+  .\\
+  x_n
+\end{array} \right) \in \mathbb{R}^n$, on a :
+\begin{eqnarray*}
+  x \in E_{1 - n} & \Leftrightarrow & (- M_0 + (n - 1) I_n) x = 0\\
+  & \Leftrightarrow & \forall i \in \llbracket 1, n \rrbracket, (n - 1) x_i =
+  \overset{n}{\underset{k \not{=} i}{\underset{k = 1}{\sum}}} x_k\\
+  & \Leftrightarrow & x_1 = x_2 = \cdots = x_n\\
+  & \Leftrightarrow & x \in \tmop{vect} \left( \left( \begin{array}{c}
+    1\\
+    1\\
+    .\\
+    .\\
+    .\\
+    1
+  \end{array} \right) \right)
+\end{eqnarray*}
+
+
+Ainsi,
+\[ E_{1 - n} = \tmop{vect} \left( \left( \begin{array}{c}
+     1\\
+     1\\
+     .\\
+     .\\
+     .\\
+     1
+   \end{array} \right) \right) \]
+
+
+Puisque $\dim E_1 + \dim E_{1 - n} = n$, alors $- M_0$ est diagonalisable, de
+valeurs propres $1$ et $1 - n$.
+
+\
+
+\tmtextbf{1.b.} Pour tout $x \in \mathbb{R}$, on a, par la d{\'e}finition du
+d{\'e}terminant :
+\[ \det (x I_n + M_0) = \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon
+   (\sigma) \underset{i = 1}{\overset{n}{\prod}} (x I_n + M_0)_{\sigma (i), i}
+\]
+
+
+Or, pour tout $i \in \llbracket 1, n \rrbracket$,
+\[ (x I_n + M_0)_{\sigma (i), i} = \left\{\begin{array}{l}
+     1 \tmop{si} \sigma (i) \not{=} i\\
+     x \tmop{si} \sigma (i) = i
+   \end{array}\right. \]
+
+
+Alors,
+\begin{eqnarray*}
+  \det (x I_n + M_0) & = & \underset{\sigma \in \mathcal{S}_n}{\sum}
+  \varepsilon (\sigma) \underset{i \in \tmmathbf{\nu} (\sigma)}{\prod} x\\
+  & = & \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  x^{\tmmathbf{\nu} (\sigma)}
+\end{eqnarray*}
+
+
+D'autre part, d'apr{\`e}s la question pr{\'e}c{\'e}dente
+\[ \det (x I_n + M_0) = (x - 1)^{n - 1} (x - (1 - n)) \]
+
+
+D'o{\`u}
+\[ \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+   x^{\tmmathbf{\nu} (\sigma)} = (x - 1)^{n - 1} (x + n - 1) \]
+\[ \  \]
+
+
+\tmtextbf{2.} D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a
+
+Pour $x = 1$ :
+\begin{eqnarray*}
+  \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma) & = & 0
+\end{eqnarray*}
+
+
+D'autre part, en d{\'e}rivant la fonction $x \longmapsto \underset{\sigma \in
+\mathcal{S}_n}{\sum} \varepsilon (\sigma) x^{\tmmathbf{\nu} (\sigma)}$, on
+obtient :
+\begin{eqnarray*}
+  \underset{\tmmathbf{\nu} (\sigma) \geqslant 1}{\underset{\sigma \in
+  \mathcal{S}_n}{\sum}} \varepsilon (\sigma) \tmmathbf{\nu} (\sigma)
+  x^{\tmmathbf{\nu} (\sigma) - 1} & = & (n - 1) (x - 1)^{n - 2} (x + n - 1) +
+  (x - 1)^{n - 1}
+\end{eqnarray*}
+
+
+Au point $x = 1$, on a :
+\begin{eqnarray*}
+  \underset{\tmmathbf{\nu} (\sigma) \geqslant 1}{\underset{\sigma \in
+  \mathcal{S}_n}{\sum}} \varepsilon (\sigma) \tmmathbf{\nu} (\sigma) & = &
+  \left\{\begin{array}{l}
+    0 \tmop{si} n \geqslant 3\\
+    2 \tmop{si} n = 2
+  \end{array}\right.
+\end{eqnarray*}
+
+
+D'o{\`u}
+\begin{eqnarray*}
+  \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  \tmmathbf{\nu} (\sigma) & = & \underset{\tmmathbf{\nu} (\sigma) \geqslant
+  1}{\underset{\sigma \in \mathcal{S}_n}{\sum}} \varepsilon (\sigma)
+  \tmmathbf{\nu} (\sigma)\\
+  & = & \left\{\begin{array}{l}
+    0 \tmop{si} n \geqslant 3\\
+    2 \tmop{si} n = 2
+  \end{array}\right.
+\end{eqnarray*}
+
+
+De plus, pour tout $x \in \mathbb{R}$, on a :
+\begin{eqnarray*}
+  \int^x_0 \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  t^{\tmmathbf{\nu} (\sigma)} d t & = & \int^x_0 (t - 1)^{n - 1} (t + n - 1) d
+  t
+\end{eqnarray*}
+
+
+Or
+\begin{eqnarray*}
+  \int^x_0 \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  t^{\tmmathbf{\nu} (\sigma)} d t & = & \underset{\sigma \in
+  \mathcal{S}_n}{\sum} \varepsilon (\sigma) \int^x_0 t^{\tmmathbf{\nu}
+  (\sigma)} d t\\
+  & = & \underset{\sigma \in \mathcal{S}_n}{\sum} \frac{\varepsilon
+  (\sigma)}{1 +\tmmathbf{\nu} (\sigma)} x^{\tmmathbf{\nu} (\sigma) + 1}
+\end{eqnarray*}
+
+
+Et
+\begin{eqnarray*}
+  \int^x_0 (t - 1)^{n - 1} (t + n - 1) d t & = & \int^x_0 (t - 1)^n + n (t -
+  1)^{n - 1} d t\\
+  & = & \frac{(x - 1)^{n + 1}}{n + 1} + (x - 1)^n + (- 1)^{n - 1} \frac{n}{n
+  + 1}
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \underset{\sigma \in \mathcal{S}_n}{\sum} \frac{\varepsilon (\sigma)}{1
+   +\tmmathbf{\nu} (\sigma)} x^{\tmmathbf{\nu} (\sigma) + 1} = \frac{(x -
+   1)^{n + 1}}{n + 1} + (x - 1)^n + (- 1)^{n - 1} \frac{n}{n + 1} \]
+
+
+Au point $x = 1$, on a
+\[ \underset{\sigma \in \mathcal{S}_n}{\sum} \frac{\varepsilon (\sigma)}{1
+   +\tmmathbf{\nu} (\sigma)} = (- 1)^{n - 1} \frac{n}{n + 1} \]
+
+
+\tmtextbf{3.} On a :
+\begin{eqnarray*}
+  \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma) & = &
+  \underset{\varepsilon (\sigma) = 1}{\underset{\sigma \in
+  \mathcal{S}_n}{\sum}} \varepsilon (\sigma) + \underset{\varepsilon (\sigma)
+  = - 1}{\underset{\sigma \in \mathcal{S}_n}{\sum}} \varepsilon (\sigma)\\
+  & = & \tmop{Card} \{ \sigma \in \mathcal{S}_n : \varepsilon (\sigma) = 1 \}
+  - \tmop{Card} \{ \sigma \in \mathcal{S}_n : \varepsilon (\sigma) = - 1 \}
+\end{eqnarray*}
+
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $\underset{\sigma \in
+\mathcal{S}_n}{\sum} \varepsilon (\sigma) = 0$.
+
+Par suite,
+\[ \tmop{Card} \{ \sigma \in \mathcal{S}_n : \varepsilon (\sigma) = 1 \} =
+   \tmop{Card} \{ \sigma \in \mathcal{S}_n : \varepsilon (\sigma) = - 1 \} \]
+
+
+D'o{\`u} la probabilit{\'e} qu'une permutation de $\mathcal{S}_n$ tir{\'e}e
+uniform{\'e}ment au hasard, soit de signature donn{\'e}e est $\frac{1}{2} .$
+
+\
+
+\tmtextbf{4.} Soit $\sigma \in \mathcal{S}_n$.
+
+On a $\sigma \in \mathcal{D}_n$ si et seulement si $\tmmathbf{\nu} (\sigma) =
+0$.
+
+Et
+\begin{eqnarray*}
+  \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  x^{\tmmathbf{\nu} (\sigma)} & = & \underset{\sigma \in \mathcal{D}_n}{\sum}
+  \varepsilon (\sigma) + \underset{\sigma \in \mathcal{S}_n \backslash
+  \mathcal{D}_n}{\sum} \varepsilon (\sigma) x^{\tmmathbf{\nu} (\sigma)}
+\end{eqnarray*}
+
+
+Au point $x = 0$, on a
+\begin{eqnarray*}
+  \left. \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  x^{\tmmathbf{\nu} (\sigma)} \right|_{x = 0} & = & \underset{\sigma \in
+  \mathcal{D}_n}{\sum} \varepsilon (\sigma)\\
+  & = & \tmop{Card} \{ \sigma \in \mathcal{D}_n : \varepsilon (\sigma) = 1 \}
+  - \tmop{Card} \{ \sigma \in \mathcal{D}_n : \varepsilon (\sigma) = - 1 \}
+\end{eqnarray*}
+
+
+\
+
+D'autre part,
+\begin{eqnarray*}
+  \left. \underset{\sigma \in \mathcal{S}_n}{\sum} \varepsilon (\sigma)
+  x^{\tmmathbf{\nu} (\sigma)} \right|_{x = 0} & = & \nobracket (x - 1)^{n - 1}
+  (x + n - 1) |_{x = 0}\\
+  & = & (- 1)^{n - 1} (n - 1)
+\end{eqnarray*}
+
+
+Ainsi,
+\[ \tmop{Card} \{ \sigma \in \mathcal{D}_n : \varepsilon (\sigma) = 1 \} -
+   \tmop{Card} \{ \sigma \in \mathcal{D}_n : \varepsilon (\sigma) = - 1 \} =
+   (- 1)^{n - 1} (n - 1) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.a.} Soit $m \in \mathbb{N}$. On a $(1, X, \ldots, X^m)$ (resp.
+$(1, (X - 1), \ldots, (X - 1)^m)$) est une famille de polyn{\^o}mes non nuls
+{\'e}chelonn{\'e}e en degr{\'e}. Donc, elle est libre, avec un cardinal
+{\'e}gal {\`a} $m + 1 = \dim (\mathbb{R}_m [X])$.
+
+Ainsi, elle est une base de $\mathbb{R}_m [X]$.
+
+\
+
+\tmtextbf{5.b.} Il suffit de montrer que $M$ est la matrice de passage de la
+base $(1, (X - 1), \ldots, (X - 1)^m)$ {\`a} la base $(1, X, \ldots, X^m)$.
+
+On a, pour tout $k \in \llbracket 0, m \rrbracket$,
+\[ X^k = ((X - 1) + 1)^k = \underset{i = 0}{\overset{k}{\sum}} \left(
+   \begin{array}{c}
+     k\\
+     i
+   \end{array} \right) (X - 1)^i \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{5.c.} Puisque $M$ est une matrice de passage, alors elle est
+inversible, et son inverse $M^{- 1}$ est la matrice de passage de la base $(1,
+X, \ldots, X^m)$ {\`a} la base $(1, (X - 1), \ldots, (X - 1)^m)$.
+
+On a, pour tout $k \in \llbracket 0, m \rrbracket$,
+\[ \begin{array}{lll}
+     (X - 1)^k & = & \underset{i = 0}{\overset{k}{\sum}} \left(
+     \begin{array}{c}
+       k\\
+       i
+     \end{array} \right) (- 1)^{k - i} X^i
+   \end{array} \]
+
+
+D'o{\`u}
+\[ M^{- 1} = \left( \left( \begin{array}{c}
+     k\\
+     i
+   \end{array} \right) (- 1)^{k - i} \right)_{(i, k) \in \llbracket 1, n
+   \rrbracket^2} \]
+
+
+\tmtextbf{5.d.} Soient $(u_0, \ldots, u_m), (v_0, \ldots, v_m) \in
+\mathbb{R}^{m + 1}$, tels que pour tout $k \leqslant m$,
+\[ u_k = \underset{l = 0}{\overset{k}{\sum}} \left( \begin{array}{c}
+     k\\
+     l
+   \end{array} \right) v_l \]
+
+
+Montrons que pour tout $k \leqslant m$, on a
+\[ v_k = \underset{l = 0}{\overset{k}{\sum}} (- 1)^{k - l} \left(
+   \begin{array}{c}
+     k\\
+     l
+   \end{array} \right) u_l \]
+
+
+On a
+\begin{eqnarray*}
+  \left( \begin{array}{c}
+    u_0\\
+    .\\
+    .\\
+    .\\
+    u_m
+  \end{array} \right) & = & \left( \begin{array}{c}
+    \underset{l = 0}{\overset{m}{\sum}} \left( \begin{array}{c}
+      0\\
+      l
+    \end{array} \right) v_l\\
+    .\\
+    .\\
+    .\\
+    \underset{l = 0}{\overset{m}{\sum}} \left( \begin{array}{c}
+      m\\
+      l
+    \end{array} \right) v_l
+  \end{array} \right)\\
+  & = & M \left( \begin{array}{c}
+    v_0\\
+    .\\
+    .\\
+    .\\
+    v_m
+  \end{array} \right)
+\end{eqnarray*}
+
+
+Donc
+\[ \left( \begin{array}{c}
+     v_0\\
+     .\\
+     .\\
+     .\\
+     v_m
+   \end{array} \right) = M^{- 1} \left( \begin{array}{c}
+     u_0\\
+     .\\
+     .\\
+     .\\
+     u_m
+   \end{array} \right) = \left( \begin{array}{c}
+     \underset{l = 0}{\overset{m}{\sum}} (- 1)^{0 - l} \left( \begin{array}{c}
+       0\\
+       l
+     \end{array} \right) u_l\\
+     .\\
+     .\\
+     .\\
+     \underset{l = 0}{\overset{m}{\sum}} (- 1)^{m - l} \left( \begin{array}{c}
+       m\\
+       l
+     \end{array} \right) u_l
+   \end{array} \right) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{6.} Soit $n \in \mathbb{N}^{\ast}$. Soit $k \in \llbracket 0, n
+\rrbracket$,
+
+Notons, pour tout $l \in \llbracket 0, k \rrbracket$, $\mathcal{F}_l$:
+l'ensemble des permutations de $\mathcal{S}_k$ ayant exactement $l$ points
+fixes.
+
+On a $\{ \mathcal{F}_0, \ldots, \mathcal{F}_k \}$ forme une partition de
+$\mathcal{S}_k$, en particulier :
+\[ \underset{l = 0}{\overset{k}{\sum}} \tmop{Card} (\mathcal{F}_l) = k! \]
+
+
+D'autre part :
+\begin{eqnarray*}
+  \tmop{Card} (\mathcal{F}_l) & = & \left( \begin{array}{c}
+    k\\
+    l
+  \end{array} \right) \tmop{Card} (\mathcal{D}_k)\\
+  & = & \left( \begin{array}{c}
+    k\\
+    l
+  \end{array} \right) D_{l - k}\\
+  & = & \left( \begin{array}{c}
+    k\\
+    l - k
+  \end{array} \right) D_{l - k}
+\end{eqnarray*}
+
+
+Avec la convention
+\[ D_0 = \tmop{Card} (\mathcal{D}_0) = 1 \]
+
+
+D'o{\`u} :
+\[ \underset{l = 0}{\overset{k}{\sum}} \left( \begin{array}{c}
+     k\\
+     l
+   \end{array} \right) D_k = k! \]
+
+
+En utilisant la question pr{\'e}c{\'e}dente, on a :
+\begin{eqnarray*}
+  D_n & = & \underset{k = 0}{\overset{n}{\sum}} (- 1)^{n - k} \left(
+  \begin{array}{c}
+    n\\
+    k
+  \end{array} \right) k!\\
+  & = & n! \underset{k = 0}{\overset{n}{\sum}} \frac{(- 1)^{n - k}}{(n - k)
+  !}\\
+  & = & n! \underset{k = 0}{\overset{n}{\sum}} \frac{(- 1)^k}{k!}
+\end{eqnarray*}
+
+
+\tmtextbf{7.a.} Soit $n \geqslant 2$, on a
+\[ Y_n (\mathcal{D}_n) = \{ - 1, 1 \} \]
+
+
+Pour $\varepsilon \in \{ - 1, 1 \}$, on a
+\begin{eqnarray*}
+  \mathbb{P} (Y_n = \varepsilon) & = & \frac{\tmop{card} \{ \sigma \in
+  \mathcal{D}_n : \varepsilon (\sigma) = \varepsilon \}}{D_n}
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question 4, on a
+\[ \mathbb{P} (Y_n = 1) =\mathbb{P} (Y_n = - 1) + \frac{(- 1)^{n - 1} (n -
+   1)}{D_n} \]
+
+
+Donc,
+\[ \mathbb{P} (Y_n = 1) = \frac{1}{2} + \frac{(- 1)^{n - 1} (n - 1)}{2 D_n} \]
+
+
+Et
+\[ \mathbb{P} (Y_n = - 1) = \frac{1}{2} - \frac{(- 1)^{n - 1} (n - 1)}{2 D_n}
+\]
+
+
+D'o{\`u}
+\[ \mathbb{P} (Y_n = \varepsilon) = \frac{1}{2} + \varepsilon \frac{(- 1)^{n -
+   1} (n - 1)}{2 D_n} \]
+
+
+\tmtextbf{7.b.} Soit $\varepsilon \in \{ - 1, 1 \}$, on a pour tout $n
+\geqslant 2$ :
+\begin{eqnarray*}
+  \frac{(- 1)^{n - 1} (n - 1)}{2 D_n} & = & \frac{(- 1)^{n - 1} (n - 1)}{n!
+  \underset{k = 0}{\overset{n}{\sum}} \frac{(- 1)^k}{k!}}
+\end{eqnarray*}
+
+
+Or,
+\[ \underset{k = 0}{\overset{n}{\sum}} \frac{(- 1)^k}{k!} \underset{n
+   \rightarrow + \infty}{\sim} \frac{1}{e} \]
+
+
+Donc
+\[ \frac{(- 1)^{n - 1} (n - 1)}{2 D_n} \underset{n \rightarrow + \infty}{\sim}
+   \frac{(- 1)^{n - 1} (n - 1)}{2 e n!} \]
+
+
+Avec
+\[ \underset{n \rightarrow + \infty}{\lim} \frac{(- 1)^{n - 1} (n - 1)}{2 e
+   n!} = 0 \]
+
+
+D'o{\`u}
+\[ \underset{n \rightarrow + \infty}{\lim} \frac{(- 1)^{n - 1} (n - 1)}{2 D_n}
+   = 0 \]
+
+
+Ainsi, $\underset{n \rightarrow + \infty}{\lim} \mathbb{P} (Y_n =
+\varepsilon)$ existe et on a :
+\[ \underset{n \rightarrow + \infty}{\lim} \mathbb{P} (Y_n = \varepsilon) =
+   \frac{1}{2} \]
+
+
+\tmtextbf{8.a.} On a
+\[ Z_n (\mathcal{S}_n) = \llbracket 0, n \rrbracket \]
+
+
+Et pour tout $k \in \llbracket 0, n \rrbracket$, on a :
+\begin{eqnarray*}
+  \mathbb{P} (Z_n = k) & = & \frac{\tmop{Card} \{ \sigma \in \mathcal{S}_n :
+  \tmmathbf{\nu} (\sigma) = k \}}{n!}\\
+  & = & \frac{\left( \begin{array}{c}
+    n\\
+    k
+  \end{array} \right) D_{n - k}}{n!}\\
+  & = & \frac{1}{k!} \underset{l = 0}{\overset{n - k}{\sum}} \frac{(-
+  1)^l}{l!}
+\end{eqnarray*}
+
+
+\tmtextbf{8.b.} On a
+\begin{eqnarray*}
+  \underset{n \rightarrow + \infty}{\lim} \mathbb{P} (Z_n = k) & = &
+  \frac{1}{e k!}
+\end{eqnarray*}
+
+
+\tmtextbf{8.c.} Le nombre moyen de points fixes d'une permutation
+al{\'e}atoire est l'esp{\'e}rence de $Z_n$.
+
+Et on a :
+\begin{eqnarray*}
+  \mathbb{E} [Z_n] & = & \underset{k = 0}{\overset{n}{\sum}} k\mathbb{P} (Z_n
+  = k)\\
+  & = & \underset{k = 0}{\overset{n}{\sum}} k \frac{1}{k!} \underset{l =
+  0}{\overset{n - k}{\sum}} \frac{(- 1)^l}{l!}\\
+  & = & \underset{k = 1}{\overset{n}{\sum}} \frac{1}{(k - 1) !} \underset{l =
+  0}{\overset{n - k}{\sum}} \frac{(- 1)^l}{l!}
+\end{eqnarray*}
+
+
+Or, pour tout $k \in \mathbb{N}$, on a :
+\[ \underset{n \rightarrow + \infty}{\lim} k\mathbb{P} (Z_n = k) =
+   \left\{\begin{array}{ll}
+     \frac{1}{e (k - 1) !} & \tmop{si} k > 0\\
+     0 & \tmop{si} k = 0
+   \end{array}\right. \]
+
+
+D'autre part, on a :
+\[ \underset{k = 0}{\overset{n}{\sum}} k\mathbb{P} (Z_n = k) = \underset{k =
+   0}{\overset{+ \infty}{\sum}} k\mathbb{P} (Z_n = k)
+   \underset{}{\tmmathbf{1_{[n, + \infty [}}} (k) \]
+
+
+La somme est finie {\`a} termes positifs, donc :
+\begin{eqnarray*}
+  \underset{n \rightarrow + \infty}{\lim} \underset{k = 0}{\overset{+
+  \infty}{\sum}} k\mathbb{P} (Z_n = k) \underset{}{\tmmathbf{1_{[n, + \infty
+  [}}} (k) & = & \underset{k = 0}{\overset{+ \infty}{\sum}} \underset{n
+  \rightarrow + \infty}{\lim} k\mathbb{P} (Z_n = k)
+  \underset{}{\tmmathbf{1_{[n, + \infty [}}} (k)\\
+  & = & \underset{k = 1}{\overset{+ \infty}{\sum}} \frac{1}{e (k - 1) !}\\
+  & = & 1
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \underset{n \rightarrow + \infty}{\lim} \mathbb{E} [Z_n] = 1 \]
+
+
+\tmtextbf{9.} Par un calcul simple, on obtient :
+\[ \left\{\begin{array}{l}
+     \frac{1}{2!} \underset{\sigma \in \mathcal{S}_2}{\sum} \omega (\sigma) =
+     \frac{3}{2}\\
+     \frac{1}{3!} \underset{\sigma \in \mathcal{S}_3}{\sum} \omega (\sigma) =
+     \frac{11}{6}\\
+     \frac{1}{4!} \underset{\sigma \in \mathcal{S}_4}{\sum} \omega (\sigma) =
+     \frac{50}{24}
+   \end{array}\right. \]
+
+
+\tmtextbf{10.} Soit $n \geqslant 2$, on a $s (n, n)$, est le nombre de
+permutations $\sigma$ de $\mathcal{S}_n $tel que $\omega (\sigma) = n$, donc
+$l_{\omega (\sigma)} = 1$.
+
+D'o{\`u} $\sigma = \tmop{id}_{\mathcal{S}_n}$, par cons{\'e}quent :
+\begin{eqnarray*}
+  s (n, n) & = & 1
+\end{eqnarray*}
+
+
+Et $s (n, 1)$ est le nombre de \ permutations $\sigma$ de $\mathcal{S}_n $tel
+que $\omega (\sigma) = 1$, c'est-{\`a}-dire $l_{\omega (\sigma)} = n$.
+
+Il existe $(n - 1) !$ permutations $\sigma$ de $\mathcal{S}_n $telles que
+$\omega (\sigma) = 1$ (cycle de longueur $n$).
+
+D'o{\`u}
+\[ s (n, 1) = (n - 1) ! \]
+
+
+Pour tout $k \in \llbracket 2, n - 1 \rrbracket$, on a $s (n, k)$ est le
+nombre de permutations $\sigma$ de $\mathcal{S}_n $telles que $\omega (\sigma)
+= k$.
+
+Montrons que
+\begin{eqnarray*}
+  s (n, k) & = & s (n - 1, k - 1) + (n - 1) s (n - 1, k)
+\end{eqnarray*}
+
+
+Si $\omega (\sigma) = k$ et sans d{\'e}placer $n$, donc $n$ est fix{\'e} par
+$\sigma$, alors la restriction de $\sigma$ {\`a} \ $\mathcal{S}_{n - 1} $
+v{\'e}rifie $\omega (\sigma') = k - 1$, donc il y a $s (n - 1, k - 1)$
+permutations qui v{\'e}rifient cette condition.
+
+Si $\omega (\sigma) = k$ par d{\'e}placement de $n$, alors il y a $(n - 1)
+$possibilit{\'e}s pour la position de $\sigma (n)$. Apr{\`e}s avoir choisi la
+position de $n$, les $n - 1$ autres {\'e}l{\'e}ments forment une bijection
+isomorphe {\`a} une permutation $\sigma'$ de $\mathcal{S}_{n - 1}$ tel que
+$\omega (\sigma') = k$.
+
+Donc il y a $(n - 1) s (n - 1, k)$ permutations qui v{\'e}rifient cette
+condition.
+
+D'o{\`u}
+\[ \begin{array}{lll}
+     s (n, k) & = & s (n - 1, k - 1) + (n - 1) s (n - 1, k)
+   \end{array} \]
+
+
+\tmtextbf{11.} Soit $x \in \mathbb{R}$. Posons, pour tout $j \in
+\mathbb{N}^{\ast}$,
+\[ \kappa_j (x) = \underset{k = 1}{\overset{j}{\sum}} s (j, k) x^k \]
+
+
+On a pour tout $n \in \mathbb{N}^{\ast}$ :
+\begin{eqnarray*}
+  \kappa_n (x) & = & S (n, n) x^n + S (n, 1) x + \underset{k = 2}{\overset{n -
+  1}{\sum}} (s (n - 1, k - 1) + (n - 1) s (n - 1, k)) x^k\\
+  & = & x^n + (n - 1) !x + \underset{k = 2}{\overset{n - 1}{\sum}} s (n - 1,
+  k - 1) x^k + (n - 1) \underset{k = 2}{\overset{n - 1}{\sum}} s (n - 1, k)
+  x^k\\
+  & = & x^n + (n - 1) !x + x \underset{k = 1}{\overset{n - 2}{\sum}} s (n -
+  1, k) x^k + (n - 1) \underset{k = 2}{\overset{n - 1}{\sum}} s (n - 1, k)
+  x^k\\
+  & = & x^n + (n - 1) !x + x (\kappa_{n - 1} (x) - s (n - 1, n - 1) x^{n -
+  1}) + (n - 1) (\kappa_{n - 1} (x) - s (n - 1, 1) x)\\
+  & = & (x + n - 1) \kappa_{n - 1} (x)
+\end{eqnarray*}
+
+
+Par t{\'e}l{\'e}scopage, on en d{\'e}duit :
+\begin{eqnarray*}
+  \kappa_n (x) & = & \kappa_1 (x) \underset{i = 2}{\overset{n}{\prod}} (x + i
+  - 1)\\
+  & = & x \underset{i = 1}{\overset{n - 1}{\prod}} (x + i)\\
+  & = & \underset{i = 0}{\overset{n - 1}{\prod}} (x + i)
+\end{eqnarray*}
+
+
+\tmtextbf{12.} On a, pour tout $n \in \mathbb{N}^{\ast}$ :
+\begin{eqnarray*}
+  \mathbb{E} [X_n] & = & \underset{k = 0}{\overset{n}{\sum}} k\mathbb{P} (X_n
+  = k)\\
+  & = & \frac{1}{n!} \underset{k = 0}{\overset{n}{\sum}} k \tmop{Card} \{
+  \sigma \in \mathcal{S}_n : \omega (\sigma) = k \}\\
+  & = & \frac{1}{n!} \underset{k = 0}{\overset{n}{\sum}} k s (n, k)
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question pr{\'e}c{\'e}dente, pour tout $x \in \mathbb{R}$,
+\[ \underset{k = 1}{\overset{n}{\sum}} k s (n, k) x^{k - 1} = \underset{k =
+   0}{\overset{n - 1}{\sum}} \underset{i \neq k}{\underset{i = 0}{\overset{n -
+   1}{\prod}}} (x + i) \]
+
+
+En particulier, pour $x = 1$, on a :
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sum}} k s (n, k) & = & \underset{k =
+  0}{\overset{n - 1}{\sum}} \underset{i \neq k}{\underset{i = 0}{\overset{n -
+  1}{\prod}}} (1 + i)\\
+  & = & \underset{k = 0}{\overset{n - 1}{\sum}} \frac{n!}{k + 1}\\
+  & = & n! \underset{k = 1}{\overset{n}{\sum}} \frac{1}{k}
+\end{eqnarray*}
+
+
+Par suite,
+\[ \mathbb{E} [X_n] = \underset{k = 1}{\overset{n}{\sum}} \frac{1}{k} \]
+
+
+Or,
+\[ \underset{k = 1}{\overset{n}{\sum}} \frac{1}{k} \underset{n \rightarrow +
+   \infty}{=} \ln (n) + \gamma + O \left( \frac{1}{n} \right) \]
+
+
+Alors,
+\[ \mathbb{E} [X_n] \underset{n \rightarrow + \infty}{=} \ln (n) + \gamma + O
+   \left( \frac{1}{n} \right) \]
+
+
+\tmtextbf{13.a.} D'apr{\`e}s la question 11, pour tout $n \in
+\mathbb{N}^{\ast}$,
+\[ \underset{k = 2}{\overset{n}{\sum}} k (k - 1) s (n, k) x^{k - 2} =
+   \underset{k = 0}{\overset{n - 1}{\sum}} \underset{j \neq k}{\underset{j =
+   0}{\overset{n - 1}{\sum}}} \underset{i \neq k, j}{\underset{i =
+   0}{\overset{n - 1}{\prod}}} (x + i) \]
+
+
+En particulier,
+\begin{eqnarray*}
+  \underset{k = 2}{\overset{n}{\sum}} k (k - 1) s (n, k) & = & \underset{k =
+  0}{\overset{n - 1}{\sum}} \underset{j \neq k}{\underset{j = 0}{\overset{n -
+  1}{\sum}}} \underset{i \neq k, j}{\underset{i = 0}{\overset{n - 1}{\prod}}}
+  (1 + i)\\
+  & = & \underset{k = 0}{\overset{n - 1}{\sum}} \underset{j \neq
+  k}{\underset{j = 0}{\overset{n - 1}{\sum}}} \frac{n!}{(k + 1)  (j + 1)}\\
+  & = & n! \underset{k = 0}{\overset{n - 1}{\sum}} \left( \underset{j =
+  0}{\overset{n - 1}{\sum}} \frac{1}{(k + 1)  (j + 1)} - \frac{1}{(k + 1)^2}
+  \right)\\
+  & = & n! \left( \underset{k = 1}{\overset{n}{\sum}} \underset{j =
+  1}{\overset{n}{\sum}} \frac{1}{k j} - \underset{k = 1}{\overset{n}{\sum}}
+  \frac{1}{k^2} \right)
+\end{eqnarray*}
+
+
+\
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{13.b.} Pour tout $n \in \mathbb{N}^{\ast}$, on a :
+\begin{eqnarray*}
+  \underset{k = 2}{\overset{n}{\sum}} k^2 s (n, k) & = & \underset{k =
+  2}{\overset{n}{\sum}} k (k - 1) s (n, k) + \underset{k =
+  1}{\overset{n}{\sum}} k s (n, k)\\
+  & = & \mathbb{E} [X_n] + \underset{k = 1}{\overset{n}{\sum}} \underset{j =
+  1}{\overset{n}{\sum}} \frac{1}{k j} - \underset{k = 1}{\overset{n}{\sum}}
+  \frac{1}{k^2}
+\end{eqnarray*}
+
+
+\tmtextbf{14.a.} On a, pour tout $n \in \mathbb{N}^{\ast}$,
+\begin{eqnarray*}
+  \frac{1}{n!} \underset{\sigma \in \mathcal{S}_n}{\sum} \omega (\sigma)^2 & =
+  & \frac{1}{n!} \underset{k = 1}{\overset{n}{\sum}} k^2 s (n, k)\\
+  & = & \mathbb{E} [X_n] + \underset{k = 1}{\overset{n}{\sum}} \underset{j =
+  1}{\overset{n}{\sum}} \frac{1}{k j} - \underset{k = 1}{\overset{n}{\sum}}
+  \frac{1}{k^2}
+\end{eqnarray*}
+
+
+Or,
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}}
+  \frac{1}{k j} & = & \left( \underset{k = 1}{\overset{n}{\sum}} \frac{1}{k}
+  \right)^2\\
+  & \underset{n \rightarrow + \infty}{=} & \left( \ln (n) + \gamma + O \left(
+  \frac{1}{n} \right) \right)^2\\
+  & \underset{n \rightarrow + \infty}{=} & \ln (n)^2 + \gamma^2 + O \left(
+  \frac{1}{n} \right)^2 + 2 \gamma \ln (n) + 2 O \left( \frac{\ln (n)}{n}
+  \right) + 2 \gamma O \left( \frac{1}{n} \right)
+\end{eqnarray*}
+
+
+On a l'existence des suites $(\varepsilon_{j, n})_{n \in \mathbb{N}}$
+born{\'e}es pour tout $j = 1, 2, 3$ telles que :
+\[ \left\{\begin{array}{l}
+     O \left( \frac{1}{n} \right)^2 = \frac{\varepsilon_{1, n}}{n^2}\\
+     O \left( \frac{1}{n} \right) = \frac{\varepsilon_{2, n}}{n}\\
+     O \left( \frac{\ln (n)}{n} \right) = \frac{\ln (n)}{n} \varepsilon_{3, n}
+   \end{array}\right. \]
+
+
+Donc,
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}}
+  \frac{1}{k j} & \underset{n \rightarrow + \infty}{=} & \ln (n)^2 + \gamma^2
+  + 2 \gamma \ln (n) + \frac{\varepsilon_{1, n}}{n^2} + 2
+  \frac{\varepsilon_{2, n}}{n} + 2 \frac{\ln (n)}{n} \varepsilon_{3, n}\\
+  & \underset{n \rightarrow + \infty}{=} & \ln (n)^2 + \gamma^2 + 2 \gamma
+  \ln (n) + \frac{\ln (n)}{n} \left( \frac{\varepsilon_{1, n}}{n \ln (n)} + 2
+  \frac{\varepsilon_{2, n}}{\ln (n)} + 2 \varepsilon_{3, n} \right)
+\end{eqnarray*}
+
+
+Avec $\left( \frac{\varepsilon_{1, n}}{n \ln (n)} + 2 \frac{\varepsilon_{2,
+n}}{\ln (n)} + 2 \varepsilon_{3, n} \right)_{n \in \mathbb{N}}$ est une suite
+born{\'e}e. Alors,
+\[ \underset{k = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{n}{\sum}}
+   \frac{1}{k j} \underset{n \rightarrow + \infty}{=} \ln (n)^2 + \gamma^2 + 2
+   \gamma \ln (n) + O \left( \frac{\ln (n)}{n} \right) \]
+
+
+Or,
+\begin{eqnarray*}
+  \mathbb{E} [X_n] & \underset{n \rightarrow + \infty}{=} & \ln (n) + \gamma +
+  O \left( \frac{1}{n} \right)\\
+  & \underset{n \rightarrow + \infty}{=} & \ln (n) + \gamma + O \left(
+  \frac{\ln (n)}{n} \right)
+\end{eqnarray*}
+
+
+Et,
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sum}} \frac{1}{k^2} & \underset{n \rightarrow
+  + \infty}{=} & \frac{\pi^2}{6} + o (1)\\
+  & \underset{n \rightarrow + \infty}{=} & \frac{\pi^2}{6} + O \left(
+  \frac{\ln (n)}{n} \right)
+\end{eqnarray*}
+
+
+D'o{\`u},
+\[ \frac{1}{n!} \underset{\sigma \in \mathcal{S}_n}{\sum} \omega (\sigma)^2
+   \underset{n \rightarrow + \infty}{=} (2 \gamma + 1) \ln (n) + \gamma^2 +
+   \gamma - \frac{\pi^2}{6} + \ln (n)^2 + O \left( \frac{\ln (n)}{n} \right)
+\]
+
+
+D'o{\`u},
+\[ c = \gamma^2 + \gamma - \frac{\pi^2}{6} \]
+
+
+\tmtextbf{14.b.} On a :
+\begin{eqnarray*}
+  \frac{1}{n!} \underset{\sigma \in \mathcal{S}_n}{\sum} (\omega (\sigma) -
+  \ln (n))^2 & = & \frac{1}{n!} \underset{\sigma \in \mathcal{S}_n}{\sum}
+  \omega (\sigma)^2 - 2 \frac{\ln (n)}{n!} \underset{\sigma \in
+  \mathcal{S}_n}{\sum} \omega (\sigma) + \ln (n)^2\\
+  & = & \frac{1}{n!} \underset{\sigma \in \mathcal{S}_n}{\sum} \omega
+  (\sigma)^2 - 2 \ln (n) \mathbb{E} [X_n] + \ln (n)^2 \\
+  & \underset{n \rightarrow + \infty}{=} & \ln (n) + c + O \left( \frac{\ln
+  (n)}{n} \right)
+\end{eqnarray*}
+
+
+\tmtextbf{15.} D'apr{\`e}s l'in{\'e}galit{\'e} de Markov :
+\begin{eqnarray*}
+  \mathbb{P} (| X_n - \ln (n) | > \varepsilon \ln (n)) & \leqslant &
+  \frac{\mathbb{E} [(X_n - \ln (n))^2]}{\varepsilon^2 \ln (n)^2}\\
+  & = & \frac{1}{\varepsilon^2 \ln (n)^2} . \frac{1}{n!} \underset{\sigma \in
+  \mathcal{S}_n}{\sum} (\omega (\sigma) - \ln (n))^2\\
+  & \underset{n \rightarrow + \infty}{=} & \frac{1}{\varepsilon^2 \ln (n)}
+  \left( 1 + \frac{c}{\ln (n)} + O \left( \frac{1}{n} \right) \right)\\
+  & \underset{n \rightarrow + \infty}{=} & \frac{1}{\varepsilon^2 \ln (n)} (1
+  + o (1))
+\end{eqnarray*}
+
+
+Or, il existe une constante $C > 0$ telle que
+\[ 1 + o (1) \leqslant C \]
+
+
+D'o{\`u}
+
+
+\[ \mathbb{P} (| X_n - \ln (n) | > \varepsilon \ln (n)) \leqslant
+   \frac{C}{\varepsilon^2 \ln (n)} \]
+
+\subsubsection*{\centering Deuxième partie}
+
+
+\tmtextbf{16.} Soit $n \in \mathbb{N}$ tel que $n \geqslant 2$, on a
+\begin{eqnarray*}
+  \underset{k = 2}{\overset{n}{\sum}} a_k b (k) & = & \underset{k =
+  2}{\overset{n}{\sum}} (A (k) - A (k - 1)) b (k)\\
+  & = & \underset{k = 2}{\overset{n}{\sum}} A (k) b (k) - \underset{k =
+  3}{\overset{n}{\sum}} A (k - 1) b (k)\\
+  & = & \underset{k = 2}{\overset{n}{\sum}} A (k) b (k) - \underset{k =
+  2}{\overset{n - 1}{\sum}} A (k) b (k + 1)\\
+  & = & A (n) b (n) + \underset{k = 2}{\overset{n - 1}{\sum}} A (k) (b (k) -
+  b (k + 1))\\
+  & = & A (n) b (n) - \underset{k = 2}{\overset{n - 1}{\sum}} A (k) \int^{k +
+  1}_k b' (t) d t\\
+  & = & A (n) b (n) - \underset{k = 2}{\overset{n - 1}{\sum}} \int^{k + 1}_k
+  A (k) b' (t) d t
+\end{eqnarray*}
+
+
+Or, pour tout $k \in \llbracket 2, n - 1 \rrbracket $et pour tout $t \in [k, k
++ 1]$, on a
+\[ A (t) = A (k) \]
+
+
+D'o{\`u},
+\begin{eqnarray*}
+  \underset{k = 2}{\overset{n}{\sum}} a_k b (k) & = & A (n) b (n) -
+  \underset{k = 2}{\overset{n - 1}{\sum}} \int^{k + 1}_k A (t) b' (t) d t\\
+  & = & A (n) b (n) - \int^n_2 A (t) b' (t) d t
+\end{eqnarray*}
+
+
+\tmtextbf{17.a.}
+
+Pour $n = 1$
+\[ \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p = 1 \]
+
+
+Pour $n = 2$
+\[ \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p = 2 \]
+
+
+Pour $n = 3$
+\[ \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p = 6 \]
+
+
+\tmtextbf{17.b.} Si $n$est pair et $n > 2$, alors $n$ n'est pas premier. Par
+suite,
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p & = &
+  \underset{p \tmop{premier}}{\underset{p \leqslant n - 1}{\prod}} p\\
+  & \leqslant & 4^{n - 1}\\
+  & \leqslant & 4^n
+\end{eqnarray*}
+
+
+\tmtextbf{17.c.} Soit $n = 2 m + 1$ avec $m \in \mathbb{N}$. On a :
+\begin{eqnarray*}
+  m! \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right) & = & \underset{k = m + 1}{\overset{2 m + 1}{\prod}} k\\
+  & = & \underset{k n' \tmop{est} \tmop{pas} \tmop{premier}}{\underset{m + 1
+  \leqslant k \leqslant 2 m + 1}{\prod}} k \times \underset{p
+  \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m + 1}{\prod}} p
+\end{eqnarray*}
+
+
+D'o{\`u} :
+\[ \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+   1}{\prod}} p \tmop{divise} m! \left( \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \]
+
+
+Or, pour tout $p$ premier tel que $m + 1 \leqslant p \leqslant 2 m + 1$, on a
+:
+\[ p \wedge m! = 1 \]
+
+
+Donc :
+\[ \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+   1}{\prod}} p \wedge m! = 1 \]
+
+
+Ainsi :
+\[ \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+   1}{\prod}} p \tmop{divise} \left( \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \]
+
+
+D'autre part, on a :
+\begin{eqnarray*}
+  \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right) & = & \frac{1}{2} \left[ \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right) + \left( \begin{array}{c}
+    2 m + 1\\
+    m + 1
+  \end{array} \right) \right]\\
+  & \leqslant & \frac{1}{2} \underset{k = 0}{\overset{2 m + 1}{\sum}} \left(
+  \begin{array}{c}
+    2 m + 1\\
+    k
+  \end{array} \right)\\
+  & = & \frac{1}{2} \times 2^{2 m + 1}\\
+  & = & 4^m
+\end{eqnarray*}
+
+
+\tmtextbf{17.d.} D'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a :
+\[ \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+   1}{\prod}} p \tmop{divise} \left( \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \]
+
+
+Et
+\[ \left( \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \leqslant 4^m \]
+
+
+Donc,
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+  1}{\prod}} p & \leqslant & \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right)\\
+  & \leqslant & 4^m
+\end{eqnarray*}
+
+
+Par suite,
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p & = &
+  \underset{p \tmop{premier}}{\underset{p \leqslant m}{\prod}} p \times
+  \underset{p \tmop{premier}}{\underset{m + 1 \leqslant p \leqslant 2 m +
+  1}{\prod}} p\\
+  & \leqslant & 4^m \times 4^m\\
+  & \leqslant & 4^{2 m + 1}\\
+  & = & 4^n
+\end{eqnarray*}
+
+
+D'o{\`u}, par r{\'e}currence forte, pour tout $n \geqslant 1$,
+\[ \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}} p \leqslant
+   4^n \]
+
+
+\tmtextbf{18.} Soit $n \in \mathbb{N}^{\ast}$ et $p$un nombre premier.
+
+On a :
+\begin{eqnarray*}
+  \tmmathbf{\nu}_p (n!) & = & \underset{k = 1}{\overset{n}{\sum}}
+  \tmmathbf{\nu}_p (k)\\
+  & = & \underset{k = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{+
+  \infty}{\sum}} \delta_{j, k}
+\end{eqnarray*}
+
+
+Avec, pour tous $j, k \in \mathbb{N}$,
+
+
+\[ \delta_{j, k} \assign \left\{\begin{array}{ll}
+     1 & \tmop{si} p^j \tmop{divise} k\\
+     0 & \tmop{sinon}
+   \end{array}\right. \]
+
+
+Or, la somme $\underset{k = 1}{\overset{n}{\sum}} \underset{j = 1}{\overset{+
+\infty}{\sum}} \delta_{j, k}$ est finie. Ainsi,
+\begin{eqnarray*}
+  \tmmathbf{\nu}_p (n!) & = & \underset{j = 1}{\overset{+ \infty}{\sum}}
+  \underset{k = 1}{\overset{n}{\sum}} \delta_{j, k}\\
+  & = & \underset{j = 1}{\overset{+ \infty}{\sum}} \tmop{Card} \{ k \in
+  \llbracket 1, n \rrbracket  | \nobracket k p^j \leqslant n \}\\
+  & = & \underset{j = 1}{\overset{+ \infty}{\sum}} E \left( \frac{n}{p^j}
+  \right)
+\end{eqnarray*}
+
+
+Par suite,
+\begin{eqnarray*}
+  \frac{n}{p} - 1 & \leqslant & E \left( \frac{n}{p} \right)\\
+  & = & \tmmathbf{\nu}_p (n!)\\
+  & = & \underset{j = 1}{\overset{+ \infty}{\sum}} E \left( \frac{n}{p^j}
+  \right)\\
+  & \leqslant & \underset{j = 1}{\overset{+ \infty}{\sum}} \frac{n}{p^j}\\
+  & = & \frac{n}{p} \frac{1}{1 - \frac{1}{p}}\\
+  & = & \frac{n}{p} + \frac{n}{p (p - 1)}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{19.a.} Soit $n \in \mathbb{N}^{\ast}$,
+
+On sait que la fonction $t \longmapsto \ln (t)$ est croissante et continue
+sur $[1, + \infty [$, donc :
+\[ \underset{k = 1}{\overset{n - 1}{\sum}} \ln (k) \leqslant \underset{k =
+   1}{\overset{n - 1}{\sum}} \int^{k + 1}_k \ln (t) d t \leqslant \underset{k
+   = 1}{\overset{n - 1}{\sum}} \ln (k + 1) \]
+
+
+Avec
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n - 1}{\sum}} \int^{k + 1}_k \ln (t) d t & = &
+  \int^n_1 \ln (t) d t\\
+  & = & n \ln (n) - n + 1
+\end{eqnarray*}
+
+
+Donc,
+\[ n \ln (n) - n + 1 \leqslant \underset{k = 1}{\overset{n}{\sum}} \ln (k)
+   \leqslant n \ln (n) + \ln (n) - n + 1 \]
+
+
+D'o{\`u},
+\[ \underset{k = 1}{\overset{n}{\sum}} \ln (k) \underset{n \rightarrow +
+   \infty}{=} n \ln (n) - n + O (\ln (n)) \]
+
+
+\tmtextbf{19.b.} D'apr{\`e}s le th{\'e}or{\`e}me fondamental de
+l'arithm{\'e}tique et par d{\'e}finition de la valuation,on a
+\[ n! = \underset{}{\underset{p \tmop{premier}}{\prod}} {p^{\tmmathbf{\nu}_p
+   (n!)}}  \]
+
+
+Avec pour tout $p > n$ premier $v_p (n!) = 0$ (car $p \wedge n! = 1$).
+
+D'o{\`u}
+\[ n! = \underset{p \tmop{premier}}{\underset{p \leqslant n}{\prod}}
+   {p^{\tmmathbf{\nu}_p (n!)}}  \]
+
+
+Par suite
+\[ \ln (n!) = \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+   \tmmathbf{\nu}_p (n!) \ln (p)  \]
+
+
+D'une part, on a
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \tmmathbf{\nu}_p
+  (n!) \ln (p) & \leqslant & \underset{p \tmop{premier}}{\underset{p \leqslant
+  n}{\sum}} \left( \frac{n}{p} + \frac{n}{p (p - 1)} \right) \ln (p)\\
+  & \leqslant & n \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{\ln (p)}{p} + n \underset{p \tmop{premier}}{\underset{p \leqslant
+  n}{\sum}} \frac{\ln (p)}{p (p - 1)}
+\end{eqnarray*}
+
+
+D'autre part,
+
+
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \tmmathbf{\nu}_p
+  (n!) \ln (p) & \geqslant & \underset{p \tmop{premier}}{\underset{p \leqslant
+  n}{\sum}} \left( \frac{n}{p} - 1 \right) \ln (p)\\
+  & \geqslant & n \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{\ln (p)}{p} - \underset{p \tmop{premier}}{\underset{p \leqslant
+  n}{\sum}} \ln (p)\\
+  & = & n \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{\ln (p)}{p} - \ln \left( \underset{p \tmop{premier}}{\underset{p
+  \leqslant n}{\prod}} p \right)\\
+  & \geqslant & n \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{\ln (p)}{p} - n \ln (4)
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ n \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{\ln
+   (p)}{p} - n \ln (4) \leqslant \ln (n!) \leqslant n \underset{p
+   \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{\ln (p)}{p} + n
+   \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{\ln
+   (p)}{p (p - 1)} \]
+
+
+\tmtextbf{19.c.} On a
+\[ \frac{\ln (k)}{k (k - 1)} \underset{k \rightarrow + \infty}{=} o \left(
+   \frac{1}{k^{3 / 2}} \right) \]
+
+
+D'o{\`u}, par le crit{\`e}re de comparaison avec une s{\'e}rie de Riemann, la
+s{\'e}rie $\underset{k \geqslant 2}{\sum} \frac{\ln (k)}{k (k - 1)}$ converge.
+
+\
+
+\tmtextbf{19.d.} D'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a :
+\[ \frac{\ln (n!)}{n} - \underset{p \tmop{premier}}{\underset{p \leqslant
+   n}{\sum}} \frac{\ln (p)}{p (p - 1)} \leqslant \underset{p
+   \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{\ln (p)}{p} \leqslant
+   \frac{\ln (n!)}{n} + \ln (4) \]
+
+
+D'apr{\`e}s la formule de Stirling :
+\[ \frac{\ln (n!)}{n} \underset{n \rightarrow + \infty}{=} \ln (n) + O (1) \]
+
+
+\
+
+Puisque $\underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+\frac{\ln (p)}{p (p - 1)} $ converge (car \ $\underset{k \geqslant 2}{\sum}
+\frac{\ln (k)}{k (k - 1)}$ converge).
+
+On en d{\'e}duit que :
+\[ \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{\ln
+   (p)}{p} \underset{n \rightarrow + \infty}{=} \ln (n) + O (1) \]
+
+
+\tmtextbf{20.a.} Soit $n \geqslant 2$,
+
+Pour
+\[ b : t \in [2, + \infty [\longmapsto \frac{1}{\ln (t)} \]
+
+
+et
+\[ A : t \in [2, + \infty [\longmapsto \underset{p
+   \tmop{premier}}{\underset{p \leqslant t}{\sum}} \frac{\ln (p)}{p} =
+   \underset{2 \leqslant k \leqslant t}{\sum} \frac{\ln (k)}{k} (\omega (k) -
+   \omega (k - 1)) \]
+
+
+D'apr{\`e}s la question 16, pour tout $n \in \mathbb{N}$,
+\begin{eqnarray*}
+  \underset{2 \leqslant k \leqslant n}{\sum} \frac{\ln (k)}{k} (\omega (k) -
+  \omega (k - 1)) \frac{1}{\ln (k)} \frac{}{} & = & \frac{1}{\ln (n)} (R (n) +
+  \ln (n)) + \int^n_2 \frac{1}{t (\ln t)^2} (R (t) + \ln (t)) d t
+\end{eqnarray*}
+
+
+Par suite,
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{1}{p} & =
+  & 1 + \frac{R (n)}{\ln (n)} + \ln_2 (n) - \ln_2 (2) + \int^n_2 \frac{R
+  (t)}{t (\ln t)^2} d t
+\end{eqnarray*}
+
+
+\tmtextbf{20.b.} On a la fonction $t \longmapsto \frac{R (t)}{t (\ln (t))^2}$
+est continue par morceaux sur $t \in [2, + \infty [$.
+
+De plus, pour tout $t \in [2, + \infty [$ :
+\begin{eqnarray*}
+  \frac{R (t)}{t (\ln (t))^2} & = & \frac{1}{t (\ln (t))^2} \left( \underset{p
+  \tmop{premier}}{\underset{p \leqslant t}{\sum}} \frac{\ln (p)}{p} \right) -
+  \frac{1}{t \ln (t)}
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question 19.d, on a :
+\begin{eqnarray*}
+  \underset{p \tmop{premier}}{\underset{p \leqslant t}{\sum}} \frac{\ln
+  (p)}{p} & = & \underset{p \tmop{premier}}{\underset{p \leqslant E
+  (t)}{\sum}} \frac{\ln (p)}{p}\\
+  & \underset{t \rightarrow + \infty}{=} & \ln (E (t)) + O (1)\\
+  & \underset{t \rightarrow + \infty}{=} & \ln (t) + O (1)
+\end{eqnarray*}
+
+
+Par suite :
+\begin{eqnarray*}
+  \frac{R (t)}{t (\ln (t))^2} & \underset{t \rightarrow + \infty}{=} &
+  \frac{\ln (t) + O (1)}{t (\ln (t))^2} - \frac{1}{t \ln (t)}\\
+  & \underset{t \rightarrow + \infty}{=} & \frac{O (1)}{t (\ln (t))^2}\\
+  & \underset{t \rightarrow + \infty}{=} & O \left( \frac{1}{t (\ln (t))^2}
+  \right)
+\end{eqnarray*}
+
+
+Puisque pour tout $t \geqslant 2$,
+\begin{eqnarray*}
+  \int^t_2 \frac{d u}{u (\ln (u))^2} & = & \frac{1}{\ln (2)} - \frac{1}{\ln
+  (t)}
+\end{eqnarray*}
+
+
+Ainsi, la fonction $t \longmapsto \int^t_2 \frac{d u}{u (\ln (u))^2}$ admet
+une limite en $+ \infty$.
+
+\
+
+En particulier, la fonction $t \longmapsto \int^t_2 \frac{R (u)}{u (\ln
+(u))^2} d u$ est int{\'e}grable.
+
+\
+
+\tmtextbf{20.c.} D'apr{\`e}s la question 20.a, on a :
+\[ \begin{array}{lll}
+     \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{1}{p} &
+     = & 1 + \frac{R (n)}{\ln (n)} + \ln_2 (n) - \ln_2 (2) + \int^n_2 \frac{R
+     (t)}{t (\ln t)^2} d t
+   \end{array} \]
+
+
+Or, d'apr{\`e}s la question pr{\'e}c{\'e}dente :
+\[ \begin{array}{ll}
+     \frac{R (t)}{t (\ln (t))^2} & \underset{t \rightarrow + \infty}{=}
+   \end{array} O \left( \frac{1}{t (\ln (t))^2} \right) \]
+
+
+Et
+\[ \int^n_2 \frac{1}{t (\ln (t))^2} d t \underset{n \rightarrow + \infty}{=} O
+   \left( \frac{1}{\ln (n)} \right) \]
+
+
+Alors :
+
+
+\[ \int^n_2 \frac{R (t)}{t (\ln t)^2} d t \underset{n \rightarrow + \infty}{=}
+   O \left( \frac{1}{\ln (n)} \right) \]
+
+
+De plus, on a :
+\begin{eqnarray*}
+  R (n) & = & \underset{p \tmop{premier}}{\underset{p \leqslant t}{\sum}}
+  \frac{\ln (p)}{p} - \ln (t)\\
+  & = & \underset{p \tmop{premier}}{\underset{p \leqslant E (t)}{\sum}}
+  \frac{\ln (p)}{p} - \ln (t)\\
+  & \underset{t \rightarrow + \infty}{=} & \ln (E (t)) - \ln (t) + O (1)\\
+  & \underset{t \rightarrow + \infty}{=} & O (1)
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \begin{array}{lll}
+     \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}} \frac{1}{p} &
+     \underset{n \rightarrow + \infty}{=} & \ln_2 (n) + 1 - \ln_2 (2) + O
+     \left( \frac{1}{\ln (n)} \right)
+   \end{array} \]
+
+
+D'o{\`u} le r{\'e}sultat avec
+\[ c_1 = 1 - \ln_2 (2) \]
+
+
+\tmtextbf{21.a.} Soit $x \in [1, + \infty [$ et $q \in \mathbb{N}^{\ast}$.
+
+On a
+\begin{eqnarray*}
+  \tmop{Card} \{ n \in \mathbb{N} \cap [1, x] : n \equiv 0 (\tmop{mod} q) \} &
+  = & \tmop{Card} \left\{ n \in \mathbb{N} \cap [1, x] : \frac{n}{q} \in
+  \mathbb{N} \right\}\\
+  & = & E \left( \frac{x}{q} \right)
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \left| \tmop{Card} \{ n \in \mathbb{N} \cap [1, x] : n \equiv 0
+   (\tmop{mod} q) \} - \frac{x}{q} \right| \leqslant 1 \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{21.b.} On a, via la question $16$ :
+\begin{eqnarray*}
+  \frac{1}{E (x)} \underset{2 \leqslant n \leqslant x}{\sum} \omega (n) & = &
+  \underset{2 \leqslant n \leqslant x}{\sum} \frac{\omega (n) - \omega (n -
+  1)}{n} - \int^{E (x)}_2 \frac{1}{t^2} \underset{2 \leqslant n \leqslant
+  t}{\sum} \omega (n) d t\\
+  & = & \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{1}{p} - \int^{E (x)}_2 \frac{1}{t^2} \underset{2 \leqslant n \leqslant
+  t}{\sum} \omega (n) d t\\
+  & \leqslant & \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{1}{p} - \int^{E (x)}_2 \frac{d t}{t}\\
+  & = & \underset{p \tmop{premier}}{\underset{p \leqslant n}{\sum}}
+  \frac{1}{p} - \ln (E (x)) + \ln (2)\\
+  & \underset{x \rightarrow + \infty}{=} & \ln_2 (E (x)) + 1 + \ln (2) -
+  \ln_2 (2) + O \left( \frac{1}{\ln (E (x))} \right)\\
+  & \underset{x \rightarrow + \infty}{=} & \ln_2 (x) + O (1)
+\end{eqnarray*}
+
+
+D'o{\`u} :
+\begin{eqnarray*}
+  \frac{1}{x} \underset{2 \leqslant n \leqslant x}{\sum} \omega (n) & = &
+  \frac{E (x)}{x} \frac{1}{E (x)} \underset{2 \leqslant n \leqslant x}{\sum}
+  \omega (n)\\
+  & \underset{x \rightarrow + \infty}{=} & \ln_2 (x) + O (1)
+\end{eqnarray*}
+
+
+\tmtextbf{22.a.} Pour tout $x \geqslant 2$, on a :
+\begin{eqnarray*}
+  \frac{1}{x} \underset{n \leqslant x}{\sum} (\omega (n) - \ln_2 (x))^2 & = &
+  \frac{1}{x} \underset{n \leqslant x}{\sum} \omega (n)^2 - 2 \frac{\ln_2
+  (x)}{x} \underset{n \leqslant x}{\sum} \omega (n) + \frac{E (x)}{x} (\ln_2
+  (x))^2\\
+  & \underset{x \rightarrow + \infty}{=} & \frac{1}{x} \underset{n \leqslant
+  x}{\sum} \omega (n)^2 - 2 (\ln_2 (x))^2 + O (\ln_2 (x)) + (\ln_2 (x))^2\\
+  & \underset{x \rightarrow + \infty}{=} & \frac{1}{x} \underset{n \leqslant
+  x}{\sum} \omega (n)^2 - (\ln_2 (x))^2 + O (\ln_2 (x))
+\end{eqnarray*}
+
+
+\tmtextbf{22.b.} Soit $x \geqslant 2$, on a :
+\begin{eqnarray*}
+  \underset{n \leqslant x}{\sum} \omega (n)^2 & = & \underset{n \leqslant
+  x}{\sum} \left( \underset{p \tmop{premier}}{\underset{p | n
+  \nobracket}{\sum}} 1 \underset{}{} \right)^2\\
+  & = & \underset{n \leqslant x}{\sum} \underset{p_1
+  \tmop{premier}}{\underset{p_1 | n \nobracket}{\sum}}  \underset{p_2
+  \tmop{premier}}{\underset{p_2 | n \nobracket}{\sum}} 1 \underset{}{}\\
+  & = & \underset{p_1 \tmop{premier}}{\underset{p_1 \leqslant x}{\sum}}
+  \underset{p_2 \tmop{premier}}{\underset{p_2 \leqslant x}{\sum}} \left(
+  \underset{p_1 | n \nobracket \tmop{et} p_2 | n \nobracket}{\underset{n
+  \leqslant x}{\sum}} 1 \right)\\
+  & = & \underset{p_1 \tmop{premier}}{\underset{p_1 \leqslant x}{\sum}}
+  \underset{p_2 \tmop{premier}}{\underset{p_2 \leqslant x}{\sum}} \tmop{Card}
+  \left\{ n \in \mathbb{N}^{\ast} : n \leqslant x, p_1  | n \nobracket
+  \infixand p_2 | n \nobracket \right\}
+\end{eqnarray*}
+
+
+\tmtextbf{22.c.} Pour tout $x \geqslant 2$, on a :
+\begin{eqnarray*}
+  \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1, p_2 \leqslant
+  x}{\sum}} \tmop{Card} \left\{ n \in \mathbb{N}^{\ast}, n \leqslant x, p_1  |
+  n \nobracket \infixand p_2 | n \nobracket \right\} & = & \underset{p_1
+  \not{=} p_2 \tmop{premiers}}{\underset{p_1, p_2 \leqslant x}{\sum}}
+  \tmop{Card} \{ n \in \mathbb{N}^{\ast} : n \leqslant x, p_1 p_2 | n
+  \nobracket \}
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question 21.a, on a pour tous $p_1 \not{=} p_2
+\tmop{premiers}$ :
+\[ \tmop{Card} \{ n \in \mathbb{N}^{\ast}, n \leqslant x, p_1 p_2 | n
+   \nobracket \} - \frac{x}{p_1 p_2} \tmop{est} \tmop{born} {\'e}e \]
+
+
+Donc
+\[ \tmop{Card} \{ n \in \mathbb{N}^{\ast}, n \leqslant x, p_1 p_2 | n
+   \nobracket \} \underset{x \rightarrow + \infty}{=} \frac{x}{p_1 p_2} + O
+   (1) \]
+
+
+Ainsi,
+
+
+\begin{eqnarray*}
+  \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1, p_2 \leqslant
+  x}{\sum}} \tmop{Card} \{ n \in \mathbb{N}^{\ast} : n \leqslant x, p_1  | n
+  \nobracket, p_2 | n \nobracket \} & \underset{x \rightarrow + \infty}{=} &
+  \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1 p_2 \leqslant
+  x}{\underset{p_1, p_2 \leqslant x}{\sum}}} \frac{x}{p_1 p_2} + O (1)\\
+  & \underset{x \rightarrow + \infty}{=} & \underset{p_1 \not{=} p_2
+  \tmop{premiers}}{\underset{p_1 p_2 \leqslant x}{\underset{p_1, p_2 \leqslant
+  x}{\sum}}} \frac{x}{p_1 p_2} + \underset{p_1 \not{=} p_2
+  \tmop{premiers}}{\underset{p_1 p_2 \leqslant x}{\underset{p_1, p_2 \leqslant
+  x}{\sum}}} O (1)
+\end{eqnarray*}
+
+
+Or,
+\begin{eqnarray*}
+  \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1 p_2 \leqslant
+  x}{\underset{p_1, p_2 \leqslant x}{\sum}} 1} & \underset{x \rightarrow +
+  \infty}{=} & \underset{p \leqslant x}{\sum} 1\\
+  & \underset{x \rightarrow + \infty}{=} & O (\ln_2 (x)) \quad (\tmop{cf} 20.
+  a)
+\end{eqnarray*}
+
+
+Donc
+\[ \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1, p_2 \leqslant
+   x}{\sum}} \tmop{Card} \{ n \in \mathbb{N}^{\ast} : n \leqslant x, p_1  | n
+   \nobracket, p_2 | n \nobracket \} = \underset{p_1 \not{=} p_2
+   \tmop{premiers}}{\underset{p_1 p_2 \leqslant x}{\underset{p_1, p_2
+   \leqslant x}{\sum}}} \frac{x}{p_1 p_2} + O (\ln_2 (x)) \]
+
+
+Or, puisque la s{\'e}rie $\underset{p \geqslant 2}{\sum} \frac{1}{p}$ diverge,
+on a
+\begin{eqnarray*}
+  \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1 p_2 \leqslant
+  x}{\underset{p_1, p_2 \leqslant x}{\sum}}} \frac{x}{p_1 p_2} & \underset{x
+  \rightarrow + \infty}{=} & \underset{p_1 \not{=} p_2
+  \tmop{premiers}}{\underset{p_1, p_2 \leqslant x}{\sum}} \frac{x}{p_1 p_2}\\
+  & \underset{x \rightarrow + \infty}{=} & \underset{p_1 p_2
+  \tmop{premiers}}{\underset{p_1, p_2 \leqslant x}{\sum}} \frac{x}{p_1 p_2} -
+  x \underset{p  \tmop{premier}}{\underset{p  \leqslant x}{\sum}}
+  \frac{1}{p^2}\\
+  & \underset{x \rightarrow + \infty}{=} & x \left( \underset{p 
+  \tmop{premier}}{\underset{p  \leqslant x}{\sum}} \frac{1}{p} \right)^2 - x O
+  (1)\\
+  & \underset{x \rightarrow + \infty}{=} & x \left( \ln_2 (E (x)) + c_1 + O
+  \left( \frac{1}{\ln (E (x))} \right) \right)^2 - O (x)\\
+  & \underset{x \rightarrow + \infty}{=} & x (\ln_2 (x))^2 + O (x \ln_2 (x))
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ \underset{p_1 \not{=} p_2 \tmop{premiers}}{\underset{p_1, p_2 \leqslant
+   x}{\sum}} \tmop{Card} \left\{ n \in \mathbb{N}^{\ast}, n \leqslant x, p_1 
+   | n \nobracket \infixand p_2 | n \nobracket \right\} - x (\ln_2 (x))^2
+   \underset{x \rightarrow + \infty}{=} O (x \ln_2 (x)) \]
+
+
+\tmtextbf{22.d.} {\color[HTML]{000000}D'apr{\`e}s ce }qui pr{\'e}c{\`e}de,
+pour tout $x \geqslant 2$, on a :
+\begin{align*}
+\frac{1}{x} \sum_{n \leq x} \Bigl( \omega(n) - \ln_2(x) \Bigr)^2 
+&\xrightarrow[x \to +\infty]{} 
+\frac{1}{x} \sum_{n \leq x} \omega(n)^2 - \bigl(\ln_2(x)\bigr)^2 + O\bigl(\ln_2(x)\bigr) \\[1ex]
+&\xrightarrow[x \to +\infty]{} 
+\frac{1}{x} \sum_{\substack{p_1 \ne p_2 \\ p_1,\, p_2 \leq x \\ \text{premiers}}}
+\operatorname{Card}\Bigl\{ n \leq x : p_1 \mid n \text{ et } p_2 \mid n \Bigr\} \\
+&\quad + \frac{1}{x} \sum_{\substack{p_1 \leq x \\ \text{premier}}}
+\operatorname{Card}\Bigl\{ n \leq x : p_1 \mid n \Bigr\}
+- \bigl(\ln_2(x)\bigr)^2 + O\bigl(\ln_2(x)\bigr) \\[1ex]
+&\xrightarrow[x \to +\infty]{} 
+\ln_2(x)^2 + O\bigl(\ln_2(x)\bigr) + \frac{1}{x} \sum_{\substack{p \leq x \\ \text{premier}}}
+\frac{x}{p} - \bigl(\ln_2(x)\bigr)^2 + O\bigl(\ln_2(x)\bigr) \\[1ex]
+&\xrightarrow[x \to +\infty]{} 
+\ln_2(x) + c_1 + O\Bigl(\frac{1}{\ln x}\Bigr) + O\bigl(\ln_2(x)\bigr) \\[1ex]
+&\xrightarrow[x \to +\infty]{} 
+O\bigl(\ln_2(x)\bigr)
+\end{align*}
+
+
+\tmtextbf{23.} On pose
+\[ \varphi = \left\{ n \geqslant 3 : \left| \frac{\omega (n) - \ln_2
+   (n)}{\sqrt{\ln_2 (n)}} \right| \geqslant (\ln_2 (n))^{1 / 4} \right\} \]
+
+
+Montrons que
+\[ \underset{x \rightarrow + \infty}{\lim} \frac{1}{x} \tmop{Card} \{ n
+   \leqslant x : n \in \varphi \} = 0 \]
+
+
+On a pour tout $x$ assez grand,
+\begin{eqnarray*}
+  \tmop{Card} \{ \varphi \cap [1, x] \} & = & \tmop{Card} \left\{ \varphi \cap
+  \left[ \sqrt{x}, x \right] \right\} + \tmop{Card} \left\{ \varphi \cap
+  \left[ 1, \sqrt{x} \right[ \right\}\\
+  & = & \tmop{Card} \left\{ \varphi \cap \left[ \sqrt{x}, x \right] \right\}
+  + O \left( \sqrt{x} \right)
+\end{eqnarray*}
+
+
+Pour tout $n \in \varphi \cap \left[ \sqrt{x}, x \right]$
+\begin{eqnarray*}
+  & \frac{(\omega (n) - \ln_2 (n))^2}{\ln_2 (n)} \geqslant (\ln_2 (n))^{1 /
+  2} \infixand x \geqslant n \geqslant \sqrt{x}
+\end{eqnarray*}
+
+
+On a {\'e}galement :
+\begin{eqnarray*}
+  \frac{(\omega (n) - \ln_2 (x))^2}{\ln_2 (n)} & = & \frac{(\omega (n) - \ln_2
+  (n) + \ln_2 (n) - \ln_2 (x))^2}{\ln_2 (n)}\\
+  & = & \frac{(\omega (n) - \ln_2 (n))^2}{\ln_2 (n)} + \frac{(\ln_2 (x) -
+  \ln_2 (n))^2}{\ln_2 (n)} + 2 \frac{(\omega (n) - \ln_2 (n)) (\ln_2 (x) -
+  \ln_2 (n))}{\ln_2 (n)}
+\end{eqnarray*}
+
+
+Par suite, on a :
+\begin{align*}
+\sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}} 
+\frac{\bigl(\omega(n) - \ln_2(x)\bigr)^2}{\ln_2(n)}
+&=
+\sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}} 
+\frac{\bigl(\omega(n) - \ln_2(n)\bigr)^2}{\ln_2(n)}
++ \sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}} 
+\frac{\bigl(\ln_2(x) - \ln_2(n)\bigr)^2}{\ln_2(n)} \\[1ex]
+&\quad + 2 \sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}} 
+\frac{\bigl(\omega(n) - \ln_2(n)\bigr) \bigl(\ln_2(x) - \ln_2(n)\bigr)}{\ln_2(n)}
+\end{align*}
+
+Avec
+\begin{eqnarray*}
+  \underset{n \in \varphi \cap \left[ \sqrt{x}, x \right]}{\sum} \frac{(\ln_2
+  (x) - \ln_2 (n))^2}{\ln_2 (n)} & \underset{x \rightarrow + \infty}{=} &
+  \frac{x - \sqrt{x}}{\ln_2 (x)} o (1)\\
+  & \underset{x \rightarrow + \infty}{=} & \frac{x}{\ln_2 (x)} o (1)
+\end{eqnarray*}
+
+
+Et
+\begin{align*}
+\sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}}
+\frac{\bigl(\omega(n) - \ln_2(n)\bigr)\bigl(\ln_2(x) - \ln_2(n)\bigr)}{\ln_2(n)}
+&\underset{x \rightarrow + \infty}{\leqslant} 
+\frac{o(1)}{\ln_2\Bigl(\sqrt{x}\Bigr)}
+\sum_{\substack{n \in \varphi \cap \left[\sqrt{x}, x\right]}}
+\Bigl( \omega(n) - \ln_2(n) \Bigr) \\[1ex]
+&\underset{x \rightarrow + \infty}{\leqslant} 
+\frac{o(1)}{\ln_2(x)}\Biggl[
+\sum_{n \leq x} \Bigl(\omega(n) - \ln_2(n)\Bigr)
+- \sum_{n \leq \sqrt{x}} \Bigl(\omega(n) - \ln_2(n)\Bigr)
+\Biggr] \\[1ex]
+&\underset{x \rightarrow + \infty}{\leqslant} 
+\frac{o(1)}{\ln_2(x)}
+\Bigl( \ln_2(x) - \ln_2\bigl(\sqrt{x}\bigr) + O(1) \Bigr) \\[1ex]
+&\underset{x \rightarrow + \infty}{\leqslant} 
+\frac{o(1)}{\ln_2(x)}
+\end{align*}
+
+
+Et
+\begin{eqnarray*}
+  \underset{n \in \varphi \cap \left[ \sqrt{x}, x \right]}{\sum} \frac{(\omega
+  (n) - \ln_2 (n))^2}{\ln_2 (n)} & \leqslant & \underset{n \in \left[
+  \sqrt{x}, x \right]}{\sum} \frac{(\omega (n) - \ln_2 (n))^2}{\ln_2 (n)}\\
+  & \leqslant & \frac{1}{\ln_2 \left( \sqrt{x} \right)} \left( \underset{n
+  \leqslant x}{\sum} (\omega (n) - \ln_2 (n))^2 - \underset{n \leqslant
+  \sqrt{x}}{\sum} (\omega (n) - \ln_2 (n))^2 \right)\\
+  & \underset{x \rightarrow + \infty}{\leqslant} & x O (1) - \sqrt{x} O (1)\\
+  & \underset{x \rightarrow + \infty}{\leqslant} & x O (1)
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  \underset{n \in \varphi \cap \left[ \sqrt{x}, x \right]}{\sum} \frac{(\omega
+  (n) - \ln_2 (x))^2}{\ln_2 (n)} & \underset{x \rightarrow +
+  \infty}{\leqslant} & \frac{x}{\ln_2 (x)} o (1) + \frac{o (1)}{\ln_2 (x)} + x
+  O (1)\\
+  & \underset{x \rightarrow + \infty}{\leqslant} & x O (1)
+\end{eqnarray*}
+
+
+Or,
+\begin{eqnarray*}
+  \underset{n \in \varphi \cap \left[ \sqrt{x}, x \right]}{\sum} \frac{(\omega
+  (n) - \ln_2 (x))^2}{\ln_2 (n)} & \geqslant & \underset{n \in \varphi \cap
+  \left[ \sqrt{x}, x \right]}{\sum} (\ln_2 (n))^{1 / 2}\\
+  & \geqslant & \tmop{Card} \left( \varphi \cap \left[ \sqrt{x}, x \right]
+  \right) \left( \ln_2 \left( \sqrt{x} \right) \right)^{1 / 2}
+\end{eqnarray*}
+
+
+Par suite,
+
+
+\begin{eqnarray*}
+  0 & \leqslant & \frac{1}{x} \tmop{Card} \left( \varphi \cap \left[ \sqrt{x},
+  x \right] \right)\\
+  & \underset{x \rightarrow + \infty}{\leqslant} & \frac{1}{x \left( \ln_2
+  \left( \sqrt{x} \right) \right)^{1 / 2}} \underset{n \in \varphi \cap \left[
+  \sqrt{x}, x \right]}{\sum} \frac{(\omega (n) - \ln_2 (x))^2}{\ln_2 (n)}\\
+  & \underset{x \rightarrow + \infty}{\leqslant} & \frac{O (1)}{\left( \ln_2
+  \left( \sqrt{x} \right) \right)^{1 / 2}}
+\end{eqnarray*}
+
+
+Avec $\underset{}{} \underset{x \rightarrow + \infty}{\lim} \frac{O
+(1)}{\left( \ln_2 \left( \sqrt{x} \right) \right)^{1 / 2}} = 0$. Alors
+\[ \underset{x \rightarrow + \infty}{\lim} \frac{1}{x} \tmop{Card} \left(
+   \varphi \cap \left[ \sqrt{x}, x \right] \right) = 0 \]
+
+
+Par suite,
+\[ \underset{x \rightarrow + \infty}{\lim} \frac{1}{x} \tmop{Card} (\varphi
+   \cap [0, x]) = 0 \]
+
+
+D'o{\`u} le r{\'e}sultat.

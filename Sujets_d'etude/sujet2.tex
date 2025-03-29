@@ -1,0 +1,586 @@
+\begin{center}
+\subsection*{Sujet 2 : Les polyn{\^o}mes irr{\'e}ductibles sur $K [X]$.}\label{sjt2}
+\textbf{SABIR Ilyass}
+\end{center}
+\[ \star \star \star \]
+\addcontentsline{toc}{subsection}{Sujet 2 : Les polyn{\^o}mes irr{\'e}ductibles sur $K [X]$.}
+\paragraph{L'objectif.}
+
+Soit $K$ un corps commutatif fini, on veut trouver le nombre des polyn{\^o}mes
+irr{\'e}ductibles sur $K [X]$ de degr{\'e} $n$.
+\[ \star \star \star \star \star \star \star \star \star \star \]
+
+
+\tmtextbf{Th{\'e}or{\`e}me 1.}
+
+Il existe un nombre premier $p$ et un entier $n \in \mathbb{N}$, tel que
+\[ \#K = p^n \]
+
+
+\tmtextbf{Preuve du th{\'e}or{\`e}me 1.}
+
+\
+
+Notons $L$ le plus petit sous corps de $K$.
+
+Puisque $K$ est fini, alors il existe un nnombre premier $p$ tel que $L$ est
+isomorphe {\`a} $\mathbb{Z}/ p\mathbb{Z}$, en particulier $\#L = p$.
+
+On note :
+\begin{eqnarray*}
+  n & \assign & [K : \mathbb{Z}/ p\mathbb{Z}]\\
+  & = & \dim_L (K)\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+$K$est un $L$ espace-vectoriel de dimension $n$. Notons $\mathcal{B}= (e_1,
+\ldots, e_n)$ une base de $K$ comme $L$espace-vectoriel. De plus l'application
+:
+\[ \begin{array}{ccc}
+     L^n & \rightarrow & K\\
+     (x_1, \ldots, x_n) & \longmapsto & \underset{k = 1}{\overset{n}{\sum}}
+     x_k e_k
+   \end{array} \]
+
+
+est bijective, en particulier :
+\begin{eqnarray*}
+  \#K & = & \# (L^n)\\
+  & = & p^n
+\end{eqnarray*}
+\[ \star \star \star \star \star \star \star \star \star \star \]
+
+
+On note pour tout entier $n \in \mathbb{N}^{\ast}$, $\mathcal{P}_K (n)$
+l'ensemble des polyn{\^o}mes unitaires irr{\'e}ductibles de degr{\'e} $n$ sur
+$K [X]$.
+
+Pour tout polyn{\^o}me $P \in K [X]$ irr{\'e}ductible, et pour tout $a \in K
+\backslash \nobracket \{ 0 \}$ $a.P$ est {\'e}galement irr{\'e}ductible sur $K
+[X]$.
+
+On a donc, pour tout entier $n \in \mathbb{N}^{\ast}$, le nombre de
+polyn{\^o}mes irr{\'e}ductibles de degr{\'e} $n$ est :
+\[ (\#K - 1) .\#\mathcal{P}_K (n) \]
+
+
+Il ne reste plus qu'{\`a} trouver le cardinal de $\mathcal{P}_K (n)$ pour tout
+$n \in \mathbb{N}^{\ast}$.
+
+\
+
+\tmtextbf{Th{\'e}or{\`e}me 2.}
+
+Notons $\#K = q$. Soit $n \in \mathbb{N}^{\ast}$, on a
+\[ X^{q^n} - X = \underset{d | n \nobracket}{\prod}  \underset{P \in
+   \mathcal{P}_K (d)}{\prod} P (X) \]
+
+
+\tmtextbf{Preuve du th{\'e}or{\`e}me 2.}
+
+Pour tout entier $d \in \mathbb{N}^{\ast}$ et pour tout $P \in \mathcal{P}_K
+(d),$ on a $M = K / (P)$ est un corps (car $K$ est principal), de cardinal
+$q^d$ , donc isomorphe {\`a} $\mathbb{Z}/ q^d \mathbb{Z}$. Ainsi, pour tout $x
+\in M$ :
+\[ x^{q^d} = x \]
+
+
+Mais si $n = d.k$ pour un $k \in \mathbb{N}^{\ast}$, on a \
+\[ x^{q^n} = x^{q^{d.k}} = (((x^{q^d})^{q^d}) \ldots)^{q^d} \quad (k
+   \tmop{fois}) \]
+
+
+Par une r{\'e}currence imm{\'e}diate sur $k$, ceci est {\'e}gal {\`a} $x$.
+Autrement dit,
+\[ X^{q^n} \nonconverted{minus} X = 0 \in M [X] \]
+
+
+Donc $P$ divise $X^{q^n} \nonconverted{minus} X$ dans $K [X]$.
+
+Comme les {\'e}l{\'e}ments de $\mathcal{P}_K (d)$ sont irr{\'e}ductibles, le
+produit $\underset{d | n \nobracket}{\prod}  \underset{P \in \mathcal{P}_K
+(d)}{\prod} P (X)$ divise lui aussi $X^{q^n} \nonconverted{minus} X$.
+
+R{\'e}ciproquement, soit $P$ un facteur irr{\'e}ductible de degr{\'e} $d$ de
+$X^{q^n} \nonconverted{minus} X$ dans $K [X$].
+
+Comme $\mathbb{Z}/ q^n \mathbb{Z}$ est un corps de d{\'e}composition de
+$X^{q^n} \nonconverted{minus} X$, $P$ est scind{\'e} sur $\mathbb{Z}/ q^n
+\mathbb{Z}$.
+
+Si $x$ est une racine de $P$, on a
+\begin{eqnarray*}
+  {}[\mathbb{Z}/ q^n \mathbb{Z}: \mathbb{Z}/ q\mathbb{Z}] & = & n\\
+  & = & [\mathbb{Z}/ q^n \mathbb{Z}: \mathbb{Z}/ q\mathbb{Z}(x)] [\mathbb{Z}/
+  q\mathbb{Z}(x) : \mathbb{Z}/ q\mathbb{Z}]
+\end{eqnarray*}
+
+
+Mais comme $P$ est irr{\'e}ductible, $\mathbb{Z}/ q\mathbb{Z}(x)$ est un corps
+de rupture de $P$ de degr{\'e} $d$ sur $\mathbb{Z}/ q\mathbb{Z}$, donc d
+divise $n$.
+
+Il suffit alors de montrer que $X^{q^n} \nonconverted{minus} X$ n'admet pas
+de facteur double (ou plus). En effet, si un tel facteur existe, alors
+$X^{q^n} \nonconverted{minus} X$ admet une racine double dans un corps de
+d{\'e}composition.
+
+Cependant, comme le polyn{\^o}me d{\'e}riv{\'e} de $X^{q^n}
+\nonconverted{minus} X$ est $q^n X^{q^n - 1} \nonconverted{minus} 1 = - 1$
+({\`a} cause de la caract{\'e}ristique), $X^{q^n} \nonconverted{minus} X$ n'a
+pas de racine double dans un corps de d{\'e}composition, ce qui termine la
+preuve.
+
+\
+
+\tmtextbf{D{\'e}finition 1. (La fonction de M{\"o}bius)}
+
+Soit $n \in \mathbb{N}^{\ast}$. On note $\mu (n)$ l'entier d{\'e}fini par :
+\[ \mu (n) = \left\{\begin{array}{l}
+     0 \quad \tmop{si} n \tmop{est} \tmop{divisible} \tmop{par} \tmop{le}
+     \tmop{carr} {\'e} d\prime \tmop{un} \tmop{nombre} \tmop{premier}\\
+     (- 1)^r \quad \tmop{si} r \tmop{est} \tmop{le} \tmop{nombre} \tmop{de}
+     \tmop{facteurs} \tmop{premiers} \tmop{distincts} \tmop{de} n,\\
+     n \tmop{non} \tmop{divisible} \tmop{par} \tmop{le} \tmop{carr} {\'e}
+     d\prime \tmop{un} \tmop{nombre} \tmop{premier}
+   \end{array}\right. \]
+
+
+\
+
+\tmtextbf{Proposition 1.}
+
+pour tout $n \neq 1$, on a l'{\'e}galit{\'e} :
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = 0 \]
+
+
+\tmtextbf{Preuve de la proposition 1.}
+
+\tmtextbf{M{\'e}thode 1.}
+
+Soit $n = \underset{i = 1}{\overset{m}{\prod}} p^{a_i}_i$ la
+d{\'e}composition en facteurs premiers de $n$.
+
+
+
+De plus si $d \in \mathbb{N}$, alors :
+
+$d$divise $n \infixand \mu (d) \neq 0$ si et seulement si $d = \underset{i \in
+J}{\overset{}{\prod}} p^{a_i}_i$ with $J \subset \llbracket 1, m \rrbracket$
+et alors
+\[ \mu (d) = (- 1)^{\#J} \]
+
+
+On en d{\'e}duit que :
+\begin{eqnarray*}
+  \underset{d | \nobracket n}{\sum} \mu (d) & = & \underset{J \subset
+  \llbracket 1, m \rrbracket}{\sum} (- 1)^{\#J}\\
+  & = & (1 - 1)^m\\
+  & = & 0 \qquad (\tmop{car} m > 0)
+\end{eqnarray*}
+
+
+\tmtextbf{M{\'e}thode 2.}
+
+Soit $n \geqslant 2$. D'apr{\`e}s le th{\'e}or{\`e}me fondamentale d
+l'arithm{\'e}tique, il existe $(p_1, \ldots, p_r) \in \mathcal{P}^r$ et
+$\alpha_1, \ldots, \alpha_r \geqslant 1$ tels que
+\[ n = \underset{i = 1}{\overset{r}{\prod}} p^{\alpha_i}_i \]
+
+
+On a
+\begin{eqnarray*}
+  \underset{d | \nobracket n}{\sum} \mu (d) & = & \underset{k_1 =
+  0}{\overset{\alpha_1}{\sum}} \underset{k_2 = 0}{\overset{\alpha_2}{\sum}}
+  \ldots \underset{k_r = 0}{\overset{\alpha_r}{\sum}} \mu \left( \underset{i =
+  1}{\overset{r}{\prod}} p^{k_i}_i \right)\\
+  & = & \underset{\exists i_0 \in \llbracket 1, r \rrbracket k_{i_0}
+  \geqslant 2}{\underset{(k_1, \ldots, k_r) \in \underset{i =
+  1}{\overset{r}{\prod}} \llbracket 0, \alpha_i \rrbracket}{\overset{}{\sum}}}
+  \mu \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) +
+  \underset{}{\underset{(k_1, \ldots, k_r) \in \llbracket 0, 1
+  \rrbracket^r}{\overset{}{\sum}}} \mu \left( \underset{i =
+  1}{\overset{r}{\prod}} p^{k_i}_i \right)
+\end{eqnarray*}
+
+
+Puisque pour tout $(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+\llbracket 0, \alpha_i \rrbracket$ tel qu'il existe $i_0 \in \llbracket 1, r
+\rrbracket \tmop{avec} k_{i_0} \geqslant 2$, on a :
+\[ \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \tmop{est} \tmop{divisible}
+   \tmop{par} p^2_{i_0 } \]
+
+
+Alors,
+\[ \mu \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+D'o{\`u}
+\[ \underset{\exists i_0 \in \llbracket 1, r \rrbracket k_{i_0} \geqslant
+   2}{\underset{(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+   \llbracket 0, \alpha_i \rrbracket}{\overset{}{\sum}}} \mu \left(
+   \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+Par suite
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = \underset{}{\underset{(k_1,
+   \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} \mu
+   \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Pour tout $(k_1, \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r$, on a
+$\overset{r}{\underset{i = 1}{\sum}} k_i$ est le nombre de facteurs premiers
+distincts de $\underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i$ et $\underset{i
+= 1}{\overset{r}{\prod}} p^{k_i}_i$ est non divisible par le carr{\'e} d'un
+nombre premier, alors
+\begin{eqnarray*}
+  \underset{d | \nobracket n}{\sum} \mu (d) & = & \underset{}{\underset{(k_1,
+  \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} (-
+  1)^{\overset{r}{\underset{i = 1}{\sum}} k_i}\\
+  & = & \underset{i = 1}{\overset{r}{\prod}} \left( \underset{k_1 =
+  0}{\overset{1 }{\sum}} (- 1)^{k_i} \right)\\
+  & = & (1 - 1)^r\\
+  & = & 0
+\end{eqnarray*}
+
+
+\tmtextbf{Th{\'e}or{\`e}me 3. (La formule d'inversion de M{\"o}bius)}
+
+\tmcolor{red}{}Soit $H$ une fonction non nulle de $\mathbb{N}^{\ast}$ dans
+$\mathbb{C}$ telle que
+\[ \forall n, m \in \mathbb{N}, H (n.m) = H (n) H (m) \]
+
+
+On se donne {\'e}galement deux fonctions $F$ et $G$ de$[1, + \infty [$ dans
+$\mathbb{C}$ telles que, pour tout $x > 1$ :
+\[ {\color[HTML]{000000}{\color[HTML]{000000}G (x) = \underset{1 \leqslant k
+   \leqslant x}{\sum} F \left( \frac{x}{k} \right) H (k)}} \]
+
+
+Alors, pour tout $x > 1$, on a :
+\[ {\color[HTML]{000000}{\color[HTML]{000000}F (x) = \underset{1 \leqslant k
+   \leqslant x}{\sum} \mu (k) G \left( \frac{x}{k} \right) H (k)}} \]
+
+
+\tmtextbf{Preuve du th{\'e}or{\`e}me 3.}
+
+\tmcolor{red}{}On a
+\[ H (1) = H (1 \times 1) = H (1)^2 \]
+
+
+Et puisque $H \neq 0$ alors $H (1) = 1$.
+
+Pour tout $x \in [1, + \infty [$, on a :
+\begin{eqnarray*}
+  \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left( \frac{x}{k}
+  \right) H (k) & = & \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+  \underset{1 \leqslant i \leqslant \frac{x}{k}}{\sum} F \left( \frac{x}{i.k}
+  \right) H (i) H (k)\\
+  & = & \underset{1 \leqslant k \leqslant x}{\sum} \underset{1 \leqslant i
+  \leqslant \frac{x}{k}}{\sum} \mu (k) F \left( \frac{x}{i.k} \right) H
+  (i.k)\\
+  & = & \underset{1 \leqslant k.i \leqslant x}{\sum} \mu (k) F \left(
+  \frac{x}{i.k} \right) H (i.k)\\
+  & = & \underset{1 \leqslant m \leqslant x}{\sum} \underset{d | \nobracket
+  m}{\sum} \mu (d) F \left( \frac{x}{m} \right) H (m)\\
+  & = & \underset{1 \leqslant m \leqslant x}{\sum} F \left( \frac{x}{m}
+  \right) H (m) \left( \underset{d | \nobracket m}{\sum} \mu (d) \right)\\
+  & = & (x) H (1) + \underset{2 \leqslant m \leqslant x}{\sum} F \left(
+  \frac{x}{m} \right) H (m) \left( \underset{d | \nobracket m}{\sum} \mu (d)
+  \right)
+\end{eqnarray*}
+
+
+D'apr{\`e}s la proposition 1, pour tout $m \geqslant 2$, on a :
+\[ \underset{d | \nobracket m}{\sum} \mu (d) = 0 \]
+
+
+D'o{\`u} :
+\[ F (x) = \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left(
+   \frac{x}{k} \right) H (k) \]
+
+
+\tmtextbf{Corollaire 1.}
+
+Pour tout entier $n \in \mathbb{N}^{\ast}$, on a :
+\[ \#\mathcal{P}_K (n) = \frac{1}{n} \underset{d | n \nobracket}{\sum} \mu
+   \left( \frac{n}{d} \right) (\#K)^d \]
+
+
+\tmtextbf{Preuve du corollaire}
+
+\tmcolor{red}{}Soit $n \in \mathbb{N}^{\ast}$, notons $\#K = q$. D'apr{\`e}s
+th{\'e}or{\`e}me 1, on a :
+\[ {\color[HTML]{000000}{\color[HTML]{000000}X^{q^n} - X = \underset{d | n
+   \nobracket}{\prod}  \underset{P \in \mathcal{P}_K (d)}{\prod} P (X)}
+   \tmcolor{black}{}} \]
+
+
+Donc :
+\begin{eqnarray*}
+  q^n & = & \deg (X^{q^n} - X)\\
+  & = & \underset{d | n \nobracket}{\sum}  \underset{P \in \mathcal{P}_K
+  (d)}{\sum} \deg (P (X))\\
+  & = & \deg \left( \underset{d | n \nobracket}{\prod}  \underset{P \in
+  \mathcal{P}_K (d)}{\prod} P (X) \right)
+\end{eqnarray*}
+
+
+Par suite :
+\[ \underset{d | n \nobracket}{\sum} d.\#\mathcal{P}_K (d) = q^n \]
+
+
+D'o{\`u}, d'apr{\`e}s la formule d'inversion de M{\"o}bius :
+\[ \#\mathcal{P}_K (n) = \frac{1}{n} \underset{d | n \nobracket}{\sum} \mu
+   \left( \frac{n}{d} \right) (\#K)^d \]
+
+\[ \star \star \star \star \star \star \star \star \star \star \]
+
+\paragraph{Pour aller plus loin.}
+
+On veut trouver le nombre de polyn{\^o}mes irr{\'e}ductibles sur $K [X]$.
+
+On a que le nombre de polyn{\^o}mes irr{\'e}ductibles sur $K [X]$ est :
+\begin{eqnarray*}
+  \underset{n = 1}{\overset{+ \infty}{\sum}} (\#K - 1) .\#\mathcal{P}_K (n) &
+  = & (\#K - 1) \underset{n = 1}{\overset{+ \infty}{\sum}} \#\mathcal{P}_K
+  (n)\\
+  & = & (\#K - 1) \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{1}{n}
+  \underset{d | n \nobracket}{\sum} \mu \left( \frac{n}{d} \right) (\#K)^d
+\end{eqnarray*}
+
+
+Pour simplifier l'{\'e}criture, on pose $\#K = q$, et on a :
+\begin{eqnarray*}
+  \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{1}{n} \underset{d | n
+  \nobracket}{\sum} \mu \left( \frac{n}{d} \right) q^d & = & \underset{n =
+  1}{\overset{+ \infty}{\sum}} \underset{d | n \nobracket}{\sum} \frac{1}{n}
+  \mu \left( \frac{n}{d} \right) q^d\\
+  & = & \underset{n = 1}{\overset{+ \infty}{\sum}} \underset{d =
+  1}{\overset{+ \infty}{\sum}} \frac{1}{n} \mu \left( \frac{n}{d} \right)
+  1_{\mathbb{N}} \left( \frac{n}{d} \right) q^d
+\end{eqnarray*}
+
+
+$\underset{}{}$Avec $\mu (r) = 0$ pour les nombres rationnels (on d{\'e}finit
+simplement un prolongement de $\mu$ qui n'a pas d'influence sur le
+r{\'e}sultat de la somme, puisque $1_{\mathbb{N}} (r) = 0$si $r$ n'est pas
+entier).
+
+On a alors, d'apr{\`e}s le th{\'e}or{\`e}me de Fubini et par positivit{\'e}
+des termes de la somme :
+\begin{eqnarray*}
+  \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{1}{n} \underset{d | n
+  \nobracket}{\sum} \mu \left( \frac{n}{d} \right) q^d & = & \underset{d =
+  1}{\overset{+ \infty}{\sum}} \underset{n = 1}{\overset{+ \infty}{\sum}}
+  \frac{1}{n} \mu \left( \frac{n}{d} \right) 1_{\mathbb{N}} \left( \frac{n}{d}
+  \right) q^d\\
+  & = & \underset{d = 1}{\overset{+ \infty}{\sum}} \underset{n =
+  1}{\overset{+ \infty}{\sum}} \frac{1}{d.n} \mu (n) q^{d.n}\\
+  & = & \underset{d = 1}{\overset{+ \infty}{\sum}} \frac{1}{d} \underset{n =
+  1}{\overset{+ \infty}{\sum}} \frac{1}{n} \mu (n) (q^d)^n
+\end{eqnarray*}
+
+
+Pour tout entier $d \in \mathbb{N}^{\ast}$, essayons de calculer la somme de
+la s{\'e}rie $\underset{n \geqslant 1}{\overset{}{\sum}} \frac{1}{n} \mu (n)
+(q^d)^n$
+
+Notons pour tout $r \in \mathbb{N}^{\star}$, $p_r$ le r-i{\`e}me nombre
+premier.
+
+On a pour tout $N \in \mathbb{N}^{\star}$, par d{\'e}finition de la fonction
+de M{\"o}bius :
+\begin{eqnarray*}
+  \underset{n_1 = 0}{\overset{+ \infty}{\sum}}  \underset{n_2 = 0}{\overset{+
+  \infty}{\sum}} \ldots \underset{n_N = 0}{\overset{+ \infty}{\sum}}
+  \frac{1}{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i} \mu \left(
+  \underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i \right) (q^d)^{\underset{i =
+  1}{\overset{N}{\prod}} p^{n_i}_i} & = & \underset{n_1, \ldots, n_N \in \{ 0,
+  1 \}}{\overset{}{\sum}} \frac{1}{\underset{i = 1}{\overset{N}{\prod}}
+  p^{n_i}_i} \mu \left( \underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i \right)
+  (q^d)^{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i}\\
+  & = & \underset{n_1, \ldots, n_N \in \{ 0, 1 \}}{\overset{}{\sum}}
+  \frac{1}{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i} {(- 1)^{\underset{i
+  = 1}{\overset{N}{\sum}} n_i}}  (q^d)^{\underset{i = 1}{\overset{N}{\prod}}
+  p^{n_i}_i}\\
+  & = & \underset{n_1, \ldots, n_N \in \{ 0, 1 \}}{\overset{}{\sum}}
+  \frac{1}{\underset{i = 1}{\overset{N}{\prod}} (- p_i)^{n_i}}
+  (q^d)^{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i}
+\end{eqnarray*}
+
+
+Calculons maintenant
+\[ A_N \assign \underset{n_1, \ldots, n_N \in \{ 0, 1 \}}{\overset{}{\sum}}
+   \frac{1}{\underset{i = 1}{\overset{N}{\prod}} (- p_i)^{n_i}}
+   (q^d)^{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i} \]
+
+
+Pour tout entier $N \in \mathbb{N}^{\ast}$, on a :
+\begin{eqnarray*}
+\sum_{n_N=0}^{1} \frac{1}{\prod_{i=1}^{N} (-p_i)^{n_i}} (q^d)^{\prod_{i=1}^{N} p_i^{n_i}}
+& = & \frac{1}{\prod_{i=1}^{N-1} (-p_i)^{n_i}} \sum_{n_N=0}^{1} \frac{1}{(-p_N)^{n_N}} \left[(q^d)^{\prod_{i=1}^{N-1} p_i^{n_i}}\right]^{n_N} \\[1em]
+& = & \frac{1}{\prod_{i=1}^{N-1} (-p_i)^{n_i}} \left( 1 - \frac{1}{p_N}(q^d)^{\prod_{i=1}^{N-1} p_i^{n_i}} \right).
+\end{eqnarray*}
+
+
+
+Ainsi,
+\begin{eqnarray*}
+A_N &=& \sum_{n_1=0}^{1} \cdots \sum_{n_{N-1}=0}^{1} \frac{1}{\prod_{i=1}^{N-1} (-p_i)^{n_i}} 
+\left( 1 - \frac{1}{p_N}\left(q^d\right)^{\prod_{i=1}^{N-1} p_i^{n_i}} \right).
+\end{eqnarray*}
+
+
+Avec,
+\begin{eqnarray*}
+  \underset{n_1 = 0}{\overset{1}{\sum}} \ldots \underset{n_{N - 1} =
+  0}{\overset{1}{\sum}} \frac{1}{\underset{}{\underset{i = 1}{\overset{N -
+  1}{\prod}}} (- p_i)^{n_i}} & = & \underset{i = 1}{\overset{N - 1}{\prod}}
+  \left( \underset{n_i = 0}{\overset{1}{\sum}} \frac{1}{(- p_i)^{n_i}}
+  \right)\\
+  & = & \underset{i = 1}{\overset{N - 1}{\prod}} \left( 1 - \frac{1}{p_i}
+  \right)
+\end{eqnarray*}
+
+
+On obtient alors
+\begin{eqnarray*}
+  A_N & = & \underset{i = 1}{\overset{N - 1}{\prod}} \left( 1 - \frac{1}{p_i}
+  \right) - \frac{1}{p_N} \underset{n_1 = 0}{\overset{1}{\sum}} \ldots
+  \underset{n_{N - 1} = 0}{\overset{1}{\sum}} \frac{{(q^d)^{\underset{i =
+  1}{\overset{N - 1}{\prod}} p^{n_i}_i}} }{\underset{}{\underset{i =
+  1}{\overset{N - 1}{\prod}}} (- p_i)^{n_i}}\\
+  & = & \underset{i = 1}{\overset{N - 1}{\prod}} \left( 1 - \frac{1}{p_i}
+  \right) - \frac{1}{p_N} A_{N - 1}
+\end{eqnarray*}
+
+
+Par suite,
+\[ (- 1)^N \left( \underset{i = 1}{\overset{N}{\prod}} p_i \right) A_N - (-
+   1)^{N - 1} \left( \underset{i = 1}{\overset{N - 1}{\prod}} p_i \right) A_{N
+   - 1} = (- 1)^N p_N \underset{i = 1}{\overset{N - 1}{\prod}} (p_i - 1) \]
+
+
+Par sommation t{\'e}l{\'e}scopique, on obtient :
+\[ (- 1)^N \left( \underset{i = 1}{\overset{N}{\prod}} p_i \right) A_N = - p_1
+   A_1 + \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i =
+   1}{\overset{k - 1}{\prod}} (p_i - 1) \]
+
+
+Or,
+\begin{eqnarray*}
+  p_1 A_1 & = & 2 \underset{n  \in \{ 0, 1 \}}{\overset{}{\sum}} \frac{1}{(-
+  2)^{n }} (q^d)^{2^n}\\
+  & = & 2 \left( 1 - \frac{1}{2} (q^d)^2 \right)\\
+  & = & 2 - q^{2 d}
+\end{eqnarray*}
+
+
+D'o{\`u} :
+\[ A_N = \frac{(- 1)^N}{\underset{i = 1}{\overset{N}{\prod}} p_i} \left( q^{2
+   d} - 2 - \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i =
+   1}{\overset{k - 1}{\prod}} (p_i - 1) \right) \]
+
+
+Enfin :
+\begin{eqnarray*}
+  \underset{n_1, \ldots, n_N \in \mathbb{N}}{\overset{}{\sum}}
+  \frac{1}{\underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i} \mu \left(
+  \underset{i = 1}{\overset{N}{\prod}} p^{n_i}_i \right) (q^d)^{\underset{i =
+  1}{\overset{N}{\prod}} p^{n_i}_i} & = & \frac{(- 1)^N}{\underset{i =
+  1}{\overset{N}{\prod}} p_i} \left( q^{2 d} - 2 - \underset{k =
+  2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i = 1}{\overset{k - 1}{\prod}}
+  (p_i - 1) \right)
+\end{eqnarray*}
+
+
+\
+
+Avec :
+\[ \left| \frac{(- 1)^N}{\underset{i = 1}{\overset{N}{\prod}} p_i} (q^{2 d} -
+   2) \right| \leqslant \frac{q^{2 d} - 2}{2^N} \underset{N \rightarrow +
+   \infty}{\rightarrow} 0 \]
+
+
+Et :
+\begin{eqnarray*}
+  \left| \frac{(- 1)^N}{\underset{i = 1}{\overset{N}{\prod}} p_i} \underset{k
+  = 2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i = 1}{\overset{k - 1}{\prod}}
+  (p_i - 1) \right| & \leqslant & \underset{k = 2}{\overset{N}{\sum}}
+  \frac{1}{\underset{i = k + 1}{\overset{N}{\prod}} p_i} \underset{i =
+  1}{\overset{k - 1}{\prod}} \left( 1 - \frac{1}{p_i} \right)\\
+  & \leqslant & \underset{k = 2}{\overset{N}{\sum}} \frac{1}{2^{N - k}}\\
+  & < & 4\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+Par suite, la limite de :
+\[ \frac{(- 1)^N}{\underset{i = 1}{\overset{N}{\prod}} p_i} \left( q^{2 d} - 2
+   - \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i =
+   1}{\overset{k - 1}{\prod}} (p_i - 1) \right) \]
+
+
+existe lorsque $N$ tend vers $+ \infty$ et est fini.
+
+\
+
+On a alors
+\begin{eqnarray*}
+  \#\mathcal{P}_K (n) & = & \underset{d = 1}{\overset{+ \infty}{\sum}}
+  \frac{1}{d} \left( \underset{N \rightarrow + \infty}{\lim} \frac{(-
+  1)^N}{\underset{i = 1}{\overset{N}{\prod}} p_i} \left( q^{2 d} - 2 -
+  \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i = 1}{\overset{k
+  - 1}{\prod}} (p_i - 1) \right) \right)\\
+  & = & \underset{d = 1}{\overset{+ \infty}{\sum}} \frac{1}{d} \left(
+  \underset{N \rightarrow + \infty}{\lim} \frac{(- 1)^{N - 1}}{\underset{i =
+  1}{\overset{N}{\prod}} p_i} \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k
+  \underset{i = 1}{\overset{k - 1}{\prod}} (p_i - 1) \right)
+\end{eqnarray*}
+
+
+Or,
+\[ \underset{d = 1}{\overset{+ \infty}{\sum}} \frac{1}{d} \left( \underset{N
+   \rightarrow + \infty}{\lim} \frac{(- 1)^{N - 1}}{\underset{i =
+   1}{\overset{N}{\prod}} p_i} \underset{k = 2}{\overset{N}{\sum}} (- 1)^k p_k
+   \underset{i = 1}{\overset{k - 1}{\prod}} (p_i - 1) \right) = \alpha
+   \underset{d = 1}{\overset{+ \infty}{\sum}} \frac{1}{d} = + \infty \]
+
+
+Avec
+\[ \alpha = \underset{N \rightarrow + \infty}{\lim} \frac{(- 1)^{N -
+   1}}{\underset{i = 1}{\overset{N}{\prod}} p_i} \underset{k =
+   2}{\overset{N}{\sum}} (- 1)^k p_k \underset{i = 1}{\overset{k - 1}{\prod}}
+   (p_i - 1) \]
+
+
+Finalement, on a
+\[ \underset{n = 1}{\overset{+ \infty}{\sum}} (\#K - 1) .\#\mathcal{P}_K (n)
+   = + \infty \]
+
+
+Pour n'importe quel corps $K$ commutatif et fini, il existe une infinit{\'e}
+de polyn{\^o}mes irr{\'e}ductibles dans $K [X]$.
+
+\tmtextbf{Corollaire 2.}
+
+Pour tout entier $N \in \mathbb{N}^{\ast}$, il existe une infinit{\'e} de
+polyn{\^o}mes irr{\'e}ductibles sur $K [X]$.
+
+\
+
+\tmtextbf{Remarque 1.}
+
+On peut {\'e}viter tous ces calculs en montrant tout simplement que
+\[ \#\mathcal{P}_K (n) \underset{n \rightarrow + \infty}{\sim}
+   \frac{(\#K)^n}{n} \]
+
+
+Puisque la s{\'e}rie $\underset{n > 0}{\sum} \frac{(\#K)^n}{n}$ est {\`a}
+terme positifs et divergente, alors
+
+
+\[ \underset{n = 1}{\overset{+ \infty}{\sum}} (\#K - 1) .\#\mathcal{P}_K (n)
+   = + \infty \]

@@ -1,0 +1,54 @@
+Cet exercice explore l'existence d'un point fixe commun pour deux fonctions
+continues $f$ et $g$ sur $[0, 1]$, en supposant que $f$ est monotone et que $f
+\circ g = g \circ f$. Nous d{\'e}montrerons qu'il existe un point $c \in [0,
+1]$ tel que $f (c) = g (c) = c$.
+\begin{exercise}[(Oral ULM 2008)]
+Soient $f$ et $g$ deux fonctions continues sur $[0, 1] \rightarrow [0, 1]$
+v{\'e}rifiant $f \circ g = g \circ f$, on suppose que $f$ est monotone,
+montrer qu'il existe $c \in [0, 1]$ tel que
+\[ f (c) = g (c) = c \]
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Pour prouver qu'il existe $c \in [0, 1]$ tel que $f (c) = g (c) = c$, nous
+utiliserons les propri{\'e}t{\'e}s des fonctions continues et monotones, ainsi
+que la propri{\'e}t{\'e} de commutation $f \circ g = g \circ f$.
+
+{\'E}tant donn{\'e} que $f$ est continue et monotone sur l'intervalle $[0,
+1]$, l'ensemble de ses points fixes,
+\[ \text{Fix} (f) =\{x \in [0, 1] \mid f (x) = x\}, \]
+est un intervalle ferm{\'e} $[\alpha, \beta] \subseteq [0, 1]$.
+
+En effet, si $x_1, x_2 \in \text{Fix} (f)$ avec $x_1 < x_2$, alors pour tout
+$x$ entre $x_1$ et $x_2$, $f (x)$ sera compris entre $f (x_1)$ et $f (x_2)$,
+qui sont respectivement {\'e}gaux {\`a} $x_1$ et $x_2$. Ainsi, $f (x) \geq x$
+ou $f (x) \leq x$, selon que $f$ est croissante ou d{\'e}croissante. Cela
+garantit qu'il n'y a pas de sauts, donc $f (x) = x$ pour tous les $x \in [x_1,
+x_2]$.
+
+{\'E}tant donn{\'e} que $f \circ g = g \circ f$, pour tout $c \in \text{Fix}
+(f)$, on a
+\[ f (g (c)) = g (f (c)) = g (c) . \]
+
+
+Cela implique $f (g (c)) = g (c)$, donc $g (c) \in \text{Fix} (f)$. Par
+cons{\'e}quent, $g$ applique Fix$(f)$ dans lui-m{\^e}me :
+\[ g : \text{Fix} (f) \rightarrow \text{Fix} (f) . \]
+
+
+Puisque Fix($f$) est un intervalle ferm{\'e} $[\alpha, \beta]$ et que $g$ est
+continue, la restriction de $g$ {\`a} Fix($f$) est une fonction continue de
+$[\alpha, \beta]$ dans lui-m{\^e}me. Par le th{\'e}or{\`e}me du point fixe de
+Brouwer en dimension un (qui affirme que toute fonction continue d'un
+intervalle ferm{\'e} dans lui-m{\^e}me a au moins un point fixe, [voir
+l'exercice 7 ULRS, lemme 1]), il existe un $c \in [\alpha, \beta]$ tel que :
+\[ g (c) = c. \]
+
+
+Puisque $c \in \text{Fix} (f)$, on a d{\'e}j{\`a} $f (c) = c$. On a
+{\'e}galement $g (c) = c$. Par cons{\'e}quent :
+\[ f (c) = c \quad \text{et} \quad g (c) = c. \]
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

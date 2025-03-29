@@ -1,0 +1,76 @@
+Cet exercice montre que l'ensemble des valeurs d'adh{\'e}rence d'une suite
+born{\'e}e dont les diff{\'e}rences entre termes successifs tendent vers
+z{\'e}ro forme un segment dans $\mathbb{R}$.
+\begin{exercise}[]
+Soit $(u_n)_{n \in \mathbb{N}}$ une suite born{\'e}e v{\'e}rifiant $\lim (u_{n
++ 1} - u_n) = 0$.
+
+Montrer que $X_u$ : l'ensemble des valeurs d'adh{\'e}rence de la suite
+$(u_n)_{n \in \mathbb{N}}$ est un segment.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Selon le th{\'e}or{\`e}me de Bolzano-Weiestrass, $(u_n)_{n \in \mathbb{N}}$
+admet au moins une valeur d'adh{\'e}rence.
+
+Si $(u_n)_{n \in \mathbb{N}}$ admet une et une seule valeur d'adh{\'e}rence
+alors $(u_n)_{n \in \mathbb{N}}$ est convergente (puisqu'elle est born{\'e}e),
+et dans ce cas $X_u$ est r{\'e}duit {\`a} un singleton.
+
+Si $(u_n)_{n \in \mathbb{N}}$ admet au mois deux valeurs d'dh{\'e}rence, on va
+essayer dans un premier temps de montrer que $X_u$ est un intervalle de
+$\mathbb{R}$, puis qu'il est ferm{\'e}e born{\'e}e afin d'atteindre le
+r{\'e}sultat souhait{\'e}.
+
+Soient $\alpha < \beta \in X_u$. Nous allons montrer que pour tout $x \in]
+\alpha, \beta [$, $x$ est aussi une valeur d'adh{\'e}rence de $(u_n)_{n \in
+\mathbb{N}}$.
+
+Soit $\varepsilon > 0$, et $N \in \mathbb{N}$. L'objectif est de trouver $M
+\geqslant N$ tel que $| u_M - x | \leqslant \varepsilon$. Quitte {\`a}
+diminuer $\varepsilon$, on peut supposer qu'on a $\alpha < x - \varepsilon < x
++ \varepsilon < \beta$
+
+Puisque $\lim (u_{n + 1} - u_n) = 0$, il existe $n_1 \in \mathbb{N}$ tel que
+pour tout $n \geqslant n_1$ on a $| u_{n + 1} - u_n | \leqslant \varepsilon$.
+
+Puisque $\alpha \in X_u$, alors il existe $n_2 \geqslant \max (N, n_1)$ tel
+que $u_{n_2} \in] - \infty, x - \varepsilon [$. De m{\^e}me, $\beta \in X_u$,
+alors il existe $n_3 \geqslant n_2$ tel que $u_{n_3} \in] x + \varepsilon, +
+\infty [$
+
+Notons
+\[ n_{\max} = \max \{ n \in \llbracket n_2, n_3 \rrbracket  | \nobracket u_n
+   < x - \varepsilon \} \]
+
+
+$\{ n \in \llbracket n_2, n_3 \rrbracket  | \nobracket u_n < x - \varepsilon
+\}$ est non vide (il contient $n_2$), et major{\'e} par $n_3$, donc $n_{\max}
+$est bien d{\'e}fini, de plus $n_{\max} \leqslant n_3$. On a donc $u_{n_{\max}
++ 1} \geqslant x - \varepsilon$, mais aussi
+\[ u_{n_{\max} + 1} \leqslant u_{n_{\max}} + | u_{n_{\max} + 1} - u_{n_{\max}}
+   | \leqslant u_{n_{\max}} + \varepsilon \leqslant x \]
+
+
+Et donc on a trouv{\'e} $M \assign n_{\max} + 1 \geqslant N$ tel que
+$u_{n_{\max} + 1} \in [x - \varepsilon, x]$. Ceci montre que $x \in X_u$.
+
+Ainsi, $X_u$est un intervalle de $\mathbb{R}$, il est born{\'e} car $(u_n)_{n
+\in \mathbb{N}}$ est born{\'e}e ($X_u$ est major{\'e} par $\underset{n \in
+\mathbb{N}}{\max} (u_n)$, et minor{\'e} par $- \underset{n \in
+\mathbb{N}}{\max} (u_n)$). De plus $X_u$ peut {\^e}tre {\'e}crit sous la forme
+:
+\[ X_u = \underset{N \in \mathbb{N}}{\bigcap} \tmop{Adh} \{ u_n | n \geqslant
+   N \nobracket \} \]
+
+
+O{\`u} $\tmop{Adh} (A)$ d{\'e}signe l'adh{\'e}rence de $A$ pour la norme
+usuelle de $\mathbb{R}$, pour tout $A \subset \mathbb{R}$.
+
+Ainsi, $X_u$ est f{\'e}rm{\'e}e. En conclusion $X_u$ est un intervalle
+ferm{\'e} et born{\'e} de $\mathbb{R}$, donc il s'agit bien d'un segment de
+$\mathbb{R}$
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

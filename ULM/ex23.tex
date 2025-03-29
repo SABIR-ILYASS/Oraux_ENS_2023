@@ -1,0 +1,96 @@
+Cet exercice s'int{\'e}resse aux sous-espaces stables d'un espace vectoriel
+norm{\'e} de dimension finie. Il demande de prouver l'existence d'un
+suppl{\'e}mentaire stable pour le sous-espace des vecteurs invariants par deux
+endomorphismes commutant avec leur commutateur. L'exercice fait appel {\`a}
+des notions d'alg{\`e}bre lin{\'e}aire et de th{\'e}orie des groupes.
+
+\begin{exercise}[(Sous-espace stable)]
+Soit~$V$ un espace vectoriel norm{\'e} de dimension finie. On consid{\`e}re
+deux endomorphismes de~$V$, not{\'e}s $h_1$ et~$h_2$, pr{\'e}servant la norme,
+et tels que $h_1$ et $h_2$ commutent avec leur commutateur~$h_1 h_2 h_1^{- 1}
+h_2^{- 1}$.
+
+Montrer que le sous-espace des vecteurs invariants par~$h_1$ et $h_2$ admet
+un suppl{\'e}mentaire {\'e}galement stable par $h_1$ et $h_2$.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+\tmtextbf{Lemme 1.}
+
+Soit $u$ un endomorphisme isom{\'e}trique d'un espace vectoriel norm{\'e} de
+dimension finie.
+
+Notons Inv$(u)$ l'espace des vecteurs invariants par $u$ et $S (u)$ son
+suppl{\'e}mentaire.
+
+En notant, Inv$(u) = \ker (u - \text{Id})$ et $S (u) = \text{Im} (u -
+\text{Id})$. Alors $V = \text{Inv} (u) \oplus S (u)$.
+
+\tmtextbf{Preuve du lemme 1.}
+
+oit $x \in \text{Inv} (u) \cap S (u)$. Alors, il existe $y \in V$ tel que $u
+(y) = x + y$. Comme $x \in \text{Inv} (u)$, on a $u (x) = x$.
+
+Soit $n$ un entier positif. En it{\'e}rant, on obtient $u^n (y) = nx + y$.
+
+Puisque $u$ est une isom{\'e}trie, pour tout $k$, on a
+\[ \|u^k (y)\|=\|y\| \]
+
+
+On a donc
+\[ \|y + nx\|=\|y\| \]
+
+
+Or,
+\[ \|nx\| \leq \|nx + y\|+\|y\| \leq 2\|y\| \]
+
+
+En divisant par $n$ et en passant {\`a} la limite, on obtient $\|x\|= 0$,
+donc $x = 0$.
+
+\
+
+On commence par le cas particulier o{\`u} $h_1$ et $h_2$ commutent.
+
+D'apr{\`e}s le \tmtextbf{lemme 1}, $V$ est la somme directe Inv$(h_1) \oplus
+S (h_1)$.
+
+Inv$(h_1)$ est stable par $h_2$ car ces endomorphismes commutent.
+
+Soit $h_2'$ l'endomorphisme induit sur Inv$(h_1)$.
+
+Alors, d'apr{\`e}s le \tmtextbf{lemme 1.}, Inv$(h_1)$ est la somme directe
+Inv$(h_2') \oplus S (h_2')$.
+
+Or, Inv$(h_2') = \text{Inv} (h_1) \cap \text{Inv} (h_2)$.
+
+Finalement, $V$ est la somme directe Inv$(h_1) \cap \text{Inv} (h_2) \oplus
+(S (h_2') + S (h_1))$. Le sous-espace suppl{\'e}mentaire $S (h_2') + S (h_1)$
+est stable par $h_1$ et $h_2$, d'o{\`u} le r{\'e}sultat.
+
+\
+
+Revenons {\`a} l'{\'e}nonc{\'e} g{\'e}n{\'e}ral. On suppose que $h_1$ et
+$h_2$ commutent avec leur commutateur $[h_1, h_2]$. Utilisons le
+\tmtextbf{lemme} :
+\[ V = \text{Inv} ([h_1, h_2]) \oplus S ([h_1, h_2]) \]
+
+
+Inv$([h_1, h_2])$ est stable par $h_1$ et $h_2$. Consid{\'e}rons les
+endomorphismes induits $h_1'$ et $h_2'$. Puisqu'ils commutent {\'e}galement
+avec $[h_1, h_2]$, ils commutent entre eux. On revient ainsi au cas
+particulier pr{\'e}c{\'e}dent, qui nous fournit un suppl{\'e}mentaire $F$
+stable par $h_1'$ et $h_2'$ tel que
+\[ \text{Inv$([h_1, h_2]) = \text{Inv} (h_1') \cap \text{Inv} (h_2') + F =
+   \text{Inv} (h_1) \cap \text{Inv} (h_2) + F$} \]
+
+
+car, Inv$(h_1) \cap \text{Inv} (h_2) \subseteq \text{Inv} ([h_1, h_2])$.
+
+Ainsi, $V = \text{Inv} (h_1) \cap \text{Inv} (h_2) + (F + S ([h_1, h_2]))$
+
+Ce qui conclut la d{\'e}monstration.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

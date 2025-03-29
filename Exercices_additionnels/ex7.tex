@@ -1,0 +1,68 @@
+Cet exercice vise {\`a} montrer que, parmi 13 nombres r{\'e}els distincts, on
+peut toujours en choisir deux, $a$ et $b$, tels que le rapport $\frac{a - b}{1
++ a.b}$ soit compris entre $0$ et $2 - \sqrt{3}$.
+
+\begin{exercise}[(Oral de l'X)]
+Montrer que parmi les 13 r{\'e}els distincts ,on peut toujours en choisir deux
+,disons $a$ et $b$ tels que :
+\[ 0 < \frac{a - b}{1 + a.b} < 2 - \sqrt{3} \]
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soient $a_1 < a_2 < \cdots < a_{13} $des r{\'e}els ,l'expression $\frac{a -
+b}{1 + a.b}$ rappelle le d{\'e}veloppement de $\tan (x - y)$
+
+Consid{\'e}rons $\tmcolor{black}{\theta_i = \arctan (a_i)}$, pour tout $i \in
+\llbracket 1, 13 \rrbracket$,on a \ la fonction arctan est strictement
+croissante
+
+Alors :
+\[ \theta_1 < \theta_2 < \cdots < \theta_{13} \]
+\text{}
+
+et ils sont dans $\left] - \frac{\pi}{2}, \frac{\pi}{2} \right[$ ,
+
+Donc, il existe $k_0 \in \llbracket 1, 12 \rrbracket$ tel que $\theta_{k_0 +
+1} - \theta_{k_0} < \frac{\pi}{12}$ , (car sinon, c-{\`a}-d si $\forall k  \in
+\llbracket 1, 12 \rrbracket$ \ $\theta_{k  + 1} - \theta_{k } >
+\frac{\pi}{12}$, on aurait $\theta_{13} - \theta_0 = \underset{k =
+1}{\overset{12}{\sum}} \theta_{k  + 1} - \theta_{k } \geqslant \pi$, ce qui
+est absurde avec : $\theta_{13}, \theta_0 \in \left] - \frac{\pi}{2},
+\frac{\pi}{2} \right[$ et la longueur de \ $\left] - \frac{\pi}{2},
+\frac{\pi}{2} \right[$ est {\'e}gale {\`a} $\pi$).
+
+Comme la fonction tan est strictement croissante sur $\left[ 0, \frac{\pi}{2}
+\right[$, alors
+\[ 0 < \tan (\theta_{k_0 + 1} - \theta_{k_0}) < \tan \left( \frac{\pi}{12}
+   \right) \]
+
+
+Or,
+\[ \tan (\theta_{k_0 + 1} - \theta_{k_0}) = \frac{\tan (\theta_{k_0 + 1}) -
+   \tan (\theta_{k_0})}{1 + \tan (\theta_{k_0}) \tan (\theta_{k_0 + 1})} =
+   \frac{a_{k_0 + 1} - a_{k_0}}{1 + a_{k_0} a_{k_0 + 1}} \]
+
+
+le r{\'e}el $x = \tan \left( \frac{\pi}{12} \right)$ v{\'e}rifie
+l'{\'e}quation :
+\[ \frac{2 x}{1 - x^2} = \tan \left( \frac{\pi}{6} \right) =
+   \frac{1}{\sqrt{3}} \]
+
+
+En r{\'e}solvant cette {\'e}quation, on obtient $x = - \sqrt{3} \pm 2$, avec
+$\tan \left( \frac{\pi}{12} \right) > 0$, on a $x = \tan \left( \frac{\pi}{12}
+\right) = 2 - \sqrt{3}$
+
+Par cons{\'e}quent :
+
+\[  \]
+\[ {\color[HTML]{000000}0 < \frac{a_{k_0 + 1} - a_{k_0}}{1 + a_{k_0} a_{k_0 +
+   1}} < 2 - \sqrt{3}} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

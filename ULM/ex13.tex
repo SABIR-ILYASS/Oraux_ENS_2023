@@ -1,0 +1,180 @@
+L'exercice 13 porte sur la valuation $p - \tmop{adique}$ d'un produit. Il
+demande de majorer la valuation $p - \tmop{adique}$ d'un produit
+sp{\'e}cifique impliquant des puissances d'un nombre premier distinct de $p$.
+L'exercice fait appel {\`a} des notions d'arithm{\'e}tique et de th{\'e}orie
+des nombres p-adiques.
+
+\begin{exercise}[(Valuation $p$-adique d'un produit)]
+Soient $p$ et $q$ deux entiers premiers distincts. Montrer qu'il existe une
+constante $c > 0$ (que l'on estimera) tel que pour tout entier~$m > 0$, la
+valuation $p$-adique du produit
+\[ N (m) = (q - 1)  (q^2 - 1) \ldots (q^m - 1), \]
+est major{\'e}e par $c.m. \log m$.
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+
+\tmtextbf{Lemme 1. (LTE : Lifting The Exponent)}
+
+Soit $p$ un nombre premier, $x$ and $y$ des entiers, $n > 0$, tels que $p| (x
+- y)$ mais $p \nmid x$ et $p \nmid y$. Alors
+
+(1) Si $p$ est impair,
+\[ v_p  (x^n - y^n) = v_p  (x - y) + v_p (n) ; \]
+
+
+(2) : Si $p = 2$ et $n$ est pair,
+\[ v_2  (x^n - y^n) = v_2  (x - y) + v_2 (n) + v_2  (x + y) - 1. \]
+
+
+(3) Si $p = 2$ et $n$ impair,
+\[ v_2  (x^n - y^n) = v_2  (x - y) . \]
+
+
+\tmtextbf{Preuve du lemme 1.}
+
+\tmtextbf{Cas de base $(p \tmop{impair} \tmop{et} n \tmop{est}
+\tmop{impair})$}.
+
+Supposons que $p \not{| \nobracket} x, p \not{| \nobracket} y, p \not{|
+\nobracket} n,$ et $p | \nobracket x - y.$ Alors $x \equiv y \pmod{p}$, ce qui
+implique :
+\[ x^{n - 1} + x^{n - 2} y + x^{n - 3} y^2 + \ldots + y^{n - 1} \equiv nx^{n -
+   1} \nequiv 0 \pmod{p} \]
+
+
+En utilisant la formule de Bernoulli :
+\[ x^n - y^n = (x - y)  (x^{n - 1} + x^{n - 2} y + \ldots + y^{n - 1}) \]
+
+
+On peut conclure que $\nu_p  (x^n - y^n) = \nu_p  (x - y)$.
+
+\tmtextbf{Cas g{\'e}n{\'e}ral $(p \tmop{impair})$}
+
+Pour $n = p$, il faut montrer que :
+\[ \nu_p  (x^p - y^p) = \nu_p  (x - y) + 1 \]
+
+
+On a :
+\[ x^{p - 1} + x^{p - 2} y + \ldots + y^{p - 1} \equiv px^{p - 1} \equiv 0
+   \pmod{p} \]
+
+
+mais ce n'est pas un multiple de $p^2$, d'o{\`u} le r{\'e}sultat.
+
+En {\'e}crivant $n$ sous la forme $p^a b$ o{\`u} $p \nmid b$, le cas de base
+donne :
+\[ \nu_p  (x^n - y^n) = \nu_p  ((x^{p^a})^b - (y^{p^a})^b) = \nu_p  (x^{p^a} -
+   y^{p^a}) \]
+
+
+Par r{\'e}currence sur $a$, on obtient :
+\[ \nu_p  (x^{p^a} - y^{p^a}) = \nu_p  (x - y) + a \]
+
+
+\tmtextbf{Cas $p$=2 et $n$ pair}
+
+Si $4| (x - y)$ alors
+\[ \nu_2  (x^n - y^n) = \nu_2 (x - y) + \nu_2 (n) \]
+
+
+En effet pour chaque nombre premier $p$ tel que $p \gcd (n, p) = 1$ et $p| (x
+- y)$ mais $p \nmid x$ et $p \nmid y$ on a
+\[ \nu_p  (x^n - y^n) = \nu_p  (x - y) \]
+. Ainsi il suffit de prouver l'{\'e}galit{\'e}
+\[ \nu_2  (x^n - y^n) = \nu_2 (x - y) + \nu_2 (n) \]
+pour les $n$ qui sont des puissances de 2. La preuve est directe par
+r{\'e}currence en utilisant le fait que $(a^2 - b^2) = (a - b)  (a + b)$. Dans
+le cas g{\'e}n{\'e}ral on a $4| (x^2 - y^2)$ et $n = m. 2^k$ et une
+r{\'e}currence permet de conclure.
+
+\tmtextbf{Cas $p$ pair et $n$ impair}
+
+Regarder le cas de base au d{\'e}but de la preuve
+
+\tmtextbf{Lemme 2. (Formule de Legendre)}
+\[ \nu_p (n!) = \sum_{i = 1}^{\infty} \left\lfloor \dfrac{n}{p^i}
+   \right\rfloor \]
+
+
+\tmtextbf{Preuve du lemme 2.}
+
+On peut dire que $\nu_p (n!)$ est le nombre de multiples de $p$ inf{\'e}rieurs
+{\`a} $n$, ou $\left\lfloor \frac{n}{p} \right\rfloor$.
+
+Cependant, les multiples de $p^2$ ne sont compt{\'e}s qu'une fois, alors
+qu'on doit les compter deux fois. Donc on ajoute donc $\left\lfloor
+\frac{n}{p^2} \right\rfloor$. Mais cela compte $p^3$ deux fois, alors qu'on
+doit les compter trois fois. Donc on ajoute$\left\lfloor \frac{n}{p^3}
+\right\rfloor$. On continue ainsi jusqu'{\`a} ce que $\nu_p (n!) = \underset{i
+= 1}{\overset{\infty}{\sum}} \left\lfloor \dfrac{n}{p^i} \right\rfloor$. Cela
+est vrai puisque la somme est finie.
+
+Soit
+\[ A = \{n \in [1, m], p | \nobracket q^n - 1\} \]
+
+
+On suppose que A est non vide, sans quoi la majoration est directe. Soit
+\[ l = min (A) \]
+
+
+On trouve par division euclidienne que
+\[ \forall k \in A, \quad l|k \]
+
+
+En notant le produit par
+\[ N (m) \assign \underset{k = 1}{\overset{m}{\prod}} (q^k - 1) \]
+
+
+on trouve :
+\[ \nu_p  (N (m)) = \sum_{k = 1}^{\lfloor \frac{m}{l} \rfloor} \nu_p  (q^{kl}
+   - 1) \]
+
+
+Si p est impair, d'apr{\`e}s LTE on a :
+\[ \nu_p  (N (m)) = \sum_{k = 1}^{\lfloor \frac{m}{l} \rfloor} (\nu_p  (q^l -
+   1) + \nu_p (\lfloor \frac{m}{l} \rfloor !) \]
+
+
+D'apr{\`e}s la formule de Legendre. On a :
+\[ \nu_p (\lfloor \frac{m}{l} \rfloor ! \leq \frac{m}{l (p - 1)} \]
+
+
+On pourrait affiner {\`a}
+\[ \nu_p (\lfloor \frac{m}{l} \rfloor ! \leq \frac{m - 1}{l (p - 1)} \]
+
+
+mais on se contentera de la premi{\`e}re in{\'e}galit{\'e}, vu qu'on ne nous
+demande pas de trouver la meilleure constante de majoration.
+
+On trouve alors que :
+\[ \nu_p N (m) \leq m \log_p (q) + \frac{m}{l (p - 1)} \]
+
+
+On trouve ainsi une majoration lin{\'e}aire avec :
+\[ c_{\text{lin{\'e}aire}} = \log_p (q) + \frac{1}{l (p - 1)} \]
+
+
+et une majoration logarithmique avec :
+\[ c_{\log} = \frac{c_{\text{lin{\'e}aire}}}{\log (2)} \]
+
+
+car $m$ est sup{\'e}rieur {\`a} 1.
+
+Si $p$ est pair, on a
+\[ \nu_2 N (m) = \sum_{k = 1}^{\lfloor \frac{m}{l} \rfloor / 2} (\nu_2 (q^l -
+   1)) + \nu_2 \left( \left\lfloor \frac{\lfloor \frac{m}{l} \rfloor}{2}
+   \right\rfloor ! \right) + \sum_{k = 1}^{\lfloor \frac{\lfloor \frac{m}{l}
+   \rfloor - 1}{2} \rfloor} (\nu_2 (q^l - 1)) \]
+
+
+On trouve ainsi en majorant $\frac{1}{2}$ par 1 une majoration lin{\'e}aire
+avec :
+\[ c_{\text{lin{\'e}aire}} = \log_p (q) + \frac{1}{l (p - 1)} \]
+
+
+et une majoration logarithmique avec :
+\[ c_{\log} = \frac{c_{\text{lin{\'e}aire}}}{\log (2)} \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

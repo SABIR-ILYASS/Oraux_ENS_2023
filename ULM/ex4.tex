@@ -1,0 +1,123 @@
+L'exercice 4 s'int{\'e}resse {\`a} l'espace des translat{\'e}es d'une
+fonction. Il examine les propri{\'e}t{\'e}s d'approximation d'un espace
+engendr{\'e} par les translations enti{\`e}res d'une fonction int{\'e}grable.
+L'exercice demande de prouver un r{\'e}sultat d'approximation uniforme {\`a}
+partir d'une hypoth{\`e}se d'approximation en norme $L_1$.
+
+\begin{exercise}[(Espace des translat{\'e}es d'une fonction)]
+Soit $g \in \mathcal{C} (\mathbb{R})$ une fonction int{\'e}grable. Pour~$A
+\subseteq \mathbb{Z}$, on note $\mathcal{S}_A$ le sous-espace vectoriel de
+$\mathcal{C} (\mathbb{R})$ engendr{\'e} par les fonctions $x \mapsto g (x -
+a)$, avec~$a \in A$. On suppose que pour toute $f \in \mathcal{C}
+(\mathbb{R})$ int{\'e}grable et tout $\epsilon > 0$, il existe $h \in
+\mathcal{S}_{\mathbb{Z}}$ telle que
+\[ \int_{\mathbb{R}} |f (x) - h (x) | \mathrm{d} x < \epsilon . \]
+
+
+Montrer que pour toute $f \in \mathcal{C} (\mathbb{R})$ int{\'e}grable et tout
+$\epsilon > 0$, il existe $L > 0$ tel que pour tout $y \in \mathbb{R}$, il
+existe~$A \subset \mathbb{Z}$ et $h \in \mathcal{S}_A$ tels que
+\[ \#A \leq L \text{et } \int_{\mathbb{R}} |f (x - y) - h (x) | \mathrm{d} x <
+   \epsilon . \]
+\end{exercise}
+
+\subsection*{Solution. (Zine Akram)}
+\addcontentsline{toc}{subsection}{Solution. (Zine Akram)}
+
+Pour tout $\varepsilon > 0$, il existe $R > 0$ tel que :
+\[ \int_{|x| > R} |f (x) |  \hspace{0.17em} dx < \frac{\varepsilon}{4} . \]
+
+
+Par d{\'e}finition de l'int{\'e}grale.
+
+Consid{\'e}rons le domaine $[- R - 1, R + 1]$, qui est compact. Comme $f$ est
+continue sur ce domaine compact, elle y est uniform{\'e}ment continue. Donc,
+il existe $\delta > 0$ tel que pour tous $x, x' \in [- R - 1, R + 1]$, si $|x
+- x' | < \delta$, alors :
+\[ |f (x) - f (x') | < \frac{\varepsilon}{4 R} . \]
+
+
+Nous voulons montrer que l'application $r \mapsto f (- r)$ est continue de
+$[0, 1]$ dans $L^1 (\mathbb{R})$.
+
+Pour tout $r_0 \in [0, 1]$ et tout $\eta > 0$, choisissons $\delta > 0$ tel
+que pour $|r - r_0 | < \delta$ :
+
+- Sur $|x| \leq R$ : Pour $x \in [- R, R]$ et $r, r_0 \in [0, 1]$, $x - r$ et
+$x - r_0$ appartiennent {\`a} $[- R - 1, R + 1]$.
+
+Donc,
+\[ |f (x - r) - f (x - r_0) | < \frac{\varepsilon}{4 R} . \]
+
+
+Ainsi,
+\[ \int_{- R}^R |f (x - r) - f (x - r_0) |  \hspace{0.17em} dx \leq (2 R)
+   \times \frac{\varepsilon}{4 R} = \frac{\varepsilon}{2} . \]
+
+
+- Sur $|x| > R$ : Comme $f$ est int{\'e}grable et tend vers 0 {\`a} l'infini :
+\[ \int_{|x| > R} |f (x - r) |  \hspace{0.17em} dx < \frac{\varepsilon}{4},
+   \quad \int_{|x| > R} |f (x - r_0) |  \hspace{0.17em} dx <
+   \frac{\varepsilon}{4} . \]
+
+
+Par l'in{\'e}galit{\'e} triangulaire :
+\[ \int_{|x| > R} |f (x - r) - f (x - r_0) | \hspace{0.17em} dx \leq \int_{|x|
+   > R} |f (x - r) | \hspace{0.17em} dx + \int_{|x| > R} |f (x - r_0) | 
+   \hspace{0.17em} dx < \frac{\varepsilon}{2} . \]
+
+
+Somme des deux contributions :
+\begin{eqnarray*}
+  \int_{\mathbb{R}} |f (x - r) - f (x - r_0) | \hspace{0.17em} dx & = & 
+  \int_{- R}^R | f (x - r) - f (x - r_0) |  \hspace{0.17em} dx + \int_{|x| >
+  R} | f (x - r) - f (x - r_0) d x\\
+  & < & \frac{\varepsilon}{2} + \frac{\varepsilon}{2}\\
+  & = & \varepsilon
+\end{eqnarray*}
+
+
+Cela montre que l'application $r \mapsto f (- r)$ est continue de $[0, 1]$
+dans $L^1 (\mathbb{R})$.
+
+L'intervalle $[0, 1]$ est compact. L'image de $[0, 1]$ par l'application
+continue $r \mapsto f (- r)$ est donc un ensemble compact dans $L^1
+(\mathbb{R})$. Par le th{\'e}or{\`e}me de Heine-Borel, cet ensemble compact
+peut {\^e}tre couvert par un nombre fini de boules de rayon $\varepsilon / 2$
+dans $L^1 (\mathbb{R})$.
+
+Autrement dit, il existe un entier $N$ et des points $r_1, r_2, \ldots, r_N
+\in [0, 1]$ tels que pour tout $r \in [0, 1]$, il existe $r_i$ avec :
+\[ \int_{\mathbb{R}} |f (x - r) - f (x - r_i) |  \hspace{0.17em} dx <
+   \frac{\varepsilon}{2} . \]
+
+
+Par hypoth{\`e}se, pour chaque $f (x - r_i)$ et pour $\varepsilon$, il existe
+$h_i \in S_{\mathbb{Z}}$ tel que :
+\[ \int_{\mathbb{R}} |f (x - r_i) - h_i (x) |  \hspace{0.17em} dx <
+   \frac{\varepsilon}{2} . \]
+
+
+Chaque $h_i$ est une combinaison lin{\'e}aire finie de fonctions de la forme
+$g (x - a)$ avec $a \in \mathbb{Z}$. Notons $A_i \subset \mathbb{Z}$
+l'ensemble des $a$ utilis{\'e}s dans $h_i$, et $L = \underset{1 \leq i \leq
+N}{\max} \#A_i$.
+
+Pour un $y \in \mathbb{R}$ arbitraire, {\'e}crivons $y = n + r$, avec $n \in
+\mathbb{Z}$ et $r \in [0, 1 [$. D'apr{\`e}s ce qui pr{\'e}c{\`e}de, il existe
+$r_i$ tel que :
+\[ \int_{\mathbb{R}} |f (x - r) - f (x - r_i) |  \hspace{0.17em} dx <
+   \frac{\varepsilon}{2} . \]
+
+
+Posons $h (x) = h_i  (x - n)$. Alors, $h$ appartient {\`a} $S_A$ avec $A = A_i
++ n = \{a + n : a \in A_i \} \subset \mathbb{Z}$.
+
+Le nombre de termes dans $h$ est $\#A =\#A_i \leq L$.
+
+On en conclut que pour tout $y \in \mathbb{R}$, il existe un ensemble $A
+\subset \mathbb{Z}$ avec $\#A \leq L$ et une fonction $h \in S_A$ telle que :
+\[ \int_{\mathbb{R}} |f (x - y) - h (x) |  \hspace{0.17em} dx < \varepsilon .
+\]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
+

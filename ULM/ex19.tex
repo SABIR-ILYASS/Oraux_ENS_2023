@@ -1,0 +1,118 @@
+Cet exercice porte sur la norme de l'inverse d'une matrice {\`a} lignes
+unitaires. Il demande de prouver une borne sur la norme de l'inverse d'une
+telle matrice, sous certaines conditions sur la distance entre ses lignes.
+L'exercice fait appel {\`a} des notions d'alg{\`e}bre lin{\'e}aire et
+d'analyse matricielle.
+\begin{exercise}[(Norme de l'inverse d'une matrice {\`a} lignes
+unitaires)]
+Soit $A$ une matrice r{\'e}elle carr{\'e}e de taille $n \geq 1$ donc les
+lignes~$L_1, \ldots, L_n$ sont des vecteurs unitaires. Soit~$\epsilon > 0$ tel
+que, pour tout~$1 \leq i \leq n$, la distance euclidienne de $L_i$ au sous
+espace engendr{\'e} par les $L_j$, avec $j \neq i$, est minor{\'e}e par
+$\epsilon$.
+
+Montrer que~$A$ est inversible et que $\|A^{- 1} x\|_2 \leq \epsilon^{- 1}
+\|x\|_1$, pour tout~$x \in \mathbb{R}^n$, o{\`u} $\|x\|_1 = \sum_i |x_i |$ et
+$\|x\|_2^2 = \sum_i x_i^2$.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Commen{\c c}ons par montrer que la matrice $A$ est inversible.
+
+Supposons par l'absurde que $A$ n'est pas inversible. Alors, les lignes de $A$
+sont lin{\'e}airement d{\'e}pendantes, c'est-{\`a}-dire qu'il existe des
+scalaires $\alpha_1, \alpha_2, \ldots, \alpha_n$, non tous nuls, tels que :
+\[ \sum_{i = 1}^n \alpha_i L_i = 0 \]
+
+
+Choisissons un indice $i_0$ tel que $\alpha_{i_0} \neq 0$. On peut alors
+{\'e}crire :
+\[ L_{i_0} = - \frac{1}{\alpha_{i_0}}  \sum_{\tmscript{\begin{array}{c}
+     j = 1\\
+     j \neq i_0
+   \end{array}}}^n \alpha_j L_j . \]
+
+
+Ainsi, $L_{i_0}$ appartient au sous-espace vectoriel engendr{\'e} par les
+$L_j$ avec $j \neq i_0$. Cela contredit le fait que la distance de $L_{i_0}$
+{\`a} ce sous-espace est strictement sup{\'e}rieure {\`a} $\varepsilon > 0$.
+
+Par cons{\'e}quent, $A$ est inversible.
+
+\
+
+Soit $x = (x_1, x_2, \ldots, x_n)^{\top} \in \mathbb{R}^n$. Nous allons
+montrer que :
+\[ \|A^{- 1} x\|_2 \leq \frac{1}{\varepsilon} \|x\|_1, \]
+
+
+o{\`u} $\|x\|_1 = \sum_{i = 1}^n |x_i |$ et $\|x\|_2 = \left( \sum_{i = 1}^n
+x_i^2 \right)^{1 / 2}$.
+
+Notons $C_j (A^{- 1})$ la $j$-i{\`e}me colonne de $A^{- 1}$. On peut
+{\'e}crire :
+\[ A^{- 1} x = \sum_{j = 1}^n x_j C_j (A^{- 1}) . \]
+
+
+Par l'in{\'e}galit{\'e} triangulaire, on obtient :
+\[ \|A^{- 1} x\|_2 \leq \sum_{j = 1}^n |x_j |\|C_j (A^{- 1})\|_2 . \]
+
+
+Il suffit donc de majorer $\|C_j (A^{- 1})\|_2$ pour chaque $j$.
+
+Consid{\'e}rons l'identit{\'e} matricielle :
+\[ AA^{- 1} = I_n, \]
+
+
+En exprimant cette identit{\'e} ligne par ligne, pour chaque $i \in \{1,
+\ldots, n\}$, on a :
+\[ L_i (A) A^{- 1} = e_i^{\top}, \]
+
+
+o{\`u} $e_i^{\top}$ est le vecteur ligne ayant un $1$ en $i$-{\`e}me position
+et des z{\'e}ros ailleurs.
+
+Cela signifie que pour chaque $i$ et $j$ :
+\[ L_i (A) \cdot C_j (A^{- 1}) = \delta_{ij}, \]
+
+
+o{\`u} $\delta_{ij}$ est le symbole de Kronecker ({\'e}gal {\`a} $1$ si $i =
+j$ et $0$ sinon).
+
+Ainsi, pour $j \neq i$, on a :
+\[ L_i (A) \cdot C_j (A^{- 1}) = 0, \]
+
+
+ce qui implique que $C_j (A^{- 1})$ est orthogonal {\`a} $L_i (A)$.
+
+Pour $j = i$, on a :
+\[ L_i (A) \cdot C_i (A^{- 1}) = 1. \]
+
+
+Puisque les lignes $L_i (A)$ sont des vecteurs unitaires, la distance
+$\delta_i$ de $L_i (A)$ au sous-espace engendr{\'e} par les $L_j (A)$ avec $j
+\neq i$ est donn{\'e}e par :
+\[ \delta_i = \frac{1}{\|C_i (A^{- 1})\|_2} . \]
+
+
+En effet, $C_i (A^{- 1})$ est un vecteur normal au sous-espace engendr{\'e}
+par les $L_j (A)$ avec $j \neq i$, et sa norme est l'inverse de la distance de
+$L_i (A)$ {\`a} ce sous-espace.
+
+{\'E}tant donn{\'e} que $\delta_i \geq \varepsilon$, on obtient :
+\[ \|C_i (A^{- 1})\|_2 \leq \frac{1}{\varepsilon} . \]
+
+
+Cette in{\'e}galit{\'e} est valable pour tout $i \in \{1, \ldots, n\}$.
+
+En combinant les r{\'e}sultats pr{\'e}c{\'e}dents, on a :
+\[ \|A^{- 1} x\|_2 \leq \sum_{j = 1}^n |x_j |\|C_j (A^{- 1})\|_2 \leq
+   \frac{1}{\varepsilon}  \sum_{j = 1}^n |x_j | = \frac{1}{\varepsilon}
+   \|x\|_1 . \]
+
+
+Ainsi, pour tout $x \in \mathbb{R}^n$, on a bien d{\'e}montr{\'e} que :
+\[ \|A^{- 1} x\|_2 \leq \frac{1}{\varepsilon} \|x\|_1 . \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

@@ -1,0 +1,1238 @@
+\begin{center}
+\textbf{ÉCOLES NORMALES SUPÉRIEURES}\\
+\textbf{CONCOURS D'ADMISSION 2018\hspace{11em}FILIÈRE MPI}\\
+\subsection*{Composition de mathématiques - C - (ULCR)}\label{mathC_2018}
+\textbf{Corrigé par : SABIR ILYASS.}
+\end{center}
+\[
+\star \star \star
+\]
+\addcontentsline{toc}{subsection}{Composition de mathématiques - C - MPI - 2018}
+
+\begin{center}
+  {\tmname{Partie I}}
+\end{center}
+
+Dans cette partie, $E$ est un ensemble fini ou d{\'e}nombrable. L'ensemble des
+probabilit{\'e}s sur $E$ est l'ensemble
+\[ \mathcal{P} (E) = \left\{ \mu : E \rightarrow [0, 1]  | \nobracket 
+   \underset{x \in E}{\sum} \mu (x) = 1 \right\} \]
+
+
+Une matrice de transition sur $E$ est une application $P : E \times E
+\rightarrow [0, 1]$ telle que, pour tout $x \in E$, on a
+\[ \underset{y \in E}{\sum} P (x, y) = 1 \]
+
+
+Le produit $P Q$de deux matrices de transition $P$ et $Q$ est d{\'e}fini par
+\[ \forall (x, z) \in E \times E, (P Q) (x, z) = \underset{y \in E}{\sum} P
+   (x, y) Q (y, z) \]
+
+
+On notera $I$ la matrice de transition d{\'e}finie par
+\[ I (x, y) = \left\{\begin{array}{l}
+     1 \tmop{si} x = y\\
+     0 \tmop{si} x \not{=} y
+   \end{array}\right. \]
+
+
+\textbf{1.1.} (a) \textbf{Vérifier que si $P$ et $Q$ sont des matrices de transition, alors $PQ$ est aussi une matrice de transition.}
+
+
+Soient $P, Q$ deux matrices de transition, on a pour tout $x \in E$
+\begin{eqnarray*}
+  \underset{y \in E}{\sum} (P Q) (x, y) & = & \underset{y \in E}{\sum}
+  \underset{z \in E}{\sum} P (x, z) Q (z, y)
+\end{eqnarray*}
+
+
+Avec, la famille $(P (x, z) Q (z, y))_{(y, z) \in E \times E}$ est {\`a}
+termes positifs, donc via le th{\'e}or{\`e}me de Fubini-Tonelli on a :
+\begin{eqnarray*}
+  \underset{y \in E}{\sum} (P Q) (x, y) & = & \underset{z \in E}{\sum}
+  \underset{y \in E}{\sum} P (x, z) Q (z, y)\\
+  & = & \underset{z \in E}{\sum} P (x, z) \underset{y \in E}{\sum} Q (z, y)
+\end{eqnarray*}
+
+
+Puisque $Q$ est une matrice de transition, alors $\underset{y \in E}{\sum} Q
+(z, y) = 1$,
+
+Ensuite, $\underset{y \in E}{\sum} (P Q) (x, y) = \underset{z \in E}{\sum} P
+(x, z) = 1$, car $P$ est une matrice de transition, d'o{\`u} le r{\'e}sultat.
+
+\
+
+\qquad (b) \textbf{Vérifier que si $P$, $Q$ et $R$ sont des matrices de transition, on a $(PQ)R = P(QR)$.}
+
+
+Pour tout $(x, y) \in E \times E$. On a
+\begin{eqnarray*}
+  (P Q) R (x, y) & = & \underset{z \in E}{\sum} (P Q) (x, z) R (z, y)\\
+  & = & \underset{z \in E}{\sum} \underset{t \in E}{\sum} P (x, t) Q (t, z) R
+  (z, y)
+\end{eqnarray*}
+
+
+La famille $(P (x, t) Q (t, z) R (z, y))_{(z, t) \in E \times E}$ est {\`a}
+termes positifs, donc d'apr{\`e}s le th{\'e}or{\`e}me de Fubini-Tonelli, on
+peut permuter les sommes. Ainsi, on a :
+\begin{eqnarray*}
+  (P Q) R (x, y) & = & \underset{t \in E}{\sum} \underset{z \in E}{\sum} P (x,
+  t) Q (t, z) R (z, y)\\
+  & = & \underset{t \in E}{\sum} P (x, t) \underset{z \in E}{\sum} Q (t, z) R
+  (z, y)\\
+  & = & \underset{t \in E}{\sum} P (x, t) (\tmop{QR}) (t, y)\\
+  & = & P (Q R) (x, y)
+\end{eqnarray*}
+
+
+Et ceci est vrai pour tout $(x, y) \in E \times E$, donc $(P Q) R = P (Q R)$.
+
+\
+
+\qquad$(c)$ Pour tout entier $n \geqslant 0$ et toute matrice de transition
+$P$, on d{\'e}finit $P^n$ par $P^0 = I$ et la relation de r{\'e}currence $P^{n
++ 1} = P^n P$ si $n \geqslant 0$. \tmtextbf{V{\'e}rifier que $P^n$ est bien
+une matrice de transition.}
+
+Par r{\'e}currence sur $n \in \mathbb{N}$, on a pour $n = 0$, $P^0 = I$, qui
+est bien une matrice de transition.
+
+Soit $n \in \mathbb{N}.$ Supposons que $P^n $est une matrice de transition.
+Puisque $P$est une matrice de transition, alors d'apr{\`e}s la
+question\tmtextbf{ 1.1.a}, le produit $P^{n + 1} = P^n P$ est une matrice de
+transition,
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+{\'E}tant donn{\'e}s $\mu \in \mathcal{P}(E)$, une matrice de transition$P$,
+et des fonctions born{\'e}es $f : E \rightarrow \mathbb{R}$ et$g : E
+\rightarrow \mathbb{R}$, on d{\'e}finit les nombres r{\'e}els suivants
+\begin{eqnarray*}
+  \mu [f] & = & \underset{x \in E}{\sum} \mu (x) f (x) .\\
+  \mu P (y) & = & \underset{x \in E}{\sum} \mu (x) P (x, y), o{\`u} y \in E.\\
+  P f (x) & = & \underset{y \in E}{\sum} P (x, y) f (y), o{\`u} x \in E.\\
+  \langle f, g \rangle_{\mu} & = & \mu [f g] .
+\end{eqnarray*}
+
+
+\textbf{1.2.} Soit $\mu \in \mathcal{P}(E)$, soient $P$ et $Q$ des matrices
+de transition et soit $f : E \rightarrow \mathbb{R}$ une fonction born{\'e}e.
+
+\textbf{$(a$) Montrer que $\mu P \in \mathcal{P}(E)$ et que $(\mu P) Q
+= \mu (P Q)$.}
+
+Montrons d'abord que $\mu P \in \mathcal{P} (E)$.
+
+On a, pour tout $x \in E$
+\begin{eqnarray*}
+  \underset{x \in E}{\sum} \mu P (x) & = & \underset{x \in E}{\sum}
+  \underset{y \in E}{\sum} \mu (y) P (y, x)
+\end{eqnarray*}
+
+
+La famille $(\mu (y) P (y, x))_{(x, y) \in E \times E}$ est {\`a} termes
+positifs, donc via le th{\'e}or{\`e}me de Fubini-Tonelli, on a :
+\begin{eqnarray*}
+  \underset{x \in E}{\sum} \mu P (x) & = & \underset{y \in E}{\sum}
+  \underset{x \in E}{\sum} \mu (y) P (y, x)\\
+  & = & \underset{y \in E}{\sum} \mu (y) \left( \underset{x \in E}{\sum} P
+  (y, x) \right) \tmmathbf{}\\
+  & = & \underset{y \in E}{\sum} \mu (y)  (\tmop{car} P \tmop{est} \tmop{une}
+  \tmop{matrice} \tmop{de} \tmop{transition})\\
+  & = & 1 (\tmop{car} \mu \in \mathcal{P} (E))
+\end{eqnarray*}
+
+
+De plus, pour tout $x \in E$, on a
+\[ 0 \leqslant \mu P (x) \leqslant \underset{x \in E}{\sum} \mu P (x) = 1 \]
+
+
+Donc, $\mu P \in \mathcal{P}(E)$.
+
+Montrons maintenant que $(\mu P) Q = \mu (P Q)$.
+
+On a, pour tout $y \in E$,
+\begin{eqnarray*}
+  (\mu P) Q (x) & = & \underset{x \in E}{\sum} (\mu P) (x) Q (x, y)\\
+  & = & \underset{x \in E}{\sum} \underset{z \in E}{\sum} \mu (z) P (z, x) Q
+  (x, y)
+\end{eqnarray*}
+
+
+Avec la famille $(\mu (z) P (z, x) Q (x, y))_{(x, z) \in E \times E}$ est
+{\`a} termes positifs, donc, via le th{\'e}or{\`e}me de Fubini-Tonelli, on a :
+\begin{eqnarray*}
+  (\mu P) Q (x) & = & \underset{z \in E}{\sum} \underset{x \in E}{\sum} \mu
+  (z) P (z, x) Q (x, y)\\
+  & = & \underset{z \in E}{\sum} \mu (z) \left( \underset{x \in E}{\sum} P
+  (z, x) Q (x, y) \right)\\
+  & = & \underset{z \in E}{\sum} \mu (z) (P Q) (z, y)\\
+  & = & \mu (P Q) (y)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(b)$ Montrer que $P f : E \rightarrow \mathbb{R}$ est une
+fonction born{\'e}e et que $\mu P [f] = \mu [P f] .$}
+
+On a pour tout $x \in E$ :
+\begin{eqnarray*}
+  | P f (x) | & = & \left| \underset{y \in E}{\sum} P (x, y) f (y) \right|\\
+  & \leqslant & \underset{y \in E}{\sum} P (x, y) | f (y) |\\
+  & \leqslant & \underset{z \in E}{\max} | f (z) | \underset{y \in E}{\sum} P
+  (x, y)\\
+  & \leqslant & \underset{z \in E}{\max} | f (z) |\\
+  & < & + \infty \quad  (\tmop{car} f \tmop{est} \tmop{born} {\'e}e)
+\end{eqnarray*}
+
+
+D'o{\`u} $P f$ est born{\'e}e. Montrons maintenant que $\mu P [f] = \mu [P f]$
+
+On a
+\begin{eqnarray*}
+  \mu P [f] & = & \underset{x \in E}{\sum} \mu P (x) f (x)\\
+  & = & \underset{x \in E}{\sum} \underset{y \in E}{\sum} \mu (y) P (y, x) f
+  (x)
+\end{eqnarray*}
+
+
+La famille $(\mu (y) P (y, x) f (x))_{(x, y) \in E \times E}$ est sommable, en
+effet, on a
+\begin{eqnarray*}
+  \underset{y \in E}{\sum} \underset{x \in E}{\sum} | \mu (y) P (y, x) f (x) |
+  & = & \underset{y \in E}{\sum} \mu (y) \underset{x \in E}{\sum} P (y, x) | f
+  (x) |\\
+  & \leqslant & \| f \|_{\infty} \underset{y \in E}{\sum} \mu (y) \underset{x
+  \in E}{\sum} P (y, x)\\
+  & = & \| f \|_{\infty} \underset{y \in E}{\sum} \mu (y)\\
+  & = & \| f \|_{\infty}\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+Donc, d'apr{\`e}s le th{\'e}or{\`e}me de Fubini-Tonelli, la famille $(\mu (y)
+P (y, x) f (x))_{(x, y) \in E \times E}$ est sommable.
+
+Et on a
+\begin{eqnarray*}
+  \mu P [f] & = & \underset{x \in E}{\sum} \underset{y \in E}{\sum} \mu (y) P
+  (y, x) f (x)\\
+  & = & \underset{y \in E}{\sum} \mu (y) \left( \underset{x \in E}{\sum} P
+  (y, x) f (x) \right)\\
+  & = & \underset{y \in E}{\sum} \mu (y) P f (y)\\
+  & = & \mu [P f]
+\end{eqnarray*}
+
+
+\tmtextbf{\qquad$(c)$Montrer que $(P Q) f = P (Q f)$.}
+
+Pour tout $x \in E$, on a
+\begin{eqnarray*}
+  (P Q) f (x) & = & \underset{y \in E}{\sum} (P Q) (x, y) f (y)\\
+  & = & \underset{y \in E}{\sum} \underset{z \in E}{\sum} P (x, z) Q (z, y) f
+  (y)
+\end{eqnarray*}
+
+
+La famille $(P (x, z) Q (z, y) f (y))_{(y, z) \in E \times E}$ est sommable,
+en effet
+\begin{eqnarray*}
+  \underset{z \in E}{\sum} \underset{y \in E}{\sum} | P (x, z) Q (z, y) f (y)
+  | & = & \underset{z \in E}{\sum} \underset{y \in E}{\sum} P (x, z) Q (z, y)
+  | f (y) |\\
+  & \leqslant & \| f \|_{\infty} \underset{z \in E}{\sum} P (x, z) \left(
+  \underset{y \in E}{\sum} Q (z, y) \right)\\
+  & = & \| f \|_{\infty} \underset{z \in E}{\sum} P (x, z)\\
+  & = & \| f \|_{\infty}\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+Et donc, via le th{\`e}or{\'e}me de Fubini-Tonelli, on a
+\begin{eqnarray*}
+  (P Q) f (x) & = & \underset{z \in E}{\sum} \underset{y \in E}{\sum} P (x, z)
+  Q (z, y) f (y)\\
+  & = & \underset{z \in E}{\sum} P (x, z) \left( \underset{y \in E}{\sum} Q
+  (z, y) f (y) \right)\\
+  & = & \underset{z \in E}{\sum} P (x, z) (Q f) (z)\\
+  & = & P (Q f) (x)
+\end{eqnarray*}
+
+
+Et cela pour tout $x \in E$. D'o{\`u} $(P Q) f = P (Q f)$.
+
+\
+
+Une matrice de transition $P$ est dite \tmtextbf{r{\'e}versible} par rapport
+{\`a} un {\'e}l{\'e}ment $\pi$ de $\mathcal{P}(E)$ si pour tout $(x, y) \in
+E^2$ , on a
+\[ \pi (x) P (x, y) = \pi (y) P (y, x) . \]
+
+
+Une matrice de transition $P$ est dite\tmtextbf{ irr{\'e}ductible} si, pour
+tout $(x, y) \in E^2$ , il existe un entier $n \geqslant 1$ tel que $P^n (x,
+y) > 0$.
+
+On se donne, sur un espace probabilis{\'e} $({\textohm}, \mathcal{A},
+\mathbb{P})$, une suite ($U_n)_{n \geqslant 1}$ de variables al{\'e}atoires
+r{\'e}elles ind{\'e}pendantes et identiquement distribu{\'e}es, et une
+variable al{\'e}atoire$X_0$ {\`a} valeurs dans $E$, ind{\'e}pendante de la
+suite ($U_n)_{n \geqslant 1}$. On se donne une fonction $F : E \times
+\mathbb{R} \rightarrow E$ et on d{\'e}finit une suite $(X_n)_{n \geqslant 1}$
+de variables al{\'e}atoires {\`a} valeurs dans $E$ en posant, pour tout entier
+$n \geqslant 1$,
+\[ X_n = F (X_{n - 1}, U_n) \]
+
+
+La loi de $X_n$ est not{\'e}e$\mu_n$. On rappelle que c'est l'{\'e}l{\'e}ment
+de $\mathcal{P}(E)$ d{\'e}fini par $\mu_n (x) =\mathbb{P}[X_n = x]$ pour tout
+$x \in E$.
+
+L'esp{\'e}rance d'une variable al{\'e}atoire r{\'e}elle born{\'e}e $X$ sera
+not{\'e}e $\mathbb{E}[X]$.
+
+Pour tout $(x, y) \in E^2$, on pose $P (x, y) =\mathbb{P}[F (x, U_1) = y]$.
+
+\
+
+\textbf{1.3. (a) Vérifier que $P$ est une matrice de transition et que, pour tout entier $n \geqslant 0$ et tout $(x_0, \ldots, x_n) \in E^{n+1}$, on a }
+\[
+\mathbb{P}[X_0 = x_0, \ldots, X_n = x_n] = \mu_0(x_0) \prod_{i=1}^{n} P(x_{i-1}, x_i).
+\]
+
+
+\
+
+V{\'e}rifiant d'abord que $P$ est une matrice de transition. On a pour tout
+$x \in E$:
+\begin{eqnarray*}
+  \underset{y \in E}{\sum} P (x, y) & = & \underset{y \in E}{\sum}
+  \mathbb{P}[F (x, U_1) = y]\\
+  & = & 1
+\end{eqnarray*}
+
+
+D'o{\`u} $P$ est une matrice de transition.
+
+On a pour tout $n \in \mathbb{N}$
+\begin{eqnarray*}
+  \mathbb{P}[X_0 = x_0, . . ., X_n = x_n] & = & \mathbb{P}[X_0 = x_0, . . .,
+  X_{n - 1} = x_{n - 1}, X_n = x_n]\\
+  & = & \mathbb{P}[X_0 = x_0, . . ., X_{n - 1} = x_{n - 1}, F (X_{n - 1},
+  U_n) = x_n]\\
+  & = & \mathbb{P}[X_0 = x_0, . . ., X_{n - 1} = x_{n - 1}, F (x_{n - 1},
+  U_n) = x_n]
+\end{eqnarray*}
+
+
+Par it{\'e}ration, on obtient
+\begin{eqnarray*}
+  \mathbb{P}[X_0 = x_0, . . ., X_n = x_n] & = & \mathbb{P}[X_0 = x_0, F (x_0,
+  U_n) = x_1 . . .,, F (x_{n - 1}, U_n) = x_n]
+\end{eqnarray*}
+
+
+Avec ($U_n)_{n \geqslant 1}$ est une suite de variables al{\'e}atoires
+r{\'e}elles ind{\'e}pendantes et identiquement distribu{\'e}es, alors pour
+tout $x \in \mathbb{R}$, $(F (x , U_k))_{k \geqslant 1}$ est une suite de
+variables al{\'e}atoires ind{\'e}pendantes et identiquement distribu{\'e}es.
+Par ailleurs, $X_0$ est ind{\'e}pendante de la suite ($U_n)_{n \geqslant 1}$.
+Ainsi, $X_0 $est {\'e}galement ind{\'e}pendante de la suite $(F (x , U_k))_{k
+\geqslant 1}$, o{\`u} $x \in E$.
+
+On a alors
+\begin{eqnarray*}
+  \mathbb{P}[X_0 = x_0, . . ., X_n = x_n] & = & \mathbb{P}[X_0 = x_0]
+  \underset{k = 1}{\overset{n}{\prod}} \mathbb{P} [F (x_{k - 1}, U_n) = x_k]\\
+  & = & \mathbb{P}[X_0 = x_0] \underset{k = 1}{\overset{n}{\prod}} \mathbb{P}
+  [F (x_{k - 1}, U_1) = x_k]\\
+  & = & \mu_0 (x_0) \underset{k = 1}{\overset{n}{\prod}} P (x_{k - 1}, x_k)
+\end{eqnarray*}
+
+
+\textbf{$(b)$Montrer que pour tout entier $n \geqslant 0$ et tout
+$(x_0, . . ., x_n) \in E^{n + 1}$ tel que $\mathbb{P}[X_0 = x_0, . . ., X_n =
+x_n] > 0$, on a, pour tout $x \in E,$}
+
+\[ \mathbb{P}[X_{n + 1} = x | \nobracket X_0 = x_0, . . ., X_n = x_n] = P (x_n, x) \]
+
+Soit $n \in \mathbb{N}$, $x \in E$ et soit $(x_0, . . ., x_n) \in E^{n + 1}$
+tel que $\mathbb{P}[X_0 = x_0, . . ., X_n = x_n] > 0$.
+
+Posons $x_{n + 1} = x$. En utilisant la question pr{\'e}c{\'e}dente, on a
+\begin{eqnarray*}
+  \mathbb{P}[X_{n + 1} = x_{n + 1} | \nobracket X_0 = x_0, . . ., X_n = x_n] &
+  = & \frac{\mathbb{P}[X_0 = x_0, . . ., X_n = x_n, X_{n + 1} = x_{n +
+  1}]}{\mathbb{P}[X_0 = x_0, . . ., X_n = x_n]}\\
+  & = & \frac{\mu_0 (x_0) \underset{k = 1}{\overset{n + 1}{\prod}} P (x_{k -
+  1}, x_k)}{\mu_0 (x_0) \underset{k = 1}{\overset{n}{\prod}} P (x_{k - 1},
+  x_k)}\\
+  & = & P (x_n, x_{n + 1})\\
+  & = & P (x_n, x)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(c)$Montrer que pour tout$n \geqslant 0,$ on a $\mu_n =
+\mu_0 P^n$ et que si $\mu_0 P = \mu_0,$ alors $\mu_n = \mu_0$ pour tout $n
+\geqslant 0$.}
+
+Soit $n \in \mathbb{N}$, pour tout $x \in E$, on a, par formule de
+probabilit{\'e} totale, en utilisant la question 1.3.a, et en posant $x_n = x$
+:
+\begin{eqnarray*}
+  \mu_n (x) & = & \mathbb{P}[X_n = x]\\
+  & = & \underset{x_0 \in E}{\sum} \underset{x_1 \in E}{\sum} \ldots
+  \underset{x_{n - 1} \in E}{\sum} \mathbb{P}[X_n = x, X_0 = x_0, . . ., X_{n
+  - 1} = x_{n - 1}]\\
+  & = & \underset{x_0 \in E}{\sum} \underset{x_1 \in E}{\sum} \ldots
+  \underset{x_{n - 1} \in E}{\sum} \mathbb{P}[X_0 = x_0, . . ., X_{n - 1} =
+  x_{n - 1}, X_n = x]\\
+  & = & \underset{x_0 \in E}{\sum} \underset{x_1 \in E}{\sum} \ldots
+  \underset{x_{n - 1} \in E}{\sum} \mu_0 (x_0) \underset{k =
+  1}{\overset{n}{\prod}} P (x_{k - 1}, x_k)\\
+  & = & \underset{x_0 \in E}{\sum} \mu_0 (x_0) \underset{x_1 \in E}{\sum}
+  \ldots \underset{x_{n - 1} \in E}{\sum} \underset{k = 1}{\overset{n}{\prod}}
+  P (x_{k - 1}, x_k)
+\end{eqnarray*}
+
+
+Par une simple r{\'e}currence, on peut montrer la formule qui donne le produit
+fini de plusieurs matrices de transitions :
+\[ \underset{x_1 \in E}{\sum} \ldots \underset{x_{n - 1} \in E}{\sum}
+   \underset{k = 1}{\overset{n}{\prod}} P (x_{k - 1}, x_k) = P^n (x_0, x_n) \]
+
+
+D'o{\`u}
+\begin{eqnarray*}
+  \mu_n (x) & = & \underset{x_0 \in E}{\sum} \mu_0 (x_0) P^n (x_0, x_n)\\
+  & = & \mu_0 P^n (x_n)\\
+  & = & \mu_0 P^n (x )
+\end{eqnarray*}
+
+
+Et {\c c}a pour tout $x \in E$, alors
+\[ \mu_n = \mu_0 P^n \]
+
+
+Supposons maintenant que $\mu_0 P = \mu_0,$ Et montrons par r{\'e}currence que
+$\mu_n = \mu_0$ pour tout $n \geqslant 0$.
+
+Pour $n = 0$, on a bien $\mu_0 P^0 = \mu_0 I = \mu_0$.
+
+Soit $n \in \mathbb{N}$, supposons que $\mu_n = \mu_0 P^n$, et montrons que
+$\mu_n = \mu_0 P^{n + 1}$.
+
+On a par hypoth{\`e}se de r{\'e}currence
+\[ \mu_n P^{n + 1} = (\mu_0 P^n) P = \mu_0 P = \mu_0  \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{$(d)$ Montrer que pour tout $n \geqslant 0$ et tout $x \in E$ tel que $\mu_0 (x) > 0$, on a }
+\[ \mathbb{P}[X_n = y | X_0 = x] = P^n (x, y) \tmop{pour} \tmop{tout} y \in E.
+\]
+
+\
+
+Soit $n \in \mathbb{N}$. On a, pour tout $x, y \in E$, tel que $\mu_0 (x) >
+0$
+\begin{eqnarray*}
+  \mathbb{P}[X_n = y | X_0 = x] & = & \frac{\mathbb{P}[X_n = y, X_0 =
+  x]}{\mathbb{P}[X_0 = x]}\\
+  & = & \frac{1}{\mu_0 (x)} \mathbb{P}[X_n = y, X_0 = x]
+\end{eqnarray*}
+
+
+Notons $x_0 = x$, et $x_n = y$. On a alors :
+\begin{eqnarray*}
+  \mathbb{P}[X_n = y | X_0 = x] & = & \frac{1}{\mu_0 (x)} \underset{x_1 \in
+  E}{\sum} \ldots \underset{x_{n - 1} \in E}{\sum} \mathbb{P}[X_0 = x_0, . .
+  ., X_{n - 1} = x_{n - 1}, X_n = x]\\
+  & = & \frac{1}{\mu_0 (x)} \underset{x_1 \in E}{\sum} \ldots \underset{x_{n
+  - 1} \in E}{\sum} \mu_0 (x_0) \underset{k = 1}{\overset{n}{\prod}} P (x_{k -
+  1}, x_k)\\
+  & = & \underset{x_1 \in E}{\sum} \ldots \underset{x_{n - 1} \in E}{\sum}
+  \underset{k = 1}{\overset{n}{\prod}} P (x_{k - 1}, x_k)\\
+  & = & P^n (x_0, x_n)\\
+  & = & P^n (x, y)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{$(e)$ Montrer que pour toute fonction$f : E \rightarrow \mathbb{R}$ born{\'e}e, on a}
+\[ \mathbb{E} [f (X_n)] = \mu_0 [P^n f] . \]
+
+\
+
+On a
+\begin{eqnarray*}
+  \mathbb{E} [f (X_n)] & = & \underset{x \in E}{\sum} f (x) \mathbb{P} [X_n =
+  x]\\
+  & = & \underset{x \in E}{\sum} f (x) \mu_n (x)\\
+  & = & \underset{x \in E}{\sum} \mu_0 P^n (x) f (x)\\
+  & = & \mu_0 P^n [f]\\
+  & = & \mu_0 [P^n f] \quad  (d' \tmop{apr} {\`e}s \tmop{la} \tmop{question}
+  1.2. c)
+\end{eqnarray*}
+
+
+{\`A} partir de maintenant, on supposera que
+
+$\bullet$ $P$ est r{\'e}versible par rapport {\`a} une probabilit{\'e} $\pi
+\in \mathcal{P}(E)$,
+
+$\bullet$ il existe $a \in E$ tel que $\pi (a) > 0$ et tel que, pour tout $x
+\in E$, il existe un entier$n \geqslant 1$ pour lequel $P^n (a, x) > 0.$
+
+\
+
+\textbf{1.4. Montrer que $\pi P = \pi$.}
+
+On a, pour tout $x \in E$
+\begin{eqnarray*}
+  \pi P (x) & = & \underset{y \in E}{\sum} \pi (y) P (y, x)\\
+  & = & \underset{y \in E}{\sum} \pi (x) P (x, y)\\
+  & = & \pi (x) \underset{y \in E}{\sum} P (x, y)\\
+  & = & \pi (x)
+\end{eqnarray*}
+
+
+Et {\c c}a pour tout $x \in E$, alors $\pi P = \pi$.
+
+\
+
+\textbf{1.5. $(a)$ Montrer que pour tout $n \geqslant 1$, la matrice
+de transition $P^n $est r{\'e}versible par rapport {\`a} $\pi$.}
+
+Essayons de montrer le r{\'e}sultat par r{\'e}currence sur $n \in
+\mathbb{N}^{\ast}$.
+
+Pour $n = 1$, par d{\'e}finition de $P$, $P$ est r{\'e}versible par rapport
+{\`a} $\pi$.
+
+Soit $n \in \mathbb{N}^{\ast}$. Supposons que $P^n $est r{\'e}versible par
+rapport {\`a} $\pi$, et montrons que $P^{n + 1} $est r{\'e}versible par
+rapport {\`a}$\pi$.
+
+On a
+\begin{eqnarray*}
+  \pi (x) P^{n + 1} (x, y) & = & \pi (x) (P^n P) (x, y)\\
+  & = & \underset{z \in E}{\sum} \pi (x) P^n (x, z) P (z, y)\\
+  & = & \underset{z \in E}{\sum} \pi (z) P^n (z, x) P (z, y)\\
+  & = & \underset{z \in E}{\sum} \pi (z) P (z, y) P^n (z, x)\\
+  & = & \underset{z \in E}{\sum} \pi (y) P (y, z) P^n (z, x)\\
+  & = & \pi (y) \underset{z \in E}{\sum} P (y, z) P^n (z, x)\\
+  & = & \pi (y) (P P^n) (y, x)\\
+  & = & \pi (y) P^{n + 1} (y, x)
+\end{eqnarray*}
+
+
+Ainsi \ $P^{n + 1} $est r{\'e}versible par rapport {\`a}$\pi$, d'o{\`u} le
+r{\'e}sultat par r{\'e}currence sur $n \geqslant 1$.
+
+\
+
+\textbf{$(b)$Soit$n \geqslant 1$ et soit $x \in E$. Montrer que si
+$P^n (a, x) > 0$, alors $P^n (x, a) > 0$et $\pi (x) > 0.$}
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a
+\[ \pi (a) P^n (a, x) = \pi (x) P^n (x, a) \]
+
+
+Puisque $\pi (a) > 0$, et $P^n (a, x) > 0$, on en d{\'e}duit que $\pi (x) P^n
+(x, a) > 0$.
+
+Comme $\pi (x) \geqslant 0$, on obtient alors $P^n (x, a) > 0$et $\pi (x) >
+0.$
+
+\
+
+\textbf{(c) Montrer que $\pi (x) > 0$ pour tout $x \in E$. }
+
+On a pour tout $x \in E$, il existe un entier$n \geqslant 1$ pour lequel $P^n
+(a, x) > 0.$ D'apr{\`e}s la question pr{\'e}c{\'e}dente, on en conclut que
+$\pi (x) > 0$.
+
+\
+
+\textbf{(d) Montrer que $P$ est irr{\'e}ductible.}
+
+Soit $(x, y) \in E^2$, il existe $n_1, n_2 > 0$ tels que $P^{n_1} (a, x) > 0$
+et $P^{n_2} (a, y) > 0$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, on a $\pi (x) > 0$, $\pi (y) > 0$.
+On en d{\'e}duit que :
+\begin{eqnarray*}
+  P^{n_1 + n_2} (x, y) & = & (P^{n_1} \times P^{n_2}) (x, y)\\
+  & = & \underset{z \in E}{\sum} P^{n_1} (x, z) P^{n_2} (z, x)\\
+  & \geqslant & P^{n_1} (x, a) P^{n_2} (a, x)
+\end{eqnarray*}
+
+
+Or, d'apr{\`e}s la question 1.5.a, $P^{n_1}$ est r{\'e}versible par rapport
+{\`a}$\pi$. Ainsi
+
+
+\begin{eqnarray*}
+  P^{n_1} (x, a) & = & \frac{\pi (a)}{\pi (x)} P^{n_1} (a, x) > 0
+\end{eqnarray*}
+
+
+Par cons{\'e}quent, $P^{n_1 + n_2} (x, y) > 0$, pour tout $(x, y) \in E^2$, et
+donc, par d{\'e}finition, $P$ est irr{\'e}ductible.
+
+\
+
+\tmtextbf{1.6.} Pour toute fonction $f : E \rightarrow \mathbb{R}$ born{\'e}e
+et tout entier $n \geqslant 1$, on pose
+\[ \mathcal{E}_n (f) = \frac{1}{2} \underset{(x, y) \in E^2}{\sum}  [f (x) - f
+   (y)]^2 \pi (x) P^n (x, y) \]
+
+
+{\hspace{3em}}\tmtextbf{(a) Montrer que $\mathcal{E}_n (f) = \langle f - P^n
+f, f \rangle_{\pi}$.}
+
+On a
+\begin{eqnarray*}
+  \langle f - P^n f, f \rangle_{\pi} & = & \pi [(f - P^n f) f]\\
+  & = & \underset{x \in E}{\sum} \pi (x) (f (x) - P^n f (x)) f (x)\\
+  & = & \underset{x \in E}{\sum} \pi (x) \left( f (x) - \underset{y \in
+  E}{\sum} P^n (x, y) f (y) \right) f (x)
+\end{eqnarray*}
+
+
+Montrons que la famille ${(\pi (x) (f (x) - f (y)) f (x) P^n (x, y))_{(x, y)
+\in E^2}} $ est sommable.
+
+Puisque $P$ est r{\'e}versible par rapport {\`a} $\pi$, on a:
+\begin{eqnarray*}
+  \underset{(x, y) \in E^2}{\sum} | \pi (x) (f (x) - f (y)) f (x) P^n (x, y) |
+  & = & \underset{(x, y) \in E^2}{\sum} | \pi (y) (f (y) - f (x)) f (y) P^n
+  (y, x) |\\
+  & = & \underset{y \in E}{\sum} \pi (y) | f (y) | \underset{x \in E}{\sum} |
+  f (y) - f (x) | P^n (y, x)\\
+  & \leqslant & 2 \| f \|_{\infty} \underset{y \in E}{\sum} \pi (y) | f (y) |
+  \underset{x \in E}{\sum} P^n (y, x)\\
+  & = & 2 \| f \|_{\infty} \underset{y \in E}{\sum} \pi (y) | f (y) |
+\end{eqnarray*}
+
+
+Car $\underset{x \in E}{\sum} P^n (y, x) = 1$, pour tout $y \in E$, puisque
+$P^n $est une matrice de transition.
+
+On a alors
+\begin{eqnarray*}
+  \underset{(x, y) \in E^2}{\sum} | \pi (x) (f (x) - f (y)) f (x) P^n (x, y) |
+  & \leqslant & 2 \| f \|^2_{\infty} \underset{y \in E}{\sum} \pi (y)\\
+  & = & 2 \| f \|^2_{\infty}\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+Donc, la famille ${(\pi (x) (f (x) - f (y)) f (x) P^n (x, y))_{(x, y) \in
+E^2}} $ est sommable, et on a
+\begin{eqnarray*}
+  \langle f - P^n f, f \rangle_{\pi} & = & \underset{x \in E }{\sum} \pi (x)
+  \left( f (x) \underset{y \in E}{\sum} P^n (x, y) - \underset{y \in E}{\sum}
+  P^n (x, y) f (y) \right) f (x) \qquad (\ast)\\
+  & = & \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x) - f (y)) f (x) P^n (x,
+  y)
+\end{eqnarray*}
+
+
+Et puisque $P$ est r{\'e}versible par rapport {\`a} $\pi,$ alors
+\begin{eqnarray*}
+  \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x) - f (y)) f (x) P^n (x, y) & =
+  & \underset{(x, y) \in E^2}{\sum} \pi (y) (f (y) - f (x)) f (y) P^n (y, x)\\
+  & = & \underset{(x, y) \in E^2}{\sum} \pi (x) (f (y) - f (x)) f (y) P^n (x,
+  y)
+\end{eqnarray*}
+
+Ainsi,
+\begin{eqnarray*}
+  \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x) - f (y)) f (x) P^n (x, y) & =
+  & \frac{1}{2} \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x) - f (y)) f (x)
+  P^n (x, y)\\
+  &  & + \frac{1}{2} \underset{(x, y) \in E^2}{\sum} \pi (x) (f (y) - f (x))
+  f (y) P^n (x, y)\\
+  & = & \frac{1}{2} \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x)^2 - 2 f
+  (y) \nobracket f (x) + \nobracket f (y)^2) P^n (x, y)\\
+  & = & \frac{1}{2} \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x)  -
+  \nobracket \nobracket f (y))^2 P^n (x, y)\\
+  & = & \mathcal{E}_n (f)
+\end{eqnarray*}
+
+
+{\hspace{3em}}\tmtextbf{$(b)$ Montrer que si $P f = f$, la fonction est $f$
+est constante.}
+
+Supposons que $P f = f$, et montrons que $f$est constante.
+
+Puisque $P f = f$, alors par r{\'e}currence simple sur $k \in \mathbb{N}$, on
+a $P^k f = f$ pour tout $k \in \mathbb{N}$.
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, pour tout $k \in \mathbb{N}$,
+\begin{eqnarray*}
+  \mathcal{E}_k (f) & = & \langle f - P^k f, f \rangle_{\pi}\\
+  & = & 0
+\end{eqnarray*}
+
+
+Donc
+\[ \frac{1}{2} \underset{(x, y) \in E^2}{\sum} \pi (x) (f (x)  - \nobracket
+   \nobracket f (y))^2 P^k (x, y) = 0 \]
+
+
+Or, la somme est {\`a} termes positifs. En particulier, pour tout $(x, y) \in
+E^2$
+\[ \pi (x) (f (x)  - \nobracket \nobracket f (y))^2 P^k (x, y) = 0 \]
+
+
+Puisqu'il existe un entier$n \geqslant 1$ pour lequel $P^n (a, x) > 0$ et $\pi
+(a) > 0$, alors en particulier pour $x = a$, et $k = n$, on obtient pour tout
+$y \in E$ que $(f (x)  - \nobracket \nobracket f (y))^2 = 0$.
+
+Ce qui montre que $f$ est une fonction constante.
+
+\
+
+\textbf{(c) Soit $\mu$ un élément de $\mathcal{P}(E)$ tel que $\mu P = \mu$. En posant $f(x) = \frac{\mu(x)}{\pi(x)}$, montrer que $Pf = f$, puis que $\mu = \pi$.}
+
+On a, pour tout $x \in E$
+\begin{eqnarray*}
+  P f (x) & = & \underset{y \in E}{\sum} P (x, y) f (y)\\
+  & = & \underset{y \in E}{\sum} P (x, y) \frac{\mu (y)}{\pi (y)}\\
+  & = & \underset{y \in E}{\sum} P (y, x) \frac{\mu (y)}{\pi (x)}\\
+  & = & \frac{1}{\pi (x)} \underset{y \in E}{\sum} P (y, x) \mu (y)\\
+  & = & \frac{1}{\pi (x)} \mu P (x)\\
+  & = & \frac{1}{\pi (x)} \mu (x)\\
+  & = & f (x)
+\end{eqnarray*}
+
+
+On a donc $P f = f$,
+
+Supposons maintenant que $\frac{\mu}{\pi}$ est born{\'e}e. D'apr{\`e}s la
+question pr{\'e}c{\'e}dente, $f$ est donc constante. Posons pour tout $x \in
+E$, $f (x) = C^{\tmop{st}} \in \mathbb{R}$. On a alors :
+\begin{eqnarray*}
+  \mu (x) & = & \pi (x) C^{\tmop{st}}
+\end{eqnarray*}
+
+
+De plus, puisque
+\[ 1 = \underset{x \in E}{\sum} \mu (x) = C^{\tmop{st}} \underset{x \in
+   E}{\sum} \pi (x) = C^{\tmop{st}} \]
+
+
+Ainsi, $C^{\tmop{st}} = 1$, d'o{\`u} $f (x) = \frac{\mu (x)}{\pi (x)} = 1$,
+pour tout $x \in E$.
+
+Par cons{\'e}quent, $\mu (x) = \pi (x)$, pour tout $x \in E$, donc $\pi =
+\mu$.
+
+\
+
+{\`A} partir de maintenant, on supposera {\'e}galement qu'il existe un
+{\'e}l{\'e}ment $b \in E$ tel que $P (b, b) > 0.$
+
+\
+
+\tmtextbf{1.7. $(a)$ Montrer que pour tous entiers positifs $k, l, n,$ on a $P^n (b, b) > 0$ et }
+\[ P^{k + n + l} (x, y) \geq P^k (x, b) P^n (b, b) P^l (b, y) \tmop{pour} \tmop{tout} (x, y) \in E^2 . \]
+
+\
+
+Montrons par r{\'e}currence sur $n \in \mathbb{N}$ que $P^n (b, b) > 0$.
+
+Pour $n = 0$, on a $P^0 (b, b) = 1 > 0$.
+
+Soit $n \in \mathbb{N}$, supposons que $P^n (b, b) > 0$, et montrons que
+$P^{n + 1} (b, b) > 0$.
+
+On a, par positivit{\'e} des termes :
+\begin{eqnarray*}
+  P^{n + 1} (b, b) & = & P^n \times P (b, b)\\
+  & = & \underset{x \in E}{\sum} P^n (b, x) P (x, b)\\
+  & \geqslant & P^n (b, b) P (b, b)\\
+  & > & 0
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat par r{\'e}currence sur $n \in \mathbb{N}$.
+
+Soient $k, l, n \in \mathbb{N}$, et $(x, y) \in E^2$. Montrons que $P^{k + n +
+l} (x, y) \geq P^k (x, b) P^n (b, b) P^l (b, y)$
+
+On a :
+\begin{eqnarray*}
+  P^{k + n + l} (x, y) & = & \underset{z \in E}{\sum} \underset{t \in E}{\sum}
+  P^k (x, t) P^n (t, z) P^l (z, y)\\
+  & \geqslant & P^k (x, b) P^n (b, b) P^l (b, y)
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(b)$ Montrer que $P^2$ est irr{\'e}ductible. On rappelle
+(cf. la question $5 (a)$) que $P^2$ est r{\'e}versible par rapport {\`a} $\pi
+.$}
+
+D'apr{\`e}s la question 1.5.d. $P$ est irr{\'e}ductible, donc il existe $n_1,
+n_2 > 0$ tels que $P^{n_1} (b, x) > 0$ et $P^{n_2} (b, y) > 0$.
+
+De plus, $\pi (y), \pi (a) > 0$, donc, via la question pr{\'e}c{\'e}dente, on
+a
+\begin{eqnarray*}
+  (P^2)^{n_1 + n_2} (x, y) & = & P^{n_1 + (n_1 + n_2) + n_2} (x, y)\\
+  & \geqslant & P^{n_1} (x, b) P^{n_1 + n_2} (b, b) P^{n_2} (b, y)\\
+  & = & \frac{\pi (b)}{\pi (x)} P^{n_1} (b, x) P^{n_1 + n_2} (b, b) P^{n_2}
+  (b, y)\\
+  & > & 0
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(c)$Montrer que si une fonction born{\'e}e $f : E
+\rightarrow \mathbb{R}$ v{\'e}rifie$P f = \nonconverted{minus} f,$ alors $f
+(x) = 0$ pour tout $x \in E$.}
+
+Soit $f : E \rightarrow \mathbb{R}$ une fonction born{\'e}e telle que $P f = -
+f$.
+
+Par r{\'e}currence simple sur $n \in \mathbb{N}$, on obtient $P^n f = (- 1)^n
+f$. En particulier, pour tout $n \in \mathbb{N}$,
+\[ P^{2 n} f - f = 0 \]
+
+
+Ensuite, en utilisant le r{\'e}sultat de la question 1.6.a, on a pour tout $n
+\geqslant 1$ $\mathcal{E}_{2 n} (f) = 0$.
+
+Ainsi, pour tout $n \geqslant 1$, on a, pour tout $n \in \mathbb{N}$ :
+\[ \begin{array}{lll}
+     \frac{1}{2} \underset{(x, y) \in E^2}{\sum}  [f (x) - f (y)]^2 \pi (x)
+     {P^{2 n}}  (x, y) & = & 0
+   \end{array} \]
+
+
+Puisque, pour tout $(x, y) \in E^2$, on a
+\[ [f (x) - f (y)]^2 \pi (x) {P^{2 n}}  (x, y) \geqslant 0 \]
+
+
+Cela implique que pour tout $(x, y) \in E^2$, on a $[f (x) - f (y)]^2 \pi (x)
+{P^{2 n}}  (x, y) = 0$ $(\maltese)$
+
+Soit $(x, y) \in E^2$, on a montr{\'e} dans la question pr{\'e}c{\'e}dente que
+$P^2$ est irr{\'e}ductible. Donc, par d{\'e}finition de
+l'irr{\'e}ductibilit{\'e}, il existe $n_{x, b}, n_{b, y} \geqslant 1$ tels que
+$P^{n_{x, b}} (x, b) > 0$ et $P^{n_{b, y}} (b, y) > 0$.
+
+Or, il existe un entier $n \in \mathbb{N}$ tel que $n_{x, b} + n_{b, y} + n_b$
+soit pair. Notons ce nombre par $2 k$.
+
+On obtient alors, en utilisant la question 1.7.a :
+\begin{eqnarray*}
+  P^{2 k} (x, y) & \geqslant & P^{n_{x, b}} (x, b) P^{n_b} (b, b) P^{n_{b, y}}
+  (b, y)
+\end{eqnarray*}
+
+
+Or, $P (b, b) > 0$, donc pour tout $n \in \mathbb{N}$, on a $P^n (b, b)
+\geqslant (P (b, b))^n > 0$. Par cons{\'e}quent
+\[ P^{2 k} (x, y) > 0 \]
+
+
+Ainsi, via $(\maltese)$, on a $[f (x) - f (y)]^2 \pi (x) {P^{2 k}}  (x, y) =
+0$, avec $\pi (x), P^{2 k} (x, y) > 0$.
+
+Donc, $f (x) = f (y)$, ainsi $f$ est constante.
+
+Par ailleurs, pour tout $x \in E$, on a
+\begin{eqnarray*}
+  f (x) & = & - \underset{x \in E}{\sum} P (x, y) f (y)\\
+  & = & - f (x) \underset{x \in E}{\sum} P (x, y)\\
+  & = & - f (x)
+\end{eqnarray*}
+
+
+Ainsi $f (x) = 0$, et {\c c}a pour tout $x \in E$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{$1.8.$} Dans cette question, on prend $E =\{1, . . ., d\}$, o{\`u}
+$d$est un entier. Une fonction $f : E \rightarrow \mathbb{R}$ peut alors
+{\^e}tre vue comme un {\'e}l{\'e}ment de $\mathbb{R}^d$.
+
+
+
+\textbf{$(a)$ Montrer que $\langle ., . \rangle_{\pi}$ d{\'e}finit un produit scalaire sur $\mathbb{R}^d$. On note $\| . \|_{\pi}$ la norme associ{\'e}e. }
+
+On a pour tous $f, g, h \in \mathbb{R}^d$, et $\lambda \in \mathbb{R}$,
+\begin{eqnarray*}
+  \langle f, g \rangle_{\pi} & = & \pi [f g]\\
+  & = & \underset{x \in E}{\sum} \pi (x) f (x) g (x)\\
+  & = & \underset{x \in E}{\sum} \pi (x) g (x) f (x)\\
+  & = & \langle g, f \rangle_{\pi}
+\end{eqnarray*}
+
+
+Donc $\langle ., . \rangle_{\pi}$ est sym{\'e}trique.
+
+Montrons que $\langle ., . \rangle_{\pi}$ est bilin{\'e}aire. On a
+\begin{eqnarray*}
+  \langle f, g + \lambda h \rangle_{\pi} & = & \pi [f (g + \lambda h)]\\
+  & = & \underset{x \in E}{\sum} \pi (x) f (x) (g (x) + \lambda h (x))\\
+  & = & \underset{x \in E}{\sum} \pi (x) f (x) g (x) + \lambda \underset{x
+  \in E}{\sum} \pi (x) f (x) h (x)\\
+  & = & \langle f, g \rangle_{\pi} + \lambda \langle f, h \rangle_{\pi}
+\end{eqnarray*}
+
+
+Par sym{\'e}trie, $\langle ., . \rangle_{\pi}$ est bilin{\'e}aire.
+
+Il reste {\`a} montrer que $\langle ., . \rangle_{\pi}$ est d{\'e}fini,
+positif.
+
+On a pour $f$non nul, il existe $x_0 \in E$ tel que $f (x_0) \not{=} 0$. Donc
+\begin{eqnarray*}
+  \langle f, f \rangle_{\pi} & = & \pi [f^2]\\
+  & = & \underset{x \in E}{\sum} \pi (x) f^2 (x)\\
+  & = & \underset{x \in E \backslash \{ x_0 \}}{\sum} \pi (x) f^2 (x) + \pi
+  (x_0) f^2 (x_0)\\
+  & > & 0
+\end{eqnarray*}
+
+
+Car $\pi (x_0) f^2 (x_0) > 0$ et $\underset{x \in E \backslash \{ x_0
+\}}{\sum} \pi (x) f^2 (x) \geqslant 0$.
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(b)$ Montrer que l'application $f \longmapsto P f$ est un endomorphisme de $\mathbb{R}^d$ sym{\'e}trique pour le produit scalaire $\langle ., . \rangle_{\pi}$. }
+
+Soient $f, g \in \mathbb{R}^d$ et $\lambda \in \mathbb{R}$. Pour tout $x \in
+E$, on a :
+\begin{eqnarray*}
+  P (f + \lambda g) (x) & = & \underset{y \in E}{\sum} P (x, y) (f (y) +
+  \lambda g (y))\\
+  & = & \underset{y \in E}{\sum} P (x, y) f (y) + \lambda \underset{y \in
+  E}{\sum} P (x, y) g (y)\\
+  & = & P f (x) + \lambda P g (x)\\
+  & = & (P f + \lambda P g) (x)
+\end{eqnarray*}
+
+
+Comme cette {\'e}galit{\'e} est vraie pour tout $x \in E$, on a donc
+\[ P (f + \lambda g) = P f + \lambda P g \]
+
+
+Ainsi, l'application $f \longmapsto P f$ est un endomorphisme de
+$\mathbb{R}^d$.
+
+Montrons maintenant qu'elle est sym{\'e}trique pour le produit scalaire
+$\langle ., . \rangle_{\pi}$
+
+Pour tous $f, g \in \mathbb{R}^d$, On a
+\begin{eqnarray*}
+  \langle P f, g \rangle_{\pi} & = & \pi [g P f]\\
+  & = & \underset{x \in E}{\sum} \pi (x) g (x) P f (x)\\
+  & = & \sum_{x \in E} \pi (x) g (x) \sum_{y \in E} P (x, y) f (y)\\
+  & = & \sum_{y \in E} \sum_{x \in E} \pi (x) P (x, y) g (x) f (y)\\
+  & = & \sum_{y \in E} \sum_{x \in E} \pi (y) P (y, x) g (x) f (y)\\
+  & = & \sum_{y \in E} f (y) \pi (y) \sum_{x \in E} P (y, x) g (x)\\
+  & = & \sum_{y \in E} f (y) \pi (y) P g (y)\\
+  & = & \pi [f P g]\\
+  & = & \langle f, P g \rangle_{\pi}
+\end{eqnarray*}
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\textbf{$(c)$ Montrer que si$\lambda \in \mathbb{C}$ est une valeur
+propre de $P$, alors $\lambda$ est r{\'e}elle et v{\'e}rifie
+$\nonconverted{minus} 1 < \lambda \leqslant 1$.}
+
+Puisque $P \longmapsto P f$ est sym{\'e}trique pour le produit scalaire
+$\langle ., . \rangle_{\pi}$, alors $P$ est une matrice r{\'e}elle
+sym{\'e}trique. D'apr{\`e}s le th{\'e}or{\`e}me spectral, $P$ est
+diagonalisable sur une base orthonormale de $\mathbb{R}^d$ pour le produit
+scalaire $\langle ., . \rangle_{\pi}$.
+
+Ainsi, $\lambda$ est r{\'e}elle, il reste {\`a} v{\'e}rifie que
+$\nonconverted{minus} 1 < \lambda \leqslant 1$
+
+Soit $e \in \mathbb{R}^d$ un vecteur propre de $P$ associ{\'e} {\`a}
+$\lambda$, alors $P e = \lambda e$
+
+Notons $P = (p_{i, j})_{1 \leqslant i, j \leqslant d}$, et $e = (e_1, \ldots,
+e_d)^T$, on a alors pour tout $i \in \llbracket 1, d \rrbracket$
+\begin{eqnarray*}
+  \underset{j = 1}{\overset{d}{\sum}} p_{i, j} e_j & = & \lambda e_j
+\end{eqnarray*}
+
+Soit $i_0 \in \llbracket 1, d \rrbracket$ qui v{\'e}rifie $| e_{i_0} | =
+\underset{1 \leqslant i \leqslant d}{\max} | e_i |$. Puisque $e$ est non nul,
+on a $| e_{i_0} | > 0$. on obtient alors :
+\begin{eqnarray*}
+  | \lambda | & = & \frac{1}{| e_{i_0} |} \left| \underset{j =
+  1}{\overset{d}{\sum}} p_{i, j} e_j \right|\\
+  & \leqslant & \underset{j = 1}{\overset{d}{\sum}} p_{i, j} \frac{| e_j |}{|
+  e_{i_0} |}\\
+  & \leqslant & \underset{j = 1}{\overset{d}{\sum}} p_{i, j}\\
+  & = & 1
+\end{eqnarray*}
+
+
+D'apr{\`e}s la question 1.7.c, $\lambda \neq 0$ (-1 n'est pas valeur propre de
+$P$, le seul vecteur $f$ qui v{\'e}rifie $P f = - f$ est $f = 0$).
+
+D'o{\`u}
+\[ - 1 < \lambda \leqslant 1 \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\textbf{$(d)$ On note $b_1$ le vecteur de $\mathbb{R}^d$ dont toutes
+les composantes valent $1$. Montrer que $b_1$ est un vecteur propre de $P$
+associ{\'e} {\`a} la valeur propre $1$, qui est une valeur propre de
+multiplicit{\'e} $1$ pour $P$.}
+
+On a
+\begin{eqnarray*}
+  P b_1 & = & \left( \begin{array}{c}
+    \sum_{y \in E} P (1, y)\\
+    .\\
+    .\\
+    .\\
+    \sum_{y \in E} P (d, y)
+  \end{array} \right)\\
+  & = & b_1
+\end{eqnarray*}
+
+
+Ainsi, $b_1 $est un vecteur propre de $P$ associ{\'e}e {\`a} 1. De plus,
+d'apr{\`e}s la question 1.6.b, pour tout $f \in \mathbb{R}^d$ tel que $P f =
+f$, $f$est constante, donc elle est proportionnelle {\`a} $b_1$.
+
+D'o{\`u} 1 est une valeur propre de multiplicit{\'e} $1$ pour $P$.
+
+\
+
+\textbf{$(e)$ Montrer qu'il existe $\lambda \in [0, 1 [$ tel que pour tout $n \geqslant 1$ et pour toute fonction $f : E \rightarrow \mathbb{R}$, on a
+\[ \| P^n f - \pi [f] b_1 \|_{\pi} \leqslant \lambda^n \| f - \pi [f] b_1
+   \|_{\pi} \]}
+
+\
+
+Si $f$ est une fonction constante, on a pour tout $n \in \mathbb{N},$
+\[ P^n f - \pi [f] b_1 = 0 \]
+
+
+et
+\[ f - \pi [f] b_1 = 0 \]
+
+
+Donc tout $\lambda \in [0, 1 [$ convient.
+
+Dans la suite, on suppose que $f$ est non constante.
+
+Montrons d'abord que $b_1$ est un vecteur normal pour la norme $\| .
+\|_{\pi}$. Pour cela, on a :
+\begin{eqnarray*}
+  \| b_1 \|^2_{\pi} & = & \langle b_1, b_1 \rangle_{\pi}\\
+  & = & \pi [b_1 b_1]\\
+  & = & \sum_{x \in E} \pi (x) b_1 (x) b_1 (x)\\
+  & = & \sum_{x \in E} \pi (x)\\
+  & = & 1
+\end{eqnarray*}
+
+
+Compl{\'e}tons $b_1$ en une base orthonorm{\'e}e de $\mathbb{R}^d$ pour le
+produit scalaire $\langle ., . \rangle_{\pi}$, not{\'e}e $(b_1, \ldots, b_d)$
+form{\'e}e par les vecteurs propres de $P$.
+
+Il existe donc des scalaires $x_1, \ldots, x_n \in \mathbb{R}$ \ tels que $f =
+\underset{k = 1}{\overset{d}{\sum}} x_k b_k$.
+
+Notons $\lambda_k \in \mathbb{R}$ la valeur propre associ{\'e}e {\`a} $b_k$
+($\lambda_1 = 1$) pour tout $k \in \llbracket 1, d \rrbracket$.
+
+Soit $n \in \mathbb{N}$. On a :
+\begin{eqnarray*}
+  \| P^n f - \pi [f] b_1 \|^2_{\pi} & = & \left\| \underset{k =
+  1}{\overset{d}{\sum}} x_k P^n b_k - \pi [f] b_1 \right\|^2_{\pi}\\
+  & = & \left\| \underset{k = 1}{\overset{d}{\sum}} x_k \lambda_k^n b_k - \pi
+  [f] b_1 \right\|^2_{\pi}\\
+  & = & \left\| (x_1 - \pi [f]) b_1 + \underset{k = 2}{\overset{d}{\sum}} x_k
+  \lambda_k^n b_k \right\|^2_{\pi}\\
+  & = & (x_1 - \pi [f])^2 + \underset{k = 2}{\overset{d}{\sum}} x^2_k
+  {\lambda^2_k}^n
+\end{eqnarray*}
+
+
+On d{\'e}finit la fonction
+\[ \gamma : \lambda \longmapsto \left( (x_1 - \pi [f])^2 + \underset{k =
+   2}{\overset{d}{\sum}} x^2_k \right) \lambda^{2 n} \]
+
+
+$\gamma$ est une fonction strictement croissante sur $\mathbb{R}$ (car $(x_1 -
+\pi [f])^2 + \underset{k = 2}{\overset{d}{\sum}} x^2_k > 0$, puisque $f$ est
+non constante).
+
+De plus, on a :
+\begin{eqnarray*}
+  \gamma (1) - \| P^n f - \pi [f] b_1 \|^2_{\pi} & = & \underset{k =
+  2}{\overset{d}{\sum}} x^2_k \left( {1 - \lambda^2_k}^n \right)
+\end{eqnarray*}
+
+
+Puisque $1$ est une valeur propre de multiplicit{\'e} $1$ de l'endomorphisme
+$f \longmapsto P f$, alors, d'apr{\`e}s la question 1.8.c, on a pour tout $2
+\leqslant k \leqslant d$
+\[ - 1 < \lambda_k < 1 \]
+
+
+Par cons{\'e}quent,
+\[ \underset{k = 2}{\overset{d}{\sum}} x^2_k \left( {1 - \lambda^2_k}^n
+   \right) \geqslant \underset{2 \leqslant k \leqslant d}{\min} \left( {1 -
+   \lambda^2_k}^n \right) \underset{k = 2}{\overset{d}{\sum}} x^2_k > 0 \]
+
+
+car $f$est non constante.
+
+Ainsi,
+\[ \gamma (1) > \| P^n f - \pi [f] b_1 \|^2_{\pi} \]
+
+
+Puisque $\gamma$ est strictement croissante, et par caract{\'e}risation de la
+borne inf{\'e}rieure, il existe $\lambda \in [0, 1 [$ tel que
+\[ \gamma (\lambda) \geqslant \| P^n f - \pi [f] b_1 \|^2_{\pi} \]
+
+
+Donc, pour ce $\lambda \in [0, 1 [$, on a
+\begin{eqnarray*}
+  \left( (x_1 - \pi [f])^2 + \underset{k = 2}{\overset{d}{\sum}} x^2_k \right)
+  \lambda^{2 n} & \geqslant & \| P^n f - \pi [f] b_1 \|^2_{\pi}
+\end{eqnarray*}
+
+
+Avec
+\begin{eqnarray*}
+  (x_1 - \pi [f])^2 + \underset{k = 2}{\overset{d}{\sum}} x^2_k & = & \| f -
+  \pi [f] b_1 \|^2_{\pi}
+\end{eqnarray*}
+
+
+Ainsi
+\[ \lambda^{2 n} \| f - \pi [f] b_1 \|^2_{\pi} \geqslant \| P^n f - \pi [f]
+   b_1 \|^2_{\pi} \]
+
+
+D'o{\`u}
+\[ \lambda^n \| f - \pi [f] b_1 \| _{\pi} \geqslant \| P^n f - \pi [f] b_1 \|
+   _{\pi} \]
+
+
+\tmtextbf{$(f)$ En d{\'e}duire qu'il existe une constante $C$ telle que} \\
+\[ \forall n \geqslant 1, \underset{x \in E}{\sup} | \mu_n (x) - \pi (x) |
+   \leqslant C \lambda^n \]
+
+\
+
+Soit $n \in \mathbb{N}^{\star}$, et $x \in E$,
+
+D'apr{\`e}s la question pr{\'e}c{\'e}dente, pour
+\[ f_x : y \longmapsto \tmmathbf{1_{x = y} (y)} = \left\{\begin{array}{l}
+     1 \tmop{si} x = y\\
+     0 \tmop{sinon}
+   \end{array}\right. \]
+
+
+On a
+\[ \lambda^{2 n} \| f_x - \pi [f_x] b_1 \|^2_{\pi} \geqslant \| P^n f_x - \pi
+   [f_x] b_1 \|^2_{\pi} \]
+
+
+Avec:
+\begin{eqnarray*}
+  \pi [f_x] & = & \sum_{y \in E} \pi (y) f_x (y)\\
+  & = & \pi (x)
+\end{eqnarray*}
+
+
+Avec $b_1$ a toutes les composantes valent 1.
+
+Ainsi
+\[ \lambda^{2 n} \| f_x - \pi (x) \|^2_{\pi} \geqslant \| P^n f_x - \pi (x)
+   \|^2_{\pi} \]
+
+
+De plus,
+\begin{eqnarray*}
+  \| f_x - \pi (x) \|^2_{\pi} & = & \langle f_x - \pi (x), f_x - \pi (x)
+  \rangle_{\pi}\\
+  & = & \pi [(f_x - \pi (x) )^2]\\
+  & = & \sum_{y \in E} \pi (y) (f_x - \pi (x))^2 (y)\\
+  & = & \sum_{y \in E} \pi (y) (f_x (y) - \pi (x))^2\\
+  & = & \sum_{y \in E} \pi (y) (f_x (y) - \pi (x))^2\\
+  & = & \underset{y \neq x}{\sum_{y \in E}} (\pi (y))^{^3} + \pi (x) (1 - \pi
+  (x))^2\\
+  & = & \underset{}{\sum_{y \in E}} (\pi (y))^{^3} + \pi (x) - 2 (\pi
+  (x))^2\\
+  & \leqslant & \underset{}{\sum_{y \in E}} (\pi (y))^{^3} + 1
+\end{eqnarray*}
+
+
+Posons
+\[ C^2 = \underset{}{\underset{y \in E}{\sum} } (\pi (y))^{^3} + 1 \]
+
+
+Et
+\begin{eqnarray*}
+  \| P^n f_x - \pi (x) \|^2_{\pi} & = & \langle P^n f_x - \pi (x) , P^n f_x -
+  \pi (x) \rangle_{\pi}\\
+  & = & \pi [(P^n f_x - \pi (x))^2]\\
+  & = & \sum_{y \in E} \pi (y) (P^n f_x - \pi (x))^2 (y)\\
+  & = & \sum_{y \in E} \pi (y) (P^n f_x (y) - \pi (x))^2\\
+  & = & \sum_{y \in E} \pi (y) \left( \sum_{z \in E} P^n (y, z) f_x (z) - \pi
+  (x) \right)^2\\
+  & = & \sum_{y \in E} \pi (y) (P^n (y, x) - \pi (x))^2\\
+  & \geqslant & \left( \sum_{y \in E} \mu_0 (y) P^n (y, x) - \pi (x)
+  \right)^2\\
+  & = & | \mu_n (x) - \pi (x) |^2
+\end{eqnarray*}
+
+
+Ainsi,
+\[ | \mu_n (x) - \pi (x) |^2 \leqslant C^2 \lambda^{2 n} \]
+
+
+Et cela pour tout $x \in E$, alors
+\[ \underset{x \in E}{\sup} | \mu_n (x) - \pi (x) | \leqslant C \lambda^n \]

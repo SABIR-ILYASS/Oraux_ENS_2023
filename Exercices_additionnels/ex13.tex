@@ -1,0 +1,78 @@
+Cet exercice propose de d{\'e}montrer une in{\'e}galit{\'e} entre la somme de
+termes positifs et l'inverse de la moyenne harmonique, qui est major{\'e}e par
+le double de la somme arithm{\'e}tique des termes.
+
+\begin{exercise}[]
+Soient $a_1, \ldots, a_n > 0$ , Montrer que :
+\[ a_1 + \frac{2}{\frac{1}{a_1} + \frac{1}{a_2}} + \cdots +
+   \frac{n}{\frac{1}{a_1} + \cdots + \frac{1}{a_n}} < 2 (a_1 + \cdots + a_n)
+\]
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Posons, pour tout $k \in \llbracket 1, n \rrbracket$ : $y_k = \frac{1}{a_k}$ ,
+et montrons que :
+\[ \frac{1}{y_1} + \frac{2}{y_1 + y_2} + \cdots + \frac{n}{y_1 + \cdots + y_n}
+   < 2 \left( \frac{1}{y_1} + \cdots + \frac{1}{y_n} \right) \]
+
+
+Consid{\'e}rons $x_1, \ldots, x_n > 0$. D'apr{\`e}s l'in{\'e}galit{\'e} de
+\tmcolor{black}{Cauchy-Schwarz}, pour tout $k \in \llbracket 1, n \rrbracket$
+:
+\[ (y_1 + \cdots + y_k) \left( \frac{x^2_1}{y_1} + \cdots + \frac{x^2_k}{y_k}
+   \right) \geqslant (x_1 + \cdots + x_k)^2 \]
+
+
+Ainsi, pour tout $k \in \llbracket 1, n \rrbracket$, on obtient :
+\[ \frac{k}{y_1 + \cdots + y_k} \leqslant \frac{k}{(x_1 + \cdots + x_k)^2}
+   \left( \frac{x^2_1}{y_1} + \cdots + \frac{x^2_k}{y_k} \right) \]
+
+
+En sommant, on a :
+\[ \underset{k = 1}{\overset{n}{\sum}} \frac{k}{y_1 + \cdots + y_k} \leqslant
+   \underset{k = 1}{\overset{n}{\sum}} \frac{k}{(x_1 + \cdots + x_k)^2} \left(
+   \frac{x^2_1}{y_1} + \cdots + \frac{x^2_k}{y_k} \right) \]
+
+
+En d{\'e}veloppant l'expression, on obtient :
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{n}{\sum}} \frac{k}{(x_1 + \cdots + x_k)^2} \left(
+  \frac{x^2_1}{y_1} + \cdots + \frac{x^2_k}{y_k} \right) & = & \underset{k =
+  1}{\overset{n}{\sum}} \underset{j = 1}{\overset{k}{\sum}} \frac{k}{(x_1 +
+  \cdots + x_k)^2} \times \frac{x_j^2}{y_j}\\
+  & = & \underset{j = 1}{\overset{n}{\sum}} \underset{k =
+  j}{\overset{n}{\sum}} \frac{k}{(x_1 + \cdots + x_k)^2} \times
+  \frac{x_j^2}{y_j}
+\end{eqnarray*}
+
+
+On en d{\'e}duit :
+\[ \underset{k = 1}{\overset{n}{\sum}} \frac{k}{y_1 + \cdots + y_k} \leqslant
+   \underset{j = 1}{\overset{n}{\sum}} \left( \underset{k =
+   j}{\overset{n}{\sum}} \frac{k.x^2_j}{(x_1 + \cdots + x_k)^2} \right) \times
+   \frac{1}{y_j} \]
+
+
+Pour tout $j \in \llbracket 1, n \rrbracket$, si on pose $x_j = j$, on a :
+\begin{eqnarray*}
+  \underset{k = j}{\overset{n}{\sum}} \frac{k.x^2_j}{(x_1 + \cdots + x_k)^2} &
+  = & \underset{k = j}{\overset{n}{\sum}} \frac{k.j^2}{(1 + \cdots + k)^2}\\
+  & = & 4 j^2 \underset{k = j}{\overset{n}{\sum}} \frac{1}{k (k + 1)^2}\\
+  & \leqslant & 2 j^2 \underset{k = j}{\overset{n}{\sum}} \frac{2 k + 1}{k (k
+  + 1)^2}\\
+  & = & 2 j^2 \underset{k = j}{\overset{n}{\sum}} \left( \frac{1}{k^2} -
+  \frac{1}{(k + 1)^2} \right)
+\end{eqnarray*}
+
+
+Donc :
+\[ \underset{k = j}{\overset{n}{\sum}} \frac{k.x^2_j}{(x_1 + \cdots + x_k)^2}
+   \leqslant 2 j^2 \left( \frac{1}{j^2} - \frac{1}{(n + 1)^2} \right) < 2 \]
+
+
+Finalement, on obtient :
+\[ \frac{1}{y_1} + \frac{2}{y_1 + y_2} + \cdots + \frac{n}{y_1 + \cdots + y_n}
+   < 2 \left( \frac{1}{y_1} + \cdots + \frac{1}{y_n} \right) \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

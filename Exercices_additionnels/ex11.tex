@@ -1,0 +1,96 @@
+Les in{\'e}galit{\'e}s entre moyennes sont au c{\oe}ur de l'{\'e}tude des
+in{\'e}galit{\'e}s en g{\'e}n{\'e}ral. Cet exercice nous propose d'{\'e}tudier
+une in{\'e}galit{\'e} faisant intervenir des puissances et qui
+g{\'e}n{\'e}ralise les in{\'e}galit{\'e}s entre moyennes.
+
+\begin{exercise}[]
+Soient $a, b, c > 0$. Montrer que pour tout $k \in \mathbb{N}$,
+\[ \frac{a^{k + 1}}{b^k} + \frac{b^{k + 1}}{c^k} + \frac{c^{k + 1}}{a^k}
+   \geqslant a + b + c \]
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+\tmtextbf{M{\'e}thode 1.}
+
+En utilisant l'in{\'e}galit{\'e} arithm{\'e}tico-g{\'e}om{\'e}trique (AM-GM),
+on a :
+\[ \frac{a^{k + 1}}{b^k} + kb = \frac{a^{k + 1}}{b^k} + \sum^k_{j = 1} b
+   \geqslant (k + 1) a \]
+
+
+Par sym{\'e}trie, on obtient :
+\[ \  \]
+\[ \frac{a^{k + 1}}{b^k} + \frac{b^{k + 1}}{c^k} + \frac{c^{k + 1}}{a^k} + k
+   (b + c + a) \geqslant (k + 1) (a + b + c) \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\tmtextbf{M{\'e}thode 2.}
+
+Montrons le resultat par r{\'e}currence forte sur $k \in \mathbb{N}$.
+
+Pour $k = 0, \tmop{ona}$ :
+\begin{eqnarray*}
+  \frac{a^{k + 1}}{b^k} + \frac{b^{k + 1}}{c^k} + \frac{c^{k + 1}}{a^k}
+  \underset{}{} & = & a + b + c\\
+  & \geqslant & a + b + c
+\end{eqnarray*}
+
+
+Soit $k \in \mathbb{N}$, supposons que pour tout $j \in \llbracket 0, k
+\rrbracket$, on ait :
+\[ \frac{a^{j + 1}}{b^j} + \frac{b^{j + 1}}{c^j} + \frac{c^{j + 1}}{a^j}
+   \geqslant a + b + c \]
+
+
+Et montrons que :
+\[ \frac{a^{k + 2}}{b^{k + 1}} + \frac{b^{k + 2}}{c^{k + 1}} + \frac{c^{k +
+   2}}{a^{k + 1}} \geqslant a + b + c \]
+
+
+Si $k$ est pair, alors il existe un $l \in \mathbb{N}$ tel que $k = 2 l$.
+Ainsi,
+\begin{eqnarray*}
+  \frac{a^{k + 2}}{b^{k + 1}} + b & = & \frac{a^{2 l + 2}}{b^{2 l + 1}} + b\\
+  & \geqslant & 2 \frac{a^{l + 1}}{b^l}
+\end{eqnarray*}
+
+
+Par sym{\'e}trie, on a alors :
+\[ \frac{a^{k + 2}}{b^{k + 1}} + b + \frac{b^{k + 2}}{c^{k + 1}} + c +
+   \frac{c^{k + 2}}{a^{k + 1}} + a \geqslant 2 \left( \frac{a^{l + 1}}{b^l} +
+   \frac{b^{l + 1}}{c^l} + \frac{c^{l + 1}}{a^l} \right) \]
+
+
+Or,
+\[ \frac{a^{l + 1}}{b^l} + \frac{b^{l + 1}}{c^l} + \frac{c^{l + 1}}{a^l}
+   \geqslant a + b + c \]
+
+
+Ainsi,
+\[ \  \]
+\[ \frac{a^{k + 2}}{b^{k + 1}} + b + \frac{b^{k + 2}}{c^{k + 1}} + c +
+   \frac{c^{k + 2}}{a^{k + 1}} + a \geqslant 2 (a + b + c) \]
+
+
+D'o{\`u}
+\[ \frac{a^{k + 2}}{b^{k + 1}} + \frac{b^{k + 2}}{c^{k + 1}} + \frac{c^{k +
+   2}}{a^{k + 1}} \geqslant a + b + c \]
+
+
+De m{\^e}me, on montre le r{\'e}sultat dans le cas o{\`u} $k$ est impair.
+
+\
+
+\tmtextbf{M{\'e}thode 3. }(Hors programme)
+
+Via l'in{\'e}galit{\'e} de H{\"o}lder, on a
+\[ \left( \frac{a^{k + 1}}{b^k} + \frac{b^{k + 1}}{c^k} + \frac{c^{k +
+   1}}{a^k} \right) (b + c + a)^k \geqslant (a + b + c)^{k + 1} \]
+
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

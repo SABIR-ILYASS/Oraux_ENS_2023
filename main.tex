@@ -1,0 +1,387 @@
+% \documentclass[a4paper,11pt, twoside]{article}
+\documentclass[a4paper,11pt]{article}
+
+% --- Packages essentiels ---
+\usepackage[utf8]{inputenc} % Encodage UTF-8
+\usepackage[T1]{fontenc}    % Encodage des polices
+\usepackage[french]{babel}  % Support du français
+\usepackage{lmodern}        % Polices de meilleure qualité
+\usepackage{graphicx}       % Inclusion d'images
+\usepackage{url}            % Gestion des URLs
+\usepackage{amsmath,amssymb}% Symboles mathématiques avancés
+\usepackage{tcolorbox}      % Boîtes colorées
+\usepackage{makeidx}        % Création d'index
+\usepackage{stmaryrd}       % Symboles mathématiques additionnels
+\usepackage{mathtools}      % Outils mathématiques avancés
+\usepackage{exsheets}       % Pour les exercices
+\usepackage{wasysym,enumerate,bbm,xcolor,theorem,accents}
+\usepackage{lipsum} % Pour générer du faux texte
+\usepackage{fancyhdr} 
+
+% --- Redéfinition des symboles < et > ---
+\catcode`\<=\active \def<{
+  \fontencoding{T1}\selectfont\symbol{60}\fontencoding{\encodingdefault}}
+\catcode`\>=\active \def>{
+  \fontencoding{T1}\selectfont\symbol{62}\fontencoding{\encodingdefault}}
+
+% --- Commandes personnalisées ---
+\newcommand{\assign}{:=}
+\newcommand{\comma}{{,}}
+\newcommand{\infixand}{\text{ and }}
+\newcommand{\infixor}{\text{ or }}
+\newcommand{\nequiv}{\mathrel{\not\equiv}}
+\newcommand{\nin}{\notin}
+\newcommand{\nobracket}{}
+\newcommand{\nospace}{}
+\newcommand{\textdots}{...}
+\newcommand{\tmabbr}[1]{#1}
+\newcommand{\tmaffiliation}[1]{\\ #1}
+\newcommand{\tmcolor}[2]{{\color{#1}{#2}}}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\tmname}[1]{\textsc{#1}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmrsub}[1]{\ensuremath{_{\textrm{#1}}}}
+\newcommand{\tmrsup}[1]{\textsuperscript{#1}}
+\newcommand{\tmscript}[1]{\text{\scriptsize{$#1$}}}
+\newcommand{\tmstrong}[1]{\textbf{#1}}
+\newcommand{\tmtextbf}[1]{\text{{\bfseries{#1}}}}
+\newcommand{\tmtextit}[1]{\text{{\itshape{#1}}}}
+
+\newenvironment{enumeratenumeric}{\begin{enumerate}[1.]}{\end{enumerate}}
+
+\newcounter{nnacknowledgments}
+\def\thennacknowledgments{\unskip}
+\newcounter{tmcounter}
+\newcommand{\custombinding}[1]{%
+  \setcounter{tmcounter}{#1}%
+  \addtocounter{tmcounter}{-1}%
+  \refstepcounter{tmcounter}}
+\usepackage[T3,T1]{fontenc}
+\DeclareSymbolFont{tipa}{T3}{cmr}{m}{n}
+\DeclareMathAccent{\invbreve}{\mathalpha}{tipa}{16}
+\newcommand{\nonconverted}[1]{\mbox{}}
+
+\linespread{1.3} % Interligne ajusté
+
+% --- Création et réinitialisation du compteur pour les exercices ---
+\newcounter{exercice}
+\makeatletter
+\@addtoreset{exercice}{part} % Réinitialise le compteur "exercice" à chaque nouvelle partie
+\makeatother
+
+% --- Définition de l'environnement "exercise" ---
+\newenvironment{exercise}[1][]{%
+  \refstepcounter{exercice}% Incrémente le compteur et permet la référence
+  \addcontentsline{toc}{section}{Exercice \theexercice : #1}% Ajoute l'exercice à la TOC
+  \begin{tcolorbox}[%
+    title=Exercice \theexercice. #1,
+    colback=blue!5,
+    colframe=blue!75!black,
+    fonttitle=\bfseries
+  ]
+}{%
+  \end{tcolorbox}
+}
+
+% --- Affichage des sous-sections dans la table des matières ---
+\setcounter{tocdepth}{2}
+
+
+
+% --- Charger hyperref en dernier ---
+\usepackage{hyperref}
+
+\pagestyle{empty} 
+
+\begin{document}
+\pagenumbering{gobble} % désactive la numérotation temporairement
+
+% --- Page de garde ---
+\begin{center}
+    \vspace*{0.1cm}
+    \includegraphics[width=0.3\textwidth]{figures/ENS_Logo_TL.jpg}\\[1cm]
+
+    {\LARGE \textbf{Oraux ENS 2023-2024 :}}\\[1cm]
+    {\LARGE \textbf{Recueil d'exercices et solutions complètes}}\\[1cm]
+
+    {\Large Mathématiques — Filière MP}\\[2cm]
+
+    {\Large Auteurs :}\\[0.5cm]
+    {\large \textsc{SABIR Ilyass}}\\[0.3cm]
+    {\large \textsc{ZINE Akram}}\\[0.3cm]
+    {\large \textsc{ETTOUSY Badr}}\\[2cm]
+
+    {\Large Avril 2024}
+\end{center}
+\newpage
+\begin{center}
+Oraux ENS 2023-2024 \\ 
+SABIR Ilyass - ZINE Akram - ETTOUSY Badr
+\end{center}
+
+\newpage
+\input{licence/licence}
+
+\newpage
+\input{avant_propos}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% En-têtes alternés pour pages impaires/paires
+\fancyhf{}  % Efface tout
+                     % Efface l’en-tête/pied existant
+\fancyhead[L]{Oraux ENS 2023-2024}       % En-tête à gauche
+\fancyhead[R]{\thepage}              % Numéro de page à droite
+\renewcommand{\headrulewidth}{0.4pt} % Ligne sous l’en-tête
+
+% \fancyhead[LO]{Oraux ENS 2023-2024}  % Left Odd (page impaire à gauche)
+% \fancyhead[RE]{Oraux ENS 2023-2024}  % Right Even (page paire à droite)
+
+% \fancyhead[RO]{\thepage}  % Right Odd (numéro page impaire)
+% \fancyhead[LE]{\thepage}  % Left Even (numéro page paire)
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newpage
+% partie 1
+\part{Les exercices pos{\'e}s {\`a} l'oral de l'ENS Ulm 2023}
+\[ \star \star \star \]
+\begin{center}
+  Dans cette premi{\`e}re partie, nous allons explorer une s{\'e}rie d'exercices extraits des {\'e}preuves orales du concours d'entr{\'e}e {\`a} l'ENS ULM. Les sujets abord{\'e}s couvrent des domaines vari{\'e}s des math{\'e}matiques, tels que l'analyse, l'alg{\`e}bre lin{\'e}aire et la g{\'e}om{\'e}trie. Vous serez confront{\'e}s {\`a} des probl{\`e}mes classiques mais exigeants, tels que les Wronskiens et les syst{\`e}mes de Tchebychev, la minimisation locale sur un graphe, ainsi que des questions de divisibilit{\'e} dans des contextes alg{\'e}briques complexes. Chaque exercice a {\'e}t{\'e} s{\'e}lectionn{\'e} pour refl{\'e}ter la rigueur et l'ing{\'e}niosit{\'e} n{\'e}cessaires lors des concours, et vous permettre de tester vos connaissances tout en affinant vos m{\'e}thodes de raisonnement. {\`A} travers les r{\'e}solutions, vous d{\'e}velopperez des outils essentiels pour ma{\^i}triser des concepts allant des espaces fonctionnels aux propri{\'e}t{\'e}s g{\'e}om{\'e}triques et alg{\'e}briques des matrices et groupes.
+  
+  Vous trouverez l'{\'e}nonc{\'e} des exercices {\`a} :
+  \textbf{https://mathexp.eu/lairez/math-ulm-2023.pdf}
+\end{center}
+\[ \star \star \star \]
+\newpage
+\input{ULM/ex1}
+\input{ULM/ex2}
+\input{ULM/ex3}
+\input{ULM/ex4}
+\input{ULM/ex5}
+\input{ULM/ex6}
+\input{ULM/ex7}
+\input{ULM/ex8}
+\input{ULM/ex9}
+\input{ULM/ex10}
+\input{ULM/ex11}
+\input{ULM/ex12}
+\input{ULM/ex13}
+\input{ULM/ex14}
+\input{ULM/ex15}
+\input{ULM/ex16}
+\input{ULM/ex17}
+\input{ULM/ex18}
+\input{ULM/ex19}
+\input{ULM/ex20}
+\input{ULM/ex21}
+\input{ULM/ex22}
+\input{ULM/ex23}
+\input{ULM/ex24}
+\input{ULM/ex25}
+\input{ULM/ex26}
+\input{ULM/ex27}
+
+% partie 2
+\newpage
+\part{Les exercices pos{\'e}s {\`a} l'oral communs ULSR}
+
+\begin{center}
+  L'{\'e}preuve orale ULSR propose une vari{\'e}t{\'e} d'exercices couvrant un large {\'e}ventail de sujets math{\'e}matiques. Les exercices abordent des domaines tels que les probabilit{\'e}s, l'alg{\`e}bre lin{\'e}aire, l'analyse, la th{\'e}orie des nombres et les structures alg{\'e}briques. On y trouve par exemple des probl{\`e}mes sur l'ordre convexe de variables al{\'e}atoires, l'{\'e}tude de suites r{\'e}currentes, les propri{\'e}t{\'e}s de matrices sym{\'e}triques, les morphismes de groupes finis, les applications contractantes et non expansives, les s{\'e}ries enti{\`e}res de fractions rationnelles, et la construction d'arbres al{\'e}atoires. Les exercices sont con{\c c}us pour {\'e}valuer non seulement la ma{\^i}trise du programme, mais aussi la capacit{\'e} des candidats {\`a} raisonner, {\`a} faire preuve d'initiative et {\`a} appliquer leurs connaissances dans des contextes nouveaux. Le niveau de difficult{\'e} est {\'e}lev{\'e}, refl{\'e}tant les attentes du concours d'entr{\'e}e aux {\'E}coles Normales Sup{\'e}rieures.
+\end{center}
+\begin{center}
+  Vous trouvez l'{\'e}nonc{\'e} des exercices {\`a} :
+  \tmtextbf{https://www.ens.psl.eu/sites/default/files/23\_mp\_rap\_omathulsr.pdf}
+\end{center}
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
+
+\newpage
+\input{ULSR/ex1}
+\input{ULSR/ex2}
+\input{ULSR/ex3}
+\input{ULSR/ex4}
+\input{ULSR/ex5}
+\input{ULSR/ex6}
+\input{ULSR/ex7}
+\input{ULSR/ex8}
+\input{ULSR/ex9}
+\input{ULSR/ex10}
+
+% partie 3
+\newpage
+\part{Exercices additionnels}
+
+\begin{center}
+  \raisebox{0.0\height}{\includegraphics[width=2.82294536271809cm,height=4.0078873147055cm]{figures/ENS_Logo_TL.jpg}}\qquad\raisebox{0.0\height}{\includegraphics[width=2.82294536271809cm,height=4.0078873147055cm]{figures/X.jpg}}
+\end{center}
+
+Dans les pages qui suivent, nous plongerons au c{\oe}ur des d{\'e}fis
+math{\'e}matiques les plus stimulants. Nous explorerons une s{\'e}lection
+soigneusement choisie d'exercices issus des oraux de l'{\'E}cole Polytechnique
+et de l'{\'E}cole Normale Sup{\'e}rieure. Notre parcours s'enrichira
+{\'e}galement de probl{\`e}mes fascinants tir{\'e}s des Olympiades de
+math{\'e}matiques, ainsi que d'autres sujets d'{\'e}tude captivants. Cette
+section vise {\`a} aiguiser votre esprit analytique, {\`a} d{\'e}velopper
+votre cr{\'e}ativit{\'e} math{\'e}matique et {\`a} vous pr{\'e}parer aux plus
+hauts niveaux de r{\'e}flexion scientifique.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
+
+\newpage
+\input{Exercices_additionnels/ex1}
+\input{Exercices_additionnels/ex2}
+\input{Exercices_additionnels/ex3}
+\input{Exercices_additionnels/ex4}
+\input{Exercices_additionnels/ex5}
+\input{Exercices_additionnels/ex6}
+\input{Exercices_additionnels/ex7}
+\input{Exercices_additionnels/ex8}
+\input{Exercices_additionnels/ex9}
+\input{Exercices_additionnels/ex10}
+\input{Exercices_additionnels/ex11}
+\input{Exercices_additionnels/ex12}
+\input{Exercices_additionnels/ex13}
+\input{Exercices_additionnels/ex14}
+\input{Exercices_additionnels/ex15}
+\input{Exercices_additionnels/ex16}
+\input{Exercices_additionnels/ex17}
+\input{Exercices_additionnels/ex18}
+\input{Exercices_additionnels/ex19}
+\input{Exercices_additionnels/ex20}
+\input{Exercices_additionnels/ex21}
+\input{Exercices_additionnels/ex22}
+\input{Exercices_additionnels/ex23}
+\input{Exercices_additionnels/ex24}
+\input{Exercices_additionnels/ex25}
+\input{Exercices_additionnels/ex26}
+\input{Exercices_additionnels/ex27}
+\input{Exercices_additionnels/ex28}
+\input{Exercices_additionnels/ex29}
+\input{Exercices_additionnels/ex30}
+\input{Exercices_additionnels/ex31}
+\input{Exercices_additionnels/ex32}
+\input{Exercices_additionnels/ex33}
+\input{Exercices_additionnels/ex34}
+\input{Exercices_additionnels/ex35}
+\input{Exercices_additionnels/ex36}
+
+
+% partie 4
+\newpage
+\part{Sujets d'{\'e}tude}
+
+\
+
+Cette partie explore quatre sujets complexes en math{\'e}matiques, chacun
+abordant un domaine distinct et fondamental :
+\begin{enumerate}
+  \item {\textbf{Probabilit{\'e} que des entiers soient premiers entre eux}}
+  : ce sujet se concentre sur la probabilit{\'e} d'obtenir des entiers
+  premiers entre eux dans un ensemble donn{\'e}, en utilisant des concepts de
+  la th{\'e}orie des probabilit{\'e}s et des m{\'e}thodes combinatoires.
+  
+  \item {\textbf{Les polyn{\^o}mes irr{\'e}ductibles sur un corps fini}} :
+  ce sujet analyse le nombre de polyn{\^o}mes irr{\'e}ductibles dans un corps
+  fini, un aspect essentiel de l'alg{\`e}bre et de la th{\'e}orie des corps,
+  avec des applications potentielles en cryptographie et dans les structures
+  alg{\'e}briques.
+  
+  \item {\textbf{Distribution des puissances d'un nombre dans une base de
+  num{\'e}ration}} : ce sujet examine la mani{\`e}re dont les puissances d'un
+  nombre se r{\'e}partissent dans une base sp{\'e}cifique, en analysant les
+  fr{\'e}quences d'apparition des chiffres en premi{\`e}re position selon une
+  approche probabiliste.
+  
+  \item {\textbf{Th{\'e}or{\`e}me de Dirichlet sur les progressions
+  arithm{\'e}tiques}} : ce th{\'e}or{\`e}me fondamental en th{\'e}orie des
+  nombres d{\'e}montre l'existence d'une infinit{\'e} de nombres premiers dans
+  certaines progressions arithm{\'e}tiques, abordant la r{\'e}partition des
+  nombres premiers, un sujet de grande importance en math{\'e}matiques pures
+  et appliqu{\'e}es.
+\end{enumerate}
+\newpage
+\input{Sujets_d'etude/sujet1}
+\newpage
+\input{Sujets_d'etude/sujet2}
+\newpage
+\input{Sujets_d'etude/sujet3}
+\newpage
+\input{Sujets_d'etude/sujet4}
+
+% annexe
+\newpage
+\part{Annexe}
+Dans cette section, nous vous proposons les corrig{\'e}s d{\'e}taill{\'e}s de
+quatre {\'e}preuves de Math{\'e}matiques pour la fili{\`e}re MP-MPI, visant
+{\`a} fournir une compr{\'e}hension approfondie et des techniques de
+r{\'e}solution rigoureuses pour les concours de haut niveau. Ces corrig{\'e}s
+incluent :
+
+1. Corrig{\'e} de l'{\'e}preuve Math{\'e}matiques A - XLSR -
+Fili{\`e}re MP-MPI 2024
+
+2. Corrig{\'e} de l'{\'e}preuve Math{\'e}matiques A - XLSR - Fili{\`e}re
+MP-MPI 2023
+
+3. {\'E}preuve des {\'E}coles Normales Sup{\'e}rieures - Concours d'Admission
+2018 - Fili{\`e}re MPI - Composition de Math{\'e}matiques C (ULCR)
+
+4. Agr{\'e}gation Externe 2019 - Autour du th{\'e}or{\`e}me de Fermat-Wiles
+
+Ces {\'e}preuves constituent une excellente pr{\'e}paration aux concours
+post-pr{\'e}pas. Elles couvrent de nombreux concepts classiques et
+approfondissent des notions math{\'e}matiques essentielles, permettant ainsi
+de renforcer la compr{\'e}hension th{\'e}orique et les capacit{\'e}s
+d'analyse.
+\newpage
+\input{Annexe/x_math_a_2024}
+\newpage
+\input{Annexe/math_x_a_2023}
+\newpage
+\input{Annexe/ens_c_2018}
+\newpage
+\input{Annexe/Agregation_externe_2019}
+
+
+
+
+
+\newpage
+\vspace*{\fill} % Centrage vertical
+
+% --- Message d'introduction ---
+\begin{center}
+  \begin{minipage}{0.85\textwidth}
+    \centering
+
+
+    \vspace{1em}
+
+    Ce document constitue une première étape d’un projet plus vaste. Son objectif est de rendre les informations accessibles à tous et d’offrir des chances équitables à celles et ceux qui se présentent aux concours post-prépa, en particulier aux étudiants rencontrant des difficultés financières.
+
+    Si vous souhaitez participer à notre projet (nous comptons produire d’autres documents, des vidéos, et organiser des séances de travail dès que possible), sachez que nous ne sommes que trois passionnés de mathématiques. Nous cherchons encore des collaborateurs !
+
+    Pour en savoir plus ou pour vous engager à nos côtés, n’hésitez pas à nous écrire à l’adresse suivante :
+
+    \vspace{1em}
+    \textbf{ilyass@steerai.autos}
+
+    \vspace{2em}
+    \begin{flushright}
+      \textbf{Les auteurs}
+    \end{flushright}
+    \vspace{1em}
+
+
+  \end{minipage}
+\end{center}
+
+\vspace*{\fill}
+\end{document}

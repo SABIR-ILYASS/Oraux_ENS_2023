@@ -1,0 +1,123 @@
+Cet exercice, intitul{\'e} ``Th{\'e}or{\`e}me de Peano", traite des wronskiens
+et de leurs propri{\'e}t{\'e}s. Il demande de prouver une condition suffisante
+pour que des fonctions forment une famille li{\'e}e, bas{\'e}e sur leurs
+wronskiens. L'exercice fait appel {\`a} des notions d'analyse et d'alg{\`e}bre
+lin{\'e}aire.
+\begin{exercise}[(Th{\'e}or{\`e}me de Peano)]
+Soit~$I \subseteq \mathbb{R}$ un intervalle ouvert non vide.
+Soit~$\mathcal{C}^r (I)$ le~$\mathbb{R}$-espace vectoriel des fonctions sur
+$I$ {\`a} valeurs r{\'e}elles continuellement d{\'e}rivables $r$ fois. Pour
+toutes fonctions $f_1, \ldots, f_r \in \mathcal{C}^r (I)$ on d{\'e}finit une
+fonction~$I \to \mathbb{R}$ par :
+\[ \mathcal{W} [f_1, \ldots, f_r] = \left| \begin{array}{ccc}
+     f_1 & \cdots & f_r\\
+     f_1' & \cdots & f_r'\\
+     \vdots &  & \vdots\\
+     f_1^{(r - 1)} & \cdots & f_r^{(r - 1)}
+   \end{array} \right| . \]
+
+
+Soient~$f_1, \ldots, f_r \in \mathcal{C}^r (I)$. On note $W =\mathcal{W} [f_1,
+\ldots, f_r]$ et, pour $1 \leq i \leq r$,
+\[ V_i = (- 1)^i \mathcal{W} [f_1, \ldots, f_{i - 1}, f_{i + 1}, \ldots, f_r]
+   . \]
+
+
+Montrer que si $V_r$ ne s'annule pas sur $I$ et si $W \equiv 0$, alors les
+$f_1, \ldots, f_r$ forment une famille li{\'e}e.
+
+\end{exercise}
+
+\subsection*{Solution. (ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ZINE Akram)}
+
+Dans le Wronskien :
+\[ V = \left|\begin{array}{cccc}
+     f_1 & f_2 & \cdots & f_n\\
+     f_1' & f_2' & \cdots & f_r'\\
+     \vdots & \vdots & \ddots & \vdots\\
+     f_1^{(r - 1)} & f_2^{(r - 1)} & \cdots & f_r^{(r - 1)}
+   \end{array}\right| \]
+
+
+On d{\'e}signe par $V_1, V_2, \ldots, V_r$ les mineurs correspondants aux
+{\'e}l{\'e}ments de la derni{\`e}re ligne.
+
+On a alors :
+\[ V_1 f_1^{(i)} + V_2 f_2^{(i)} + \ldots + V_r f_r^{(i)} = 0 \quad (i = 0, 1,
+   \ldots, r - 1) \quad (1) \]
+
+
+Il suffit de d{\'e}velopper par rapport {\`a} la derni{\`e}re ligne pour $i =
+r - 1$. Pour les autres valeurs de $i$, on peut modifier la matrice li{\'e}e
+{\`a} $V$ en mettant dans la derni{\`e}re ligne le vecteur $(f_1^{(i)},
+\ldots, f_r^{(i)})$. Cette ligne appara{\^i}t forc{\'e}ment comme une
+duplication d'une ligne pr{\'e}c{\'e}dente, et donc le d{\'e}terminant reste
+toujours nul.
+
+\
+
+D{\'e}veloppons de la m{\^e}me fa{\c c}on par rapport {\`a} la premi{\`e}re
+colonne. On obtient :
+\[ \forall 1 \leq k \leq r, \quad w = V_r f_k^{(r - 1)} + \sum_{i = 0}^{r - 2}
+   \alpha_i f_k^{(i)} = 0 \]
+
+
+o{\`u} les $\alpha_i$ sont les mineurs li{\'e}s aux $r - 1$ premiers
+{\'e}l{\'e}ments de la premi{\`e}re colonne.
+
+Comme $V_r$ ne s'annule pas, les $f_k$ sont solutions d'une {\'e}quation
+diff{\'e}rentielle d'ordre $r - 1$.
+
+D'apr{\`e}s l'{\'e}quation (1), on a $\forall 0 \leq i \leq r - 1$ :
+\[ f_r^{(i)} (0) = - \sum_{k = 1}^{r - 1} \frac{V_k (0)}{V_r (0)} f_k^{(i)}
+   (0) . \]
+
+
+D'o{\`u}, d'apr{\`e}s le th{\'e}or{\`e}me de Cauchy, on trouve que :
+\[ f_r (x) = - \sum_{k = 1}^{r - 1} \frac{V_k (0)}{V_r (0)} f_k (x) . \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+\tmtextbf{Autre m{\'e}thode :}
+
+En diff{\'e}renciant chacune des $r - 1$ premi{\`e}res identit{\'e}s de
+l'{\'e}quation (1) et en les soustrayant {\`a} la suivante, nous obtenons :
+\[ V_1' f_1^{(i)} + V_2' f_2^{(i)} + \ldots + V_r' f_r^{(i)} = 0 \quad (i = 0,
+   1, \ldots, r - 2) . \]
+
+
+Ajoutons maintenant ces identit{\'e}s ensemble, apr{\`e}s avoir multipli{\'e}
+la $i$-{\`e}me d'entre elles (pour $i = 1, 2, \ldots, r - 1$) par le premier
+mineur de $V_r$, not{\'e} $\tilde{V}_1$, correspondant {\`a} $f_1^{(i - 1)}$.
+Cela donne :
+\[ \sum_{k = 1}^r V'_k  \sum_{i = 1}^{r - 1} \tilde{V}_1 f_k^{(i - 1)} = 0. \]
+
+
+La somme $\sum_{i = 1}^{r - 1} \tilde{V}_1 f_k^{(i - 1)}$ est nulle sauf pour
+$k = 1$ et $k = r$, o{\`u} elle vaut respectivement $V_r$ et $- V_1$. Nous
+obtenons alors :
+\[ V_1' V_r - V_r' V_1 = 0. \]
+
+
+Puisque $V_r$ ne s'annule pas sur $I$, en consid{\'e}rant que la
+d{\'e}riv{\'e}e de $\frac{V_1}{V_r}$ est nulle, on trouve des constantes $c_1,
+\ldots, c_{r - 1}$ telles que :
+\[ V_1 = - c_1 V_r, \quad V_2 = - c_2 V_r, \quad \ldots, \quad V_{r - 1} = -
+   c_{r - 1} V_r . \]
+
+
+Par cons{\'e}quent, l'identit{\'e} :
+\[ V_1 f_1 + V_2 f_2 + \ldots + V_r f_r = 0 \]
+
+
+peut {\^e}tre {\'e}crite sous la forme :
+\[ V_r (- c_1 f_1 - c_2 f_2 - \ldots - c_{r - 1} f_{r - 1} + f_r) = 0. \]
+
+
+Et, puisque $V_r$ ne s'annule pas, on trouve que :
+\[ f_r = c_1 f_1 + c_2 f_2 + \ldots + c_{r - 1} f_{r - 1} . \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

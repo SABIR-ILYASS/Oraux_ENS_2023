@@ -1,0 +1,195 @@
+Cet exercice porte sur le th{\'e}or{\`e}me d'Hermite-Kakeya. Il demande de
+prouver une caract{\'e}risation des paires de polyn{\^o}mes qui s'entrelacent,
+c'est-{\`a}-dire dont les racines r{\'e}elles sont simples et altern{\'e}es.
+L'exercice fait appel {\`a} des notions de th{\'e}orie des polyn{\^o}mes et
+d'analyse r{\'e}elle.
+\begin{exercise}[(Th{\'e}or{\`e}me d'Hermite--Kakeya)]
+Soient $P$ et $Q \in \mathbb{R} [X]$ des polyn{\^o}mes non constants. On dit
+que~$P$ et~$Q$ {\tmem{s'entrelacent}} si:
+
+(1)~leurs racines sont r{\'e}elles et simples,
+
+(2)~ils n'ont pas de racines r{\'e}elles communes,
+
+(3)~entre deux racines cons{\'e}cutives de $Q$ (resp.~$P$), il y a une et une
+seule racine de~$P$ (resp.~$Q$).
+
+Montrer que si pour tout~$(\lambda, \mu) \in \mathbb{R}^2 \setminus \{ (0, 0)
+\}$, les racines de $\lambda P + \mu Q$ sont toutes r{\'e}elles et simples,
+alors $P$ et $Q$ s'entrelacent.
+
+Montrer la r{\'e}ciproque.
+\end{exercise}
+
+\subsection*{Solution. (ETTOUSY Badr, ZINE Akram)}
+\addcontentsline{toc}{subsection}{Solution. (ETTOUSY Badr, ZINE Akram)}
+
+
+\tmtextbf{M{\'e}thode 1 : (ETTOUSY Badr)}
+
+Soit $P$ et $Q$ dans $\mathbb{R} [X]$.
+
+On suppose que $\forall (\lambda, \mu) \in \mathbb{R}^2$, le polyn{\^o}me
+$\lambda P (X) + \mu Q (X)$ a toutes ses racines r{\'e}elles et simples.
+Montrons que les racines de $P$ et $Q$ sont intercal{\'e}es (c'est-{\`a}-dire,
+entre deux racines de $P$ il existe une racine de $Q$ et r{\'e}ciproquement).
+
+En utilisant les couples $(\lambda, \mu) = (1, 0)$ et $(\lambda, \mu) = (0,
+1)$, on voit d{\'e}j{\`a} que $P$ et $Q$ doivent avoir toutes leurs racines
+r{\'e}elles. Les polyn{\^o}mes $P$ et $Q$ jouant des r{\^o}les
+sym{\'e}triques, il suffit de montrer qu'entre deux racines de $P$, il existe
+au moins une racine de $Q$.
+
+Soit $a$ et $b$ deux racines cons{\'e}cutives de $P$, et supposons que $Q$ ne
+s'annule pas sur $[a, b]$. La fraction rationnelle $R (x) = \frac{P (x)}{Q
+(x)}$ est donc de classe $C^1$ sur $[a, b]$ avec $R (a) = R (b) = 0$.
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Rolle, il existe $c \in] a, b [$ tel que
+$R' (c) = 0$. La fraction rationnelle $R (x) - R (c)$ admet donc $c$ comme
+z{\'e}ro de multiplicit{\'e} au moins 2.
+
+En vertu du lemme suivant, pour $r$ assez petit, il existe sur la
+circonf{\'e}rence $|z - c| = r$ au moins quatre points tels que Im$(R (z) - R
+(c)) = 0$, soit Im$\hspace{0.17em} R (z) = 0$. L'un au moins de ces points
+$z_0$ n'est pas r{\'e}el. Alors, $R (z_0) = \mu \in \mathbb{R}$. Le
+polyn{\^o}me $P (x) - \mu Q (x)$ s'annule en un point $z_0$ non r{\'e}el, ce
+qui contredit notre hypoth{\`e}se.
+
+\tmtextbf{Lemme 1.}
+
+Soit $R$ une fraction rationnelle qui admet $z_0$ comme racine de
+multiplicit{\'e} $k$. Alors, pour $r$ assez petit, il existe au moins $2 k$
+points v{\'e}rifiant $|z - z_0 | = r$ et Im$\hspace{0.17em} R (z) = 0$.
+
+\tmtextbf{Preuve du lemme 1.}
+
+Posons $z - z_0 = re^{i \theta}$ et $\frac{1}{k!} R^{(k)} (z_0) = \rho e^{i
+\alpha}$.
+
+La formule de Taylor Young nous dit alors que
+\[ R (z) = \rho r^k e^{i (\alpha + k \theta)}  (1 + \varepsilon (z - z_0)) \]
+
+
+avec $\underset{u \to 0}{\lim}  \varepsilon (u) = 0$. Soit $\eta > 0$ tel que
+$|u| < \eta$ et $| \varepsilon (u) | < 1$, et choisissons $r < \eta$.
+
+Posons $f (\theta) = \text{Im} \hspace{0.17em} R (z_0 + re^{i \theta})$,
+$\varepsilon (u) = \varepsilon_1 (u) + i \varepsilon_2 (u)$, avec
+$\varepsilon_1 (u)$ et $\varepsilon_2 (u)$ r{\'e}els. On obtient :
+\[ f (\theta) = \text{Im} \hspace{0.17em} R (z) = \rho r^k  (\cos (\alpha + k
+   \theta) \varepsilon_2 (z - z_0) + \sin (\alpha + k \theta) (1 +
+   \varepsilon_2 (z - z_0))) \]
+
+
+D{\'e}finissons $\theta_m$ pour $m \in \{0, 1, \ldots, 2 k\}$ par $\alpha + k
+\theta_m = m \pi + \frac{\pi}{2}$. On a alors :
+\[ f (\theta_m) = \rho r^k  (- 1)^m  (1 + \beta_m) \]
+\
+
+avec $| \beta_m | < 1$. Donc $f (\theta_m)$ est du signe de $(- 1)^m$. La
+fonction $f$ change donc $2 k + 1$ fois de signe sur un intervalle de longueur
+$2 \pi$, et donc elle s'annule au moins $2 k$ fois, ce qui ach{\`e}ve la
+d{\'e}monstration.
+
+\tmtextbf{La r{\'e}ciproque }
+
+Soit $(P, Q)$ un couple de polyn{\^o}mes r{\'e}els simplement scind{\'e}s tels
+qu'entre deux racines de l'un il y ait toujours au moins une racine de
+l'autre. Montrons que le polyn{\^o}me $\lambda P + \mu Q$ reste scind{\'e}
+lorsque le couple $(\lambda, \mu)$ d{\'e}crit $\mathbb{R}^2$.
+
+Il est loisible de se ramener au cas o{\`u} $\lambda \neq 0$ et o{\`u} les
+deux polyn{\^o}mes sont de la forme :
+\[ P = \prod_{i = 1}^n (X - a_i) \infixand Q = \prod_{j = 1}^m (X - b_j) \]
+
+
+avec $m = n$ ou $m = n - 1$. Nous supposerons de plus que :
+\[ a_1 < b_1 < a_2 < b_2 < \ldots < a_n < b_n \tmop{si} m = n \]
+
+
+cas que nous traiterons en premier.
+
+Le signe des valeurs de la fonction rationnelle $P / Q$ aux voisinages des
+infinis et des r{\'e}els $b_j$, ainsi que son annulation en les r{\'e}els
+$a_i$, montre que l'{\'e}quation $\lambda P (x) + \mu Q (x) = 0$ poss{\`e}de
+au moins $n$ racines r{\'e}elles si $\lambda + \mu \neq 0$, {\`a} savoir une
+dans chaque intervalle $] b_j, b_{j + 1} [$ et une autre dans l'un des deux
+intervalles $] - \infty, b_1 [$ et $] b_n, + \infty [$, et au moins $n - 1$
+racines r{\'e}elles dans le cas contraire -- la derni{\`e}re pouvant {\^e}tre
+alors consid{\'e}r{\'e}e comme {\'e}tant devenue infinie.
+
+Ce nombre de racines {\'e}tant toujours exactement {\'e}gal au degr{\'e} de
+$\lambda P + \mu Q$, ce dernier polyn{\^o}me est donc (simplement) scind{\'e}.
+
+Il en va tout de m{\^e}me si $m = n - 1$ (ici d'ailleurs le degr{\'e} de
+$\lambda P + \mu Q$ est toujours {\'e}gal {\`a} $n$). Enfin $\lambda P + \mu
+Q$ est scind{\'e} (mais alors non simplement) dans le cas $\lambda = \mu = 0$.
+
+\tmtextbf{M{\'e}thode 2 : (ZINE Akram)}
+
+Raisonnons par contrapos{\'e}e. Supposons que $P$ et $Q$ ne s'entrelacent pas.
+Cela signifie qu'il existe deux racines $\lambda_1$ et $\lambda_2$ de $P$
+telles qu'il n'y ait aucune racine de $Q$ entre elles. D{\'e}finissons alors
+la fonction $F = \frac{P}{Q}$. Puisque $Q$ n'a pas de racine entre $\lambda_1$
+et $\lambda_2$, $F$ est bien d{\'e}finie sur cet intervalle. De plus, nous
+avons $F (\lambda_1) = F (\lambda_2) = 0$.
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Rolle, il existe un point $c$ situ{\'e}
+entre $\lambda_1$ et $\lambda_2$ tel que $F' (c) = 0$.
+
+Calculons alors $F' (x) = \left( \frac{P}{Q} \right)'$. En utilisant la
+formule de d{\'e}rivation du quotient, on obtient :
+\[ F' (x) = \frac{P' (x) Q (x) - P (x) Q' (x)}{Q (x)^2} . \]
+
+
+Comme $F' (c) = 0$, cela implique que $P' (c) Q (c) - P (c) Q' (c) = 0$.
+Puisque $Q (c) \neq 0$ (car $Q$ n'a pas de racine entre $\lambda_1$ et
+$\lambda_2$), nous en d{\'e}duisons que $P (c) Q' (c) = P' (c) Q (c$).
+
+Consid{\'e}rons alors le polyn{\^o}me $T = P + \alpha Q$, o{\`u} $\alpha = - F
+(c)$. Puisque $F' (c) = 0$, $c$est une racine double de $T$. Ceci contredit
+l'hypoth{\`e}se que pour tout $(\lambda, \mu) \in \mathbb{R}^2 \setminus \{(0,
+0)\}$, les racines de $\lambda P + \mu Q$ sont toutes r{\'e}elles et simples.
+Ainsi, nous avons montr{\'e} par contrapos{\'e}e que $P$ et $Q$ doivent
+s'entrelacer.
+
+\tmtextbf{Preuve du sens inverse}
+
+Supposons maintenant que $P$ et $Q$ s'entrelacent. Nous voulons montrer que
+pour tout $(\lambda, \mu) \in \mathbb{R}^2 \setminus \{(0, 0)\}$, les racines
+de $R = \lambda P + \mu Q$ sont toutes r{\'e}elles et simples. Supposons que
+$\lambda$ et $\mu$ sont non nuls ; sinon, la conclusion est triviale.
+
+Soit $n = \deg P$ et $m = \deg Q$.
+
+On suppose, sans perte de g{\'e}n{\'e}ralit{\'e}, que $n \geq m$ et que $p_1 <
+q_1$.
+
+Traitons le cas $n > m$ : \tmcolor{red}{}
+
+On a alors $m = n - 1$. Pour tout $i \leq n - 1$, $R (p_i) = \mu Q (p_i)$ et
+$R (p_{i + 1}) = \mu Q (p_{i + 1})$. Comme $Q$ change de signe en $q_i$, $R$
+change {\'e}galement de signe sur $[p_i, p_{i + 1}]$ et admet donc une racine
+sur cet intervalle. Ceci {\'e}tant vrai pour tout $i$, $R$ admet $n - 1$
+racines r{\'e}elles distinctes.
+
+Si $n$ est pair, soit $p$ et $q$ les coefficients dominants de $P$ et $Q$
+respectivement. On a $\frac{R}{\mu q} (p_1) < 0$ et $\underset{x \to -
+\infty}{\lim }  \frac{R}{\lambda p} (x) > 0$ ainsi que $\frac{R}{\mu q} (p_n)
+> 0$ et $\underset{x \to \infty}{\lim }  \frac{R}{\lambda p} (x) > 0$. Par
+cons{\'e}quent, l'un des deux couples $(\underset{x \to - \infty}{\lim } R
+(x), R (p_1))$ ou $(R (p_n), \underset{x \to \infty}{\lim } R (x))$
+poss{\`e}de deux {\'e}l{\'e}ments de signes oppos{\'e}s. Le th{\'e}or{\`e}me
+des valeurs interm{\'e}diaires implique alors l'existence d'une
+$n^{\text{i{\`e}me}}$ racine.
+
+Si $n$ est impair, la conclusion reste la m{\^e}me.
+
+Ainsi, $R$ poss{\`e}de $n$ racines r{\'e}elles distinctes et son degr{\'e} est
+$n$, d'o{\`u} le r{\'e}sultat.
+
+Le cas $n = m$ se traite de la m{\^e}me fa{\c c}on en prouvant que $n - 1$
+racines de $R$ se trouvent dans les intervalles $[q_i, q_{i + 1}]$. Pour la
+racine restante, on raisonne sur les couples $(\underset{x \to - \infty}{\lim}
+R (x), R (q_1))$ et $(R (q_n), \underset{x \to \infty}{\lim}  R (x))$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

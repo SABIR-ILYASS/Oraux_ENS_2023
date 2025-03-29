@@ -1,0 +1,91 @@
+Les suites de nombres harmoniques sont riches en propri{\'e}t{\'e}s
+int{\'e}ressantes et cet exercice nous propose d'{\'e}tudier la partie
+enti{\`e}re de leur somme partielle. C'est une belle occasion d'explorer les
+liens entre l'analyse et l'arithm{\'e}tique.
+\begin{exercise}[]
+Montrer que $f : \left\{\begin{array}{l}
+  \mathbb{N}^{\ast} \rightarrow \mathbb{N}^{\ast}\\
+  n \mapsto \left\lfloor 1 + \frac{1}{2} + \cdots + \frac{1}{n} \right\rfloor
+\end{array}\right.$ est surjective.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Montrons que $f : \left\{\begin{array}{l}
+  \mathbb{N}^{\ast} \rightarrow \mathbb{N}^{\ast}\\
+  n \mapsto \left\lfloor 1 + \frac{1}{2} + \cdots + \frac{1}{n} \right\rfloor
+\end{array}\right.$ est surjective.
+
+Notons :
+\[ A =\{f (n) - 1 | \nobracket n \in \mathbb{N}^{\ast} \} \]
+
+
+On a $f$ est croissante et $f (1) = 1$, donc $0 \in A$.
+
+Montrons que $\underset{n \to + \infty}{\lim} f (n) = + \infty$
+
+On a $t \mapsto \frac{1}{t}$ est d{\'e}croissante sur $] 0, + \infty [$, donc
+pour tout $k \in \mathbb{N}^{\ast}$, on a :
+\[ \frac{1}{k + 1} \leqslant \int_k^{k + 1} \frac{dt}{t} \leqslant
+   \frac{1}{k} \]
+
+
+Donc :
+\[ \ln (n + 1) \leqslant 1 + \frac{1}{2} + \cdots + \frac{1}{n} \]
+
+
+Ainsi, $\underset{n \to + \infty}{\lim} f (n) = + \infty$, et pour tout $n \in
+\mathbb{N}^{\ast}$, on a :
+
+\begin{align*}
+  f (n + 1) - f (n) & = \left\lfloor 1 + \frac{1}{2} + \cdots + \frac{1}{n +
+  1} \right\rfloor - \left\lfloor 1 + \frac{1}{2} + \cdots + \frac{1}{n}
+  \right\rfloor\\
+  & \leqslant \left( 1 + \frac{1}{2} + \cdots + \frac{1}{n + 1} \right) -
+  \left[ \left( 1 + \frac{1}{2} + \cdots + \frac{1}{n} \right) - 1 \right]\\
+  & = \frac{1}{n + 1} + 1
+\end{align*}
+
+\
+
+Donc :
+\[ 0 \leqslant f (n + 1) - f (n) \leqslant \left\lfloor \frac{1}{n + 1} + 1
+   \right\rfloor = 1 \]
+
+
+Soit $k \in A$, donc il existe un $n_0 \in \mathbb{N}^{\ast}$ tel que $k + 1 =
+f (n_0)$.
+
+Notons :
+\[ A_k =\{j \in \mathbb{N} \mid j \geqslant k \text{et } f (j) = k + 1\} \]
+
+
+Si $A_k$ est non born{\'e}e, on aurait par croissance de $f$, pour tout $j
+\geqslant k$ $f (j) = k + 1$, ce qui est absurde avec $\underset{n \to +
+\infty}{\lim} f (n) = + \infty$
+
+Donc, $A_k$ est fini, et admet un plus grand {\'e}l{\'e}ment not{\'e} $j_0$.
+
+On a alors $f (j_0) = k + 1$ et $f (j_0 + 1) \neq k + 1$, et par croissance de
+$f$, on a $f (j_0 + 1) > k + 1$
+
+Or :
+\[ 0 \leqslant f (j_0 + 1) - f (j_0) \leqslant 1 \]
+
+
+Donc, $f (j_0 + 1) = k + 2$, ainsi $k + 1 = f (j_0 + 1) - 1 \in A$
+
+Conclusion
+\[ \left\{\begin{array}{l}
+     0 \in A\\
+     \text{si } k \in A \text{alors } k + 1 \in A
+   \end{array}\right. \]
+\
+
+Par l'axiome de Peano, $A =\mathbb{N}$.
+
+D'o{\`u}
+\[ f (\mathbb{N}^{\ast}) = A + 1 =\mathbb{N}^{\ast} \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

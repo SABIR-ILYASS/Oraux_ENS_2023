@@ -1,0 +1,132 @@
+Cet exercice illustre le th{\'e}or{\`e}me de Cayley-Hamilton, qui affirme
+qu'une matrice carr{\'e}e annule son propre polyn{\^o}me caract{\'e}ristique,
+en exploitant une preuve analytique.
+\begin{exercise}[(Th{\'e}or{\`e}me de Cayley-Hamilton)]
+Soit $K$ un corps commutatif quelconque, et $n \in \mathbb{N}^{\star}$.
+
+Pour tout matrice $M \in M_n (K)$, notons $\chi_A (X) = \det (X.I_n - A) $ le
+polyn{\^o}me caract{\'e}ristique de $M$.
+
+On a alors $\chi_M (M) = 0 $
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+Soit $A \in \mathcal{M}_n (K)$, et soit $\| . \|$ une norme sur $\mathcal{M}_n
+(K)$.
+
+Notons $\lambda_1, \ldots, \lambda_l$ les racines complexes de $\det (X.I_n -
+A)$ et $R (A) = \overset{l}{\tmmathbf{\underset{j = 1}{\max}}} | \lambda_j |$.
+
+Pour tout r{\'e}el $r > R (A)$ et pour tout $t \in \mathbb{R}$, on a $\det
+(r.e^{\tmop{it}} I_n - A) \neq 0$, donc $r.e^{\tmop{it}} I_n - A \in
+\tmop{GL}_n (K)$.
+
+On {\'e}crit alors :
+\[ r.e^{\tmop{it}} I_n - A = r.e^{\tmop{it}} \left( I_n - \frac{1}{r} e^{-
+   \tmop{it}} A \right) \]
+
+
+On pose $R = \max (R (A), \| A \|)$. Pour tout $r > R$ et pour tout $t \in
+\mathbb{R}$, on a :
+\[ \left\| \frac{1}{r} e^{- \tmop{it}} A \right\| = \frac{\| A \|}{r} < 1 \]
+
+
+Ainsi, la s{\'e}rie $\underset{p \geqslant 0}{\sum} \left( \frac{1}{r} e^{- i
+t} A \right)^p$ converge absolument, donc converge dans $\mathcal{M}_n (K)$.
+
+De plus :
+\[ \underset{p = 0}{\overset{+ \infty}{\sum}} \left( \frac{1}{r} e^{-
+   \tmop{it}} A \right)^p = \left( I_n - \frac{1}{r} e^{- i t} A \right)^{- 1}
+\]
+
+
+Ainsi :
+\begin{eqnarray*}
+  (r.e^{i t} I_n - A)^{- 1} & = & \frac{1}{r} e^{- i t} \left( I_n -
+  \frac{1}{r} e^{- i t} A \right)^{- 1}\\
+  & = & \frac{1}{r} e^{- i t} \underset{p = 0}{\overset{+ \infty}{\sum}}
+  \left( \frac{1}{r} e^{- i t} A \right)^p\\
+  & = & \underset{p = 1}{\overset{+ \infty}{\sum}} \left( \frac{1}{r} e^{- i
+  t} \right)^p A^{p - 1}
+\end{eqnarray*}
+
+
+Par suite, pour tout $k \in \mathbb{N}^{\star}$, on a :
+\[ \int^{2 \pi}_0 (r e^{i t})^k (r.e^{i t} I_n - A)^{- 1} d t = \int^{2 \pi}_0
+   \underset{p = 1}{\overset{+ \infty}{\sum}} \left( \frac{1}{r} e^{- i t}
+   \right)^{p - k} A^{p - 1} d t \]
+
+
+Il est possible d'intervertir l'integrale et la sommation en s{\'e}rie,
+puisque la convergence de la s{\'e}rie est normale sur $[0, 2 \pi]$, on
+obtient alors :
+\begin{eqnarray*}
+  \int^{2 \pi}_0 (r e^{i t})^k (r.e^{i t} I_n - A)^{- 1} d t & = & \underset{p
+  = 1}{\overset{+ \infty}{\sum}} r^{k - p} \int^{2 \pi}_0 e^{- i (p - k) t}
+  A^{p - 1} d t\\
+  & = & \underset{p = 1}{\overset{+ \infty}{\sum}} r^{k - p} (2 \pi
+  \delta_{k, p}) A^{p - 1}
+\end{eqnarray*}
+
+
+\
+
+avec $\forall p, k \in \mathbb{N}^{\star}, \delta_{k, p} =
+\left\{\begin{array}{l}
+  0 \tmop{si} p \neq k\\
+  1 \tmop{si} p = k
+\end{array}\right. \text{}$
+
+D'o{\`u}
+\[ \int^{2 \pi}_0 (r e^{i t})^k (r.e^{i t} I_n - A)^{- 1} d t = 2 \pi A^{k -
+   1} \]
+
+
+On en d{\'e}duit que pour tout $k \in \mathbb{N}^{\star}$ :
+\[ A^{k - 1} = \frac{1}{2 \pi} \int^{2 \pi}_0 (r e^{i t})^k (r e^{i t} I_n -
+   A)^{- 1} d t \]
+
+
+Posons $\chi_A (X) = \det (X.I_n - A) = \underset{k = 0}{\overset{n}{\sum}}
+a_k X^k$, o{\`u} $a_0, \ldots, a_n \in \mathbb{C}$ (le polyn{\^o}me
+caract{\'e}ristique de $A$).
+
+On a :
+\begin{eqnarray*}
+  \chi_A (A) & = & \underset{k = 1}{\overset{n + 1}{\sum}} a_{k - 1} A^{k -
+  1}\\
+  & = & \frac{1}{2 \pi} \underset{k = 1}{\overset{n + 1}{\sum}} a_{k - 1}
+  \int^{2 \pi}_0 (r e^{i t})^k (r e^{i t} I_n - A)^{- 1} d t
+\end{eqnarray*}
+
+
+Par suite
+\[ \chi_A (A) = \frac{1}{2 \pi} \int^{2 \pi}_0 \chi_A (r e^{i t}) r e^{i t}
+   (\tmop{re}^{i t} I_n - A)^{- 1} \tmop{dt} \]
+
+
+Or, d'apr{\`e}s la formule fondamentale v{\'e}rifi{\'e}e par la comatrice, on
+a :
+\[ ^t \tmop{Com} (X.I_n - A) (X.I_n - A) = \chi_A (X) I_n \]
+
+
+En {\'e}valuant {\c c}ela en $r e^{i t}$, on obtient pour tout $r > R$ et pour
+tout $t \in [0, 2 \pi]$ :
+\[ \chi_A (r e^{i t}) r e^{i t} (r e^{i t} I_n - A)^{- 1} =^t \tmop{Com} (r
+   e^{i t} .I_n - A) \]
+
+
+Par suite
+\[ \chi_A (A) = \frac{1}{2 \pi} \overset{2 \pi}{\underset{0}{\int}} {r e^{i
+   t}}^t \tmop{Com} (r e^{i t} I_n - A) \tmop{dt} = 0 \]
+
+
+car les coefficients de la matrice sous le signe int{\'e}gral sont des
+polyn{\^o}mes trigonom{\'e}triques de valeurs moyennes nulles.
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

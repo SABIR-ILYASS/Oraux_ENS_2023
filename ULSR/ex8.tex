@@ -1,0 +1,173 @@
+Cet exercice d'analyse complexe et de combinatoire demande aux candidats
+d'{\'e}tudier le d{\'e}veloppement en s{\'e}rie enti{\`e}re d'une fraction
+rationnelle particuli{\`e}re. Il teste leur capacit{\'e} {\`a} manipuler des
+s{\'e}ries formelles et {\`a} extraire des informations sur les coefficients
+de ces s{\'e}ries.
+\begin{exercise}[]
+Soient $p, q \geq 2$ des entiers premiers entre eux. Calculer le
+d{\'e}veloppement en s{\'e}rie enti{\`e}re $\underset{k =
+0}{\overset{\infty}{\sum}} c_k z^k$ de la fraction rationnelle
+\[ \frac{1 - z^{p q}}{(1 - z^p) (1 - z^q)} \]
+
+
+en $z = 0$. D{\'e}terminer le plus grand entier $k$ tel que $c_k = 0$.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+On a, pour tout $| z | < 1$, puisque $p \tmop{et} q$ sont premiers entre eux,
+$p$ et $q$ jouent un r{\^o}le sym{\'e}trique, et donc sans perte de
+g{\'e}n{\'e}ralit{\'e}, on peut supposer que $q$ est impair. On a alors
+\begin{eqnarray*}
+  \frac{1 - z^{p q}}{(1 - z^p) (1 - z^q)} & = & \frac{(1 - z^p) \underset{k =
+  0}{\overset{q - 1}{\sum}} z^{k p}}{(1 - z^p) (1 - z^q)}\\
+  & = & \frac{1}{1 - z^q} \underset{k = 0}{\overset{q - 1}{\sum}} z^{k p}\\
+  & = & \left( \underset{k = 0}{\overset{q - 1}{\sum}} z^{k p} \right) \left(
+  \underset{n = 0}{\overset{+ \infty}{\sum}} z^{q n} \right)\\
+  & = & \left( \underset{k = 0}{\overset{+ \infty}{\sum}} \tmmathbf{1}_{[0, q
+  [} \left( \frac{k}{p} \right) \tmmathbf{1}_{\mathbb{N}} \left( \frac{k}{p}
+  \right) z^k \right) \left( \underset{n = 0}{\overset{+ \infty}{\sum}}
+  \tmmathbf{1}_{\mathbb{N}} \left( \frac{k}{q} \right) z^n \right)\\
+  & = & \underset{n = 0}{\overset{+ \infty}{\sum}} \left( \underset{k =
+  0}{\overset{n}{\sum}} \tmmathbf{1}_{[0, q [} \left( \frac{k}{p} \right)
+  \tmmathbf{1}_{\mathbb{N}} \left( \frac{k}{p} \right)
+  \tmmathbf{1}_{\mathbb{N}} \left( \frac{n - k}{q} \right) \right) z^n
+\end{eqnarray*}
+
+
+Posons,
+\[ c_n = \underset{k = 0}{\overset{n}{\sum}} \tmmathbf{1}_{[0, q [} \left(
+   \frac{k}{p} \right) \tmmathbf{1}_{\mathbb{N}} \left( \frac{k}{p} \right)
+   \tmmathbf{1}_{\mathbb{N}} \left( \frac{n - k}{q} \right) \]
+
+
+On a pour tout $n \in \mathbb{N}$, $c_n = 0$ si, et seulement si, pour tout $k
+\in \llbracket 0, n \rrbracket$, on a
+\[ \tmmathbf{1}_{[0, q [} \left( \frac{k}{p} \right) \tmmathbf{1}_{\mathbb{N}}
+   \left( \frac{k}{p} \right) \tmmathbf{1}_{\mathbb{N}} \left( \frac{n - k}{q}
+   \right) = 0 \]
+
+
+Ainsi, pour un $n \in \mathbb{N},$ $c_n \neq 0$ si et seulement s'il existe \
+$k \in \llbracket 0, n \rrbracket$ tel que
+\[ \tmmathbf{1}_{[0, q [} \left( \frac{k}{p} \right)
+   \tmmathbf{1}_{\mathbb{N}} \left( \frac{k}{p} \right)
+   \tmmathbf{1}_{\mathbb{N}} \left( \frac{n - k}{q} \right) = 1 \]
+
+
+Ce qui est {\'e}quivalent {\`a} l'existence de $s, t \in \mathbb{N}$ tels que
+\[ k \leqslant p q, k = p s \infixand n = k + t q \]
+
+
+Donc,
+\[ k = p s + t q \infixand k \leqslant \min (p q, n) \]
+
+
+En vertu des deux lemmes suivants, un tel $k$existe si et seulement si $n > p
+q - p - q$.
+
+Ainsi, le plus grand entier $n$ tel que $c_n = 0$ est $n = p q - p - q$.
+
+\tmtextbf{Lemme 1. (Chicken McNugget Theorem)}
+
+Soient $a$ et $b$ deux entiers positifs premiers entre eux. Alors le plus
+grand entier qui ne peut pas s'exprimer comme une combinaison lin{\'e}aire non
+n{\'e}gative de $a$ et $b$ (c'est-{\`a}-dire de la forme $ma + nb$ avec $m, n
+\in \mathbb{N}$) est :
+\[ N = ab - a - b. \]
+
+
+\tmtextbf{Preuve du Lemme 1.}
+
+Puisque $a$ et $b$ sont premiers entre eux, il existe des entiers relatifs $u$
+et $v$ tels que :
+\[ au + bv = 1. \]
+
+
+Ceci est une cons{\'e}quence de l'identit{\'e} de B{\'e}zout.
+
+Consid{\'e}rons les r{\'e}sidus modulo $b$ des multiples de $a$. Puisque
+$\tmop{pgcd} (a, b) = 1$, les multiples de $a$ mod $b$ parcourent tous les
+r{\'e}sidus de $0$ {\`a} $b - 1$.
+
+Pour chaque entier $r$ tel que $0 \leq r \leq b - 1$, il existe un entier $k$
+tel que :
+\[ ka \equiv r \, \tmop{mod} b. \]
+
+
+Pour tout entier $n \geq N + 1 = ab - a - b + 1$, on peut {\'e}crire :
+\[ n = a k + b \left( \frac{n - ak}{b} \right) . \]
+
+
+Puisque $n - ak \equiv 0 \, \tmop{mod} b$, le second terme est un entier. Il
+nous suffit de montrer que le coefficient du second terme est non n{\'e}gatif.
+
+Comme $n \geq ab - a - b + 1$, on a :
+\[ n \geq ab - a - b + 1. \]
+
+
+En choisissant judicieusement $k$ pour chaque $n$, on peut assurer que les
+coefficients sont non n{\'e}gatifs.
+
+\
+
+\tmtextbf{Lemme 2 :}
+
+L'entier $N = pq - p - q$ ne peut pas {\^e}tre exprim{\'e} comme une
+combinaison lin{\'e}aire non n{\'e}gative de $p$ et $q$.
+
+\tmtextbf{Preuve du Lemme 2 :}
+
+Supposons par l'absurde que $N$ puisse {\^e}tre exprim{\'e} comme une
+combinaison lin{\'e}aire non n{\'e}gative de $p$ et $q$ :
+\[ N = ap + bq, \quad \text{avec} \quad a, b \in \mathbb{N}. \]
+
+
+Alors :
+\[ ap + bq = pq - p - q. \]
+
+
+R{\'e}arrangeons l'{\'e}quation :
+\[ ap + p + bq + q = pq. \]
+
+
+Ce qui donne :
+\[ p (a + 1) + q (b + 1) = pq. \]
+
+
+Comme $p$ et $q$ sont premiers entre eux, $p$ ne divise pas $q$ et vice versa.
+Ainsi, pour que la somme $p (a + 1) + q (b + 1)$ soit {\'e}gale {\`a} $pq$, il
+faut que $a + 1$ soit multiple de $q$ et $b + 1$ soit multiple de $p$. Donc,
+il existe des entiers $m, n \in \mathbb{N}$ tels que :
+\[ a + 1 = qn, \quad b + 1 = pm. \]
+
+
+Substituons dans l'{\'e}quation :
+\[ p (qn) + q (pm) = pq. \]
+
+
+Ce qui simplifie {\`a} :
+\[ pq (n + m) = pq. \]
+
+
+Donc :
+\[ n + m = 1. \]
+
+
+Cela implique que soit $n = 1$ et $m = 0$, soit $n = 0$ et $m = 1$.
+
+- Si $n = 1$ et $m = 0$, alors $a + 1 = q$ donc $a = q - 1$, et $b + 1 = 0$
+donc $b = - 1$, ce qui est impossible puisque $b \in \mathbb{N}$.
+
+- Si $n = 0$ et $m = 1$, alors $a + 1 = 0$ donc $a = - 1$, impossible car $a
+\in \mathbb{N}$.
+
+Dans les deux cas, nous obtenons une contradiction. Par cons{\'e}quent, $N$ ne
+peut pas {\^e}tre exprim{\'e} comme une combinaison lin{\'e}aire non
+n{\'e}gative de $p$ et $q$.
+
+
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

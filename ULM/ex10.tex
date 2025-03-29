@@ -1,0 +1,205 @@
+Cet exercice porte sur le r{\'e}sultant de deux polyn{\^o}mes. Il s'agit de
+prouver certaines propri{\'e}t{\'e}s du r{\'e}sultant, notamment sa
+sym{\'e}trie et son lien avec un d{\'e}terminant sp{\'e}cifique. L'exercice
+fait appel {\`a} des notions d'alg{\`e}bre lin{\'e}aire et de th{\'e}orie des
+polyn{\^o}mes.
+
+\begin{exercise}[(R{\'e}sultant)]
+Soient $A, B \in \mathbb{C} [X]$ deux polyn{\^o}mes unitaires, de degr{\'e}s
+respectifs $a$ et $b$. Soit $M_{A, B}$ l'endomorphisme de~$\mathbb{C} [X] /
+(A)$ d{\'e}fini par~$M_{A, B} ([P]) = [BP]$.
+
+Soit $\mu_{A, B} = \det M_{A, B}$. Montrer que $\mu_{A, B} = (- 1)^{ab}
+\mu_{B, A}$.
+
+Soit $F_{A, B}$ l'unique endomorphisme de~$\mathbb{C} [X]_{a + b - 1}$ tel que
+pour tout $U \in \mathbb{C} [X]_{a - 1}$ et tout $V \in \mathbb{C} [X]_{b -
+1}$, $F_{A, B}  (U + X^a V) = BU + AV$.
+
+Montrer que $\det (F_{A, B}) = \mu_{A, B}$
+
+\textit{Le nombre $\mu_{A, B}$ est le r{\'e}sultant de $A$ et de $B$.}
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+Soit $A, B \in \mathbb{C} [X]$, deux polyn{\^o}mes unitaires de degr{\'e}s
+respectifs $a$ et $b$.
+
+Soit $M_{A, B}$ l'endomorphisme de $\mathbb{C} [X] / (A)$ d{\'e}fini par
+$M_{A, B} ([P]) = [BP]$ et soit $\mu_{A, B} = \det M_{A, B}$.
+
+Montrons que
+\[ \mu_{A, B} = (- 1)^{ab} \mu_{B, A} \]
+
+
+Pour cela, on va montrer que :
+\[ \mu_{A, B} = \underset{i = 1}{\overset{a}{\prod}} \underset{j =
+   1}{\overset{b}{\prod}} (\alpha_i - \beta_j)  (\maltese) \]
+
+
+L'identit{\'e} $(\maltese)$ nous permettra {\'e}galement de traiter la seconde
+partie de l'{\'e}nonc{\'e} de l'exercice.
+
+Notons $A = \underset{k = 1}{\overset{a}{\prod}} (X - \alpha_k)$ et $B =
+\underset{k = 1}{\overset{a}{\prod}} (X - \beta_k)$ avec $\alpha_1, \ldots,
+\alpha_a, \beta_1, \ldots, \beta_b \in \mathbb{C}$.
+
+Supposons dans un premier temps que $\alpha_1, \alpha_2, \ldots, \alpha_a$
+(respectivement $\beta_1, \beta_2, \ldots, \beta_b$) sont deux {\`a} deux
+distincts.
+
+Pour tout $j \in \llbracket 1, a \rrbracket$, on d{\'e}finit le polyn{\^o}me
+$P_j \assign \underset{k \not{=} j}{\underset{k = 1}{\overset{a}{\prod}}}
+\frac{X - \alpha_k}{\alpha_j - \alpha_k}$. On a $(P_j)_{1 \leqslant j
+\leqslant a}$ est une base de $\mathbb{C} [X] / (A)$. De plus, pour tout $j
+\in \llbracket 1, a \rrbracket$, il existe $Q_j \in \mathbb{R} [X]$ tel que
+\begin{eqnarray*}
+  B.P_j & = & Q_j A + M_{A, B} (P_j)
+\end{eqnarray*}
+
+
+Pour tout $i \in \llbracket 1, a \rrbracket \backslash \{ j \} \nobracket$, on
+a $M_{A, B} (P_j) (\alpha_i) = 0$ et $M_{A, B} (P_j) (\alpha_j) = B
+(\alpha_j)$
+
+On en d{\'e}duit, par interpolation de Lagrange, que
+\[ M_{A, B} (P_j) = B (\alpha_j) P_j \]
+
+
+Ainsi,
+\begin{eqnarray*}
+  \mu_{A, B} & = & \det (M_{A, B})\\
+  & = & \underset{}{\overset{}{}} \underset{j = 1}{\overset{a}{\prod}} B
+  (\alpha_j)\\
+  & = & \underset{i = 1}{\overset{a}{\prod}} \underset{j =
+  1}{\overset{b}{\prod}} (\alpha_i - \beta_j)
+\end{eqnarray*}
+
+
+Puisque l'ensemble des polyn{\^o}mes sind{\'e}s {\`a} racines simples dense
+dans l'ensemble des polyn{\^o}mes scind{\'e}s, et que l'application $(A, B)
+\in \mathbb{C} [X]^2 \longmapsto \mu_{A, B}$ est continue (car elle est une
+composition d'applications continues).
+
+On a pour $A : = \underset{k = 1}{\overset{a}{\prod}} (X - \alpha_k)$ et $B :
+= \underset{k = 1}{\overset{a}{\prod}} (X - \beta_k)$, avec $\alpha_1, \ldots,
+\alpha_a, \beta_1, \ldots, \beta_b \in \mathbb{C}$.
+
+On a
+\[ \begin{array}{lll}
+     \mu_{B, A} & = & \underset{j = 1}{\overset{b}{\prod}} \underset{i =
+     1}{\overset{a}{\prod}} (\beta_j - \alpha_i)
+   \end{array} \]
+
+
+En particulier, par sym{\'e}trie :
+\begin{eqnarray*}
+  \mu_{B, A} & = & \underset{j = 1}{\overset{b}{\prod}} \underset{i =
+  1}{\overset{a}{\prod}} (\beta_j - \alpha_i)\\
+  & = & \underset{i = 1}{\overset{a}{\prod}} \underset{j =
+  1}{\overset{b}{\prod}} (- 1) (\alpha_i - \beta_j)\\
+  & = & (- 1)^{a b} \mu_{A, B}
+\end{eqnarray*}
+
+
+Montrons maintenant que $\det (F_{A, B}) = \mu_{A, B}$.
+
+Notons $A = \underset{k = 0}{\overset{a}{\sum}} \lambda_k X^k$ et $B =
+\underset{k = 0}{\overset{b}{\sum}} \gamma_k X^k$, o{\`u} $\lambda_0, \ldots,
+\lambda_a, \gamma_0, \ldots, \gamma_b \in \mathbb{C}$.
+
+On a alors pour tout $n \in \llbracket 0, a - 1 \rrbracket$,
+\begin{eqnarray*}
+  F_{A, B} (X^n) & = & B.X^n\\
+  & = & \underset{k = 0}{\overset{b}{\sum}} \gamma_k X^{n + k}
+\end{eqnarray*}
+
+
+Et pour tout $n \in \llbracket a, a + b - 2 \rrbracket$
+\begin{eqnarray*}
+  F_{A, B} (X^n) & = & A.X^{n - a}\\
+  & = & \underset{k = 0}{\overset{a}{\sum}} \lambda_k X^{n - a + k}
+\end{eqnarray*}
+
+
+La matrice de $F_{A, B} $ dans la base $\mathcal{B}= (X^n)_{0 \leqslant n
+\leqslant a + b - 2}$ est donc :
+\[ \tmop{mat}_{\mathcal{B}} (F_{A, B}) = \left( \begin{array}{ccccccccc}
+     \lambda_0 & \lambda_1 & \ldots & \lambda_a & 0 & 0 & 0 & \ldots & 0\\
+     0 & \lambda_0 & \lambda_1 & \ldots & \lambda_a & 0 & 0 & \ldots & 0\\
+     &  &  &  &  &  &  &  & \\
+     \vdots &  &  & \ddots &  &  &  &  & \vdots\\
+     &  &  &  &  &  &  &  & \\
+     0 & 0 & \ldots & 0 & 0 & \lambda_0 & \lambda_1 & \ldots & \lambda_a\\
+     \beta_0 & \beta_1 & \ldots & \beta_b & 0 & 0 & 0 & \ldots & 0\\
+     0 & \beta_0 & \beta_1 & \ldots & \beta_b & 0 & 0 & \ldots & 0\\
+     &  &  &  &  &  &  &  & \\
+     \vdots &  &  & \ddots &  &  &  &  & \vdots\\
+     &  &  &  &  &  &  &  & \\
+     0 & 0 & \ldots & 0 & 0 & \beta_0 & \beta_1 & \ldots & \beta_b
+   \end{array} \right)  (\tmop{Matrice} \tmop{de} \tmop{Sylvester}) \]
+
+
+Pour conclure, il suffit de montrer que $\det (F_{A, B}) = \underset{j =
+1}{\overset{b}{\prod}} \underset{i = 1}{\overset{a}{\prod}} (\beta_j -
+\alpha_i)$.
+
+Soient $k, l \in \mathbb{C}$. Si l'on remplace $A$ par $kA$ et $B$ par $lB$,
+on a :
+\[ \det (F_{kA, lB}) = k^b l^a \det (F_{A, B}) \]
+
+
+En effet, les $b$ premi{\`e}res lignes de la matrice sont multipli{\'e}es par
+$k$ (contribution de $k^b$), les $a$ derni{\`e}res lignes sont multipli{\'e}es
+par $l$ (contribution de $l^a$).
+
+\
+
+Par homog{\'e}n{\'e}it{\'e}, on peut se ramener au cas o{\`u} $A$ et $B$ sont
+unitaires. Il suffit donc de d{\'e}montrer l'{\'e}galit{\'e} pour :
+\[ A (X) = \prod_{i = 1}^a (X - \alpha_i) \quad \text{et} \quad B (X) =
+   \prod_{j = 1}^b (X - \beta_j) \]
+
+
+o{\`u} $\alpha_1, \ldots, \alpha_a$ et $\beta_1, \ldots, \beta_b$ sont les
+racines respectives de $A$ et $B$.
+
+On a alors $\det (F_{A, B}) \in \mathbb{C}[\alpha_1, \ldots, \alpha_a,
+\beta_1, \ldots, \beta_b]$. Pour tous $i \in \llbracket 1, a \rrbracket$ et $j
+\in \llbracket 1, b \rrbracket$, $(\beta_j - \alpha_i)$ divise $\det (F_{A,
+B})$.
+
+Si $\alpha_i = \beta_j$, alors : $A (X) = (X - \alpha_i) A_1 (X)$ et $B (X) =
+(X - \beta_j) B_1 (X)$
+
+On peut construire un vecteur non nul $v$ dans le noyau de $F_{A, B}$ :
+\[ v = X^b A_1 - X^a B_1 \]
+
+
+Ce vecteur est non nul car les degr{\'e}s des polyn{\^o}mes sont
+diff{\'e}rents. Donc $F_{A, B}$ n'est pas inversible et $\det (F_{A, B}) = 0$.
+
+Par les points pr{\'e}c{\'e}dents, on peut {\'e}crire :
+\[ \det (F_{A, B}) = \lambda \prod_{j = 1}^b \prod_{i = 1}^a (\beta_j -
+   \alpha_i) \]
+
+
+o{\`u} $\lambda$ est une constante dans $\mathbb{C}$.
+
+Pour calculer $\lambda$, consid{\'e}rons le cas particulier o{\`u} :
+\[ A (X) = X^a  \quad \text{et} \quad B (X) = 1 \]
+
+
+Dans ce cas, la matrice $F_{A, B}$ devient triangulaire, et tous les
+{\'e}l{\'e}ments diagonaux sont {\'e}gaux {\`a} 1.
+
+Donc $\det (F_{A, B}) = 1$.
+
+Par cons{\'e}quent, $\lambda = 1$.
+
+On a donc d{\'e}montr{\'e} que :
+\[ \det (F_{A, B}) = \prod_{j = 1}^b \prod_{i = 1}^a (\beta_j - \alpha_i) =
+   \mu_{A, B} \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

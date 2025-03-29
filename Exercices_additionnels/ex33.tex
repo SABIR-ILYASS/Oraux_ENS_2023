@@ -1,0 +1,179 @@
+Cet exercice porte sur l'in{\'e}galit{\'e} de H{\"o}lder, utilis{\'e}e pour comparer des sommes et produits de valeurs positives. Il s'agit de d{\'e}montrer l'in{\'e}galit{\'e}, d'{\'e}tudier le cas d'{\'e}galit{\'e}, puis d'appliquer cette in{\'e}galit{\'e} {\`a} une propri{\'e}t{\'e} des produits augment{\'e}s.
+\begin{exercise}[(In{\'e}galit{\'e} de H{\"o}lder)]
+Soient ${m, n \in \mathbb{N}^{\ast}} $, et soient $(a_{2, 1}, \ldots, a_{2,
+n})$, $(a_{1, 1}, \ldots, a_{1, n}), \ldots$ et $(a_{m, 1}, \ldots, a_{m, n})$
+des r{\'e}els positifs.
+
+1. Montrer que :
+\[ \underset{i = 1}{\overset{m}{\prod}} \left( \overset{n}{\underset{j =
+   1}{\sum}} a_{i, j} \right) \geqslant \left( \underset{j =
+   1}{\overset{n}{\sum}} \sqrt[m]{\underset{i = 1}{\overset{m}{\prod}} a_{i,
+   j}} \right)^m \]
+
+
+2. {\'E}tudier le cas d'{\'e}galit{\'e} dans l'in{\'e}galit{\'e} de
+H{\"o}lder.
+
+3. Soient $a_1, \ldots, a_n > 0$, Montrer que :
+\[ (1 + a_1) (1 + a_2) \ldots (1 + a_n) \geqslant \left( 1 + \sqrt[n]{a_1 a_2
+   \ldots a_n} \right)^n \]
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+1- Soient $m, n \in \mathbb{N}^{\star}$, $(a_{2, 1}, \ldots, a_{2, n})$,
+$(a_{1, 1}, \ldots, a_{1, n}), \ldots,$et $(a_{m, 1}, \ldots, a_{m, n})$ des
+r{\'e}els positifs.
+
+Montrons que :
+\[ \underset{i = 1}{\overset{m}{\prod}} \left( \overset{n}{\underset{j =
+   1}{\sum}} a_{i, j} \right) \geqslant \left( \underset{j =
+   1}{\overset{n}{\sum}} \sqrt[m]{\underset{i = 1}{\overset{m}{\prod}} a_{i,
+   j}} \right)^m \]
+
+
+On sait que la fonction $\ln$ est concave sur $] 0, + \infty [$.
+
+D'apr{\`e}s l'in{\'e}galit{\'e} de Jensen, pour tous $p_1, .., p_m > 0$ tels
+que
+\[ \frac{1}{p_1} + \cdots + \frac{1}{p_m} = 1 \]
+
+
+et pour tous $x_1, \ldots, x_m > 0$, on a :
+\[ \ln \left( \underset{i = 1}{\overset{}{} \overset{m}{\sum}}
+   \frac{x^{p_i}_i}{p_i} \right) \geqslant \underset{i = 1}{\overset{}{}
+   \overset{m}{\sum}} \ln (x_i) \]
+
+
+Ainsi :
+\[ \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \frac{x^{p_i}_i}{p_i}
+   \geqslant \underset{i = 1}{\overset{}{} \overset{m}{\prod}} x_i \quad
+   (\tmop{AM} - \tmop{GM} g{\'e}n{\'e} \tmop{ralis} {\'e}e)  \]
+
+
+En particulier, pour tout $j \in \llbracket 1, n \rrbracket$, posons\quad$x_i
+= \frac{a_{i, j}}{\left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right)
+}$ , et $p_i = m$ pour tout $i \in \llbracket 1, m \rrbracket$.
+
+On obtient, pour tout $j \in \llbracket 1, n \rrbracket$ :
+\begin{eqnarray*}
+  \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \frac{a_{i, j}}{m \left(
+  \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) } & \geqslant &
+  \underset{i = 1}{\overset{}{} \overset{m}{\prod}} \left( \frac{a_{i,
+  j}}{\left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) }
+  \right)^{\frac{1}{m}}\\
+  & = & \frac{\sqrt[m]{\underset{i = 1}{\overset{m}{\prod}} a_{i,
+  j}}}{\underset{i = 1}{\overset{}{} \overset{m}{\prod}} \left(
+  \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right)^{^{\frac{1}{m}}}}
+\end{eqnarray*}
+
+
+En sommant sur $j$, on obtient :
+\begin{eqnarray*}
+  \overset{n}{\underset{j = 1}{\sum}}  \underset{i = 1}{\overset{}{}
+  \overset{m}{\sum}} \frac{a_{i, j}}{m \left( \overset{n}{\underset{k =
+  1}{\sum}} a_{i, k} \right) } & \geqslant & \underset{j =
+  1}{\overset{n}{\sum}} \frac{\sqrt[m]{\underset{i = 1}{\overset{m}{\prod}}
+  a_{i, j}}}{\underset{i = 1}{\overset{}{} \overset{m}{\prod}} \left(
+  \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right)^{^{\frac{1}{m}}}}
+\end{eqnarray*}
+\[ \  \]
+
+
+Avec :
+\begin{eqnarray*}
+  \overset{n}{\underset{j = 1}{\sum}}  \underset{i = 1}{\overset{}{}
+  \overset{m}{\sum}} \frac{a_{i, j}}{m \left( \overset{n}{\underset{k =
+  1}{\sum}} a_{i, k} \right) } & = & \underset{i = 1}{\overset{}{}
+  \overset{m}{\sum}} \frac{1}{m} \underset{j = 1}{\overset{n}{\sum}}
+  \frac{a_{i, j}}{\overset{n}{\underset{k = 1}{\sum}} a_{i, k} }\\
+  & = & \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \frac{1}{m}\\
+  & = & 1
+\end{eqnarray*}
+
+
+On obtient finalement :
+\[ 1 \geqslant \underset{j = 1}{\overset{n}{\sum}} \frac{\sqrt[m]{\underset{i
+   = 1}{\overset{m}{\prod}} a_{i, j}}}{\underset{i = 1}{\overset{}{}
+   \overset{m}{\prod}} \left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k}
+   \right)^{^{\frac{1}{m}}}} \]
+
+
+Donc :
+\[ \underset{i = 1}{\overset{}{} \overset{m}{\prod}} \left(
+   \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right)^{^{\frac{1}{m}}}
+   \geqslant \underset{j = 1}{\overset{n}{\sum}} \sqrt[m]{\underset{i =
+   1}{\overset{m}{\prod}} a_{i, j}} \]
+
+
+D'o{\`u} :
+\[ \underset{i = 1}{\overset{m}{\prod}} \left( \overset{n}{\underset{j =
+   1}{\sum}} a_{i, j} \right) \geqslant \left( \underset{j =
+   1}{\overset{n}{\sum}} \sqrt[m]{\underset{i = 1}{\overset{m}{\prod}} a_{i,
+   j}} \right)^m \]
+
+
+\
+
+2. L'{\'e}galit{\'e} dans l'in{\'e}galit{\'e} de H{\"o}lder est atteinte si,
+pour tout $j \in \llbracket 1, n \rrbracket$, on a :
+\[ \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \frac{a_{i, j}}{m \left(
+   \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) } = \underset{i =
+   1}{\overset{}{} \overset{m}{\prod}} \left( \frac{a_{i, j}}{\left(
+   \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) }
+   \right)^{\frac{1}{m}} \]
+
+
+Cela implique :
+\[ \ln \left( \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \frac{a_{i,
+   j}}{m \left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) } \right)
+   = \underset{i = 1}{\overset{}{} \overset{m}{\sum}} \ln \left( \frac{a_{i,
+   j}}{\left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k} \right) } \right)
+\]
+
+
+{\'E}tant donn{\'e} que la fonction ln est strictement concave, cela signifie
+que $\frac{a_{i, j}}{\left( \overset{n}{\underset{k = 1}{\sum}} a_{i, k}
+\right) }$ est ind{\'e}pendant de $i$, d'o{\`u} l'existence d'une constante
+$C_j > 0$ telle que, pour tout $i, l \in \llbracket 1, m \rrbracket$
+\[ \frac{a_{i, j}}{a_{l, j}} = C_j \]
+
+
+3. Soient $a_1, \ldots, a_n > 0$. Montrons que :
+\[ (1 + a_1) (1 + a_2) \ldots (1 + a_n) \geqslant \left( 1 + \sqrt[n]{a_1 a_2
+   \ldots a_n} \right)^n \]
+
+
+\tmtextbf{M{\'e}thode 1.}
+
+Par application directe de l'in{\'e}galit{\'e} de H{\"o}lder, le r{\'e}sultat
+suit.
+
+\
+
+\tmtextbf{M{\'e}thode 2.}
+
+En appliquant l'in{\'e}galit{\'e} arithm{\'e}tico-g{\'e}om{\'e}trique, on
+obtient :
+
+
+\[ \frac{1}{1 + a_1} + \cdots + \frac{1}{1 + a_n} \geqslant
+   \frac{n}{\sqrt[n]{(1 + a_1) \ldots (1 + a_n)}} \]
+
+
+Et
+\[ \frac{a_1}{1 + a_1} + \cdots + \frac{a_n}{1 + a_n} \geqslant \frac{n
+   \sqrt[n]{a_1 \ldots a_n}}{\sqrt[n]{(1 + a_1) \ldots (1 + a_n)}} \]
+
+
+En sommant les deux, on obtient :
+\[ n \geqslant \frac{n \left( 1 + \sqrt[n]{a_1 \ldots a_n}
+   \right)}{\sqrt[n]{(1 + a_1) \ldots (1 + a_n)}} \]
+
+
+ce qui entra{\^i}ne :
+\[ (1 + a_1) (1 + a_2) \ldots (1 + a_n) \geqslant \left( 1 + \sqrt[n]{a_1 a_2
+   \ldots a_n} \right)^n \]
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

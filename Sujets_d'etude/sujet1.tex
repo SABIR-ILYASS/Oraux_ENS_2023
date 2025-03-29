@@ -1,0 +1,414 @@
+\begin{center}
+\subsection*{Sujet 1 : Probabilit{\'e} que $l$ entiers soient premiers entre eux.}\label{sjt1}
+\textbf{SABIR Ilyass}
+\end{center}
+\[ \star \star \star \]
+\addcontentsline{toc}{subsection}{Sujet 1 : Probabilit{\'e} que $l$ entiers soient premiers entre eux.}
+Soit $l \in \mathbb{N}^{\star}$, notons \tmcolor{red}{$\tmcolor{black}{\Omega
+= \left( {{\mathbb{N}^{\ast}}^{} }^{^{}} \right)^l}$} , nous consid{\'e}rons
+l'espace probabiliste $\tmcolor{red}{\tmcolor{black}{(\Omega, \mathcal{P}
+(\Omega), \mathbb{P})}}$ , o{\`u} $\mathbb{P}$ est la fonction de masse de
+probabilit{\'e} d{\'e}finie par :
+\[ \mathbb{P}: I \in \mathcal{P} (\Omega) \longmapsto \underset{n \rightarrow
+   + \infty}{\lim} \frac{\tmop{card} \left( I \bigcap \Omega_n \right)}{n^l}
+   \in [0, 1] \]
+
+o{\`u} $\Omega_n = {\llbracket 1, n \rrbracket^{} }^{ l}$.
+
+Notons
+\[ A_l = \left\{ (a_1, a_2, \ldots, a_l) \in \mathbb{N}_{\ast}^l  | \nobracket
+   \underset{k = 1}{\overset{l}{\wedge}} a_k = 1 \right\} \]
+et pour tout $n \geqslant 1$,
+\[ A_{n, l} = \left\{ (a_1, a_2, \ldots, a_l) \in \llbracket 1, n \rrbracket^l
+   | \nobracket  \underset{k = 1}{\overset{l}{\wedge}} a_k = 1 \right\} \]
+
+
+Soient $p_1, \ldots, p_k$ des nombres premiers inf{\'e}rieurs {\`a} $n$, et
+$(U_i)_{i \in \llbracket 1, k \rrbracket}$ une famille d'ensembles d{\'e}finie
+pour tout $i \in \llbracket 1, k \rrbracket$ par :
+\[ U_i = \{ (a_1, a_2, \ldots, a_l) \in \llbracket 1, n \rrbracket^l  |
+   \nobracket \forall j \in \llbracket 1, l \rrbracket, p_i | a_j \nobracket
+   \} \]
+
+
+Nous pouvons facilement constater que :
+\[ A_{l, n} = \overline{\underset{i = 1}{\overset{k}{\bigcup}} U_i} \]
+
+
+Pour calculer la cardinalit{\'e}, nous utiliserons le principe d'inclusion-exclusion.
+
+\
+
+\subparagraph{Lemme 1. (Formule de Poincar{\'e})}
+
+Soient $E_1, \ldots, E_n$ des ensembles finis, alors :
+\[ \# \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i \right) =
+   \underset{}{\overset{n}{\underset{k = 1}{\sum}} \underset{1 \leqslant i_1 <
+   \cdots < i_k \leqslant n}{\sum} (- 1)^{k - 1} \# \left(
+   \overset{k}{\underset{j = 1}{\bigcap}} E_{i_j} \right)} \]
+
+\subparagraph{Preuve du lemme 1.}
+
+Pour $n \geqslant 2$, la preuve pour $n = 2$ a d{\'e}j{\`a} {\'e}t{\'e} vue.
+Supposons que la formule est vraie pour $n$, montrons-la pour $n + 1$.
+
+En appliquant d'abord le cas $n = 2$, puis la distributivit{\'e} des
+intersections, on obtient :
+\begin{eqnarray*}
+  \# \left( \underset{i = 1}{\overset{n + 1}{\bigcup}} E_i \right) & = & \#
+  \left( \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i \right) \bigcup
+  E_{n + 1} \right)\\
+  & = & \# \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i \right) +\#
+  (E_{n + 1}) -\# \left( \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i
+  \right) \bigcap E_{n + 1} \right)\\
+  & = & \# \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i \right) +\#
+  (E_{n + 1}) -\# \left( \left( \underset{i = 1}{\overset{n}{\bigcup}} \right.
+  \left( E_i \bigcap E_{n + 1} \right) \right)
+\end{eqnarray*}
+
+
+\
+
+Les premiers et derniers termes sont des unions $n$, pour lesquelles nous
+avons suppos{\'e} la formule vraie. Par cons{\'e}quent, nous pouvons conclure.
+
+\
+
+
+\[ \# \left( \underset{i = 1}{\overset{n}{\bigcup}} E_i \right) =
+   \underset{}{\overset{n}{\underset{k = 1}{\sum}} \underset{1 \leqslant i_1 <
+   \cdots < i_k \leqslant n}{\sum} (- 1)^{k - 1} \# \left(
+   \overset{k}{\underset{j = 1}{\bigcap}} E_{i_j} \right)} \]
+
+
+Et
+\[ \# \left( \left( \underset{i = 1}{\overset{n}{\bigcup}} \right. \left( E_i
+   \bigcap E_{n + 1} \right) \right) = \overset{n}{\underset{k = 1}{\sum}}
+   \underset{1 \leqslant i_1 < \cdots < i_k \leqslant n}{\sum} (- 1)^{k - 1}
+   \# \left( \overset{k}{\underset{j = 1}{\bigcap}} \left( E_{i_j} \bigcap
+   E_{n + 1} \right) \right) \]
+
+
+Alors
+\begin{eqnarray*}
+\#\Bigl(\bigcup_{i=1}^{n+1} E_i\Bigr)
+& = &
+\sum_{k=1}^{n} \sum_{1 \le i_1 < \cdots < i_k \le n} (-1)^{\,k-1} \#\Bigl(\bigcap_{j=1}^{k} E_{i_j}\Bigr)
++ \#(E_{n+1}) \\[1mm]
+& & + \sum_{k=1}^{n} \sum_{1 \le i_1 < \cdots < i_k \le n} (-1)^{\,k} \#\Bigl(\bigcap_{j=1}^{k} \Bigl(E_{i_j} \cap E_{n+1}\Bigr)\Bigr)
+\end{eqnarray*}
+
+
+Le c{\^o}t{\'e} droit peut {\^e}tre r{\'e}{\'e}crit comme
+\begin{eqnarray*}
+  &  & \overset{n}{\underset{k = 1}{\sum}} \underset{1 \leqslant i_1 < \cdots
+  < i_k \leqslant n}{\sum} (- 1)^{k - 1} \# \left( \overset{k}{\underset{j =
+  1}{\bigcap}} E_{i_j} \right) +\# (E_{n + 1})\\
+  & = & \overset{n + 1}{\underset{k = 1}{\sum}} \underset{i_k \neq n +
+  1}{\underset{1 \leqslant i_1 < \cdots < i_k \leqslant n + 1}{\sum}} (- 1)^{k
+  - 1} \# \left( \overset{k}{\underset{j = 1}{\bigcap}} E_{i_j} \right) +
+  \overset{n + 1}{\underset{k = 1}{\sum}} \# (E_k)
+\end{eqnarray*}
+
+
+Et
+\begin{eqnarray*}
+  &  & \overset{n}{\underset{k = 1}{\sum}} \underset{1 \leqslant i_1 < \cdots
+  < i_k \leqslant n}{\sum} (- 1)^k \# \left( \overset{k}{\underset{j =
+  1}{\bigcap}} \left( E_{i_j} \bigcap E_{n + 1} \right) \right)\\
+  & = & \overset{n + 1}{\underset{k = 2}{\sum}} \underset{i_k = n +
+  1}{\underset{1 \leqslant i_1 < \cdots < i_k < i_k \leqslant n + 1}{\sum}} (-
+  1)^{k - 1} \# \left( \overset{k}{\underset{j = 1}{\bigcap}} E_{i_j} \right)
+\end{eqnarray*}
+
+
+Nous concluons que
+
+
+\[
+\begin{aligned}
+\#\Biggl(\bigcup_{i=1}^{n+1} E_i\Biggr)
+&= \sum_{k=1}^{n+1} \#(E_k)
++ \sum_{k=1}^{n+1} \Biggl[
+\sum_{\substack{1\le i_1<\cdots<i_k\le n+1 \\ i_k\neq n+1}} (-1)^{\,k-1}\,\#\Bigl(\bigcap_{j=1}^k E_{i_j}\Bigr)\\[1ex]
+&\quad + \sum_{\substack{1\le i_1<\cdots<i_k\le n+1 \\ i_k = n+1}} (-1)^{\,k-1}\,\#\Bigl(\bigcap_{j=1}^k E_{i_j}\Bigr)
+\Biggr].
+\end{aligned}
+\]
+
+
+
+Ainsi,
+\[ \# \left( \underset{i = 1}{\overset{n + 1}{\bigcup}} E_i \right) =
+   \underset{}{\overset{n + 1}{\underset{k = 1}{\sum}} \underset{1 \leqslant
+   i_1 < \cdots < i_k \leqslant n + 1}{\sum} (- 1)^{k - 1} \# \left(
+   \overset{k}{\underset{j = 1}{\bigcap}} E_{i_j} \right)} \]
+
+
+ce qui justifie la formule pour $n + 1$.
+
+\subparagraph{D{\'e}finition 1. (La fonction de M{\"o}bius)}
+
+Soit $n \in \mathbb{N}^{\star}$, on note $\mu (n)$ l'entier d{\'e}fini par :
+\[
+\mu(n) =
+\begin{cases}
+0, & \text{si } n \text{ possède un facteur premier au carré},\\[1mm]
+1, & \text{si } n \text{ est sans facteur premier au carré et a un nombre pair de facteurs premiers},\\[1mm]
+-1, & \text{si } n \text{ est sans facteur premier au carré et a un nombre impair de facteurs premiers}.
+\end{cases}
+\]
+
+
+
+D'apr{\`e}s le lemme 1, on a
+
+\[  \]
+\[ \# \left( \underset{i = 1}{\overset{k}{\bigcup}} U_i \right) =
+   \overset{k}{\underset{j = 1}{\sum}} \underset{1 \leqslant i_1 < \cdots <
+   i_j \leqslant k}{\sum} (- 1)^{j - 1} \# \left( \overset{j}{\underset{m =
+   1}{\bigcap}} U_{i_m} \right) \]
+
+
+Pour conclure, il suffit de calculer $\overset{j}{\underset{m = 1}{\bigcap}}
+U_{i_m}$, pour tout $\leqslant i_1 < \cdots < i_j \leqslant k$
+
+\
+
+Soit $I \subset \llbracket 1, k \rrbracket$ non vide, le cardinal de
+l'intersection $\underset{i \in I}{\bigcap} U_i$ est {\'e}gal au nombre des
+$l$-uplets de multiples strictement positifs de $\underset{i \in I}{\prod}
+p_i$ inf{\'e}rieurs ou {\'e}gaux {\`a} $n$, ce cardinal est {\'e}gal {\`a} :
+\tmcolor{red}{$\tmcolor{black}{\left\lfloor \frac{n}{\underset{i \in I}{\prod}
+p_i} \right\rfloor^l}$}.
+
+\
+
+La formule de Poincar{\'e} donne :
+\[ \# \left( \underset{i = 1}{\overset{k}{\bigcup}} U_i \right) =
+   \overset{k}{\underset{j = 1}{\sum}} \underset{1 \leqslant i_1 < \cdots <
+   i_j \leqslant k}{\sum} (- 1)^{j - 1} \left\lfloor
+   \frac{n}{\overset{j}{\underset{m = 1}{\prod}} p_{i_m}} \right\rfloor^l \]
+
+
+Par cons{\'e}quent,
+\[ \#A_{l, n} = n^l -\# \left( \underset{i = 1}{\overset{k}{\bigcup}} U_i
+   \right) = \underset{d = 1}{\overset{n}{\sum}} \mu (d) \left\lfloor
+   \frac{n}{d} \right\rfloor^l \]
+
+
+Donc,
+\[ \tmcolor{red}{\tmcolor{black}{\frac{\# (A_{l, n})}{n^l} = \frac{1}{n^l}
+   \underset{d = 1}{\overset{n}{\sum}} \mu (d) \left\lfloor \frac{n}{d}
+   \right\rfloor^l}} \]
+
+
+Pour continuer la d{\'e}monstration, nous avons besoin d'une propri{\'e}t{\'e}
+fondamentale de la fonction de M{\"o}bius.
+
+\subparagraph{Proposition 1.}
+
+Pour tout entier $n \neq 1$, on a
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = 0 \]
+
+\subparagraph{Preuve.}
+
+\tmtextbf{M{\'e}thode 1.} Soit $n = \underset{i = 1}{\overset{m}{\prod}}
+p^{a_i}_i$ la d{\'e}composition en facteurs premiers de $n$, et $d \in
+\mathbb{N}$, on a:
+
+$d | \nobracket n \infixand \mu (d) \neq 0$ si et seulement si $d =
+\underset{i \in J}{\overset{}{\prod}} p^{a_i}_i$ avec $J \subset \llbracket 1,
+m \rrbracket$. Donc
+\[ \mu (d) = (- 1)^{\#J} \]
+
+
+Par suite,
+\begin{eqnarray*}
+  \underset{d | \nobracket n}{\sum} \mu (d) & = & \underset{J \subset
+  \llbracket 1, m \rrbracket}{\sum} (- 1)^{\#J}\\
+  & = & (1 - 1)^m\\
+  & = & 0 \quad (\tmop{car} m > 0)
+\end{eqnarray*}
+
+
+\tmtextbf{M{\'e}thode 2.} Soit $n \geqslant 2$. D'apr{\`e}s le
+th{\'e}or{\`e}me fondamental de l'arithm{\'e}tique, il existe des entiers
+premiers $(p_1, \ldots, p_r) \in \mathcal{P}^r$ et des entiers $\alpha_1,
+\ldots, \alpha_r \geqslant 1$ tels que $n = \underset{i =
+1}{\overset{r}{\prod}} p^{\alpha_i}_i$
+
+On a alors :
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = \underset{k_1 =
+   0}{\overset{\alpha_1}{\sum}} \underset{k_2 = 0}{\overset{\alpha_2}{\sum}}
+   \ldots \underset{k_r = 0}{\overset{\alpha_r}{\sum}} \mu \left( \underset{i
+   = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Donc :
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = \underset{\exists i_0 \in
+   \llbracket 1, r \rrbracket k_{i_0} \geqslant 2}{\underset{(k_1, \ldots,
+   k_r) \in \underset{i = 1}{\overset{r}{\prod}} \llbracket 0, \alpha_i
+   \rrbracket}{\overset{}{\sum}}} \mu \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{k_i}_i \right) + \underset{}{\underset{(k_1,
+   \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} \mu
+   \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Puisque pour tout $(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+\llbracket 0, \alpha_i \rrbracket$ tel qu'il existe $i_0 \in \llbracket 1, r
+\rrbracket$ avec $k_{i_0} \geqslant 2$, alors $\underset{i =
+1}{\overset{r}{\prod}} p^{k_i}_i$ est divisible par $p^2_{i_0 }$, donc
+\[ \mu \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+Ce qui implique que :
+\[ \underset{\exists i_0 \in \llbracket 1, r \rrbracket k_{i_0} \geqslant
+   2}{\underset{(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+   \llbracket 0, \alpha_i \rrbracket}{\overset{}{\sum}}} \mu \left(
+   \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+Par cons{\'e}quent :
+\[ \underset{d | \nobracket n}{\sum} \mu (d) = \underset{}{\underset{(k_1,
+   \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} \mu
+   \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Pour tout $(k_1, \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r$, on a
+$\overset{r}{\underset{i = 1}{\sum}} k_i$ est le nombre de facteurs premiers
+distincts de
+
+$\underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i$, et $\underset{i =
+1}{\overset{r}{\prod}} p^{k_i}_i$ n'est pas divisible par le carr{\'e} d'un
+nombre premier. Ainsi :
+\begin{eqnarray*}
+  \underset{d | \nobracket n}{\sum} \mu (d) & = & \underset{}{\underset{(k_1,
+  \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} (-
+  1)^{\overset{r}{\underset{i = 1}{\sum}} k_i}\\
+  & = & \underset{i = 1}{\overset{r}{\prod}} \left( \underset{k_1 =
+  0}{\overset{1 }{\sum}} (- 1)^{k_i} \right)\\
+  & = & (1 - 1)^r\\
+  & = & 0
+\end{eqnarray*}
+
+
+\
+
+Pour l'{\'e}tude asymptotique de $\frac{\# (A_{l, n})}{n^l}$, il semble
+naturel de remplacer le terme $\frac{1}{n^l} \left\lfloor \frac{n}{d}
+\right\rfloor^l$ par son {\'e}quivalent $\frac{1}{d^l}$. La diff{\'e}rence
+entre les deux sommes s'{\'e}crit :
+\[ \left| \frac{\# (A_{l, n})}{n^l} - \underset{d = 1}{\overset{n}{\sum}}
+   \frac{\mu (d)}{d^l} \right| = \left| \underset{d = 1}{\overset{n}{\sum}}
+   \mu (d) \left( \frac{1}{n^l} \left\lfloor \frac{n}{d} \right\rfloor^l -
+   \frac{1}{d^l} \right) \right| \]
+
+
+Comme $\left\lfloor \frac{n}{d} \right\rfloor  > \frac{n}{d} - 1$, On a
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{l}{\sum}} \begin{array}{c}
+    \\
+    
+  \end{array} \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \frac{1}{d^k n^{l - k}} & = & \left( \frac{1}{d} -
+  \frac{1}{n} \right)^l - \frac{1}{d^l}\\
+  & < & \frac{1}{n^l} \left\lfloor \frac{n}{d} \right\rfloor^l -
+  \frac{1}{d^l}\\
+  & \leqslant & 0
+\end{eqnarray*}
+
+
+Ce qui donne
+\begin{eqnarray*}
+  \left| \frac{\# (A_{l, n})}{n^l} - \underset{d = 1}{\overset{n}{\sum}}
+  \frac{\mu (d)}{d^l} \right| & \leqslant & \underset{d =
+  1}{\overset{n}{\sum}} \underset{k = 1}{\overset{l}{\sum}} \begin{array}{c}
+    \\
+    
+  \end{array} \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \frac{1}{d^k n^{l - k}}\\
+  & = & \underset{k = 1}{\overset{l}{\sum}} \begin{array}{c}
+    \\
+    
+  \end{array} \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \frac{1}{n^{l - k}} \left( \underset{d =
+  1}{\overset{n}{\sum}} \frac{1}{d^k } \right)
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  \underset{k = 1}{\overset{l}{\sum}} \begin{array}{c}
+    \\
+    
+  \end{array} \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \frac{1}{n^{l - k}} \left( \underset{d =
+  1}{\overset{n}{\sum}} \frac{1}{d^k } \right) & \underset{n \rightarrow +
+  \infty}{\sim} & \left( \begin{array}{c}
+    l\\
+    1
+  \end{array} \right) \frac{1}{n^{l - 1}} \log (n) + \underset{k =
+  2}{\overset{l}{\sum}} \begin{array}{c}
+    \\
+    
+  \end{array} \left( \begin{array}{c}
+    l\\
+    k
+  \end{array} \right) \frac{1}{n^{l - k}} \underset{d = 1}{\overset{+
+  \infty}{\sum}} \frac{1}{d^k }\\
+  & = & O \left( \frac{1}{n^{l - 1}} \log (n) \right)
+\end{eqnarray*}
+
+
+Par suite,
+\[ \mathbb{P} (A_l) = \underset{n \rightarrow + \infty}{\lim} \frac{\# (A_{l,
+   n})}{n^l} = \underset{d = 1}{\overset{+ \infty}{\sum}} \frac{\mu (d)}{d^l}
+\]
+
+
+\subparagraph{D{\'e}finition 2.}
+
+On d{\'e}finit la fonction z{\^e}ta de Riemann, pour tout $z \in \mathbb{C}$
+tel que $\tmop{Re} (z) > 1$, par
+\[ \zeta (z) = \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{1}{n^z} \]
+
+
+\subparagraph{Proposition 2.}
+
+Pour tout nombre complexe $z$ tel que $\tmop{Re} (z) > 1$, on a :
+\[ \frac{1}{\zeta (z)} = \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{\mu
+   (n)}{n^z} \]
+
+\subparagraph{Preuve.}
+
+Soit $z \in \mathbb{C}$, tel que $\tmop{Re} (z) > 1$,on a, via la proposition
+1 :
+\begin{eqnarray*}
+  \zeta (z) . \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{\mu (n)}{n^z} &
+  = & \left( \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{1}{n^z} \right)
+  \left( \underset{n = 1}{\overset{+ \infty}{\sum}} \frac{\mu (n)}{n^z}
+  \right)\\
+  & = & \underset{n, d \geqslant 1}{\overset{}{\sum}} \frac{\mu
+  (d)}{(n.d)^z}\\
+  & = & \underset{n \geqslant 1}{\overset{}{\sum}} \underset{d | n
+  \nobracket}{\overset{}{\sum}} \frac{\mu (d)}{n^z}\\
+  & = & 1
+\end{eqnarray*}
+
+
+On en conclut que
+\[ \mathbb{P} (A_l) = \frac{1}{\zeta (l)} \]
+
+
+\subparagraph{Remarque 1.}
+
+On peut d{\'e}duire directement de ce r{\'e}sultat le th{\'e}or{\`e}me d'Euclide, qui {\'e}nonce que l'ensemble des nombres premiers est infini.

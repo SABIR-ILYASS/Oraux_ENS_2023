@@ -1,0 +1,2594 @@
+\begin{center}
+\subsection*{Sujet 4 : Le th{\'e}or{\`e}me de Dirichlet}\label{sjt4}
+Le th{\'e}or{\`e}me de la progression arithm{\'e}tique.\\
+\textbf{SABIR Ilyass}
+\end{center}
+\[ \star \star \star \]
+\addcontentsline{toc}{subsection}{Sujet 4 : Probabilit{\'e} que $l$ entiers soient premiers entre eux.}
+
+\subparagraph{Introduction.}
+
+On va pr{\'e}senter ici un r{\'e}sultat fondamental concernant les nombres
+premiers. Selon le th{\'e}or{\`e}me d'Euclide, les nombres premiers sont
+infinie, un fait dont la d{\'e}monstration est relativement simple (la preuve
+de ce th{\'e}or{\`e}me ne sera cependant pas donn{\'e}e ici ; pour ceux qui
+souhaiteraient en savoir plus, une d{\'e}monstration est disponible sur le
+site suivant :
+\href{https://www.cantorsparadise.com/how-to-prove-the-infinity-of-primes-9ccfbe9bdd6a}{Cantor's
+Paradise}).
+
+\
+
+L'une des questions les plus profondes en math{\'e}matiques est celle de la
+r{\'e}partition des nombres premiers parmi les entiers. Bien que les
+math{\'e}matiques aient consid{\'e}rablement progress{\'e}, la distribution
+des nombres premiers reste myst{\'e}rieuse et pose de nombreux d{\'e}fis non
+r{\'e}solus, comme la conjecture de Goldbach ou l'hypoth{\`e}se de Riemann sur
+la fonction Z{\^e}ta.
+
+\
+
+Cela ne signifie pas pour autant qu'il n'existe aucun r{\'e}sultat sur la
+distribution des nombres premiers. Au contraire, certains r{\'e}sultats
+remarquables fournissent des r{\'e}ponses partielles {\`a} cette question
+complexe. Parmi eux figure le th{\'e}or{\`e}me de Dirichlet, un des plus beaux
+r{\'e}sultats sur les nombres premiers, qui {\'e}nonce que pour tout $(a, b)
+\in \mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$ premiers entre eux, il existe
+une infinit{\'e} de nombres premiers de la forme $a n + b$.
+
+\
+
+L'{\'e}tude des nombres premiers et de leur distribution est ainsi cruciale,
+non seulement pour l'avancement des math{\'e}matiques, mais aussi pour des
+domaines comme l'informatique et la physique.
+
+\
+
+\subparagraph{L'objectif principal.}
+
+On veut montrer le r{\'e}sultat suivant :
+
+
+\textbf{Pour tout $(a, b) \in \mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$ premiers entre eux, on a une infinité de nombres premiers qui s'écrivent sous la forme : $an + b$.}
+
+
+\
+
+\tmtextbf{Remarque.}
+
+Soit $(a, b) \in \mathbb{N}^{\star} \times \mathbb{N}^{\star}$, si $a$ et $b$
+ne sont pas premiers entre eux (c'est-{\`a}-dire si $a \wedge b$>1), alors
+pour tout entier $n \in \mathbb{N}$ on a :
+\[ a.n + b = a \wedge b \left( \frac{a}{a \wedge b} n + \frac{b}{a \wedge b}
+   \right) \]
+
+
+Donc, par d{\'e}finition d'un nombre premier, on peut trouver au plus un
+nombre permier de la forme $a.n + b = a \wedge b \left( \frac{a}{a \wedge b} n
++ \frac{b}{a \wedge b} \right)$
+
+\
+
+On en d{\'e}duit que la condition $a$ et $b$ sont premiers entre eux est une
+condition n{\'e}cessaire pour que le r{\'e}sultat soit vrai. On va montrer
+sans la suite que cette condition est suffisante.
+
+\
+
+\subparagraph{Quelques exemples et premiers r{\'e}sultats.}
+
+Avant de commencer la d{\'e}monstration de notre th{\'e}or{\`e}me principal,
+nous allons d'abord voir quelques exemples qui montrent la validit{\'e} de ce
+th{\'e}or{\`e}me pour des cas particuliers.
+
+\
+
+\subparagraph{Exemple 1.}
+
+On sait, d'apr{\`e}s le lemme d'Euclide, qu'il existe une infinit{\'e} de
+nombres premiers. Puisque les nombres premiers sont tous impairs, sauf 2, il
+existe donc une infinit{\'e} de nombres premiers de la forme $2 n + 1$ , avec
+$n \in \mathbb{N}$.
+
+\
+
+\tmtextbf{Question 1.}
+
+Existe-il une infinit{\'e} de nombres premiers congrus {\`a} 3 modulo 4 ?
+
+\
+
+\tmtextbf{R{\'e}ponse.}
+
+Raisonnons par l'absurde, et supposons qu'il n'en existe qu'un nombre fini
+$n$. Notons-les $p_1, \ldots, p_n$, et consid{\'e}rons l'entier
+\[ N = 4. p_1 \ldots p_n - 1 \geqslant 2 \]
+
+
+Aucun des $p_k$ ne divise $N$, puisque $N$ est impair et que ses diviseurs
+premiers ne sont pas dans l'ensemble $\{ p_1, \ldots, p_n \}$. Par
+cons{\'e}quent, ils ne sont pas congrus {\`a} 3 modulo 4. Par imparit{\'e} et
+par primabilit{\'e}, tous les diviseurs premiers de $N$ sont congus {\`a} 1
+modulo 4, et donc $N$ est congru {\`a} 1 modulo 4. Or, manifestement, $N$ est
+congru {\`a} 3 modulo 4, ce qui est contradictoire.
+
+\
+
+De la m{\^e}me mani{\`e}re, on peut montrer qu'il existe une infinit{\'e} de
+nombre premiers de la forme $4 n + 1$, et bien d'autres encore{\textdots}
+
+\
+
+Pasons une question plus forte :
+
+\tmtextbf{Question 2.}
+
+Existe-il une infinit{\'e} de nombres premiers de la forme $3 n + 1$, et une
+infinit{\'e} de nombres premiers de la forme $4 n + 1$5, ainsi qu'une
+infinit{\'e} de nombres premiers de la forme $5 n + 1${\textdots} ?
+
+De mani{\`e}re g{\'e}n{\'e}rale, pour un entier $\lambda \in
+\mathbb{N}^{\ast}$, Existe-t-il une infinit{\'e} de nombres premiers de la
+forme $\lambda n + 1$ ?
+
+\
+
+\tmtextbf{R{\'e}ponse.}
+
+En nous basant sur une m{\'e}thode due {\`a} Leonard Euler, qui a utilis{\'e}
+les polyn{\^o}mes cyclotomiques pour montrer ce r{\'e}sultat.
+
+Commen{\c c}ons par d{\'e}finir les polyn{\^o}mes cyclotomiques :
+
+\
+
+\subparagraph{D{\'e}finition 1.}
+
+Soit $n \in \mathbb{N}^{\ast}$. On d{\'e}finit le n-i{\`e}me polyn{\^o}me
+cyclotomique par :
+\[ \Phi_n = \underset{k \wedge n = 1}{\underset{1 \leqslant k \leqslant
+   n}{\prod}} \left( X - e^{\frac{2 i.k \pi}{n}} \right) \]
+
+
+\subparagraph{Th{\'e}or{\`e}me 1.}
+
+Pour tout $n \in \mathbb{N}^{\star}$, on a : $\Phi_n \in \mathbb{Z} [X]$
+
+\
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 1.}
+
+Soit $n \in \mathbb{N}^{\star}$. Montrons d'abord que
+\[ X^n - 1 = \underset{}{\underset{d | n \nobracket}{\prod} \Phi_d} \]
+. On sait que :
+\[ X^n - 1 = \underset{}{\overset{n}{\underset{l = 1}{\prod}}  \left( X -
+   e^{\frac{2 i.k \pi}{n}} \right)} \]
+
+
+Notons, pour tout entier $d \geqslant 1$, $R_d$ l'ensemble des racines
+primitives d-i{\`e}mes de l'unit{\'e} et $\mathbb{U}_d$ l'ensemble des racines
+d-i{\`e}mes de l'unit{\'e}.
+
+On a, par d{\'e}finition :
+\[ \Phi_n = \underset{}{\underset{\xi \in R_n}{\prod}} (X - \xi) \]
+
+
+Si $\xi \in \mathbb{U}_n$, l'ordre de $\xi$ est un diviseur $d$ de $n$, et
+alors $\xi \in R_d$. Par cons{\'e}quent, $\mathbb{U}_n$ est une r{\'e}union
+disjointe des $R_d$ pour $d | n \nobracket$. S'o{\`u} il r{\'e}sulte :
+\begin{eqnarray*}
+  X^n - 1 & = & \underset{}{\underset{\xi \in R_n}{\prod}} (X - \xi)\\
+  & = & \underset{}{\underset{d | n \nobracket}{\prod}} \left(
+  \underset{}{\underset{\xi \in R_d}{\prod}} (X - \xi) \right)\\
+  & = & \underset{}{\underset{d | n \nobracket}{\prod}} \Phi_d
+\end{eqnarray*}
+
+
+Nous allons {\'e}tablir que $\Phi_n$ est {\`a} coefficients entiers par
+r{\'e}currence sur $n \geqslant 1$ en utilisant le r{\'e}sultat suivant :
+
+\subparagraph{Lemme 1.}
+
+Soient $A$ et $B$ deux polyn{\^o}mes {\`a} coefficients entiers, B {\'e}tant
+non nul et unitaire. Alors $Q$ et R, le quotient et le reste de la division
+euclidienne de $A$ par $B$ dans $\mathbb{C} [X]$, sont aussi {\`a}
+coefficients entiers.
+
+\
+
+\subparagraph{Preuve du lemme 1.}
+
+La division euclidienne est invariante par extension de corps, alors $Q, R \in
+\mathbb{Q} [X]$.
+
+On a :
+\[ A = B.Q + R \]
+
+
+On d{\'e}finit l'application $\mathcal{C}: \mathbb{Z} [X] \rightarrow
+\mathbb{Z}$ pour tout $P = \underset{n = 0}{\overset{N}{\sum}} a_n X^n \in
+\mathbb{Z} [X]$ par :
+\[ \mathcal{C} (P) = \underset{n = 0}{\overset{N}{\wedge}} a_n \]
+
+
+Pour $P = \underset{n = 0}{\overset{N}{\sum}} a_n X^n$ et $Q = \underset{n =
+0}{\overset{M}{\sum}} b_n X^n \in \mathbb{Z} [X]$, par d{\'e}finition de
+$\mathcal{C}$, on a
+\[ \frac{P}{\mathcal{C} (P)}, \frac{Q}{\mathcal{C} (Q)} \in \mathbb{Z} [X] \]
+
+
+et les coefficients de $\frac{P}{\mathcal{C}(P)}$ (resp. de $\frac{Q}{\mathcal{C}(Q)}$) 
+sont premiers entre eux.
+
+
+Pour tout entier premier $p$, $p$ ne divise pas tous les coefficients de
+$\frac{P}{\mathcal{C} (P)}$ (resp. de $\frac{Q}{\mathcal{C} (Q)}$), donc dans
+$\mathbb{Z}/ p\mathbb{Z} [X]$, on a $\frac{P}{\mathcal{C} (P)} \neq 0$ et
+$\frac{Q}{\mathcal{C} (Q)} \neq 0$.
+
+Or, $\mathbb{Z}/ p\mathbb{Z}$ est un corps, donc l'anneau $\mathbb{Z}/
+p\mathbb{Z} [X] \tmop{est} \tmop{int} {\`e} \tmop{gre}$. Par cons{\'e}quent,
+dans $\mathbb{Z}/ p\mathbb{Z} [X]$ on a
+\[ \frac{P}{\mathcal{C} (P)} \times \frac{Q}{\mathcal{C} (Q)} \neq 0 \]
+
+
+Ainsi, $p$ne divise pas tous les coefficients de $\frac{P}{\mathcal{C} (P)}
+\times \frac{Q}{\mathcal{C} (Q)}$, et donc $p$ ne divise pas $\mathcal{C}
+\left( \frac{P}{\mathcal{C} (P)} \times \frac{Q}{\mathcal{C} (Q)} \right)$, et
+{\c c}a pour tout nombre premier $p$.
+
+Alors,
+\[ \mathcal{C} \left( \frac{P}{\mathcal{C} (P)} \times \frac{Q}{\mathcal{C}
+   (Q)} \right) = 1 \]
+
+
+Par suite
+\[ \mathcal{C} (P.Q) =\mathcal{C} (P) \mathcal{C} (Q) \]
+
+
+Soit $b \in \mathbb{N}^{\ast}$ un entier tel que $b.Q, b.R \in \mathbb{Z}
+[X]$. On a alors :
+\[ b.A = (b.Q) B + b.R \]
+
+
+Donc
+\begin{eqnarray*}
+  \mathcal{C} (b.A - b.R) & = & \mathcal{C} (B) \mathcal{C} (b.Q)\\
+  & = & \mathcal{C} (b.Q)
+\end{eqnarray*}
+
+
+Comme $B$ et A sont unitaires, alors $Q$ est aussi unitaire, donc le
+coefficient dominant de $b.Q$ est $b$, en particulier, $\mathcal{C} (b.Q) | b
+\nobracket$, donc $\frac{b}{\mathcal{C} (b.Q)} \in \mathbb{N}$.
+
+De m{\^e}me, on montre que $b | \mathcal{C} (b.Q) \nobracket$, donc
+$\mathcal{C} (b.Q) = b$.
+
+Ainsi,
+\[ Q = \frac{b.Q}{\mathcal{C} (b.Q)} \in \mathbb{Z} [X] \]
+
+
+Par suite
+\[ R = A - B.Q \in \mathbb{Z} [X] \]
+
+
+D'o{\`u} le r{\'e}sultat.
+
+\
+
+{\'E}tablissons maintenant par r{\'e}currence sur $n$ que $\Phi_n$ est {\`a}
+coefficients entiers.
+
+1. C'est vrai pour $n = 1$ (par d{\'e}finition).
+
+2. Si $n \geqslant 2$, $\Phi_n$ est le quotient dans $\mathbb{C} [x]$ de $X^n
+- 1$ par $B$, o{\`u} $B$ est {\'e}gal au produit des $\Phi_d$, o{\`u} $d$ est
+un diviseur strict de $n$.
+
+\
+
+Si on suppose la propri{\'e}t{\'e} vraie pour les entiers inf{\'e}rieurs ou
+{\'e}gaux {\`a} $n - 1$, chacun de ces $\Phi_d$ est {\`a} coefficients
+enti{\`e}rs et unitaire par d{\'e}finition. Donc, $B$ est aussi {\`a}
+coefficients entiers et unitaire. En vertu du lemme 1, $\Phi_n \tmop{est}
+{\`a} \tmop{coefficients} \tmop{entiers}$.
+
+\
+
+Soit $p$ un nombre premier qui divise $\Phi_n (a)$, o{\`u} $a \in
+\mathbb{Z}$, mais ne divise aucun $\Phi_d (a)$, o{\`u} $d$ parcourt l'ensemble
+des diviseur stricts de $n$.
+
+\
+
+Soit $a \in \mathbb{Z}$. Comme $p$ divise $\Phi_n (a)$, il divise aussi $a^n
+- 1$. Ainsi, l'ordre de $\overline{a} $dans le groupe multiplicatif
+$(\mathbb{Z}/ p\mathbb{Z})^{\times}$ divise $n$.
+
+Montrons que cet ordre est exactement $n$. Si $d < n$, on a dans $\mathbb{Z}/
+p\mathbb{Z}$
+\[ \overline{a}^d - 1 = \underset{d' | d \nobracket}{\prod}
+   \overline{\Phi_{d'} (a)} \]
+
+
+Or, si $d'$ divise $d$, alors $d'$ divise aussi $n$ et par hypoth{\`e}se sur
+$p$, $\overline{}$
+\[ \overline{\Phi_{d'} (a)} \neq 0 \]
+
+
+Comme $\mathbb{Z}/ p\mathbb{Z}$ est un corps, le produit de ces
+{\'e}l{\'e}ments non nuls est {\'e}galement non nul, si bien que
+$\overline{a}^d \neq 1$.
+
+L'ordre de $\overline{a}$ est donc $n$. Comme cet ordre divise $p - 1$
+d'apr{\`e}s le th{\'e}or{\`e}me de Lagrange, $p$ est de la forme $\lambda n +
+1$ avec $\lambda \in \mathbb{N}$.
+
+\
+
+Montrons maintenant que pour $n \geqslant 1$ fix{\'e}, il existe une
+infinit{\'e} de nombres premiers de la forme $\lambda n + 1$ avec $\lambda \in
+\mathbb{N}$.
+
+\
+
+Raisonnons par l'absurde et supposons qu'il existe un nombre fini d'entiers
+premiers congrus {\`a} 1 modulo $n$, soient $p_1, \ldots, p_q$.
+
+Si on arrive {\`a} trouver $a$ et $p$ v{\'e}rifiant les hypoth{\`e}ses, assure
+que $p$ est congru {\`a} 1 modulo $n$. Cela sera insuffisant pour aboutir
+{\`a} une contradiction, $p$ pouvant {\^e}tre alors un des $p_i$.
+
+Pour {\'e}viter cela, changeons $n$ en $N = n.p_1 \ldots p_q$.
+
+Si $p$ est congru {\`a} 1 modulo $N$, $p$ ne peut {\^e}tre un des $p_i $et
+pourtant, il est congru {\`a} 1 modulo $n$.
+
+Il faut donc trouver $a \in \mathbb{Z}$ et $p$ premier, tels que $p$ divise
+$\Phi_N (a)$, mais aucun des $\Phi_d (a)$, pour $d | N \nobracket, d < N$.
+
+On note
+\[ B = \underset{d | N \nobracket, d < N}{\prod} \Phi_d \]
+
+
+\
+
+Le probl{\`e}me est donc de trouver $a \in \mathbb{Z}$ et $p$ premier tels
+que $p$ divise $\Phi_N (a)$,et ne divise pas $B (a)$.
+
+Puisque les deux polyn{\^o}mes $B$ et $\Phi_N$ sont scind{\'e}s sur
+$\mathbb{C}$ et n'ont aucune racine commune, alors ils sont premiers entre eux
+dans $\mathbb{C} [X]$, donc aussi dans $\mathbb{Q} [X]$, puisque ces
+polyn{\^o}mes sont {\`a} coefficients rationnels et que le pgcd est invariant
+par extension de corps.
+
+D'apr{\`e}s le th{\'e}or{\`e}me de Bezout, il existe donc un couple $(U, V)
+\in \mathbb{Q} [X]^2$ tel que
+\[ U \Phi_N + V B = 1 \]
+
+
+Il existe $a \in \mathbb{Z}$ tel que $U' = a.U$ et $V' = a.V$ appartient {\`a}
+$\mathbb{Z} [X]$.
+
+Comme $\Phi_N \neq 0$ et $\Phi_N \neq \pm 1$, on peut m{\^e}me choisir $a$ tel
+que $\Phi_N (a) \neq 0$ et $\Phi_N (a) \neq \pm 1$, {\'e}tant donn{\'e}
+l'infinit{\'e} de $a \in \mathbb{Z}$ v{\'e}rifiant $a.U \in \mathbb{Z} [X]$ et
+$a.V \in \mathbb{Z} [X]$.
+
+\
+
+On a donc
+\[ a = U' \Phi_N + V' B \]
+
+
+et en particulier $a = U' (a) \Phi_N (a) + V' (a) B (a)$ $(\star)$
+
+\
+
+Soit $p$un nombre premier divisant $\Phi_N (a)$. Alors $p$ divise $a^N - 1$,
+car $\Phi_N$ divise $X^N - 1$ dans $\mathbb{Z} [X]$. Dans $\mathbb{Z}/
+p\mathbb{Z}$, $\overline{a}^N = 1$, et donc $\overline{a}$ est inversible, ce
+qui signifie que $a$ est premier avec $p$.
+
+Si $p$ divise $B (a)$, il diviserait $a$, d'apr{\`e}s $(\star)$, ce qui est
+exclu. On est donc dans les hypoth{\`e}ses : $p$ est congru {\`a} 1 modulo
+$N$, et donc modulo $n$, avec $p$ forc{\'e}ment distinct des $p_i$, pour $1
+\leqslant i \leqslant q$, C'est la contradiction voulue.
+
+\
+
+\subparagraph{Le premier th{\'e}or{\`e}me de Mertens.}
+
+Commen{\c c}ons par d{\'e}montrer le th{\'e}or{\`e}me de Legendre :
+
+\subparagraph{Th{\'e}or{\`e}me 2. (Th{\'e}or{\`e}me de Legendre)}
+
+Soit $n \in \mathbb{N}^{\ast}$, Pour tout nombre premier $p$, on a :
+\[ v_p (n!) = \underset{k = 1}{\overset{+ \infty}{\sum}} \left[ \frac{n}{p^k}
+   \right] \]
+\tmtextbf{}
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 2.}
+
+Soit $n \in \mathbb{N}^{\ast} $et $p$ premier. On note
+\[ n_0 = \max \left\{ k \in \mathbb{N} | \nobracket  \frac{n}{p^k} \geqslant
+   1 \right\} \]
+
+
+En r{\'e}alit{\'e}, la somme $\underset{k = 1}{\overset{+ \infty}{\sum}}
+\left[ \frac{n}{p^k} \right]$ est finie, car pour tout $k \geqslant n_0 + 1$,
+on a $\left[ \frac{n}{p^k} \right] = 0$.
+
+On a donc :
+\[ \underset{k = 1}{\overset{+ \infty}{\sum}} \left[ \frac{n}{p^k} \right] =
+   \underset{k = 1}{\overset{n_0}{\sum}} \left[ \frac{n}{p^k} \right] \]
+
+
+On commence par d{\'e}montrer le lemme suivant :
+
+\subparagraph{Lemme 2.}
+
+Soit $(a, b) \in \mathbb{N}^{\ast} \times \mathbb{N}$, le nombre de multiples
+de $a$ dans $\llbracket 1, b \rrbracket $est $ \left[ \frac{b}{a} \right]$.
+
+\
+
+\subparagraph{Preuve du lemme 2.}
+
+Soit $(a, b) \in \mathbb{N}^{\ast} \times \mathbb{N}$,
+
+1. Cas o{\`u} $b < a$ :
+
+Il n'existe aucun multiple de $a$ entre $1$ et $b$, donc le nombre de
+multiples de $a$ dans \ $\llbracket 1, b \rrbracket $est
+\[ 0 = \left[ \frac{b}{a} \right] \]
+
+
+2. Cas o{\`u} $b \geqslant a$ :
+
+Soit $x \in \llbracket 1, b \rrbracket$ tel que $a$ divise $x$. Alors, il
+existe $k \in \mathbb{N}^{\ast}$ tel que $x = k a$.
+
+On a $1 \leqslant k a \leqslant b$, donc $0 < \frac{1}{a} \leqslant k
+\leqslant \frac{b}{a}$.
+
+En prenant la partie enti{\`e}re, on obtient
+\[ 1 \leqslant k \leqslant \left[ \frac{b}{a} \right] \]
+
+
+R{\'e}ciproquement, pour tout entier $k$ tel que $1 \leqslant k \leqslant
+\left[ \frac{b}{a} \right]$, on a
+\[ a \leqslant a k \leqslant a \left[ \frac{b}{a} \right] \leqslant b \]
+
+
+Donc $k a$ est bien un multiple de $a$ dans $\llbracket 1, b \rrbracket$.
+
+Ainsi, le nombre de multiples de $a$ dans $\llbracket 1, b \rrbracket$ est $
+\left[ \frac{b}{a} \right]$.
+
+Pour tout nombre premier $p$, on a :
+\begin{eqnarray*}
+  v_p (n!) & = & v_p \left( \underset{k = 1}{\overset{n}{\prod}} k \right)\\
+  & = & \underset{k = 1}{\overset{n}{\sum}} v_p (k)
+\end{eqnarray*}
+
+
+On note, pour tout $i \in \llbracket 0, n_0 \rrbracket,$
+\[ A_i = \{ k \in \llbracket 1, n \rrbracket  | \nobracket p^i \tmop{divise}
+   k \tmop{et} p^{i + 1} \tmop{ne} \tmop{divise} \tmop{pas} k \} \]
+
+
+On a bien $(A_i)_{0 \leqslant i \leqslant n_0}$ est une partition de
+$\llbracket 1, n \rrbracket$ (par construction), donc
+
+
+\[ v_p (n!) = \underset{i = 0}{\overset{n_0}{\sum}} \left( \underset{k \in
+   A_i}{\overset{}{\sum}} v_p (k) \right) \]
+
+
+Or, pour tout $i \in \llbracket 0, n_0 \rrbracket$ et pour tout $k \in A_i$,
+$p^i \tmop{divise} k \tmop{et} p^{i + 1} \tmop{ne} \tmop{divise} \tmop{pas}
+k$, donc pour tout $i \in \llbracket 0, n_0 \rrbracket$ et pour tout $k \in
+A_i$ :
+\[ v_p (k) = i \]
+
+
+\
+
+D'o{\`u},
+\begin{eqnarray*}
+  v_p (n!) & = & \underset{i = 0}{\overset{n_0}{\sum}} i.\# (A_i)\\
+  & = & \underset{i = 1}{\overset{n_0}{\sum}} i.\# (A_i)
+\end{eqnarray*}
+\[ \  \]
+
+
+Or, pour tout $i \in \llbracket 1, n_0 \rrbracket$, on a :
+\[ A_i = \{ k \in \llbracket 1, n \rrbracket  | \nobracket p^i \tmop{divise} k
+   \tmop{et} p^{i + 1} \tmop{ne} \tmop{divise} \tmop{pas} k \} \]
+
+
+Ainsi,
+\[ A_i = \{ k \in \llbracket 1, n \rrbracket  | \nobracket p^i \tmop{divise} k
+   \} \backslash \nobracket \{ k \in \llbracket 1, n \rrbracket  | \nobracket
+   p^{i + 1} \tmop{divise} k \} \]
+
+
+Puisque
+\[ \{ k \in \llbracket 1, n \rrbracket / p^{i + 1} \tmop{divise} k \} \subset
+   \{ k \in \llbracket 1, n \rrbracket / p^i \tmop{divise} k \} \]
+
+
+Alors,
+
+
+\[ \#A_i =\# \{ k \in \llbracket 1, n \rrbracket / p^i \tmop{divise} k \} -\#
+   \{ k \in \llbracket 1, n \rrbracket / p^{i + 1} \tmop{divise} k \} \]
+
+
+Donc,
+\[ \#A_i = \left[ \frac{n}{p^i} \right] - \left[ \frac{n}{p^{i + 1}} \right]
+\]
+
+
+Ainsi,
+\begin{eqnarray*}
+  v_p (n!) & = & \underset{i = 1}{\overset{n_0}{\sum}} i. \left( \left[
+  \frac{n}{p^i} \right] - \left[ \frac{n}{p^{i + 1}} \right] \right)\\
+  & = & \underset{k = 1}{\overset{n_0}{\sum}} \left[ \frac{n}{p^k} \right]\\
+  & = & \underset{k = 1}{\overset{+ \infty}{\sum}} \left[ \frac{n}{p^k}
+  \right]
+\end{eqnarray*}
+
+
+\subparagraph{Th{\'e}or{\`e}me 3. (La formule de Mertens)}
+
+\
+
+Pour tout $x > 1$, on a
+\[ \underset{p \leqslant x}{\sum} \frac{\log (p)}{p} \underset{x \rightarrow +
+   \infty}{=} \log (x) + O (1) \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 3.}
+
+Soit $x > 2,$ notons $n = [x]$. On a
+\[ n! = \underset{p \leqslant x}{\prod} p^{v_p (n!)} \]
+
+
+Donc,
+\[ \log (n!) = \underset{p \leqslant x}{\sum} v_p (n!) \log (p)  \]
+
+
+Pour tout nombre premier $p \leqslant x$, d'apr{\`e}s le th{\'e}or{\`e}me de
+Legendre, on a :
+\begin{eqnarray*}
+  \frac{n}{p} - 1 & < & \left[ \frac{n}{p} \right]\\
+  & < & v_p (n!)\\
+  & = & \underset{k = 1}{\overset{+ \infty}{\sum}} \left[ \frac{n}{p^k}
+  \right]\\
+  & \leqslant & \underset{k = 1}{\overset{+ \infty}{\sum}} \frac{n}{p^k}\\
+  & = & \frac{n}{p - 1}\\
+  & = & \frac{n}{p} + \frac{n}{p (p - 1)}
+\end{eqnarray*}
+
+
+\
+
+Ainsi,
+\begin{eqnarray*}
+  n \underset{p \leqslant x}{\sum} \left( \frac{\log (p)}{p} - \frac{\log
+  (p)}{n} \right) & \leqslant & \log (n!)\\
+  & = & \underset{p \leqslant x}{\sum} v_p (n!) \log (p)\\
+  & \leqslant & n \underset{p \leqslant x}{\sum} \left( \frac{\log (p)}{p} +
+  \frac{\log (p)}{p (p - 1)} \right)
+\end{eqnarray*}
+
+
+Donc :
+\[ \frac{\log (n!)}{n} - \underset{p \leqslant x}{\sum} \frac{\log (p)}{p (p -
+   1)} - \log (x) \leqslant \underset{p \leqslant x}{\sum} \frac{\log (p)}{p}
+   - \log (x) \]
+
+
+Et
+
+
+\[ \underset{p \leqslant x}{\sum} \frac{\log (p)}{p} - \log (x) \leqslant
+   \frac{\log (n!)}{n} - \log (x) + \underset{p \leqslant x}{\sum} \frac{\log
+   (p)}{n} \]
+
+
+Avec :
+\begin{eqnarray*}
+  \underset{p \leqslant x}{\sum} \frac{\log (p)}{n} & = & \frac{1}{n} \log
+  \left( \underset{p \leqslant x}{\prod} p \right)\\
+  & = & \frac{1}{n} \log \left( \underset{p \leqslant n}{\prod} p \right)
+\end{eqnarray*}
+
+
+Or, on a pout tout entier $m \geqslant 0$
+\begin{eqnarray*}
+  2 \times 4^m & = & (1 + 1)^{2 m + 1}\\
+  & = & \underset{k = 0}{\overset{2 m + 1}{\sum}} \left( \begin{array}{c}
+    2 m + 1\\
+    k
+  \end{array} \right)
+\end{eqnarray*}
+
+
+Donc,
+\begin{eqnarray*}
+  \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right) & = & \frac{1}{2} \left[ \left( \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right) + \left( \begin{array}{c}
+    2 m + 1\\
+    m + 1
+  \end{array} \right) \right]\\
+  & \leqslant & \frac{1}{2} \underset{k = 0}{\overset{2 m + 1}{\sum}} \left(
+  \begin{array}{c}
+    2 m + 1\\
+    k
+  \end{array} \right)\\
+  & = & 4^m
+\end{eqnarray*}
+
+
+Pour tout nombre premier $m + 1 < p \leqslant 2 m + 1$, on a $p$ divise $(2 m
++ 1) !$, donc $p$ divise
+\[ m! (m + 1) ! \left( \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \]
+
+
+Comme $p > m + 1$, alors $p$ ne divise ni $m!$ ni $(m + 1) !$, d'o{\`u},
+d'apr{\`e}s le lemme de Gauss, $p$ divise $\left( \begin{array}{c}
+  2 m + 1\\
+  m
+\end{array} \right)$.
+
+Ainsi,
+\[ \underset{m + 1 < p \leqslant 2 m + 1}{\prod} p \tmop{divise} \left(
+   \begin{array}{c}
+     2 m + 1\\
+     m
+   \end{array} \right) \]
+
+
+D'o{\`u},
+\begin{eqnarray*}
+  \underset{m + 1 < p \leqslant 2 m + 1}{\prod} p & \leqslant & \left(
+  \begin{array}{c}
+    2 m + 1\\
+    m
+  \end{array} \right)\\
+  & \leqslant & 4^m
+\end{eqnarray*}
+
+
+Montrons maintenant par r{\'e}currence que pour tout $m \in
+\mathbb{N}^{\ast}$, on a :
+\[ \underset{p \leqslant m}{\prod} p \leqslant 4^m \]
+
+
+Pour $m = 1$, on a
+\begin{eqnarray*}
+  \underset{p \leqslant m}{\prod} p & = & \underset{p \leqslant 1}{\prod} p\\
+  & = & 1\\
+  & \leqslant & 4
+\end{eqnarray*}
+
+
+Soit $m \in \mathbb{N}^{\ast}$, supposons que pour tout $k \in \llbracket 1, m
+\rrbracket$
+\[ \underset{p \leqslant k}{\prod} p \leqslant 4^k \]
+
+
+et montrons que
+\[ \underset{p \leqslant m + 1}{\prod} p \leqslant 4^{m + 1} \]
+
+
+\tmtextbf{Si $m + 1$ n'est pas premier}, on a alors :
+\begin{eqnarray*}
+  \underset{p \leqslant m + 1}{\prod} p & = & \underset{p \leqslant m}{\prod}
+  p\\
+  & \leqslant & 4^m\\
+  & \leqslant & 4^{m + 1}
+\end{eqnarray*}
+
+
+\tmtextbf{Si $(m + 1)$ est premier} :
+
+Si $m = 1$, on a
+\begin{eqnarray*}
+  \underset{p \leqslant m + 1}{\prod} p & = & 2\\
+  & \leqslant & 4^2
+\end{eqnarray*}
+
+
+Si $m > 1$, alors $m + 1$ est impair, donc il existe $k_0 \in \llbracket 1, m
+\rrbracket$ tel que $m + 1 = 2 k_0 + 1$.
+
+On a alors :
+\begin{eqnarray*}
+  \underset{p \leqslant m + 1}{\prod} p & = & \underset{p \leqslant 2 k_0 +
+  1}{\prod} p\\
+  & = & \underset{p \leqslant k_0 + 1}{\prod} p \underset{k_0 + 1 < p
+  \leqslant 2 k_0 + 1}{\prod} p\\
+  & \leqslant & 4^{k_0} \times 4^{k_0 + 1}\\
+  & = & 4^{m + 1}
+\end{eqnarray*}
+D'o{\`u} pour tout $n \in \mathbb{N}^{\ast}$
+\[ \underset{p \leqslant m}{\prod} p \leqslant 4^m \]
+Par suite :
+\begin{eqnarray*}
+  \underset{p \leqslant x}{\sum} \frac{\log (p)}{n} & = & \frac{1}{n} \log
+  \left( \underset{p \leqslant x}{\prod} p \right)\\
+  & = & \frac{1}{n} \log \left( \underset{p \leqslant n}{\prod} p \right)\\
+  & \leqslant & \frac{1}{n} \log (4^n)\\
+  & = & \log (4)
+\end{eqnarray*}
+Et on a :
+\[ \underset{p \leqslant x}{\sum} \frac{\log (p)}{p (p - 1)} \leqslant
+   \underset{2 \leqslant k \leqslant n}{\sum} \frac{\log (k)}{k (k - 1)} \]
+
+
+Comme
+\[ \frac{\log (k)}{\sqrt{k}} \underset{k \rightarrow +
+   \infty}{\longrightarrow} 0 \]
+
+
+alors
+\[ \frac{\log (k)}{k (k - 1)} = o \left( \frac{1}{\sqrt{k} (k - 1)} \right) \]
+
+
+avec
+\[ \frac{1}{\sqrt{k} (k - 1)} \underset{k \rightarrow + \infty}{\sim}
+   \frac{1}{k^{3 / 2}} \tmop{et} \underset{k \geqslant 2}{\sum} \frac{1}{k^{3
+   / 2}} \tmop{converge} \]
+
+
+Alors $\underset{k \geqslant 2}{\sum} \frac{1}{\sqrt{k} (k - 1)}$ converge, et
+par suite $\underset{k \geqslant 2}{\sum} \frac{\log (k)}{k (k - 1)}$
+converge.
+
+\
+
+On a donc $\tmop{par} \tmop{positivit} {\'e} \tmop{des} \tmop{termes}$ :
+\begin{eqnarray*}
+  \underset{p \leqslant x}{\sum} \frac{\log (p)}{p (p - 1)} & \leqslant &
+  \underset{2 \leqslant k \leqslant n}{\sum} \frac{\log (k)}{k (k - 1)}\\
+  & \leqslant & \underset{k = 2}{\overset{+ \infty}{\sum}} \frac{\log (k)}{k
+  (k - 1)}\\
+  & < & + \infty
+\end{eqnarray*}
+
+
+D'o{\`u},
+\[ \frac{\log (n!)}{n} - \underset{k = 2}{\overset{+ \infty}{\sum}} \frac{\log
+   (k)}{k (k - 1)} - \log (x) \leqslant \underset{p \leqslant x}{\sum}
+   \frac{\log (p)}{p} - \log (x) \leqslant \frac{\log (n!)}{n} - \log (x) +
+   \log (4) \]
+
+
+D'apr{\`e}s la formule de stirling :
+\[ \frac{\log (n!)}{n} = \log (n) - 1 + O \left( \frac{\log (n)}{n} \right) \]
+
+
+Donc :
+\[ \frac{\log (n!)}{n} - \log (x) = \log \left( \frac{n}{x} \right) - 1 + O
+   \left( \frac{\log (n)}{n} \right) \]
+
+
+Avec $n \leqslant x < n + 1$, donc
+\[ 1 - \frac{1}{x} < \frac{n}{x} \leqslant 1 \]
+
+
+On a donc
+\[ \log \left( 1 - \frac{1}{x} \right) \leqslant \log \left( \frac{n}{x}
+   \right) \leqslant 0 \]
+
+
+Il existe $N_1 \in \mathbb{N}$ et $M > 0$ tels que pour tout $m \geqslant
+N_1$, on a
+\[ \left| O \left( \frac{\log (m)}{m} \right) \right| \leqslant M. \frac{\log
+   (m)}{m} \]
+
+
+Donc pour tout $x \geqslant N_1$, et pour tout $n \geqslant N_1$, on a :
+\begin{eqnarray*}
+  \left| \frac{\log (n!)}{n} - \log (x) \right| & \leqslant & 1 + \left| \log
+  \left( \frac{n}{x} \right) \right| + M \frac{\log (n)}{n}\\
+  & \leqslant & 1 + \log \left( \frac{x}{x - 1} \right) + M. \frac{\log
+  (n)}{n}
+\end{eqnarray*}
+
+
+Donc :
+\begin{eqnarray*}
+  \left| \frac{\log (n!)}{n} - \log (x) \right| & \leqslant & 1 + \left| \log
+  \left( \frac{n}{x} \right) \right| + M \frac{\log (n)}{n}\\
+  & \leqslant & 1 + \log \left( \frac{x}{x - 1} \right) + M
+\end{eqnarray*}
+
+
+Comme $\log \frac{x}{x - 1} \underset{x \rightarrow + \infty}{\rightarrow} 0$
+, alors il existe $\eta > 0$ tel que pour tout $x \geqslant \eta$, on a
+\[ \tmop{og} \frac{x}{x - 1} \leqslant 1 \]
+
+
+Pour $N = \max (N_1, [\eta] + 1)$, on a pour tout $x \geqslant N$ :
+\[ \left| \frac{\log (n!)}{n} - \log (x) \right| \leqslant 2 + M \]
+
+
+Donc pour tout $x \geqslant \eta$, on a :
+\[ - \underset{k = 2}{\overset{+ \infty}{\sum}} \frac{\log (k)}{k (k - 1)} - 2
+   - M \leqslant \underset{p \leqslant x}{\sum} \frac{\log (p)}{p} - \log (x)
+   \leqslant 2 + M + \log (4) \]
+
+
+Par suite :
+\[ \left| \sum_{p \leqslant x} \frac{\log (p)}{p} - \log (x) \right| \leqslant
+   2 + M + \max \left( \log (4), \sum^{+ \infty}_{k = 2} \frac{\log (k)}{k (k
+   - 1)} \right) \]
+
+
+D'o{\`u},
+\[ \underset{p \leqslant x}{\sum} \frac{\log (p)}{p} = \log (x) + O (1) \]
+
+
+\subparagraph{Quelques r{\'e}sultats sur les groupes finis}
+
+\subparagraph{D{\'e}finition 2.}
+
+Soit $G$ un groupe commutatif fini dont on notera la loi multiplicativement.
+
+On dit qu'un homomorphisme de $G$ dans le groupe multiplicatif
+$\mathbb{C}^{\star}$ est un caract{\`e}re de $G$. Soient $\chi$ et $\chi'$
+deux caract{\`e}res de $G$. Le produit $\chi \chi_0$ est d{\'e}fini par la
+formule :
+\[ \chi \chi' (g) = \chi (g) \chi' (g) \tmop{pour} g \in G. \]
+
+
+On note 1 le caract{\`e}re constant de valeur 1. L'ensemble $\hat{G}$ des
+caract{\`e}res de $G$ est ainsi muni d'une loi de groupe d'{\'e}l{\'e}ment
+neutre 1.
+
+On note $\widehat{\hat{G}}$ le groupe des caract{\`e}res de $\hat{G}$.
+
+On note enfin $\overline{\chi}$ le caract{\`e}re qui {\`a} $g \in G$ associe
+le conjugu{\'e} $\overline{\chi (g)}$ de $\chi (g)$.
+
+Pour tout $z \in G$, consid{\'e}rons l'application$\varphi_x \in
+\widehat{\hat{G}}$ d{\'e}finie par :
+
+
+\[ \forall \chi \in \hat{G}, \quad \varphi_x (\chi) = \chi (x) \]
+
+\subparagraph{Th{\'e}or{\`e}me 4.}
+
+le morphisme :
+\[ \left\{\begin{array}{l}
+     G \rightarrow \widehat{\hat{G}}\\
+     x \longmapsto \varphi_x
+   \end{array}\right. \]
+
+
+est injectif
+
+\
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 4.}
+
+Soit $x \in G$ tel que $x \neq 1$ et $\tmop{gr} (x)$ le sous-groupe de $G$
+engendr{\'e} par $x$. Montrons qu'il existe un caract{\`e}re $\chi$ de
+$\tmop{gr} (x)$ tel que $\chi (x) \neq 1$.
+
+Comme $\tmop{gr} (x)$ est cyclique, alors il est isomorphe {\`a} $\mathbb{Z}/
+m\mathbb{Z}$, o{\`u} $m = o (x)$; l'ordre de $x$ dans $G$.
+
+Et comme $\mathbb{Z}/ m\mathbb{Z}$ est isomprphe {\`a} $\mathbb{U}_m$; le
+groupe des racines $m$-i{\`e}mes de l'unit{\'e}, alors $\tmop{gr} (x)$ est
+isomorphe {\`a} $\mathbb{U}_m$.
+
+\
+
+Puisque $x \neq 1$, alors $m \geqslant 2$, et donc il existe un caract{\`e}re
+de $\mathbb{U}_m$ qui ne prend la valeur 1 qu'en 1.
+
+Via l'isomorphisme, on en d{\'e}duit l'existance d'un caract{\`e}re $\chi$ de
+$\tmop{gr} (x)$ qui ne prend la valeur 1 qu'en $1_G$.
+
+D'o{\`u} l'existance d'un caract{\`e}re $\chi$ de $\tmop{gr} (x)$ tel que
+$\chi (x) \neq 1$.
+
+Soit $F$ la famille des sous-groupes $H$ de $G$ contenant $\tmop{gr} (x)$ tels
+que $\chi$ se prolonge en un caract{\`e}re de $H$. Montrer que $F$ admet un
+{\'e}l{\'e}ment $G'$ de cardinal maximal.
+
+Supposons que $G\prime \neq G$. Soit $y$ un {\'e}l{\'e}ment de $G$ qui n'est
+pas dans $G\prime$.
+
+On a :
+\[ F = \left\{ H \tmop{sous} \tmop{groupe} \tmop{de} G | \nobracket \tmop{gr}
+   (x) \subset H \infixand \chi \tmop{se} \tmop{prolonge} \tmop{en} \tmop{un}
+   \tmop{caract} {\`e} \tmop{re} \tmop{de} H \right\} \]
+
+
+Consid{\`e}rons l'ensemble :
+\[ A_F = \{ \#H | \nobracket H \in F \} \]
+
+
+$A_F$ est une partie de $\mathbb{N}$. Comme $\tmop{gr} (x)$ est un sous-groupe
+de $G$ tel que $\tmop{gr} (x) \subset \tmop{gr} (x)$ et $\chi$ se prolonge en
+un caract{\`e}re de $H$, alors $\tmop{gr} (x) \in F$, donc $F \neq \emptyset$,
+et par suite $A_F \neq \emptyset$.
+
+\
+
+Puisque G est un groupe fini, alors
+\[ \forall H \subset F, H \tmop{est} \tmop{fini} \tmop{et} \#H \leqslant \#G
+\]
+
+
+D'o{\`u} $A_F$ est une partie de $\mathbb{N}$, non vide major{\'e}e.
+
+Par cons{\'e}quent, $A_F$ poss{\`e}de un plus grand {\'e}l{\'e}ment.
+
+Il en r{\'e}sulte que $F$ admet un {\'e}lement $G'$ de cardinal maximal.
+
+Condid{\`e}rons l'ensemble
+\[ K = \{ m \in \mathbb{N}^{\ast}  | \nobracket y^m \in G' \} \]
+
+
+$K$ est une partie non vide de $\mathbb{N}$, puisqu'il contient l'ordre de $y$
+(qui est fini, puisque $G$ est fini, et $1_G \in G'$).
+
+Ainsi, $K$ admet un plus petit {\'e}l{\'e}ment, d'o{\`u} l'existence de $n \in
+\mathbb{N}^{\ast} $minimal tel que $y^n \in G'$.
+
+Soit $\chi'$ un caract{\`e}re de $G'$ prolongeant $\chi$ et posons $a = \chi'
+(g^n)$.
+
+Soit $b$ une racine $n$-i{\`e}me de $a$ dans $\mathbb{C}$.
+
+\
+
+Pour tous $m, k \in \mathbb{Z}$ et $g, g' \in G'$, en effectuant la division
+euclidienne de $m - k$ par $n$, on a l'existence de $(q, r) \in \mathbb{Z}
+\times \llbracket 0, n - 1 \rrbracket$ tel que :
+\[ m - k = q.n + r \]
+
+
+comme $g^n \in G'$, alors $g^{q.n} \in G'$.
+
+Si $g^m .g = y^k g'$, alors $g^{m - k} = g' .g^{- 1} \in G'$. On a alors
+\[ g^r = g^{m - k} .g^{- q.n} \in G' \]
+
+
+Alors $r = 0$, (car sinon, on trouve une contraduction avec le carat{\`e}re
+minimale de $n \geqslant 1$).
+
+Donc,
+\[ g^{m - k} = g' .g^{- 1} \]
+
+
+ce qui implique
+\[ g^{q.n} = g^{- 1} .g' \]
+
+
+Puisque $\chi'$ est un caract{\`e}re, alors :
+\begin{eqnarray*}
+  \chi' (g') . \chi' (g^{- 1}) & = & \chi' ((g^n)^q)\\
+  & = & (\chi' (g^n) )^q\\
+  & = & a^q\\
+  & = & b^{m - k}
+\end{eqnarray*}
+
+
+Il vient donc :
+\[ \chi' (g') b^k = \chi' (g ) b^m \]
+
+
+On peut donc d{\'e}finir $\chi''$ pour tout $(m, g) \in \mathbb{Z} \times G'$
+par :
+\[ \chi'' (g^m g) = b^m \chi' (g) \]
+
+
+On a ainsi $\chi''_{/ G} = \chi'$, par constuction
+\[ \chi''_{/ G} = \chi'_{/ G} = \chi \]
+
+
+Puisque $\chi'$ prolonge $\chi$ {\`a} $G'$, on peut alors prolonger $\chi$ au
+groupe engendr{\'e} par $g$ et $G'$.
+
+\
+
+L'hypoth{\`e}se $G' \neq G$ conduit {\`a} une absurdit{\'e}, car le groupe
+engendr{\'e} par $G'$ et $g$ a un cardinal strictement sup{\'e}rieur {\`a}
+celui de $G'$ (puisque $y \nin G'$). On en d{\'e}duit donc que
+\[ G' = G \]
+
+
+Pour tout $g \in G$distinct de 1, on dispose d'un caract{\`e}re $\chi$ de $G$
+tel que $\chi (g) \neq 1$, donc $\phi_g (\chi) \neq 1$ autrement dit $\phi_g
+\neq 1$.
+
+On en d{\'e}duit que l'application $g \longmapsto \varphi_g$ est injective
+(puisque $\phi_g$ est un morphisme).
+
+\
+
+\subparagraph{Th{\'e}or{\`e}me 5.}
+
+Pour tout $x \in G$ :
+\[ \underset{\chi \in \hat{G}}{\sum} \chi (x) = 0 \tmop{si} x \neq 1 \]
+
+
+et
+\[ \underset{\chi \in \hat{G}}{\sum} \chi (x) =\# \hat{G} \tmop{si} x = 1 \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 5.}
+
+Soit $(\chi', x) \in \hat{G} \times G$. Consid{\'e}rons l'application $\varphi
+: \hat{G} \longrightarrow \hat{G}$ d{\'e}finie pour tout $\chi \in \hat{G}$
+par :
+\[ \varphi (\chi) = \chi . \chi' \]
+
+
+Cette application est bien d{\'e}finie et bijective.
+
+Ainsi, on a :
+\[ \underset{\chi \in \hat{G}}{\sum} \chi (x) = \underset{\chi \in
+   \hat{G}}{\sum} (\chi . \chi') (x) \]
+
+
+Si $x \neq 1$, il existe, d'apr{\`e}s ce qui pr{\'e}c{\`e}de un $\chi' \in
+\hat{G}$ tel que $\chi' (x) \neq 1$. On obtient alors :
+\[ (1 - \chi' (x)) \underset{\chi \in \hat{G}}{\sum} \chi (x) = 0 \]
+
+
+Comme $1 - \chi' (x) \neq 0$, on en d{\'e}duit que :
+\[ \underset{\chi \in \hat{G}}{\sum} \chi (x) = 0 \]
+
+
+Si $x = 1$, on a :
+\begin{eqnarray*}
+  \underset{\chi \in \hat{G}}{\sum} \chi (x) & = & \underset{\chi \in
+  \hat{G}}{\sum} 1\\
+  & = & \# \hat{G}
+\end{eqnarray*}
+
+
+\subparagraph{Th{\'e}or{\`e}me 6.}
+
+Pour tout caract{\`e}re $\chi \in \hat{G}$, on a :
+\[ \underset{g \in G}{\sum} \chi (g) = 0 \tmop{si} \chi \neq 1 \]
+
+
+et
+\[ \underset{g \in G}{\sum} \chi (g) =\#G \tmop{si} \chi = 1 \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 6.}
+
+Si $\chi \neq 1$, soit $y \in G$ tel que $\chi (y) \neq 1$. L'application $g
+\in G \rightarrow g.y \in G$ est bijective. On a alors :
+\begin{eqnarray*}
+  \underset{g \in G}{\sum} \chi (g) & = & \underset{g \in G}{\sum} \chi
+  (g.y)\\
+  & = & \left( \underset{g \in G}{\sum} \chi (g) \right) \chi (y)
+\end{eqnarray*}
+
+
+D'o{\`u}
+\[ (1 - \chi (y)) \left( \underset{g \in G}{\sum} \chi (g) \right) = 0 \]
+
+
+Comme $1 - \chi (y) \neq 0$, on en d{\'e}duit que
+\[ \underset{g \in G}{\sum} \chi (g) = 0 \]
+
+
+Si $\chi \neq 1$, on a
+\begin{eqnarray*}
+  \underset{g \in G}{\sum} \chi (g) & = & \underset{g \in G}{\sum} 1\\
+  & = & \#G
+\end{eqnarray*}
+
+
+\subparagraph{Th{\'e}or{\`e}me 7.}
+
+le morphisme
+\[ \left\{\begin{array}{l}
+     G \rightarrow \widehat{\hat{G}}\\
+     x \longmapsto \varphi_x
+   \end{array}\right. \]
+
+
+est bijectif.
+
+\
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 7.}
+
+On a :
+\begin{eqnarray*}
+  \underset{(\chi, x) \in \hat{G} \times G}{\sum} \chi (x) & = &
+  \underset{\chi \in \hat{G}}{\sum}  \underset{x \in G}{\sum} \chi (x)\\
+  & = & \underset{\chi \in \hat{G} \backslash \{ 1 \} \nobracket}{\sum} 
+  \underset{x \in G}{\sum} \chi (x) + \underset{x \in G}{\sum} 1 (x)\\
+  & = & \#G
+\end{eqnarray*}
+
+
+D'autre part :
+\begin{eqnarray*}
+  \underset{(\chi, x) \in \hat{G} \times G}{\sum} \chi (x) & = &  \underset{x
+  \in G}{\sum}  \underset{\chi \in \hat{G}}{\sum} \chi (x)\\
+  & = & \underset{x \in G \backslash \{ 1 \} \nobracket}{\sum} 
+  \underset{\chi \in \hat{G}}{\sum} \chi (x) + \underset{\chi \in
+  \hat{G}}{\sum} \chi (1)\\
+  & = & \# \hat{G}
+\end{eqnarray*}
+
+
+On en d{\'e}duit que $\# \hat{G} =\#G$ ,donc $\# \widehat{\invbreve{G}} =\#G$
+
+Puisque le morphisme $\left\{\begin{array}{l}
+  G \rightarrow \widehat{\hat{G}}\\
+  x \longmapsto \varphi_x
+\end{array}\right.$ est injectif, alors il est bijectif (c'est un isomorphisme
+de groupes).
+
+\
+
+\subparagraph{La d{\'e}monstration du th{\'e}or{\`e}me de Dirichlet.}
+
+On va utiliser plusieurs fois une transform{\'e}e connue sous le nom de
+sommation d'Abel.
+
+On commence par l'{\'e}nonc{\'e} et la d{\'e}monstration de cette formule.
+Ensuite, nous d{\'e}finissons quelques fonctions arithm{\'e}tiques et nous
+{\'e}non{\c c}ons quelques propositions sur ces fonctions.
+
+\
+
+\subparagraph{Th{\'e}or{\`e}me 8. (La formule de sommation d'Abel)}
+
+Soient $\underset{n \geqslant 1}{\sum} u_n$ et $\underset{n \geqslant 1}{\sum}
+v_n$ deux s{\'e}ries de nombres complexes. Soit $U_n = \underset{k =
+1}{\overset{n}{\sum}} u_k$ la somme partielle des $u_k$, on a alors pour tout
+$n \geqslant 1$ :
+\[ \overset{n}{\underset{k = 1}{\sum}} u_k v_k = \overset{n - 1}{\underset{i =
+   1}{\sum}} (v_i - v_{i + 1}) U_i + v_n U_n \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 8.}
+
+\tmtextbf{M{\'e}thode 1.}
+
+Pour tout $n \geqslant 1$, on a :
+\begin{eqnarray*}
+  \overset{n}{\underset{k = 1}{\sum}} u_k v_k & = & \overset{n}{\underset{k =
+  1}{\sum}} u_k (v_k - v_n) + v_n \overset{n}{\underset{k = 1}{\sum}} u_k\\
+  & = & \overset{n}{\underset{k = 1}{\sum}} u_k \left( \overset{n -
+  1}{\underset{i = k}{\sum}} (v_i - v_{i + 1}) \right) + v_n U_n\\
+  & = & \overset{n}{\underset{k = 1}{\sum}} \overset{n - 1}{\underset{i =
+  k}{\sum}} u_k (v_i - v_{i + 1}) + v_n U_n\\
+  & = & \overset{n - 1}{\underset{i = 1}{\sum}} \overset{i}{\underset{k =
+  1}{\sum}} u_k (v_i - v_{i + 1}) + v_n U_n
+\end{eqnarray*}
+
+
+Ainsi,
+\begin{eqnarray*}
+  \overset{n}{\underset{k = 1}{\sum}} u_k v_k & = & \overset{n -
+  1}{\underset{i = 1}{\sum}} (v_i - v_{i + 1}) \left( \overset{i}{\underset{k
+  = 1}{\sum}} u_k \right) + v_n U_n\\
+  & = & \overset{n - 1}{\underset{i = 1}{\sum}} (v_i - v_{i + 1}) U_i + v_n
+  U_n
+\end{eqnarray*}
+
+
+\tmtextbf{M{\'e}thode 2.}
+
+Notons pour toute suite $(a_n)_{n \in \mathbb{N}}$, pour tout $n \in
+\mathbb{N}$ :
+\[ \Delta a_n = a_{n + 1} - a_n \]
+
+
+Alors, pour tout $k \in \mathbb{N}$ :
+\begin{eqnarray*}
+  \Delta (U.v)_k & = & U_{k + 1} v_{k + 1} - U_k v_k\\
+  & = & \left|\begin{array}{c}
+    U_{k + 1} \qquad U_k\\
+    v_k \qquad v_{k + 1}
+  \end{array}\right|\\
+  & = & \left|\begin{array}{c}
+    u_{k + 1} \qquad U_k\\
+    - \Delta v_k \qquad v_{k + 1}
+  \end{array}\right|
+\end{eqnarray*}
+
+
+Ainsi,
+\[ \Delta (U.v)_k = u_{k + 1} v_{k + 1} + U_k \Delta v_k \]
+
+
+En sommant de 1 {\`a} $n - 1$, on obtient :
+\[ \overset{n - 1}{\underset{k = 1}{\sum}} \Delta (U.v)_k = \overset{n -
+   1}{\underset{k = 1}{\sum}} u_{k + 1} v_{k + 1} + \overset{n -
+   1}{\underset{k = 1}{\sum}} U_k \Delta v_k \]
+
+
+D'o{\`u} :
+\[ U_{n - 1} .v_{n - 1} - U_1 {.v_1}  = \overset{n - 1}{\underset{k =
+   1}{\sum}} u_{k + 1} v_{k + 1} + \overset{n - 1}{\underset{k = 1}{\sum}} U_k
+   (v_{k + 1} - v_k)  \]
+
+
+Ainsi :
+\[ \overset{n}{\underset{k = 1}{\sum}} u_k v_k = \overset{n - 1}{\underset{i =
+   1}{\sum}} (v_i - v_{i + 1}) U_i + v_n U_n \]
+
+
+\subparagraph{D{\'e}finition 3. (La fonction de M{\"o}bius)}
+
+Soit $n \in \mathbb{N}^{\ast}$. On note $\mu (n)$ l'entier d{\'e}fini par :
+\[ \mu (n) = \left\{\begin{array}{l}
+     0 \quad \tmop{si} n \tmop{est} \tmop{divisible} \tmop{par} \tmop{le}
+     \tmop{carr} {\'e} d\prime \tmop{un} \tmop{nombre} \tmop{premier}\\
+     (- 1)^r \quad \tmop{si} r \tmop{est} \tmop{le} \tmop{nombre} \tmop{de}
+     \tmop{facteurs} \tmop{premiers} \tmop{distincts} \tmop{de} n,\\
+     n \tmop{non} \tmop{divisible} \tmop{par} \tmop{le} \tmop{carr} {\'e}
+     d\prime \tmop{un} \tmop{nombre} \tmop{premier}
+   \end{array}\right. \]
+
+
+\subparagraph{Proposition 1.}
+
+pour tout $n \neq 1$, on a l'{\'e}galit{\'e}
+\[ \underset{d / n}{\sum} \mu (d) = 0 \]
+
+\subparagraph{Preuve de la proposition 1.}
+
+\tmtextbf{M{\'e}thode 1.}
+
+Soit $n = \underset{i = 1}{\overset{m}{\prod}} p^{a_i}_i$ la d{\'e}composition
+en facteurs premiers de $n$.
+
+
+
+Si $d \in \mathbb{N}$ tel que $d$ divise $n$. Alors, $\mu (d) \neq 0$ si et
+seulement si $d = \underset{i \in J}{\overset{}{\prod}} p^{a_i}_i$ with $J
+\subset \llbracket 1, m \rrbracket$
+
+Dans ce cas on a
+\[ \mu (d) = (- 1)^{\#J} \]
+
+
+On en d{\'e}duit que :
+\begin{eqnarray*}
+  \underset{d / n}{\sum} \mu (d) & = & \underset{J \subset \llbracket 1, m
+  \rrbracket}{\sum} (- 1)^{\#J}\\
+  & = & (1 - 1)^m\\
+  & = & 0 \qquad (\tmop{car} m > 0)
+\end{eqnarray*}
+
+
+\tmtextbf{M{\'e}thode 2.}
+
+Soit $n \geqslant 2$. D'apr{\`e}s le th{\'e}or{\`e}me fondamental de
+l'arithm{\'e}tique, il existe des entiers premiers $p_1, \ldots, p_r$ et
+$\alpha_1, \ldots, \alpha_r \geqslant 1$ tels que :
+\[ n = \underset{i = 1}{\overset{r}{\prod}} p^{\alpha_i}_i \]
+
+
+On a :
+\[ \underset{d / n}{\sum} \mu (d) = \underset{k_1 =
+   0}{\overset{\alpha_1}{\sum}} \underset{k_2 = 0}{\overset{\alpha_2}{\sum}}
+   \ldots \underset{k_r = 0}{\overset{\alpha_r}{\sum}} \mu \left( \underset{i
+   = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Par suite :
+\[ \underset{d / n}{\sum} \mu (d) = \underset{\exists i_0 \in \llbracket 1, r
+   \rrbracket k_{i_0} \geqslant 2}{\underset{(k_1, \ldots, k_r) \in
+   \underset{i = 1}{\overset{r}{\prod}} \llbracket 0, \alpha_i
+   \rrbracket}{\overset{}{\sum}}} \mu \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{k_i}_i \right) + \underset{}{\underset{(k_1,
+   \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} \mu
+   \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Puisque pour tout $(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+\llbracket 0, \alpha_i \rrbracket$ tel qu'il existe $i_0 \in \llbracket 1, r
+\rrbracket$ tel que $k_{i_0} \geqslant 2$, on a
+
+
+\[ \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \tmop{est} \tmop{divisible}
+   \tmop{par} p^2_{i_0 } \]
+
+
+Alors,
+\[ \mu \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+D'o{\`u}
+\[ \underset{\exists i_0 \in \llbracket 1, r \rrbracket k_{i_0} \geqslant
+   2}{\underset{(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+   \llbracket 0, \alpha_i \rrbracket}{\overset{}{\sum}}} \mu \left(
+   \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+Par suite :
+\[ \underset{d / n}{\sum} \mu (d) = \underset{}{\underset{(k_1, \ldots, k_r)
+   \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} \mu \left( \underset{i
+   = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \]
+
+
+Pour tout $(k_1, \ldots, k_r) \in \llbracket 0, 1 \rrbracket^r$, on a
+$\overset{r}{\underset{i = 1}{\sum}} k_i$ est le nombre de facteurs premiers
+distincts de $\underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i$, et $\underset{i
+= 1}{\overset{r}{\prod}} p^{k_i}_i$ n'est pas divisible par le carr{\'e} d'un
+nombre premier. Alors :
+\begin{eqnarray*}
+  \underset{d / n}{\sum} \mu (d) & = & \underset{}{\underset{(k_1, \ldots,
+  k_r) \in \llbracket 0, 1 \rrbracket^r}{\overset{}{\sum}}} (-
+  1)^{\overset{r}{\underset{i = 1}{\sum}} k_i}\\
+  & = & \underset{i = 1}{\overset{r}{\prod}} \left( \underset{k_1 =
+  0}{\overset{1 }{\sum}} (- 1)^{k_i} \right)\\
+  & = & (1 - 1)^r\\
+  & = & 0
+\end{eqnarray*}
+
+
+\subparagraph{Th{\'e}or{\`e}me 9. (La formule d'inversion de M{\"o}bius)}
+
+Soit $H$ une fonction non nulle de $\mathbb{N}^{\ast}$ dans $\mathbb{C}$ telle
+que pour tout $n, m \in \mathbb{N}^{\ast}$
+\[ H (n.m) = H (n) H (m) \]
+
+
+On se donne {\'e}galement deux fonctions $F$ et $G$ de$[1, + \infty [$ dans
+$\mathbb{C}$ telles que :
+\[ \forall x > 1, \quad {\color[HTML]{000000}{\color[HTML]{000000}G (x) =
+   \underset{1 \leqslant k \leqslant x}{\sum} F \left( \frac{x}{k} \right) H
+   (k)}} \]
+
+
+Alors :
+\[ \forall x > 1, \quad {\color[HTML]{000000}{\color[HTML]{000000}F (x) =
+   \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left( \frac{x}{k}
+   \right) H (k)}} \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 9.}
+
+On a
+\[ H (1) = H (1 \times 1) = H (1)^2 \]
+
+Puisque $H \neq 0$, alors $H (1) = 1$.
+
+De plus, pour tout $x \in [1, + \infty [$, on a :
+
+\begin{eqnarray*}
+  \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left( \frac{x}{k}
+  \right) H (k) & = & \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+  \underset{1 \leqslant i \leqslant \frac{x}{k}}{\sum} F \left( \frac{x}{i.k}
+  \right) H (i) H (k)\\
+  & = & \underset{1 \leqslant k \leqslant x}{\sum} \underset{1 \leqslant i
+  \leqslant \frac{x}{k}}{\sum} \mu (k) F \left( \frac{x}{i.k} \right) H
+  (i.k)\\
+  & = & \underset{1 \leqslant k.i \leqslant x}{\sum} \mu (k) F \left(
+  \frac{x}{i.k} \right) H (i.k)\\
+  & = & \underset{1 \leqslant m \leqslant x}{\sum}  \underset{d | \nobracket
+  m}{\sum} \mu (d) F \left( \frac{x}{m} \right) H (m)\\
+  & = & \underset{1 \leqslant m \leqslant x}{\sum} F \left( \frac{x}{m}
+  \right) H (m) \left( \underset{d | \nobracket m}{\sum} \mu (d) \right)\\
+  & = & F (x) H (1) + \underset{2 \leqslant m \leqslant x}{\sum} F \left(
+  \frac{x}{m} \right) H (m) \left( \underset{d | \nobracket m}{\sum} \mu (d)
+  \right)
+\end{eqnarray*}
+
+
+\
+
+D'apr{\`e}s la proposition 1, on a pour tout $m \geqslant 2$
+\[ \underset{d | \nobracket m}{\sum} \mu (d) = 0 \]
+
+
+d'o{\`u} :
+\[ F (x) = \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left(
+   \frac{x}{k} \right) H (k) \]
+
+
+\
+
+\subparagraph{D{\'e}finition 4.}
+
+Soit $\Lambda$ la fonction de $[1, + \infty [$ dans $\mathbb{R}$ qui {\`a}
+$p^n$ associe $\log (p)$ et qui est nulle sur tous les r{\'e}els qui ne sont
+pas des entiers de la forme $p^n$.
+
+\
+
+\subparagraph{Proposition 2.}
+
+Pour tout entier $m \geqslant 1$, on a :
+\[ \Lambda (x) = \underset{d | \nobracket m}{\sum} \mu (d) \log \left(
+   \frac{m}{d} \right) \]
+
+
+\subparagraph{Preuve de la proposition 2.}
+
+\tmtextbf{M{\'e}thode 1.}
+
+On applique ce qui pr{\'e}c{\`e}de {\`a} $F = \Lambda$ et $H = 1$ (qui est
+bien une fonction multiplicative).
+
+Alors, pour tout $x \geqslant 1$ et $k \in \mathbb{N}^{\ast}$ $\Lambda \left(
+\frac{x}{k} \right)$ est non nul si et seulement si $x$ est un entier de la
+forme $k.p^n$ avec $n \in \mathbb{N}^{\ast}$, et n{\'e}cessairement
+inf{\'e}rieur {\`a} $v_p (x)$.
+
+D'o{\`u}
+\begin{eqnarray*}
+  G (x) & = & \underset{1 \leqslant k \leqslant x}{\sum} \Lambda \left(
+  \frac{x}{k} \right)\\
+  & = & 1_{\mathbb{N}} (x) \underset{p^n \leqslant x}{\sum} \log (p)\\
+  & = & 1_{\mathbb{N}} (x) \underset{p / x}{\sum} v_p (x) \log (p)\\
+  & = & 1_{\mathbb{N}} (x) . \log (x)
+\end{eqnarray*}
+
+
+Ainsi,
+
+\[  \]
+\[ \Lambda (x) = \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+   1_{\mathbb{N}} \left( \frac{x}{k} \right) \log \left( \frac{x}{k} \right)
+\]
+
+
+En particulier, puisque $\frac{m}{k}$ est un entier si et seulement si $k$
+divise $m$
+\[ \Lambda (x) = \underset{d | \nobracket m}{\sum} \mu (d) \log \left(
+   \frac{m}{d} \right) \]
+
+
+\tmtextbf{M{\'e}thode 2.}
+
+Pour tout entier $m \in \mathbb{N}^{\ast}$, on a
+\[ \Lambda (1) = 0 \]
+
+
+et
+\[ \underset{d | \nobracket 1}{\sum} \mu (d) \log \left( \frac{1}{d} \right) =
+   \log (1) = 0 \]
+
+
+Dans la suite, on prend $m \geqslant 2$. D'apr{\`e}s le th{\'e}or{\`e}me
+fondamental de l'arithm{\'e}tique, il existe $p_1, \ldots, p_r \in
+\mathcal{P}^+$ et $\alpha_1, \ldots, \alpha_r \in \mathbb{N}^{\ast}$ tels que
+\[ m = \underset{i = 1}{\overset{r}{\prod}} p^{\alpha_i}_i \]
+
+
+On a alors :
+\[ \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right) =
+   \underset{\underset{}{(k_1, \ldots, k_r) \in \underset{i =
+   1}{\overset{r}{\prod}} \llbracket 0, \alpha_i \rrbracket}}{\sum} \mu \left(
+   \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) \log \left(
+   \underset{i = 1}{\overset{r}{\prod}} p^{\alpha_i - k_i}_i \right) \]
+
+
+\
+
+\
+
+Avec pour tout $(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+\llbracket 0, \alpha_i \rrbracket$, il existe \ $i_0 \in \llbracket 1, r
+\rrbracket$ tel que $k_{i_0} \geqslant 2$ alors
+\[ \mu \left( \underset{i = 1}{\overset{r}{\prod}} p^{k_i}_i \right) = 0 \]
+
+
+Alors,
+\[ \underset{\underset{\exists i_0 \in \llbracket 1, r \rrbracket k_{i_0}
+   \geqslant 2}{(k_1, \ldots, k_r) \in \underset{i = 1}{\overset{r}{\prod}}
+   \llbracket 0, \alpha_i \rrbracket}}{\sum} \mu \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{k_i}_i \right) \log \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{\alpha_i - k_i}_i \right) = 0 \]
+
+
+Par suite,
+\[ \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right)
+   = \underset{\underset{}{(k_1, \ldots, k_r) \in \underset{}{\overset{}{}}
+   \llbracket 0, 1 \rrbracket^r}}{\sum} \mu \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{k_i}_i \right) \log \left( \underset{i =
+   1}{\overset{r}{\prod}} p^{\alpha_i - k_i}_i \right) \]
+
+
+Ainsi,
+
+
+\[ \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right) =
+   \underset{\underset{}{(k_1, \ldots, k_r) \in \underset{}{\overset{}{}}
+   \llbracket 0, 1 \rrbracket^r}}{\sum} (- 1)^{\overset{r}{\underset{i =
+   1}{\sum}} k_i} \overset{r}{\underset{j = 1}{\sum}} (\alpha_j - k_j) \log (p
+   _j) \]
+
+
+Par suite,
+\[ \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right)
+   = \log \left( \underset{i = 1}{\overset{r}{\prod}} p^{\alpha_i}_i \right)
+   (1 + (- 1))^r - \underset{\underset{}{(k_1, \ldots, k_r) \in
+   \underset{}{\overset{}{}} \llbracket 0, 1 \rrbracket^r}}{\sum} (-
+   1)^{\overset{r}{\underset{i = 1}{\sum}} k_i} \overset{r}{\underset{j =
+   1}{\sum}} k_j \log (p _j) \]
+
+
+Ainsi,
+\[ \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right) =
+   \overset{r}{\underset{j = 1}{\sum}} \log (p _j) \underset{\underset{}{(k_1,
+   \ldots, k_r) \in \underset{}{\overset{}{}} \llbracket 0, 1
+   \rrbracket^r}}{\sum} (- 1)^{\overset{r}{\underset{}{\underset{i \neq
+   j}{\underset{i = 1}{\sum}}}} k_i} k_j \]
+
+
+\
+
+Ainsi,
+\begin{eqnarray*}
+  \underset{d | \nobracket m}{\sum} \mu (d) \log \left( \frac{m}{d} \right) &
+  = & \overset{r}{\underset{j = 1}{\sum}} \log (p _j) \left[ \underset{i \neq
+  j}{\underset{i = 1}{\overset{r}{\prod}}} (1 - 1) \right] (0 + 1)\\
+  & = & 0^{r - 1} \overset{r}{\underset{j = 1}{\sum}} \log (p _j)\\
+  & = & \left\{\begin{array}{l}
+    0 \tmop{si} r \geqslant 2\\
+    \log (p_1) \tmop{si} r = 1
+  \end{array}\right.\\
+  & = & \Lambda (m)
+\end{eqnarray*}
+
+
+D'o{\`u}, pour tout $m \in \mathbb{N}^{\ast}$
+\[ \Lambda (m) = \underset{d | \nobracket m}{\sum} \mu (d) \log \left(
+   \frac{m}{d} \right) \]
+
+
+Par caract{\`e}re, on entendra toujours caract{\`e}re de $G (N)$. On dira
+qu'un caract{\`e}re $\chi \neq 1$ est non trivial.
+
+On notera encore $\chi$ la fonction de $\mathbb{N}$ dans $\mathbb{C}$
+d{\'e}finie par
+\[ \chi (m) = \chi (m \tmop{mod} N) \]
+
+
+si $m$ et $N$ sont premiers entre eux, et $\chi (m) = 0$ sinon.
+
+On a la formule
+\[ \chi (a b) = \chi (a) \chi (b) \]
+
+
+pour tout $a, b.$
+
+\
+
+\subparagraph{D{\'e}finition 5.}
+
+Soit $\chi$ un caract{\`e}re non trivial. On d{\'e}finit la fonction $f :
+\mathbb{N} \rightarrow \mathbb{C}$ pour tout $n \in \mathbb{N}$ par :
+\[ f (n) = \underset{d | n \nobracket}{\sum} \chi (d) \]
+
+
+On d{\'e}finit la fonction $g$ pour tout $x \geqslant 0$, par :
+\[ g (x) = \underset{n \leqslant x}{\sum} \frac{f (n)}{\sqrt{n}} \]
+
+
+\subparagraph{Proposition 3.}
+
+Soit $\chi$ un caract{\`e}re non trivial. Les s{\'e}ries $\underset{n
+\geqslant 1}{\sum} \frac{\chi (n)}{n}$ et $\underset{n \geqslant 1}{\sum}
+\frac{\chi (n)}{n} \log (n)$ convergent.
+
+On note dans la suite
+\[ L (\chi) = \underset{n \geqslant 1}{\sum} \frac{\chi (n)}{n} \]
+
+
+et
+\[ L_1 (\chi) = \underset{n \geqslant 1}{\sum} \frac{\chi (n)}{n} \log (n) \]
+
+
+\subparagraph{Preuve de la proposition 3.}
+
+Soit $\chi$ un caract{\`e}re non trivial et $m \in \mathbb{N}^{\ast}$. Puisque
+pour tout entier $n \geqslant 3$, on a
+\[ \left| \chi (n) \frac{\log (n)}{n} \right| \geqslant \left| \frac{\chi
+   (n)}{n} \right| \]
+
+
+Il suffit de montrer que la s{\'e}rie $\overset{}{\underset{n \geqslant
+1}{\sum}} \chi (n) \frac{\log (n)}{n}$ converge.
+
+\
+
+D'apr{\'e}s le th{\'e}or{\`e}me 5,
+\begin{eqnarray*}
+  \overset{N}{\underset{n = 1}{\sum}} \chi (n) & = & \overset{N}{\underset{n
+  \wedge N = 1}{\underset{n = 1}{\sum}}} \chi (n)\\
+  & = & \overset{}{\underset{}{\underset{g \in G (N)}{\sum}}} \chi (g)\\
+  & = & 0 \quad (\star)
+\end{eqnarray*}
+
+
+On a, d'apr{\`e}s la formule de sommation d'Abel (le th{\'e}or{\`e}me 8)
+\[ \overset{m}{\underset{n = 1}{\sum}} \chi (n) \frac{\log (n)}{n} =
+   \overset{m}{\underset{n = 1}{\sum}} \chi (n) \frac{\log (m)}{m} +
+   \overset{m - 1}{\underset{n = 1}{\sum}} \left( \frac{\log (n + 1)}{n + 1} -
+   \frac{\log (n)}{n} \right) \overset{n}{\underset{i = 1}{\sum}} \chi (i) \]
+
+
+Par la division euclidienne de $m$ par N, il existe $(q, r) \in \mathbb{N}^2$
+tel que $r < N$ et $m = N q + r$.
+
+On a alors
+\begin{eqnarray*}
+  \overset{m}{\underset{n = 1}{\sum}} \chi (n) & = & \overset{n q +
+  r}{\underset{n = 1}{\sum}} \chi (n)\\
+  & = & \overset{q - 1}{\underset{k = 0}{\sum}} \left( \overset{(k + 1)
+  N}{\underset{n = 1 + k.N}{\sum}} \chi (n) \right) + \overset{q.N +
+  r}{\underset{n = 1 + q.N}{\sum}} \chi (n)\\
+  & = & \overset{q - 1}{\underset{k = 0}{\sum}} \left(
+  \overset{N}{\underset{n = 1}{\sum}} \chi (n + k.N) \right) +
+  \overset{r}{\underset{n = 1}{\sum}} \chi (n + q.N)\\
+  & = & \overset{q - 1}{\underset{k = 0}{\sum}} \left(
+  \overset{N}{\underset{n = 1}{\sum}} \chi (n) \right) +
+  \overset{r}{\underset{n = 1}{\sum}} \chi (n)\\
+  & = & q \overset{N}{\underset{n = 1}{\sum}} \chi (n) +
+  \overset{r}{\underset{n = 1}{\sum}} \chi (n)
+\end{eqnarray*}
+
+
+D'apr{\`e}s $(\star)$,
+\[ \overset{N}{\underset{n = 1}{\sum}} \chi (n) = 0 \]
+
+
+Donc :
+
+
+\[ \overset{m}{\underset{n = 1}{\sum}} \chi (n) = \overset{r}{\underset{n =
+   1}{\sum}} \chi (n) \]
+
+
+Ainsi, par l'in{\'e}galit{\'e} triangulaire
+\[ \left| \overset{m}{\underset{n = 1}{\sum}} \chi (n) \right| \leqslant
+   \overset{r}{\underset{n = 1}{\sum}} | \chi (n) | \]
+
+
+Donc :
+\[ \overset{m}{\underset{n = 1}{\sum}} \chi (n) \frac{\log (m)}{m} = O \left(
+   \frac{\log (m)}{m} \right) = o (1) \]
+
+
+De plus,
+
+
+\[ \left( \frac{\log (n + 1)}{n + 1} - \frac{\log (n)}{n} \right)
+   \overset{n}{\underset{i = 1}{\sum}} \chi (i) = O \left( \frac{\log (n +
+   1)}{n + 1} - \frac{\log (n)}{n} \right) \]
+
+
+Avec $\frac{\log (n)}{n} \underset{n \longrightarrow +
+\infty}{\longrightarrow} 0$, alors la serie t{\'e}lescopique $\underset{n
+\geqslant 1}{\sum} \left( \frac{\log (n + 1)}{n + 1} - \frac{\log (n)}{n}
+\right)$ converge.
+
+\
+
+Ainsi, la s{\'e}rie \
+\[ \underset{n \geqslant 1}{\sum} \left[ \left( \frac{\log (n + 1)}{n + 1} -
+   \frac{\log (n)}{n} \right) \overset{n}{\underset{i = 1}{\sum}} \chi (i)
+   \right] \tmop{converge} \]
+
+
+On en d{\'e}duit que la s{\'e}rie $\overset{}{\underset{n \geqslant 1}{\sum}}
+\chi (n) \frac{\log (n)}{n}$ converge.
+
+
+
+Par suite $\overset{}{\underset{n \geqslant 1}{\sum}} \frac{\chi (n)}{n}$
+converge.
+
+\
+
+\subparagraph{Proposition 4.}
+
+La fonction $f$ est arithm{\'e}tique, et pour tout entier $n \in \mathbb{N}$,
+on a $f (n) \geqslant 0$.
+
+De plus :
+\[ f (n) \geqslant 1 \tmop{si} n \tmop{est} \tmop{un} \tmop{carr} {\'e} \]
+
+
+\subparagraph{Preuve de la proposition 4.}
+
+Soit $(n, m) \in \mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$, tel que $n
+\wedge m = 1$.
+
+Pour tout $d$ diviseur de $n$ et $d'$ diviseur de $m$, le produit $d d'$ est
+un diviseur de $n.m$
+
+Soit $D$ un diviseur de $n.m$. Montrons l'existence et l'unicit{\'e} d'un
+couple $(d, d') \in \mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$, tel que $d$
+est un diviseur de $n$ et $d'$ est un diviseur de $m$ et $D = d.d'$
+
+\
+
+On pose $a = D \wedge n$. On a alors $a | \nobracket D$ et $a | \nobracket
+n$.
+
+\
+
+Soient $p_1, \ldots, p_r, p_{r + 1}, \ldots, p_l$ des nombres premiers deux
+{\`a} deux distincts, et $\alpha_1, \ldots, \alpha_l \in \mathbb{N}^{\ast}$
+tels que :
+\[ n = \underset{i = 1}{\overset{r}{\prod}} {p^{\alpha_i}_i}_{} \infixand m =
+   \underset{i = r + 1}{\overset{l}{\prod}} {p^{\alpha_i}_i}_{} \]
+
+
+On a alors
+\[ n m = \underset{i = 1}{\overset{l}{\prod}} {p^{\alpha_i}_i}_{} \]
+
+
+Comme $D$ est un diviseur de $n m$, il existe $\lambda_1, \ldots, \lambda_l
+\in \mathbb{N}$ tels que pour tout $i \in \llbracket 1, l \rrbracket 
+\lambda_i \leqslant \alpha_i$ et $D = \underset{i = 1}{\overset{l}{\prod}}
+{p^{\lambda_i}_i}_{}$
+
+\
+
+On a $a = D \wedge n$, donc
+\[ a = \underset{i = 1}{\overset{r}{\prod}} p^{\min (\lambda_i, \alpha_i)}_i =
+   \underset{i = 1}{\overset{r}{\prod}} {{p^{\lambda_i}_i}_{}}_{} \]
+
+
+Alors :
+\[ \frac{D}{a} = \underset{i = r + 1}{\overset{l}{\prod}}
+   {{p^{\lambda_i}_i}_{}}_{} \]
+
+
+Donc $\frac{D}{a} \wedge n = 1$, et $\frac{D}{a}$ divise $D$, donc divise
+aussi $n m$. Via le lemme de Gauss, on en d{\'e}duit que $\frac{D}{a}$ divise
+$m$.
+
+\
+
+Ainsi, tout diviseur $m n$ est le produit d'un diviseur de $n$ et d'un
+diviseur de $m$. Montrons maintenant que cette d{\'e}composition est unique.
+
+\
+
+Soient $d, d', D, D' \in \mathbb{N}^{\ast}$ tels que $d.d' = D.D'$ avec $d$
+et $D$ (respectivement $d'$ et $D'$) sont des diviseurs de $n$ (respectivement
+de $m$).
+
+\
+
+On a alors $d$ divise $D.D'$, avec $d$est premier {\`a} $D'$ (puisque $n$ et
+$m$ sont premiers entre eux). D'apr{\`e}s le lemme de Gauss $d$ divise $D$.
+
+\
+
+De m{\^e}me, on trouve $D$divise $d$, donc $D = d$. De m{\^e}me $D = d'$.
+
+\
+
+Il vient alors :
+\begin{eqnarray*}
+  f (n) f (m) & = & \left( \underset{d | \nobracket n}{\sum} \chi (d) \right)
+  \left( \underset{d' | \nobracket m}{\sum} \chi (d') \right)\\
+  & = & \underset{d | \nobracket n}{\sum}  \underset{d' | \nobracket m}{\sum}
+  \chi (d) \chi (d')\\
+  & = & \underset{d' | \nobracket m}{\underset{d | \nobracket n}{\sum}} \chi
+  (d.d')
+\end{eqnarray*}
+
+
+On utilise ce qu'on a montr{\'e}, et on a alors :
+\begin{eqnarray*}
+  f (n) f (m) & = & \underset{}{\underset{d / n.m}{\sum}} \chi (d)\\
+  & = & f (n m)
+\end{eqnarray*}
+
+
+Si $n$ n'est pas premier {\`a} $N$, on a $\chi (n) = 0$ (par d{\'e}finition).
+
+\
+
+Sinon, on a $n \in G (N)$, qui est fini. Notons $a$ l'ordre de $n$dans $G
+(N)$. On a
+\begin{eqnarray*}
+  1 & = & \chi (1)\\
+  & = & \chi (n^a)\\
+  & = & \chi (n)^a
+\end{eqnarray*}
+
+
+Et donc $\chi (n) $est une racine $a$-{\`e}me de l'unit{\'e}. Puisqu'on
+suppose que $\chi$ prend des valeurs r{\'e}elles, on a $\chi (n)$ est {\'e}gal
+{\`a} $- 1$ ou $1$.
+
+En conclusion $\chi$ est {\`a} valeurs dans $\{ - 1, 0, 1 \}$.
+
+Soit $p$ un nombre premier, on a pour tout $n \in \mathbb{N}$ :
+\begin{eqnarray*}
+  f (p^n) & = & \underset{k = 0}{\overset{n}{\sum}} \chi (p)^k\\
+  & = & \left\{\begin{array}{ll}
+    1 & \tmop{si} \chi (p) = 0\\
+    n + 1 & \tmop{si} \chi (p) = 1\\
+    \frac{1 + (- 1)^n}{2}  & \tmop{si} \chi (p) = - 1
+  \end{array}\right.
+\end{eqnarray*}
+
+
+\
+
+En d{\'e}composant $n$ en facteurs premiers, on a
+\[ f (n) = \underset{p | \nobracket n}{\prod} f (p^{v_p (n)}) \]
+
+
+Chacun des termes est positif, d'apr{\`e}s ce qui pr{\'e}c{\`e}de, et m{\^e}me
+sup{\'e}rieur ou {\'e}gal {\`a} 1 si $v_p (n)$ est pair. On en d{\'e}duit :
+\[ f (n) \geqslant 0 \infixand f (n) \geqslant 1 \tmop{si} n \tmop{est}
+   \tmop{un} \tmop{carr} {\'e} \]
+
+
+\subparagraph{Proposition 5.}
+
+$\tmop{On} a$
+\[  \underset{x \rightarrow + \infty}{\lim} g (x) = + \infty \]
+
+
+\subparagraph{Preuve de la proposition 5.}
+
+D'apr{\`e}s ce qui pr{\'e}c{\'e}de, pour tout $m \in \mathbb{N}^{\ast}$ et
+pour $x \geqslant m^2$, on a :
+\begin{eqnarray*}
+  g (x) & \geqslant & \underset{k = 1}{\overset{m^2}{\sum}} \frac{f
+  (k)}{\sqrt{k}}\\
+  & \geqslant & \underset{k = 1}{\overset{m}{\sum}} \frac{f (k^2)}{k}\\
+  & \geqslant & \underset{k = 1}{\overset{m}{\sum}} \frac{1}{k}
+\end{eqnarray*}
+
+
+Par divergence de $\underset{k \geqslant 1}{\overset{}{\sum}} \frac{1}{k}$, on
+obtient
+\[ \underset{x \rightarrow + \infty}{\lim} g (x) = + \infty \]
+
+
+\
+
+\subparagraph{Proposition 6.}
+
+Pour tout $x \geqslant 0$, on a
+\[  g (x) = \underset{d' \leqslant \sqrt{x}}{\sum}  \frac{1}{\sqrt{d'}}
+   \underset{}{\underset{\sqrt{x} < d \leqslant \frac{x}{d'}}{\sum}}
+   \frac{\chi (d)}{\sqrt{d}} + \underset{d \leqslant \sqrt{x}}{\sum} 
+   \frac{\chi (d)}{\sqrt{d}} \underset{}{\underset{d \leqslant
+   \frac{x}{d}}{\sum}} \frac{1}{\sqrt{d'}} \]
+
+
+\subparagraph{Preuve de la proposition 6.}
+
+L'application $(d, d') \longmapsto (d.d', d)$ de l'ensemble des couples $(d,
+d') \in \mathbb{N}^{\ast} \times \mathbb{N}^{\ast}$ v{\'e}rifiant $n \leqslant
+x$ et $d | \nobracket n$ est bien d{\'e}finie et bijective, avec pour
+r{\'e}ciproque :
+\[ (n, d) \longmapsto \left( d, \frac{n}{d} \right) \]
+
+
+On en d{\'e}duit que :
+\begin{eqnarray*}
+  g (x) & = & \underset{n \leqslant x}{\sum}  \underset{d / n}{\sum}
+  \frac{\chi (d)}{\sqrt{n}}\\
+  & = & \underset{d.d' \leqslant x}{\sum} \frac{\chi (d)}{\sqrt{d.d'}}
+\end{eqnarray*}
+
+
+o{\`u} la seconde somme est prise sur l'ensemble des couples $(d, d')$
+d'entiers $\geqslant 1$, tels que $d d' \leqslant x$. Pour de tels entiers, on
+a $d \leqslant \frac{x}{d'} \leqslant x$ et $d' \leqslant \frac{x}{d}
+\leqslant x$, avec\quad$d' \leqslant \sqrt{x}$ si, et seulement si, $d >
+\sqrt{x}$.
+
+En scindant la somme selon les cas $d < \sqrt{x}$ ou $d \geqslant \sqrt{x}$,
+on obtient :
+\begin{eqnarray*}
+  g (x) & = & \underset{d > \sqrt{x}}{\underset{d.d' \leqslant x}{\sum}}
+  \frac{\chi (d)}{\sqrt{d.d'}} + \underset{d \leqslant
+  \sqrt{x}}{\underset{d.d' \leqslant x}{\sum}} \frac{\chi (d)}{\sqrt{d.d'}}\\
+  & = & \underset{d' \leqslant \sqrt{x}}{\sum}  \frac{1}{\sqrt{d'}}
+  \underset{}{\underset{\sqrt{x} < d \leqslant \frac{x}{d'}}{\sum}} \frac{\chi
+  (d)}{\sqrt{d}} + \underset{d \leqslant \sqrt{x}}{\sum}  \frac{\chi
+  (d)}{\sqrt{d}} \underset{}{\underset{d \leqslant \frac{x}{d}}{\sum}}
+  \frac{1}{\sqrt{d'}}
+\end{eqnarray*}
+
+
+\subparagraph{Proposition 7.}
+
+Pour tout $x \geqslant 0$,
+\[ g (x) - \sqrt{x} L (\chi) \]
+
+
+est born{\'e}e et $L (\chi)$ est non nul.
+
+\
+
+\subparagraph{Preuve de la proposition 7.}
+
+La fonction $g$ est en escalier par d{\'e}finition, donc continue par morceaux
+sur son domaine de d{\'e}finition.
+
+La fonction $x \longmapsto g (x) - 2 \sqrt{x} L (\chi)$ est {\'e}galement
+continue par morceaux sur son domaine de d{\'e}finition. Pour montrer qu'elle
+est born{\'e}e, il suffit de montrer qu'elle est born{\'e}e au voisinage de $+
+\infty$.
+
+\
+
+Pour $m = [x]$, on a $g (x) = g (m)$ (par d{\'e}finition de $g$). Par
+cons{\'e}quent,
+\begin{eqnarray*}
+  g (x) - 2 \sqrt{x} L (\chi) & = & g (m) - 2 \sqrt{m} L (\chi) - 2 L (\chi) -
+  2 L (\chi) \frac{x - m}{\sqrt{x} + \sqrt{m}}
+\end{eqnarray*}
+
+
+Puisque
+\[ \underset{x \longmapsto + \infty}{\lim}  \frac{x - [x]}{\sqrt{x} +
+   \sqrt{[x]}} = 0 \]
+
+
+On a alors :
+\[ g (x) - 2 \sqrt{x} L (\chi) = g (m) - 2 \sqrt{m} L (\chi) + o (1) \]
+
+
+On se ram{\`e}ne donc {\`a} d{\'e}montrer que
+\[ g (x) - 2 \sqrt{x} L (\chi) = o (1) \]
+
+
+dans le cas o{\`u} $x$ est un entier. Par ailleurs, par d{\'e}finition, on a :
+\begin{eqnarray*}
+  2 \sqrt{m} L (\chi) & = & 2 \sqrt{m} \underset{k = 1}{\overset{+
+  \infty}{\sum}} \frac{\chi (k)}{k}\\
+  & = & 2 \underset{k = 1}{\overset{+ \infty}{\sum}} \frac{\chi (k)}{k}
+  \sqrt{\frac{m}{k}}
+\end{eqnarray*}
+
+
+Ainsi, $g (m) - 2 \sqrt{m} L (\chi)$ est {\'e}gal {\`a} :
+\[ \underset{d' \leqslant \sqrt{m}}{\sum}  \frac{1}{\sqrt{d'}}
+   \underset{}{\underset{\sqrt{m} < d \leqslant \frac{m}{d'}}{\sum}}
+   \frac{\chi (d)}{\sqrt{d}} + \underset{d \leqslant \sqrt{m}}{\sum} 
+   \frac{\chi (d)}{\sqrt{d}} \left( \underset{}{\underset{d \leqslant
+   \frac{m}{d}}{\sum}} \frac{1}{\sqrt{d'}} - 2 \sqrt{\frac{m}{d}} \right) - 2
+   \sqrt{m} \underset{d > \sqrt{m}}{\sum}  \frac{\chi (d)}{d} \]
+
+
+On va d{\'e}montrer que chacun des termes du membre de droite de cette
+{\'e}galit{\'e} est born{\'e} par $m$, ce qui permet de conclure.
+
+On applique le raisonnement de la question 1 avec
+\[ u_m = \chi (m) \]
+
+
+On note $U_m = \underset{d = 1}{\overset{m}{\sum}} \chi (d)$. On a vu que la
+suite $(U_m)_{m \geqslant 1}$ est born{\'e}e, et on dispose donc d'un r{\'e}el
+positif $A$ tel que
+\[ | U_m | \leqslant A \]
+
+
+Supposons que la suite $(v_m)_{m \geqslant 1}$ soit de signe constant de
+d{\'e}croissante en valeur absolue. Alors, pour tout $n \leqslant m$, on a :
+\begin{eqnarray*}
+  \underset{n < d \leqslant m}{\sum} v_d u_d & = & \underset{d \leqslant
+  m}{\sum} v_d u_d - \underset{d \leqslant n}{\sum} v_d u_d\\
+  & = & U_m v_m - U_n v_n + \underset{d = n}{\overset{m - 1}{\sum}} U_d (v_d
+  - v_{d + 1})
+\end{eqnarray*}
+
+
+Et par hypoth{\`e}se de monotonie et de signe sur $(v_m)_{m \geqslant 1}$, on
+a :
+\begin{eqnarray*}
+  \left| \underset{n < d \leqslant m}{\sum} u_d v_d \right| & \leqslant & A
+  \left( | v_m | + | v_n | + \underset{d = n}{\overset{m - 1}{\sum}} (| v_d |
+  - | v_{d + 1} |) \right)\\
+  & = & 2 A | v_n |
+\end{eqnarray*}
+
+
+Donc,
+\[ \underset{n < d \leqslant m}{\sum} u_d v_d = O (v_n) \]
+
+
+Si de plus, la s{\'e}rie $\sum u_d v_d$ converge, alors on peut passer {\`a}
+la limite dans l'in{\'e}galit{\'e} pr{\'e}c{\'e}dente, et il vient :
+\[ \underset{n < d}{\sum} u_d v_d = O (v_n) \]
+
+
+On prend d'abord $v_m = \frac{1}{m}$, qui constitue le terme g{\'e}n{\'e}ral
+d'une suite d{\'e}croissante et positive. Avec ce qui pr{\'e}c{\'e}de, et
+puisque la s{\'e}rie d{\'e}finissant $L (\chi)$ converge, il vient :
+\begin{eqnarray*}
+  \left| - 2 \sqrt{m} \underset{d > \sqrt{m}}{\sum} \frac{\chi (d)}{d} \right|
+  & = & \sqrt{m} O \left( \frac{1}{\left[ \sqrt{m} \right]} \right)\\
+  & = & O (1)
+\end{eqnarray*}
+
+
+On prend ensuite $v_m = \frac{1}{\sqrt{m}}$, qui est {\'e}galement le terme
+g{\'e}n{\'e}ral d'une suite positive d{\'e}croissante. Il vient alors :
+\[ \underset{\sqrt{m} < d \leqslant \frac{m}{d'}}{\sum} \frac{\chi
+   (d)}{\sqrt{d}} = O \left( \frac{1}{\sqrt{\left[ \sqrt{m} \right]}} \right)
+\]
+
+
+Or, par comparaison entre une s{\'e}rie divergente (de Riemann) et une
+int{\'e}grale dans le cas d'une fonction continue et positive, on a :
+\[ \underset{d' < \sqrt{m}}{\sum} \frac{1}{\sqrt{d'}} \underset{m \rightarrow
+   + \infty}{\sim} 2 \sqrt{\left[ \sqrt{m} \right]} \]
+
+
+Et donc,
+\[ \underset{d' < \sqrt{m}}{\sum} \frac{1}{\sqrt{d'}} \underset{\sqrt{m} < d
+   \leqslant \frac{m}{d'}}{\sum} \frac{\chi (d)}{\sqrt{d}} = O (1) \]
+
+
+Pour {\'e}tudier le dernier terme, on constate :
+\begin{eqnarray*}
+  \underset{d' \leqslant \frac{m}{d}}{\sum} \frac{1}{\sqrt{d'}} - 2
+  \sqrt{\frac{m}{d}} & = & \underset{d' \leqslant \frac{m}{d}}{\sum} \left(
+  \frac{1}{\sqrt{d'}} - \int^{d'}_{d' - 1} \frac{\tmop{dt}}{\sqrt{t}} \right)
+  + 2 \sqrt{\left[ \frac{m}{d} \right]} - 2 \sqrt{\frac{m}{d}}
+\end{eqnarray*}
+
+
+Or,
+\begin{eqnarray*}
+  \sqrt{\left[ \frac{m}{d} \right]} - \sqrt{\frac{m}{d}} & = & \frac{\left[
+  \frac{m}{d} \right] - \frac{m}{d}}{\sqrt{\left[ \frac{m}{d} \right]} +
+  \sqrt{\frac{m}{d}}}\\
+  & = & O \left( \sqrt{\frac{d}{m}} \right)
+\end{eqnarray*}
+
+
+Et donc,
+\[ \underset{d \leqslant \sqrt{m}}{\sum} \frac{\chi (d)}{d} \left(
+   \underset{d' \leqslant \frac{m}{d}}{\sum} \frac{1}{\sqrt{d'}} - 2
+   \sqrt{\frac{m}{d}} \right) = \underset{d \leqslant \sqrt{m}}{\sum} \left[
+   \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}} - \frac{1}{\sqrt{t}} \right)
+   \tmop{dt} + \frac{\chi (d)}{d} O \left( \sqrt{\frac{d}{m}} \right) \right]
+\]
+
+
+On a :
+\begin{eqnarray*}
+  \underset{d \leqslant \sqrt{m}}{\sum} \frac{\chi (d)}{d} O \left(
+  \sqrt{\frac{d}{m}} \right) & = & \underset{d \leqslant \sqrt{m}}{\sum} O
+  \left( \sqrt{\frac{1}{m}} \right)\\
+  & = & O (1)
+\end{eqnarray*}
+
+
+et que
+\[ \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}} - \frac{1}{\sqrt{t}} \right)
+   d t < 0 \]
+
+
+On en d{\'e}duit que la fonction  $d \longmapsto \underset{d' \leqslant
+\frac{m}{d}}{\sum} \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}} -
+\frac{1}{\sqrt{t}} \right) d t$ est n{\'e}gative et croissante (i.e
+d{\'e}croissante en valeur absolue) en raison de la d{\'e}croissance de $d
+\longmapsto \frac{m}{d}$. On pose donc, finalement :
+\[ v_d = \frac{1}{\sqrt{d}} \underset{d' \leqslant \frac{m}{d}}{\sum}
+   \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}} - \frac{1}{\sqrt{t}} \right)
+   d t \]
+
+
+de sorte que la suite $(v_d)_{d \geqslant 1}$ est n{\'e}gative et
+d{\'e}croissante en valeur absolue, en tant que produit de deux termes tous
+deux d{\'e}croissants en valeur absolue, l'un positif et l'autre n{\'e}gatif.
+On obtient donc :
+\[ \underset{d \leqslant \sqrt{m}}{\sum} \frac{\chi (d)}{d} \underset{d'
+   \leqslant \frac{m}{d}}{\sum} \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}}
+   - \frac{1}{\sqrt{t}} \right) \tmop{dt} = O \left( \int^m_0
+   \frac{\tmop{dt}}{\sqrt{t}} - \underset{d' = 1}{\overset{m}{\sum}}
+   \frac{1}{\sqrt{d'}} \right) \]
+
+
+L'int{\'e}grale {\'e}tant entendue comme une limite, et par comparaison entre
+s{\'e}rie et int{\'e}grale, on a :
+
+
+\[ \int^{m + 1}_1 \frac{d t}{\sqrt{t}} \leqslant \underset{d' =
+   1}{\overset{m}{\sum}} \frac{1}{\sqrt{d'}} \leqslant \int^m_0 \frac{d
+   t}{\sqrt{t}} \]
+
+
+Et donc, puisque $\sqrt{m} - \sqrt{m + 1} = \frac{- 1}{\sqrt{m} + \sqrt{m +
+1}} = o (1)$, on en d{\'e}duit que
+\[ \underset{d \leqslant \sqrt{m}}{\sum} \frac{\chi (d)}{d} \underset{d'
+   \leqslant \frac{m}{d}}{\sum} \int^{d'}_{d' - 1} \left( \frac{1}{\sqrt{d'}}
+   - \frac{1}{\sqrt{t}} \right) d t = O (1) \]
+
+
+Ainsi,
+\[ g (x) - 2 \sqrt{x} L (\chi) \tmop{est} \tmop{born} {\'e}e \]
+
+
+\
+
+On en d{\'e}duit que la fonction $x \longmapsto 2 \sqrt{x} L (\chi)$ tend
+vers l'infini en $- \infty$, et donc que $L (\chi) $est strictement positif.
+En particulier :
+\[ L (\chi) \tmop{est} \tmop{non} \tmop{nul} \]
+
+
+\
+
+\subparagraph{Th{\'e}or{\`e}me 10.}
+
+Soit $\chi$ un caract{\`e}re non trivial.
+
+\
+
+Si $L (\chi) \neq 0$, alors la fonction $x \longmapsto \underset{n \leqslant
+x}{\sum} \frac{\mu (n) \chi (n)}{n}$ est born{\'e}e.
+
+\
+
+Si $L (\chi) \neq 0$, alors la fonction $x \longmapsto L_1 (\chi) \underset{n
+\leqslant x}{\sum} \frac{\mu (n) \chi (n)}{n} + \log (x)$ est born{\'e}e.
+
+\
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 10.}
+
+Soit $\chi$ un caract{\`e}re non trivial.
+
+Si $L (\chi) \neq 0$, posons pour tout $x \geqslant 0$,
+\[ G (x) = \underset{1 \leqslant n \leqslant x}{\sum} \frac{x}{n} \chi (n) \]
+
+
+La fonction $G$ est le produit de l'identit{\'e} et d'une fonction en
+escalier, elle est donc continue par morceaux sur son domaine de
+d{\'e}finition. Il suffit de montrer qu'elle est born{\'e}e au voisinage de
+l'infini.
+
+D'apr{\`e}s la proposition 3, la s{\'e}rie $\underset{n \geqslant 1}{\sum}
+\frac{\chi (n)}{n}$ converge, il vient par positivit{\'e} et d{\'e}croissance
+de $\left( \frac{1}{n} \right)_{n \geqslant 1}$
+\begin{eqnarray*}
+  G (x) - x.L (\chi) & = & x \underset{n > x}{\sum} \frac{\chi (n)}{n}\\
+  & = & O \left( \frac{x}{[x]} \right)\\
+  & = & O (1)
+\end{eqnarray*}
+
+
+Ainsi, $G (x) - x.L (\chi)$ est born{\'e}e.
+
+\
+
+le caract{\`e}re $\chi$ {\'e}tant multiplicatif, on applique le
+th{\'e}or{\`e}me 9 avec $F = \tmop{id}$, $H = \chi$, donc les applications
+not{\'e}es $G$ sont identiques. On en d{\'e}duit que
+\[ x = \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G \left( \frac{x}{k}
+   \right) \chi (k) \]
+
+
+Donc,
+\begin{eqnarray*}
+  x - L (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) \frac{\chi
+  (k)}{k} & = & \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) \chi (k)
+  \left( G \left( \frac{x}{k} \right) - \frac{x}{k} L (\chi) \right)\\
+  & = & O \left( \underset{1 \leqslant k \leqslant x}{\sum} | \mu (k) \chi
+  (k) | \right)
+\end{eqnarray*}
+
+
+Or, $\mu$ et $\chi$ sont born{\'e}s par 1 (on a d{\'e}j{\`a} remarqu{\'e} que
+$\chi$ prend ses valeurs non nulles dans les racines de l'unit{\'e}), donc
+\[ x.L (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) \frac{\chi
+   (k)}{k} = O (x) \]
+
+
+Et
+\[ \underset{}{L (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+   \frac{\chi (k)}{k} = O (1)} \]
+
+
+Par cons{\'e}quent, si $L (\chi)$ est non nul, et puisque $x \longmapsto
+\underset{1 \leqslant k \leqslant x}{\sum} \mu (k) \frac{\chi (k)}{k}$ est une
+fonction en escalier, donc continue par morceaux sur son domaine de
+d{\'e}finition, on conclut que
+\[ \underset{n \leqslant x}{\sum} \frac{\mu (n) \chi (n)}{n} \tmop{est}
+   \tmop{born} {\'e}e \]
+
+
+\
+
+Si $L (\chi) = 0$, posons pour tout $x > 1$,
+\[ G_1 (x) = \underset{1 \leqslant n \leqslant x}{\sum} \left( \frac{x}{n}
+   \log \left( \frac{x}{n} \right) \right) \chi (n) \]
+
+
+Par d{\'e}finition et par convergence des s{\'e}ries d{\'e}finissant $L (\chi)
+\tmop{et} L_1 (\chi)$, en tenant compte de $L (\chi) = 0$, on a
+\begin{eqnarray*}
+  G_1 (x) + x.L_1 (\chi) & = & G_1 (x) + x.L (\chi) + x.L_1 (x)\\
+  & = & - x. \log (x) \underset{n > x}{\sum} \frac{\chi (n)}{n} + x
+  \underset{n > x}{\sum} \frac{\chi (n) \log (n)}{n}
+\end{eqnarray*}
+
+
+Or, pour tout $n \geqslant 3$, on a $\log (n) \geqslant 1$, et donc
+\begin{eqnarray*}
+  \log (n + 1) & = & \log (n) + \log \left( 1 + \frac{1}{n} \right)\\
+  & \leqslant & \log (n) + \frac{1}{n}\\
+  & \leqslant & \log \left( 1 + \frac{1}{n} \right) + \log (n) \frac{n}{n +
+  1}
+\end{eqnarray*}
+
+
+Les suites $\left( \frac{1}{n} \right)_{n \geqslant 1}$ et $\left( \frac{\log
+(n)}{n} \right)_{n \geqslant 3}$ sont donc positives et d{\'e}croissantes. Il
+r{\'e}sulte alors des relations obtenues en proposition 7 que, pour tout $x >
+2$,
+\[ \underset{n > x}{\sum} \frac{\chi (n)}{n} = O \left( \frac{1}{x} \right)
+   \infixand \underset{n > x}{\sum} \frac{\chi (n) \log (n)}{n} = O \left(
+   \frac{\log (x)}{x} \right) \]
+
+
+D'o{\`u}
+
+
+\[ G_1 (x) = - x.L_1 (x) + O (\log (x)) \]
+
+
+On applique le th{\'e}or{\`e}me 9, avec $F = \tmop{id} \times \log$et $H =
+\chi$. Les applications not{\'e}es $G_1 $ et $G$ dans le th{\'e}or{\`e}me 9
+co{\"i}ncident alors, et on en d{\'e}duit
+\[ x. \log (x) = \underset{1 \leqslant k \leqslant x}{\sum} \mu (k) G_1 \left(
+   \frac{x}{k} \right) \chi (k) \]
+
+
+Et donc,
+\begin{eqnarray*}
+  x. \log (x) + x.L_1 (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu
+  (k) \frac{\chi (k)}{k} & = & \underset{1 \leqslant k \leqslant x}{\sum} \mu
+  (k) \chi (k) \left( G_1 \left( \frac{x}{k} \right) + \frac{x}{k} L_1 (x)
+  \right)\\
+  & = & O \left( \underset{1 \leqslant k \leqslant x}{\sum} \log \left(
+  \frac{x}{k} \right) \right)\\
+  & = & O (x. \log (x) - \log ([x] !))
+\end{eqnarray*}
+
+
+\
+
+Ainsi, en utilisant la formule de Stirling :
+\begin{eqnarray*}
+  O \left( \underset{1 \leqslant k \leqslant x}{\sum} \log \left( \frac{x}{k}
+  \right) \right) & = & O (x. \log (x) - [x] \log ([x]) + O (x))\\
+  & = & O \left( (x - [x]) . \log (x) - [x] \log \left( \frac{x}{[x]} \right)
+  + O (x) \right)\\
+  & = & O (1) . \log (x) + O (x) .O (1) + O (x)\\
+  & = & O (x)
+\end{eqnarray*}
+
+
+Donc,
+\[ \begin{array}{c}
+     \log (x) + L_1 (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+     \frac{\chi (k)}{k} = O (1)
+   \end{array} \]
+
+
+Ainsi, puisque nous avons affaire {\`a} des fonctions continues par morceaux
+sur leur domaine de d{\'e}finition,
+\[ \log (x) + L_1 (\chi) \underset{1 \leqslant k \leqslant x}{\sum} \mu (k)
+   \frac{\chi (k)}{k} \tmop{est} \tmop{born} {\'e}e \]
+
+
+\
+
+\subparagraph{Th{\'e}or{\`e}me 11.}
+
+On a :
+\[ L_1 (\chi) \underset{d \leqslant x}{\sum} \frac{\mu (d) \chi (d)}{d} =
+   \underset{m \leqslant x}{\sum} \Lambda (m) \frac{\chi (m)}{m} + O (1) \]
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 11.}
+
+Puis{\tmstrong{}}que la suite $\left( \frac{\log (n)}{n} \right)_{n \geqslant
+3}$ est positive et d{\'e}croissante.
+
+En utilisant les relations de la proposition 7, on obtient :
+\[ \underset{n > m}{\sum} \frac{\chi (n) \log (x)}{n} = O \left( \frac{\log
+   (m)}{m} \right) \]
+
+
+\
+
+Par d{\'e}finition et par associativit{\'e}, on a, puisque la seconde somme
+est finie et par multiplicativit{\'e} de $\chi$ :
+\begin{eqnarray*}
+  L_1 (\chi) \underset{d \leqslant x}{\sum} \frac{\mu (d) \chi (d)}{d} & = &
+  \underset{d \leqslant x}{\sum} \left( \underset{n = 1}{\overset{+
+  \infty}{\sum}} \frac{\chi (n) \log (n)}{n} \frac{\mu (d) \chi (d)}{d}
+  \right)\\
+  & = & \underset{d \leqslant x}{\sum}  \underset{n \leqslant
+  \frac{x}{d}}{\overset{}{\sum}} \frac{\chi (n) \log (n)}{n} \frac{\mu (d)
+  \chi (d)}{d} + \underset{d \leqslant x}{\sum}  \underset{n >
+  \frac{x}{d}}{\overset{}{\sum}} \frac{\chi (n) \log (n)}{n} \frac{\mu (d)
+  \chi (d)}{d}\\
+  & = & \underset{m \leqslant x}{\sum}  \underset{d | \nobracket
+  m}{\overset{}{\sum}} \mu (d) . \log \left( \frac{m}{d} \right) \frac{\chi
+  (m)}{m} + \underset{d \leqslant x}{\sum} O \left( \frac{d. \log \left(
+  \frac{x}{d} \right)}{x} \right) \frac{\mu (d) \chi (d)}{d}
+\end{eqnarray*}
+
+
+En utilisant la bijection $(d, n) \longmapsto (n.d, d)$, et la proposition 2,
+il vient :
+\[ L_1 (\chi) \underset{d \leqslant x}{\sum} \frac{\mu (d) \chi (d)}{d} =
+   \underset{m \leqslant x}{\sum} \Lambda (m) \frac{\chi (m)}{m} + \frac{1}{x}
+   \underset{d \leqslant x}{\sum} O \left( \log \left( \frac{x}{d} \right)
+   \right) \]
+
+
+Or, vu que :
+\[ \underset{d \leqslant x}{\sum} \log \left( \frac{x}{d} \right) = O (x) \]
+
+
+et donc
+
+
+\[ L_1 (\chi) \underset{d \leqslant x}{\sum} \frac{\mu (d) \chi (d)}{d} =
+   \underset{m \leqslant x}{\sum} \Lambda (m) \frac{\chi (m)}{m} + O (1) \]
+
+
+Enfin, on a :
+\begin{eqnarray*}
+  \underset{m \leqslant x}{\sum} \Lambda (m) \frac{\chi (m)}{m} & = &
+  \underset{p \leqslant x}{\sum} \log (p) \underset{n \leqslant \frac{\log
+  (x)}{\log (p)}}{\sum} \frac{\chi (p)^n}{p^n}\\
+  & = & \underset{p \leqslant x}{\sum} \log (p) \frac{\chi (p) }{p } +
+  \underset{p \leqslant x}{\sum} \log (p) \underset{2 \leqslant n \leqslant
+  \frac{\log (x)}{\log (p)}}{\sum} \frac{\chi (p)^n}{p^n}
+\end{eqnarray*}
+
+
+Avec
+\begin{eqnarray*}
+  \underset{p \leqslant x}{\sum} \log (p) \underset{2 \leqslant n \leqslant
+  \frac{\log (x)}{\log (p)}}{\sum} \frac{\chi (p)^n}{p^n} & = & \underset{p
+  \leqslant x}{\sum} \log (p) \underset{2 \leqslant n \leqslant \frac{\log
+  (x)}{\log (p)}}{\sum} O \left( \frac{1}{p^n} \right)\\
+  & = & \underset{p \leqslant x}{\sum} O \left( \frac{1}{p^2} \frac{1}{1 -
+  \frac{1}{p}} \right) \log (p)\\
+  & = & O (1)
+\end{eqnarray*}
+
+
+Ainsi :
+\[ \underset{m \leqslant x}{\sum} \Lambda (m) \frac{\chi (m)}{m} = \underset{p
+   \leqslant x}{\sum} \log (p) \frac{\chi (p) }{p } + O (1) \]
+
+
+Puisque
+\[ \log (p) \frac{1}{p^2} \frac{1}{1 - \frac{1}{p}} \underset{p \rightarrow +
+   \infty}{\sim} \frac{\log (p)}{p^2} = O \left( \frac{1}{p^{\frac{3}{2}}}
+   \right) \]
+
+
+et donc, par comparaison avec une s{\'e}rie de Riemann convergente, on a
+\[ \sum \log (p) \frac{1}{p^2} \frac{1}{1 - \frac{1}{p}} \]
+
+
+est absolument convergente. Il en r{\'e}sulte que
+\[ L_1 (\chi) \underset{n \leqslant x}{\sum} \frac{\mu (n) \chi (n)}{n} =
+   \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} + O (1) \]
+
+
+\
+
+\subparagraph{Proposition 6.}
+
+On a :
+\[ \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} =
+   \left\{\begin{array}{ll}
+     O (1) & \tmop{si} L (\chi) \neq 0\\
+     - \log (x) + O (1) & \tmop{si} L (\chi) = 0
+   \end{array}\right. \]
+
+
+\subparagraph{Preuve de la proposition 6.}
+
+Il d{\'e}coule, d'apr{\`e}s les th{\'e}or{\`e}me 10 et 11, que :
+
+
+\[ \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} = L_1 (\chi)
+   \underset{n \leqslant x}{\sum} \frac{\mu (n) \chi (n)}{n} + O (1) \]
+
+
+Ainsi, on obtient :
+\[ \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} =
+   \left\{\begin{array}{ll}
+     O (1) & \tmop{si} L (\chi) \neq 0\\
+     - \log (x) + O (1) & \tmop{si} L (\chi) = 0
+   \end{array}\right. \]
+
+
+\
+
+\subparagraph{Th{\'e}or{\`e}me 12.}
+
+\[ \#G (N) \underset{p \equiv 1 [N]}{\underset{p \leqslant x}{\sum}}
+   \frac{\chi (p) \log (p)}{p} = \log (x) + O (1) \]
+
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 12.}
+
+Soit T le nombre de caract{\`e}res non triviaux tels que $L (\chi) = 0$.
+Montrons d'abord que :
+\[ \#G (N) . \underset{p \equiv 1 [N]}{\underset{p \leqslant x}{\sum}}
+   \frac{\chi (p) \log (p)}{p} = (1 - T) \log (x) + O (1) \]
+
+
+Ensuite, nous montrerons que $T \leqslant 1$.
+
+D'apr{\`e}s la formule de Mertens, si $\chi$ est trivial, on a :
+\begin{eqnarray*}
+  \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} & = & \underset{p
+  \leqslant x}{\sum} \frac{\log (p)}{p}\\
+  & = & \log (x) + O (1)
+\end{eqnarray*}
+
+
+En utilisant le r{\'e}sultat pr{\'e}c{\'e}dent, on obtient :
+\[ \underset{\chi \in G (N)}{\sum} \underset{p \leqslant x}{\sum} \frac{\chi
+   (p) \log (p)}{p} = (1 - T) \log (x) + O (1) \]
+
+
+Comme nous avons affaire {\`a} des sommes finies, on peut {\'e}changer les
+sommes. Ainsi :
+\[ \#G (N) \underset{p \equiv 1 [N]}{\underset{p \leqslant x}{\sum}}
+   \frac{\chi (p) \log (p)}{p} = (1 - T) \log (x) + O (1) \]
+
+
+Puisque le membre de gauche est positif, {\'e}tant une somme de termes
+positifs, le membre de droite l'est {\'e}galement, et donc $T \leqslant 1$.
+
+\
+
+Montrons maintenant $T = 0$, pour conclure.
+
+\
+
+Si $\chi$ est non trivial et {\`a} valeurs r{\'e}elles, alors $L (\chi) \neq
+0$.
+
+D'apr{\`e}s la propostion 7, si $\chi$ n'est pas {\`a} valeurs r{\'e}elles,
+alors $\overline{\chi} \overline{} $est distinct de $\chi$ et $L
+(\overline{\chi}) = \overline{L (\chi)}$, de sorte que les deux sont
+simultan{\'e}ment nuls ou non. Comme $T \leqslant 1$, aucun des deux n'est nul
+et finalement
+\[ T = 0 \]
+
+
+\subparagraph{Th{\'e}or{\`e}me 13. (Th{\'e}or{\`e}me de Dirichlet)}
+
+Soit $l$ un entier premier {\`a} $N$, Alors
+\[ \tmcolor{black}{\{ p \tmop{premier} / p \equiv l [N] \} \tmop{est}
+   \tmop{infini} .} \]
+
+\subparagraph{Preuve du th{\'e}or{\`e}me 13.}
+
+On d{\'e}duit de ce qui pr{\'e}c{\`e}de que, pour un caract{\`e}re $\chi$ non
+trivial, on a :
+\[ \underset{p \leqslant x}{\sum} \frac{\chi (p) \log (p)}{p} = O (1) \]
+
+
+Donc,
+\begin{eqnarray*}
+  \underset{\chi \in G (N)}{\sum} \underset{p \leqslant x}{\sum} \bar{\chi}
+  (l) \frac{\chi (p) \log (p)}{p} & = & \underset{p \leqslant x}{\sum}
+  \frac{\log (p)}{p}\\
+  & = & \log (x) + O (1)
+\end{eqnarray*}
+
+Puisque $l$ est premier {\`a} N, on dispose d'une relation de B{\'e}zout,
+c'est-{\`a}-dire qu'il existe $a, b \in \mathbb{Z}$ tel que
+\[ a.l + b.N = 1 \]
+
+
+Cela implique que
+\[ \chi (a) \chi (l) = 1 \]
+
+
+De plus, si $d$ est l'ordre de la classe de $l$ modulo $N$ dans $G (N)$ alors
+\[ l^d \equiv 1 [N] \]
+
+
+ce qui implique que
+\[ \chi (l)^d = \chi (1) = 1 \]
+
+
+Ainsi, $\chi (l)$ est une racine de l'unit{\'e}, et donc
+\[ \underset{\chi \in G (N)}{\sum} \bar{\chi} (l) \chi (p) = \underset{\chi
+   \in G (N)}{\sum} \chi (a.p) \]
+
+
+Cette derni{\`e}re somme est nulle sauf si $a.p \equiv 1 [N]$, auquel cas elle
+vaut $\#G (N)$.
+
+D'apr{\`e}s l'{\'e}tude des groupes finis, on a :
+\[ a.p \equiv 1 [N] \tmop{si} \infixand \tmop{seulement} \tmop{si} p \equiv l
+   [N] \]
+
+
+et donc
+\[ \underset{p \leqslant x}{\sum}  \underset{\chi \in G (N)}{\sum} \bar{\chi}
+   (l) \frac{\chi (p) \log (p)}{p} =\#G (N) \underset{p \equiv l
+   [N]}{\underset{p \leqslant x}{\sum}} \frac{\log (p)}{p} \]
+
+
+Si l'ensemble $\{ p \tmop{premier} / p \equiv l [N] \}$ est fini, alors la
+seconde somme est born{\'e}e (et m{\^e}me constante) au voisinage de l'infini,
+et elle ne pourrait donc {\^e}tre {\'e}quivalente {\`a} $\log (x)$
+
+Par cons{\'e}quent,
+\[ \{ p \tmop{premier} / p \equiv l [N] \}  \]
+
+
+est infini.
+
+\
+
+\subparagraph{Généralisations.}
+
+1. La conjecture de Bunyakovsky généralise le théorème de
+Dirichlet aux polyn{\^o}mes de degr{\'e} sup{\'e}rieur. Par exemple,
+d{\'e}terminer si des polyn{\^o}mes simples comme $x^2 + 1$ (connu dans le
+cadre du quatri{\`e}me probl{\`e}me de Landau) atteignent une infinit{\'e} de
+valeurs premi{\`e}res est un probl{\`e}me ouvert important.
+
+2. La conjecture de Dickson g{\'e}n{\'e}ralise le th{\'e}or{\`e}me de
+Dirichlet {\`a} plus d'un polyn{\^o}me.
+
+3. L'hypoth{\`e}se de Schinzel ($H$) g{\'e}n{\'e}ralise ces deux conjectures,
+c'est-{\`a}-dire qu'elle s'applique {\`a} plusieurs polyn{\^o}mes, chacun
+pouvant avoir un degr{\'e} sup{\'e}rieur {\`a} un.
+
+4. Dans la th{\'e}orie alg{\'e}brique des nombres, le th{\'e}or{\`e}me de
+Dirichlet se g{\'e}n{\'e}ralise au th{\'e}or{\`e}me de densit{\'e} de
+Chebotarev.
+
+5. Le th{\'e}or{\`e}me de Linnik (1944) concerne la taille du plus petit
+nombre premier dans une progression arithm{\'e}tique donn{\'e}e. Linnik a
+prouv{\'e} que la progression $a + n d$ (pour $n$ variant parmi les entiers
+positifs) contient un nombre premier de magnitude au plus $c \cdot d^L$, pour
+certaines constantes absolues $c$ et $L$. Des recherches ult{\'e}rieures ont
+permis de r{\'e}duire $L$ {\`a} $5$.
+
+6. Un analogue du th{\'e}or{\`e}me de Dirichlet existe dans le cadre des
+syst{\`e}mes dynamiques (T. Sunada et A. Katsuda, 1990).

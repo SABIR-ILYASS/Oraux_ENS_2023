@@ -1,0 +1,120 @@
+Cet exercice explore les propri{\'e}t{\'e}s des suites complexes dont la puissance $p$-i{\`e}me tend vers $1$ et dont la moyenne arithm{\'e}tique converge. L'objectif est de caract{\'e}riser l'ensemble des valeurs possibles de cette moyenne limite.
+\begin{exercise}[]
+Soit $n \geqslant 1$ et soit $P$ est une matrice de $M_n (\mathbb{C})$. On a l'{\'e}quivalence :
+
+\begin{center}
+  Le rayon spectral de $P$ $< 1$ si et seulement si $\underset{k \to + \infty}{\lim} P^k = 0$.
+\end{center}
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+
+$\Leftarrow$) Supposons que $\underset{k \to + \infty}{\lim} P^k = 0$
+
+Soit $n \geqslant 1$ et soit $P$ est une matrice de $M_n (\mathbb{C})$.
+
+Pour toute norme $N$ sur $M_{n, 1} (\mathbb{C})$, on note :
+\[ \mathcal{N}(N) : T \in M_n (\mathbb{C}) \longmapsto \underset{x \neq
+   0}{\sup}  \frac{N (Tx)}{N (x)} \]
+
+
+$\mathcal{N}(N)$ est une norme sur $M_n (\mathbb{C})$. De plus, pour tout $(x,
+T) \in M_{n, 1} (\mathbb{C}) \times M_n (\mathbb{C})$ :
+\[ N (Tx) \leq \mathcal{N}(N) (T) N (x) \quad (\kreuz) \]
+
+
+Fixons maintenant une norme $N$ de $M_n (\mathbb{C})$. Soit $\lambda$ une
+valeur propre de $P$ et $x_{\lambda}$ un vecteur propre de $P$ associ{\'e}
+{\`a} $\lambda$.
+
+D'apr{\`e}s $(\kreuz)$, pour tout $k \in \mathbb{N}$ :
+\[ N (P^k x_{\lambda}) \leq \mathcal{N} (N) (P)^k N (x_{\lambda}) \]
+
+
+Ainsi, pour tout $k \in \mathbb{N}$
+\[ | \lambda |^k N (x_{\lambda}) \leq \mathcal{N}(P)^k N (x_{\lambda}) \]
+
+
+Avec $N (x_{\lambda}) \neq 0$ (puisque $x_{\lambda} \neq 0$), on en d{\'e}duit
+que pour tout $k \in \mathbb{N}$ :
+\[ | \lambda |^k \leq \mathcal{N}(P^k) \]
+
+
+Comme $\underset{k \rightarrow + \infty}{\lim} P^k = 0$ et $\dim M_n
+(\mathbb{C}) < + \infty$, donc toutes les normes de $M_n (\mathbb{C})$ sont
+{\'e}quivalentes.
+
+On a donc $\underset{k \rightarrow + \infty}{\lim} P^k = 0$ dans l'espace
+$(M_n (\mathbb{C}), \mathcal{N}(N))$.
+
+\
+
+Puisque $\underset{k \rightarrow + \infty}{\lim} \mathcal{N}(P^k) = 0$, alors
+$\underset{k \rightarrow + \infty}{\lim} | \lambda |^k = 0$.
+
+\
+
+Ceci n'est possible que si $| \lambda | < 1$, et {\c c}a pour tout $\lambda
+\in \mathrm{Sp} (P)$.
+
+Ainsi,
+\[ \rho (P) = \underset{\lambda \in \mathrm{Sp} (P)}{\max } | \lambda | < 1.
+\]
+
+
+$\Rightarrow$) Supposons que $\rho (P) = \underset{\lambda \in \mathrm{Sp}
+(P)}{\max } | \lambda | < 1$.
+
+\
+
+Toute matrice carr{\'e}e $P$ peut {\^e}tre mise sous forme de Jordan. Il
+existe une matrice inversible $S$ telle que :
+\[ P = SJS^{- 1} \]
+
+
+o{\`u} $J$ est la matrice de Jordan compos{\'e}e de blocs associ{\'e}s aux
+valeurs propres de $P$.
+
+Donc pour tout $k \in \mathbb{N}$ :
+\[ P^k = (SJS^{- 1})^k = SJ^k S^{- 1} \]
+
+
+Chaque bloc de Jordan $J_i$ associ{\'e} {\`a} une valeur propre $\lambda_i$ a
+la forme :
+\[ J_i = \lambda_i I + N \]
+
+
+o{\`u} $N$ est une matrice nilpotente.
+
+La $k$-i{\`e}me puissance d'un bloc de Jordan est donn{\'e}e par :
+\begin{eqnarray*}
+  J_i^k & = & \lambda_i^k \underset{j = 0}{\overset{k}{\sum}} \left(
+  \begin{array}{c}
+    k\\
+    j
+  \end{array} \right) \frac{1}{\lambda^j_i} N^j
+\end{eqnarray*}
+
+
+Comme $| \lambda_i | < 1$, les termes $\lambda_i^k$ tendent vers 0. M{\^e}me
+en tenant compte des puissances de $k$ dues aux termes en $N$, l'ensemble tend
+vers 0 :
+\[ \underset{k \rightarrow + \infty}{\lim} J_i^k = 0 \]
+
+
+Puisque chaque bloc $J_i^k$ tend vers la matrice nulle, il en est de m{\^e}me
+pour $J^k$, et donc :
+\begin{eqnarray*}
+  \underset{k \rightarrow + \infty}{\lim} P^k & = & \underset{k \rightarrow +
+  \infty}{\lim} SJ^k S^{- 1}\\
+  & = & S \left( \underset{k \rightarrow + \infty}{\lim} J^k \right) S^{- 1}
+  \\
+  & = & 0
+\end{eqnarray*}
+
+
+D'o{\`u} l'{\'e}quivalence.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

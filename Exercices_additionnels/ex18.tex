@@ -1,0 +1,177 @@
+La caract{\'e}risation des boules unit{\'e}s ferm{\'e}es en dimension finie
+fait appel {\`a} des propri{\'e}t{\'e}s g{\'e}om{\'e}triques et topologiques
+fondamentales. Cet exercice {\'e}tablit un pont {\'e}l{\'e}gant entre la
+th{\'e}orie des espaces norm{\'e}s et les propri{\'e}t{\'e}s
+g{\'e}om{\'e}triques des ensembles convexes.
+\begin{exercise}[]
+Soit $E$ un espace vectoriel de dimension finie muni de sa topologie d'espace
+vectoriel, et $B$ une partie de $E$. Montrer l'{\'e}quivalence :
+
+il existe une norme $N$ sur $E$ telle que $B$ est la boule unit{\'e}
+ferm{\'e}e de $(E, N)$ si, et seulement si, $B$ est convexe, compacte,
+sym{\'e}trique par rapport {\`a} l'origine, et d'int{\'e}rieur non vide.
+
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+$\Longrightarrow)$ Supposons qu'il existe une norme $N$ sur $E$ telle que $B$
+est la boule ferm{\'e}e unit{\'e} de ($E, N$).
+
+Alors, $B$ est convexe. En effet, pour tout $\lambda \in [0, 1]$ et pour tout
+$x, y \in B$, on a :
+\[ N ((1 - \lambda) x + \lambda y) \leq (1 - \lambda) N (x) + \lambda N (y)
+   \leq 1 \]
+Ainsi, ($1 - \lambda) x + \lambda y \in B$, d'o{\`u} $B$ est convexe.
+
+$B$ est compacte, car elle est ferm{\'e}e et born{\'e}e (en dimension finie).
+
+De plus, pour tout $x \in B$, on a $N (- x) = N (x) \leq 1$, donc $- x \in B$.
+D'o{\`u} $B$ est sym{\'e}trique par rapport {\`a} $0$.
+
+Il reste {\`a} montrer que $B$ est d'int{\'e}rieur non vide. En effet, pour $x
+\neq 0$, on a $\frac{1}{2 N (x)} x \in B^{\circ}$. Donc $B$ est
+d'int{\'e}rieur non vide.
+
+$\Longleftarrow$) Supposons maintenant que $B$ est convexe, compacte,
+sym{\'e}trique par rapport {\`a} l'origine, et d'int{\'e}rieur non vide, et
+montrons qu'il existe une norme $N$ sur $E$ telle que $B$ est la boule
+unit{\'e} ferm{\'e}e de ($E, N$).
+
+Pour cela, l'id{\'e}e est d'utiliser l'homog{\'e}n{\'e}it{\'e}. Pour $x$
+vecteur non nul de $E$, posons :
+\[ T_x =\{\lambda > 0 \mid \frac{x}{\lambda} \in B\} \]
+
+
+Montrons d'abord que cet ensemble est non vide. En effet, l'origine est
+forc{\'e}ment un point int{\'e}rieur {\`a} $B$, car comme $B$ est
+d'int{\'e}rieur non vide, on peut trouver $y \in B$ et $r > 0$, tel que $B (y,
+r) \subset B$.
+
+Par sym{\'e}trie par rapport {\`a} l'origine, on a {\'e}galement $B (- y, r)
+\subset B$. Par convexit{\'e}, il en d{\'e}coule que $B (0, r) \in B$.
+
+Ainsi, comme $B$ est convexe, et contient l'origine, si $\lambda \in T_x$,
+alors $[\lambda, + \infty [\subset T_x$. Donc $T_x$ est un intervalle non
+major{\'e} de $\mathbb{R}^{\ast}_+$.
+
+Comme $B$ est compacte, elle est born{\'e}e. Soit $M > 0$ tel que $\|a\| \leq
+M$ pour tout $a \in B$. (Pour une norme quelconque $\| \cdot \|$, puisque
+toutes les normes sont {\'e}quivalentes en dimension finie). Si $\lambda \in
+T_x$, on a $\lambda \geq \frac{\|x\|}{M} > 0$. Posons alors :
+\[ N (x) = \inf T_x \]
+
+
+On pose aussi $N (0) = 0$
+
+On vient de prouver qu'il s'agit d'un r{\'e}el strictement positif. Comme $B$
+est ferm{\'e}e, l'intervalle $T_x$ est aussi ferm{\'e} et il est donc {\'e}gal
+{\`a} $[N (x), + \infty [$.
+
+Il reste {\`a} montrer que $N$ est une norme et que $B$ en est la boule
+unit{\'e} ferm{\'e}e.
+
+L'application $N$ est positive car pour tout $x \in E$ non nul, on a :
+\[ T_x \subset] 0, + \infty [ \]
+
+
+Donc :
+\[ N (x) = \inf (T_x) \geq \inf (] 0, + \infty [) = 0 \]
+
+
+Et :
+\[ N (0) = 0 \]
+
+
+De plus, d'apr{\`e}s ce qui pr{\'e}c{\`e}de, on a pour tout $x \in E$ non nul
+:
+\[ \forall \lambda \in T_x, \lambda \geq \frac{\|x\|}{M} \]
+
+
+Donc, pour tout $x \in E$ non nul, on a :
+\[ N (x) \geq \frac{\|x\|}{M} > 0 \]
+
+
+Donc l'axiome de s{\'e}paration est v{\'e}rifi{\'e}.
+
+Si $x \in E$ est non nul et si $\mu > 0$, on a pour tout $\lambda > 0$ :
+\[ \lambda \in T_{\mu x} \Longleftrightarrow \frac{\mu x}{\lambda} \in B
+   \Longleftrightarrow \frac{\mu}{\lambda} x \in B \Longleftrightarrow
+   \frac{\lambda}{\mu} \in T_x \Longleftrightarrow \lambda \in \mu T_x \]
+
+
+Donc :
+\[ T_{\mu x} = \frac{1}{\mu} T_x \]
+
+
+Ainsi :
+\[ N (\mu x) = \inf T_{\mu x} = \inf \mu T_x = \mu \inf T_x = \mu N (x) \]
+
+
+Par sym{\'e}trie de $B$, on a pour tout $x \in E$ non nul $T_{- x} = T_x$,
+donc $N (- x) = N (x$). Cela reste vrai pour $x = 0$. Donc $N$ est
+homog{\`e}ne.
+
+Il ne reste qu'{\`a} montrer que $N$ v{\'e}rifie l'in{\'e}galit{\'e}
+triangulaire. Pour cela, on va montrer d'abord le lemme suivant :
+
+\tmtextbf{Lemme 1. }
+
+Soit $\Phi : E \to \mathbb{R}_+$ v{\'e}rifiant pour tout $x \in E$ et pour
+tout $\lambda \in \mathbb{R}$ :
+\[ \Phi (x) = 0 \Longleftrightarrow x = 0 \text{et } \Phi (\lambda x) = |
+   \lambda | \Phi (x) \]
+
+
+On a : $\Phi$ est une norme si, et seulement si, l'ensemble $\{x \in E, \Phi
+(x) \leq 1\}$ est convexe.
+
+\
+
+\tmtextbf{Preuve du lemme 1.}
+
+Si $\Phi$ est une norme, il est clair que $B$ est convexe. En effet, si ($x,
+y) \in B^2$ et $t \in [0, 1]$, on a :
+\[ \Phi ((1 - t) x + ty) \leq (1 - t) \Phi (x) + t \Phi (y) \leq (1 - t) + t =
+   1 \]
+
+
+Donc :
+\[ (1 - t) x + ty \in B \]
+
+
+D'o{\`u} $B$ est convexe.
+
+\
+
+R{\'e}ciproquement, supposons que $B$ est convexe, consid{\'e}rons $x$ et $y$
+dans $E$. On veut prouver que :
+\[ \Phi (x + y) \leq \Phi (x) + \Phi (y) \]
+
+
+On peut supposer que $x$ et $y$ non nuls, sans quoi l'in{\'e}galit{\'e} est
+triviale.
+
+Par homog{\'e}n{\'e}it{\'e}, les vecteurs $\frac{x}{\Phi (x)}$ et
+$\frac{y}{\Phi (y)}$ sont dans $B$. Il en est donc de m{\^e}me de leur
+barycentre $z$ affect{\'e} des masses positives $\Phi (x$) et $\Phi (y$). On a
+:
+\[ z = \frac{x + y}{\Phi (x) + \Phi (y)} \]
+
+
+Le fait que $\Phi (z) \leq 1$ conduit {\`a} $\Phi (x + y) \leq \Phi (x) + \Phi
+(y$).
+
+D'o{\`u} l'{\'e}quivalence.
+
+Pour tout $x \in E$, on a $N (x) \leq 1$ si, et seulement si, $1 \in T_x$,
+donc si, et seulement si, $x \in B$. Ainsi :
+\[ \{x \in E \mid N (x) \leq 1\}= B \]
+
+
+Comme $B$ est convexe, on en d{\'e}duit d'apr{\`e}s le lemme que $N$
+v{\'e}rifie l'in{\'e}galit{\'e} triangulaire.
+
+D'o{\`u} le r{\'e}sultat.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]

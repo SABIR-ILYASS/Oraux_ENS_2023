@@ -1,0 +1,146 @@
+Cet exercice explore des propri{\'e}t{\'e}s g{\'e}om{\'e}triques des racines
+d'un polyn{\^o}me et de sa d{\'e}riv{\'e}e dans le plan complexe. On
+{\'e}tudie notamment la relation entre les racines d'un polyn{\^o}me et celles
+de sa d{\'e}riv{\'e}e {\`a} travers le concept d'enveloppe convexe.
+
+\begin{exercise}[(Oral l'X 2007)]
+Soit $P \in \mathbb{C}[X]$
+
+$a.$ Montrer que tout racine de $P'$ est dans l'enveloppe convexe des racines
+de $P$.
+
+$b.$ Soit $K$ un convexe ferm{\'e} de $\mathbb{C}$. On note $\Omega$
+l'ensemble des complexes $w$ tels que $P^{- 1} (\{w\}) \subset K$. Montrer que
+$\Omega$ est convexe.
+\end{exercise}
+
+\subsection*{Solution. (SABIR Ilyass)}
+\addcontentsline{toc}{subsection}{Solution. (SABIR Ilyass)}
+
+$a.$ Cette question est classique, et utilis{\'e}e pour montrer plusieurs
+r{\'e}sultats importants. Ce r{\'e}sultat est connu sous le nom de
+th{\'e}or{\`e}me de Lucas.
+
+Soit $z \in \mathbb{C}$ une racine de $P'$.
+
+Si $z$ est une racine de $P$, c'est termin{\'e} ! Sinon, la cl{\^o}ture de
+$\mathbb{C}$ permet d'{\'e}crire :
+\[ P = c \prod_{i = 1}^n (X - z_i) \]
+
+
+avec $z_1, \ldots, z_n \in \mathbb{C}$, on a donc
+\[ \frac{P'}{P} = \sum_{i = 1}^n \frac{1}{X - z_i} \]
+
+
+En particulier,
+\begin{eqnarray*}
+  0 & = & \frac{P' (z)}{P (z)}\\
+  & = & \sum_{i = 1}^n \frac{1}{z - z_i}
+\end{eqnarray*}
+
+
+En multipliant chaque terme de la somme par $\overline{z - z_i}$, on obtient :
+\[ \sum_{i = 1}^n \frac{\overline{z - z_i}}{|z - z_i |^2} = 0 \]
+
+
+En conjuguant cette {\'e}galit{\'e}, on obtient :
+
+
+\[ z = \sum_{i = 1}^n \frac{z_i}{|z - z_i |^2} \cdot \frac{1}{\sum_{i = 1}^n
+   \frac{1}{|z - z_i |^2}} \]
+
+
+En posant pour tout $i \in \llbracket 1, n \rrbracket,$
+\[ \lambda_i = \frac{1}{|z - z_i |^2} \times \frac{1}{\sum_{i = 1}^n
+   \frac{1}{|z - z_i |^2}} \]
+
+
+On obtient donc $\sum_{i = 1}^n \lambda_i = 1$, et
+\[ z = \sum_{i = 1}^n \lambda_i z_i \]
+
+
+Ce qui montre que $z$ est dans l'enveloppe convexe des $z_i$.
+
+\
+
+$b.$ Soient $u, v \in \Omega$. Montrons que pour tout $\lambda \in [0, 1]$
+$\lambda \mu + (1 - \lambda) \nu \in \Omega$.
+
+C'est-{\`a}-dire que pour tout $z$ tel que $P (z) = \lambda u + (1 - \lambda)
+v$ est dans $K$.
+
+\
+
+Supposons d'abord $\lambda \in \mathbb{Q}$. On peut donc {\'e}crire $\lambda
+= \frac{n}{n + m}$ avec $n, m \geq 0$. Il s'agit de montrer que si $f (z) =
+\frac{mu + nv}{n + m}$ avec $z \in K$.
+
+Consid{\'e}rons le polyn{\^o}me :
+\[ R = (P - u)^n (P - v)^m \]
+
+
+\
+
+On note $\mathcal{Z}$ l'ensemble des racines de $R$.
+
+On a donc, les racines de $R$ sont soit racines de $P - u$ ou $P - v$, donc
+un {\'e}lement de $K$.
+
+Ainsi $\mathcal{Z} \subset K$. Or
+\[ R' = P' (P - u)^{n - 1} (P - v)^{m - 1} (n (P - v) + m (P - v)) \]
+
+
+D'apr{\`e}s la question $a$, les racines de $R'$ sont dans l'enveloppe convexe
+de $\mathcal{Z}$ not{\'e}e $\tmop{Conv} \mathcal{Z}$.
+
+En particulier, pour tout $z$ tel que $P (z) = \frac{mu + nv}{n + m}$ est une
+racine de $R'$, donc est dans Conv $\mathcal{Z}$, qui est inclus dans $K$ par
+convexit{\'e} de $K$.
+
+{\'E}tudions {\`a} pr{\'e}sent le cas g{\'e}n{\'e}ral, soit $\lambda \in [0,
+1]$ et $(\lambda_k)_{k \in \mathbb{N}}$ une suite de rationnels de $[0, 1]$
+convergeant vers $\lambda$. Posons :
+\[ P (X) = (\lambda_k u + (1 - \lambda_k) v) = c \prod_{i = 1}^n (z - z_{i,
+   k}) \]
+
+
+o{\`u} $P (z) = \lambda u + (1 - \lambda) v$, on a donc :
+\[ (\lambda - \lambda_k) (\mu - \nu) = c \prod_{i = 1}^n (z - z_{i, k}) \]
+
+
+o{\`u} les $z_{i, k}$ sont dans $K$, d'apr{\`e}s ce qui pr{\'e}c{\`e}de.
+
+Il en r{\'e}sulte que
+\[ \prod_{i = 1}^n (z - z_{i, k}) \xrightarrow[k \to + \infty]{} 0 \]
+
+
+pour tout $\varepsilon > 0$,cil existe $k \in \mathbb{N}$ tel que
+\[ \prod_{i = 1}^n |z - z_{i, k} | \leq \varepsilon^{\text{deg } P} =
+   \varepsilon^n \]
+
+
+Par cons{\'e}quent, il existe un indice $j$ tel que $|z - z_{j, k} | \leq
+\varepsilon$. Ainsi $z$ est adh{\'e}rent {\`a} $K$. Donc $z \in K$.
+
+\tmtextbf{Remarques.}
+
+1. Le th{\'e}or{\`e}me de Lucas (partie $a$) est un r{\'e}sultat fondamental
+en analyse complexe. Il a de nombreuses applications, notamment dans
+l'{\'e}tude de la distribution des z{\'e}ros des polyn{\^o}mes.
+
+2. La partie b de cet exercice est une g{\'e}n{\'e}ralisation int{\'e}ressante
+du th{\'e}or{\`e}me de Lucas. Elle montre que la convexit{\'e} est
+pr{\'e}serv{\'e}e sous certaines transformations polynomiales.
+
+3. Ces r{\'e}sultats peuvent {\^e}tre {\'e}tendus {\`a} des classes plus
+larges de fonctions analytiques, au-del{\`a} des simples polyn{\^o}mes.
+
+\tmtextbf{Exercices compl{\'e}mentaires.}
+
+1. Montrer que si toutes les racines d'un polyn{\^o}me $P$ sont r{\'e}elles,
+alors toutes les racines de $P'$ sont {\'e}galement r{\'e}elles.
+
+2. G{\'e}n{\'e}raliser le th{\'e}or{\`e}me de Lucas aux d{\'e}riv{\'e}es
+d'ordre sup{\'e}rieur : montrer que les racines de $P^{(k)}$ sont dans
+l'enveloppe convexe des racines de $P$ pour tout $k \geq 1$.
+\[ \maltese \maltese \maltese \maltese \maltese \maltese \maltese \]
